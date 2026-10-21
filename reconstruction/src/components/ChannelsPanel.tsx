@@ -136,6 +136,48 @@ export const ChannelsPanel: React.FC = () => {
               </div>
             </div>
           </div>
+
+          {/* Action buttons: Discover more & Create channel */}
+          <div className="x1c4vz4f xdl72j9 x1g77sc7 x78zum5 xozqiw3 x1oa3qoh x12fk4p8 xeuugli x2lwn1j x1nhvcw1 xdt5ytf x6s0dn4 xh8yej3 x1plvlek xryxfnj xn95wi4" style={{ flexShrink: 0 }}>
+            <div className="xh8yej3 x6ikm8r x10wlt62 x1lliihq" style={{ display: 'flex', flexDirection: 'column', gap: '8px', padding: '16px 20px', width: '100%', boxSizing: 'border-box' }}>
+              <div tabIndex={0} className="x1h678fw x1a8lsjc xe2zdcy x2vl965" data-tab="4">
+                <button aria-disabled="false" tabIndex={0} type="button" className="html-button xdj266r x14z9mp xat24cr x1lziwak xexx8yu x18d9i69 x1n2onr6 x1so62im x1syfmzz x1ja2u2z x1ypdohk x1s928wv x1j6awrg x1m1drc7 x1iygr5g x4eaejv x1wsn0xg x1r0yslu x2q1x1w xapdjt xr6f91l x5rv0tg x1akc3lz xikp0eg x1xl5mkn x1mfml39 x1l5mzlr xgmdoj8 x1f1wgk5 x1x3ic1u xjbqb8w x178xt8z x1lun4ml xso031l xpilrb4 x13fuv20 x18b5jzi x1q0q8m5 x1t7ytsu xnj1f2r x2uibgs xkveyfu x12llq9 xo1mcw5 x1wjp2x xtnn1bt x9v5kkp xmw7ebm xrdum7p x3oybdh x13t8fmb x11xpdln xum2xem xh8yej3 x1lliihq xk8lq53 x9f619 xt8t1vi x1xc408v x129tdwq x15urzxu x1vqgdyp xdx6fka xvtqlqk" style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--border-default, rgba(134, 150, 160, 0.2))', padding: '8px 16px', background: 'none', color: 'var(--primary, #00a884)', cursor: 'pointer' }}>
+                  <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x78zum5 xdt5ytf">
+                    <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x6s0dn4 x78zum5 x1q0g3np xh8yej3 xl56j7k">
+                      <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu x18d9i69 x1c1uobl x6s0dn4 x78zum5 x1vjfegm x1nzty39">
+                        <span aria-hidden="true" className="x1qx5ct2 xw4jnvo"><Icon name="ic-grid" size={20} /></span>
+                      </div>
+                      <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu x18d9i69 x1c1uobl xdt5ytf x6s0dn4 x78zum5 x1vjfegm x1nzty39 x1c4vz4f" style={{ marginLeft: '12px' }}>
+                        <span className="x140p0ai x1gufx9m x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x193iq5w xeuugli x13faqbe x1vvkbs x1lliihq x1fj9vlw xo1mcw5 x87ps6o x1f6kntn xjb2p0i xfjzk2p x8r4c90 x1ic7a3i x12xpedu" style={{ fontSize: '14px', lineHeight: '9.9531px', fontWeight: 500 }}>
+                          <span className="html-span xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x1hl2dhg x16tdsg8 x1vvkbs x1lliihq x1plvlek xryxfnj x1n2onr6">
+                            <span className="html-span xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x1hl2dhg x16tdsg8 x1vvkbs x1lliihq x193iq5w x6ikm8r x10wlt62 xlyipyv xuxw1ft">Discover more</span>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              </div>
+              <div tabIndex={0} className="xv6tirj xe2zdcy x2vl965" data-tab="4">
+                <button aria-disabled="false" tabIndex={0} type="button" className="html-button xdj266r x14z9mp xat24cr x1lziwak xexx8yu x18d9i69 x1n2onr6 x1so62im x1syfmzz x1ja2u2z x1ypdohk x1s928wv x1j6awrg x1m1drc7 x1iygr5g x4eaejv x1wsn0xg x1r0yslu x2q1x1w xapdjt xr6f91l x5rv0tg x1akc3lz xikp0eg x1xl5mkn x1mfml39 x1l5mzlr xgmdoj8 x1f1wgk5 x1x3ic1u xjbqb8w x178xt8z x1lun4ml xso031l xpilrb4 x13fuv20 x18b5jzi x1q0q8m5 x1t7ytsu xnj1f2r x2uibgs xkveyfu x12llq9 xo1mcw5 x1wjp2x xtnn1bt x9v5kkp xmw7ebm xrdum7p x3oybdh x13t8fmb x11xpdln xum2xem xh8yej3 x1lliihq xk8lq53 x9f619 xt8t1vi x1xc408v x129tdwq x15urzxu x1vqgdyp xdx6fka xvtqlqk" style={{ width: '100%', borderRadius: '24px', border: '1px solid var(--border-default, rgba(134, 150, 160, 0.2))', padding: '8px 16px', background: 'none', color: 'var(--primary, #00a884)', cursor: 'pointer' }}>
+                  <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x78zum5 xdt5ytf">
+                    <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x6s0dn4 x78zum5 x1q0g3np xh8yej3 xl56j7k">
+                      <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu x18d9i69 x1c1uobl x6s0dn4 x78zum5 x1vjfegm x1nzty39">
+                        <span aria-hidden="true" className="x1qx5ct2 xw4jnvo"><Icon name="ic-add" size={20} /></span>
+                      </div>
+                      <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu x18d9i69 x1c1uobl xdt5ytf x6s0dn4 x78zum5 x1vjfegm x1nzty39 x1c4vz4f" style={{ marginLeft: '12px' }}>
+                        <span className="x140p0ai x1gufx9m x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x193iq5w xeuugli x13faqbe x1vvkbs x1lliihq x1fj9vlw xo1mcw5 x87ps6o x1f6kntn xjb2p0i xfjzk2p x8r4c90 x1ic7a3i x12xpedu" style={{ fontSize: '14px', lineHeight: '9.9531px', fontWeight: 500 }}>
+                          <span className="html-span xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x1hl2dhg x16tdsg8 x1vvkbs x1lliihq x1plvlek xryxfnj x1n2onr6">
+                            <span className="html-span xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x1hl2dhg x16tdsg8 x1vvkbs x1lliihq x193iq5w x6ikm8r x10wlt62 xlyipyv xuxw1ft">Create channel</span>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

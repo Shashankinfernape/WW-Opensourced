@@ -13,14 +13,15 @@ interface CallRecord {
 }
 
 const FIXTURE_CALLS: CallRecord[] = [
-  { id: '1', name: 'Alex Rivera', time: 'Today, 2:40 PM', incoming: true, isVideo: false, initials: 'AR', color: '#00a884' },
-  { id: '2', name: 'Jordan Lee', time: 'Yesterday, 6:15 PM', incoming: false, isVideo: true, initials: 'JL', color: '#34b7f1' },
-  { id: '3', name: 'Taylor Sam', time: '19 October, 11:20 AM', incoming: true, missed: true, initials: 'TS', color: '#ea4335' },
-  { id: '4', name: 'Morgan Smith', time: '17 October, 4:05 PM', incoming: false, isVideo: false, initials: 'MS', color: '#ffb900' }
+  { id: '1', name: 'Alex Rivera', time: 'Friday', incoming: false, isVideo: false, missed: true, initials: 'AR', color: '#00a884' },
+  { id: '2', name: 'Jordan Lee', time: 'Friday', incoming: false, isVideo: false, initials: 'JL', color: '#34b7f1' },
+  { id: '3', name: 'Taylor Brooks', time: '13/10/2026', incoming: true, missed: true, initials: 'TB', color: '#ea4335' },
+  { id: '4', name: 'Morgan Smith', time: '13/10/2026', incoming: true, isVideo: false, initials: 'MS', color: '#ffb900' }
 ];
 
 export const CallsPanel: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
+  const [showBanner, setShowBanner] = useState(true);
 
   const filteredCalls = FIXTURE_CALLS.filter(c =>
     c.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -64,7 +65,7 @@ export const CallsPanel: React.FC = () => {
                         <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x78zum5 xdt5ytf">
                           <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x6s0dn4 x78zum5 x1q0g3np xh8yej3 xl56j7k">
                             <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x6s0dn4 x78zum5 x1vjfegm">
-                              <span aria-hidden="true" className="xxk0z11 xvy4d1p"><Icon name="ic-call" size={24} /></span>
+                              <span aria-hidden="true" className="xxk0z11 xvy4d1p"><Icon name="ic-add" size={24} /></span>
                             </div>
                             <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl xdt5ytf x6s0dn4 x78zum5 x1vjfegm x1c4vz4f"></div>
                           </div>
@@ -104,26 +105,58 @@ export const CallsPanel: React.FC = () => {
           </div>
         </div>
 
+        {/* Notifications off banner */}
+        {showBanner && (
+          <div role="status" data-testid="calls_tab_notifications_off_banner_wrapper" className="x2lah0s x1uvdrpn x14mko6t x1380le5 xefnzgg">
+            <div className="x1n2onr6">
+              <div className="x67dgr1 x10l6tqk x1ngp85i">
+                <div className="x6s0dn4 xs2akgl x78zum5 x1q0g3np x6nvzda x4i4b9w xhl9efl xj65ea0 x1xrf6ya xvtqlqk xscbp6u xdx6fka x1abdmlv" style={{ display: 'flex', alignItems: 'center', padding: '16px 20px', gap: '16px', backgroundColor: 'var(--WDS-surface-sunken, #111b21)', borderBottom: '1px solid var(--border-default, rgba(134, 150, 160, 0.15))' }}>
+                  <span aria-hidden="true" className="x1v5yvga x19kjcj4" style={{ color: '#00a884' }}><Icon name="ic-notifications-off" size={32} /></span>
+                  <div className="x78zum5 xdt5ytf x129bwdz x1yc453h" style={{ flex: 1 }}>
+                    <div className="xp48ta0">
+                      <span className="x140p0ai x1gufx9m x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x193iq5w xeuugli x13faqbe x1vvkbs x1lliihq x1fj9vlw x14ug900 x1hx0egp x1f6kntn xjb2p0i x8r4c90 xo1l8bm x1ic7a3i x12xpedu" style={{ fontSize: '14px', lineHeight: '18px', color: 'var(--primary, #e9edef)' }}>
+                        Notifications are off.&nbsp;
+                        <button data-tab="4" type="button" onClick={() => setShowBanner(false)} style={{ background: 'none', border: 'none', color: '#00a884', fontWeight: 500, cursor: 'pointer', padding: 0 }}>Turn on</button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Calls body */}
         <div className="x1n2onr6 x1n2onr6 xupqr0c x78zum5 x1r8uery x1iyjqo2 xdt5ytf x6ikm8r x1odjw0f x1hc1fzr x9w6j0p x1anedsm">
           <div tabIndex={0} className="" data-tab="3">
             <div tabIndex={-1} className="">
-              <div className="x1y332i5 x1n2onr6 x6ikm8r x10wlt62" role="list" aria-label="Chat list" style={{ height: `${(filteredCalls.length + 2) * 72}px`, position: 'relative' }}>
-                {/* Item 0: Favorites */}
-                <div className="x10l6tqk xh8yej3 x1g42fcv" role="listitem" data-testid="list-item-0" style={{ zIndex: 1000000, height: '72px', transform: 'translateY(0px)' }}>
-                  <div className="x1n2onr6 x1c4vz4f x2lah0s xdl72j9 xyorhqc x1280gxy">
-                    <div tabIndex={0} className="" data-testid="add-favorite" aria-label="Add favorite" aria-disabled="false" role="button">
-                      <div className="xs83m0k xdl72j9 x1g77sc7 x78zum5 xozqiw3 x1oa3qoh x12fk4p8 xeuugli x1nhvcw1 x1q0g3np x9f619 x1iyjqo2 x1qjc9v5 x879a55 x16ydxro xyo1k6t xlr9sxt xvvg52n xwd4zgb xq8v1ta x17gydlx x1jsj9aw">
+              <div className="x1y332i5 x1n2onr6 x6ikm8r x10wlt62" role="list" aria-label="Chat list" style={{ height: '700px', position: 'relative' }}>
+                {/* list-item-0: Favourites Heading */}
+                <div className="x10l6tqk xh8yej3 x1g42fcv" role="row" data-testid="list-item-0" style={{ zIndex: 1000000, height: '56px', transform: 'translateY(0px)' }}>
+                  <div className="x78zum5 xdt5ytf xh8yej3">
+                    <div className="x6s0dn4 x78zum5 xs2akgl x1qughib x12xbjc7 x1p57kb1 x1phvje8 xcldk2z" style={{ padding: '0 20px', height: '56px', display: 'flex', alignItems: 'center' }}>
+                      <div className="x78zum5 xdt5ytf x1iyjqo2 xeuugli">
+                        <h2 className="html-h2 xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x1vvkbs x1heor9g x1qlqyl8 x1pd3egz x1a2a7pz x193iq5w xeuugli">
+                          <span className="x140p0ai x1gufx9m x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x193iq5w xeuugli x13faqbe x1vvkbs x1lliihq x1fj9vlw x14ug900 x1hx0egp x1jchvi3 xjb2p0i xfjzk2p x17mssa0 x1ic7a3i" style={{ fontSize: '16px', lineHeight: '11.375px', color: '#00a884', fontWeight: 500 }}>Favourites</span>
+                        </h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* list-item-1: Add favourite */}
+                <div className="x10l6tqk xh8yej3 x1g42fcv" role="row" data-testid="list-item-1" style={{ zIndex: 999999, height: '76px', transform: 'translateY(56px)' }}>
+                  <div role="gridcell" style={{ width: '100%' }}>
+                    <div className="x78zum5 xh8yej3 x1iyjqo2 x1n2onr6 x9f619 xkh2ocl" data-testid="add-favorite" aria-label="Add favorite" aria-disabled="false" role="button" tabIndex={0} style={{ padding: '0 16px', height: '76px', display: 'flex', alignItems: 'center' }}>
+                      <div className="xs83m0k xdl72j9 x1g77sc7 x78zum5 xozqiw3 x1oa3qoh x12fk4p8 xeuugli x1nhvcw1 x1q0g3np x9f619 x1iyjqo2 x1qjc9v5 x879a55 x16ydxro xyo1k6t xlr9sxt xvvg52n xwd4zgb xq8v1ta x17gydlx x1jsj9aw" style={{ display: 'flex', alignItems: 'center', width: '100%', gap: '15px' }}>
                         <div className="x1c4vz4f xdl72j9 x1g77sc7 x78zum5 xozqiw3 x1oa3qoh x12fk4p8 x2lwn1j xl56j7k x1q0g3np x6s0dn4 xz9dl7a xsag5q8 xe2zdcy x1pic42t x1fns5xo xn95wi4" style={{ flexShrink: 0 }}>
-                          <div className="x78zum5 x6s0dn4 xl56j7k x1pse0pq xe5due1 x1c9tyrk xeusxvb x1pahc9y x1ertn4p x100vrsf x1vqgdyp" style={{ backgroundColor: '#00a884', borderRadius: '50%', width: '48px', height: '48px', color: '#fff' }}>
+                          <div className="x78zum5 x6s0dn4 xl56j7k x1pse0pq xe5due1 x1c9tyrk xeusxvb x1pahc9y x1ertn4p x100vrsf x1vqgdyp" style={{ backgroundColor: '#00a884', borderRadius: '50%', width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
                             <span aria-hidden="true"><Icon name="ic-add" size={24} /></span>
                           </div>
                         </div>
-                        <div className="x78zum5 xdl72j9 xdt5ytf x1iyjqo2 xl56j7k xeuugli x1n1b19v">
-                          <div role="gridcell" aria-colindex={2} className="x6s0dn4 x78zum5 xggjnk3 x1yc453h">
-                            <div className="x14ug900 x78zum5 x1iyjqo2 x1jchvi3 xdod15v x6ikm8r x10wlt62 x1mzt3pk x1yc453h xo1l8bm" data-testid="cell-frame-title">
-                              <span dir="auto" title="Add favorite" className="x1iyjqo2 x6ikm8r x10wlt62 x1n2onr6 xlyipyv xuxw1ft xnpuxes" style={{ minHeight: '0px' }}>Add favorite</span>
-                            </div>
+                        <div className="x1g77sc7 x78zum5 xozqiw3 x1oa3qoh x12fk4p8 xeuugli x2lwn1j xdt5ytf x12lumcd x1qjc9v5 xl56j7k x9f619 x2vl965 xz9dl7a xsag5q8 x1mz2wy7 xw36f2b xn95wi4" style={{ flexGrow: 1 }}>
+                          <div className="x1c4vz4f xs83m0k xdl72j9 x1g77sc7 x78zum5 xozqiw3 x1oa3qoh x12fk4p8 xeuugli x2lwn1j x1nhvcw1 x1q0g3np x6s0dn4">
+                            <span className="x140p0ai x1gufx9m x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x193iq5w xeuugli x13faqbe x1vvkbs x1lliihq x1fj9vlw x14ug900 x1hx0egp x1jchvi3 xjb2p0i xo1l8bm x17mssa0 x1ic7a3i" style={{ fontSize: '16px', lineHeight: '11.375px', color: 'var(--primary, #e9edef)' }}>Add favourite</span>
                           </div>
                         </div>
                       </div>
@@ -131,18 +164,31 @@ export const CallsPanel: React.FC = () => {
                   </div>
                 </div>
 
+                {/* list-item-2: Recent Heading */}
+                <div className="x10l6tqk xh8yej3 x1g42fcv" role="row" data-testid="list-item-2" style={{ zIndex: 999998, height: '61px', transform: 'translateY(132px)' }}>
+                  <div className="x78zum5 xdt5ytf xh8yej3">
+                    <div className="x6s0dn4 x78zum5 xs2akgl x1qughib x12xbjc7 x1p57kb1 x1phvje8 xcldk2z" style={{ padding: '0 20px', height: '61px', display: 'flex', alignItems: 'center' }}>
+                      <div className="x78zum5 xdt5ytf x1iyjqo2 xeuugli">
+                        <h2 className="html-h2 xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x1vvkbs x1heor9g x1qlqyl8 x1pd3egz x1a2a7pz x193iq5w xeuugli">
+                          <span className="x140p0ai x1gufx9m x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x193iq5w xeuugli x13faqbe x1vvkbs x1lliihq x1fj9vlw x14ug900 x1hx0egp x1jchvi3 xjb2p0i xfjzk2p x17mssa0 x1ic7a3i" style={{ fontSize: '16px', lineHeight: '11.375px', color: '#00a884', fontWeight: 500 }}>Recent</span>
+                        </h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Call History Rows */}
                 {filteredCalls.map((call, idx) => (
-                  <div key={call.id} className="x10l6tqk xh8yej3 x1g42fcv" role="listitem" data-testid={`list-item-${idx + 1}`} style={{ zIndex: 999999 - idx, height: '72px', transform: `translateY(${(idx + 1) * 72}px)` }}>
-                    <div className="x1n2onr6 x1c4vz4f x2lah0s xdl72j9 xyorhqc x1280gxy">
-                      <div tabIndex={-1} className="" role="button">
-                        <div data-testid={`chatlist-message-${idx}`} className="x1280gxy xlr9sxt xvvg52n xwd4zgb xq8v1ta x78zum5 x1q0g3np xy75621 x1hm9lzh x1sa5p1d x71s49j x1n2onr6 x1ypdohk x1ubxc9n xbmkbis xb5mbof xiitwr3 x206yn3">
-                          <div className="x78zum5">
+                  <div key={call.id} className="x10l6tqk xh8yej3 x1g42fcv" role="row" data-testid={`list-item-${idx + 3}`} style={{ zIndex: 999997 - idx, height: '76px', transform: `translateY(${193 + idx * 76}px)` }}>
+                    <div role="gridcell" className="x1n2onr6" tabIndex={0} style={{ width: '100%' }}>
+                      <div tabIndex={-1} className="">
+                        <div data-testid={`chatlist-message-${idx}`} className="x1280gxy xlr9sxt xvvg52n xwd4zgb xq8v1ta x78zum5 x1q0g3np xy75621 x1hm9lzh x1sa5p1d x71s49j x1n2onr6 x1ypdohk x1ubxc9n xbmkbis xb5mbof xiitwr3 x206yn3" style={{ padding: '0 16px', height: '76px', display: 'flex', alignItems: 'center' }}>
+                          <div className="x78zum5" style={{ marginRight: '15px' }}>
                             <div className="x6s0dn4 x78zum5 x1c4vz4f x2lah0s x1y332i5 x18d9i69 xexx8yu x1n1b19v xbmws1g">
                               <div className="x47corl">
                                 <div className="x1n2onr6 x1c7u0tx x1c9tyrk xeusxvb x1pahc9y x1ertn4p x6ikm8r x10wlt62 x5lhr3w x16ye13r" style={{ width: '49px', height: '49px' }}>
                                   <div className="x1n2onr6 x1c9tyrk xeusxvb x1pahc9y x1ertn4p x16ye13r x5lhr3w" style={{ height: '49px', width: '49px' }}>
-                                    <div className="x10l6tqk x13vifvy x1o0tod x78zum5 x6s0dn4 xl56j7k xh8yej3 x5yr21d" style={{ backgroundColor: call.color, borderRadius: '50%', color: '#fff', fontWeight: 600, fontSize: '18px' }}>
+                                    <div className="x10l6tqk x13vifvy x1o0tod x78zum5 x6s0dn4 xl56j7k xh8yej3 x5yr21d" style={{ backgroundColor: call.color, borderRadius: '50%', color: '#fff', fontWeight: 600, fontSize: '18px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                       {call.initials}
                                     </div>
                                   </div>
@@ -155,32 +201,20 @@ export const CallsPanel: React.FC = () => {
                               <div className="x14ug900 x78zum5 x1iyjqo2 x1jchvi3 xdod15v x6ikm8r x10wlt62 x1mzt3pk x1yc453h xo1l8bm" data-testid="cell-frame-title">
                                 <span dir="auto" title={call.name} className="x1iyjqo2 x6ikm8r x10wlt62 x1n2onr6 xlyipyv xuxw1ft xnpuxes" style={{ minHeight: '0px', color: call.missed ? '#ea4335' : 'inherit' }}>{call.name}</span>
                               </div>
-                            </div>
-                            <div className="x6s0dn4 xhslqc4 x78zum5 x1nxh6w3 x1fc57z9 xr9ek0c xisnujt" data-testid="cell-frame-secondary">
-                              <div className="xjbqb8w x1iyjqo2 x1f6kntn x1fc57z9 x6ikm8r x10wlt62 x1yc453h xlyipyv xuxw1ft xo1l8bm" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                                <span style={{ color: call.missed ? '#ea4335' : '#00a884', fontSize: '12px' }}>{call.incoming ? '↙' : '↗'}</span>
-                                <span>{call.time}</span>
+                              <div className="xhslqc4 x1c4vz4f x2lah0s x1pg5gke xdzw4kq x193iq5w x1xxsxie x7r5mf7 x6ikm8r x10wlt62 xlyipyv xuxw1ft" data-testid="cell-frame-primary-detail" style={{ marginLeft: 'auto' }}>
+                                <span className="x140p0ai x1gufx9m x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x193iq5w xeuugli x13faqbe x1vvkbs x1lliihq x1fj9vlw xhslqc4 x1hx0egp x1pg5gke xjb2p0i xo1l8bm xl2ypbo x1ic7a3i" style={{ fontSize: '12px', color: 'var(--secondary, #8696a0)' }}>{call.time}</span>
                               </div>
                             </div>
-                          </div>
-                          <div className="x78zum5 x6s0dn4 xl56j7k" style={{ paddingRight: '12px', color: 'var(--icon, #8696a0)' }}>
-                            <Icon name={call.isVideo ? 'ic-videocam' : 'ic-call'} size={20} />
+                            <div className="x6s0dn4 xhslqc4 x78zum5 x1nxh6w3 x1fc57z9 xr9ek0c xisnujt" data-testid="cell-frame-secondary" style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '3px' }}>
+                              <span style={{ color: call.missed ? '#ea4335' : '#00a884', fontSize: '13px' }}>{call.incoming ? '↙' : '↗'}</span>
+                              <span style={{ fontSize: '13px', color: call.missed ? '#ea4335' : 'var(--secondary, #8696a0)' }}>{call.missed ? 'Missed' : (call.incoming ? 'Incoming' : 'Outgoing')}</span>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 ))}
-
-                {/* End to end message */}
-                <div className="x10l6tqk xh8yej3 x1g42fcv" role="listitem" data-testid={`list-item-${filteredCalls.length + 1}`} style={{ zIndex: 999990, height: '72px', transform: `translateY(${(filteredCalls.length + 1) * 72}px)` }}>
-                  <div className="x1n2onr6 x1c4vz4f x2lah0s xdl72j9 xyorhqc x1280gxy">
-                    <div data-testid="calls-e2e-message" className="x78zum5 x6s0dn4 xl56j7k" style={{ padding: '16px', fontSize: '12px', color: 'var(--secondary, #8696a0)', textAlign: 'center', gap: '6px' }}>
-                      <Icon name="ic-lock" size={12} />
-                      <span>Your personal calls are end-to-end encrypted</span>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

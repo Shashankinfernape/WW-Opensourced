@@ -81,6 +81,16 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose, onOpenPro
               </div>
             </div>
 
+            {/* Profile Avatar Card (120px) */}
+            <div className="x1c4vz4f xs83m0k xdl72j9 x1g77sc7 x78zum5 xozqiw3 x1oa3qoh x12fk4p8 xeuugli x2lwn1j x1nhvcw1 xdt5ytf x6s0dn4 x9r8f99" style={{ padding: '24px 0 16px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div style={{ width: '120px', height: '120px', borderRadius: '50%', backgroundColor: '#00a884', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '48px', fontWeight: 600, cursor: 'pointer', marginBottom: '12px' }} onClick={onOpenProfile}>
+                AR
+              </div>
+              <div style={{ fontSize: '14px', color: 'var(--secondary, #8696a0)' }}>
+                Available
+              </div>
+            </div>
+
             {/* Listbox */}
             <div role="listbox" data-testid="dropdown" className="x78zum5 x1iyjqo2 xw2csxc x1odjw0f">
               <div tabIndex={-1} className="x78zum5 xdt5ytf x1iyjqo2 x2lah0s xdl72j9 x1odjw0f xh8yej3">

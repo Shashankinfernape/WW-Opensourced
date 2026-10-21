@@ -1,5 +1,5 @@
 {
-  "evidence_id": "ev_fdad649b5a00511fb02c86b3e3d6c81da8d7f78fdf24581c5606bd94dc39e776",
+  "evidence_id": "ev_1e8d3e86b79424de07db755ad846b38218824ce7e1fa40f49aba222d6444d648",
   "subject": null,
   "provider": {
     "id": "rea-cdp-browser",
@@ -11,7 +11,7 @@
   "operation": "compare_web_screenshots",
   "parameters": {
     "before_artifact_sha256": "7eb1bb70838e528a388f78576b608b2b8cb3974905aac345e7b98ed5509a303d",
-    "after_artifact_sha256": "c239305083803d7d344d2a6551938c333cdf3cb0a7ff744e590daa9be98abc0f",
+    "after_artifact_sha256": "c19c2bea602a4ecf9d682fbf51f0936656afdeb818e97484720118f8520d1aa8",
     "channel_threshold": 10
   },
   "raw_result": null,
@@ -32,10 +32,10 @@
     ],
     "status": "different",
     "compared_pixels": 330480,
-    "changed_pixels": 58819,
-    "changed_ratio": 0.17798051319293148,
+    "changed_pixels": 54663,
+    "changed_ratio": 0.16540486564996368,
     "maximum_channel_delta": 252,
-    "mean_absolute_channel_delta": 8.304452614379086
+    "mean_absolute_channel_delta": 7.03630249939482
   },
   "confidence": "observed",
   "authority": "external-service",

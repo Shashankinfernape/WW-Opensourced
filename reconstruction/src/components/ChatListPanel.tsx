@@ -97,14 +97,15 @@ export const ChatListPanel: React.FC<ChatListPanelProps> = ({
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Filter Pills Tablist */}
-        <div
-          tabIndex={-1}
-          role="tablist"
-          aria-label="chat-list-filters"
-          className="x1iorvi4 x10b6aqq x106a9eq x2vl965 x1280gxy x78zum5 x1q0g3np xozqiw3 x2lah0s xfex06f xeuugli x2lwn1j x6ikm8r x10wlt62"
-        >
+      {/* Filter Pills Tablist (Direct child 2 of #side) */}
+      <div
+        tabIndex={-1}
+        role="tablist"
+        aria-label="chat-list-filters"
+        className="x1iorvi4 x10b6aqq x106a9eq x2vl965 x1280gxy x78zum5 x1q0g3np xozqiw3 x2lah0s xfex06f xeuugli x2lwn1j x6ikm8r x10wlt62"
+      >
           <div hidden={true} />
           {/* All Filter */}
           <div>
@@ -301,65 +302,9 @@ export const ChatListPanel: React.FC<ChatListPanelProps> = ({
             </span>
           </div>
         </div>
-      </div>
 
-      {/* Sync / Notification Banner */}
-      <span className="x78zum5 x1c4vz4f x2lah0s xdl72j9 xdt5ytf" data-testid="chat-butterbar">
-        <div className="x1380le5 x14mko6t xefnzgg x1uvdrpn">
-          <div className="x1n2onr6">
-            <div className="x67dgr1 x10l6tqk x1ngp85i">
-              <span className="html-span xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x1hl2dhg x16tdsg8 x1vvkbs x4k7w5x x1h91t0o x1h9r5lt x1jfb8zj xv2umb2 x1beo9mf xaigb6o x12ejxvf x3igimt xarpa2k xedcshv x1lytzrv x1t2pt76 x7ja8zs x1qrby5j">
-                <button
-                  data-tab="4"
-                  aria-label="Close"
-                  aria-disabled="false"
-                  tabIndex={0}
-                  type="button"
-                  className="html-button xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x178xt8z x1lun4ml xso031l xpilrb4 x1n2onr6 x1ejq31n x18oe1m7 x1sy0etr xstzfhl x1so62im x1syfmzz x1ja2u2z x1ypdohk x1s928wv x1j6awrg x1m1drc7 x1iygr5g x4eaejv x1wsn0xg x1r0yslu x2q1x1w xapdjt xr6f91l x5rv0tg x1akc3lz xikp0eg x1xl5mkn x1mfml39 x1l5mzlr xgmdoj8 x1f1wgk5 x1x3ic1u xjbqb8w xuwfzo9 x1wb366y xtnn1bt x9v5kkp xmw7ebm xrdum7p x2lah0s x1lliihq xk8lq53 x9f619 xt8t1vi x1xc408v x129tdwq x15urzxu x1vqgdyp x100vrsf"
-                >
-                  <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x78zum5 xdt5ytf">
-                    <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x6s0dn4 x78zum5 x1q0g3np xh8yej3 xl56j7k">
-                      <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x6s0dn4 x78zum5 x1vjfegm">
-                        <span aria-hidden="true" className="xxk0z11 xvy4d1p">
-                          <Icon name="ic-close" size={24} />
-                        </span>
-                      </div>
-                      <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl xdt5ytf x6s0dn4 x78zum5 x1vjfegm x1c4vz4f" />
-                    </div>
-                  </div>
-                </button>
-              </span>
-            </div>
-            <div className="x6s0dn4 xs2akgl x78zum5 x1q0g3np x6nvzda x4i4b9w xhl9efl xj65ea0 x1xrf6ya xvtqlqk xscbp6u xdx6fka x1abdmlv">
-              <span aria-hidden="true" className="x1v5yvga x19kjcj4">
-                <Icon name="ic-notifications-off" size={36} />
-              </span>
-              <div className="x78zum5 xdt5ytf x129bwdz x1yc453h">
-                <div className="xp48ta0">
-                  <span
-                    className="x140p0ai x1gufx9m x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x193iq5w xeuugli x13faqbe x1vvkbs x1lliihq x1fj9vlw x14ug900 x1hx0egp x1f6kntn xjb2p0i x8r4c90 xo1l8bm x1ic7a3i x12xpedu"
-                    style={{
-                      ['--x-fontSize' as string]: '14px',
-                      ['--x-lineHeight' as string]: '9.9531px',
-                      ['--x-8dd7yt' as string]: '-0.0137em',
-                      ['--x-hxtmnb' as string]: '0.0137em',
-                    }}
-                  >
-                    Message and call notifications are off.&nbsp;
-                    <button
-                      data-tab="4"
-                      type="button"
-                      className="xjb2p0i x1qlqyl8 x972fbf x10w94by x1qhh985 x14e42zd xexx8yu xyri2b x18d9i69 x1c1uobl x11g6tue x1a2a7pz x1ypdohk x1ph7ams x17f7hit xuv8nkb x1hl2dhg xt0b8zv x1eo1aoc xbvygy2 x1wp9yj1 xv854yx x1k74hu9 xp30eni xrys4gj xhmieyt"
-                    >
-                      Turn on
-                    </button>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </span>
+      {/* Empty butterbar span (Child 3 of #side) */}
+      <span className="x78zum5 x1c4vz4f x2lah0s xdl72j9 xdt5ytf" data-testid="chat-butterbar" />
 
       {/* Pane-side Scroll Container */}
       <div
@@ -370,47 +315,46 @@ export const ChatListPanel: React.FC<ChatListPanelProps> = ({
       >
         {/* Archived Row */}
         <button
-          type="button"
+          className="xjb2p0i xk390pu x1heor9g x1ypdohk xjbqb8w x972fbf x10w94by x1qhh985 x14e42zd x1fmog5m xu25z0z x140muxe xo1y3bh xexx8yu xyri2b x18d9i69 x1c1uobl x2lah0s xav9cv8 x4tpdpg x1lziwak x14z9mp xtnn1bt x9v5kkp xmw7ebm xrdum7p"
           tabIndex={0}
+          data-tab="4"
+          data-testid="chatlist-panel-archived-button"
+          aria-disabled="false"
+          type="button"
+          aria-label="Archived "
           onClick={onOpenArchived}
-          className="html-button xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x178xt8z x1lun4ml xso031l xpilrb4 x1n2onr6 x1ejq31n x18oe1m7 x1sy0etr xstzfhl x1ypdohk x1s928wv x1j6awrg x1m1drc7 x1iygr5g x4eaejv x1wsn0xg x1r0yslu x2q1x1w xapdjt xr6f91l x5rv0tg x1akc3lz xikp0eg x1xl5mkn x1mfml39 x1l5mzlr xgmdoj8 x1f1wgk5 x1x3ic1u xjbqb8w x1wb366y xtnn1bt x9v5kkp xmw7ebm xrdum7p x2lah0s x1lliihq xk8lq53 x9f619 xt8t1vi x1xc408v x129tdwq x15urzxu x100vrsf x1vqgdyp"
-          style={{
-            width: '100%',
-            border: 'none',
-            background: 'transparent',
-            textAlign: 'left',
-            cursor: 'pointer',
-            padding: 0,
-          }}
         >
-          <div
-            data-testid="cell-frame-container"
-            className="xlr9sxt xvvg52n xwd4zgb xq8v1ta x78zum5 x1q0g3np x1hm9lzh x1sa5p1d x71s49j x1n2onr6 xjbqb8w x3ffywh x1ubxc9n"
-            style={{
-              height: '49px',
-              padding: '0 16px',
-              display: 'flex',
-              alignItems: 'center',
-              borderBottom: '1px solid var(--border-default, rgba(134, 150, 160, 0.08))',
-            }}
-          >
-            <div className="x78zum5" style={{ marginRight: '16px', display: 'flex', alignItems: 'center' }}>
-              <span className="xxk0z11 xvy4d1p" style={{ color: 'var(--icon, #8696a0)', display: 'flex' }}>
-                <Icon name="nav-archived" size={20} />
-              </span>
+          <div data-testid="cell-frame-container" className="xlr9sxt xvvg52n xwd4zgb xq8v1ta x78zum5 x1q0g3np x1hm9lzh x1sa5p1d x71s49j x1n2onr6 xjbqb8w x3ffywh x1ubxc9n">
+            <div className="x78zum5">
+              <div className="x6s0dn4 x78zum5 x1c4vz4f x2lah0s xdj266r xexx8yu x18d9i69 x1q3ajuy xbmws1g">
+                <div className="x1c4vz4f xs83m0k xdl72j9 x1g77sc7 x78zum5 xozqiw3 x1oa3qoh x12fk4p8 xeuugli x2lwn1j xl56j7k x1q0g3np x6s0dn4 x1g3ev5e x3ffywh xhslqc4">
+                  <span aria-hidden="true">
+                    <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" className="" fill="currentColor">
+                      <title>ic-archive</title>
+                      <path fill="currentColor" d="M5 21c-.55 0-1.02-.2-1.41-.59-.4-.39-.59-.86-.59-1.41V6.5c0-.25.04-.47.13-.67.08-.2.19-.4.32-.58l1.4-1.7c.13-.18.3-.32.5-.41.2-.1.42-.14.65-.14h12c.23 0 .45.05.65.14.2.09.37.23.5.41l1.4 1.7c.13.18.24.38.32.58.09.2.13.42.13.67V19c0 .55-.2 1.02-.59 1.41-.39.4-.86.59-1.41.59H5Zm.4-15h13.2l-.85-1H6.25L5.4 6ZM5 19h14V8H5v11Zm7-1.43c.13 0 .26-.02.38-.06a.88.88 0 0 0 .32-.21l2.6-2.6a.95.95 0 0 0 .27-.7.96.96 0 0 0-.27-.7.95.95 0 0 0-.7-.28c-.28 0-.52.1-.7.28l-.9.9V11c0-.28-.1-.52-.29-.71A.97.97 0 0 0 12 10c-.28 0-.52.1-.71.29A.94.94 0 0 0 11 11v3.2l-.9-.9a.95.95 0 0 0-.7-.28.95.95 0 0 0-.97.97c0 .3.09.53.27.71l2.6 2.6c.1.1.2.17.32.21.12.04.25.06.38.06Z" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
             </div>
             <div className="x78zum5 xdl72j9 xdt5ytf x1iyjqo2 xl56j7k xeuugli x1n1b19v">
               <div role="group" className="x6s0dn4 x78zum5 xggjnk3 x1yc453h">
                 <div data-testid="cell-frame-title" className="x14ug900 x78zum5 x1iyjqo2 x1jchvi3 xdod15v x6ikm8r x10wlt62 x1mzt3pk x1yc453h xo1l8bm">
                   <span
                     className="x140p0ai x1gufx9m x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x193iq5w xeuugli x13faqbe x1vvkbs x1lliihq x1fj9vlw xhslqc4 x1hx0egp x1jchvi3 xjb2p0i xo1l8bm x17mssa0 x1ic7a3i"
-                    style={{ fontSize: '16px', color: 'var(--primary, #e9edef)' }}
+                    style={{
+                      ['--x-fontSize' as any]: '16px',
+                      ['--x-lineHeight' as any]: '11.375px',
+                      ['--x-8dd7yt' as any]: '-0.0137em',
+                      ['--x-hxtmnb' as any]: '0.0137em',
+                    }}
                   >
                     Archived
                   </span>
                 </div>
               </div>
             </div>
+            <div className="xl56j7k xeuugli x6s0dn4 xamitd3 x9f619 x78zum5 xdl72j9 x1c4vz4f x2lah0s x5yr21d x1hwfens x1q0g3np" />
           </div>
         </button>
 
@@ -421,7 +365,7 @@ export const ChatListPanel: React.FC<ChatListPanelProps> = ({
             aria-label="Chat list"
             className="x1y332i5 x1n2onr6 x6ikm8r x10wlt62 x16ovd2e"
             style={{
-              height: `${filteredChats.length * 72}px`,
+              height: `${filteredChats.length * 76}px`,
               position: 'relative',
               width: '100%',
             }}
@@ -435,8 +379,8 @@ export const ChatListPanel: React.FC<ChatListPanelProps> = ({
                   data-testid={`list-item-${idx}`}
                   className="x10l6tqk xh8yej3 x1g42fcv"
                   style={{
-                    height: '72px',
-                    transform: `translateY(${idx * 72}px)`,
+                    height: '76px',
+                    transform: `translateY(${idx * 76}px)`,
                     zIndex: 1000 - idx,
                     width: '100%',
                   }}
@@ -453,9 +397,9 @@ export const ChatListPanel: React.FC<ChatListPanelProps> = ({
                         data-testid="cell-frame-container"
                         className={`${
                           isSelected ? 'x4wrhlh' : 'x1280gxy'
-                        } xlr9sxt xvvg52n xwd4zgb xq8v1ta x78zum5 x1q0g3np xy75621 x1hm9lzh x1sa5p1d x71s49j x1n2onr6 x1ypdohk x1ubxc9n xbmkbis x1yjtglu xiitwr3 x206yn3`}
+                        } xlr9sxt xvvg52n xwd4zgb xq8v1ta x78zum5 x1q0g3np xy75621 x1hm9lzh x1sa5p1d x71s49j x1n2onr6 x1ypdohk x1ubxc9n xbmkbis xb5mbof xiitwr3 x206yn3`}
                         style={{
-                          height: '72px',
+                          height: '76px',
                           display: 'flex',
                           alignItems: 'center',
                           padding: '0 16px',
@@ -622,19 +566,15 @@ export const ChatListPanel: React.FC<ChatListPanelProps> = ({
         </div>
 
         {/* E2E encryption notice at bottom of chatlist */}
-        <div
-          style={{
-            padding: '24px 16px',
-            textAlign: 'center',
-            fontSize: '12px',
-            color: 'var(--secondary, #8696a0)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '6px',
-          }}
-        >
-          <span>Your personal messages are end-to-end encrypted</span>
+        <div className="x9f619 x78zum5 x6s0dn4 xl56j7k xcxhlts x1ys307a x1fqp7bg xyqm7xq x889kno x178xt8z x13fuv20 xx42vgk x14ug900" data-testid="chatlist-e2e-message" style={{ height: '29px' }}>
+          <div className="x2b8uid xl56j7k x78zum5">
+            <div className="x1pg5gke x1fcty0u xvq8zen x1mzt3pk xeaf4i8" style={{ display: 'flex', alignItems: 'center' }}>
+              <span aria-hidden="true" className="xvijh9v x1p8j9ns"><Icon name="ic-lock" size={12} color="var(--secondary, #8696a0)" /></span>
+              <span className="x140p0ai x1gufx9m x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x193iq5w xeuugli x13faqbe x1vvkbs x1lliihq x1fj9vlw xhslqc4 x1hx0egp x1f6kntn xjb2p0i xo1l8bm x1ic7a3i x12xpedu" style={{ fontSize: '12px', color: 'var(--secondary, #8696a0)', marginLeft: '4px' }}>
+                Your personal messages are <span role="button" tabIndex={0} style={{ color: '#00a884', cursor: 'pointer' }}>end-to-end encrypted</span>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

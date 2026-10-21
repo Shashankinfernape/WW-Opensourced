@@ -7,9 +7,9 @@
       72
     ],
     "compared_pixels": 29736,
-    "changed_pixels": 19222,
-    "changed_ratio": 0.646421845574388,
-    "mean_absolute_channel_delta": 13.432094094700027
+    "changed_pixels": 4820,
+    "changed_ratio": 0.16209308582189938,
+    "mean_absolute_channel_delta": 8.463495426419156
   },
   "chat-row-selected": {
     "rect": [
@@ -19,9 +19,9 @@
       72
     ],
     "compared_pixels": 29736,
-    "changed_pixels": 21009,
-    "changed_ratio": 0.7065173527037933,
-    "mean_absolute_channel_delta": 16.778349475383372
+    "changed_pixels": 20628,
+    "changed_ratio": 0.6937046004842615,
+    "mean_absolute_channel_delta": 18.71564769975787
   },
   "wallpaper-area": {
     "rect": [
@@ -31,9 +31,9 @@
       609
     ],
     "compared_pixels": 338604,
-    "changed_pixels": 160329,
-    "changed_ratio": 0.4735000177198143,
-    "mean_absolute_channel_delta": 15.79118749335507
+    "changed_pixels": 241226,
+    "changed_ratio": 0.712413320575067,
+    "mean_absolute_channel_delta": 18.10656991648061
   },
   "bubbles-structure": {
     "rect": [
@@ -43,9 +43,9 @@
       300
     ],
     "compared_pixels": 166800,
-    "changed_pixels": 91517,
-    "changed_ratio": 0.5486630695443645,
-    "mean_absolute_channel_delta": 24.020503597122303
+    "changed_pixels": 117364,
+    "changed_ratio": 0.703621103117506,
+    "mean_absolute_channel_delta": 27.121768585131896
   },
   "attach-menu": {
     "rect": [
@@ -55,9 +55,9 @@
       273
     ],
     "compared_pixels": 81900,
-    "changed_pixels": 58837,
-    "changed_ratio": 0.7184004884004884,
-    "mean_absolute_channel_delta": 8.757875457875459
+    "changed_pixels": 597,
+    "changed_ratio": 0.007289377289377289,
+    "mean_absolute_channel_delta": 0.1421825396825397
   },
   "chat-menu": {
     "rect": [
@@ -67,9 +67,9 @@
       280
     ],
     "compared_pixels": 61600,
-    "changed_pixels": 42808,
-    "changed_ratio": 0.694935064935065,
-    "mean_absolute_channel_delta": 13.364074675324675
+    "changed_pixels": 1481,
+    "changed_ratio": 0.024042207792207792,
+    "mean_absolute_channel_delta": 2.4049594155844156
   },
   "status-panel": {
     "rect": [
@@ -79,9 +79,9 @@
       737
     ],
     "compared_pixels": 304381,
-    "changed_pixels": 17241,
-    "changed_ratio": 0.056642825931973416,
-    "mean_absolute_channel_delta": 3.9805416566737084
+    "changed_pixels": 10938,
+    "changed_ratio": 0.03593522591751785,
+    "mean_absolute_channel_delta": 2.3991806321682367
   },
   "channels-panel": {
     "rect": [
@@ -91,9 +91,9 @@
       737
     ],
     "compared_pixels": 304381,
-    "changed_pixels": 59008,
-    "changed_ratio": 0.19386229758099224,
-    "mean_absolute_channel_delta": 12.696980100597607
+    "changed_pixels": 54828,
+    "changed_ratio": 0.18012950874069011,
+    "mean_absolute_channel_delta": 12.311013170992933
   },
   "communities-panel": {
     "rect": [
@@ -103,9 +103,9 @@
       737
     ],
     "compared_pixels": 304381,
-    "changed_pixels": 37208,
-    "changed_ratio": 0.12224153281578022,
-    "mean_absolute_channel_delta": 8.642216498401675
+    "changed_pixels": 24603,
+    "changed_ratio": 0.08082961814305098,
+    "mean_absolute_channel_delta": 6.51673560439055
   },
   "calls-panel": {
     "rect": [
@@ -115,8 +115,8 @@
       737
     ],
     "compared_pixels": 304381,
-    "changed_pixels": 62283,
-    "changed_ratio": 0.2046218390766835,
-    "mean_absolute_channel_delta": 7.716960815556819
+    "changed_pixels": 70434,
+    "changed_ratio": 0.23140077731527264,
+    "mean_absolute_channel_delta": 7.767885479054212
   }
 }

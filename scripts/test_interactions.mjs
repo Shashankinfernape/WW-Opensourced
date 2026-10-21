@@ -61,45 +61,45 @@ async function runInteractionTests() {
   // Click on Chat 1 (Alex Rivera) to open conversation
   await evaluate(`(() => {
     const rows = Array.from(document.querySelectorAll('[data-testid="cell-frame-container"]'));
-    const row1 = rows.find(r => r.innerText.includes('Alex Rivera'));
+    const row1 = rows.find(r => (r.textContent || r.innerText || '').includes('Alex Rivera'));
     if (row1) row1.click();
   })()`);
   await new Promise(r => setTimeout(r, 300));
 
-  let currentHeader = await evaluate(`document.querySelector('[data-testid="conversation-info-header-chat-title"]')?.innerText`);
+  let currentHeader = await evaluate(`document.querySelector('[data-testid="conversation-info-header-chat-title"]')?.innerText || document.querySelector('[data-testid="conversation-info-header-chat-title"]')?.textContent`);
   assert('Open active chat "Alex Rivera"', currentHeader === 'Alex Rivera', `Header: ${currentHeader}`);
 
   // Click on Chat 2 (Jordan Lee)
   await evaluate(`(() => {
     const rows = Array.from(document.querySelectorAll('[data-testid="cell-frame-container"]'));
-    const row2 = rows.find(r => r.innerText.includes('Jordan Lee'));
+    const row2 = rows.find(r => (r.textContent || r.innerText || '').includes('Jordan Lee'));
     if (row2) row2.click();
   })()`);
   await new Promise(r => setTimeout(r, 300));
 
-  currentHeader = await evaluate(`document.querySelector('[data-testid="conversation-info-header-chat-title"]')?.innerText`);
+  currentHeader = await evaluate(`document.querySelector('[data-testid="conversation-info-header-chat-title"]')?.innerText || document.querySelector('[data-testid="conversation-info-header-chat-title"]')?.textContent`);
   assert('Switch to chat "Jordan Lee"', currentHeader === 'Jordan Lee', `Header: ${currentHeader}`);
 
   // Click on Chat 3 (Taylor Brooks)
   await evaluate(`(() => {
     const rows = Array.from(document.querySelectorAll('[data-testid="cell-frame-container"]'));
-    const row3 = rows.find(r => r.innerText.includes('Taylor Brooks'));
+    const row3 = rows.find(r => (r.textContent || r.innerText || '').includes('Taylor Brooks'));
     if (row3) row3.click();
   })()`);
   await new Promise(r => setTimeout(r, 300));
 
-  currentHeader = await evaluate(`document.querySelector('[data-testid="conversation-info-header-chat-title"]')?.innerText`);
+  currentHeader = await evaluate(`document.querySelector('[data-testid="conversation-info-header-chat-title"]')?.innerText || document.querySelector('[data-testid="conversation-info-header-chat-title"]')?.textContent`);
   assert('Switch to chat "Taylor Brooks"', currentHeader === 'Taylor Brooks', `Header: ${currentHeader}`);
 
   // Click back to Chat 1 (Alex Rivera)
   await evaluate(`(() => {
     const rows = Array.from(document.querySelectorAll('[data-testid="cell-frame-container"]'));
-    const row1 = rows.find(r => r.innerText.includes('Alex Rivera'));
+    const row1 = rows.find(r => (r.textContent || r.innerText || '').includes('Alex Rivera'));
     if (row1) row1.click();
   })()`);
   await new Promise(r => setTimeout(r, 300));
 
-  currentHeader = await evaluate(`document.querySelector('[data-testid="conversation-info-header-chat-title"]')?.innerText`);
+  currentHeader = await evaluate(`document.querySelector('[data-testid="conversation-info-header-chat-title"]')?.innerText || document.querySelector('[data-testid="conversation-info-header-chat-title"]')?.textContent`);
   assert('Switch back to chat "Alex Rivera"', currentHeader === 'Alex Rivera', `Header: ${currentHeader}`);
 
   // ==========================================
@@ -171,7 +171,7 @@ async function runInteractionTests() {
   await new Promise(r => setTimeout(r, 400));
 
   let filteredNames = await evaluate(`(() => {
-    const names = Array.from(document.querySelectorAll('[data-testid="cell-frame-container"] span[title]')).map(s => s.innerText);
+    const names = Array.from(document.querySelectorAll('[data-testid="cell-frame-container"] span[title]')).map(s => s.getAttribute('title') || s.textContent || s.innerText);
     return names;
   })()`);
   assert('Search for "Taylor"', filteredNames.length === 1 && filteredNames[0].includes('Taylor'), `Results: ${JSON.stringify(filteredNames)}`);
@@ -234,8 +234,11 @@ async function runInteractionTests() {
     const lastMsg = messages[messages.length - 1];
     const hasSingleCheck = lastMsg?.querySelector('svg[data-icon="msg-check"]') !== null || lastMsg?.innerHTML.includes('msg-check');
     const hasDblCheck = lastMsg?.querySelector('svg[data-icon="wds-ic-read"]') !== null || lastMsg?.innerHTML.includes('wds-ic-read');
-    return { hasSingleCheck, hasDblCheck, text: lastMsg?.innerText };
+    return { hasSingleCheck, hasDblCheck, text: lastMsg?.innerText, html: lastMsg?.innerHTML };
   })()`);
+  if (!finalAck.hasDblCheck) {
+    console.log('Final ack debug HTML:', finalAck.html);
+  }
 
   assert('ACK progression to ACK 3 (read receipts double check)', finalAck.hasDblCheck, `Ack state: single=${finalAck.hasSingleCheck}, dbl=${finalAck.hasDblCheck}`);
 
@@ -332,7 +335,7 @@ async function runInteractionTests() {
 
   // 5f. Chat Search Drawer
   await evaluate(`(() => {
-    const searchBtn = document.querySelector('header[data-testid="conversation-header"] button[aria-label="Search..."]');
+    const searchBtn = document.querySelector('header[data-testid="conversation-header"] button[aria-label^="Search"]');
     if (searchBtn) searchBtn.click();
   })()`);
   await new Promise(r => setTimeout(r, 400));

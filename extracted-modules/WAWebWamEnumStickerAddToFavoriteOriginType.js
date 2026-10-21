@@ -1,0 +1,18 @@
+__d("WAWebWamEnumStickerAddToFavoriteOriginType", [], function(t, n, r, o, a, i) {
+    const e = Object.freeze({
+        STICKER_RECEIVED: 1,
+        STICKER_SENT: 2,
+        STICKER_PICKER: 3,
+        STICKER_STORE: 4,
+        STICKER_SEARCH: 5,
+        STICKER_AI_CREATE: 6,
+        DISCOVERY_PACK: 7,
+        STICKER_MAKER: 8,
+        MEDIA_HUB: 9,
+        MULTI_DEVICE_SYNC: 10,
+        MESSAGE_MENU: 11,
+        STICKER_DETAILS_FROM_MENU: 12,
+        STICKER_DETAILS_FROM_TAP: 13
+    });
+    i.STICKER_ADD_TO_FAVORITE_ORIGIN_TYPE = e;
+}, 66);

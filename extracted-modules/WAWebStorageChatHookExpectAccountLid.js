@@ -1,0 +1,49 @@
+__d("WAWebStorageChatHookExpectAccountLid", [
+    "WALogger",
+    "WAWebCurrentUser",
+    "WAWebLid1X1MigrationGating",
+    "WAWebLidMigrationLogging",
+    "WAWebLidMigrationUtils",
+    "WAWebSchemaChat",
+    "WAWebWid",
+    "WAWebWidFactory",
+    "err"
+], function(t, n, r, o, a, i, l) {
+    let e;
+    let s;
+    let u;
+    let c;
+    let d;
+    const m = {
+        type: "creating",
+        callback: function(n, a) {
+            if (r("WAWebWid").isRegularUserNoImply(a.id) && (o("WAWebLidMigrationUtils").toLid(o("WAWebWidFactory").createWid(a.id)) == null && (o("WAWebLidMigrationLogging").logLidMetadata(), o("WAWebCurrentUser").isEmployee() && (o("WALogger").LOG(e || (e = babelHelpers.taggedTemplateLiteralLoose([
+                "lid mapping is missing for ",
+                ""
+            ])), a.id), o("WALogger").ERROR(s || (s = babelHelpers.taggedTemplateLiteralLoose([
+                "Lid mapping is missing during creation"
+            ]))).sendLogs("lid-mapping-missing-during-chat-creation")), o("WALogger").WARN(u || (u = babelHelpers.taggedTemplateLiteralLoose([
+                "Lid mapping is missing for chat creation"
+            ])))), o("WAWebLid1X1MigrationGating").Lid1X1MigrationUtils.isLidMigrated() && a.accountLid == null)) {
+                o("WAWebLidMigrationLogging").logLidMetadata();
+                const t = o("WAWebWidFactory").createWid(a.id);
+                o("WALogger").LOG(c || (c = babelHelpers.taggedTemplateLiteralLoose([
+                    "chat insert failed: ",
+                    " no accountLid (migrated) emp=",
+                    " keys=",
+                    ""
+                ])), t.toLogString(), o("WAWebCurrentUser").isEmployee(), Object.keys(a));
+                if (o("WAWebCurrentUser").isEmployee()) {
+                    o("WALogger").ERROR(d || (d = babelHelpers.taggedTemplateLiteralLoose([
+                        "Lid is missing in chat table"
+                    ]))).sendLogs("lid-missing-migrated-client");
+                }
+                throw r("err")("Lid is missing in chat table");
+            }
+        }
+    };
+    function p() {
+        o("WAWebSchemaChat").getChatTable().addHook(m);
+    }
+    l.initializeHook = p;
+}, 98);

@@ -1,0 +1,37 @@
+__d("GHLDetectionUtils", [
+    "GHLDetectionUtilsPreludeSafe",
+    "gkx"
+], function(t, n, r, o, a, i, l) {
+    "use strict";
+    function e() {
+        if (r("gkx")("5415")) {
+            return true;
+        }
+        return o("GHLDetectionUtilsPreludeSafe").isJSONParseShimmed();
+    }
+    function s(e) {
+        if (r("gkx")("8869")) {
+            return true;
+        }
+        return typeof e === "function" && !(e.toString === e.toString.toString && o("GHLDetectionUtilsPreludeSafe").normalize(e.toString()) === "function XMLHttpRequest() { [native code] }" && o("GHLDetectionUtilsPreludeSafe").normalize(e.toString.toString()) === "function toString() { [native code] }");
+    }
+    function u(e) {
+        if (r("gkx")("9063")) {
+            return true;
+        }
+        return typeof e === "function" && !(e.prototype.fillText.toString === e.prototype.fillText.toString.toString && o("GHLDetectionUtilsPreludeSafe").normalize(e.prototype.fillText.toString()) === "function fillText() { [native code] }" && o("GHLDetectionUtilsPreludeSafe").normalize(e.prototype.fillText.toString.toString()) === "function toString() { [native code] }");
+    }
+    function c() {
+        return typeof String === "function" && !(String.toString === String.toString.toString && o("GHLDetectionUtilsPreludeSafe").normalize(String.toString()) === "function String() { [native code] }" && o("GHLDetectionUtilsPreludeSafe").normalize(String.toString.toString()) === "function toString() { [native code] }");
+    }
+    function d() {
+        return typeof Function.prototype.call === "function" && !(Function.prototype.call.toString === Function.prototype.call.toString.toString && o("GHLDetectionUtilsPreludeSafe").normalize(Function.prototype.call.toString()) === "function call() { [native code] }" && o("GHLDetectionUtilsPreludeSafe").normalize(Function.prototype.call.toString.toString()) === "function toString() { [native code] }");
+    }
+    l.isNativeStackTampered = o("GHLDetectionUtilsPreludeSafe").isNativeStackTampered;
+    l.isXHRResponseGetterShimmed = o("GHLDetectionUtilsPreludeSafe").isXHRResponseGetterShimmed;
+    l.isJSONParseShimmed = e;
+    l.isXHRModified = s;
+    l.isCanvasFillTextModified = u;
+    l.isStringShimmed = c;
+    l.isCallShimmed = d;
+}, 98);

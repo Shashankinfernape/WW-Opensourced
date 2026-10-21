@@ -1,0 +1,812 @@
+__d("WAWebTasksDefinitions", [
+    "Promise",
+    "WALogger",
+    "WATaskScheduler",
+    "WATimeUtils",
+    "WAWebABProps",
+    "WAWebABPropsCache",
+    "WAWebABPropsLocalStorage",
+    "WAWebAbPropsSyncJob",
+    "WAWebAccountLinkingScheduledJobs",
+    "WAWebApiChat",
+    "WAWebApiParticipantStore",
+    "WAWebApiTasksScheduledTime",
+    "WAWebApiTextStatus",
+    "WAWebBizBroadcastCampaignCleanup",
+    "WAWebBotGating",
+    "WAWebCTWAGatingUtils",
+    "WAWebCanonicalGating",
+    "WAWebCleanUtmJob",
+    "WAWebClearFalcoBufferJob",
+    "WAWebContactSyncBridge",
+    "WAWebDBPurgeExpiredRecords",
+    "WAWebDBReportingTokenUtils",
+    "WAWebDownloads3PDSignalsDatabaseApi",
+    "WAWebFetchQuickPromotions",
+    "WAWebFingerprintJob",
+    "WAWebGalaxyFlowsUtils",
+    "WAWebGroupHistoryReportingTokenDBUtils",
+    "WAWebInactiveGroupLidMigrationJob",
+    "WAWebLogDailyStatsJob",
+    "WAWebLogHistorySyncStatusAfterPairingJob",
+    "WAWebMetaAiBotSessionCleanupJob",
+    "WAWebMetaAiHistoricalThreadMigrationJob",
+    "WAWebMobilePlatforms",
+    "WAWebNewsletterCleanupTasks",
+    "WAWebNonAddressBookContactsJob",
+    "WAWebNonMessageDataRequestMediaHandlingUtils",
+    "WAWebOpusMigration",
+    "WAWebOrgBackgroundSyncJob",
+    "WAWebPersistedJobDefinitions",
+    "WAWebPollPendingUpdatesCleanup",
+    "WAWebQplStorage",
+    "WAWebQuarantineDataCleanupJob",
+    "WAWebQuickPromotionGating",
+    "WAWebReportDbVerionsJob",
+    "WAWebReportingTokenConstants",
+    "WAWebRestartRecentSyncJob",
+    "WAWebScheduledMessagesGatingUtils",
+    "WAWebScheduledMsgOrphanRevealKeyStore",
+    "WAWebScheduledMsgRevealKeyStore",
+    "WAWebServicedJobs",
+    "WAWebSyncContactsJob",
+    "WAWebSyncdAntiTampering",
+    "WAWebSyncdReportKeyStatsJob",
+    "WAWebSyncdReportSyncdStatJob",
+    "WAWebSyncdRequestAllSyncdMissingKeysJob",
+    "WAWebSyncdSyncAllCollectionsJob",
+    "WAWebTasksTaskType",
+    "WAWebUserPrefsBot",
+    "WAWebUserPrefsHistorySync",
+    "WAWebUserPrefsMultiDevice",
+    "WAWebWebTPSharedSessionUtils",
+    "asyncToGeneratorRuntime",
+    "cr:4857",
+    "cr:4940",
+    "cr:878",
+    "gkx",
+    "justknobx",
+    "requireDeferred"
+], function(t, n, r, o, a, i, l) {
+    let e;
+    let s;
+    let u;
+    let c;
+    let d;
+    let m;
+    let p;
+    let _;
+    let f;
+    let g;
+    let h;
+    let y;
+    let C;
+    let b;
+    let v;
+    let S;
+    let R;
+    let L;
+    let E;
+    let k;
+    let I;
+    let T;
+    let D;
+    let x;
+    let $;
+    let P;
+    let N;
+    let M;
+    let w;
+    let A;
+    let F;
+    const O = r("requireDeferred")("WAWebBizBroadcastAudienceRefreshJob").__setRef("WAWebTasksDefinitions");
+    const B = r("requireDeferred")("WAWebCanonicalCredentialRecoveryJob").__setRef("WAWebTasksDefinitions");
+    const W = r("requireDeferred")("WAWebConsumerFetchQuickPromotions").__setRef("WAWebTasksDefinitions");
+    const q = [
+        (F = o("WAWebTasksTaskType")).TaskType.AEA_CONSUMER_BACKFILL,
+        F.TaskType.CANONICAL_ENT_TOKEN_REFRESH,
+        F.TaskType.CLEAN_TC_TOKENS,
+        F.TaskType.LOG_DAILY_STATS,
+        F.TaskType.ROTATE_KEY,
+        F.TaskType.SYNC_AB_PROPS,
+        F.TaskType.SYNC_CONTACTS,
+        F.TaskType.REPORT_SYNCD_ACTION_STAT,
+        F.TaskType.LT_HASH_CHECK,
+        F.TaskType.REQUEST_ALL_SYNCD_MISSING_KEYS,
+        F.TaskType.REPORT_SYNCD_KEY_STATS,
+        F.TaskType.SYNCD_SYNC_ALL_COLLECTIONS,
+        F.TaskType.CLEAN_ORPHAN_ADD_ONS,
+        F.TaskType.CLEAN_POLL_PENDING_UPDATES,
+        F.TaskType.CLEAN_EXPIRED_UTM,
+        F.TaskType.SEND_NON_MESSAGE_DATA_REQUEST,
+        F.TaskType.LOG_HISTORY_SYNC_STATUS_AFTER_PAIRING,
+        F.TaskType.DELETE_NEWSLETTER_PREVIEW_CHATS,
+        F.TaskType.REPORT_DB_VERSIONS,
+        F.TaskType.UPDATE_EXPIRED_TEXT_STATUS,
+        F.TaskType.RESTART_RECENT_SYNC,
+        F.TaskType.CLEANUP_REPORTING_TABLE,
+        F.TaskType.CLEANUP_GROUP_HISTORY_REPORTING_TOKEN_TABLE,
+        F.TaskType.CLEANUP_SCHEDULED_MSG_REVEAL_KEYS,
+        F.TaskType.WAFFLE_SCHEDULED_TASKS,
+        F.TaskType.CLEAR_GALAXY_FLOWS_CACHE,
+        F.TaskType.CLEAR_FALCO_BUFFER,
+        F.TaskType.SEND_WAM_FINGERPRINT,
+        F.TaskType.INACTIVE_GROUP_LID_MIGRATION,
+        F.TaskType.MIGRATE_META_AI_MESSAGES_TO_HISTORICAL_THREAD,
+        F.TaskType.CLEAN_META_AI_BOT_SESSION,
+        F.TaskType.PURGE_QPL_STORAGE,
+        F.TaskType.CLEAN_WEBTP_SHARED_SESSIONS,
+        F.TaskType.CLEAN_EXPIRED_QUARANTINE_DATA,
+        F.TaskType.OPUS_MIGRATION,
+        F.TaskType.FETCH_QUICK_PROMOTIONS,
+        F.TaskType.SYNC_ORGS
+    ];
+    const U = [
+        F.TaskType.CLEANUP_3PD_SIGNALS_TABLE,
+        F.TaskType.CLEANUP_STALE_CAMPAIGNS,
+        F.TaskType.REFRESH_AUDIENCE_EXPRESSIONS
+    ];
+    const V = [
+        F.TaskType.LOG_DB_ROW_COUNTS,
+        F.TaskType.MONITOR_DB_STORAGE
+    ];
+    function H(t) {
+        if (t === o("WAWebTasksTaskType").TaskType.AEA_CONSUMER_BACKFILL) {
+            if (n("cr:878") == null) {
+                return void 0;
+            }
+            return n("cr:878").runAeaConsumerBackfillTask;
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.MONITOR_DB_STORAGE) {
+            return (()=>{
+                const e = n("asyncToGeneratorRuntime").asyncToGenerator(function*(e) {
+                    if (r("gkx")("26258")) {
+                        return o("WATaskScheduler").DO_NOT_RESCHEDULE;
+                    }
+                    const t = yield n("cr:4857") == null ? void 0 : n("cr:4857").shouldMonitorDbStorageUsageJob();
+                    if (t) {
+                        return o("WATimeUtils").HOUR_SECONDS;
+                    }
+                    return o("WATaskScheduler").DO_NOT_RESCHEDULE;
+                });
+                return function(t) {
+                    return e.apply(this, arguments);
+                };
+            })();
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.CLEAN_TC_TOKENS) {
+            return (()=>{
+                const t = n("asyncToGeneratorRuntime").asyncToGenerator(function*(t) {
+                    if (t) {
+                        o("WALogger").LOG(e || (e = babelHelpers.taggedTemplateLiteralLoose([
+                            "CleanTcToken skip first run"
+                        ])));
+                    } else {
+                        try {
+                            yield o("WAWebApiChat").pruneExpiredTcTokens();
+                            yield o("WAWebApiChat").pruneExpiredOrphanTcTokens();
+                        } catch (e) {
+                            o("WALogger").ERROR(s || (s = babelHelpers.taggedTemplateLiteralLoose([
+                                "Failed to delete the expired TcTokens with error: ",
+                                ""
+                            ])), e).verbose();
+                        }
+                    }
+                    return o("WATimeUtils").DAY_SECONDS;
+                });
+                return function(e) {
+                    return t.apply(this, arguments);
+                };
+            })();
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.UPDATE_EXPIRED_TEXT_STATUS) {
+            return (()=>{
+                const e = n("asyncToGeneratorRuntime").asyncToGenerator(function*(e) {
+                    if (e) {
+                        o("WALogger").LOG(u || (u = babelHelpers.taggedTemplateLiteralLoose([
+                            "Update expired text status skip first run"
+                        ])));
+                    } else {
+                        try {
+                            yield o("WAWebApiTextStatus").updateExpiredTextStatusOfContact();
+                        } catch (e) {
+                            o("WALogger").ERROR(c || (c = babelHelpers.taggedTemplateLiteralLoose([
+                                "Failed to update expired text status: ",
+                                ""
+                            ])), e).verbose();
+                        }
+                    }
+                    return o("WATimeUtils").DAY_SECONDS;
+                });
+                return function(t) {
+                    return e.apply(this, arguments);
+                };
+            })();
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.LOG_DAILY_STATS) {
+            return function() {
+                return o("WAWebLogDailyStatsJob").logDailyStatsJob().catch((e)=>{
+                    o("WALogger").ERROR(d || (d = babelHelpers.taggedTemplateLiteralLoose([
+                        "Failed to log daily stats: ",
+                        ""
+                    ])), e).verbose();
+                }).then(()=>o("WATimeUtils").DAY_SECONDS);
+            };
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.LOG_DB_ROW_COUNTS) {
+            return (()=>{
+                if (!r("gkx")("26258")) {
+                    const e = 120;
+                    const t = 7200;
+                    return function() {
+                        self.setTimeout(function() {
+                            if (n("cr:4940") != null) {
+                                n("cr:4940").logStorageTableRowCounts().catch((e)=>{
+                                    o("WALogger").ERROR(m || (m = babelHelpers.taggedTemplateLiteralLoose([
+                                        "Failed to log table row counts from a task: ",
+                                        ""
+                                    ])), e).verbose();
+                                });
+                            }
+                        }, e * 1000);
+                        return (A || (A = n("Promise"))).resolve(t);
+                    };
+                }
+                return function() {
+                    return (A || (A = n("Promise"))).resolve(o("WATaskScheduler").DO_NOT_RESCHEDULE);
+                };
+            })();
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.ROTATE_KEY) {
+            return (()=>{
+                const e = n("asyncToGeneratorRuntime").asyncToGenerator(function*(e) {
+                    if (e) {
+                        o("WALogger").LOG(p || (p = babelHelpers.taggedTemplateLiteralLoose([
+                            "RotateKeyTask skip first run"
+                        ])));
+                    } else {
+                        try {
+                            yield o("WAWebServicedJobs").runServicedJobToCompletion(o("WAWebPersistedJobDefinitions").jobSerializers.rotateKey());
+                        } catch (e) {
+                            o("WALogger").ERROR(_ || (_ = babelHelpers.taggedTemplateLiteralLoose([
+                                "RotateKeyTask failed: ",
+                                ""
+                            ])), e).sendLogs("rotate-key-task-failed");
+                            return o("WATimeUtils").HOUR_SECONDS;
+                        }
+                    }
+                    return 27 * o("WATimeUtils").DAY_SECONDS;
+                });
+                return function(t) {
+                    return e.apply(this, arguments);
+                };
+            })();
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.SYNC_AB_PROPS) {
+            return (()=>{
+                const e = n("asyncToGeneratorRuntime").asyncToGenerator(function*(e) {
+                    if (!e) {
+                        yield o("WAWebAbPropsSyncJob").syncABPropsTask();
+                    }
+                    return o("WAWebABPropsLocalStorage").getRefresh();
+                });
+                return function(t) {
+                    return e.apply(this, arguments);
+                };
+            })();
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.SYNC_CONTACTS) {
+            return (()=>{
+                const e = n("asyncToGeneratorRuntime").asyncToGenerator(function*(e) {
+                    if (!e) {
+                        try {
+                            yield o("WAWebNonAddressBookContactsJob").getNonAddressBookContactsAndMarkAllContactsDirty();
+                        } catch (e) {
+                            o("WALogger").ERROR(f || (f = babelHelpers.taggedTemplateLiteralLoose([
+                                "Failed to sync non-address book contacts with error: ",
+                                ""
+                            ])), e).verbose();
+                        }
+                        try {
+                            yield o("WAWebContactSyncBridge").doFullContactSync();
+                        } catch (e) {
+                            o("WALogger").ERROR(g || (g = babelHelpers.taggedTemplateLiteralLoose([
+                                "syncContacts: contact sync failed, error: ",
+                                ""
+                            ])), e).verbose().tags("non-sad", "contact-sync").sendLogs("syncContacts: contact sync failed");
+                        }
+                    }
+                    return o("WAWebSyncContactsJob").getContactSyncRefreshSeconds();
+                });
+                return function(t) {
+                    return e.apply(this, arguments);
+                };
+            })();
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.REPORT_SYNCD_ACTION_STAT) {
+            return (()=>{
+                const e = n("asyncToGeneratorRuntime").asyncToGenerator(function*(e) {
+                    if (!e) {
+                        yield o("WAWebSyncdReportSyncdStatJob").reportSyncdStatsJob();
+                    }
+                    return o("WATimeUtils").DAY_SECONDS;
+                });
+                return function(t) {
+                    return e.apply(this, arguments);
+                };
+            })();
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.LT_HASH_CHECK) {
+            return (()=>{
+                const e = n("asyncToGeneratorRuntime").asyncToGenerator(function*(e) {
+                    const t = o("WAWebABProps").getABPropConfigValue("lthash_check_hours");
+                    if (t === 0) {
+                        return 24 * o("WATimeUtils").HOUR_SECONDS;
+                    }
+                    if (!e) {
+                        yield o("WAWebSyncdAntiTampering").checkLtHash("abc");
+                    }
+                    return t * o("WATimeUtils").HOUR_SECONDS;
+                });
+                return function(t) {
+                    return e.apply(this, arguments);
+                };
+            })();
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.REQUEST_ALL_SYNCD_MISSING_KEYS) {
+            return (()=>{
+                const e = n("asyncToGeneratorRuntime").asyncToGenerator(function*(e) {
+                    if (!e) {
+                        yield o("WAWebSyncdRequestAllSyncdMissingKeysJob").requestAllSyncdMissingKeysJob();
+                    }
+                    return o("WATimeUtils").HOUR_SECONDS * 6;
+                });
+                return function(t) {
+                    return e.apply(this, arguments);
+                };
+            })();
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.REPORT_SYNCD_KEY_STATS) {
+            return (()=>{
+                const e = n("asyncToGeneratorRuntime").asyncToGenerator(function*(e) {
+                    if (!e) {
+                        yield o("WAWebSyncdReportKeyStatsJob").reportSyncdKeyStatsJob();
+                    }
+                    if (r("gkx")("26258")) {
+                        return o("WATimeUtils").DAY_SECONDS * 3;
+                    }
+                    return o("WATimeUtils").DAY_SECONDS;
+                });
+                return function(t) {
+                    return e.apply(this, arguments);
+                };
+            })();
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.SYNCD_SYNC_ALL_COLLECTIONS) {
+            return (()=>{
+                const e = n("asyncToGeneratorRuntime").asyncToGenerator(function*(e) {
+                    const t = o("WAWebABProps").getABPropConfigValue("syncd_periodic_sync_days");
+                    if (t === 0) {
+                        o("WALogger").LOG(h || (h = babelHelpers.taggedTemplateLiteralLoose([
+                            "syncd: syncdPeriodicSyncDays is 0, skipping sync"
+                        ])));
+                        return o("WATimeUtils").DAY_SECONDS;
+                    }
+                    if (!e) {
+                        yield o("WAWebSyncdSyncAllCollectionsJob").syncdSyncAllCollectionsJob();
+                    }
+                    return o("WATimeUtils").DAY_SECONDS * t;
+                });
+                return function(t) {
+                    return e.apply(this, arguments);
+                };
+            })();
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.CLEAN_ORPHAN_ADD_ONS) {
+            return (()=>{
+                const e = 30;
+                const t = 90;
+                return n("asyncToGeneratorRuntime").asyncToGenerator(function*() {
+                    try {
+                        yield o("WAWebDBPurgeExpiredRecords").purgeExpiredOrphanRecords(e, t);
+                    } catch (e) {
+                        o("WALogger").ERROR(y || (y = babelHelpers.taggedTemplateLiteralLoose([
+                            "Failed to delete expired orphan add-on msgs: ",
+                            ""
+                        ])), e).verbose();
+                    }
+                    return o("WATimeUtils").DAY_SECONDS;
+                });
+            })();
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.CLEAN_POLL_PENDING_UPDATES) {
+            return n("asyncToGeneratorRuntime").asyncToGenerator(function*() {
+                yield o("WAWebPollPendingUpdatesCleanup").cleanExpiredPollPendingUpdates();
+                return o("WATimeUtils").DAY_SECONDS;
+            });
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.CLEAN_PAST_PARTICIPANTS) {
+            return n("asyncToGeneratorRuntime").asyncToGenerator(function*() {
+                try {
+                    yield o("WAWebApiParticipantStore").pruneExpiredPastParticipants();
+                } catch (e) {
+                    o("WALogger").ERROR(C || (C = babelHelpers.taggedTemplateLiteralLoose([
+                        "Failed to delete the expired orphan reactions with error: ",
+                        ""
+                    ])), e).verbose();
+                }
+                return o("WATimeUtils").DAY_SECONDS;
+            });
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.CLEAN_EXPIRED_UTM) {
+            return function() {
+                if (o("WAWebCTWAGatingUtils").isUtmTrackingEnabled()) {
+                    return o("WAWebCleanUtmJob").cleanExpiredUtmJob().catch((e)=>{
+                        o("WALogger").ERROR(b || (b = babelHelpers.taggedTemplateLiteralLoose([
+                            "Failed to clean expired UTM: ",
+                            ""
+                        ])), e).verbose();
+                    }).then(()=>o("WATimeUtils").DAY_SECONDS);
+                }
+                return (A || (A = n("Promise"))).resolve(o("WATaskScheduler").DO_NOT_RESCHEDULE);
+            };
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.SEND_NON_MESSAGE_DATA_REQUEST) {
+            return n("asyncToGeneratorRuntime").asyncToGenerator(function*() {
+                yield o("WAWebNonMessageDataRequestMediaHandlingUtils").retryNonMessageDataRequestJob();
+                return o("WATimeUtils").HOUR_SECONDS * 23;
+            });
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.DELETE_NEWSLETTER_PREVIEW_CHATS) {
+            return n("asyncToGeneratorRuntime").asyncToGenerator(function*() {
+                yield o("WAWebNewsletterCleanupTasks").deletePreviewNewsletters();
+                return o("WATimeUtils").HOUR_SECONDS * 4;
+            });
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.REPORT_DB_VERSIONS) {
+            return n("asyncToGeneratorRuntime").asyncToGenerator(function*() {
+                yield o("WAWebReportDbVerionsJob").reportDbVersionsJob();
+                return o("WATimeUtils").DAY_SECONDS * 3;
+            });
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.LOG_HISTORY_SYNC_STATUS_AFTER_PAIRING) {
+            return n("asyncToGeneratorRuntime").asyncToGenerator(function*() {
+                const e = o("WAWebUserPrefsMultiDevice").getPairingTimestamp();
+                if (e != null) {
+                    const n = (yield o("WAWebUserPrefsHistorySync").getHistorySyncStatusAfterPairingLoggingCount()) ?? 0;
+                    if (n >= 5) {
+                        o("WALogger").LOG(v || (v = babelHelpers.taggedTemplateLiteralLoose([
+                            "[history sync] skip job: logged 4+ times"
+                        ])));
+                        return o("WATaskScheduler").DO_NOT_RESCHEDULE;
+                    }
+                    yield o("WAWebLogHistorySyncStatusAfterPairingJob").logHistorySyncStatusAfterPairingJob(e, n);
+                    if (n === 0) {
+                        return o("WATimeUtils").MINUTE_SECONDS * 5;
+                    }
+                    return o("WATimeUtils").MINUTE_SECONDS * 10;
+                }
+                return 10;
+            });
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.RESTART_RECENT_SYNC) {
+            return n("asyncToGeneratorRuntime").asyncToGenerator(function*() {
+                const e = o("WAWebUserPrefsMultiDevice").getPairingTimestamp();
+                if (e != null) {
+                    const t = (o("WATimeUtils").unixTime() - e) / 60;
+                    if (t >= 5) {
+                        yield o("WAWebRestartRecentSyncJob").restartRecentSyncJob();
+                    }
+                    return o("WATimeUtils").MINUTE_SECONDS * 5;
+                }
+                return 10;
+            });
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.CLEANUP_REPORTING_TABLE) {
+            return n("asyncToGeneratorRuntime").asyncToGenerator(function*() {
+                try {
+                    yield o("WAWebDBReportingTokenUtils").cleanupReportingTable(o("WAWebABProps").getABPropConfigValue("rt_clean_reporting_tag") ?? o("WAWebReportingTokenConstants").DEFAULT_RT_CLEANUP_OLDER_THAN_DAYS);
+                    yield o("WAWebDBReportingTokenUtils").cleanupReportingTokenAndContent(o("WAWebABProps").getABPropConfigValue("rt_clean_reporting_token"));
+                } catch (e) {
+                    o("WALogger").ERROR(S || (S = babelHelpers.taggedTemplateLiteralLoose([
+                        "Failed to cleanup reporting token table: ",
+                        ""
+                    ])), e).tags("messaging", "wa-ice", "report-token");
+                }
+                return o("WATimeUtils").DAY_SECONDS;
+            });
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.CLEANUP_GROUP_HISTORY_REPORTING_TOKEN_TABLE) {
+            return n("asyncToGeneratorRuntime").asyncToGenerator(function*() {
+                try {
+                    yield o("WAWebGroupHistoryReportingTokenDBUtils").cleanupGroupHistoryReportingTokenTable(30, true);
+                } catch (e) {
+                    o("WALogger").ERROR(R || (R = babelHelpers.taggedTemplateLiteralLoose([
+                        "Failed to cleanup GHS reporting token table: ",
+                        ""
+                    ])), e).tags("messaging", "wa-ice", "group-history");
+                }
+                return o("WATimeUtils").DAY_SECONDS;
+            });
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.CLEANUP_SCHEDULED_MSG_REVEAL_KEYS) {
+            return n("asyncToGeneratorRuntime").asyncToGenerator(function*() {
+                yield o("WAWebABPropsCache").waitForABPropConfigsReady();
+                if (!o("WAWebScheduledMessagesGatingUtils").isScheduledMessagesReceiverEnabled()) {
+                    return o("WATimeUtils").DAY_SECONDS;
+                }
+                try {
+                    yield o("WAWebScheduledMsgRevealKeyStore").cleanupExpiredRevealKeys();
+                    yield o("WAWebScheduledMsgOrphanRevealKeyStore").cleanupExpiredOrphanRevealKeys();
+                } catch (e) {
+                    o("WALogger").ERROR(L || (L = babelHelpers.taggedTemplateLiteralLoose([
+                        "Failed to cleanup expired scheduled-message reveal keys: ",
+                        ""
+                    ])), e).verbose();
+                }
+                return o("WATimeUtils").DAY_SECONDS;
+            });
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.CLEANUP_3PD_SIGNALS_TABLE) {
+            return n("asyncToGeneratorRuntime").asyncToGenerator(function*() {
+                try {
+                    if (o("WAWebABProps").getABPropConfigValue("ctwa_download_3pd_signals")) {
+                        yield o("WAWebDownloads3PDSignalsDatabaseApi").cleanup3PDSignalsTable();
+                    }
+                } catch (e) {
+                    o("WALogger").ERROR(E || (E = babelHelpers.taggedTemplateLiteralLoose([
+                        "Failed to cleanup 3PD Signals table: ",
+                        ""
+                    ])), e).tags("3pd-signals");
+                }
+                return o("WATimeUtils").DAY_SECONDS;
+            });
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.FETCH_QUICK_PROMOTIONS) {
+            return n("asyncToGeneratorRuntime").asyncToGenerator(function*() {
+                if (o("WAWebMobilePlatforms").isSMB()) {
+                    o("WALogger").LOG(k || (k = babelHelpers.taggedTemplateLiteralLoose([
+                        "fetchQuickPromotions: fetching quick promotions"
+                    ])));
+                    yield o("WAWebFetchQuickPromotions").fetchQuickPromotions();
+                } else {
+                    const e = yield W.load();
+                    const t = e.fetchConsumerQuickPromotions;
+                    o("WALogger").LOG(I || (I = babelHelpers.taggedTemplateLiteralLoose([
+                        "fetchConsumerQuickPromotions: fetching"
+                    ])));
+                    yield t();
+                }
+                return o("WAWebQuickPromotionGating").qpGraphQLFetchIntervalMinutes() * o("WATimeUtils").MINUTE_SECONDS;
+            });
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.WAFFLE_SCHEDULED_TASKS) {
+            return n("asyncToGeneratorRuntime").asyncToGenerator(function*() {
+                yield o("WAWebAccountLinkingScheduledJobs").scheduledWaffleJobs();
+                return o("WATimeUtils").DAY_SECONDS;
+            });
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.CLEAR_GALAXY_FLOWS_CACHE) {
+            return n("asyncToGeneratorRuntime").asyncToGenerator(function*() {
+                yield o("WAWebGalaxyFlowsUtils").clearGalaxyFlowsCache();
+                return 7 * o("WATimeUtils").DAY_SECONDS;
+            });
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.CLEAR_FALCO_BUFFER) {
+            return (()=>{
+                const e = n("asyncToGeneratorRuntime").asyncToGenerator(function*(e) {
+                    if (!e) {
+                        yield o("WAWebClearFalcoBufferJob").clearFalcoBufferJob();
+                    }
+                    return o("WATimeUtils").DAY_SECONDS;
+                });
+                return function(t) {
+                    return e.apply(this, arguments);
+                };
+            })();
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.SEND_WAM_FINGERPRINT) {
+            return n("asyncToGeneratorRuntime").asyncToGenerator(function*() {
+                yield o("WAWebFingerprintJob").sendWamFingerprintJob();
+                return o("WATimeUtils").DAY_SECONDS * 2;
+            });
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.INACTIVE_GROUP_LID_MIGRATION) {
+            return n("asyncToGeneratorRuntime").asyncToGenerator(function*() {
+                const e = o("WAWebUserPrefsMultiDevice").getPairingTimestamp();
+                if (e != null) {
+                    const t = o("WATimeUtils").unixTime() - e;
+                    const n = o("WATimeUtils").MINUTE_SECONDS;
+                    if (t < n) {
+                        return n - t;
+                    }
+                    try {
+                        yield o("WAWebInactiveGroupLidMigrationJob").migrateInactiveGroupsToLid();
+                    } catch (e) {
+                        o("WALogger").ERROR(T || (T = babelHelpers.taggedTemplateLiteralLoose([
+                            "Failed to run LID inactive group migration: ",
+                            ""
+                        ])), e).verbose();
+                    }
+                    return o("WATimeUtils").DAY_SECONDS;
+                }
+                return 30;
+            });
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.CANONICAL_ENT_TOKEN_REFRESH) {
+            return n("asyncToGeneratorRuntime").asyncToGenerator(function*() {
+                if (!o("WAWebCanonicalGating").isCanonicalRecoveryEnabled()) {
+                    return o("WATimeUtils").DAY_SECONDS;
+                }
+                const e = yield B.load();
+                const t = e.maybeRecoverCanonicalCredentials;
+                const n = yield t();
+                return n;
+            });
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.MIGRATE_META_AI_MESSAGES_TO_HISTORICAL_THREAD) {
+            return n("asyncToGeneratorRuntime").asyncToGenerator(function*() {
+                if (o("WAWebUserPrefsBot").isMetaAIThreadMigrationComplete()) {
+                    return o("WATaskScheduler").DO_NOT_RESCHEDULE;
+                }
+                if (o("WAWebBotGating").isAiChatThreadsHistoricalMessageMigrationEnabled()) {
+                    yield o("WAWebMetaAiHistoricalThreadMigrationJob").migrateMetaAiMessagesToHistoricalThread();
+                }
+                return o("WATimeUtils").HOUR_SECONDS;
+            });
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.CLEAN_META_AI_BOT_SESSION) {
+            return n("asyncToGeneratorRuntime").asyncToGenerator(function*() {
+                yield o("WAWebMetaAiBotSessionCleanupJob").maybeCleanupMetaAiBotSession();
+                return o("WATimeUtils").DAY_SECONDS;
+            });
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.CLEAN_WEBTP_SHARED_SESSIONS) {
+            return n("asyncToGeneratorRuntime").asyncToGenerator(function*() {
+                yield o("WAWebABPropsCache").waitForABPropConfigsReady();
+                if (!r("justknobx")._("2214")) {
+                    return o("WATimeUtils").DAY_SECONDS;
+                }
+                try {
+                    yield o("WAWebWebTPSharedSessionUtils").removeExpiredWebTPSharedSessions();
+                } catch (e) {
+                    o("WALogger").ERROR(D || (D = babelHelpers.taggedTemplateLiteralLoose([
+                        "Failed to clean expired WebTP shared sessions: ",
+                        ""
+                    ])), e).verbose();
+                }
+                return o("WATimeUtils").DAY_SECONDS;
+            });
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.PURGE_QPL_STORAGE) {
+            return n("asyncToGeneratorRuntime").asyncToGenerator(function*() {
+                try {
+                    yield o("WAWebQplStorage").destroy();
+                } catch (e) {
+                    o("WALogger").ERROR(x || (x = babelHelpers.taggedTemplateLiteralLoose([
+                        "Failed to purge deprecated qpl-storage: ",
+                        ""
+                    ])), e).verbose();
+                }
+                return o("WATaskScheduler").DO_NOT_RESCHEDULE;
+            });
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.CLEANUP_STALE_CAMPAIGNS) {
+            return n("asyncToGeneratorRuntime").asyncToGenerator(function*() {
+                try {
+                    yield o("WAWebBizBroadcastCampaignCleanup").cleanupStaleCampaigns();
+                } catch (e) {
+                    o("WALogger").ERROR($ || ($ = babelHelpers.taggedTemplateLiteralLoose([
+                        "Failed to cleanup stale campaigns: ",
+                        ""
+                    ])), e).tags("wa-smb", "business-broadcast");
+                }
+                return o("WATimeUtils").DAY_SECONDS * 5;
+            });
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.CLEAN_EXPIRED_QUARANTINE_DATA) {
+            return n("asyncToGeneratorRuntime").asyncToGenerator(function*() {
+                try {
+                    yield o("WAWebQuarantineDataCleanupJob").cleanExpiredQuarantineDataJob();
+                } catch (e) {
+                    o("WALogger").ERROR(P || (P = babelHelpers.taggedTemplateLiteralLoose([
+                        "Failed to cleanup expired quarantine data: ",
+                        ""
+                    ])), e).verbose();
+                }
+                return o("WATimeUtils").DAY_SECONDS;
+            });
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.OPUS_MIGRATION) {
+            return n("asyncToGeneratorRuntime").asyncToGenerator(function*() {
+                yield o("WAWebABPropsCache").waitForABPropConfigsReady();
+                const e = o("WAWebABProps").getABPropConfigValue("opus_enabled");
+                if (!e) {
+                    return o("WATimeUtils").DAY_SECONDS;
+                }
+                const t = o("WAWebABProps").getABPropConfigValue("opus_t");
+                if (t == null) {
+                    return o("WATimeUtils").DAY_SECONDS;
+                }
+                const n = o("WATimeUtils").unixTime();
+                if (n < t) {
+                    return t - n;
+                }
+                yield o("WAWebOpusMigration").runOpusMigration();
+                return o("WATaskScheduler").DO_NOT_RESCHEDULE;
+            });
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.SYNC_ORGS) {
+            return n("asyncToGeneratorRuntime").asyncToGenerator(function*() {
+                try {
+                    yield o("WAWebOrgBackgroundSyncJob").runOrgBackgroundSync();
+                } catch (e) {
+                    o("WALogger").ERROR(N || (N = babelHelpers.taggedTemplateLiteralLoose([
+                        "Failed to sync orgs in the background: ",
+                        ""
+                    ])), e).verbose();
+                }
+                return o("WATimeUtils").DAY_SECONDS;
+            });
+        }
+        if (t === o("WAWebTasksTaskType").TaskType.REFRESH_AUDIENCE_EXPRESSIONS) {
+            return (()=>{
+                const e = n("asyncToGeneratorRuntime").asyncToGenerator(function*(e) {
+                    if (e) {
+                        return o("WATimeUtils").HOUR_SECONDS;
+                    }
+                    try {
+                        const t = yield O.load();
+                        const n = t.refreshTimeBasedAudiences;
+                        yield n();
+                    } catch (e) {
+                        o("WALogger").ERROR(M || (M = babelHelpers.taggedTemplateLiteralLoose([
+                            "Failed to refresh audience expressions: ",
+                            ""
+                        ])), e).tags("wa-smb", "business-broadcast", "audience-refresh");
+                    }
+                    return o("WATimeUtils").HOUR_SECONDS * 6;
+                });
+                return function(t) {
+                    return e.apply(this, arguments);
+                };
+            })();
+        }
+        return (()=>{
+            throw Error(`Match: No case succesfully matched. Make exhaustive or add a wildcard case using '_'. Argument: ${t}`);
+        })();
+    }
+    function G() {
+        return {
+            scheduledTimeResolver: {
+                get: function(t) {
+                    return o("WAWebApiTasksScheduledTime").getTaskScheduledTime(String(t));
+                },
+                set: function(t, n) {
+                    return o("WAWebApiTasksScheduledTime").updateTaskScheduledTime(String(t), n);
+                }
+            }
+        };
+    }
+    function z(e) {
+        const t = H(e);
+        if (t != null) {
+            o("WALogger").LOG(w || (w = babelHelpers.taggedTemplateLiteralLoose([
+                "maybeRegisterTask: registering task ",
+                ""
+            ])), e);
+            o("WATaskScheduler").registerTask(e, t);
+        }
+    }
+    function j() {
+        o("WATaskScheduler").startScheduler(G());
+        q.forEach(z);
+        if (o("WAWebMobilePlatforms").isSMB()) {
+            U.forEach(z);
+        }
+        if (!r("gkx")("26258")) {
+            V.forEach(z);
+        }
+    }
+    l.registerTasks = j;
+}, 98);

@@ -1,0 +1,58 @@
+__d("WAWebChatModelDerivedMethods", [
+    "WAWebABProps",
+    "WAWebBotUtils",
+    "WAWebChatFlowTypes",
+    "WAWebChatGetters",
+    "WAWebChatGroupUtils",
+    "WAWebFrontendChatGetters",
+    "WAWebMsgType",
+    "WAWebPollsCagsGatingUtils",
+    "WAWebViewMode.flow",
+    "WAWebViewModeUtils",
+    "WAWebWamEnumMdChatAssignmentChatType"
+], function(t, n, r, o, a, i, l) {
+    function e(e) {
+        const t = o("WAWebFrontendChatGetters").getKind(e);
+        if (t != null) {
+            switch(t){
+                case o("WAWebChatFlowTypes").ChatKindType.Chat:
+                    return o("WAWebWamEnumMdChatAssignmentChatType").MD_CHAT_ASSIGNMENT_CHAT_TYPE.INDIVIDUAL;
+                case o("WAWebChatFlowTypes").ChatKindType.Group:
+                    return o("WAWebWamEnumMdChatAssignmentChatType").MD_CHAT_ASSIGNMENT_CHAT_TYPE.GROUP;
+                case o("WAWebChatFlowTypes").ChatKindType.Broadcast:
+                    return o("WAWebWamEnumMdChatAssignmentChatType").MD_CHAT_ASSIGNMENT_CHAT_TYPE.BROADCAST_LIST;
+                case o("WAWebChatFlowTypes").ChatKindType.Newsletter:
+                    return o("WAWebWamEnumMdChatAssignmentChatType").MD_CHAT_ASSIGNMENT_CHAT_TYPE.CHANNEL;
+                case o("WAWebChatFlowTypes").ChatKindType.Community:
+                    return o("WAWebWamEnumMdChatAssignmentChatType").MD_CHAT_ASSIGNMENT_CHAT_TYPE.COMMUNITY;
+            }
+        } else {
+            const n = new TypeError(`Invalid Chat.kind ${String(t)}`);
+            n.stack;
+            throw n;
+        }
+    }
+    function s(e) {
+        return e.type !== o("WAWebMsgType").MSG_TYPE.E2E_NOTIFICATION && (e.type !== o("WAWebMsgType").MSG_TYPE.NOTIFICATION_TEMPLATE || e.subtype === "chat_assignment" || e.subtype === "chat_assignment_unassign" || e.subtype === "limit_sharing_system_message" || e.subtype === "change_username") && e.type !== o("WAWebMsgType").MSG_TYPE.REACTION && e.type !== o("WAWebMsgType").MSG_TYPE.POLL_UPDATE && e.type !== o("WAWebMsgType").MSG_TYPE.KEEP_IN_CHAT && e.subtype !== "newsletter_admin_context_card" && e.subtype !== "newsletter_privacy" && e.subtype !== "scheduled_message_created" && !e.pendingDeleteForMe && e.botPluginReferenceIndex == null && o("WAWebViewModeUtils").isViewModeVisibleInSurface(o("WAWebViewMode.flow").ViewModeSurface.CHAT_LIST, e.viewMode);
+    }
+    function u(e) {
+        return e.subtype === "acp2_system_message" && e.acp2Setting?.enabled === true && !e.pendingDeleteForMe && o("WAWebViewModeUtils").isViewModeVisibleInSurface(o("WAWebViewMode.flow").ViewModeSurface.CHAT_LIST, e.viewMode);
+    }
+    function c(e) {
+        if (o("WAWebChatGetters").getIsBroadcast(e) || o("WAWebChatGetters").getIsMetaAiBot(e) || o("WAWebBotUtils").isBusinessAssistantBot(e.id) || o("WAWebChatGetters").getIsBotChannel(e) || e.id.isAiHub()) {
+            return false;
+        }
+        const e_groupMetadata = e.groupMetadata;
+        if (e_groupMetadata == null) {
+            return true;
+        }
+        if (o("WAWebFrontendChatGetters").getIsCAG(e)) {
+            return o("WAWebChatGroupUtils").getGroupParticipantsCount(e_groupMetadata) <= o("WAWebABProps").getABPropConfigValue("pnh_cag_disable_polls_group_size") && o("WAWebPollsCagsGatingUtils").isPollsCreationEnabledInCags();
+        }
+        return true;
+    }
+    l.getMdChatAssignmentChatTypeFn = e;
+    l.isPreviewMessage = s;
+    l.isAcp2RestrictionNotice = u;
+    l.canSendPolls = c;
+}, 98);

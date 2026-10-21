@@ -1,0 +1,33 @@
+__d("WAWebMediaUrlAllowlist", [
+    "WALogger",
+    "WAWebABProps",
+    "WAWebURLUtils"
+], function(t, n, r, o, a, i, l) {
+    let e;
+    function s(e) {
+        if (!r("WAWebURLUtils").isHttps(e)) {
+            return false;
+        }
+        const t = r("WAWebURLUtils").hostname(e);
+        return t === "whatsapp.net" || t.endsWith(".whatsapp.net");
+    }
+    function u(t) {
+        if (t == null || t === "") {
+            return null;
+        }
+        if (o("WAWebABProps").getABPropConfigValue("web_validate_media_url_allowlist_enabled")) {
+            if (s(t)) {
+                return t;
+            }
+            o("WALogger").WARN(e || (e = babelHelpers.taggedTemplateLiteralLoose([
+                "media url dropped: host not on the media CDN allow-list"
+            ]))).sendLogs("media-url-not-allowlisted", {
+                sampling: 0.01
+            });
+            return null;
+        }
+        return t;
+    }
+    l.isAllowedMediaUrl = s;
+    l.allowlistedMediaUrl = u;
+}, 98);

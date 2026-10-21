@@ -1,0 +1,88 @@
+__d("WAWebMsgRangeContainmentHandlers", [
+    "WAWebApiActiveMessageRanges",
+    "WAWebBackendApi",
+    "WAWebChatDbUpdatesApi",
+    "WAWebHandleForMessageRangeEnums",
+    "WAWebNewsletterArchiveUtils",
+    "WAWebUserPrefsMultiDevice",
+    "WAWebWidFactory",
+    "asyncToGeneratorRuntime"
+], function(t, n, r, o, a, i, l) {
+    function e(e, t) {
+        return s.apply(this, arguments);
+    }
+    function s() {
+        s = n("asyncToGeneratorRuntime").asyncToGenerator(function*(e, t) {
+            if (t === o("WAWebHandleForMessageRangeEnums").RangeContain.DOES_NOT_CONTAIN) {
+                if (o("WAWebNewsletterArchiveUtils").shouldKeepChannelArchivedUntilMigration(o("WAWebWidFactory").createWid(e.chatId))) {
+                    return;
+                }
+                const n = yield o("WAWebUserPrefsMultiDevice").getArchiveV2EnabledSetting();
+                const r = yield o("WAWebUserPrefsMultiDevice").getUnarchiveChatsSetting();
+                if (!n || r) {
+                    yield o("WAWebChatDbUpdatesApi").setArchive([
+                        {
+                            id: e.chatId,
+                            archive: false
+                        }
+                    ]);
+                }
+                yield o("WAWebApiActiveMessageRanges").removeActiveMessageRange(e.chatId, e.action);
+            }
+        });
+        return s.apply(this, arguments);
+    }
+    function u(e, t) {
+        return c.apply(this, arguments);
+    }
+    function c() {
+        c = n("asyncToGeneratorRuntime").asyncToGenerator(function*(e, t) {
+            if (t === o("WAWebHandleForMessageRangeEnums").RangeContain.DOES_NOT_CONTAIN || e.remainingMessages === 0) {
+                yield o("WAWebApiActiveMessageRanges").removeActiveMessageRange(e.chatId, e.action);
+            }
+        });
+        return c.apply(this, arguments);
+    }
+    function d(e, t, n) {
+        return m.apply(this, arguments);
+    }
+    function m() {
+        m = n("asyncToGeneratorRuntime").asyncToGenerator(function*(e, t, read) {
+            if (t === o("WAWebHandleForMessageRangeEnums").RangeContain.DOES_NOT_CONTAIN) {
+                yield o("WAWebApiActiveMessageRanges").removeActiveMessageRange(e.chatId, e.action);
+            } else if (e.remainingMessages === 0) {
+                o("WAWebBackendApi").frontendFireAndForget("updateChatReadStatus", {
+                    id: o("WAWebWidFactory").createWid(e.chatId),
+                    read
+                });
+                yield o("WAWebApiActiveMessageRanges").removeActiveMessageRange(e.chatId, e.action);
+            }
+        });
+        return m.apply(this, arguments);
+    }
+    function p(e, t) {
+        if (t === o("WAWebHandleForMessageRangeEnums").RangeContain.CONTAINS_BY_TIMESTAMP || t === o("WAWebHandleForMessageRangeEnums").RangeContain.CONTAINS_BY_ADDITIONAL) {
+            return o("WAWebHandleForMessageRangeEnums").ActiveRangeHandlerAction.DropMessage;
+        }
+        if (t === o("WAWebHandleForMessageRangeEnums").RangeContain.DOES_NOT_CONTAIN) {
+            return undefined;
+        }
+        return (()=>{
+            throw Error(`Match: No case succesfully matched. Make exhaustive or add a wildcard case using '_'. Argument: ${t}`);
+        })();
+    }
+    function _(e, t) {
+        switch(t){
+            case o("WAWebHandleForMessageRangeEnums").RangeContain.CONTAINS_BY_TIMESTAMP:
+            case o("WAWebHandleForMessageRangeEnums").RangeContain.CONTAINS_BY_ADDITIONAL:
+                return o("WAWebHandleForMessageRangeEnums").ActiveRangeHandlerAction.DropMessage;
+            case o("WAWebHandleForMessageRangeEnums").RangeContain.DOES_NOT_CONTAIN:
+                return;
+        }
+    }
+    l.handleForArchive = e;
+    l.handleForUnarchive = u;
+    l.handleForMarkAsReadUnread = d;
+    l.handleForClearChat = p;
+    l.handleForDeleteChat = _;
+}, 98);

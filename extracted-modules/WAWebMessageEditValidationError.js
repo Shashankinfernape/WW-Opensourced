@@ -1,0 +1,32 @@
+__d("WAWebMessageEditValidationError", [
+    "$InternalEnum",
+    "WAWebHandleMsgError"
+], function(t, n, r, o, a, i, l) {
+    const e = n("$InternalEnum")({
+        MISSING_PROTOCOL_KEY: "missing_protocol_key",
+        MISSING_EDITED_MESSAGE: "missing_edited_message",
+        MISSING_TARGET_MESSAGE_KEY: "missing_target_message_key",
+        MISSING_ENC_PAYLOAD: "missing_enc_payload",
+        MISSING_ENC_IV: "missing_enc_iv",
+        INVALID_IV_LENGTH: "invalid_iv_length",
+        MISSING_MESSAGE_SENDER: "missing_message_sender",
+        MISSING_PARENT_MESSAGE_SENDER: "missing_parent_message_sender",
+        PARENT_SENDER_MISMATCH: "parent_sender_mismatch",
+        INVALID_PROTOCOL_MESSAGE_TYPE: "invalid_protocol_message_type",
+        MISSING_MESSAGE_SECRET: "missing_message_secret",
+        MISSING_ORIGINAL_SENDER: "missing_original_sender",
+        MISSING_SENDER_TIMESTAMP: "missing_sender_timestamp"
+    });
+    const s = ((e)=>{
+        function t(...r) {
+            let t;
+            t = e.call(this, ...r) || this;
+            t.name = "MessageEditValidationError";
+            return babelHelpers.assertThisInitialized(t) || babelHelpers.assertThisInitialized(t);
+        }
+        babelHelpers.inheritsLoose(t, e);
+        return t;
+    })(o("WAWebHandleMsgError").MessageValidationError);
+    l.MessageEditValidationErrorCode = e;
+    l.MessageEditValidationError = s;
+}, 98);

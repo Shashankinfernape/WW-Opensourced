@@ -1,0 +1,42 @@
+__d("WAWebAdsCreationChatlistHeaderDropdownItem.react", [
+    "WAWebAdCreationDropdownItem.react",
+    "WAWebShouldShowAdCreationEntryPoint",
+    "WAWebWamEnumLwiEntryPoint",
+    "react",
+    "react-compiler-runtime"
+], function(t, n, r, o, a, i, l) {
+    let e;
+    const s = e || (e = o("react"));
+    function u(e) {
+        const t = o("react-compiler-runtime").c(5);
+        const e_activeAccountInfo = e.activeAccountInfo;
+        let a;
+        if (t[0] !== e_activeAccountInfo) {
+            a = o("WAWebShouldShowAdCreationEntryPoint").computeShouldShowAdCreationEntryPoint({
+                activeAccountInfo: e_activeAccountInfo
+            });
+            t[0] = e_activeAccountInfo;
+            t[1] = a;
+        } else {
+            a = t[1];
+        }
+        const i = a;
+        let l;
+        if (t[2] !== e_activeAccountInfo || t[3] !== i) {
+            l = i && e_activeAccountInfo != null ? s.jsx(r("WAWebAdCreationDropdownItem.react"), {
+                adCreationUrlInput: {
+                    sourceAdCreation: "whatsapp_smb_web_ad_creation_home_menu_item",
+                    activeAccountInfo: e_activeAccountInfo
+                },
+                lwiEntryPoint: o("WAWebWamEnumLwiEntryPoint").LWI_ENTRY_POINT.SMB_HOME_SCREEN_OVERFLOW_MENU_ITEM
+            }) : null;
+            t[2] = e_activeAccountInfo;
+            t[3] = i;
+            t[4] = l;
+        } else {
+            l = t[4];
+        }
+        return l;
+    }
+    l.default = u;
+}, 98);

@@ -9,19 +9,19 @@
     "reconMeas": {
       "railWidth": 64,
       "sideWidth": 432,
-      "mainWidth": 944
+      "mainWidth": 0
     },
     "railDiff": {
       "compared_pixels": 47168,
-      "changed_pixels": 2130,
-      "changed_ratio": 0.04515773405698779,
-      "mean_delta": 2.2676231767299866
+      "changed_pixels": 2397,
+      "changed_ratio": 0.05081835142469471,
+      "mean_delta": 2.5144006529850746
     },
     "sideHeaderDiff": {
       "compared_pixels": 27584,
-      "changed_pixels": 34,
-      "changed_ratio": 0.001232598607888631,
-      "mean_delta": 0.020646026682134572
+      "changed_pixels": 2986,
+      "changed_ratio": 0.10825116009280743,
+      "mean_delta": 9.102958236658933
     }
   },
   "width_600": {
@@ -34,19 +34,19 @@
     "reconMeas": {
       "railWidth": 64,
       "sideWidth": 270,
-      "mainWidth": 266
+      "mainWidth": 0
     },
     "railDiff": {
       "compared_pixels": 47168,
-      "changed_pixels": 3185,
-      "changed_ratio": 0.06752459294436906,
-      "mean_delta": 3.5326439535278156
+      "changed_pixels": 3452,
+      "changed_ratio": 0.07318521031207599,
+      "mean_delta": 3.7789126102442334
     },
     "sideHeaderDiff": {
       "compared_pixels": 17280,
-      "changed_pixels": 1370,
-      "changed_ratio": 0.07928240740740741,
-      "mean_delta": 4.236979166666667
+      "changed_pixels": 3036,
+      "changed_ratio": 0.17569444444444443,
+      "mean_delta": 14.246238425925926
     }
   }
 }

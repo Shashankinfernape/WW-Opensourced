@@ -1,0 +1,127 @@
+__d("WAWebBizNativeAdsGatingUtils", [
+    "WAWebABProps",
+    "WAWebCompactMapString",
+    "WAWebMobilePlatforms",
+    "justknobx"
+], function(t, n, r, o, a, i, l) {
+    function e() {
+        return o("WAWebMobilePlatforms").isSMB() && o("WAWebABProps").getABPropConfigValue("ctwa_native_ads_creation_web_enabled");
+    }
+    function s() {
+        if (!o("WAWebMobilePlatforms").isSMB()) {
+            return false;
+        }
+        const e = o("WAWebABProps").getABPropConfigValue("wa_native_ads_web_creation_rollout");
+        const t = o("WAWebABProps").getABPropConfigValue("wa_native_ads_web_creation_dummy");
+        return e && t;
+    }
+    function u() {
+        return o("WAWebMobilePlatforms").isSMB() && o("WAWebABProps").getABPropConfigValue("wa_native_ads_web_creation_rollout_no_exposure");
+    }
+    function c() {
+        return r("justknobx")._("6068");
+    }
+    function d() {
+        return r("justknobx")._("3945");
+    }
+    function m() {
+        if (!o("WAWebMobilePlatforms").isSMB() || !d()) {
+            return false;
+        }
+        const e = o("WAWebABProps").getABPropConfigValue("wa_native_ads_web_add_media_rollout");
+        const t = o("WAWebABProps").getABPropConfigValue("wa_native_ads_web_add_media_dummy");
+        return e && t;
+    }
+    function p() {
+        return r("justknobx")._("5322");
+    }
+    function _() {
+        const e = o("WAWebABProps").getABPropConfigValue("ctwa_web_native_ads_catalog_media_enabled");
+        const t = o("WAWebABProps").getABPropConfigValue("ctwa_web_native_ads_catalog_media_enabled_dummy");
+        return e && t;
+    }
+    function f() {
+        const e = _();
+        return p() && (e || r("justknobx")._("160"));
+    }
+    function g() {
+        return r("justknobx")._("5157") && f();
+    }
+    function h() {
+        if (!o("WAWebMobilePlatforms").isSMB() || !r("justknobx")._("5914")) {
+            return false;
+        }
+        const e = o("WAWebABProps").getABPropConfigValue("wa_native_ads_web_advertise_badge_enabled");
+        const t = o("WAWebABProps").getABPropConfigValue("wa_native_ads_web_advertise_badge_dummy_enabled");
+        return e && t;
+    }
+    function y() {
+        return r("justknobx")._("5953");
+    }
+    function C() {
+        return r("justknobx")._("5312");
+    }
+    function b() {
+        return r("justknobx")._("6091");
+    }
+    function v() {
+        return r("justknobx")._("6406");
+    }
+    function S() {
+        return o("WAWebMobilePlatforms").isSMB() && o("WAWebABProps").getABPropConfigValue("ctwa_native_ads_creation_web_hawk_tool_enabled");
+    }
+    function R() {
+        return o("WAWebMobilePlatforms").isSMB() && o("WAWebABProps").getABPropConfigValue("ctwa_native_ads_creation_web_targeting_modal_hawk_tool_enabled");
+    }
+    function L() {
+        return o("WAWebMobilePlatforms").isSMB() && o("WAWebABProps").getABPropConfigValue("ctwa_smb_h2_2026_ofs_migration_enabled");
+    }
+    function E() {
+        return r("justknobx")._("458");
+    }
+    function k() {
+        return r("justknobx")._("5502");
+    }
+    function I() {
+        return o("WAWebABProps").getABPropConfigValue("ctwa_web_native_ads_sabr_enabled");
+    }
+    function T() {
+        return o("WAWebMobilePlatforms").isSMB() && o("WAWebABProps").getABPropConfigValue("ctwa_web_native_ads_sabr_enabled");
+    }
+    function D() {
+        return o("WAWebMobilePlatforms").isSMB() && (I() || o("WAWebABProps").getABPropConfigValue("ctwa_web_native_ads_budget_recommendation_enabled"));
+    }
+    function x() {
+        return I() || r("justknobx")._("1666");
+    }
+    function $() {
+        const e = o("WAWebABProps").getABPropConfigValue("ctwa_native_ads_inline_notice_modules").split(",");
+        return r("WAWebCompactMapString")(e, function(e) {
+            return e.trim();
+        });
+    }
+    l.nativeAdsDogfoodEnabled = e;
+    l.nativeAdsWebCreationEnabled = s;
+    l.nativeAdsWebCreationRolloutEnabledNoExposure = u;
+    l.nativeAdsDescriptionLimitErrorEnabled = c;
+    l.nativeAdsWebAddMediaAffordanceKillswitchEnabled = d;
+    l.nativeAdsWebAddMediaAffordanceEnabled = m;
+    l.nativeAdsUnifiedCreativeMediaStoreEnabled = p;
+    l.nativeAdsCatalogMediaSourceEnabled = f;
+    l.nativeAdsCatalogBoostEnabled = g;
+    l.nativeAdsWebAdvertiseBadgeEnabled = h;
+    l.nativeAdsLiveAdDetailsStatusTextEnabled = y;
+    l.nativeAdsHideViewResultsWhenDetailsOpenEnabled = C;
+    l.nativeAdsStackAwareManageAdsNavigationEnabled = b;
+    l.nativeAdsWAAAdsIdentityUpsertEnabled = v;
+    l.nativeAdsCreationHawkToolEnabled = S;
+    l.nativeAdsCreationTargetingModalHawkToolEnabled = R;
+    l.nativeAdsOfsForecastEnabled = L;
+    l.sendRunContinuouslyEnabled = E;
+    l.nativeAdsCldrCurrencyFormattingEnabled = k;
+    l.tempSabrQABackdoor = I;
+    l.ctwaSabrEnabled = T;
+    l.ctwaBudgetRecommendationEnabled = D;
+    l.inlineNoticePartitionEnabled = x;
+    l.ctwaInlineNoticeModules = $;
+}, 98);

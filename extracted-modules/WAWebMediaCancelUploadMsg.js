@@ -1,0 +1,22 @@
+__d("WAWebMediaCancelUploadMsg", [
+    "WALogger",
+    "WAWebMediaMmsV4Upload"
+], function(t, n, r, o, a, i, l) {
+    let e;
+    function s(e, t) {
+        o("WAWebMediaMmsV4Upload").cancelUploadMedia(e, t);
+    }
+    function u(t) {
+        if (t.mediaObject) {
+            s(t.mediaObject, "user");
+        } else {
+            o("WALogger").ERROR(e || (e = babelHelpers.taggedTemplateLiteralLoose([
+                "id: ",
+                " type: ",
+                ""
+            ])), t.id.toString(), t.type).sendLogs("media-fault: cancelUploadMsg msg without mediaObject");
+        }
+    }
+    l.cancelUploadMedia = s;
+    l.cancelUploadMsg = u;
+}, 98);

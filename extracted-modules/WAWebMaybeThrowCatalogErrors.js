@@ -1,0 +1,60 @@
+__d("WAWebMaybeThrowCatalogErrors", [
+    "errorCode",
+    "$InternalEnum",
+    "WALogger",
+    "WAWebBackendErrors"
+], function(t, n, r, o, a, i, l, s) {
+    let e;
+    let u;
+    const c = n("$InternalEnum").Mirrored([
+        "GET_PRODUCT_CATALOG_OWNER_GRAPHQL"
+    ]);
+    function d(t, n) {
+        const r = t.source.errors || [];
+        const a = r[0];
+        const i = a?.code;
+        if (i != null) {
+            o("WALogger").ERROR(e || (e = babelHelpers.taggedTemplateLiteralLoose([
+                "maybeThrowLocalErrorForCatalogQuery: error code ",
+                ""
+            ])), i);
+            if (n === c.GET_PRODUCT_CATALOG_OWNER_GRAPHQL && i === 2498052) {
+                throw new (o("WAWebBackendErrors")).ServerStatusCodeError(404, t.message);
+            }
+            switch(i){
+                case 2498052:
+                case 2498049:
+                case 2498050:
+                case 2498051:
+                case 2498053:
+                case 2498056:
+                    throw new (o("WAWebBackendErrors")).ServerStatusCodeError(400, t.message);
+                case 2498048:
+                    throw new (o("WAWebBackendErrors")).E451;
+                case 2498054:
+                    throw new (o("WAWebBackendErrors")).ServerStatusCodeError(421);
+                case 3095069:
+                    throw new (o("WAWebBackendErrors")).CatalogEditServerError({
+                        errors: [
+                            {
+                                detail: null,
+                                name: "retailer_id",
+                                reason: "duplicate"
+                            }
+                        ],
+                        message: t.message,
+                        statusCode: 406
+                    });
+                case 2498103:
+                case 2498102:
+                    throw new (o("WAWebBackendErrors")).CollectionReorderError;
+            }
+            o("WALogger").WARN(u || (u = babelHelpers.taggedTemplateLiteralLoose([
+                "maybeThrowLocalErrorForCatalogQuery: unknown error code ",
+                ""
+            ])), i);
+        }
+    }
+    l.ErrorSourceForCatalogQuery = c;
+    l.maybeThrowLocalErrorForCatalogQuery = d;
+}, 98);

@@ -1,0 +1,16 @@
+__d("WAWebSyncdOrphanWorkerCompatible", [
+    "nullthrows"
+], function(t, n, r, o, a, i, l) {
+    let e;
+    function s() {
+        return r("nullthrows")(e, "CheckOrphanMutations is not initialised");
+    }
+    function u(t) {
+        e = t;
+    }
+    function c(e, t, n) {
+        return s()(e, t, n);
+    }
+    l.setInstance = u;
+    l.checkOrphanMutations = c;
+}, 98);

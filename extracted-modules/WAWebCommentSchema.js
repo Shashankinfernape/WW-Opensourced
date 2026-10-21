@@ -1,0 +1,34 @@
+__d("WAWebCommentSchema", [
+    "WAWebModelStorageUtils",
+    "WAWebModelStorageVersions",
+    "WAWebStorageMutationBuilder",
+    "WAWebStorageSchema"
+], function(t, n, r, o, a, i, l) {
+    function e() {
+        const e = o("WAWebModelStorageUtils").getStorage();
+        const t = o("WAWebStorageMutationBuilder").columnBuilder(e.config);
+        const { addColumn: n, addEncryptedColumn: r, addIndex: a, addUserDefinedPrimaryKey: i } = t;
+        e.add("comments").version(o("WAWebModelStorageVersions").commentCreateTable(), [
+            i("msgKey"),
+            n("parentMsgKey"),
+            a("parentMsgKey"),
+            n("t"),
+            n("ack"),
+            n("sender"),
+            n("read"),
+            r("msgRowOpaqueData", o("WAWebStorageSchema").EncryptedValueType.ARRAY_BUFFER),
+            n("isOverwrittenByRevoke"),
+            n("revokeTimestamp"),
+            n("protocolMessageKey"),
+            n("subtype"),
+            n("isPlaceholder")
+        ]).view(function(e) {
+            return e;
+        });
+    }
+    function s() {
+        return o("WAWebModelStorageUtils").getStorage().table("comments");
+    }
+    l.addTable = e;
+    l.getTable = s;
+}, 98);

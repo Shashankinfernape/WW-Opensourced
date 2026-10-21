@@ -1,0 +1,33 @@
+__d("WAWebEphemeralKeepInChat", [
+    "WAWebEphemeralKeepInChatUtils",
+    "WAWebMsgKey",
+    "WAWebWidFactory",
+    "err",
+    "nullthrows"
+], function(t, n, r, o, a, i, l) {
+    function e({ keepInChat: t }) {
+        if (t != null && t.key != null) {
+            const n = t.key;
+            const { fromMe: a, id: i, participant: l, remoteJid: s } = n;
+            const { keepType: u, serverTimestampMs: c } = t;
+            if (i == null || u == null || c == null || s == null) {
+                throw r("err")("parseKeepInChatHistorySyncMessage: malformed KIC WebMessageInfo");
+            }
+            const d = o("WAWebEphemeralKeepInChatUtils").parseKeepTypeToKicState(u);
+            if (d == null) {
+                throw r("err")("parseKeepInChatHistorySyncMessage: KeepType has unsupported value");
+            }
+            return {
+                kicKey: new (r("WAWebMsgKey"))({
+                    fromMe: r("nullthrows")(a),
+                    id: r("nullthrows")(i),
+                    remote: r("nullthrows")(o("WAWebWidFactory").createWidFromWidLike(s)),
+                    participant: l != null ? o("WAWebWidFactory").createWidFromWidLike(l) : void 0
+                }),
+                kicState: d,
+                kicTimestampMs: parseInt(c, 10)
+            };
+        }
+    }
+    l.parseKeepInChatHistorySyncMessage = e;
+}, 98);

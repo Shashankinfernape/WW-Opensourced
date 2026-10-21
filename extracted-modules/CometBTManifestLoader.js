@@ -1,0 +1,110 @@
+__d("CometBTManifestLoader", [
+    "BootloaderEvents",
+    "BtLongtailHashFalcoEvent",
+    "ClientConsistencyEventEmitter",
+    "FBLogger",
+    "ODS",
+    "Promise",
+    "SiteData",
+    "XHRRequest",
+    "asyncToGeneratorRuntime",
+    "err",
+    "getErrorSafe",
+    "promiseDone",
+    "vulture"
+], function(t, n, r, o, a, i, l) {
+    "use strict";
+    let e;
+    let s;
+    const u = new Set;
+    function c(e, t, n, r) {
+        return d.apply(this, arguments);
+    }
+    function d() {
+        d = n("asyncToGeneratorRuntime").asyncToGenerator(function*(e, t, o, a) {
+            const i = yield new (s || (s = n("Promise")))(function(n, i) {
+                new (r("XHRRequest"))(`${e}/btmanifest/${o}/${t}/${a}`).setMethod("GET").setResponseHandler(function(e) {
+                    return n(e.toString());
+                }).setErrorHandler(function(e) {
+                    return i(e);
+                }).send();
+            });
+            if (typeof i !== "string") {
+                throw r("FBLogger")("binary_transparency", "bt_invalid_manifest_response").mustfixThrow("Invalid response from BT manifest endpoint");
+            }
+            return i;
+        });
+        return d.apply(this, arguments);
+    }
+    function m(t, n) {
+        (e || (e = o("ODS"))).bumpEntityKey(454, "obc.www.all", `bt.comet_manifest_loader.0.${o("SiteData").pkg_cohort}.${t}.${n}`);
+    }
+    function p(e, t, n) {
+        let o;
+        if (n instanceof Error) {
+            o = n;
+        } else if (typeof n === "object") {
+            const a = JSON.stringify(n);
+            o = r("err")("(XHRRequest): %s", a.slice(0, 300) + (a.length > 300 ? "..." : ""));
+        } else {
+            o = r("err")(n);
+        }
+        r("FBLogger")("binary_transparency", "bt_download_manifest_error").catching(o).mustfix('Unable to download and inject BT manifest "%s" for version: %s', t, e);
+    }
+    function _(e, t) {
+        return f.apply(this, arguments);
+    }
+    function f() {
+        f = n("asyncToGeneratorRuntime").asyncToGenerator(function*(e, t) {
+            r("vulture")("TONxYGLCkef91XeTupAsyKqTbrs=");
+            if (!(!o("SiteData").manifest_origin || o("SiteData").manifest_version_prefix == null || o("SiteData").manifest_base_uri == null)) {
+                const n = `${e}_${t}`;
+                const a = `${o("SiteData").manifest_version_prefix}${e}`;
+                if (!u.has(n)) {
+                    m(t, "start");
+                    u.add(n);
+                    try {
+                        const l = document.createElement("script");
+                        const s = yield c(o("SiteData").manifest_base_uri, o("SiteData").manifest_origin, a, t);
+                        l.textContent = s;
+                        l.type = "application/json";
+                        l.setAttribute("name", "binary-transparency-manifest");
+                        l.dataset.manifestRev = a;
+                        l.dataset.manifestType = t;
+                        document.head?.appendChild(l);
+                        m(t, "complete");
+                    } catch (error) {
+                        const d = r("getErrorSafe")(error);
+                        m(t, "failed");
+                        p(a, t, d);
+                        u.delete(n);
+                    }
+                }
+            }
+        });
+        return f.apply(this, arguments);
+    }
+    function g() {
+        r("promiseDone")(_(o("SiteData").client_revision, "main"));
+        o("BootloaderEvents").onResourceInLongTailBTManifest(function(e) {
+            r("promiseDone")(_(o("SiteData").client_revision, "longtail"));
+            e.hashes.forEach((hash)=>{
+                r("BtLongtailHashFalcoEvent").log(function() {
+                    return {
+                        client_revision: String(o("SiteData").client_revision),
+                        ef_page: o("SiteData").ef_page || "",
+                        hash,
+                        pkg_cohort: o("SiteData").pkg_cohort,
+                        reference: e.source,
+                        rls_id: o("SiteData").hsi
+                    };
+                });
+            });
+        });
+        r("ClientConsistencyEventEmitter").addListener("newRevision", function(e) {
+            r("promiseDone")(_(e, "main"));
+            r("promiseDone")(_(e, "longtail"));
+        });
+    }
+    l.init = g;
+}, 98);

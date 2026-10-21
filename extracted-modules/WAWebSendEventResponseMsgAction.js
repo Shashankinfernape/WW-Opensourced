@@ -1,0 +1,75 @@
+__d("WAWebSendEventResponseMsgAction", [
+    "WAWebAddonSendMsgData",
+    "WAWebCreateEncryptedEventResponseMsgData",
+    "WAWebCreateEventResponseMsgData",
+    "WAWebFrontendMsgGetters",
+    "WAWebLidMeUserForChat",
+    "WAWebMsgCollection",
+    "WAWebMsgKey",
+    "WAWebMsgKeyUtils",
+    "WAWebSendAddonMsgChatAction",
+    "WAWebSendMsgResultAction",
+    "asyncToGeneratorRuntime",
+    "err",
+    "nullthrows"
+], function(t, n, r, o, a, i, l) {
+    function e(e) {
+        return s.apply(this, arguments);
+    }
+    function s() {
+        s = n("asyncToGeneratorRuntime").asyncToGenerator(function*(e) {
+            const t = r("nullthrows")(o("WAWebMsgCollection").MsgCollection.get(e.parentMsgKey));
+            const n = r("nullthrows")(o("WAWebFrontendMsgGetters").getAsEventCreation(t));
+            const sender = o("WAWebLidMeUserForChat").getMeUserLidOrJidForChat(o("WAWebFrontendMsgGetters").getChat(n.unsafe()), o("WAWebMsgKeyUtils").TranslateMsgKeyType.Addon);
+            yield d({
+                responseType: e.eventResponse,
+                responseMsgKey: e.id,
+                eventCreationMsg: n,
+                sender
+            });
+        });
+        return s.apply(this, arguments);
+    }
+    function u(e, t) {
+        return c.apply(this, arguments);
+    }
+    function c() {
+        c = n("asyncToGeneratorRuntime").asyncToGenerator(function*(responseType, t) {
+            const n = o("WAWebLidMeUserForChat").getMeUserLidOrJidForChat(o("WAWebFrontendMsgGetters").getChat(t.unsafe()), o("WAWebMsgKeyUtils").TranslateMsgKeyType.Addon);
+            const responseMsgKey = new (r("WAWebMsgKey"))({
+                fromMe: true,
+                remote: t.id.remote,
+                id: yield r("WAWebMsgKey").newId(),
+                participant: n
+            });
+            yield d({
+                responseType,
+                responseMsgKey,
+                eventCreationMsg: t,
+                sender: n
+            });
+        });
+        return c.apply(this, arguments);
+    }
+    function d(e) {
+        return m.apply(this, arguments);
+    }
+    function m() {
+        m = n("asyncToGeneratorRuntime").asyncToGenerator(function*(e) {
+            const t = o("WAWebCreateEventResponseMsgData").createEventResponseMsgData(e);
+            let n;
+            if (o("WAWebAddonSendMsgData").isOptimisticAddonSendSupported(t)) {
+                n = yield o("WAWebSendAddonMsgChatAction").addAndSendAddonToChat(t);
+            } else {
+                const a = yield o("WAWebCreateEncryptedEventResponseMsgData").createEncryptedEventResponseMsgData(t, e.eventCreationMsg.unsafe());
+                n = yield o("WAWebSendAddonMsgChatAction").addAndSendAddonToChat(a);
+            }
+            if (n.messageSendResult !== o("WAWebSendMsgResultAction").SendMsgResult.OK) {
+                throw r("err")("Failed to send event response");
+            }
+        });
+        return m.apply(this, arguments);
+    }
+    l.resendEventResponseMsg = e;
+    l.sendEventResponseMsg = u;
+}, 98);

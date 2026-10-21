@@ -1,0 +1,15 @@
+__d("WDSIconIcRemove.react", [
+    "WDSSvgIconHelpers"
+], function(t, n, r, o, a, i, l) {
+    const e = o("WDSSvgIconHelpers").createWDSIcon("ic-remove", 24, 24, "0 -960 960 960", {
+        fill: "currentColor"
+    }, [
+        [
+            "path",
+            {
+                d: "M240-440q-17 0-28.5-11.5T200-480q0-17 11.5-28.5T240-520h480q17 0 28.5 11.5T760-480q0 17-11.5 28.5T720-440H240Z"
+            }
+        ]
+    ]);
+    l.default = e;
+}, 98);

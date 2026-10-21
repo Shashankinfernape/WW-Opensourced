@@ -1,0 +1,29 @@
+__d("WAWebSyncdCryptoHelper", [
+    "WACryptoHkdf",
+    "WAWebSyncdCryptoConst",
+    "WAWebSyncdKeyTypes",
+    "asyncToGeneratorRuntime"
+], function(t, n, r, o, a, i, l) {
+    "use strict";
+    function e(e) {
+        return s.apply(this, arguments);
+    }
+    function s() {
+        s = n("asyncToGeneratorRuntime").asyncToGenerator(function*(e) {
+            let t;
+            const n = yield u(e);
+            return {
+                indexKey: n.slice(0, (t = o("WAWebSyncdCryptoConst")).INDEX_KEY_END),
+                valueEncryptionKey: n.slice(t.INDEX_KEY_END, t.VALUE_ENCRYPTION_KEY_END),
+                valueMacKey: n.slice(t.VALUE_ENCRYPTION_KEY_END, t.VALUE_MAC_KEY_END),
+                snapshotMacKey: n.slice(t.VALUE_MAC_KEY_END, t.SNAPSHOT_MAC_KEY_END),
+                patchMacKey: n.slice(t.SNAPSHOT_MAC_KEY_END, t.PATCH_MAC_KEY_END)
+            };
+        });
+        return s.apply(this, arguments);
+    }
+    function u(e) {
+        return o("WACryptoHkdf").extractAndExpand(o("WAWebSyncdKeyTypes").fromSyncKeyData(e), o("WAWebSyncdCryptoConst").HKDF_INFO, o("WAWebSyncdCryptoConst").DERIVED_KEY_LENGTH);
+    }
+    l.generateEncryptionKeysUnmemoized = e;
+}, 98);

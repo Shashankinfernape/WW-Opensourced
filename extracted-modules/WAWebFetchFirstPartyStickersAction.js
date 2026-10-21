@@ -1,0 +1,61 @@
+__d("WAWebFetchFirstPartyStickersAction", [
+    "WAWebL10N",
+    "WAWebPonyfillsFetch",
+    "WAWebRecentStickerCollectionMd",
+    "WAWebServerErrors",
+    "WAWebStickerCommonQueryToStaticServerWamEvent",
+    "WAWebStickerUtils",
+    "WAWebURLUtils",
+    "WAWebWamEnumQueryType",
+    "asyncToGeneratorRuntime"
+], function(t, n, r, o, a, i, l) {
+    const e = "https://static.whatsapp.net/sticker";
+    function s(e, t) {
+        return u.apply(this, arguments);
+    }
+    function u() {
+        u = n("asyncToGeneratorRuntime").asyncToGenerator(function*(t, n) {
+            const a = o("WAWebStickerUtils").getStickerFetchParamsFromABConfig();
+            const i = babelHelpers.extends({}, a, o("WAWebStickerUtils").getPremiumParams(o("WAWebRecentStickerCollectionMd").RecentStickerCollectionMd.length), {
+                cat: "sticker_pack_data",
+                id: t,
+                lg: r("WAWebL10N").getNormalizedLocale()
+            });
+            const l = r("WAWebURLUtils").build(e, i);
+            const s = new (o("WAWebStickerCommonQueryToStaticServerWamEvent")).StickerCommonQueryToStaticServerWamEvent;
+            s.startQueryLatencyMs();
+            const u = yield r("WAWebPonyfillsFetch")(l, {
+                signal: n?.signal
+            });
+            s.markQueryLatencyMs();
+            s.set({
+                httpResponseCode: u.status,
+                params: new URLSearchParams(i).toString(),
+                queryType: o("WAWebWamEnumQueryType").QUERY_TYPE.STICKER_PACK_DATA
+            });
+            s.commit();
+            if (!u.ok) {
+                throw new (o("WAWebServerErrors")).InvalidServerResponseError(l, u.status.toString(), "Invalid response from WhatsApp stickers endpoint");
+            }
+            const c = yield u.json();
+            if (c == null || c.length === 0) {
+                throw new (o("WAWebServerErrors")).InvalidServerResponseError(l, u.status.toString(), `Invalid response from WhatsApp stickers endpoint: ${JSON.stringify(c)}`);
+            }
+            return c[0].stickers.map((e, index)=>({
+                    mimetype: e.mimetype,
+                    width: e.width,
+                    height: e.height,
+                    index,
+                    filehash: e["file-hash"],
+                    directPath: e["direct-path"],
+                    mediaKey: e["media-key"],
+                    id: e["file-hash"],
+                    deprecatedMms3Url: e.url,
+                    encFilehash: e["enc-file-hash"],
+                    mediaKeyTimestamp: 0
+                }));
+        });
+        return u.apply(this, arguments);
+    }
+    l.fetchFirstPartyStickers = s;
+}, 98);

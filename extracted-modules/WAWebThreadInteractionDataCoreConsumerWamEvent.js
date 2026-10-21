@@ -1,0 +1,802 @@
+__d("WAWebThreadInteractionDataCoreConsumerWamEvent", [
+    "WAWebWamCodegenUtils",
+    "WAWebWamEnumAcpVersionType",
+    "WAWebWamEnumChatMutedType",
+    "WAWebWamEnumChatType",
+    "WAWebWamEnumEphemeralityInitiatorType",
+    "WAWebWamEnumEphemeralityTriggerActionType",
+    "WAWebWamEnumGaStatus",
+    "WAWebWamEnumOppositeVisibleIdentificationType",
+    "WAWebWamEnumThreadType",
+    "WAWebWamEnumTypeOfGroupEnum"
+], function(t, n, r, o, a, i, l) {
+    let e;
+    const s = (e = o("WAWebWamCodegenUtils")).defineEvents({
+        ThreadInteractionDataCoreConsumer: [
+            6466,
+            {
+                acpVersion: [
+                    160,
+                    o("WAWebWamEnumAcpVersionType").ACP_VERSION_TYPE
+                ],
+                afterReadDuration: [
+                    138,
+                    e.TYPES.INTEGER
+                ],
+                afterReadMessagesExpired: [
+                    139,
+                    e.TYPES.INTEGER
+                ],
+                afterReadMessagesReceived: [
+                    144,
+                    e.TYPES.INTEGER
+                ],
+                afterReadMessagesSent: [
+                    140,
+                    e.TYPES.INTEGER
+                ],
+                afterReadMessagesUnreadExpired: [
+                    141,
+                    e.TYPES.INTEGER
+                ],
+                afterReadTurnedOff: [
+                    142,
+                    e.TYPES.BOOLEAN
+                ],
+                afterReadTurnedOn: [
+                    143,
+                    e.TYPES.BOOLEAN
+                ],
+                ar12hMediaMessagesExpired: [
+                    163,
+                    e.TYPES.INTEGER
+                ],
+                ar12hMediaMessagesReceived: [
+                    164,
+                    e.TYPES.INTEGER
+                ],
+                ar12hMediaMessagesSent: [
+                    165,
+                    e.TYPES.INTEGER
+                ],
+                ar12hMediaMessagesUnreadExpired: [
+                    166,
+                    e.TYPES.INTEGER
+                ],
+                ar12hTextMessagesExpired: [
+                    167,
+                    e.TYPES.INTEGER
+                ],
+                ar12hTextMessagesReceived: [
+                    168,
+                    e.TYPES.INTEGER
+                ],
+                ar12hTextMessagesSent: [
+                    169,
+                    e.TYPES.INTEGER
+                ],
+                ar12hTextMessagesUnreadExpired: [
+                    170,
+                    e.TYPES.INTEGER
+                ],
+                ar6hMediaMessagesExpired: [
+                    171,
+                    e.TYPES.INTEGER
+                ],
+                ar6hMediaMessagesReceived: [
+                    172,
+                    e.TYPES.INTEGER
+                ],
+                ar6hMediaMessagesSent: [
+                    173,
+                    e.TYPES.INTEGER
+                ],
+                ar6hMediaMessagesUnreadExpired: [
+                    174,
+                    e.TYPES.INTEGER
+                ],
+                ar6hTextMessagesExpired: [
+                    175,
+                    e.TYPES.INTEGER
+                ],
+                ar6hTextMessagesReceived: [
+                    176,
+                    e.TYPES.INTEGER
+                ],
+                ar6hTextMessagesSent: [
+                    177,
+                    e.TYPES.INTEGER
+                ],
+                ar6hTextMessagesUnreadExpired: [
+                    178,
+                    e.TYPES.INTEGER
+                ],
+                audioMessagesReceived: [
+                    1,
+                    e.TYPES.INTEGER
+                ],
+                audioMessagesSent: [
+                    2,
+                    e.TYPES.INTEGER
+                ],
+                broadcastMsgsReceived: [
+                    3,
+                    e.TYPES.INTEGER
+                ],
+                broadcastMsgsSent: [
+                    4,
+                    e.TYPES.INTEGER
+                ],
+                chatEphemeralityDuration: [
+                    6,
+                    e.TYPES.INTEGER
+                ],
+                chatMuted: [
+                    7,
+                    o("WAWebWamEnumChatMutedType").CHAT_MUTED_TYPE
+                ],
+                chatOverflowClicks: [
+                    8,
+                    e.TYPES.INTEGER
+                ],
+                chatTypeInd: [
+                    9,
+                    o("WAWebWamEnumChatType").CHAT_TYPE
+                ],
+                commentsReceived: [
+                    10,
+                    e.TYPES.INTEGER
+                ],
+                dedupKey: [
+                    159,
+                    e.TYPES.INTEGER
+                ],
+                dm24hMediaMessagesExpired: [
+                    179,
+                    e.TYPES.INTEGER
+                ],
+                dm24hMediaMessagesReceived: [
+                    180,
+                    e.TYPES.INTEGER
+                ],
+                dm24hMediaMessagesSent: [
+                    181,
+                    e.TYPES.INTEGER
+                ],
+                dm24hMediaMessagesUnreadExpired: [
+                    182,
+                    e.TYPES.INTEGER
+                ],
+                dm24hTextMessagesExpired: [
+                    183,
+                    e.TYPES.INTEGER
+                ],
+                dm24hTextMessagesReceived: [
+                    184,
+                    e.TYPES.INTEGER
+                ],
+                dm24hTextMessagesSent: [
+                    185,
+                    e.TYPES.INTEGER
+                ],
+                dm24hTextMessagesUnreadExpired: [
+                    186,
+                    e.TYPES.INTEGER
+                ],
+                dm7dMediaMessagesExpired: [
+                    187,
+                    e.TYPES.INTEGER
+                ],
+                dm7dMediaMessagesReceived: [
+                    188,
+                    e.TYPES.INTEGER
+                ],
+                dm7dMediaMessagesSent: [
+                    189,
+                    e.TYPES.INTEGER
+                ],
+                dm7dMediaMessagesUnreadExpired: [
+                    190,
+                    e.TYPES.INTEGER
+                ],
+                dm7dTextMessagesExpired: [
+                    191,
+                    e.TYPES.INTEGER
+                ],
+                dm7dTextMessagesReceived: [
+                    192,
+                    e.TYPES.INTEGER
+                ],
+                dm7dTextMessagesSent: [
+                    193,
+                    e.TYPES.INTEGER
+                ],
+                dm7dTextMessagesUnreadExpired: [
+                    194,
+                    e.TYPES.INTEGER
+                ],
+                dm90dMediaMessagesExpired: [
+                    195,
+                    e.TYPES.INTEGER
+                ],
+                dm90dMediaMessagesReceived: [
+                    196,
+                    e.TYPES.INTEGER
+                ],
+                dm90dMediaMessagesSent: [
+                    197,
+                    e.TYPES.INTEGER
+                ],
+                dm90dMediaMessagesUnreadExpired: [
+                    198,
+                    e.TYPES.INTEGER
+                ],
+                dm90dTextMessagesExpired: [
+                    199,
+                    e.TYPES.INTEGER
+                ],
+                dm90dTextMessagesReceived: [
+                    200,
+                    e.TYPES.INTEGER
+                ],
+                dm90dTextMessagesSent: [
+                    201,
+                    e.TYPES.INTEGER
+                ],
+                dm90dTextMessagesUnreadExpired: [
+                    202,
+                    e.TYPES.INTEGER
+                ],
+                dmSettingChangeCount: [
+                    162,
+                    e.TYPES.INTEGER
+                ],
+                documentMessagesReceived: [
+                    13,
+                    e.TYPES.INTEGER
+                ],
+                documentMessagesSent: [
+                    14,
+                    e.TYPES.INTEGER
+                ],
+                editedMsgsSent: [
+                    15,
+                    e.TYPES.INTEGER
+                ],
+                ephemeralMessagesExpired: [
+                    110,
+                    e.TYPES.INTEGER
+                ],
+                ephemeralMessagesReceived: [
+                    16,
+                    e.TYPES.INTEGER
+                ],
+                ephemeralMessagesSent: [
+                    17,
+                    e.TYPES.INTEGER
+                ],
+                ephemeralMessagesUnreadExpired: [
+                    18,
+                    e.TYPES.INTEGER
+                ],
+                ephemeralityInitiator: [
+                    19,
+                    o("WAWebWamEnumEphemeralityInitiatorType").EPHEMERALITY_INITIATOR_TYPE
+                ],
+                ephemeralityTriggerAction: [
+                    20,
+                    o("WAWebWamEnumEphemeralityTriggerActionType").EPHEMERALITY_TRIGGER_ACTION_TYPE
+                ],
+                eventCreationMessagesReceived: [
+                    21,
+                    e.TYPES.INTEGER
+                ],
+                eventCreationMessagesSent: [
+                    22,
+                    e.TYPES.INTEGER
+                ],
+                eventResponseMessagesReceived: [
+                    23,
+                    e.TYPES.INTEGER
+                ],
+                eventResponseMessagesSent: [
+                    24,
+                    e.TYPES.INTEGER
+                ],
+                forwardAudioMessagesReceived: [
+                    25,
+                    e.TYPES.INTEGER
+                ],
+                forwardAudioMessagesSent: [
+                    26,
+                    e.TYPES.INTEGER
+                ],
+                forwardDocumentMessagesReceived: [
+                    27,
+                    e.TYPES.INTEGER
+                ],
+                forwardDocumentMessagesSent: [
+                    28,
+                    e.TYPES.INTEGER
+                ],
+                forwardGifMessagesReceived: [
+                    29,
+                    e.TYPES.INTEGER
+                ],
+                forwardGifMessagesSent: [
+                    30,
+                    e.TYPES.INTEGER
+                ],
+                forwardMessagesReceived: [
+                    31,
+                    e.TYPES.INTEGER
+                ],
+                forwardMessagesSent: [
+                    32,
+                    e.TYPES.INTEGER
+                ],
+                forwardPhotoMessagesReceived: [
+                    33,
+                    e.TYPES.INTEGER
+                ],
+                forwardPhotoMessagesSent: [
+                    34,
+                    e.TYPES.INTEGER
+                ],
+                forwardPtvMessagesReceived: [
+                    134,
+                    e.TYPES.INTEGER
+                ],
+                forwardPtvMessagesSent: [
+                    135,
+                    e.TYPES.INTEGER
+                ],
+                forwardStickerMessagesReceived: [
+                    35,
+                    e.TYPES.INTEGER
+                ],
+                forwardStickerMessagesSent: [
+                    36,
+                    e.TYPES.INTEGER
+                ],
+                forwardTextMessagesReceived: [
+                    37,
+                    e.TYPES.INTEGER
+                ],
+                forwardTextMessagesSent: [
+                    38,
+                    e.TYPES.INTEGER
+                ],
+                forwardUrlMessagesReceived: [
+                    39,
+                    e.TYPES.INTEGER
+                ],
+                forwardUrlMessagesSent: [
+                    40,
+                    e.TYPES.INTEGER
+                ],
+                forwardVideoMessagesReceived: [
+                    41,
+                    e.TYPES.INTEGER
+                ],
+                forwardVideoMessagesSent: [
+                    42,
+                    e.TYPES.INTEGER
+                ],
+                gaStatus: [
+                    43,
+                    o("WAWebWamEnumGaStatus").GA_STATUS
+                ],
+                gifMessagesReceived: [
+                    44,
+                    e.TYPES.INTEGER
+                ],
+                gifMessagesSent: [
+                    45,
+                    e.TYPES.INTEGER
+                ],
+                groupMembershipReplies: [
+                    47,
+                    e.TYPES.INTEGER
+                ],
+                groupPrivateReplies: [
+                    48,
+                    e.TYPES.INTEGER
+                ],
+                groupSize: [
+                    49,
+                    e.TYPES.INTEGER
+                ],
+                groupStatusLikesOthersToOthers: [
+                    113,
+                    e.TYPES.INTEGER
+                ],
+                groupStatusLikesOthersToOwn: [
+                    114,
+                    e.TYPES.INTEGER
+                ],
+                groupStatusLikesOwnToOthers: [
+                    115,
+                    e.TYPES.INTEGER
+                ],
+                groupStatusLikesOwnToOwn: [
+                    116,
+                    e.TYPES.INTEGER
+                ],
+                groupStatusRepliesOthersToOthers: [
+                    117,
+                    e.TYPES.INTEGER
+                ],
+                groupStatusRepliesOthersToOwn: [
+                    118,
+                    e.TYPES.INTEGER
+                ],
+                groupStatusRepliesOwnToOthers: [
+                    119,
+                    e.TYPES.INTEGER
+                ],
+                groupStatusRepliesOwnToOwn: [
+                    120,
+                    e.TYPES.INTEGER
+                ],
+                hasReplied1On1: [
+                    145,
+                    e.TYPES.BOOLEAN
+                ],
+                hasUsername: [
+                    50,
+                    e.TYPES.BOOLEAN
+                ],
+                hasUsernamePin: [
+                    51,
+                    e.TYPES.BOOLEAN
+                ],
+                isAContact: [
+                    52,
+                    e.TYPES.BOOLEAN
+                ],
+                isAContactAtThreadCreation: [
+                    53,
+                    e.TYPES.BOOLEAN
+                ],
+                isAGroup: [
+                    54,
+                    e.TYPES.BOOLEAN
+                ],
+                isArchived: [
+                    55,
+                    e.TYPES.BOOLEAN
+                ],
+                isDeleted: [
+                    57,
+                    e.TYPES.BOOLEAN
+                ],
+                isGuestThread: [
+                    112,
+                    e.TYPES.BOOLEAN
+                ],
+                isInviteCreatedThread: [
+                    58,
+                    e.TYPES.BOOLEAN
+                ],
+                isManagedAccount: [
+                    121,
+                    e.TYPES.BOOLEAN
+                ],
+                isMessageYourself: [
+                    136,
+                    e.TYPES.BOOLEAN
+                ],
+                isMetaAiAssistant: [
+                    59,
+                    e.TYPES.BOOLEAN
+                ],
+                isNewManagedAccountEmIgnored: [
+                    122,
+                    e.TYPES.BOOLEAN
+                ],
+                isPinned: [
+                    60,
+                    e.TYPES.BOOLEAN
+                ],
+                isPnhEnabledChat: [
+                    61,
+                    e.TYPES.BOOLEAN
+                ],
+                isUsernameThread: [
+                    123,
+                    e.TYPES.BOOLEAN
+                ],
+                isUsernameThreadAtCreation: [
+                    137,
+                    e.TYPES.BOOLEAN
+                ],
+                limitSharingOption: [
+                    124,
+                    e.TYPES.BOOLEAN
+                ],
+                markedReadCnt: [
+                    62,
+                    e.TYPES.INTEGER
+                ],
+                markedReadMessageCnt: [
+                    63,
+                    e.TYPES.INTEGER
+                ],
+                matchedMessagesMarkedAsReadWithDeltaTime: [
+                    131,
+                    e.TYPES.STRING
+                ],
+                matchedMessagesReadWithDeltaTime: [
+                    132,
+                    e.TYPES.STRING
+                ],
+                messagesRead: [
+                    64,
+                    e.TYPES.INTEGER
+                ],
+                messagesReceived: [
+                    65,
+                    e.TYPES.INTEGER
+                ],
+                messagesReceivedWithEnabledReadReceipt: [
+                    133,
+                    e.TYPES.INTEGER
+                ],
+                messagesSent: [
+                    66,
+                    e.TYPES.INTEGER
+                ],
+                messagesUnread: [
+                    68,
+                    e.TYPES.INTEGER
+                ],
+                oppositePartyHasProfilePhoto: [
+                    146,
+                    e.TYPES.BOOLEAN
+                ],
+                oppositePartyLimitSharingOption: [
+                    125,
+                    e.TYPES.BOOLEAN
+                ],
+                oppositeVisibleIdentification: [
+                    69,
+                    o("WAWebWamEnumOppositeVisibleIdentificationType").OPPOSITE_VISIBLE_IDENTIFICATION_TYPE
+                ],
+                photoMessagesReceived: [
+                    70,
+                    e.TYPES.INTEGER
+                ],
+                photoMessagesSent: [
+                    71,
+                    e.TYPES.INTEGER
+                ],
+                pollCreationMessagesReceived: [
+                    72,
+                    e.TYPES.INTEGER
+                ],
+                pollCreationMessagesSent: [
+                    73,
+                    e.TYPES.INTEGER
+                ],
+                pollUpdateMessagesReceived: [
+                    74,
+                    e.TYPES.INTEGER
+                ],
+                pollUpdateMessagesSent: [
+                    75,
+                    e.TYPES.INTEGER
+                ],
+                profileReplies: [
+                    76,
+                    e.TYPES.INTEGER
+                ],
+                profileViews: [
+                    77,
+                    e.TYPES.INTEGER
+                ],
+                pttMessagesReceived: [
+                    78,
+                    e.TYPES.INTEGER
+                ],
+                pttMessagesSent: [
+                    79,
+                    e.TYPES.INTEGER
+                ],
+                ptvMessagesReceived: [
+                    80,
+                    e.TYPES.INTEGER
+                ],
+                ptvMessagesSent: [
+                    81,
+                    e.TYPES.INTEGER
+                ],
+                reactionsReceived: [
+                    82,
+                    e.TYPES.INTEGER
+                ],
+                reactionsSent: [
+                    83,
+                    e.TYPES.INTEGER
+                ],
+                repliesSent: [
+                    85,
+                    e.TYPES.INTEGER
+                ],
+                requestedPhoneNumber: [
+                    86,
+                    e.TYPES.BOOLEAN
+                ],
+                seenMaskedPhoneNumber: [
+                    87,
+                    e.TYPES.BOOLEAN
+                ],
+                sharedPhoneNumber: [
+                    89,
+                    e.TYPES.BOOLEAN
+                ],
+                sharesCommonGroup: [
+                    107,
+                    e.TYPES.BOOLEAN
+                ],
+                statusReactionsReceived: [
+                    90,
+                    e.TYPES.INTEGER
+                ],
+                statusReactionsSent: [
+                    126,
+                    e.TYPES.INTEGER
+                ],
+                statusReplies: [
+                    91,
+                    e.TYPES.INTEGER
+                ],
+                statusReplyMessagesReceived: [
+                    127,
+                    e.TYPES.INTEGER
+                ],
+                statusViews: [
+                    92,
+                    e.TYPES.INTEGER
+                ],
+                stickerMessagesReceived: [
+                    93,
+                    e.TYPES.INTEGER
+                ],
+                stickerMessagesSent: [
+                    94,
+                    e.TYPES.INTEGER
+                ],
+                textMessagesReceived: [
+                    95,
+                    e.TYPES.INTEGER
+                ],
+                textMessagesSent: [
+                    96,
+                    e.TYPES.INTEGER
+                ],
+                threadCreationDate: [
+                    111,
+                    e.TYPES.STRING
+                ],
+                threadDs: [
+                    97,
+                    e.TYPES.STRING
+                ],
+                threadId: [
+                    98,
+                    e.TYPES.STRING
+                ],
+                threadIdByLid: [
+                    109,
+                    e.TYPES.STRING
+                ],
+                threadType: [
+                    161,
+                    o("WAWebWamEnumThreadType").THREAD_TYPE
+                ],
+                tombstoneAiFutureproofedMessagesReceived: [
+                    130,
+                    e.TYPES.INTEGER
+                ],
+                tombstoneEphemeralMessagesReceived: [
+                    128,
+                    e.TYPES.INTEGER
+                ],
+                tombstoneViewOnceMessagesReceived: [
+                    129,
+                    e.TYPES.INTEGER
+                ],
+                typeOfGroup: [
+                    108,
+                    o("WAWebWamEnumTypeOfGroupEnum").TYPE_OF_GROUP_ENUM
+                ],
+                urlMessagesReceived: [
+                    99,
+                    e.TYPES.INTEGER
+                ],
+                urlMessagesSent: [
+                    100,
+                    e.TYPES.INTEGER
+                ],
+                videoMessagesReceived: [
+                    102,
+                    e.TYPES.INTEGER
+                ],
+                videoMessagesSent: [
+                    103,
+                    e.TYPES.INTEGER
+                ],
+                viewOnceAudioMessagesOpened: [
+                    150,
+                    e.TYPES.INTEGER
+                ],
+                viewOnceAudioMessagesReceived: [
+                    151,
+                    e.TYPES.INTEGER
+                ],
+                viewOnceAudioMessagesSent: [
+                    152,
+                    e.TYPES.INTEGER
+                ],
+                viewOnceImageMessagesOpened: [
+                    153,
+                    e.TYPES.INTEGER
+                ],
+                viewOnceImageMessagesReceived: [
+                    154,
+                    e.TYPES.INTEGER
+                ],
+                viewOnceImageMessagesSent: [
+                    155,
+                    e.TYPES.INTEGER
+                ],
+                viewOnceMessagesOpened: [
+                    104,
+                    e.TYPES.INTEGER
+                ],
+                viewOnceMessagesReceived: [
+                    105,
+                    e.TYPES.INTEGER
+                ],
+                viewOnceMessagesSent: [
+                    106,
+                    e.TYPES.INTEGER
+                ],
+                viewOnceTextMessagesOpened: [
+                    147,
+                    e.TYPES.INTEGER
+                ],
+                viewOnceTextMessagesReceived: [
+                    148,
+                    e.TYPES.INTEGER
+                ],
+                viewOnceTextMessagesSent: [
+                    149,
+                    e.TYPES.INTEGER
+                ],
+                viewOnceVideoMessagesOpened: [
+                    156,
+                    e.TYPES.INTEGER
+                ],
+                viewOnceVideoMessagesReceived: [
+                    157,
+                    e.TYPES.INTEGER
+                ],
+                viewOnceVideoMessagesSent: [
+                    158,
+                    e.TYPES.INTEGER
+                ]
+            },
+            [
+                1,
+                1,
+                1
+            ],
+            "regular"
+        ]
+    }, {
+        ThreadInteractionDataCoreConsumer: []
+    });
+    l.ThreadInteractionDataCoreConsumerWamEvent = s;
+}, 98);

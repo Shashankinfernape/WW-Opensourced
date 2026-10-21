@@ -1,0 +1,31 @@
+__d("WAWebWamEnumWpbujSurface", [], function(t, n, r, o, a, i) {
+    const e = Object.freeze({
+        APP_THEME: 1,
+        APP_ICON: 2,
+        RINGTONE: 3,
+        LIST: 4,
+        CHAT_THEME: 5,
+        ALERT_TONE: 6,
+        PINNED_CHAT: 7,
+        STICKER_TRAY: 8,
+        STICKER_RECEIVED: 9,
+        STICKER_STORE: 10,
+        APPEARANCE_SETTINGS: 11,
+        NOTIFICATION_SETTINGS: 12,
+        WHATSAPP_SETTINGS: 13,
+        STICKER_GENERIC: 14,
+        BACKUP_PROVIDER_SELECTION: 15,
+        BACKUP_NEW_USER_SETUP: 16,
+        CUSTOM_REACTIONS_SETTINGS: 17,
+        REACTION_TRAY: 18,
+        REACTION_KEYBOARD: 19,
+        FOCUS_SCHEDULES_ENTRY: 20,
+        FOCUS_SCHEDULES: 21,
+        LIST_MUTE_DIALOG: 22,
+        LIST_SCHEDULE: 23,
+        SCHEDULE_TIME_EDITOR: 24,
+        GROUP_INFO: 25,
+        GROUP_SYSTEM_MESSAGE: 26
+    });
+    i.WPBUJ_SURFACE = e;
+}, 66);

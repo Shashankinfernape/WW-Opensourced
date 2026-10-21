@@ -1,0 +1,9 @@
+{
+  "application": "analysis/whatsapp-app-evidence.json",
+  "native_observations": [],
+  "seed": {
+    "kind": "string",
+    "value": "WAWebIntroPanelStartCallEmptyState.react"
+  },
+  "direction": "both"
+}

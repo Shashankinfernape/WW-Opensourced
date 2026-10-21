@@ -1,0 +1,48 @@
+__d("WAWebMessagingGatingUtils", [
+    "WAWebABProps"
+], function(t, n, r, o, a, i, l) {
+    function e() {
+        return o("WAWebABProps").getABPropConfigValue("group_size_bypassing_sampling") ?? 100000;
+    }
+    function s() {
+        return p() > 0;
+    }
+    function u() {
+        return o("WAWebABProps").getABPropConfigValue("rt_sender_v3_hybrid_mode");
+    }
+    function c() {
+        return o("WAWebABProps").getABPropConfigValue("rt_receive_reporting_tag");
+    }
+    function d() {
+        return o("WAWebABProps").getABPropConfigValue("rt_receiver_missing_reporting_token_detection");
+    }
+    function m() {
+        return o("WAWebABProps").getABPropConfigValue("rt_sync_reporting_tag");
+    }
+    function p() {
+        return o("WAWebABProps").getABPropConfigValue("rt_sender_reporting_token_version");
+    }
+    function _() {
+        return o("WAWebABProps").getABPropConfigValue("rt_web_delay_processing");
+    }
+    function f() {
+        return o("WAWebABProps").getABPropConfigValue("ft_validation_failure_drop_placeholder");
+    }
+    function g() {
+        return o("WAWebABProps").getABPropConfigValue("visible_message_drop_placeholder_enabled_internal_only");
+    }
+    function h() {
+        return o("WAWebABProps").getABPropConfigValue("web_biz_simple_signal_enabled") === 1;
+    }
+    l.getGroupSizeBypassingSampling = e;
+    l.isReportingTokenSendingEnabled = s;
+    l.isReportingTokenV3HybridSendingEnabled = u;
+    l.isReportingTokenReceivingEnabled = c;
+    l.isMissingReportingTokenDetectionEnabled = d;
+    l.isReportingTagSyncingEnabled = m;
+    l.getSenderReportingTokenVersion = p;
+    l.isWebReportingTokenDelayProcessingEnabled = _;
+    l.isReportingTokenValidationFailureDebugPlaceholderEnabled = f;
+    l.isMessageDropPlaceholderEnabled = g;
+    l.isSimpleSignalEnabled = h;
+}, 98);

@@ -8,18 +8,18 @@
   "reconMeas": {
     "railWidth": 64,
     "sideWidth": 432,
-    "mainWidth": 944
+    "mainWidth": 0
   },
   "railDiff": {
     "compared_pixels": 47168,
-    "changed_pixels": 2130,
-    "changed_ratio": 0.04515773405698779,
-    "mean_delta": 2.2676231767299866
+    "changed_pixels": 2397,
+    "changed_ratio": 0.05081835142469471,
+    "mean_delta": 2.5144006529850746
   },
   "sideHeaderDiff": {
     "compared_pixels": 27584,
-    "changed_pixels": 34,
-    "changed_ratio": 0.001232598607888631,
-    "mean_delta": 0.020646026682134572
+    "changed_pixels": 2986,
+    "changed_ratio": 0.10825116009280743,
+    "mean_delta": 9.102958236658933
   }
 }

@@ -1,0 +1,42 @@
+__d("WAWebWebcMediaErrorUnknownDetailsWamEvent", [
+    "WAWebWamCodegenUtils",
+    "WAWebWamEnumWebcMediaOperationCode"
+], function(t, n, r, o, a, i, l) {
+    let e;
+    const s = (e = o("WAWebWamCodegenUtils")).defineEvents({
+        WebcMediaErrorUnknownDetails: [
+            2352,
+            {
+                dedupKey: [
+                    5,
+                    e.TYPES.INTEGER
+                ],
+                mediaId: [
+                    1,
+                    e.TYPES.INTEGER
+                ],
+                webcMediaErrorMessage: [
+                    4,
+                    e.TYPES.STRING
+                ],
+                webcMediaErrorName: [
+                    3,
+                    e.TYPES.STRING
+                ],
+                webcMediaOperation: [
+                    2,
+                    o("WAWebWamEnumWebcMediaOperationCode").WEBC_MEDIA_OPERATION_CODE
+                ]
+            },
+            [
+                1,
+                1,
+                1
+            ],
+            "regular"
+        ]
+    }, {
+        WebcMediaErrorUnknownDetails: []
+    });
+    l.WebcMediaErrorUnknownDetailsWamEvent = s;
+}, 98);

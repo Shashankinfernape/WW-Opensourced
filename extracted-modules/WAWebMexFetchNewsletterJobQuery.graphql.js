@@ -1,0 +1,439 @@
+__d("WAWebMexFetchNewsletterJobQuery.graphql", [], function(t, n, r, o, a, i) {
+    "use strict";
+    const e = (()=>{
+        const e = {
+            defaultValue: null,
+            kind: "LocalArgument",
+            name: "fetch_creation_time"
+        };
+        const t = {
+            defaultValue: null,
+            kind: "LocalArgument",
+            name: "fetch_full_image"
+        };
+        const n = {
+            defaultValue: null,
+            kind: "LocalArgument",
+            name: "fetch_pinned_messages"
+        };
+        const r = {
+            defaultValue: null,
+            kind: "LocalArgument",
+            name: "fetch_status_metadata"
+        };
+        const o = {
+            defaultValue: null,
+            kind: "LocalArgument",
+            name: "fetch_viewer_metadata"
+        };
+        const a = {
+            defaultValue: null,
+            kind: "LocalArgument",
+            name: "fetch_wamo_sub"
+        };
+        const i = {
+            defaultValue: null,
+            kind: "LocalArgument",
+            name: "input"
+        };
+        const l = {
+            alias: null,
+            args: null,
+            kind: "ScalarField",
+            name: "id",
+            storageKey: null
+        };
+        const s = {
+            alias: null,
+            args: null,
+            kind: "ScalarField",
+            name: "type",
+            storageKey: null
+        };
+        const u = [
+            l,
+            {
+                alias: null,
+                args: null,
+                kind: "ScalarField",
+                name: "text",
+                storageKey: null
+            },
+            {
+                alias: null,
+                args: null,
+                kind: "ScalarField",
+                name: "update_time",
+                storageKey: null
+            }
+        ];
+        const c = [
+            l,
+            s,
+            {
+                alias: null,
+                args: null,
+                kind: "ScalarField",
+                name: "direct_path",
+                storageKey: null
+            }
+        ];
+        const d = {
+            alias: null,
+            args: null,
+            kind: "ScalarField",
+            name: "value",
+            storageKey: null
+        };
+        const m = [
+            {
+                alias: null,
+                args: [
+                    {
+                        kind: "Variable",
+                        name: "input",
+                        variableName: "input"
+                    }
+                ],
+                concreteType: "XWA2Newsletter",
+                kind: "LinkedField",
+                name: "xwa2_newsletter",
+                plural: false,
+                selections: [
+                    l,
+                    {
+                        alias: null,
+                        args: null,
+                        concreteType: "XWA2NewsletterState",
+                        kind: "LinkedField",
+                        name: "state",
+                        plural: false,
+                        selections: [
+                            s
+                        ],
+                        storageKey: null
+                    },
+                    {
+                        alias: null,
+                        args: null,
+                        concreteType: "XWA2NewsletterThreadMetadata",
+                        kind: "LinkedField",
+                        name: "thread_metadata",
+                        plural: false,
+                        selections: [
+                            {
+                                condition: "fetch_creation_time",
+                                kind: "Condition",
+                                passingValue: true,
+                                selections: [
+                                    {
+                                        alias: null,
+                                        args: null,
+                                        kind: "ScalarField",
+                                        name: "creation_time",
+                                        storageKey: null
+                                    }
+                                ]
+                            },
+                            {
+                                alias: null,
+                                args: null,
+                                concreteType: "XWA2NewsletterName",
+                                kind: "LinkedField",
+                                name: "name",
+                                plural: false,
+                                selections: u,
+                                storageKey: null
+                            },
+                            {
+                                condition: "fetch_full_image",
+                                kind: "Condition",
+                                passingValue: true,
+                                selections: [
+                                    {
+                                        alias: null,
+                                        args: [
+                                            {
+                                                kind: "Literal",
+                                                name: "type",
+                                                value: "IMAGE"
+                                            }
+                                        ],
+                                        concreteType: "XWA2Picture",
+                                        kind: "LinkedField",
+                                        name: "picture",
+                                        plural: false,
+                                        selections: c,
+                                        storageKey: 'picture(type:"IMAGE")'
+                                    }
+                                ]
+                            },
+                            {
+                                alias: "preview",
+                                args: [
+                                    {
+                                        kind: "Literal",
+                                        name: "type",
+                                        value: "PREVIEW"
+                                    }
+                                ],
+                                concreteType: "XWA2Picture",
+                                kind: "LinkedField",
+                                name: "picture",
+                                plural: false,
+                                selections: c,
+                                storageKey: 'picture(type:"PREVIEW")'
+                            },
+                            {
+                                alias: null,
+                                args: null,
+                                concreteType: "XWA2NewsletterDescription",
+                                kind: "LinkedField",
+                                name: "description",
+                                plural: false,
+                                selections: u,
+                                storageKey: null
+                            },
+                            {
+                                alias: null,
+                                args: null,
+                                kind: "ScalarField",
+                                name: "invite",
+                                storageKey: null
+                            },
+                            {
+                                alias: null,
+                                args: null,
+                                kind: "ScalarField",
+                                name: "handle",
+                                storageKey: null
+                            },
+                            {
+                                alias: null,
+                                args: null,
+                                kind: "ScalarField",
+                                name: "subscribers_count",
+                                storageKey: null
+                            },
+                            {
+                                alias: null,
+                                args: null,
+                                kind: "ScalarField",
+                                name: "verification",
+                                storageKey: null
+                            },
+                            {
+                                alias: null,
+                                args: null,
+                                concreteType: "XWA2NewsletterThreadSettings",
+                                kind: "LinkedField",
+                                name: "settings",
+                                plural: false,
+                                selections: [
+                                    {
+                                        alias: null,
+                                        args: null,
+                                        concreteType: "XWA2NewsletterReactionCodesSetting",
+                                        kind: "LinkedField",
+                                        name: "reaction_codes",
+                                        plural: false,
+                                        selections: [
+                                            d
+                                        ],
+                                        storageKey: null
+                                    }
+                                ],
+                                storageKey: null
+                            },
+                            {
+                                condition: "fetch_wamo_sub",
+                                kind: "Condition",
+                                passingValue: true,
+                                selections: [
+                                    {
+                                        alias: null,
+                                        args: null,
+                                        concreteType: "XWA2NewsletterWamoSubMetadata",
+                                        kind: "LinkedField",
+                                        name: "wamo_sub",
+                                        plural: false,
+                                        selections: [
+                                            {
+                                                alias: null,
+                                                args: null,
+                                                kind: "ScalarField",
+                                                name: "plan_id",
+                                                storageKey: null
+                                            }
+                                        ],
+                                        storageKey: null
+                                    }
+                                ]
+                            },
+                            {
+                                condition: "fetch_pinned_messages",
+                                kind: "Condition",
+                                passingValue: true,
+                                selections: [
+                                    {
+                                        alias: null,
+                                        args: null,
+                                        concreteType: "XWA2NewsletterPinnedMessage",
+                                        kind: "LinkedField",
+                                        name: "pinned_messages",
+                                        plural: true,
+                                        selections: [
+                                            {
+                                                alias: null,
+                                                args: null,
+                                                kind: "ScalarField",
+                                                name: "message_id",
+                                                storageKey: null
+                                            },
+                                            {
+                                                alias: null,
+                                                args: null,
+                                                kind: "ScalarField",
+                                                name: "expiry_ts",
+                                                storageKey: null
+                                            }
+                                        ],
+                                        storageKey: null
+                                    }
+                                ]
+                            }
+                        ],
+                        storageKey: null
+                    },
+                    {
+                        condition: "fetch_viewer_metadata",
+                        kind: "Condition",
+                        passingValue: true,
+                        selections: [
+                            {
+                                alias: null,
+                                args: null,
+                                concreteType: "XWA2NewsletterViewerMetadata",
+                                kind: "LinkedField",
+                                name: "viewer_metadata",
+                                plural: false,
+                                selections: [
+                                    {
+                                        alias: null,
+                                        args: null,
+                                        concreteType: "XWA2NewsletterUserSetting",
+                                        kind: "LinkedField",
+                                        name: "settings",
+                                        plural: true,
+                                        selections: [
+                                            s,
+                                            d
+                                        ],
+                                        storageKey: null
+                                    },
+                                    {
+                                        alias: null,
+                                        args: null,
+                                        kind: "ScalarField",
+                                        name: "role",
+                                        storageKey: null
+                                    },
+                                    {
+                                        condition: "fetch_wamo_sub",
+                                        kind: "Condition",
+                                        passingValue: true,
+                                        selections: [
+                                            {
+                                                alias: null,
+                                                args: null,
+                                                kind: "ScalarField",
+                                                name: "wamo_sub_status",
+                                                storageKey: null
+                                            }
+                                        ]
+                                    }
+                                ],
+                                storageKey: null
+                            }
+                        ]
+                    },
+                    {
+                        condition: "fetch_status_metadata",
+                        kind: "Condition",
+                        passingValue: true,
+                        selections: [
+                            {
+                                alias: null,
+                                args: null,
+                                concreteType: "XWA2NewsletterStatusMetadata",
+                                kind: "LinkedField",
+                                name: "status_metadata",
+                                plural: false,
+                                selections: [
+                                    {
+                                        alias: null,
+                                        args: null,
+                                        kind: "ScalarField",
+                                        name: "last_status_server_id",
+                                        storageKey: null
+                                    },
+                                    {
+                                        alias: null,
+                                        args: null,
+                                        kind: "ScalarField",
+                                        name: "last_status_sent_time",
+                                        storageKey: null
+                                    }
+                                ],
+                                storageKey: null
+                            }
+                        ]
+                    }
+                ],
+                storageKey: null
+            }
+        ];
+        return {
+            fragment: {
+                argumentDefinitions: [
+                    e,
+                    t,
+                    n,
+                    r,
+                    o,
+                    a,
+                    i
+                ],
+                kind: "Fragment",
+                metadata: null,
+                name: "WAWebMexFetchNewsletterJobQuery",
+                selections: m,
+                type: "Query",
+                abstractKey: null
+            },
+            kind: "Request",
+            operation: {
+                argumentDefinitions: [
+                    i,
+                    o,
+                    t,
+                    e,
+                    a,
+                    r,
+                    n
+                ],
+                kind: "Operation",
+                name: "WAWebMexFetchNewsletterJobQuery",
+                selections: m
+            },
+            params: {
+                id: "27456920720571478",
+                metadata: {},
+                name: "WAWebMexFetchNewsletterJobQuery",
+                operationKind: "query",
+                text: null
+            }
+        };
+    })();
+    a.exports = e;
+}, null);

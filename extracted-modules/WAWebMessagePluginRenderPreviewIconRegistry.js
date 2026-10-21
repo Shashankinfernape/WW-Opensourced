@@ -1,0 +1,519 @@
+__d("WAWebMessagePluginRenderPreviewIconRegistry", [
+    "WAWebRenderAlbumPreviewIcon.react",
+    "WAWebRenderAudioPreviewIcon",
+    "WAWebRenderBizContentPlaceholderPreviewIcon",
+    "WAWebRenderCiphertextPreviewIcon",
+    "WAWebRenderDebugPlaceholderPreviewIcon",
+    "WAWebRenderDocumentPreviewIcon.react",
+    "WAWebRenderEventCreationPreviewIcon.react",
+    "WAWebRenderGroupInvitePreviewIcon.react",
+    "WAWebRenderImagePreviewIcon",
+    "WAWebRenderInteractivePreviewIcon",
+    "WAWebRenderLocationPreviewIcon",
+    "WAWebRenderMusicPreviewIcon",
+    "WAWebRenderNativeFlowPreviewIcon",
+    "WAWebRenderNewsletterInvitePreviewIcon",
+    "WAWebRenderOrderPreviewIcon",
+    "WAWebRenderPaymentPreviewIcon",
+    "WAWebRenderPollCreationPreviewIcon",
+    "WAWebRenderProductPreviewIcon",
+    "WAWebRenderPttPreviewIcon",
+    "WAWebRenderPtvPreviewIcon",
+    "WAWebRenderQuarantinedPreviewIcon.react",
+    "WAWebRenderRevokedPreviewIcon",
+    "WAWebRenderSharableEventInvitePreviewIcon.react",
+    "WAWebRenderStickerPreviewIcon",
+    "WAWebRenderUnknownPreviewIcon",
+    "WAWebRenderVcardPreviewIcon",
+    "WAWebRenderVideoPreviewIcon"
+], function(t, n, r, o, a, i, l) {
+    let e;
+    const s = [
+        {
+            type: "album",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderAlbumPreviewIcon.react")
+        },
+        {
+            type: "audio",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderAudioPreviewIcon")
+        },
+        {
+            type: "biz_content_placeholder",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderBizContentPlaceholderPreviewIcon")
+        },
+        {
+            type: "buttons_response",
+            subtype: undefined,
+            renderPreviewIcon: null
+        },
+        {
+            type: "chat",
+            subtype: "url",
+            renderPreviewIcon: null
+        },
+        {
+            type: "chat",
+            subtype: undefined,
+            renderPreviewIcon: null
+        },
+        {
+            type: "ciphertext",
+            subtype: "acp_unavailable_fanout",
+            renderPreviewIcon: e = r("WAWebRenderCiphertextPreviewIcon")
+        },
+        {
+            type: "ciphertext",
+            subtype: "bot_unavailable_fanout",
+            renderPreviewIcon: e
+        },
+        {
+            type: "ciphertext",
+            subtype: "fanout",
+            renderPreviewIcon: e
+        },
+        {
+            type: "ciphertext",
+            subtype: "hosted_unavailable_fanout",
+            renderPreviewIcon: e
+        },
+        {
+            type: "ciphertext",
+            subtype: "view_once_unavailable_fanout",
+            renderPreviewIcon: e
+        },
+        {
+            type: "ciphertext",
+            subtype: undefined,
+            renderPreviewIcon: e
+        },
+        {
+            type: "comment",
+            subtype: undefined,
+            renderPreviewIcon: null
+        },
+        {
+            type: "debug_placeholder",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderDebugPlaceholderPreviewIcon")
+        },
+        {
+            type: "document",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderDocumentPreviewIcon.react")
+        },
+        {
+            type: "event_creation",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderEventCreationPreviewIcon.react")
+        },
+        {
+            type: "event_edit_encrypted",
+            subtype: undefined,
+            renderPreviewIcon: null
+        },
+        {
+            type: "event_response",
+            subtype: undefined,
+            renderPreviewIcon: null
+        },
+        {
+            type: "group-history",
+            subtype: "message_history_bundle",
+            renderPreviewIcon: null
+        },
+        {
+            type: "groups_v4_invite",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderGroupInvitePreviewIcon.react")
+        },
+        {
+            type: "hsm",
+            subtype: undefined,
+            renderPreviewIcon: null
+        },
+        {
+            type: "image",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderImagePreviewIcon")
+        },
+        {
+            type: "interactive",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderInteractivePreviewIcon")
+        },
+        {
+            type: "interactive_response",
+            subtype: undefined,
+            renderPreviewIcon: null
+        },
+        {
+            type: "keep_in_chat",
+            subtype: undefined,
+            renderPreviewIcon: null
+        },
+        {
+            type: "list",
+            subtype: undefined,
+            renderPreviewIcon: null
+        },
+        {
+            type: "list_response",
+            subtype: undefined,
+            renderPreviewIcon: null
+        },
+        {
+            type: "loading_media",
+            subtype: "loading_image",
+            renderPreviewIcon: r("WAWebRenderImagePreviewIcon")
+        },
+        {
+            type: "loading_media",
+            subtype: "loading_video",
+            renderPreviewIcon: r("WAWebRenderVideoPreviewIcon")
+        },
+        {
+            type: "location",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderLocationPreviewIcon")
+        },
+        {
+            type: "message_edit_encrypted",
+            subtype: "message_edit",
+            renderPreviewIcon: null
+        },
+        {
+            type: "message_history_notice",
+            subtype: "message_history_notice",
+            renderPreviewIcon: null
+        },
+        {
+            type: "multi_vcard",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderVcardPreviewIcon")
+        },
+        {
+            type: "music",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderMusicPreviewIcon")
+        },
+        {
+            type: "native_flow",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderNativeFlowPreviewIcon")
+        },
+        {
+            type: "newsletter_admin_invite",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderNewsletterInvitePreviewIcon")
+        },
+        {
+            type: "newsletter_follower_invite",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderNewsletterInvitePreviewIcon")
+        },
+        {
+            type: "newsletter_question_response",
+            subtype: undefined,
+            renderPreviewIcon: null
+        },
+        {
+            type: "notification_template",
+            subtype: "contact_info_card",
+            renderPreviewIcon: null
+        },
+        {
+            type: "order",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderOrderPreviewIcon")
+        },
+        {
+            type: "payment",
+            subtype: "ciphertext",
+            renderPreviewIcon: null
+        },
+        {
+            type: "payment",
+            subtype: "futureproof",
+            renderPreviewIcon: null
+        },
+        {
+            type: "payment",
+            subtype: "invite",
+            renderPreviewIcon: null
+        },
+        {
+            type: "payment",
+            subtype: "request",
+            renderPreviewIcon: r("WAWebRenderPaymentPreviewIcon")
+        },
+        {
+            type: "payment",
+            subtype: "send",
+            renderPreviewIcon: r("WAWebRenderPaymentPreviewIcon")
+        },
+        {
+            type: "pin_message",
+            subtype: undefined,
+            renderPreviewIcon: null
+        },
+        {
+            type: "pinned_message",
+            subtype: undefined,
+            renderPreviewIcon: null
+        },
+        {
+            type: "poll_add_option_decrypted",
+            subtype: undefined,
+            renderPreviewIcon: null
+        },
+        {
+            type: "poll_add_option_encrypted",
+            subtype: undefined,
+            renderPreviewIcon: null
+        },
+        {
+            type: "poll_creation",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderPollCreationPreviewIcon")
+        },
+        {
+            type: "poll_edit_encrypted",
+            subtype: undefined,
+            renderPreviewIcon: null
+        },
+        {
+            type: "poll_result_snapshot",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderPollCreationPreviewIcon")
+        },
+        {
+            type: "poll_update",
+            subtype: "poll_vote",
+            renderPreviewIcon: null
+        },
+        {
+            type: "product",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderProductPreviewIcon")
+        },
+        {
+            type: "protocol",
+            subtype: "acp2_system_message",
+            renderPreviewIcon: null
+        },
+        {
+            type: "protocol",
+            subtype: "admin_revoke",
+            renderPreviewIcon: null
+        },
+        {
+            type: "protocol",
+            subtype: "ai_media_collection",
+            renderPreviewIcon: null
+        },
+        {
+            type: "protocol",
+            subtype: "biz_ai_metadata_sync",
+            renderPreviewIcon: null
+        },
+        {
+            type: "protocol",
+            subtype: "bot_feedback",
+            renderPreviewIcon: null
+        },
+        {
+            type: "protocol",
+            subtype: "bot_memu_onboarding",
+            renderPreviewIcon: null
+        },
+        {
+            type: "protocol",
+            subtype: "bot_request_welcome",
+            renderPreviewIcon: null
+        },
+        {
+            type: "protocol",
+            subtype: "ephemeral_setting",
+            renderPreviewIcon: null
+        },
+        {
+            type: "protocol",
+            subtype: "ephemeral_sync_response",
+            renderPreviewIcon: null
+        },
+        {
+            type: "protocol",
+            subtype: "event_edit_decrypted",
+            renderPreviewIcon: r("WAWebRenderEventCreationPreviewIcon.react")
+        },
+        {
+            type: "protocol",
+            subtype: "hatch_metadata_sync",
+            renderPreviewIcon: null
+        },
+        {
+            type: "protocol",
+            subtype: "history_sync_notification",
+            renderPreviewIcon: null
+        },
+        {
+            type: "protocol",
+            subtype: "limit_sharing_system_message",
+            renderPreviewIcon: null
+        },
+        {
+            type: "protocol",
+            subtype: "member_label",
+            renderPreviewIcon: null
+        },
+        {
+            type: "protocol",
+            subtype: "message_edit",
+            renderPreviewIcon: null
+        },
+        {
+            type: "protocol",
+            subtype: "message_edit_decrypted",
+            renderPreviewIcon: null
+        },
+        {
+            type: "protocol",
+            subtype: "poll_edit_decrypted",
+            renderPreviewIcon: null
+        },
+        {
+            type: "protocol",
+            subtype: "scheduled_message_unschedule",
+            renderPreviewIcon: null
+        },
+        {
+            type: "protocol",
+            subtype: "sender_revoke",
+            renderPreviewIcon: null
+        },
+        {
+            type: "protocol",
+            subtype: "share_phone_number",
+            renderPreviewIcon: null
+        },
+        {
+            type: "protocol",
+            subtype: "status_group_mention_message",
+            renderPreviewIcon: r("WAWebRenderUnknownPreviewIcon")
+        },
+        {
+            type: "protocol",
+            subtype: "status_mention_message",
+            renderPreviewIcon: r("WAWebRenderUnknownPreviewIcon")
+        },
+        {
+            type: "ptt",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderPttPreviewIcon")
+        },
+        {
+            type: "ptv",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderPtvPreviewIcon")
+        },
+        {
+            type: "quarantined",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderQuarantinedPreviewIcon.react")
+        },
+        {
+            type: "reaction",
+            subtype: undefined,
+            renderPreviewIcon: null
+        },
+        {
+            type: "reaction_enc",
+            subtype: undefined,
+            renderPreviewIcon: null
+        },
+        {
+            type: "request_phone_number",
+            subtype: undefined,
+            renderPreviewIcon: null
+        },
+        {
+            type: "revoked",
+            subtype: "admin",
+            renderPreviewIcon: r("WAWebRenderRevokedPreviewIcon")
+        },
+        {
+            type: "revoked",
+            subtype: "sender",
+            renderPreviewIcon: r("WAWebRenderRevokedPreviewIcon")
+        },
+        {
+            type: "rich_response",
+            subtype: undefined,
+            renderPreviewIcon: null
+        },
+        {
+            type: "sharable_event_invite",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderSharableEventInvitePreviewIcon.react")
+        },
+        {
+            type: "status_notification",
+            subtype: "status_notification_message",
+            renderPreviewIcon: null
+        },
+        {
+            type: "sticker",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderStickerPreviewIcon")
+        },
+        {
+            type: "sticker-pack",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderStickerPreviewIcon")
+        },
+        {
+            type: "template_button_reply",
+            subtype: undefined,
+            renderPreviewIcon: null
+        },
+        {
+            type: "unknown",
+            subtype: "payment_action_request_declined",
+            renderPreviewIcon: null
+        },
+        {
+            type: "unknown",
+            subtype: "payment_transaction_request_cancelled",
+            renderPreviewIcon: null
+        },
+        {
+            type: "unknown",
+            subtype: "phone",
+            renderPreviewIcon: null
+        },
+        {
+            type: "unknown",
+            subtype: "phone_only_feature",
+            renderPreviewIcon: null
+        },
+        {
+            type: "unknown",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderUnknownPreviewIcon")
+        },
+        {
+            type: "vcard",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderVcardPreviewIcon")
+        },
+        {
+            type: "video",
+            subtype: undefined,
+            renderPreviewIcon: r("WAWebRenderVideoPreviewIcon")
+        }
+    ];
+    l.default = s;
+}, 98);

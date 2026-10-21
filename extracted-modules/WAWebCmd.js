@@ -1,0 +1,962 @@
+__d("WAWebCmd", [
+    "JSResourceForInteraction",
+    "Promise",
+    "WAAbortError",
+    "WALogger",
+    "WAPromiseDelays",
+    "WAWebAppTracker",
+    "WAWebBoolFunc",
+    "WAWebBotGating",
+    "WAWebBotUtils",
+    "WAWebCmd.flow",
+    "WAWebComposeBoxActions",
+    "WAWebDocumentFlushed",
+    "WAWebDrawerManagerGlobalContext",
+    "WAWebEventEmitter",
+    "WAWebPageLoadLogging",
+    "WAWebStateUtils",
+    "WAWebThreadModelResolver",
+    "WAWebThreadMsgUtils",
+    "WAWebUiIdleEventBus",
+    "WAWebWamMemoryStat",
+    "asyncToGeneratorRuntime",
+    "err",
+    "gkx"
+], function(t, n, r, o, a, i, l) {
+    let e;
+    let s;
+    let u;
+    let c;
+    let d;
+    let m;
+    let p;
+    let _;
+    let f;
+    let g;
+    let h;
+    let y;
+    const C = 1300;
+    const b = 400;
+    const v = ((t)=>{
+        function a() {
+            let e;
+            e = t.call(this) || this;
+            e.isMainStreamReadyMd = false;
+            e.isOfflineDeliveryEnd = false;
+            e.$CmdImpl$p_1 = null;
+            o("WAWebUiIdleEventBus").UiIdleEventBus.setDeferUntilDocumentFlushed(S);
+            return e;
+        }
+        babelHelpers.inheritsLoose(a, t);
+        const i = a.prototype;
+        i.muteAllReactions = function(t, n, r) {
+            this.trigger("mute_all_reactions", t, n, r);
+        };
+        i.muteChat = function(t, n, r, a) {
+            this.trigger("mute_chat", o("WAWebStateUtils").unproxy(t), n, r, a);
+        };
+        i.muteChatMultiselect = function(t, n, r) {
+            this.trigger("mute_chat_multiselect", t, n, r);
+        };
+        i.muteChatWithDuration = function(t, n, r) {
+            this.trigger("mute_chat_with_duration", o("WAWebStateUtils").unproxy(t), n, r);
+        };
+        i.muteChatFromEntryPoint = function(t, n, r, a) {
+            this.trigger("mute_chat_from_entrypoint", o("WAWebStateUtils").unproxy(t), n, r, a);
+        };
+        i.assignChat = function(t, n) {
+            this.trigger("assign_chat", o("WAWebStateUtils").unproxy(t), n);
+        };
+        i.deleteOrExitChat = function(t, n) {
+            this.trigger("delete_or_exit_chat", o("WAWebStateUtils").unproxy(t), n);
+        };
+        i.deleteOrExitChatFromEntryPoint = function(t, n, r, a) {
+            this.trigger("delete_or_exit_chat_from_entrypoint", o("WAWebStateUtils").unproxy(t), n, r, a);
+        };
+        i.clearChat = function(t, n, r) {
+            this.trigger("clear_chat", o("WAWebStateUtils").unproxy(t), n, r);
+        };
+        i.clearSelectedChats = function(t, n) {
+            this.trigger("clear_selected_chats", t.map((e)=>o("WAWebStateUtils").unproxy(e)), n);
+        };
+        i.deleteSelectedChats = function(t, n) {
+            this.trigger("delete_selected_chats", t.map((e)=>o("WAWebStateUtils").unproxy(e)), n);
+        };
+        i.archiveChat = function(t, n, r = true) {
+            this.trigger("archive_chat", {
+                archive: n,
+                chat: o("WAWebStateUtils").unproxy(t),
+                showToast: r
+            });
+        };
+        i.archiveChatFromEntryPoint = function({ archive: e, chat: n, entryPoint: r, showToast: i = true }) {
+            this.trigger("archive_chat_from_entrypoint", {
+                archive: e,
+                chat: o("WAWebStateUtils").unproxy(n),
+                entryPoint: r,
+                showToast: i
+            });
+        };
+        i.pinChat = function(t, n) {
+            this.trigger("pin_chat", o("WAWebStateUtils").unproxy(t), n);
+        };
+        i.favoriteChat = function(t, n, r) {
+            this.trigger("favorite_chat", o("WAWebStateUtils").unproxy(t), n, r);
+        };
+        i.markChatUnread = function(t, n) {
+            this.trigger("mark_chat_unread", o("WAWebStateUtils").unproxy(t), n);
+        };
+        i.msgInfoDrawer = function(t) {
+            this.trigger("msg_info_drawer", o("WAWebStateUtils").unproxy(t));
+        };
+        i.chatSearch = function(t) {
+            this.trigger("chat_search", o("WAWebStateUtils").unproxy(t));
+        };
+        i.scrollChatHeight = function(t) {
+            this.trigger("scroll_chat_by_height", t);
+        };
+        i.ctwaAdPreviewDrawer = function(t, n, r) {
+            this.trigger("ctwa_ad_preview_drawer", o("WAWebStateUtils").unproxy(t), n, r);
+        };
+        i.galaxyFlowDrawer = function({ chat: e, messageData: n, msg: r, onClose: o }) {
+            this.trigger("galaxy_flows_drawer", e, n, r, o);
+        };
+        i.chatInfoDrawer = function(t, n) {
+            this.trigger("chat_info_drawer", o("WAWebStateUtils").unproxy(t), n?.showFullGroupDescription, n?.scrollToParticipantList, n?.sourceGroupChatOrNewsletter, n?.focusNewsletterDescriptionOnMount, n?.focusGroupSubjectOnMount, n?.focusGroupDescriptionOnMount, n?.threadId);
+        };
+        i.newsletterDeleteDrawer = function(t) {
+            this.trigger("delete_newsletter_drawer", o("WAWebStateUtils").unproxy(t));
+        };
+        i.openCurrentChatInfo = function() {
+            this.trigger("open_current_chat_info");
+        };
+        i.blockCurrentChat = function() {
+            this.trigger("block_current_chat");
+        };
+        i.clearCurrentChatConversationHistory = function() {
+            this.trigger("clear_current_chat_conversation_history");
+        };
+        i.exitCurrentGroup = function() {
+            this.trigger("exit_current_group");
+        };
+        i.replyCurrentMessageKeyboardShortcut = function() {
+            this.trigger("reply_current_message_keyboard_shortcut");
+        };
+        i.replyCurrentMessagePrivate = function() {
+            this.trigger("reply_current_message_private");
+        };
+        i.forwardCurrentMessage = function() {
+            this.trigger("forward_current_message");
+        };
+        i.starCurrentMessage = function() {
+            this.trigger("star_current_message");
+        };
+        i.startPttRecording = function() {
+            this.trigger("start_ptt_recording");
+        };
+        i.pausePttRecording = function() {
+            this.trigger("pause_ptt_recording");
+        };
+        i.sendPttRecording = function() {
+            R.trigger("send_ptt_recording");
+        };
+        i.editGroupDescription = function() {
+            this.trigger("edit_group_description");
+        };
+        i.attachMediaDrawer = function(t) {
+            const e = this;
+            const a = o("WAWebStateUtils").unproxy(t.chat);
+            if (!(a.id.isBot() && !o("WAWebBotUtils").isBotChannelFBID(a.id) && !a.id.isSupportAgentBot() && !o("WAWebBotGating").isMediaInputEnabledForAssistantBotChat(a.id) && t.bot3pMediaInputAuthorized !== true)) {
+                if (o("WAWebBotUtils").isMetaAiBot(a.id)) {
+                    const i = t.attachments;
+                    if (i != null) {
+                        (y || (y = n("Promise"))).all(i).then((()=>{
+                            const o = n("asyncToGeneratorRuntime").asyncToGenerator(function*(n) {
+                                const o = yield r("JSResourceForInteraction")("WAWebBotMultiModalUtils").__setRef("WAWebCmd").load();
+                                const { showMetaAiAttachmentErrors: i, validateMetaAiAttachments: l } = o;
+                                const s = l(n, a.id);
+                                const { errors: u, validAttachments: c } = s;
+                                i(u);
+                                if (c.length !== 0) {
+                                    e.$CmdImpl$p_2(babelHelpers.extends({}, t, {
+                                        attachments: c.map((e)=>e)
+                                    }), a);
+                                }
+                            });
+                            return function(e) {
+                                return o.apply(this, arguments);
+                            };
+                        })());
+                        return;
+                    }
+                }
+                this.$CmdImpl$p_2(t, a);
+            }
+        };
+        i.$CmdImpl$p_2 = function(t, n) {
+            const e = function(r) {
+                if (r.length > 0) {
+                    o("WAWebComposeBoxActions").ComposeBoxActions.setTextContent(n, r.join("\n\n"));
+                }
+                t.onCancel?.();
+            };
+            const r = babelHelpers.extends({}, t, {
+                chat: n,
+                onCancel: e
+            });
+            this.trigger("attach_media_drawer", r);
+        };
+        i.attachProduct = function(t) {
+            this.trigger("attach_product", t);
+        };
+        i.verificationDrawer = function(t) {
+            this.trigger("verification_drawer", t);
+        };
+        i.mediaViewerModal = function({ currentTime: e, getZoomNode: n, highlightedMsgIds: r, msg: o, shouldShowAllMedia: a, shouldShowNumberText: i }) {
+            this.trigger("media_viewer_modal", {
+                msg: o,
+                getZoomNode: n,
+                currentTime: e,
+                highlightedMsgIds: r,
+                shouldShowNumberText: i,
+                shouldShowAllMedia: a
+            });
+        };
+        i.openMediaViewerForAlbumMedia = function(t) {
+            this.trigger("open_media_viewer_for_album_media", t);
+        };
+        i.productImageViewerModal = function(t, n) {
+            this.trigger("product_image_viewer_modal", t, n);
+        };
+        i.ephemeralDrawer = function(t, n, r) {
+            this.trigger("ephemeral_drawer", t, n, r);
+        };
+        i.chatThemeDrawer = function(t) {
+            this.trigger("chat_theme_drawer", o("WAWebStateUtils").unproxy(t));
+        };
+        i.openCommunityHome = function(t, n) {
+            this.trigger("open_community_home", t, n);
+        };
+        i.openCommunityTabbedInfo = function(t, n, r, o) {
+            this.trigger("open_community_tabbed_info", t, n, r, o);
+        };
+        i.openCommunityPendingGroupsDrawer = function(t) {
+            this.trigger("open_community_pending_groups_drawer", t);
+        };
+        i.openCommunityHomeManageGroups = function(t) {
+            this.trigger("open_community_home_manage_groups", t);
+        };
+        i.openCommunitySettingsDrawer = function(t) {
+            this.trigger("open_community_settings_drawer", t);
+        };
+        i.openMetaAiThreadDrawer = function(t, n) {
+            this.trigger("open_meta_ai_thread_drawer", t, n);
+        };
+        i.updateAiThreadlistSelection = function() {
+            this.trigger("update_ai_thread_list_selection");
+        };
+        i.openCommunitySubgroupJoinModal = function(t, n) {
+            this.trigger("open_subgroup_join_modal", t, n);
+        };
+        i.openProfile = function(t) {
+            this.trigger("open_profile", t);
+        };
+        i.communityAddNewGroup = function(t, n, r) {
+            this.trigger("open_community_add_new_group", t, n, r);
+        };
+        i.communityAddExistingGroup = function(t) {
+            this.trigger("open_community_add_existing_group", t);
+        };
+        i.openCreatedNewsletter = function(t) {
+            this.trigger("open_created_newsletter", t);
+        };
+        i.openNewsletterProfile = function(t, n) {
+            this.trigger("open_newsletter_profile", t, n);
+        };
+        i.newsletterMuteToggle = function(t, n, r) {
+            this.trigger("newsletter:mute_toggle", t, n, r);
+        };
+        i.editNewsletterDescription = function() {
+            this.trigger("edit_newsletter_description");
+        };
+        i.openEventInfoDrawer = function(t, n, r, o) {
+            this.trigger("open_event_info_drawer", t, n, r, o);
+        };
+        i.sendStarMsgs = function(t, n, r, a) {
+            this.trigger("send_star_msgs", o("WAWebStateUtils").unproxy(t), n, r, a);
+        };
+        i.sendUnstarMsgs = function(t, n, r, a) {
+            this.trigger("send_unstar_msgs", o("WAWebStateUtils").unproxy(t), n, r, a);
+        };
+        i.sendDeleteMsgs = function(t, n, r, a, i, l) {
+            this.trigger("send_delete_msgs", o("WAWebStateUtils").unproxy(t), n, r, a, i, l);
+        };
+        i.sendRevokeMsgs = function(t, n, r) {
+            this.trigger("send_revoke_msgs", o("WAWebStateUtils").unproxy(t), n, r);
+        };
+        i.$CmdImpl$p_3 = function(r) {
+            const t = this;
+            const { chat: a, chatEntryPoint: i, isSuperseded: l, msgContext: u, threadId: c } = r;
+            const d = this.$CmdImpl$p_1 != null && this.$CmdImpl$p_1 === a.id;
+            if (d) {
+                o("WALogger").LOG(e || (e = babelHelpers.taggedTemplateLiteralLoose([
+                    "openChat: preserving entry point ",
+                    ", skipping ",
+                    " for same chat"
+                ])), a.chatEntryPoint, i);
+            } else {
+                a.chatEntryPoint = i;
+            }
+            this.$CmdImpl$p_1 = a.id;
+            o("WAWebWamMemoryStat").uploadMemoryIfChatWasOpened(a.id);
+            return new (y || (y = n("Promise")))(function(e) {
+                t.trigger("open_chat", {
+                    chat: a,
+                    msgContext: u,
+                    chatEntryPoint: i,
+                    isSuperseded: l,
+                    threadId: c,
+                    onComplete: (()=>{
+                        const t = n("asyncToGeneratorRuntime").asyncToGenerator(function*(t) {
+                            const r = o("WAWebDrawerManagerGlobalContext").getGlobalDrawerManager("right");
+                            const a = r?.existsDrawer() ?? false;
+                            if (a && window.matchMedia(`(max-width: ${C}px)`).matches) {
+                                if (r != null) {
+                                    r.closeDrawer();
+                                }
+                            }
+                            e(t);
+                        });
+                        function r(e) {
+                            return t.apply(this, arguments);
+                        }
+                        return r;
+                    })()
+                });
+            }).catch((e)=>{
+                o("WALogger").LOG(s || (s = babelHelpers.taggedTemplateLiteralLoose([
+                    "Unexpected openChat error: ",
+                    ""
+                ])), String(e));
+                throw e;
+            });
+        };
+        i.openChatAt = function(t) {
+            const e = this;
+            const { chat: r, chatEntryPoint: a, msgContext: i, noFocus: l, onSuccess: s, threadId: u } = t;
+            const c = o("WAWebStateUtils").unproxy(r);
+            if (!i) {
+                return this.openChatBottom({
+                    chat: c,
+                    chatEntryPoint: a
+                });
+            }
+            o("WAWebUiIdleEventBus").UiIdleEventBus.setUiBusy(true);
+            const d = this.$CmdImpl$p_3({
+                chat: c,
+                msgContext: i,
+                chatEntryPoint: a,
+                threadId: u
+            }).then((()=>{
+                const t = n("asyncToGeneratorRuntime").asyncToGenerator(function*(t) {
+                    let r;
+                    let o;
+                    const a = i.enableAnimation ?? true;
+                    if (t) {
+                        if (t.wasVisible) {
+                            r = function() {
+                                return e.$CmdImpl$p_4({
+                                    pos: "offset",
+                                    offset: t.offset
+                                });
+                            };
+                            o = function() {
+                                return e.$CmdImpl$p_4({
+                                    pos: "center",
+                                    animate: a,
+                                    duration: b,
+                                    easing: [
+                                        0.7,
+                                        0,
+                                        0.3,
+                                        1
+                                    ]
+                                });
+                            };
+                        } else {
+                            r = function() {
+                                return e.$CmdImpl$p_4({
+                                    pos: t.alignAt,
+                                    scrollIfNeeded: true
+                                });
+                            };
+                            switch(t.alignAt){
+                                case "top":
+                                case "bottom":
+                                    o = function() {
+                                        return e.$CmdImpl$p_4({
+                                            pos: "center",
+                                            animate: a,
+                                            duration: b,
+                                            easing: [
+                                                0.88,
+                                                0.64,
+                                                0.13,
+                                                0.99
+                                            ]
+                                        });
+                                    };
+                                    break;
+                                case "center":
+                                default:
+                                    o = function() {
+                                        return (y || (y = n("Promise"))).resolve();
+                                    };
+                            }
+                        }
+                    } else {
+                        r = function() {
+                            return e.$CmdImpl$p_4({
+                                pos: "center"
+                            });
+                        };
+                        o = function() {
+                            return (y || (y = n("Promise"))).resolve();
+                        };
+                    }
+                    yield r();
+                    return o();
+                });
+                return function(e) {
+                    return t.apply(this, arguments);
+                };
+            })()).then(()=>{
+                if (i?.msg?.botPluginReferenceIndex != null) {
+                    const r = i?.msg?.botResponseTargetId;
+                    if (r != null) {
+                        e.botTogglePluginSearchDetailsToggle(r, true);
+                    }
+                }
+                if (i?.highlightMsg === true) {
+                    e.flashFocusedMsg(i.highlightMentionMsg, l);
+                }
+            }).then(()=>{
+                if (s) {
+                    const { mediaMsgToOpenInMediaViewer: e, onScrollToQuotedCarouselCard: t } = s;
+                    if (e) {
+                        o("WAPromiseDelays").delayMs(500).then(()=>{
+                            R.openMediaViewerForAlbumMedia(o("WAWebStateUtils").unproxy(e));
+                            t?.();
+                        });
+                    }
+                }
+                return true;
+            }).then((t)=>{
+                e.$CmdImpl$p_5(i);
+                return t;
+            }).catch(o("WAAbortError").catchAbort(o("WAWebBoolFunc").returnFalse));
+            d.finally(()=>{
+                o("WAWebUiIdleEventBus").UiIdleEventBus.setUiBusy(false);
+            });
+            return d;
+        };
+        i.openChatFromUnread = function(t) {
+            const e = this;
+            const { chat: a, chatEntryPoint: i, isSuperseded: l, threadId: s } = t;
+            const c = o("WAWebStateUtils").unproxy(a);
+            if (!r("gkx")("26258")) {
+                window.chat = c;
+                const d = c.unreadMsgAnchor && c.unreadMsgAnchor.id.toString() || "No unreadMsgAnchor found";
+                o("WALogger").LOG(u || (u = babelHelpers.taggedTemplateLiteralLoose([
+                    "openChatFromUnread anchor=",
+                    " unread=",
+                    ""
+                ])), d, c.unreadCount);
+            }
+            let m;
+            const p = o("WAWebThreadModelResolver").resolveThreadOrChat(c, s);
+            if (p.unreadMsgAnchor) {
+                m = {
+                    collection: p.unreadMsgAnchor.getMsgChunk(p !== c ? s : void 0),
+                    promise: (y || (y = n("Promise"))).resolve(),
+                    msg: p.unreadMsgAnchor,
+                    isUnreadDivider: c.shouldShowUnreadDivider()
+                };
+            }
+            if (m || c.unreadCount > 0) {
+                o("WAWebUiIdleEventBus").UiIdleEventBus.setUiBusy(true);
+                const _ = this.$CmdImpl$p_3({
+                    chat: c,
+                    msgContext: m,
+                    chatEntryPoint: i,
+                    isSuperseded: l,
+                    threadId: s
+                }).then(()=>e.$CmdImpl$p_4({
+                        pos: "top",
+                        offset: -120
+                    })).then(o("WAWebBoolFunc").returnTrue).catch(o("WAAbortError").catchAbort(o("WAWebBoolFunc").returnFalse));
+                _.finally(()=>{
+                    o("WAWebUiIdleEventBus").UiIdleEventBus.setUiBusy(false);
+                });
+                return _;
+            }
+            return this.openChatBottom({
+                chat: c,
+                chatEntryPoint: i,
+                isSuperseded: l
+            });
+        };
+        i.openChatBottom = function(t) {
+            const e = this;
+            const { chat: n, chatEntryPoint: r, isSuperseded: a, threadId: i } = t;
+            const l = o("WAWebStateUtils").unproxy(n);
+            o("WALogger").LOG(c || (c = babelHelpers.taggedTemplateLiteralLoose([
+                "openChatBottom"
+            ])));
+            if (l.id.isLid()) {
+                o("WALogger").LOG(d || (d = babelHelpers.taggedTemplateLiteralLoose([
+                    "openChatBottom. entry point: ",
+                    ""
+                ])), r);
+            }
+            o("WAWebUiIdleEventBus").UiIdleEventBus.setUiBusy(true);
+            let s;
+            const u = o("WAWebThreadModelResolver").resolveThreadOrChat(l, i);
+            const m = u.msgs;
+            if (m.length > 0) {
+                let p;
+                if (u !== l) {
+                    p = m.last();
+                } else if (i != null) {
+                    p = l.msgs.findLast((e)=>o("WAWebThreadMsgUtils").isMsgInThread(e, i));
+                } else {
+                    p = l.msgs.last();
+                }
+                s = {
+                    collection: m,
+                    msg: p,
+                    isUnreadDivider: false
+                };
+            }
+            const _ = this.$CmdImpl$p_3({
+                chat: l,
+                msgContext: s,
+                chatEntryPoint: r,
+                isSuperseded: a,
+                threadId: i
+            }).then(()=>e.scrollChatToBottom({
+                    isChatOpen: true
+                })).then(o("WAWebBoolFunc").returnTrue).catch(o("WAAbortError").catchAbort(o("WAWebBoolFunc").returnFalse));
+            _.finally(()=>{
+                o("WAWebUiIdleEventBus").UiIdleEventBus.setUiBusy(false);
+            });
+            return _;
+        };
+        i.$CmdImpl$p_4 = function(t) {
+            const e = this;
+            return new (y || (y = n("Promise")))(function(n) {
+                e.trigger("scroll_to_focused_msg", n, t);
+            }).catch((e)=>{
+                o("WALogger").WARN(m || (m = babelHelpers.taggedTemplateLiteralLoose([
+                    "Unexpected_scrollToFocusedMsg error: ",
+                    ""
+                ])), String(e));
+            });
+        };
+        i.scrollChatToBottom = function(t) {
+            const e = this;
+            return new (y || (y = n("Promise")))(function(n) {
+                e.trigger("scroll_chat_to_bottom", n, t);
+            }).catch((e)=>{
+                o("WALogger").WARN(p || (p = babelHelpers.taggedTemplateLiteralLoose([
+                    "Unexpected scrollChatToBottom error: ",
+                    ""
+                ])), String(e));
+            });
+        };
+        i.scrollToActiveChat = function() {
+            this.trigger("scroll_to_active_chat");
+        };
+        i.scrollChatListToTop = function() {
+            this.trigger("scroll_chat_list_to_top");
+        };
+        i.flashFocusedMsg = function(t, n) {
+            const e = this;
+            self.setTimeout(function() {
+                e.trigger("flash_focused_msg", n);
+                if (t) {
+                    e.trigger("flash_mention_msg");
+                }
+            }, 0);
+        };
+        i.setActiveNavBarItem = function(t) {
+            this.trigger("set_active_nav_bar", t);
+        };
+        i.setRightDrawerExpanded = function(t, n) {
+            this.trigger("set_right_drawer_expanded", t, n);
+        };
+        i.setActiveFilter = function(t, n, r) {
+            this.trigger("set_active_filter", t, n, r);
+        };
+        i.updateChatlistSelection = function(t) {
+            const e = o("WAWebStateUtils").unproxy(t);
+            this.trigger("update_chatlist_selection", e);
+        };
+        i.closeChat = function(t) {
+            const e = o("WAWebStateUtils").unproxy(t);
+            if (this.$CmdImpl$p_1 != null && this.$CmdImpl$p_1 === e.id) {
+                this.$CmdImpl$p_1 = null;
+            }
+            this.trigger("close_chat", e);
+            o("WAWebWamMemoryStat").uploadMemoryInfoOnChatClose();
+        };
+        i.closeActiveChat = function() {
+            this.$CmdImpl$p_1 = null;
+            this.trigger("close_active_chat");
+        };
+        i.focusNextChat = function(t) {
+            this.trigger("focus_next_chat", t);
+        };
+        i.focusPrevChat = function(t) {
+            this.trigger("focus_prev_chat", t);
+        };
+        i.focusChatSearch = function() {
+            this.trigger("focus_chat_search");
+        };
+        i.closeStatusViewer = function() {
+            this.trigger("close_status_viewer");
+        };
+        i.openComposeBoxExpressionPanel = function(t) {
+            this.trigger("open_compose_box_panel", t);
+        };
+        i.openAttachmentDropdown = function() {
+            this.trigger("open_attachment_dropdown");
+        };
+        i.openCaptureMedia = function(t) {
+            this.trigger("open_capture_media", t);
+        };
+        i.closeExpressionPanels = function() {
+            this.trigger("close_expression_panels");
+        };
+        i.onLogoutFromBridge = function() {
+            if (!r("gkx")("26258")) {
+                try {
+                    throw r("err")("Non Error - CMD logout, thrown only for getting logout stack trace");
+                } catch (e) {
+                    if (e instanceof Error) {
+                        o("WALogger").LOG(_ || (_ = babelHelpers.taggedTemplateLiteralLoose([
+                            "CMD.onLogoutFromBridge debug: \n ",
+                            ""
+                        ], [
+                            "CMD.onLogoutFromBridge debug: \\n ",
+                            ""
+                        ])), e.stack).verbose();
+                    }
+                }
+            }
+            o("WAWebAppTracker").AppTracker.mark(o("WAWebAppTracker").AppTrackerType.Logout);
+            this.trigger("logout_from_bridge");
+        };
+        i.openContextMenu = function(t, n) {
+            this.trigger("open_context_menu", t, n);
+        };
+        i.closeContextMenu = function(t) {
+            this.trigger("close_context_menu", t);
+        };
+        i.openTooltip = function(t, n) {
+            this.trigger("open_tooltip", t, n);
+        };
+        i.closeTooltip = function(t) {
+            this.trigger("close_tooltip", t);
+        };
+        i.alertNewMsg = function(t) {
+            this.trigger("alert_new_msg", t);
+        };
+        i.newMediaMsg = function(t) {
+            this.trigger("new_media_msg", t);
+        };
+        i.alertCall = function(t, n, r, o, a, i, l) {
+            this.trigger("alert_call", {
+                wid: t,
+                msgId: n,
+                isVideo: r,
+                isGroup: o,
+                isSilenced: a,
+                groupJid: i,
+                groupCallParticipants: l
+            });
+        };
+        i.cancelCall = function(t) {
+            this.trigger("cancel_call", t);
+        };
+        i.windowError = function(t) {};
+        i.onPanesWillChange = function(t) {
+            this.trigger("panes_will_change", t);
+        };
+        i.onPanesDidChange = function(t) {
+            this.trigger("panes_did_change", t);
+        };
+        i.reactionChangeLastMessage = function() {
+            this.trigger("reaction_changed_last_msg");
+        };
+        i.openGroupsV4InviteRequestFlow = function(t, n, r, o, a) {
+            this.trigger("open_groups_v4_invite_request_flow", t, n, r, o, a);
+        };
+        i.toggleLidDebugBadge = function() {
+            this.trigger("toggle_lid_debug_badge");
+        };
+        i.openCommandPalette = function() {
+            this.trigger("open_command_palette");
+        };
+        i.closeCommandPalette = function() {
+            this.trigger("close_command_palette");
+        };
+        i.windowMouseDown = function(t) {
+            this.trigger("window_mousedown", t);
+        };
+        i.windowClick = function(t) {
+            this.trigger("window_click", t);
+        };
+        i.midnight = function() {
+            this.trigger("midnight");
+        };
+        i.scrollMessages = function() {
+            this.trigger("scroll_messages");
+        };
+        i.getConversationHeaderOffset = function(t) {
+            this.trigger("get_conversation_header_offset", t);
+        };
+        i.getChatListPanelOffset = function(t) {
+            this.trigger("get_chat_list_panel_offset", t);
+        };
+        i.floaterEscapeOverlap = function(t, n) {
+            this.trigger("floater_escape_overlap", t, n);
+        };
+        i.refreshMessages = function() {
+            this.trigger("refresh_messages");
+        };
+        i.editGroupSubject = function() {
+            this.trigger("edit_group_subject");
+        };
+        i.endFlow = function() {
+            this.trigger("end_flow");
+        };
+        i.socketStreamDisconnectedFromBridge = function() {
+            this.trigger("socket_stream_disconnected_from_bridge");
+        };
+        i.openSocketStreamFromBridge = function() {
+            this.trigger("open_socket_stream_from_bridge");
+        };
+        i.openLongLinkModal = function() {
+            this.trigger("open_long_link_modal");
+        };
+        i.closeLongLinkModal = function(t = false) {
+            this.trigger("close_long_link_modal", t);
+        };
+        i.openLockScreenModal = function() {
+            this.trigger("open_lock_screen_modal");
+        };
+        i.correctPasscodeLockScreen = function(t) {
+            this.trigger("correct_passcode_lock_screen", t);
+        };
+        i.incorrectPasscodeLockScreen = function() {
+            this.trigger("incorrect_passcode_lock_screen");
+        };
+        i.onOfflineDeliveryEndFromBridge = function() {
+            this.isOfflineDeliveryEnd = true;
+            this.trigger("offline_delivery_end_from_bridge");
+        };
+        i.onOfflineDeliveryStateResetFromBridge = function() {
+            this.isOfflineDeliveryEnd = false;
+            this.trigger("offline_delivery_state_reset_from_bridge");
+        };
+        i.onMainStreamModeReadyFromBridge = function() {
+            o("WAWebPageLoadLogging").addPageLoadQplPoint("main_stream_mode_ready");
+            this.isMainStreamReadyMd = true;
+            o("WALogger").LOG(f || (f = babelHelpers.taggedTemplateLiteralLoose([
+                "Cmd: onMainStreamModeReadyFromBridge"
+            ])));
+            this.trigger("main_stream_mode_ready_from_bridge");
+        };
+        i.onInitialChatHistorySyncedFromBridge = function() {
+            this.trigger("on_initial_chat_synced_from_bridge");
+        };
+        i.onAppStateSyncCompletedFromBridge = function() {
+            this.trigger("app_state_sync_completed_from_bridge");
+        };
+        i.onHistorySyncChunkProcessedFromBridge = function(t) {
+            this.trigger("new_history_sync_chunk_processed_from_bridge", t);
+        };
+        i.onOfflineProgressUpdateFromBridge = function() {
+            this.trigger("offline_progress_update_from_bridge");
+        };
+        i.criticalSyncDoneFromBridge = function() {
+            this.trigger("on_critical_sync_done_from_bridge");
+        };
+        i.onTemporaryBanFromBridge = function(t) {
+            this.trigger("account_temporarily_banned_from_bridge", t);
+        };
+        i.onStartingLogoutFromBridge = function() {
+            this.trigger("starting_logout_from_bridge");
+        };
+        i.onUnexpectedLogoutModalFromBridge = function(t) {
+            this.trigger("unexpected_logout_modal_from_bridge", t);
+        };
+        i.onInitialLoadReadyFromBridge = function() {
+            o("WALogger").LOG(g || (g = babelHelpers.taggedTemplateLiteralLoose([
+                "Cmd: onInitialLoadReadyFromBridge"
+            ])));
+            this.trigger("initial_load_ready_from_bridge");
+        };
+        i.onServiceUnavailableFromBridge = function() {
+            this.trigger("service_unavailable_503_from_bridge");
+        };
+        i.onScheduledMsgRevealedFromBridge = function(t) {
+            this.trigger("scheduled_msg_revealed_from_bridge", t);
+        };
+        i.onScheduledMsgChangedFromBridge = function(t) {
+            this.trigger("scheduled_msg_changed_from_bridge", t);
+        };
+        i.merchantDetailsDrawer = function(t) {
+            this.trigger("merchant_details_drawer", t);
+        };
+        i.showMerchantDetailsEntityTypePopup = function(t, n) {
+            this.trigger("show_merchant_details_entity_type_popup", t, n);
+        };
+        i.showCountrySelector = function(t, n, r, o, a, i, l) {
+            this.trigger("show_country_selector_popup", t, n, r, o, a, i, l);
+        };
+        i.toggleStickerMaker = function() {
+            this.trigger("toggle_sticker_maker");
+        };
+        i.onAccountSyncForPrivacyFromBridge = function(t) {
+            this.trigger("account_sync_for_privacy_from_bridge", t);
+        };
+        i.updateCrosspostAutoShareSettingsFromBridge = function(t) {
+            this.trigger("update_crosspost_auto_share_settings_from_bridge", t);
+        };
+        i.updateStatusPrivacySettingsFromBridge = function(t) {
+            this.trigger("update_status_privacy_settings_from_bridge", t);
+        };
+        i.openStickerPack = function(t) {
+            this.trigger("open_sticker_pack", t);
+        };
+        i.onStatusViewerOpen = function() {
+            this.trigger("status_viewer_open");
+        };
+        i.onStatusPostingFlow = function() {
+            this.trigger("status_posting_flow");
+        };
+        i.triggerStorageAlert = function() {
+            if (!r("gkx")("26258")) {
+                this.trigger("handle_low_storage_butter_bar");
+            }
+        };
+        i.triggerBugReportV2 = function() {
+            if (r("gkx")("9092")) {
+                this.trigger("trigger_bugreport_v2", {});
+            }
+        };
+        i.onNotificationPermissionChange = function() {
+            this.trigger("on_notification_permission_change");
+        };
+        i.onNotificationTestVerified = function() {
+            this.trigger("on_notification_test_verified");
+        };
+        i.onBrigadingStateChangeFromBridge = function(t) {
+            this.trigger("on_brigading_state_change_from_bridge", t);
+        };
+        i.onAbPropsUpdateFromBridge = function(t) {
+            this.trigger("on_ab_props_update_from_bridge", t);
+        };
+        i.onAbPropsLoadedFromBridge = function() {
+            this.trigger("ab_props_loaded_from_bridge");
+        };
+        i.playNextPtv = function(t) {
+            this.trigger("sequential_ptv_playback", t);
+        };
+        i.groupNotificationContextCardRendered = function(t) {
+            this.trigger("group_notification_context_card_rendered", t);
+        };
+        i.contactInfoCardRendered = function(t) {
+            this.trigger("contact_info_card_rendered", t);
+        };
+        i.botTogglePluginSearchDetailsToggle = function(t, n) {
+            if (t == null) {
+                o("WALogger").WARN(h || (h = babelHelpers.taggedTemplateLiteralLoose([
+                    "botTogglePluginSearchDetailsToggle: null target id"
+                ])));
+                return;
+            }
+            const e = this;
+            e.trigger(`bot_toggle_plugin_search_details_for_target_id_${t}`, n);
+        };
+        i.rerenderApp = function() {
+            this.trigger("rerender_app");
+        };
+        i.changeAiReplyStatus = function(t, n) {
+            this.trigger("change_ai_reply_status", t, n);
+        };
+        i.chatListVisibilityChange = function(t) {
+            this.trigger("chat_list_visibility_change", t);
+        };
+        i.limitSharingDrawer = function(t) {
+            this.trigger("limit_sharing_drawer", t);
+        };
+        i.acp2Drawer = function(t) {
+            this.trigger("acp2_drawer", t);
+        };
+        i.reachoutTimelockStateChange = function() {
+            this.trigger("reachout_timelock_state_change");
+        };
+        i.newChatMessageCappingStateChange = function() {
+            this.trigger("new_chat_message_capping_state_change");
+        };
+        i.chatMessageSent = function(t) {
+            this.trigger("chat_message_sent", o("WAWebStateUtils").unproxy(t));
+        };
+        i.typingIndicatorVisibilityChange = function(t) {
+            this.trigger("typing_indicator_visibility_change", t);
+        };
+        i.$CmdImpl$p_5 = function(t) {
+            if (t.highlightTerms != null && t.highlightTerms.length > 0) {
+                this.trigger("set_msg_highlight_terms", t.highlightTerms, t.key);
+            }
+        };
+        return a;
+    })(r("WAWebEventEmitter"));
+    function S(e) {
+        let t;
+        const n = function() {
+            if (!t) {
+                t = new AbortController;
+                const n = t;
+                const r = n.signal;
+                o("WAWebDocumentFlushed").documentFlushed({
+                    signal: r
+                }).then(()=>{
+                    if (!r.aborted) {
+                        t = null;
+                        e();
+                    }
+                }, (e)=>{
+                    if (!(e instanceof Error && e.name === o("WAAbortError").ABORT_ERROR)) {
+                        throw e;
+                    }
+                });
+            }
+        };
+        n.cancel = function() {
+            if (t) {
+                t.abort();
+                t = null;
+            }
+        };
+        return n;
+    }
+    var R = new v;
+    l.Revoke = o("WAWebCmd.flow").Revoke;
+    l.CmdImpl = v;
+    l.deferUntilDocumentFlushed = S;
+    l.Cmd = R;
+}, 98);

@@ -1,0 +1,30 @@
+__d("WAWebSchemaInAppSignupInfo", [
+    "WAWebModelStorageUtils",
+    "WAWebModelStorageVersions",
+    "WAWebStorageMutationBuilder"
+], function(t, n, r, o, a, i, l) {
+    function e() {
+        const e = o("WAWebModelStorageUtils").getStorage();
+        const t = o("WAWebStorageMutationBuilder").columnBuilder(e.config);
+        const { addColumn: n, addUserDefinedPrimaryKey: r } = t;
+        e.add("in-app-signup-info").version(o("WAWebModelStorageVersions").inAppSignupInfoCreateTable(), [
+            r("id"),
+            n("isIasSubscriber"),
+            n("iasOptinDs"),
+            n("iasEntryPoint"),
+            n("pendingConfirmationSignupId"),
+            n("pendingConfirmationDeadlineMs")
+        ]).view(function(e) {
+            return e;
+        });
+    }
+    function s() {
+        return o("WAWebModelStorageUtils").getStorage().table("in-app-signup-info");
+    }
+    function u() {
+        return o("WAWebModelStorageUtils").getStorage().doesLocalSchemaIncludeVersion(o("WAWebModelStorageVersions").inAppSignupInfoCreateTable());
+    }
+    l.addTable = e;
+    l.getInAppSignupInfoTable = s;
+    l.canUseInAppSignupInfoTable = u;
+}, 98);

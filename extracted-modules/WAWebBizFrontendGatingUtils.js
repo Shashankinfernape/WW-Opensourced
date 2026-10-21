@@ -1,0 +1,77 @@
+__d("WAWebBizFrontendGatingUtils", [
+    "WAWebABProps",
+    "WAWebContactUtils",
+    "WAWebMobilePlatforms",
+    "WAWebPrimaryFeaturesModel",
+    "WAWebUprPaymentKeySyncGating",
+    "WAWebWamEnumBizPlatform"
+], function(t, n, r, o, a, i, l) {
+    function e() {
+        return o("WAWebMobilePlatforms").isSMB() && o("WAWebPrimaryFeaturesModel").PrimaryFeatures.paymentInfoSyncSupport && o("WAWebABProps").getABPropConfigValue("order_details_payment_instructions_sync_enabled");
+    }
+    function s() {
+        return o("WAWebMobilePlatforms").isSMB() && o("WAWebPrimaryFeaturesModel").PrimaryFeatures.customPaymentMethodsSyncSupport && o("WAWebABProps").getABPropConfigValue("payments_br_pix_phase_1_seller_sync_enabled");
+    }
+    function u() {
+        return o("WAWebMobilePlatforms").isSMB() && o("WAWebPrimaryFeaturesModel").PrimaryFeatures.customPaymentMethodsSyncSupport && o("WAWebABProps").getABPropConfigValue("payments_br_pix_quick_reply_enabled");
+    }
+    function c() {
+        return o("WAWebMobilePlatforms").isSMB();
+    }
+    function d(e) {
+        const t = o("WAWebContactUtils").getMaybeBizPlatformForLogging(e);
+        const n = t !== o("WAWebWamEnumBizPlatform").BIZ_PLATFORM.UNKNOWN;
+        if (n) {
+            return o("WAWebABProps").getABPropConfigValue("payments_br_p2m_pix_copy_key_buyer_logging");
+        }
+        return o("WAWebABProps").getABPropConfigValue("payments_br_p2p_pix_copy_key_buyer_logging");
+    }
+    function m(e) {
+        const t = o("WAWebContactUtils").getMaybeBizPlatformForLogging(e);
+        const n = t !== o("WAWebWamEnumBizPlatform").BIZ_PLATFORM.UNKNOWN;
+        if (n) {
+            return o("WAWebABProps").getABPropConfigValue("payments_br_p2m_pix_copy_code_buyer_logging");
+        }
+        return o("WAWebABProps").getABPropConfigValue("payments_br_p2p_pix_copy_code_buyer_logging");
+    }
+    function p() {
+        return o("WAWebMobilePlatforms").isSMB() && o("WAWebPrimaryFeaturesModel").PrimaryFeatures.customPaymentMethodsSyncSupport && o("WAWebABProps").getABPropConfigValue("payments_br_pix_on_web");
+    }
+    function _() {
+        return o("WAWebMobilePlatforms").isSMB() && o("WAWebABProps").getABPropConfigValue("ctwa_smb_multiselect_enabled");
+    }
+    function f() {
+        return o("WAWebMobilePlatforms").isSMB() && o("WAWebPrimaryFeaturesModel").PrimaryFeatures.customPaymentMethodsSyncSupport && o("WAWebUprPaymentKeySyncGating").isCustomPaymentMethodsSyncEnabledForCountry("MX");
+    }
+    function g() {
+        return o("WAWebMobilePlatforms").isSMB() && o("WAWebPrimaryFeaturesModel").PrimaryFeatures.customPaymentMethodsSyncSupport && o("WAWebUprPaymentKeySyncGating").isCustomPaymentMethodsSyncEnabledForCountry("ID");
+    }
+    function h(e) {
+        return o("WAWebMobilePlatforms").isSMB() && o("WAWebPrimaryFeaturesModel").PrimaryFeatures.customPaymentMethodsSyncSupport && o("WAWebUprPaymentKeySyncGating").isCustomPaymentMethodsSyncEnabledForCountry(e);
+    }
+    function y() {
+        const t = o("WAWebABProps").getABPropConfigValue("payments_upr_send_key_from_web") ?? "";
+        if (t === "") {
+            return new Set;
+        }
+        return new Set(t.split(",").map((e)=>e.trim().toUpperCase()).filter((e)=>e !== ""));
+    }
+    function C(e) {
+        if (e == null || e === "") {
+            return false;
+        }
+        return y().has(e.toUpperCase());
+    }
+    l.isOrderDetailsPaymentInstructionsSyncEnabled = e;
+    l.isCustomPaymentMethodsSyncEnabled = s;
+    l.isPixInQuickReplyEnabled = u;
+    l.isForceCopyPixCTAEnabled = c;
+    l.isCopyPixKeyBuyerLoggingEnabled = d;
+    l.isCopyPixCodeBuyerLoggingEnabled = m;
+    l.isPixOnWebEnabled = p;
+    l.isCTWASMBListsMultiSelectEnabled = _;
+    l.isClabeSyncEnabled = f;
+    l.isIdPaymentAccountSyncEnabled = g;
+    l.isUprSendEnabledForCountry = h;
+    l.isUprAttachmentTrayEnabled = C;
+}, 98);

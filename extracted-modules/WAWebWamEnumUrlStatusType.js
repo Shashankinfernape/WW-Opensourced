@@ -1,0 +1,12 @@
+__d("WAWebWamEnumUrlStatusType", [], function(t, n, r, o, a, i) {
+    const e = Object.freeze({
+        NO_PREVIEW: 1,
+        TRUNCATED: 2,
+        NON_TRUNCATED: 3,
+        INTERACTABLE: 4,
+        TOP_BAR_ATTRIBUTION: 5,
+        INLINE_VIDEO_CTA: 6,
+        PSA_CTA: 7
+    });
+    i.URL_STATUS_TYPE = e;
+}, 66);

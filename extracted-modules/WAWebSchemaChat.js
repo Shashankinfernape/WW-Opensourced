@@ -1,0 +1,112 @@
+__d("WAWebSchemaChat", [
+    "WAWebModelStorageUtils",
+    "WAWebModelStorageVersions",
+    "WAWebStorageSchema"
+], function(t, n, r, o, a, i, l) {
+    function e() {
+        o("WAWebModelStorageUtils").getStorage().add_OPTIMIZED_EXPERIMENT("chat", function(e, t) {
+            let n;
+            const { addColumn: r, addEncryptedColumn: a, addIndex: i, addUniqueIndex: l, addUserDefinedPrimaryKey: s } = t;
+            return e.version((n = o("WAWebModelStorageVersions")).chatCreateTable(), [
+                s("id"),
+                r("t"),
+                r("unreadCount"),
+                r("unreadDividerOffset"),
+                r("archive"),
+                r("isReadOnly"),
+                r("isLocked"),
+                r("isAnnounceGrpRestrict"),
+                r("modifyTag"),
+                r("muteExpiration"),
+                r("isAutoMuted"),
+                r("mentionAllMuteExpiration"),
+                r("callMuteExpiration"),
+                r("name"),
+                r("notSpam"),
+                r("pin"),
+                r("changeNumberOldJid"),
+                r("changeNumberNewJid"),
+                r("ephemeralDuration"),
+                r("ephemeralSettingTimestamp"),
+                r("afterReadDuration"),
+                r("unreadMsgAnchorId"),
+                r("endOfHistoryTransferType"),
+                r("lastReactionPreview"),
+                r("chatlistPreview"),
+                r("unreadEditTimestampMs"),
+                a("chatRowOpaqueData", o("WAWebStorageSchema").EncryptedValueType.ARRAY_BUFFER),
+                r("ephemeralDisplayedExemptions"),
+                r("disappearingModeTrigger"),
+                r("disappearingModeInitiatedByMe"),
+                r("hasOpened"),
+                r("lastChatEntryTimestamp"),
+                r("hasCreatedBotInvokeSystemMsg"),
+                r("bizBotSystemMsgType"),
+                r("lidOriginType"),
+                r("hasRequestedWelcomeMsg"),
+                r("wallpaper"),
+                r("showDoodle"),
+                r("chatThemeId"),
+                r("colorSchemeId"),
+                r("stockWallpaperImageId"),
+                r("wallpaperValue"),
+                r("chatThemeValue"),
+                r("capiThreadControl"),
+                r("capiCallingPermissionType"),
+                r("createdLocally"),
+                r("chatViewMode"),
+                r("limitSharing"),
+                r("mmSignalSharingExpirationWindow"),
+                r("toneId"),
+                r("originalLid"),
+                r("historyChatId"),
+                r("hasCtwaConsumerDataSharingDisclosureSystemMsg"),
+                r("isUsernameThreadAtCreation"),
+                r("isSenderNewAccount"),
+                r("isSenderSuspicious"),
+                r("parentCompanyName"),
+                r("obaPhoneNumber"),
+                r("suggestedRepliesEnabled"),
+                r("aiHandoffStartedAt"),
+                r("aiLastHandoffActor"),
+                r("aeaThreadState"),
+                r("aeaCooldownStartedAtMs"),
+                r("aeaCooldownIdentityKey")
+            ]).version(n.chatAddDisappearingModeInitiator(), [
+                r("disappearingModeInitiator")
+            ]).version(n.addUnreadMentionToChatTable(), [
+                r("unreadMentionsOfMe")
+            ]).version(n.addUnreadMentionCountToChatTable(), [
+                r("unreadMentionCount")
+            ]).version(n.addTcTokenToChatTable(), [
+                a("tcToken", o("WAWebStorageSchema").EncryptedValueType.ARRAY_BUFFER)
+            ]).version(n.addTcTokenTimestampToChatTable(), [
+                r("tcTokenTimestamp"),
+                i("tcTokenTimestamp")
+            ]).version(n.addArchiveAtMentionViewedInDrawer(), [
+                r("archiveAtMentionViewedInDrawer")
+            ]).version(n.addTcTokenSenderTimestampToChatTable(), [
+                r("tcTokenSenderTimestamp")
+            ]).version(n.addEphemeralityIndexToChatTable(), [
+                i("ephemeralDuration")
+            ]).version(n.chatAddAccountLidIndex(), [
+                r("accountLid"),
+                l("accountLid")
+            ]).version(n.chatAddHistoryChatIdIndex(), [
+                l("historyChatId")
+            ]).version(n.chatAddIsAiHandoff(), [
+                r("isAiHandoff")
+            ]).version(n.chatAddAiHandoffRemovalExpiry(), [
+                r("aiHandoffRemovalExpiry"),
+                r("acp2Setting")
+            ]).view(function(e) {
+                return e;
+            }).commit();
+        });
+    }
+    function s() {
+        return o("WAWebModelStorageUtils").getStorage().table("chat");
+    }
+    l.addTable = e;
+    l.getChatTable = s;
+}, 98);

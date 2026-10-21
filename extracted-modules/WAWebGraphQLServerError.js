@@ -1,0 +1,48 @@
+__d("WAWebGraphQLServerError", [
+    "$InternalEnum"
+], function(t, n, r, o, a, i) {
+    const e = n("$InternalEnum")({
+        INVALID_ACCESS_TOKEN: 190,
+        RATE_LIMIT_EXCEEDED: 1675004,
+        CONTACT_MANAGER_SUBSCRIPTION_REQUIRED: 2494193,
+        BUSINESS_BANHAMMERED: 2859017,
+        AD_ACCOUNT_LINKING_DISABLED: 2859050,
+        WASS_BOT_NOT_FOUND: 5171003
+    });
+    const l = ((e)=>{
+        function t(t) {
+            let n;
+            n = e.call(this) || this;
+            n.name = "GraphQLServerError";
+            n.source = t;
+            return n;
+        }
+        babelHelpers.inheritsLoose(t, e);
+        return t;
+    })(babelHelpers.wrapNativeSuper(Error));
+    function s(t, n) {
+        if (t instanceof l) {
+            return (t.source?.errors ?? []).some(({ code: r })=>e.cast(r) === n);
+        }
+        return false;
+    }
+    function u(t) {
+        return s(t, e.RATE_LIMIT_EXCEEDED);
+    }
+    function c(t) {
+        return s(t, e.WASS_BOT_NOT_FOUND);
+    }
+    function d(t) {
+        return s(t, e.CONTACT_MANAGER_SUBSCRIPTION_REQUIRED);
+    }
+    function m(e) {
+        const r = e.source?.errors ?? [];
+        return r.map((e)=>`code=${e.code}${e.summary != null ? ` summary=${e.summary}` : ""}${e.description != null ? ` description=${e.description}` : ""}${e.message != null ? ` message=${e.message}` : ""}`).join("; ");
+    }
+    i.GraphQLErrorCode = e;
+    i.GraphQLServerError = l;
+    i.isRateLimitError = u;
+    i.isWassBotNotFoundError = c;
+    i.isContactManagerSubscriptionRequiredError = d;
+    i.formatGraphQLServerError = m;
+}, 66);

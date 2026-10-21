@@ -1,0 +1,28 @@
+__d("WAWebWebcPageResumeWamEvent", [
+    "WAWebWamCodegenUtils"
+], function(t, n, r, o, a, i, l) {
+    const e = o("WAWebWamCodegenUtils").defineEvents({
+        WebcPageResume: [
+            884,
+            {
+                dedupKey: [
+                    2,
+                    o("WAWebWamCodegenUtils").TYPES.INTEGER
+                ],
+                webcResumeCount: [
+                    1,
+                    o("WAWebWamCodegenUtils").TYPES.INTEGER
+                ]
+            },
+            [
+                1,
+                1,
+                1
+            ],
+            "regular"
+        ]
+    }, {
+        WebcPageResume: []
+    });
+    l.WebcPageResumeWamEvent = e;
+}, 98);

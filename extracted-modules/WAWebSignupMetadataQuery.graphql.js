@@ -1,0 +1,92 @@
+__d("WAWebSignupMetadataQuery.graphql", [], function(t, n, r, o, a, i) {
+    "use strict";
+    const e = (()=>{
+        const e = {
+            defaultValue: null,
+            kind: "LocalArgument",
+            name: "phone_number"
+        };
+        const t = {
+            defaultValue: null,
+            kind: "LocalArgument",
+            name: "signup_id"
+        };
+        const n = [
+            {
+                alias: null,
+                args: [
+                    {
+                        kind: "Variable",
+                        name: "phone_number",
+                        variableName: "phone_number"
+                    },
+                    {
+                        kind: "Variable",
+                        name: "signup_id",
+                        variableName: "signup_id"
+                    }
+                ],
+                concreteType: "WhatsAppBusinessSignup",
+                kind: "LinkedField",
+                name: "wa_signup_metadata",
+                plural: false,
+                selections: [
+                    {
+                        alias: null,
+                        args: null,
+                        kind: "ScalarField",
+                        name: "id",
+                        storageKey: null
+                    },
+                    {
+                        alias: null,
+                        args: null,
+                        kind: "ScalarField",
+                        name: "signup_message",
+                        storageKey: null
+                    },
+                    {
+                        alias: null,
+                        args: null,
+                        kind: "ScalarField",
+                        name: "privacy_policy_url",
+                        storageKey: null
+                    }
+                ],
+                storageKey: null
+            }
+        ];
+        return {
+            fragment: {
+                argumentDefinitions: [
+                    e,
+                    t
+                ],
+                kind: "Fragment",
+                metadata: null,
+                name: "WAWebSignupMetadataQuery",
+                selections: n,
+                type: "Query",
+                abstractKey: null
+            },
+            kind: "Request",
+            operation: {
+                argumentDefinitions: [
+                    t,
+                    e
+                ],
+                kind: "Operation",
+                name: "WAWebSignupMetadataQuery",
+                selections: n
+            },
+            params: {
+                id: "28516250088045061",
+                metadata: {},
+                name: "WAWebSignupMetadataQuery",
+                operationKind: "query",
+                text: null
+            }
+        };
+    })();
+    a.exports = e;
+}, null);

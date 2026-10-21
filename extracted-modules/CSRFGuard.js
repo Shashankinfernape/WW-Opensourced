@@ -1,0 +1,17 @@
+__d("CSRFGuard", [], function(t, n, r, o, a, i) {
+    "use strict";
+    const e = "for (;;);";
+    const l = /^for ?\(;;\);/;
+    const e_length = e.length;
+    function u(e) {
+        return !!e.match(l);
+    }
+    function c(e) {
+        const t = e.match(l);
+        return t && e.substr(t[0].length);
+    }
+    i.regex = l;
+    i.length = e_length;
+    i.exists = u;
+    i.clean = c;
+}, 66);

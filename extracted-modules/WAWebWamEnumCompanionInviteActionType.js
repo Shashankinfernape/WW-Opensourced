@@ -1,0 +1,8 @@
+__d("WAWebWamEnumCompanionInviteActionType", [], function(t, n, r, o, a, i) {
+    const e = Object.freeze({
+        IMPRESSION: 0,
+        INVITE_SEND: 1,
+        INVITE_INTENT: 2
+    });
+    i.COMPANION_INVITE_ACTION_TYPE = e;
+}, 66);

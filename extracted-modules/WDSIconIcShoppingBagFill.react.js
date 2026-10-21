@@ -1,0 +1,15 @@
+__d("WDSIconIcShoppingBagFill.react", [
+    "WDSSvgIconHelpers"
+], function(t, n, r, o, a, i, l) {
+    const e = o("WDSSvgIconHelpers").createWDSIcon("ic-shopping-bag-fill", 24, 24, "0 -960 960 960", {
+        fill: "currentColor"
+    }, [
+        [
+            "path",
+            {
+                d: "M240-80q-33 0-56.5-23.5T160-160v-480q0-33 23.5-56.5T240-720h80q0-66 47-113t113-47 113 47 47 113h80q33 0 56.5 23.5T800-640v480q0 33-23.5 56.5T720-80zm160-640h160q0-33-23.5-56.5T480-800t-56.5 23.5T400-720m228.5 188.5Q640-543 640-560v-80h-80v80q0 17 11.5 28.5T600-520t28.5-11.5m-240 0Q400-543 400-560v-80h-80v80q0 17 11.5 28.5T360-520t28.5-11.5"
+            }
+        ]
+    ]);
+    l.default = e;
+}, 98);

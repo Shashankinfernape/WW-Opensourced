@@ -1,0 +1,66 @@
+__d("WAWebMessageEditDecryptedMsgDataConversion", [
+    "WALongInt",
+    "WAWebE2EProtoParser",
+    "WAWebE2EProtoUtils",
+    "WAWebMessageEditBotGroupMetadata",
+    "WAWebMessageEditValidationError",
+    "WAWebMsgKeyUtils",
+    "WAWebMsgType",
+    "WAWebParseProtocolMessageEditProto",
+    "WAWebProcessBaseMsgInfo",
+    "WAWebProtobufsE2E.pb",
+    "WAWebWamEnumE2eFailureReason",
+    "nullthrows"
+], function(t, n, r, o, a, i, l) {
+    function e(e, t, n) {
+        const i = r("nullthrows")(e.protocolMessage, "[MessageEdit] Missing protocol message");
+        if (i.type !== o("WAWebProtobufsE2E.pb").Message$ProtocolMessage$Type.MESSAGE_EDIT) {
+            throw new (o("WAWebMessageEditValidationError")).MessageEditValidationError(o("WAWebMessageEditValidationError").MessageEditValidationErrorCode.INVALID_PROTOCOL_MESSAGE_TYPE, o("WAWebWamEnumE2eFailureReason").E2E_FAILURE_REASON.MESSAGE_SECRET_INVALID);
+        }
+        const l = o("WAWebProcessBaseMsgInfo").msgDataToBaseMsgInfo(t);
+        const s = r("nullthrows")(o("WAWebE2EProtoUtils").translateRegularMessageKeyToLocalReference(i.key, l));
+        const u = i.editedMessage;
+        if (u == null) {
+            throw new (o("WAWebMessageEditValidationError")).MessageEditValidationError(o("WAWebMessageEditValidationError").MessageEditValidationErrorCode.MISSING_EDITED_MESSAGE, o("WAWebWamEnumE2eFailureReason").E2E_FAILURE_REASON.MESSAGE_SECRET_INVALID);
+        }
+        const c = o("WALongInt").maybeNumberOrThrowIfTooLarge(i.timestampMs);
+        const d = r("nullthrows")(r("WAWebParseProtocolMessageEditProto")({
+            messageProtobuf: {
+                protocolMessage: {
+                    additionalPromptIds: [],
+                    editedMessage: u,
+                    key: i.key,
+                    type: i.type,
+                    timestampMs: i.timestampMs
+                },
+                messageContextInfo: {
+                    messageSecret: r("nullthrows")(t.messageSecret ?? n).buffer,
+                    threadId: []
+                }
+            },
+            baseMessage: l,
+            msgContext: "relay"
+        }));
+        const { contextInfo: m, msgData: p } = d;
+        if (m != null) {
+            o("WAWebE2EProtoParser").parseContextInfoProto(p, m, "relay", null);
+        }
+        return babelHelpers.extends({}, p, o("WAWebMsgKeyUtils").msgKeyToTargetInfo(t.id, o("WAWebMsgKeyUtils").TranslateMsgKeyType.Message), {
+            id: t.id,
+            t: Math.floor(r("nullthrows")(c) / 1000),
+            type: o("WAWebMsgType").MSG_TYPE.PROTOCOL,
+            subtype: "message_edit_decrypted",
+            kind: o("WAWebMsgType").MsgKind.MessageEditDecrypted,
+            viewMode: p.viewMode,
+            latestEditSenderTimestampMs: c,
+            latestEditMsgKey: t.id,
+            protocolMessageKey: s,
+            editedMessage: u,
+            editMsgType: p.editMsgType,
+            reportingTokenInfo: t.reportingTokenInfo,
+            isSpoiler: p.isSpoiler === true,
+            botEditType: t.botEditType
+        }, o("WAWebMessageEditBotGroupMetadata").getReceivedEditBotGroupMetadata(t, e, p.mentionedJidList));
+    }
+    l.protobufToMessageEditDecryptedMsgData = e;
+}, 98);

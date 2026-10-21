@@ -1,0 +1,15 @@
+__d("WAWebWamEnumWpbujBenefitType", [], function(t, n, r, o, a, i) {
+    const e = Object.freeze({
+        APP_THEMES: 1,
+        APP_ICONS: 2,
+        RINGTONES: 3,
+        PINNED_CHATS: 4,
+        STICKERS: 5,
+        LISTS: 6,
+        NOT_APPLICABLE: 7,
+        CLOUD_STORAGE: 8,
+        CUSTOM_REACTIONS: 9,
+        FOCUS_LISTS: 10
+    });
+    i.WPBUJ_BENEFIT_TYPE = e;
+}, 66);

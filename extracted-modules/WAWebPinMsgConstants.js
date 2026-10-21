@@ -1,0 +1,66 @@
+__d("WAWebPinMsgConstants", [
+    "$InternalEnum",
+    "WATimeUtils",
+    "err"
+], function(t, n, r, o, a, i, l) {
+    const e = {
+        INVALID: 0,
+        PIN: 1,
+        UNPIN: 2
+    };
+    const s = n("$InternalEnum").Mirrored([
+        "FiveSeconds",
+        "FifteenSeconds",
+        "OneMinute",
+        "OneDay",
+        "SevenDays",
+        "ThirtyDays",
+        "Never"
+    ]);
+    const s_SevenDays = s.SevenDays;
+    const c = "infinite";
+    function d(e) {
+        switch(e){
+            case s.FiveSeconds:
+                return 5;
+            case s.FifteenSeconds:
+                return 15;
+            case s.OneMinute:
+                return o("WATimeUtils").MINUTE_SECONDS;
+            case s.OneDay:
+                return o("WATimeUtils").DAY_SECONDS;
+            case s.SevenDays:
+                return 7 * o("WATimeUtils").DAY_SECONDS;
+            case s.ThirtyDays:
+                return 30 * o("WATimeUtils").DAY_SECONDS;
+            case s.Never:
+                return 0;
+        }
+    }
+    function m(e) {
+        switch(e){
+            case 5:
+                return s.FiveSeconds;
+            case 15:
+                return s.FifteenSeconds;
+            case o("WATimeUtils").MINUTE_SECONDS:
+                return s.OneMinute;
+            case o("WATimeUtils").DAY_SECONDS:
+                return s.OneDay;
+            case 7 * o("WATimeUtils").DAY_SECONDS:
+                return s.SevenDays;
+            case 30 * o("WATimeUtils").DAY_SECONDS:
+                return s.ThirtyDays;
+            case 0:
+                return s.Never;
+            default:
+                throw r("err")("Unexpeded pin expiry duration");
+        }
+    }
+    l.PIN_STATE = e;
+    l.PinExpiryDurationOption = s;
+    l.DEFAULT_PIN_EXPIRY_DURATION_OPTION = s_SevenDays;
+    l.PIN_TIME_REMAINING_INFINITE = c;
+    l.getPinExpiryDuration = d;
+    l.getPinExpiryOption = m;
+}, 98);

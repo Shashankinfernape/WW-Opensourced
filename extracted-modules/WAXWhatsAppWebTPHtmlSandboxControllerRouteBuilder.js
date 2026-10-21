@@ -1,0 +1,6 @@
+__d("WAXWhatsAppWebTPHtmlSandboxControllerRouteBuilder", [
+    "jsRouteBuilder"
+], function(t, n, r, o, a, i, l) {
+    const e = r("jsRouteBuilder")("/html-sandbox/", Object.freeze({}), void 0);
+    l.default = e;
+}, 98);

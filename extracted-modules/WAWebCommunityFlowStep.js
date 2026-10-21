@@ -1,0 +1,26 @@
+__d("WAWebCommunityFlowStep", [
+    "$InternalEnum"
+], function(t, n, r, o, a, i) {
+    const e = n("$InternalEnum").Mirrored([
+        "CommunityTab",
+        "CommunityHome",
+        "NewCommunityFlow",
+        "ManageGroupsFlow",
+        "InviteMembersFlow",
+        "NewGroupFlow",
+        "DeactivateCommunityFlow",
+        "CommunitySettings",
+        "MediaGallery",
+        "StarredMessages",
+        "KeptMessages",
+        "PendingGroups",
+        "Ephemeral",
+        "AllEvents",
+        "AllCommunityEvents",
+        "EventInfo",
+        "TransferOwnershipFlow",
+        "LimitSharing",
+        "Acp2"
+    ]);
+    i.CommunityFlowStep = e;
+}, 66);

@@ -1,0 +1,90 @@
+__d("WAWebBBNuxLogs", [
+    "WAWebBBLoggerTypes"
+], function(t, n, r, o, a, i, l) {
+    "use strict";
+    function e(e, t, n, r) {
+        e({
+            action: o("WAWebBBLoggerTypes").SMB_USER_ACTION_TYPE_ENUM.VIEW,
+            bbTier: r,
+            entryPoint: t,
+            extraAttributes: n,
+            surface: o("WAWebBBLoggerTypes").SURFACE_TYPE.BB_NUX,
+            userActionTarget: o("WAWebBBLoggerTypes").UserActionTarget.TOS_NUX_MODAL
+        });
+    }
+    function s(e, t, n, r) {
+        e({
+            action: o("WAWebBBLoggerTypes").SMB_USER_ACTION_TYPE_ENUM.VIEW,
+            bbTier: r,
+            entryPoint: t,
+            extraAttributes: {
+                direction: n === "TURN_OFF" ? "turn_off" : "turn_on"
+            },
+            surface: o("WAWebBBLoggerTypes").SURFACE_TYPE.BB_NUX,
+            userActionTarget: o("WAWebBBLoggerTypes").UserActionTarget.TOS_NUX_QR
+        });
+    }
+    function u({ bbTier, entryPoint, log }) {
+        log({
+            action: o("WAWebBBLoggerTypes").SMB_USER_ACTION_TYPE_ENUM.CLICK,
+            bbTier,
+            entryPoint,
+            surface: o("WAWebBBLoggerTypes").SURFACE_TYPE.BB_NUX,
+            userActionTarget: o("WAWebBBLoggerTypes").UserActionTarget.TOS_NUX_ACCEPT
+        });
+    }
+    function c(e, t, n, r) {
+        e({
+            action: o("WAWebBBLoggerTypes").SMB_USER_ACTION_TYPE_ENUM.API,
+            bbTier: r,
+            entryPoint: t,
+            extraAttributes: babelHelpers.extends({
+                save_result: "success"
+            }, n),
+            surface: o("WAWebBBLoggerTypes").SURFACE_TYPE.BB_NUX,
+            userActionTarget: o("WAWebBBLoggerTypes").UserActionTarget.TOS_NUX_ACCEPT_SUCCESS
+        });
+    }
+    function d(e, t, n, r, broadcast_jid, i) {
+        e({
+            action: o("WAWebBBLoggerTypes").SMB_USER_ACTION_TYPE_ENUM.API,
+            bbTier: i,
+            entryPoint: t,
+            extraAttributes: babelHelpers.extends({
+                broadcast_jid,
+                error_type: n,
+                save_result: "failure"
+            }, r),
+            surface: o("WAWebBBLoggerTypes").SURFACE_TYPE.BB_NUX,
+            userActionTarget: o("WAWebBBLoggerTypes").UserActionTarget.TOS_NUX_ACCEPT_FAILED
+        });
+    }
+    function m(e, t, n) {
+        e({
+            action: o("WAWebBBLoggerTypes").SMB_USER_ACTION_TYPE_ENUM.CLICK,
+            bbTier: n,
+            entryPoint: t,
+            surface: o("WAWebBBLoggerTypes").SURFACE_TYPE.BB_NUX,
+            userActionTarget: o("WAWebBBLoggerTypes").UserActionTarget.TOS_NUX_DISMISS
+        });
+    }
+    function p(e, t, n, r) {
+        e({
+            action: o("WAWebBBLoggerTypes").SMB_USER_ACTION_TYPE_ENUM.CLICK,
+            bbTier: r,
+            entryPoint: t,
+            extraAttributes: {
+                link_name: n
+            },
+            surface: o("WAWebBBLoggerTypes").SURFACE_TYPE.BB_NUX,
+            userActionTarget: o("WAWebBBLoggerTypes").UserActionTarget.TOS_NUX_LINK
+        });
+    }
+    l.tosNuxViewed = e;
+    l.tosNuxQrViewed = s;
+    l.tosNuxAcceptClicked = u;
+    l.tosNuxAcceptSuccess = c;
+    l.tosNuxAcceptFailed = d;
+    l.tosNuxDismissClicked = m;
+    l.tosNuxLinkClicked = p;
+}, 98);

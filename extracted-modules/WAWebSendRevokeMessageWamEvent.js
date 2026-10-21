@@ -1,0 +1,38 @@
+__d("WAWebSendRevokeMessageWamEvent", [
+    "WAWebWamCodegenUtils",
+    "WAWebWamEnumMediaType",
+    "WAWebWamEnumMessageType"
+], function(t, n, r, o, a, i, l) {
+    const e = o("WAWebWamCodegenUtils").defineEvents({
+        SendRevokeMessage: [
+            1348,
+            {
+                dedupKey: [
+                    4,
+                    o("WAWebWamCodegenUtils").TYPES.INTEGER
+                ],
+                messageMediaType: [
+                    2,
+                    o("WAWebWamEnumMediaType").MEDIA_TYPE
+                ],
+                messageType: [
+                    1,
+                    o("WAWebWamEnumMessageType").MESSAGE_TYPE
+                ],
+                revokeSendDelay: [
+                    3,
+                    o("WAWebWamCodegenUtils").TYPES.INTEGER
+                ]
+            },
+            [
+                1,
+                1,
+                1
+            ],
+            "regular"
+        ]
+    }, {
+        SendRevokeMessage: []
+    });
+    l.SendRevokeMessageWamEvent = e;
+}, 98);

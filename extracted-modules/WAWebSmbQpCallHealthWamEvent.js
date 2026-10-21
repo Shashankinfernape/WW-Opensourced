@@ -1,0 +1,38 @@
+__d("WAWebSmbQpCallHealthWamEvent", [
+    "WAWebWamCodegenUtils",
+    "WAWebWamEnumFetchMechanismEnum",
+    "WAWebWamEnumFetchResultEnum"
+], function(t, n, r, o, a, i, l) {
+    const e = o("WAWebWamCodegenUtils").defineEvents({
+        SmbQpCallHealth: [
+            6746,
+            {
+                dedupKey: [
+                    4,
+                    o("WAWebWamCodegenUtils").TYPES.INTEGER
+                ],
+                fetchExceptionMessage: [
+                    1,
+                    o("WAWebWamCodegenUtils").TYPES.STRING
+                ],
+                fetchMechanism: [
+                    2,
+                    o("WAWebWamEnumFetchMechanismEnum").FETCH_MECHANISM_ENUM
+                ],
+                fetchResult: [
+                    3,
+                    o("WAWebWamEnumFetchResultEnum").FETCH_RESULT_ENUM
+                ]
+            },
+            [
+                1,
+                1,
+                1
+            ],
+            "regular"
+        ]
+    }, {
+        SmbQpCallHealth: []
+    });
+    l.SmbQpCallHealthWamEvent = e;
+}, 98);

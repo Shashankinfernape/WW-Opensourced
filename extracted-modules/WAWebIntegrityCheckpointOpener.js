@@ -1,0 +1,40 @@
+__d("WAWebIntegrityCheckpointOpener", [
+    "WALogger",
+    "WAWebIntegrityChallengeUtils",
+    "WAWebIntegrityPasskeyCheckpointUtils"
+], function(t, n, r, o, a, i, l) {
+    let e;
+    let s;
+    let u;
+    function c(t) {
+        const n = o("WAWebIntegrityChallengeUtils").ChallengeTypes.cast(t.challenge_type);
+        e: {
+            if (n === o("WAWebIntegrityChallengeUtils").ChallengeTypes.PASSKEY) {
+                const r = t.passkey_challenge_base64;
+                if (r == null) {
+                    o("WALogger").ERROR(e || (e = babelHelpers.taggedTemplateLiteralLoose([
+                        "[integrity-challenge] missing passkey challenge data"
+                    ]))).sendLogs("integrity-challenge-missing-passkey-data");
+                    return;
+                }
+                o("WAWebIntegrityPasskeyCheckpointUtils").openPasskeyCheckpoint(r);
+                break e;
+            }
+            if (n === o("WAWebIntegrityChallengeUtils").ChallengeTypes.CAPTCHA) {
+                o("WALogger").LOG(s || (s = babelHelpers.taggedTemplateLiteralLoose([
+                    "[integrity-challenge] captcha checkpoint not yet implemented"
+                ])));
+                break e;
+            }
+            if (n === undefined) {
+                o("WALogger").ERROR(u || (u = babelHelpers.taggedTemplateLiteralLoose([
+                    "[integrity-challenge] unknown challenge type: ",
+                    ""
+                ])), t.challenge_type).sendLogs("integrity-challenge-unknown-type");
+                break e;
+            }
+            throw Error(`Match: No case succesfully matched. Make exhaustive or add a wildcard case using '_'. Argument: ${n}`);
+        }
+    }
+    l.openChallengeModal = c;
+}, 98);

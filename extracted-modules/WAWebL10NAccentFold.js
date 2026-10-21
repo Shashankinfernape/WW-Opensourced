@@ -1,0 +1,8 @@
+__d("WAWebL10NAccentFold", [
+    "WAWebL10NRemoveAccents"
+], function(t, n, r, o, a, i, l) {
+    function e(e = "") {
+        return o("WAWebL10NRemoveAccents").removeAccents(e).toLowerCase();
+    }
+    l.accentFold = e;
+}, 98);

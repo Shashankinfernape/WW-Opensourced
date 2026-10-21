@@ -1,0 +1,175 @@
+__d("WAWebRSAPkcs1v15", [
+    "asyncToGeneratorRuntime",
+    "err"
+], function(t, n, r, o, a, i, l) {
+    function e(e) {
+        for(var t = e.replace(/-/g, "+").replace(/_/g, "/"); t.length % 4;){
+            t += "=";
+        }
+        for(var n = atob(t), r = new Uint8Array(n.length), o = 0; o < n.length; o++){
+            r[o] = n.charCodeAt(o);
+        }
+        return r;
+    }
+    function s(e, t) {
+        for(let n = Math.max(e.length, t.length), r = 0; r < n; r++){
+            const o = r < n - e.length ? 0 : e[r - (n - e.length)];
+            const a = r < n - t.length ? 0 : t[r - (n - t.length)];
+            if (o !== a) {
+                if (o < a) {
+                    return -1;
+                }
+                return 1;
+            }
+        }
+        return 0;
+    }
+    function u(e) {
+        for(let t = 0; t < e.length; t++){
+            if (e[t] !== 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    function c(e) {
+        const t = new Uint8Array(e.length);
+        let n = 0;
+        for(let r = 0; r < e.length; r++){
+            const o = e[r] % 2;
+            t[r] = Math.floor(e[r] / 2) + n * 128;
+            n = o;
+        }
+        return t;
+    }
+    function d(e, t) {
+        for(var n = Math.max(e.length, t.length), r = new Uint8Array(n), o = 0, a = 0; a < n; a++){
+            const i = e.length - 1 - a;
+            const l = t.length - 1 - a;
+            const s = i >= 0 ? e[i] : 0;
+            const u = l >= 0 ? t[l] : 0;
+            const c = s - u - o;
+            if (c < 0) {
+                r[n - 1 - a] = c + 256;
+                o = 1;
+            } else {
+                r[n - 1 - a] = c;
+                o = 0;
+            }
+        }
+        return r;
+    }
+    function m(e, t) {
+        const n = e.length + t.length;
+        const r = new Uint8Array(n);
+        for(let o = e.length - 1; o >= 0; o--){
+            let a = 0;
+            for(let i = t.length - 1; i >= 0; i--){
+                const l = n - 1 - (e.length - 1 - o) - (t.length - 1 - i);
+                const s = e[o] * t[i] + r[l] + a;
+                r[l] = s % 256;
+                a = Math.floor(s / 256);
+            }
+            const u = n - 1 - (e.length - 1 - o) - t.length;
+            if (u >= 0) {
+                r[u] += a;
+            }
+        }
+        return r;
+    }
+    function p(e, t) {
+        for(var n = _(e), r = _(t); s(n, r) >= 0;){
+            const o = n.length - r.length;
+            let a = new Uint8Array(r.length + o);
+            a.set(r, 0);
+            if (s(a, n) > 0) {
+                a = new Uint8Array(r.length + o - 1);
+                a.set(r, 0);
+            }
+            const i = n.length > 1 ? n[0] * 256 + n[1] : n[0] * 256;
+            const l = a[0] + 1;
+            let u = Math.floor(i / l);
+            if (u === 0) {
+                u = 1;
+            }
+            const c = new Uint8Array([
+                Math.floor(u / 256) % 256,
+                u % 256
+            ]);
+            let p = m(_(c), a);
+            for(p = _(p); s(p, n) > 0;){
+                u--;
+                const f = new Uint8Array([
+                    Math.floor(u / 256) % 256,
+                    u % 256
+                ]);
+                p = m(_(f), a);
+                p = _(p);
+            }
+            n = _(d(n, p));
+        }
+        return n;
+    }
+    function _(e) {
+        for(var t = 0; t < e.length - 1 && e[t] === 0;){
+            t++;
+        }
+        if (t === 0) {
+            return e;
+        }
+        return e.slice(t);
+    }
+    function f(e, t, n) {
+        let r = new Uint8Array([
+            1
+        ]);
+        let o = p(e, n);
+        for(let a = new Uint8Array(t); !u(a);){
+            if (a[a.length - 1] % 2) {
+                r = p(m(r, o), n);
+            }
+            a = c(a);
+            o = p(m(o, o), n);
+        }
+        return r;
+    }
+    function g(e, t) {
+        return h.apply(this, arguments);
+    }
+    function h() {
+        h = n("asyncToGeneratorRuntime").asyncToGenerator(function*(t, n) {
+            const o = yield self.crypto.subtle.exportKey("jwk", t);
+            if (o.n == null || o.e == null) {
+                throw r("err")("Invalid RSA public key: missing n or e");
+            }
+            const a = o.e;
+            const i = e(o.n);
+            const l = e(a);
+            const i_length = i.length;
+            const n_length = n.length;
+            if (n_length > i_length - 11) {
+                throw r("err")("Message too long for RSA PKCS1v1.5 encryption");
+            }
+            const c = i_length - n_length - 3;
+            const d = new Uint8Array(c);
+            self.crypto.getRandomValues(d);
+            for(let m = 0; m < c; m++){
+                while(d[m] === 0){
+                    d[m] = self.crypto.getRandomValues(new Uint8Array(1))[0];
+                }
+            }
+            const p = new Uint8Array(i_length);
+            p[0] = 0;
+            p[1] = 2;
+            p.set(d, 2);
+            p[2 + c] = 0;
+            p.set(n, 3 + c);
+            const _ = f(p, l, i);
+            const g = new Uint8Array(i_length);
+            g.set(_, i_length - _.length);
+            return g;
+        });
+        return h.apply(this, arguments);
+    }
+    l.rsaPkcs1v15Encrypt = g;
+}, 98);

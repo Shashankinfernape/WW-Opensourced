@@ -1,0 +1,24 @@
+__d("WAWebBotSourcesDrawerLoadable", [
+    "JSResourceForInteraction",
+    "WAWebLazyLoadedRetriable",
+    "WAWebLoadingDrawer.react",
+    "asyncToGeneratorRuntime",
+    "react",
+    "react-loadable"
+], function(t, n, r, o, a, i, l) {
+    let e;
+    const s = e || (e = o("react"));
+    const u = r("WAWebLazyLoadedRetriable")(n("asyncToGeneratorRuntime").asyncToGenerator(function*() {
+        const e = yield r("JSResourceForInteraction")("WAWebBotSourcesDrawer.react").__setRef("WAWebBotSourcesDrawerLoadable").load();
+        return e;
+    }), "WAWebBotSourcesDrawer");
+    const c = r("react-loadable")({
+        loader: u,
+        loading: function(t) {
+            return s.jsx(r("WAWebLoadingDrawer.react"), {
+                error: !!t.error
+            });
+        }
+    });
+    l.WAWebBotSourcesDrawerLoadable = c;
+}, 98);

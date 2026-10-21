@@ -1,0 +1,35 @@
+__d("WAWebFileSaverTypes", [
+    "$InternalEnum"
+], function(t, n, r, o, a, i) {
+    const e = n("$InternalEnum")({
+        CSV: ".csv",
+        DOC: ".doc",
+        DOCX: ".docx",
+        HTML: ".html",
+        JPG: ".jpg",
+        JSON: ".json",
+        M4A: ".m4a",
+        MD: ".md",
+        MP3: ".mp3",
+        MP4: ".mp4",
+        OGG: ".ogg",
+        PDF: ".pdf",
+        PNG: ".png",
+        PPT: ".ppt",
+        PPTX: ".pptx",
+        THREE_GP: ".3gp",
+        TIF: ".tif",
+        TIFF: ".tiff",
+        TOML: ".toml",
+        TSV: ".tsv",
+        TXT: ".txt",
+        WAV: ".wav",
+        WEBP: ".webp",
+        XLS: ".xls",
+        XLSX: ".xlsx",
+        YAML: ".yaml",
+        YML: ".yml",
+        ZIP: ".zip"
+    });
+    i.AllowedFileExtensions = e;
+}, 66);

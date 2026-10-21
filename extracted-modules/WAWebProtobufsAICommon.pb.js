@@ -1,0 +1,2033 @@
+__d("WAWebProtobufsAICommon.pb", [
+    "$InternalEnum",
+    "WAProtoConst",
+    "WAWebProtobufsProtocol.pb"
+], function(t, n, r, o, a, i, l) {
+    let e;
+    let s;
+    let u;
+    const c = (u = n("$InternalEnum"))({
+        UNKNOWN_PLUGIN: 0,
+        REELS: 1,
+        SEARCH: 2
+    });
+    const d = u({
+        UNKNOWN: 0,
+        BING: 1,
+        GOOGLE: 2,
+        SUPPORT: 3
+    });
+    const m = u({
+        BOT_LINKED_ACCOUNT_TYPE_1P: 0
+    });
+    const p = u({
+        UNSPECIFIED: 0,
+        WA_BOT_MSG: 1,
+        WA_TEE_BOT_MSG: 2,
+        P2P_PILLS: 3,
+        WA_WAFFLE: 4,
+        WA_FEATURE_PKI: 5
+    });
+    const _ = u({
+        UNKNOWN_TYPE: 0,
+        C50: 1,
+        SURVEY_PLATFORM: 2
+    });
+    const f = u({
+        UNDEFINED_ENTRY_POINT: 0,
+        FAVICON: 1,
+        CHATLIST: 2,
+        AISEARCH_NULL_STATE_PAPER_PLANE: 3,
+        AISEARCH_NULL_STATE_SUGGESTION: 4,
+        AISEARCH_TYPE_AHEAD_SUGGESTION: 5,
+        AISEARCH_TYPE_AHEAD_PAPER_PLANE: 6,
+        AISEARCH_TYPE_AHEAD_RESULT_CHATLIST: 7,
+        AISEARCH_TYPE_AHEAD_RESULT_MESSAGES: 8,
+        AIVOICE_SEARCH_BAR: 9,
+        AIVOICE_FAVICON: 10,
+        AISTUDIO: 11,
+        DEEPLINK: 12,
+        NOTIFICATION: 13,
+        PROFILE_MESSAGE_BUTTON: 14,
+        FORWARD: 15,
+        APP_SHORTCUT: 16,
+        FF_FAMILY: 17,
+        AI_TAB: 18,
+        AI_HOME: 19,
+        AI_DEEPLINK_IMMERSIVE: 20,
+        AI_DEEPLINK: 21,
+        META_AI_CHAT_SHORTCUT_AI_STUDIO: 22,
+        UGC_CHAT_SHORTCUT_AI_STUDIO: 23,
+        NEW_CHAT_AI_STUDIO: 24,
+        AIVOICE_FAVICON_CALL_HISTORY: 25,
+        ASK_META_AI_CONTEXT_MENU: 26,
+        ASK_META_AI_CONTEXT_MENU_1ON1: 27,
+        ASK_META_AI_CONTEXT_MENU_GROUP: 28,
+        INVOKE_META_AI_1ON1: 29,
+        INVOKE_META_AI_GROUP: 30,
+        META_AI_FORWARD: 31,
+        NEW_CHAT_AI_CONTACT: 32,
+        MESSAGE_QUICK_ACTION_1_ON_1_CHAT: 33,
+        MESSAGE_QUICK_ACTION_GROUP_CHAT: 34,
+        ATTACHMENT_TRAY_1_ON_1_CHAT: 35,
+        ATTACHMENT_TRAY_GROUP_CHAT: 36,
+        ASK_META_AI_MEDIA_VIEWER_1ON1: 37,
+        ASK_META_AI_MEDIA_VIEWER_GROUP: 38,
+        MEDIA_PICKER_1_ON_1_CHAT: 39,
+        MEDIA_PICKER_GROUP_CHAT: 40,
+        ASK_META_AI_NO_SEARCH_RESULTS: 41,
+        META_AI_SETTINGS: 45,
+        WEB_INTRO_PANEL: 46,
+        WEB_NAVIGATION_BAR: 47,
+        GROUP_MEMBER: 54,
+        CHATLIST_SEARCH: 55,
+        NEW_CHAT_LIST: 56,
+        CONTACTS_TAB: 57,
+        NEW_3P_AGENT_CREATION: 58,
+        SHARE: 59
+    });
+    const g = u({
+        AI_TAB_THREAD: 1,
+        AI_HOME_THREAD: 2,
+        AI_DEEPLINK_IMMERSIVE_THREAD: 3,
+        AI_DEEPLINK_THREAD: 4,
+        ASK_META_AI_CONTEXT_MENU_THREAD: 5
+    });
+    const h = u({
+        NONE: 0,
+        NULL_STATE: 1,
+        TYPEAHEAD: 2,
+        USER_INPUT: 3,
+        EMU_FLASH: 4,
+        EMU_FLASH_FOLLOWUP: 5,
+        VOICE: 6,
+        AI_HOME_SESSION: 7
+    });
+    const y = u({
+        CENTER: 1,
+        LEFT: 2,
+        RIGHT: 3
+    });
+    const C = u({
+        ONCE: 1,
+        DAILY: 2,
+        WEEKLY: 3,
+        BIWEEKLY: 4,
+        MONTHLY: 5
+    });
+    const b = u({
+        NOTIFY: 1,
+        CREATE: 2,
+        DELETE: 3,
+        UPDATE: 4
+    });
+    const v = u({
+        UNKNOWN_STATUS: 0,
+        AVAILABLE: 1,
+        QUOTA_EXCEED_LIMIT: 2
+    });
+    const S = u({
+        UNKNOWN_TYPE: 0,
+        LLAMA_PROD: 1,
+        LLAMA_PROD_PREMIUM: 2
+    });
+    const R = u({
+        UNKNOWN: 0,
+        OTHER: 1,
+        GOOGLE: 2,
+        BING: 3
+    });
+    const L = u({
+        UNKNOWN_PROVIDER: 0,
+        OTHER: 1,
+        GOOGLE: 2,
+        BING: 3
+    });
+    const E = u({
+        UNKNOWN: 0,
+        PLANNED: 1,
+        EXECUTING: 2,
+        FINISHED: 3
+    });
+    const k = u({
+        UNKNOWN: 0,
+        PROGRESS_INDICATOR: 1,
+        RICH_RESPONSE_HEADING: 2,
+        RICH_RESPONSE_NESTED_LIST: 3,
+        AI_MEMORY: 4,
+        RICH_RESPONSE_THREAD_SURFING: 5,
+        RICH_RESPONSE_TABLE: 6,
+        RICH_RESPONSE_CODE: 7,
+        RICH_RESPONSE_STRUCTURED_RESPONSE: 8,
+        RICH_RESPONSE_INLINE_IMAGE: 9,
+        WA_IG_1P_PLUGIN_RANKING_CONTROL: 10,
+        WA_IG_1P_PLUGIN_RANKING_UPDATE_1: 11,
+        WA_IG_1P_PLUGIN_RANKING_UPDATE_2: 12,
+        WA_IG_1P_PLUGIN_RANKING_UPDATE_3: 13,
+        WA_IG_1P_PLUGIN_RANKING_UPDATE_4: 14,
+        WA_IG_1P_PLUGIN_RANKING_UPDATE_5: 15,
+        WA_IG_1P_PLUGIN_RANKING_UPDATE_6: 16,
+        WA_IG_1P_PLUGIN_RANKING_UPDATE_7: 17,
+        WA_IG_1P_PLUGIN_RANKING_UPDATE_8: 18,
+        WA_IG_1P_PLUGIN_RANKING_UPDATE_9: 19,
+        WA_IG_1P_PLUGIN_RANKING_UPDATE_10: 20,
+        RICH_RESPONSE_SUB_HEADING: 21,
+        RICH_RESPONSE_GRID_IMAGE: 22,
+        AI_STUDIO_UGC_MEMORY: 23,
+        RICH_RESPONSE_LATEX: 24,
+        RICH_RESPONSE_MAPS: 25,
+        RICH_RESPONSE_INLINE_REELS: 26,
+        AGENTIC_PLANNING: 27,
+        ACCOUNT_LINKING: 28,
+        STREAMING_DISAGGREGATION: 29,
+        RICH_RESPONSE_GRID_IMAGE_3P: 30,
+        RICH_RESPONSE_LATEX_INLINE: 31,
+        QUERY_PLAN: 32,
+        PROACTIVE_MESSAGE: 33,
+        RICH_RESPONSE_UNIFIED_RESPONSE: 34,
+        PROMOTION_MESSAGE: 35,
+        SIMPLIFIED_PROFILE_PAGE: 36,
+        RICH_RESPONSE_SOURCES_IN_MESSAGE: 37,
+        RICH_RESPONSE_SIDE_BY_SIDE_SURVEY: 38,
+        RICH_RESPONSE_UNIFIED_TEXT_COMPONENT: 39,
+        AI_SHARED_MEMORY: 40,
+        RICH_RESPONSE_UNIFIED_SOURCES: 41,
+        RICH_RESPONSE_UNIFIED_DOMAIN_CITATIONS: 42,
+        RICH_RESPONSE_UR_INLINE_REELS_ENABLED: 43,
+        RICH_RESPONSE_UR_MEDIA_GRID_ENABLED: 44,
+        RICH_RESPONSE_UR_TIMESTAMP_PLACEHOLDER: 45,
+        RICH_RESPONSE_IN_APP_SURVEY: 46,
+        AI_RESPONSE_MODEL_BRANDING: 47,
+        SESSION_TRANSPARENCY_SYSTEM_MESSAGE: 48,
+        RICH_RESPONSE_UR_REASONING: 49,
+        RICH_RESPONSE_UR_ZEITGEIST_CITATIONS: 50,
+        RICH_RESPONSE_UR_ZEITGEIST_CAROUSEL: 51,
+        AI_IMAGINE_LOADING_INDICATOR: 52,
+        RICH_RESPONSE_UR_IMAGINE: 53,
+        AI_IMAGINE_UR_TO_NATIVE_LOADING_INDICATOR: 54,
+        RICH_RESPONSE_UR_BLOKS_ENABLED: 55,
+        RICH_RESPONSE_INLINE_LINKS_ENABLED: 56,
+        RICH_RESPONSE_UR_IMAGINE_VIDEO: 57,
+        JSON_PATCH_STREAMING: 58,
+        AI_TAB_FORCE_CLIPPY: 59,
+        UNIFIED_RESPONSE_EMBEDDED_SCREENS: 60,
+        AI_SUBSCRIPTION_ENABLED: 61,
+        UNIFIED_RESPONSE_AI_CONTENT_SEARCH_ENABLED: 62,
+        UNIFIED_RESPONSE_MARKDOWN_LINKS_ENABLED: 63,
+        AI_RICH_RESPONSE_MAPS_V2_ENABLED: 64,
+        AI_SUBSCRIPTION_METERING_ENABLED: 65,
+        RICH_RESPONSE_SPORTS_WIDGET_ENABLED: 66,
+        AI_RICH_RESPONSE_ARTIFACTS_ENABLED: 67,
+        AI_RICH_RESPONSE_EMAIL_CALENDAR_ENABLED: 68,
+        AI_RICH_RESPONSE_REMINDERS_ENABLED: 69,
+        AI_STOP_GENERATION_ENABLED: 70,
+        AI_RICH_RESPONSE_3P_LINKING_CARD_ENABLED: 71,
+        HATCH_NOTIFICATION_METADATA_EVENT_ENABLED: 72,
+        AI_SUGGESTED_REPLIES_ENABLED: 73,
+        RICH_RESPONSE_IN_APP_SURVEY_BLOKS: 74,
+        RICH_RESPONSE_IMAGE_SOURCE_ATTRIBUTION: 75,
+        HATCH_CONNECTOR_ACTION_CARD_ENABLED: 76,
+        HATCH_SECURE_CREDENTIAL_CARD_ENABLED: 77,
+        HATCH_BROWSER_TASK_CARD_ENABLED: 78,
+        HATCH_ARTIFACT_CARD_ENABLED: 79,
+        AI_STUDY_CENTER_ENABLED: 80,
+        AI_MUSE_JARVIS_SCHEMA_ENABLED: 81,
+        AI_STUDY_QUIZ_ENABLED: 82
+    });
+    const I = u({
+        DEFAULT_MODE: 0,
+        THINK_HARD_MODE: 1
+    });
+    const T = u({
+        UNKNOWN_FEATURE: 0,
+        REASONING_FEATURE: 1
+    });
+    const D = u({
+        UNKNOWN: 0,
+        IMAGINE: 1,
+        MEMU: 2,
+        FLASH: 3,
+        EDIT: 4
+    });
+    const x = u({
+        O18_BINARY: 0,
+        WAFFLE: 1
+    });
+    const $ = u({
+        UNKNOWN: 0,
+        BING: 1,
+        GOOGLE: 2,
+        SUPPORT: 3,
+        OTHER: 4
+    });
+    const P = u({
+        BOT_MESSAGE_ORIGIN_TYPE_AI_INITIATED: 0,
+        BOT_MESSAGE_ORIGIN_TYPE_META_AI_THREAD_WELCOME: 1
+    });
+    const N = u({
+        UNKNOWN: 0,
+        DEFAULT: 1,
+        INCOGNITO: 2,
+        SIDE_CHAT: 3,
+        PRIVATE_SEARCH_CHAT: 4
+    });
+    const M = u({
+        UNSPECIFIED: 0,
+        THINK_HARD: 1,
+        IMAGE_GEN: 2,
+        VIDEO_GEN: 3
+    });
+    const w = u({
+        NONE: 0,
+        GENERIC: 1
+    });
+    const A = u({
+        BOT_FEEDBACK_MULTIPLE_POSITIVE_GENERIC: 1
+    });
+    const F = u({
+        BOT_FEEDBACK_MULTIPLE_NEGATIVE_GENERIC: 1,
+        BOT_FEEDBACK_MULTIPLE_NEGATIVE_HELPFUL: 2,
+        BOT_FEEDBACK_MULTIPLE_NEGATIVE_INTERESTING: 4,
+        BOT_FEEDBACK_MULTIPLE_NEGATIVE_ACCURATE: 8,
+        BOT_FEEDBACK_MULTIPLE_NEGATIVE_SAFE: 16,
+        BOT_FEEDBACK_MULTIPLE_NEGATIVE_OTHER: 32,
+        BOT_FEEDBACK_MULTIPLE_NEGATIVE_REFUSED: 64,
+        BOT_FEEDBACK_MULTIPLE_NEGATIVE_NOT_VISUALLY_APPEALING: 128,
+        BOT_FEEDBACK_MULTIPLE_NEGATIVE_NOT_RELEVANT_TO_TEXT: 256
+    });
+    const O = u({
+        BOT_FEEDBACK_POSITIVE: 0,
+        BOT_FEEDBACK_NEGATIVE_GENERIC: 1,
+        BOT_FEEDBACK_NEGATIVE_HELPFUL: 2,
+        BOT_FEEDBACK_NEGATIVE_INTERESTING: 3,
+        BOT_FEEDBACK_NEGATIVE_ACCURATE: 4,
+        BOT_FEEDBACK_NEGATIVE_SAFE: 5,
+        BOT_FEEDBACK_NEGATIVE_OTHER: 6,
+        BOT_FEEDBACK_NEGATIVE_REFUSED: 7,
+        BOT_FEEDBACK_NEGATIVE_NOT_VISUALLY_APPEALING: 8,
+        BOT_FEEDBACK_NEGATIVE_NOT_RELEVANT_TO_TEXT: 9,
+        BOT_FEEDBACK_NEGATIVE_PERSONALIZED: 10,
+        BOT_FEEDBACK_NEGATIVE_CLARITY: 11,
+        BOT_FEEDBACK_NEGATIVE_DOESNT_LOOK_LIKE_THE_PERSON: 12,
+        BOT_FEEDBACK_NEGATIVE_HALLUCINATION_INTERNAL_ONLY: 13,
+        BOT_FEEDBACK_NEGATIVE: 14
+    });
+    const B = u({
+        TEXT_EXTRACTION: 0,
+        OCR_AND_IMAGES: 1
+    });
+    const W = u({
+        PROMPT: 0,
+        CREATE_IMAGE: 1,
+        ANIMATE_PHOTO: 2,
+        ANALYZE_FILE: 3,
+        COLLABORATE: 4,
+        OPEN_GREETING_CARD: 5
+    });
+    const q = u({
+        UNKNOWN_TYPE: 0,
+        NY_AI_SAFETY_DISCLAIMER: 1
+    });
+    const U = u({
+        AAPI: 0,
+        CLIPPY: 1
+    });
+    const V = u({
+        UNSPECIFIED: 0,
+        AGENT_CHAT_READY: 1
+    });
+    const H = {};
+    const G = {};
+    const z = {};
+    const j = {};
+    const K = {};
+    const Q = {};
+    const X = {};
+    const Y = {};
+    const J = {};
+    const Z = {};
+    const ee = {};
+    const te = {};
+    const ne = {};
+    const re = {};
+    const oe = {};
+    const ae = {};
+    const ie = {};
+    const le = {};
+    const se = {};
+    const ue = {};
+    const ce = {};
+    const de = {};
+    const me = {};
+    const pe = {};
+    const _e = {};
+    const fe = {};
+    const ge = {};
+    const he = {};
+    const ye = {};
+    const Ce = {};
+    const be = {};
+    const ve = {};
+    const Se = {};
+    const Re = {};
+    const Le = {};
+    const Ee = {};
+    const ke = {};
+    const Ie = {};
+    const Te = {};
+    const De = {};
+    const xe = {};
+    const $e = {};
+    const Pe = {};
+    const Ne = {};
+    const Me = {};
+    const we = {};
+    const Ae = {};
+    const Fe = {};
+    const Oe = {};
+    const Be = {};
+    const We = {};
+    const qe = {};
+    const Ue = {};
+    const Ve = {};
+    const He = {};
+    const Ge = {};
+    const ze = {};
+    const je = {};
+    const Ke = {};
+    const Qe = {};
+    const Xe = {};
+    const Ye = {};
+    const Je = {};
+    const Ze = {};
+    const et = {};
+    const tt = {};
+    const nt = {};
+    const rt = {};
+    const ot = {};
+    const at = {};
+    const it = {};
+    const lt = {};
+    const st = {};
+    const ut = {};
+    const ct = {};
+    const dt = {};
+    const mt = {};
+    const pt = {};
+    const _t = {};
+    const ft = {};
+    const gt = {};
+    const ht = {};
+    const yt = {};
+    H.name = "BotPluginMetadata";
+    H.internalSpec = {
+        provider: [
+            1,
+            (e = o("WAProtoConst")).TYPES.ENUM,
+            d
+        ],
+        pluginType: [
+            2,
+            e.TYPES.ENUM,
+            c
+        ],
+        thumbnailCdnUrl: [
+            3,
+            e.TYPES.STRING
+        ],
+        profilePhotoCdnUrl: [
+            4,
+            e.TYPES.STRING
+        ],
+        searchProviderUrl: [
+            5,
+            e.TYPES.STRING
+        ],
+        referenceIndex: [
+            6,
+            e.TYPES.UINT32
+        ],
+        expectedLinksCount: [
+            7,
+            e.TYPES.UINT32
+        ],
+        searchQuery: [
+            9,
+            e.TYPES.STRING
+        ],
+        parentPluginMessageKey: [
+            10,
+            e.TYPES.MESSAGE,
+            (s = o("WAWebProtobufsProtocol.pb")).MessageKeySpec
+        ],
+        deprecatedField: [
+            11,
+            e.TYPES.ENUM,
+            c
+        ],
+        parentPluginType: [
+            12,
+            e.TYPES.ENUM,
+            c
+        ],
+        faviconCdnUrl: [
+            13,
+            e.TYPES.STRING
+        ]
+    };
+    G.name = "BotSuggestedPromptMetadata";
+    G.internalSpec = {
+        suggestedPrompts: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.STRING
+        ],
+        selectedPromptIndex: [
+            2,
+            e.TYPES.UINT32
+        ],
+        promptSuggestions: [
+            3,
+            e.TYPES.MESSAGE,
+            z
+        ],
+        selectedPromptId: [
+            4,
+            e.TYPES.STRING
+        ]
+    };
+    z.name = "BotPromptSuggestions";
+    z.internalSpec = {
+        suggestions: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            j
+        ]
+    };
+    j.name = "BotPromptSuggestion";
+    j.internalSpec = {
+        prompt: [
+            1,
+            e.TYPES.STRING
+        ],
+        promptId: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    K.name = "BotLinkedAccountsMetadata";
+    K.internalSpec = {
+        accounts: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Q
+        ],
+        acAuthTokens: [
+            2,
+            e.TYPES.BYTES
+        ],
+        acErrorCode: [
+            3,
+            e.TYPES.INT32
+        ]
+    };
+    Q.name = "BotLinkedAccount";
+    Q.internalSpec = {
+        type: [
+            1,
+            e.TYPES.ENUM,
+            m
+        ]
+    };
+    X.name = "BotMemoryMetadata";
+    X.internalSpec = {
+        addedFacts: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Y
+        ],
+        removedFacts: [
+            2,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Y
+        ],
+        disclaimer: [
+            3,
+            e.TYPES.STRING
+        ]
+    };
+    Y.name = "BotMemoryFact";
+    Y.internalSpec = {
+        fact: [
+            1,
+            e.TYPES.STRING
+        ],
+        factId: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    J.name = "BotSignatureVerificationMetadata";
+    J.internalSpec = {
+        proofs: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Z
+        ]
+    };
+    Z.name = "BotSignatureVerificationUseCaseProof";
+    Z.internalSpec = {
+        version: [
+            1,
+            e.TYPES.INT32
+        ],
+        useCase: [
+            2,
+            e.TYPES.ENUM,
+            p
+        ],
+        signature: [
+            3,
+            e.TYPES.BYTES
+        ],
+        certificateChain: [
+            4,
+            e.FLAGS.REPEATED | e.TYPES.BYTES
+        ],
+        certificateChainSki: [
+            5,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            ee
+        ]
+    };
+    ee.name = "BotSignatureVerificationUseCaseProof$CertificateSKI";
+    ee.internalSpec = {
+        useCase: [
+            1,
+            e.TYPES.ENUM,
+            p
+        ],
+        ski: [
+            2,
+            e.TYPES.BYTES
+        ]
+    };
+    te.name = "BotPromotionMessageMetadata";
+    te.internalSpec = {
+        promotionType: [
+            1,
+            e.TYPES.ENUM,
+            _
+        ],
+        buttonTitle: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    ne.name = "BotRenderingMetadata";
+    ne.internalSpec = {
+        keywords: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            re
+        ]
+    };
+    re.name = "BotRenderingMetadata$Keyword";
+    re.internalSpec = {
+        value: [
+            1,
+            e.TYPES.STRING
+        ],
+        associatedPrompts: [
+            2,
+            e.FLAGS.REPEATED | e.TYPES.STRING
+        ]
+    };
+    oe.name = "BotMetricsMetadata";
+    oe.internalSpec = {
+        destinationId: [
+            1,
+            e.TYPES.STRING
+        ],
+        destinationEntryPoint: [
+            2,
+            e.TYPES.ENUM,
+            f
+        ],
+        threadOrigin: [
+            3,
+            e.TYPES.ENUM,
+            g
+        ]
+    };
+    ae.name = "BotSessionMetadata";
+    ae.internalSpec = {
+        sessionId: [
+            1,
+            e.TYPES.STRING
+        ],
+        sessionSource: [
+            2,
+            e.TYPES.ENUM,
+            h
+        ]
+    };
+    ie.name = "BotMediaMetadata";
+    ie.internalSpec = {
+        fileSha256: [
+            1,
+            e.TYPES.STRING
+        ],
+        mediaKey: [
+            2,
+            e.TYPES.STRING
+        ],
+        fileEncSha256: [
+            3,
+            e.TYPES.STRING
+        ],
+        directPath: [
+            4,
+            e.TYPES.STRING
+        ],
+        mediaKeyTimestamp: [
+            5,
+            e.TYPES.INT64
+        ],
+        mimetype: [
+            6,
+            e.TYPES.STRING
+        ],
+        orientationType: [
+            7,
+            e.TYPES.ENUM,
+            y
+        ]
+    };
+    le.name = "BotMemuMetadata";
+    le.internalSpec = {
+        faceImages: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            ie
+        ]
+    };
+    se.name = "BotReminderMetadata";
+    se.internalSpec = {
+        requestMessageKey: [
+            1,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ],
+        action: [
+            2,
+            e.TYPES.ENUM,
+            b
+        ],
+        name: [
+            3,
+            e.TYPES.STRING
+        ],
+        nextTriggerTimestamp: [
+            4,
+            e.TYPES.UINT64
+        ],
+        frequency: [
+            5,
+            e.TYPES.ENUM,
+            C
+        ]
+    };
+    ue.name = "BotModelMetadata";
+    ue.internalSpec = {
+        modelType: [
+            1,
+            e.TYPES.ENUM,
+            S
+        ],
+        premiumModelStatus: [
+            2,
+            e.TYPES.ENUM,
+            v
+        ],
+        modelNameOverride: [
+            3,
+            e.TYPES.STRING
+        ]
+    };
+    ce.name = "BotProgressIndicatorMetadata";
+    ce.internalSpec = {
+        progressDescription: [
+            1,
+            e.TYPES.STRING
+        ],
+        stepsMetadata: [
+            2,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            de
+        ],
+        estimatedCompletionTime: [
+            3,
+            e.TYPES.INT64
+        ]
+    };
+    de.name = "BotProgressIndicatorMetadata$BotPlanningStepMetadata";
+    de.internalSpec = {
+        statusTitle: [
+            1,
+            e.TYPES.STRING
+        ],
+        statusBody: [
+            2,
+            e.TYPES.STRING
+        ],
+        sourcesMetadata: [
+            3,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            _e
+        ],
+        status: [
+            4,
+            e.TYPES.ENUM,
+            E
+        ],
+        isReasoning: [
+            5,
+            e.TYPES.BOOL
+        ],
+        isEnhancedSearch: [
+            6,
+            e.TYPES.BOOL
+        ],
+        sections: [
+            7,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            me
+        ]
+    };
+    me.name = "BotProgressIndicatorMetadata$BotPlanningStepMetadata$BotPlanningStepSectionMetadata";
+    me.internalSpec = {
+        sectionTitle: [
+            1,
+            e.TYPES.STRING
+        ],
+        sectionBody: [
+            2,
+            e.TYPES.STRING
+        ],
+        sourcesMetadata: [
+            3,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            pe
+        ]
+    };
+    pe.name = "BotProgressIndicatorMetadata$BotPlanningStepMetadata$BotPlanningSearchSourceMetadata";
+    pe.internalSpec = {
+        title: [
+            1,
+            e.TYPES.STRING
+        ],
+        provider: [
+            2,
+            e.TYPES.ENUM,
+            L
+        ],
+        sourceUrl: [
+            3,
+            e.TYPES.STRING
+        ],
+        favIconUrl: [
+            4,
+            e.TYPES.STRING
+        ]
+    };
+    _e.name = "BotProgressIndicatorMetadata$BotPlanningStepMetadata$BotPlanningSearchSourcesMetadata";
+    _e.internalSpec = {
+        sourceTitle: [
+            1,
+            e.TYPES.STRING
+        ],
+        provider: [
+            2,
+            e.TYPES.ENUM,
+            R
+        ],
+        sourceUrl: [
+            3,
+            e.TYPES.STRING
+        ]
+    };
+    fe.name = "BotCapabilityMetadata";
+    fe.internalSpec = {
+        capabilities: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.ENUM,
+            k
+        ]
+    };
+    ge.name = "BotModeSelectionMetadata";
+    ge.internalSpec = {
+        mode: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.ENUM,
+            I
+        ],
+        overrideMode: [
+            2,
+            e.FLAGS.REPEATED | e.TYPES.UINT32
+        ]
+    };
+    he.name = "BotQuotaMetadata";
+    he.internalSpec = {
+        botFeatureQuotaMetadata: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            ye
+        ]
+    };
+    ye.name = "BotQuotaMetadata$BotFeatureQuotaMetadata";
+    ye.internalSpec = {
+        featureType: [
+            1,
+            e.TYPES.ENUM,
+            T
+        ],
+        remainingQuota: [
+            2,
+            e.TYPES.UINT32
+        ],
+        expirationTimestamp: [
+            3,
+            e.TYPES.UINT64
+        ]
+    };
+    Ce.name = "BotImagineMetadata";
+    Ce.internalSpec = {
+        imagineType: [
+            1,
+            e.TYPES.ENUM,
+            D
+        ],
+        shortPrompt: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    be.name = "BotAgeCollectionMetadata";
+    be.internalSpec = {
+        ageCollectionEligible: [
+            1,
+            e.TYPES.BOOL
+        ],
+        shouldTriggerAgeCollectionOnClient: [
+            2,
+            e.TYPES.BOOL
+        ],
+        ageCollectionType: [
+            3,
+            e.TYPES.ENUM,
+            x
+        ]
+    };
+    ve.name = "BotSourcesMetadata";
+    ve.internalSpec = {
+        sources: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Se
+        ]
+    };
+    Se.name = "BotSourcesMetadata$BotSourceItem";
+    Se.internalSpec = {
+        provider: [
+            1,
+            e.TYPES.ENUM,
+            $
+        ],
+        thumbnailCdnUrl: [
+            2,
+            e.TYPES.STRING
+        ],
+        sourceProviderUrl: [
+            3,
+            e.TYPES.STRING
+        ],
+        sourceQuery: [
+            4,
+            e.TYPES.STRING
+        ],
+        faviconCdnUrl: [
+            5,
+            e.TYPES.STRING
+        ],
+        citationNumber: [
+            6,
+            e.TYPES.UINT32
+        ],
+        sourceTitle: [
+            7,
+            e.TYPES.STRING
+        ]
+    };
+    Re.name = "InThreadSurveyMetadata";
+    Re.internalSpec = {
+        tessaSessionId: [
+            1,
+            e.TYPES.STRING
+        ],
+        simonSessionId: [
+            2,
+            e.TYPES.STRING
+        ],
+        simonSurveyId: [
+            3,
+            e.TYPES.STRING
+        ],
+        tessaRootId: [
+            4,
+            e.TYPES.STRING
+        ],
+        requestId: [
+            5,
+            e.TYPES.STRING
+        ],
+        tessaEvent: [
+            6,
+            e.TYPES.STRING
+        ],
+        invitationHeaderText: [
+            7,
+            e.TYPES.STRING
+        ],
+        invitationBodyText: [
+            8,
+            e.TYPES.STRING
+        ],
+        invitationCtaText: [
+            9,
+            e.TYPES.STRING
+        ],
+        invitationCtaUrl: [
+            10,
+            e.TYPES.STRING
+        ],
+        surveyTitle: [
+            11,
+            e.TYPES.STRING
+        ],
+        questions: [
+            12,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            ke
+        ],
+        surveyContinueButtonText: [
+            13,
+            e.TYPES.STRING
+        ],
+        surveySubmitButtonText: [
+            14,
+            e.TYPES.STRING
+        ],
+        privacyStatementFull: [
+            15,
+            e.TYPES.STRING
+        ],
+        privacyStatementParts: [
+            16,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Le
+        ],
+        feedbackToastText: [
+            17,
+            e.TYPES.STRING
+        ],
+        startQuestionIndex: [
+            18,
+            e.TYPES.INT32
+        ]
+    };
+    Le.name = "InThreadSurveyMetadata$InThreadSurveyPrivacyStatementPart";
+    Le.internalSpec = {
+        text: [
+            1,
+            e.TYPES.STRING
+        ],
+        url: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    Ee.name = "InThreadSurveyMetadata$InThreadSurveyOption";
+    Ee.internalSpec = {
+        stringValue: [
+            1,
+            e.TYPES.STRING
+        ],
+        numericValue: [
+            2,
+            e.TYPES.UINT32
+        ],
+        textTranslated: [
+            3,
+            e.TYPES.STRING
+        ]
+    };
+    ke.name = "InThreadSurveyMetadata$InThreadSurveyQuestion";
+    ke.internalSpec = {
+        questionText: [
+            1,
+            e.TYPES.STRING
+        ],
+        questionId: [
+            2,
+            e.TYPES.STRING
+        ],
+        questionOptions: [
+            3,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Ee
+        ]
+    };
+    Ie.name = "BotMessageOriginMetadata";
+    Ie.internalSpec = {
+        origins: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Te
+        ]
+    };
+    Te.name = "BotMessageOrigin";
+    Te.internalSpec = {
+        type: [
+            1,
+            e.TYPES.ENUM,
+            P
+        ]
+    };
+    De.name = "BotUnifiedResponseMutation";
+    De.internalSpec = {
+        sbsMetadata: [
+            1,
+            e.TYPES.MESSAGE,
+            $e
+        ],
+        mediaDetailsMetadataList: [
+            2,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            xe
+        ]
+    };
+    xe.name = "BotUnifiedResponseMutation$MediaDetailsMetadata";
+    xe.internalSpec = {
+        id: [
+            1,
+            e.TYPES.STRING
+        ],
+        highResMedia: [
+            2,
+            e.TYPES.MESSAGE,
+            ie
+        ],
+        previewMedia: [
+            3,
+            e.TYPES.MESSAGE,
+            ie
+        ]
+    };
+    $e.name = "BotUnifiedResponseMutation$SideBySideMetadata";
+    $e.internalSpec = {
+        primaryResponseId: [
+            1,
+            e.TYPES.STRING
+        ],
+        surveyCtaHasRendered: [
+            2,
+            e.TYPES.BOOL
+        ]
+    };
+    Pe.name = "AIThreadInfo";
+    Pe.internalSpec = {
+        serverInfo: [
+            1,
+            e.TYPES.MESSAGE,
+            Me
+        ],
+        clientInfo: [
+            2,
+            e.TYPES.MESSAGE,
+            Ne
+        ]
+    };
+    Ne.name = "AIThreadInfo$AIThreadClientInfo";
+    Ne.internalSpec = {
+        type: [
+            1,
+            e.TYPES.ENUM,
+            N
+        ],
+        sourceChatJid: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    Me.name = "AIThreadInfo$AIThreadServerInfo";
+    Me.internalSpec = {
+        title: [
+            1,
+            e.TYPES.STRING
+        ]
+    };
+    we.name = "AIMediaCollectionMetadata";
+    we.internalSpec = {
+        collectionId: [
+            1,
+            e.TYPES.STRING
+        ],
+        uploadOrderIndex: [
+            2,
+            e.TYPES.UINT32
+        ]
+    };
+    Ae.name = "AIMediaCollectionMessage";
+    Ae.internalSpec = {
+        collectionId: [
+            1,
+            e.TYPES.STRING
+        ],
+        expectedMediaCount: [
+            2,
+            e.TYPES.UINT32
+        ],
+        hasGlobalCaption: [
+            3,
+            e.TYPES.BOOL
+        ]
+    };
+    Fe.name = "HatchMetadataSync";
+    Fe.internalSpec = {
+        data: [
+            1,
+            e.TYPES.BYTES
+        ],
+        timestampMs: [
+            2,
+            e.TYPES.INT64
+        ],
+        requestId: [
+            3,
+            e.TYPES.STRING
+        ]
+    };
+    Oe.name = "AIMetadataOperation";
+    Oe.internalSpec = {
+        hatchMetadataSync: [
+            1,
+            e.TYPES.MESSAGE,
+            Fe
+        ],
+        bizAiMetadataSync: [
+            2,
+            e.TYPES.MESSAGE,
+            gt
+        ]
+    };
+    Be.name = "BotCommandMetadata";
+    Be.internalSpec = {
+        commandName: [
+            1,
+            e.TYPES.STRING
+        ],
+        commandDescription: [
+            2,
+            e.TYPES.STRING
+        ],
+        commandPrompt: [
+            3,
+            e.TYPES.STRING
+        ]
+    };
+    We.name = "BotResolvedToolCallMetadata";
+    We.internalSpec = {
+        toolCallId: [
+            1,
+            e.TYPES.STRING
+        ],
+        resolutionDataSerialized: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    qe.name = "BotPttPromptMetadata";
+    qe.internalSpec = {
+        transcript: [
+            1,
+            e.TYPES.STRING
+        ]
+    };
+    Ue.name = "BotMetadata";
+    Ue.internalSpec = {
+        personaId: [
+            2,
+            e.TYPES.STRING
+        ],
+        pluginMetadata: [
+            3,
+            e.TYPES.MESSAGE,
+            H
+        ],
+        suggestedPromptMetadata: [
+            4,
+            e.TYPES.MESSAGE,
+            G
+        ],
+        invokerJid: [
+            5,
+            e.TYPES.STRING
+        ],
+        sessionMetadata: [
+            6,
+            e.TYPES.MESSAGE,
+            ae
+        ],
+        memuMetadata: [
+            7,
+            e.TYPES.MESSAGE,
+            le
+        ],
+        timezone: [
+            8,
+            e.TYPES.STRING
+        ],
+        reminderMetadata: [
+            9,
+            e.TYPES.MESSAGE,
+            se
+        ],
+        modelMetadata: [
+            10,
+            e.TYPES.MESSAGE,
+            ue
+        ],
+        messageDisclaimerText: [
+            11,
+            e.TYPES.STRING
+        ],
+        progressIndicatorMetadata: [
+            12,
+            e.TYPES.MESSAGE,
+            ce
+        ],
+        capabilityMetadata: [
+            13,
+            e.TYPES.MESSAGE,
+            fe
+        ],
+        imagineMetadata: [
+            14,
+            e.TYPES.MESSAGE,
+            Ce
+        ],
+        memoryMetadata: [
+            15,
+            e.TYPES.MESSAGE,
+            X
+        ],
+        renderingMetadata: [
+            16,
+            e.TYPES.MESSAGE,
+            ne
+        ],
+        botMetricsMetadata: [
+            17,
+            e.TYPES.MESSAGE,
+            oe
+        ],
+        botLinkedAccountsMetadata: [
+            18,
+            e.TYPES.MESSAGE,
+            K
+        ],
+        richResponseSourcesMetadata: [
+            19,
+            e.TYPES.MESSAGE,
+            ve
+        ],
+        aiConversationContext: [
+            20,
+            e.TYPES.BYTES
+        ],
+        botPromotionMessageMetadata: [
+            21,
+            e.TYPES.MESSAGE,
+            te
+        ],
+        botModeSelectionMetadata: [
+            22,
+            e.TYPES.MESSAGE,
+            ge
+        ],
+        botQuotaMetadata: [
+            23,
+            e.TYPES.MESSAGE,
+            he
+        ],
+        botAgeCollectionMetadata: [
+            24,
+            e.TYPES.MESSAGE,
+            be
+        ],
+        conversationStarterPromptId: [
+            25,
+            e.TYPES.STRING
+        ],
+        botResponseId: [
+            26,
+            e.TYPES.STRING
+        ],
+        verificationMetadata: [
+            27,
+            e.TYPES.MESSAGE,
+            J
+        ],
+        unifiedResponseMutation: [
+            28,
+            e.TYPES.MESSAGE,
+            De
+        ],
+        botMessageOriginMetadata: [
+            29,
+            e.TYPES.MESSAGE,
+            Ie
+        ],
+        inThreadSurveyMetadata: [
+            30,
+            e.TYPES.MESSAGE,
+            Re
+        ],
+        botThreadInfo: [
+            31,
+            e.TYPES.MESSAGE,
+            Pe
+        ],
+        regenerateMetadata: [
+            32,
+            e.TYPES.MESSAGE,
+            it
+        ],
+        sessionTransparencyMetadata: [
+            33,
+            e.TYPES.MESSAGE,
+            lt
+        ],
+        botDocumentMessageMetadata: [
+            34,
+            e.TYPES.MESSAGE,
+            st
+        ],
+        botGroupMetadata: [
+            35,
+            e.TYPES.MESSAGE,
+            He
+        ],
+        botRenderingConfigMetadata: [
+            36,
+            e.TYPES.MESSAGE,
+            ze
+        ],
+        botInfrastructureDiagnostics: [
+            37,
+            e.TYPES.MESSAGE,
+            dt
+        ],
+        aiMediaCollectionMetadata: [
+            38,
+            e.TYPES.MESSAGE,
+            we
+        ],
+        commandMetadata: [
+            39,
+            e.TYPES.MESSAGE,
+            Be
+        ],
+        resolvedToolCallMetadata: [
+            40,
+            e.TYPES.MESSAGE,
+            We
+        ],
+        subscriptionUpsellMetadata: [
+            41,
+            e.TYPES.MESSAGE,
+            Ve
+        ],
+        pttPromptMetadata: [
+            42,
+            e.TYPES.MESSAGE,
+            qe
+        ],
+        botHistoryShareMetadata: [
+            43,
+            e.TYPES.MESSAGE,
+            Ge
+        ],
+        responseStoppedByUser: [
+            44,
+            e.TYPES.BOOL
+        ],
+        internalMetadata: [
+            999,
+            e.TYPES.BYTES
+        ]
+    };
+    Ve.name = "AISubscriptionUpsellMetadata";
+    Ve.internalSpec = {
+        requestType: [
+            1,
+            e.TYPES.ENUM,
+            M
+        ]
+    };
+    He.name = "BotGroupMetadata";
+    He.internalSpec = {
+        participantsMetadata: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            je
+        ]
+    };
+    Ge.name = "BotHistoryShareMetadata";
+    Ge.internalSpec = {
+        participantsMetadata: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            je
+        ]
+    };
+    ze.name = "BotRenderingConfigMetadata";
+    ze.internalSpec = {
+        bloksVersioningId: [
+            1,
+            e.TYPES.STRING
+        ],
+        pixelDensity: [
+            2,
+            e.TYPES.DOUBLE
+        ]
+    };
+    je.name = "BotGroupParticipantMetadata";
+    je.internalSpec = {
+        botFbid: [
+            1,
+            e.TYPES.STRING
+        ]
+    };
+    Ke.name = "BotFeedbackMessage";
+    Ke.internalSpec = {
+        messageKey: [
+            1,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ],
+        kind: [
+            2,
+            e.TYPES.ENUM,
+            O
+        ],
+        text: [
+            3,
+            e.TYPES.STRING
+        ],
+        kindNegative: [
+            4,
+            e.TYPES.UINT64
+        ],
+        kindPositive: [
+            5,
+            e.TYPES.UINT64
+        ],
+        kindReport: [
+            6,
+            e.TYPES.ENUM,
+            w
+        ],
+        sideBySideSurveyMetadata: [
+            7,
+            e.TYPES.MESSAGE,
+            Qe
+        ]
+    };
+    Qe.name = "BotFeedbackMessage$SideBySideSurveyMetadata";
+    Qe.internalSpec = {
+        selectedRequestId: [
+            1,
+            e.TYPES.STRING
+        ],
+        surveyId: [
+            2,
+            e.TYPES.UINT32
+        ],
+        simonSessionFbid: [
+            3,
+            e.TYPES.STRING
+        ],
+        responseOtid: [
+            4,
+            e.TYPES.STRING
+        ],
+        responseTimestampMsString: [
+            5,
+            e.TYPES.STRING
+        ],
+        isSelectedResponsePrimary: [
+            6,
+            e.TYPES.BOOL
+        ],
+        messageIdToEdit: [
+            7,
+            e.TYPES.STRING
+        ],
+        analyticsData: [
+            8,
+            e.TYPES.MESSAGE,
+            nt
+        ],
+        metaAiAnalyticsData: [
+            9,
+            e.TYPES.MESSAGE,
+            Xe
+        ]
+    };
+    Xe.name = "BotFeedbackMessage$SideBySideSurveyMetadata$SidebySideSurveyMetaAiAnalyticsData";
+    Xe.internalSpec = {
+        surveyId: [
+            1,
+            e.TYPES.UINT32
+        ],
+        primaryResponseId: [
+            2,
+            e.TYPES.STRING
+        ],
+        testArmName: [
+            3,
+            e.TYPES.STRING
+        ],
+        timestampMsString: [
+            4,
+            e.TYPES.STRING
+        ],
+        ctaImpressionEvent: [
+            5,
+            e.TYPES.MESSAGE,
+            tt
+        ],
+        ctaClickEvent: [
+            6,
+            e.TYPES.MESSAGE,
+            et
+        ],
+        cardImpressionEvent: [
+            7,
+            e.TYPES.MESSAGE,
+            Ze
+        ],
+        responseEvent: [
+            8,
+            e.TYPES.MESSAGE,
+            Je
+        ],
+        abandonEvent: [
+            9,
+            e.TYPES.MESSAGE,
+            Ye
+        ]
+    };
+    Ye.name = "BotFeedbackMessage$SideBySideSurveyMetadata$SidebySideSurveyMetaAiAnalyticsData$SideBySideSurveyAbandonEventData";
+    Ye.internalSpec = {
+        abandonDwellTimeMsString: [
+            1,
+            e.TYPES.STRING
+        ]
+    };
+    Je.name = "BotFeedbackMessage$SideBySideSurveyMetadata$SidebySideSurveyMetaAiAnalyticsData$SideBySideSurveyResponseEventData";
+    Je.internalSpec = {
+        responseDwellTimeMsString: [
+            1,
+            e.TYPES.STRING
+        ],
+        selectedResponseId: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    Ze.name = "BotFeedbackMessage$SideBySideSurveyMetadata$SidebySideSurveyMetaAiAnalyticsData$SideBySideSurveyCardImpressionEventData";
+    Ze.internalSpec = {};
+    et.name = "BotFeedbackMessage$SideBySideSurveyMetadata$SidebySideSurveyMetaAiAnalyticsData$SideBySideSurveyCTAClickEventData";
+    et.internalSpec = {
+        isSurveyExpired: [
+            1,
+            e.TYPES.BOOL
+        ],
+        clickDwellTimeMsString: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    tt.name = "BotFeedbackMessage$SideBySideSurveyMetadata$SidebySideSurveyMetaAiAnalyticsData$SideBySideSurveyCTAImpressionEventData";
+    tt.internalSpec = {
+        isSurveyExpired: [
+            1,
+            e.TYPES.BOOL
+        ]
+    };
+    nt.name = "BotFeedbackMessage$SideBySideSurveyMetadata$SideBySideSurveyAnalyticsData";
+    nt.internalSpec = {
+        tessaEvent: [
+            1,
+            e.TYPES.STRING
+        ],
+        tessaSessionFbid: [
+            2,
+            e.TYPES.STRING
+        ],
+        simonSessionFbid: [
+            3,
+            e.TYPES.STRING
+        ]
+    };
+    rt.name = "ForwardedAIBotMessageInfo";
+    rt.internalSpec = {
+        botName: [
+            1,
+            e.TYPES.STRING
+        ],
+        botJid: [
+            2,
+            e.TYPES.STRING
+        ],
+        creatorName: [
+            3,
+            e.TYPES.STRING
+        ]
+    };
+    ot.name = "BotMessageSharingInfo";
+    ot.internalSpec = {
+        botEntryPointOrigin: [
+            1,
+            e.TYPES.ENUM,
+            f
+        ],
+        forwardScore: [
+            2,
+            e.TYPES.UINT32
+        ]
+    };
+    at.name = "AIRichResponseUnifiedResponse";
+    at.internalSpec = {
+        data: [
+            1,
+            e.TYPES.BYTES
+        ]
+    };
+    it.name = "AIRegenerateMetadata";
+    it.internalSpec = {
+        messageKey: [
+            1,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ],
+        responseTimestampMs: [
+            2,
+            e.TYPES.INT64
+        ]
+    };
+    lt.name = "SessionTransparencyMetadata";
+    lt.internalSpec = {
+        disclaimerText: [
+            1,
+            e.TYPES.STRING
+        ],
+        hcaId: [
+            2,
+            e.TYPES.STRING
+        ],
+        sessionTransparencyType: [
+            3,
+            e.TYPES.ENUM,
+            q
+        ]
+    };
+    st.name = "BotDocumentMessageMetadata";
+    st.internalSpec = {
+        pluginType: [
+            1,
+            e.TYPES.ENUM,
+            B
+        ]
+    };
+    ut.name = "AIHomeState";
+    ut.internalSpec = {
+        lastFetchTime: [
+            1,
+            e.TYPES.INT64
+        ],
+        capabilityOptions: [
+            2,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            ct
+        ],
+        conversationOptions: [
+            3,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            ct
+        ]
+    };
+    ct.name = "AIHomeState$AIHomeOption";
+    ct.internalSpec = {
+        type: [
+            1,
+            e.TYPES.ENUM,
+            W
+        ],
+        title: [
+            2,
+            e.TYPES.STRING
+        ],
+        promptText: [
+            3,
+            e.TYPES.STRING
+        ],
+        sessionId: [
+            4,
+            e.TYPES.STRING
+        ],
+        imageWdsIdentifier: [
+            5,
+            e.TYPES.STRING
+        ],
+        imageTintColor: [
+            6,
+            e.TYPES.STRING
+        ],
+        imageBackgroundColor: [
+            7,
+            e.TYPES.STRING
+        ],
+        cardTypeId: [
+            8,
+            e.TYPES.STRING
+        ]
+    };
+    dt.name = "BotInfrastructureDiagnostics";
+    dt.internalSpec = {
+        botBackend: [
+            1,
+            e.TYPES.ENUM,
+            U
+        ],
+        toolsUsed: [
+            2,
+            e.FLAGS.REPEATED | e.TYPES.STRING
+        ],
+        isThinking: [
+            3,
+            e.TYPES.BOOL
+        ]
+    };
+    mt.name = "BotAgentMetadata";
+    mt.internalSpec = {
+        deepLinkMetadata: [
+            1,
+            e.TYPES.MESSAGE,
+            pt
+        ]
+    };
+    pt.name = "BotAgentDeepLinkMetadata";
+    pt.internalSpec = {
+        token: [
+            1,
+            e.TYPES.STRING
+        ],
+        clientPublicKey: [
+            2,
+            e.TYPES.BYTES
+        ]
+    };
+    _t.name = "AIProvenance";
+    _t.internalSpec = {
+        c2PaMetadata: [
+            1,
+            e.TYPES.MESSAGE,
+            ft
+        ],
+        iptcMetadata: [
+            2,
+            e.TYPES.MESSAGE,
+            ft
+        ]
+    };
+    ft.name = "AIProvenance$Metadata";
+    ft.internalSpec = {
+        createdWithGenAi: [
+            1,
+            e.TYPES.BOOL
+        ],
+        editedWithGenAi: [
+            2,
+            e.TYPES.BOOL
+        ]
+    };
+    gt.name = "BizAIMetadataSync";
+    gt.internalSpec = {
+        serverEvent: [
+            1,
+            e.TYPES.MESSAGE,
+            ht
+        ],
+        __oneofs__: {
+            operation: [
+                "serverEvent"
+            ]
+        }
+    };
+    ht.name = "BizAIMetadataSync$ServerEvent";
+    ht.internalSpec = {
+        protocolEvent: [
+            1,
+            e.TYPES.ENUM,
+            V
+        ],
+        agentOnboardingStarted: [
+            2,
+            e.TYPES.MESSAGE,
+            yt
+        ],
+        __oneofs__: {
+            event: [
+                "protocolEvent",
+                "agentOnboardingStarted"
+            ]
+        }
+    };
+    yt.name = "BizAIMetadataSync$ServerEvent$AgentOnboardingStarted";
+    yt.internalSpec = {
+        composerBlockDurationSecs: [
+            1,
+            e.TYPES.INT64
+        ]
+    };
+    l.BotPluginMetadata$PluginType = c;
+    l.BotPluginMetadata$SearchProvider = d;
+    l.BotLinkedAccount$BotLinkedAccountType = m;
+    l.BotSignatureVerificationUseCaseProof$BotSignatureUseCase = p;
+    l.BotPromotionMessageMetadata$BotPromotionType = _;
+    l.BotMetricsEntryPoint = f;
+    l.BotMetricsThreadEntryPoint = g;
+    l.BotSessionSource = h;
+    l.BotMediaMetadata$OrientationType = y;
+    l.BotReminderMetadata$ReminderFrequency = C;
+    l.BotReminderMetadata$ReminderAction = b;
+    l.BotModelMetadata$PremiumModelStatus = v;
+    l.BotModelMetadata$ModelType = S;
+    l.BotProgressIndicatorMetadata$BotPlanningStepMetadata$BotPlanningSearchSourcesMetadata$BotPlanningSearchSourceProvider = R;
+    l.BotProgressIndicatorMetadata$BotPlanningStepMetadata$BotSearchSourceProvider = L;
+    l.BotProgressIndicatorMetadata$BotPlanningStepMetadata$PlanningStepStatus = E;
+    l.BotCapabilityMetadata$BotCapabilityType = k;
+    l.BotModeSelectionMetadata$BotUserSelectionMode = I;
+    l.BotQuotaMetadata$BotFeatureQuotaMetadata$BotFeatureType = T;
+    l.BotImagineMetadata$ImagineType = D;
+    l.BotAgeCollectionMetadata$AgeCollectionType = x;
+    l.BotSourcesMetadata$BotSourceItem$SourceProvider = $;
+    l.BotMessageOrigin$BotMessageOriginType = P;
+    l.AIThreadInfo$AIThreadClientInfo$AIThreadType = N;
+    l.AISubscriptionRequestType = M;
+    l.BotFeedbackMessage$ReportKind = w;
+    l.BotFeedbackMessage$BotFeedbackKindMultiplePositive = A;
+    l.BotFeedbackMessage$BotFeedbackKindMultipleNegative = F;
+    l.BotFeedbackMessage$BotFeedbackKind = O;
+    l.BotDocumentMessageMetadata$DocumentPluginType = B;
+    l.AIHomeState$AIHomeOption$AIHomeActionType = W;
+    l.SessionTransparencyType = q;
+    l.BotInfrastructureDiagnostics$BotBackend = U;
+    l.BizAIMetadataSync$ServerEvent$ProtocolEvent = V;
+    l.BotPluginMetadataSpec = H;
+    l.BotSuggestedPromptMetadataSpec = G;
+    l.BotPromptSuggestionsSpec = z;
+    l.BotPromptSuggestionSpec = j;
+    l.BotLinkedAccountsMetadataSpec = K;
+    l.BotLinkedAccountSpec = Q;
+    l.BotMemoryMetadataSpec = X;
+    l.BotMemoryFactSpec = Y;
+    l.BotSignatureVerificationMetadataSpec = J;
+    l.BotSignatureVerificationUseCaseProofSpec = Z;
+    l.BotSignatureVerificationUseCaseProof$CertificateSKISpec = ee;
+    l.BotPromotionMessageMetadataSpec = te;
+    l.BotRenderingMetadataSpec = ne;
+    l.BotRenderingMetadata$KeywordSpec = re;
+    l.BotMetricsMetadataSpec = oe;
+    l.BotSessionMetadataSpec = ae;
+    l.BotMediaMetadataSpec = ie;
+    l.BotMemuMetadataSpec = le;
+    l.BotReminderMetadataSpec = se;
+    l.BotModelMetadataSpec = ue;
+    l.BotProgressIndicatorMetadataSpec = ce;
+    l.BotProgressIndicatorMetadata$BotPlanningStepMetadataSpec = de;
+    l.BotProgressIndicatorMetadata$BotPlanningStepMetadata$BotPlanningStepSectionMetadataSpec = me;
+    l.BotProgressIndicatorMetadata$BotPlanningStepMetadata$BotPlanningSearchSourceMetadataSpec = pe;
+    l.BotProgressIndicatorMetadata$BotPlanningStepMetadata$BotPlanningSearchSourcesMetadataSpec = _e;
+    l.BotCapabilityMetadataSpec = fe;
+    l.BotModeSelectionMetadataSpec = ge;
+    l.BotQuotaMetadataSpec = he;
+    l.BotQuotaMetadata$BotFeatureQuotaMetadataSpec = ye;
+    l.BotImagineMetadataSpec = Ce;
+    l.BotAgeCollectionMetadataSpec = be;
+    l.BotSourcesMetadataSpec = ve;
+    l.BotSourcesMetadata$BotSourceItemSpec = Se;
+    l.InThreadSurveyMetadataSpec = Re;
+    l.InThreadSurveyMetadata$InThreadSurveyPrivacyStatementPartSpec = Le;
+    l.InThreadSurveyMetadata$InThreadSurveyOptionSpec = Ee;
+    l.InThreadSurveyMetadata$InThreadSurveyQuestionSpec = ke;
+    l.BotMessageOriginMetadataSpec = Ie;
+    l.BotMessageOriginSpec = Te;
+    l.BotUnifiedResponseMutationSpec = De;
+    l.BotUnifiedResponseMutation$MediaDetailsMetadataSpec = xe;
+    l.BotUnifiedResponseMutation$SideBySideMetadataSpec = $e;
+    l.AIThreadInfoSpec = Pe;
+    l.AIThreadInfo$AIThreadClientInfoSpec = Ne;
+    l.AIThreadInfo$AIThreadServerInfoSpec = Me;
+    l.AIMediaCollectionMetadataSpec = we;
+    l.AIMediaCollectionMessageSpec = Ae;
+    l.HatchMetadataSyncSpec = Fe;
+    l.AIMetadataOperationSpec = Oe;
+    l.BotCommandMetadataSpec = Be;
+    l.BotResolvedToolCallMetadataSpec = We;
+    l.BotPttPromptMetadataSpec = qe;
+    l.BotMetadataSpec = Ue;
+    l.AISubscriptionUpsellMetadataSpec = Ve;
+    l.BotGroupMetadataSpec = He;
+    l.BotHistoryShareMetadataSpec = Ge;
+    l.BotRenderingConfigMetadataSpec = ze;
+    l.BotGroupParticipantMetadataSpec = je;
+    l.BotFeedbackMessageSpec = Ke;
+    l.BotFeedbackMessage$SideBySideSurveyMetadataSpec = Qe;
+    l.BotFeedbackMessage$SideBySideSurveyMetadata$SidebySideSurveyMetaAiAnalyticsDataSpec = Xe;
+    l.BotFeedbackMessage$SideBySideSurveyMetadata$SidebySideSurveyMetaAiAnalyticsData$SideBySideSurveyAbandonEventDataSpec = Ye;
+    l.BotFeedbackMessage$SideBySideSurveyMetadata$SidebySideSurveyMetaAiAnalyticsData$SideBySideSurveyResponseEventDataSpec = Je;
+    l.BotFeedbackMessage$SideBySideSurveyMetadata$SidebySideSurveyMetaAiAnalyticsData$SideBySideSurveyCardImpressionEventDataSpec = Ze;
+    l.BotFeedbackMessage$SideBySideSurveyMetadata$SidebySideSurveyMetaAiAnalyticsData$SideBySideSurveyCTAClickEventDataSpec = et;
+    l.BotFeedbackMessage$SideBySideSurveyMetadata$SidebySideSurveyMetaAiAnalyticsData$SideBySideSurveyCTAImpressionEventDataSpec = tt;
+    l.BotFeedbackMessage$SideBySideSurveyMetadata$SideBySideSurveyAnalyticsDataSpec = nt;
+    l.ForwardedAIBotMessageInfoSpec = rt;
+    l.BotMessageSharingInfoSpec = ot;
+    l.AIRichResponseUnifiedResponseSpec = at;
+    l.AIRegenerateMetadataSpec = it;
+    l.SessionTransparencyMetadataSpec = lt;
+    l.BotDocumentMessageMetadataSpec = st;
+    l.AIHomeStateSpec = ut;
+    l.AIHomeState$AIHomeOptionSpec = ct;
+    l.BotInfrastructureDiagnosticsSpec = dt;
+    l.BotAgentMetadataSpec = mt;
+    l.BotAgentDeepLinkMetadataSpec = pt;
+    l.AIProvenanceSpec = _t;
+    l.AIProvenance$MetadataSpec = ft;
+    l.BizAIMetadataSyncSpec = gt;
+    l.BizAIMetadataSync$ServerEventSpec = ht;
+    l.BizAIMetadataSync$ServerEvent$AgentOnboardingStartedSpec = yt;
+}, 98);

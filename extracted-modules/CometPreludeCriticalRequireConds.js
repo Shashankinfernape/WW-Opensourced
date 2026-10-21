@@ -1,0 +1,43 @@
+__d("CometPreludeCriticalRequireConds", [
+    "DTSG",
+    "DTSG_ASYNC",
+    "JSScheduler",
+    "RunComet",
+    "RunWWW",
+    "TimeSliceSham",
+    "clearIntervalComet",
+    "clearIntervalWWW",
+    "clearTimeoutComet",
+    "clearTimeoutWWW",
+    "clearTimeoutWWWOrMobile",
+    "setIntervalAcrossTransitionsWWW",
+    "setIntervalComet",
+    "setIntervalWWW",
+    "setTimeoutAcrossTransitionsWWW",
+    "setTimeoutComet",
+    "setTimeoutWWW",
+    "setTimeoutWWWOrMobile"
+], function(t, n, r, o, a, i) {
+    "use strict";
+    let e;
+    n("DTSG");
+    n("DTSG_ASYNC");
+    if (!e) {
+        e = n("JSScheduler");
+    }
+    n("TimeSliceSham");
+    n("RunComet");
+    n("RunWWW");
+    n("clearIntervalComet");
+    n("clearIntervalWWW");
+    n("clearTimeoutComet");
+    n("clearTimeoutWWW");
+    n("clearTimeoutWWWOrMobile");
+    n("setIntervalAcrossTransitionsWWW");
+    n("setIntervalComet");
+    n("setIntervalWWW");
+    n("setTimeoutAcrossTransitionsWWW");
+    n("setTimeoutComet");
+    n("setTimeoutWWW");
+    n("setTimeoutWWWOrMobile");
+}, null);

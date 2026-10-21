@@ -1,0 +1,46 @@
+__d("WAWebSchemaLabel", [
+    "$InternalEnum",
+    "WAWebModelStorageUtils",
+    "WAWebModelStorageVersions",
+    "WAWebStorageMutationBuilder"
+], function(t, n, r, o, a, i, l) {
+    const e = n("$InternalEnum")({
+        NONE: 0,
+        UNREAD: 1,
+        GROUPS: 2,
+        FAVORITES: 3,
+        PREDEFINED: 4,
+        CUSTOM: 5,
+        COMMUNITY: 6,
+        SERVER_ASSIGNED: 7,
+        DRAFTED: 8,
+        AI_HANDOFF: 9,
+        CHANNELS: 10,
+        AI_RESPONDING: 11,
+        LEAD: 16,
+        MENTIONS_AND_REPLIES: 17
+    });
+    function s() {
+        const e = o("WAWebModelStorageUtils").getStorage();
+        const t = o("WAWebStorageMutationBuilder").columnBuilder(e.config);
+        const { addColumn: n, addUserDefinedPrimaryKey: r } = t;
+        e.add("label").version(o("WAWebModelStorageVersions").labelCreateTable(), [
+            r("id"),
+            n("name"),
+            n("colorIndex"),
+            n("predefinedId"),
+            n("orderIndex"),
+            n("isActive"),
+            n("type"),
+            n("isImmutable")
+        ]).view(function(e) {
+            return e;
+        });
+    }
+    function u() {
+        return o("WAWebModelStorageUtils").getStorage().table("label");
+    }
+    l.ListType = e;
+    l.addTable = s;
+    l.getLabelTable = u;
+}, 98);

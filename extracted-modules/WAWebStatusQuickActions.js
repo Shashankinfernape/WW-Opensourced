@@ -1,0 +1,38 @@
+__d("WAWebStatusQuickActions", [
+    "fbt",
+    "WAWebCreateTextStatusFlowLoadable",
+    "WAWebModalManager",
+    "WAWebStatusAttachMediaFlowLoadable",
+    "WDSIconIcEdit.react",
+    "WDSIconIcPhotoCamera.react",
+    "react"
+], function(t, n, r, o, a, i, l, s) {
+    "use strict";
+    let e;
+    const u = e || (e = o("react"));
+    const c = [
+        {
+            id: "text_status",
+            Icon: r("WDSIconIcEdit.react"),
+            label: function() {
+                return s._("Text status");
+            },
+            onClick: function() {
+                o("WAWebModalManager").ModalManager.openMedia(u.jsx(o("WAWebCreateTextStatusFlowLoadable").CreateTextStatusFlowLoadable, {}), {
+                    transition: "status-modal"
+                });
+            }
+        },
+        {
+            id: "photo_video",
+            Icon: r("WDSIconIcPhotoCamera.react"),
+            label: function() {
+                return s._("Photo and video");
+            },
+            onClick: function() {
+                o("WAWebModalManager").ModalManager.open(u.jsx(o("WAWebStatusAttachMediaFlowLoadable").StatusAttachMediaFlowLoadable, {}));
+            }
+        }
+    ];
+    l.default = c;
+}, 226);

@@ -1,0 +1,42 @@
+__d("WAWebNotificationMuteReason", [
+    "$InternalEnum"
+], function(t, n, r, o, a, i) {
+    const e = n("$InternalEnum").Mirrored([
+        "ParentMsgMissing",
+        "GlobalMute",
+        "AppState",
+        "MutedChat",
+        "ArchivedChat",
+        "OfflineResumeInProgress",
+        "IgnoreGroupMsg",
+        "GroupFlood",
+        "ReactionFlood",
+        "NonHydratedReaction",
+        "MutedStatus",
+        "AlreadyNotifiedKic",
+        "KicOnNonEphemeralChat",
+        "KicOnNonOriginalMsg",
+        "KicByMe",
+        "UserLeftGroupKic",
+        "IgnoreAddedToCommunityHome",
+        "IgnoreFutureProof",
+        "IgnoreBizContentPlaceholder",
+        "IgnoreCallMsgs",
+        "IgnoreBotMsgs",
+        "IgnoreInternalSilentTag",
+        "IgnoreHiddenViewModeMsgs",
+        "AIRepliesOn",
+        "MutedStatusReaction",
+        "IgnoreViewedMsgs",
+        "GroupSafetyCheck",
+        "MentionAllMuted",
+        "NewsletterFollowerActivityMuted",
+        "NewsletterFollowerActivityDisabled",
+        "ReadByPeer",
+        "NotifyForHighlights",
+        "IgnoreGroupHistoryNotice",
+        "BotResponseStreaming",
+        "HatchApprovalChatOnScreen"
+    ]);
+    i.default = e;
+}, 66);

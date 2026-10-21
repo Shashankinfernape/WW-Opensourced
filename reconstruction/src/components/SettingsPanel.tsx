@@ -6,294 +6,130 @@ interface SettingsPanelProps {
   onOpenProfile?: () => void;
 }
 
-type SettingsSubpage = 'main' | 'notifications' | 'privacy' | 'security' | 'theme' | 'wallpaper' | 'shortcuts' | 'help';
-
 export const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose, onOpenProfile }) => {
-  const [subpage, setSubpage] = useState<SettingsSubpage>('main');
-  const [selectedTheme, setSelectedTheme] = useState<'dark' | 'light' | 'system'>('dark');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [activeSubpage, setActiveSubpage] = useState<string | null>(null);
 
   const menuItems = [
-    { id: 'notifications', label: 'Notifications', icon: 'ic-notifications-off' },
-    { id: 'privacy', label: 'Privacy', icon: 'ic-lock' },
-    { id: 'security', label: 'Security', icon: 'ic-lock' },
-    { id: 'theme', label: 'Theme', icon: 'nav-settings' },
-    { id: 'wallpaper', label: 'Chat wallpaper', icon: 'nav-media' },
-    { id: 'shortcuts', label: 'Keyboard shortcuts', icon: 'nav-settings' },
-    { id: 'help', label: 'Help', icon: 'nav-settings' },
+    { id: 'profile', testid: 'li-profile', label: 'Profile', icon: 'ic-account-circle', onClick: onOpenProfile },
+    { id: 'account', testid: 'li-account', label: 'Account', icon: 'ic-key', onClick: () => setActiveSubpage('Account') },
+    { id: 'privacy', testid: 'settings-drawer-item-privacy', label: 'Privacy', icon: 'ic-lock', onClick: () => setActiveSubpage('Privacy') },
+    { id: 'chats', testid: 'li-chats', label: 'Chats', icon: 'wds-ic-chat', onClick: () => setActiveSubpage('Chats') },
+    { id: 'notifications', testid: 'li-notifications', label: 'Notifications', icon: 'ic-notifications', onClick: () => setActiveSubpage('Notifications') },
+    { id: 'shortcuts', testid: 'li-keyboard-shortcuts', label: 'Keyboard shortcuts', icon: 'ic-keyboard', onClick: () => setActiveSubpage('Keyboard shortcuts') },
+    { id: 'help', testid: 'li-help', label: 'Help', icon: 'ic-help', onClick: () => setActiveSubpage('Help') },
+    { id: 'logout', testid: 'li-logout', label: 'Log out', icon: 'ic-logout', onClick: onClose }
   ];
 
+  const filteredItems = menuItems.filter(item =>
+    item.label.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
-    <div
-      className="x9f619 x1n2onr6 x5yr21d x17dzmu4 x1i1dayz x2ipvbc xjdofhw x78zum5 xdt5ytf x12xzxwr x1plvlek xryxfnj x570efc x18dvir5 xxljpkc x18pi947 xck4lzl x1gluznb xahwd2o x10fiusa x1a0bplq xc995h1"
-      style={{
-        width: '100%',
-        flexShrink: 0,
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        backgroundColor: 'var(--WDS-surface-default, #161717)',
-        borderRight: '1px solid var(--border-default, rgba(134, 150, 160, 0.15))',
-      }}
-    >
+    <div className="xnpuxes x78zum5 xdt5ytf x5yr21d x1o0tod x6ikm8r x10wlt62 x67bb7w x10l6tqk x13vifvy xh8yej3 x1280gxy copyable-area" data-testid="me-tab-drawer" style={{ width: '100%', height: '100%', position: 'relative' }}>
       {/* Header */}
-      <header
-        className="x570efc x9f619 x78zum5 x1okw0bk x6s0dn4 x1peatla x14ug900 x1280gxy x889kno x1a8lsjc x106a9eq x1xnnf8n"
-        style={{
-          height: '64px',
-          display: 'flex',
-          alignItems: 'center',
-          padding: '0 20px',
-          gap: '24px',
-          borderBottom: '1px solid var(--border-default, rgba(134, 150, 160, 0.1))',
-        }}
-      >
-        {subpage !== 'main' ? (
-          <button
-            type="button"
-            aria-label="Back"
-            onClick={() => setSubpage('main')}
-            style={{ background: 'none', border: 'none', color: 'var(--icon, #aebac1)', cursor: 'pointer', padding: '6px', display: 'flex' }}
-          >
-            <Icon name="ic-arrow-back" size={24} />
-          </button>
-        ) : onClose ? (
-          <button
-            type="button"
-            aria-label="Close"
-            onClick={onClose}
-            style={{ background: 'none', border: 'none', color: 'var(--icon, #aebac1)', cursor: 'pointer', padding: '6px', display: 'flex' }}
-          >
-            <Icon name="ic-arrow-back" size={24} />
-          </button>
-        ) : null}
-        <h2 style={{ fontSize: '18px', fontWeight: 500, color: 'var(--primary, #e9edef)', margin: 0, textTransform: 'capitalize' }}>
-          {subpage === 'main' ? 'Settings' : subpage}
-        </h2>
+      <header className="x570efc x9f619 x78zum5 x1okw0bk x6s0dn4 x1peatla x14ug900 x1280gxy x889kno x1a8lsjc x106a9eq x1xnnf8n">
+        <div className="x78zum5 x1okw0bk x6s0dn4 xh8yej3 x14wi4xw xexx8yu xyri2b x18d9i69 x1c1uobl">
+          {activeSubpage && (
+            <button
+              type="button"
+              aria-label="Back"
+              onClick={() => setActiveSubpage(null)}
+              className="html-button"
+              style={{ background: 'none', border: 'none', color: 'var(--icon, #aebac1)', cursor: 'pointer', paddingRight: '16px' }}
+            >
+              <Icon name="ic-arrow-back" size={24} />
+            </button>
+          )}
+          <div data-testid="drawer-title-body" className="x1iyjqo2 x6ikm8r x10wlt62 x1mzt3pk">
+            <h2 className="html-h2 xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x1vvkbs x1heor9g x1qlqyl8 x1pd3egz x1a2a7pz x193iq5w xeuugli">
+              <span className="x140p0ai x1gufx9m x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x193iq5w xeuugli x13faqbe x1vvkbs x1lliihq x1fj9vlw x14ug900 x1hx0egp x1aueamr xjb2p0i xo1l8bm xladpa3 x1ic7a3i" style={{ fontSize: '22px', lineHeight: '15.6406px' }}>
+                <span className="html-span xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x1hl2dhg x16tdsg8 x1vvkbs x1lliihq x1plvlek xryxfnj x1n2onr6">
+                  <span className="html-span xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x1hl2dhg x16tdsg8 x1vvkbs x1lliihq x193iq5w x6ikm8r x10wlt62 xlyipyv xuxw1ft">
+                    <span dir="auto" title={activeSubpage || 'Alex Rivera'} className="x1iyjqo2 x6ikm8r x10wlt62 x1n2onr6 xlyipyv xuxw1ft xnpuxes" style={{ minHeight: '0px' }}>{activeSubpage || 'Alex Rivera'}</span>
+                  </span>
+                </span>
+              </span>
+            </h2>
+          </div>
+        </div>
       </header>
 
-      {/* Main Settings Page */}
-      {subpage === 'main' && (
-        <div style={{ flex: 1, overflowY: 'auto' }}>
-          {/* Profile Card Trigger */}
-          <div
-            role="button"
-            tabIndex={0}
-            onClick={onOpenProfile}
-            className="x10l6tqk x13vifvy x1ey2m1c xhtitgo xhslqc4 x47corl x87ps6o xh9ts4v x1k6rcq7 x1o0tod x6prxxf"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '16px',
-              padding: '16px 20px',
-              cursor: 'pointer',
-              borderBottom: '8px solid var(--app-background, #0b141a)',
-            }}
-          >
-            <div
-              style={{
-                width: '64px',
-                height: '64px',
-                borderRadius: '50%',
-                backgroundColor: 'var(--avatar-placeholder-background, #6b7780)',
-                color: '#ffffff',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '24px',
-                fontWeight: 600,
-                flexShrink: 0,
-              }}
-            >
-              U
-            </div>
-            <div style={{ flex: 1, minWidth: 0 }}>
-              <div style={{ fontSize: '18px', fontWeight: 500, color: 'var(--primary, #e9edef)', marginBottom: '4px' }}>
-                User
-              </div>
-              <div style={{ fontSize: '14px', color: 'var(--secondary, #8696a0)' }}>
-                Hey there! I am using WhatsApp.
+      {/* Body */}
+      <div className="x1n2onr6 xupqr0c x78zum5 x1r8uery x1iyjqo2 xdt5ytf x6ikm8r x1odjw0f x1hc1fzr x1anedsm">
+        {!activeSubpage && (
+          <div className="x1phvje8 xcldk2z x1tiyuxx x1nbhmlj">
+            {/* Search */}
+            <div dir="ltr" className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl">
+              <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x5yr21d xh8yej3">
+                <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x1q0g3np xh8yej3 x78zum5 x6s0dn4 x9f619 x4wrhlh x1w9h8z1 xn2mukg x1yo0frk x2b5yea x1vqgdyp xq91m4v x1fxkg6m x1x15s1u x17mvztg x1bsbh89 xxyb0qf x8qhm2e">
+                  <div className="html-div xdj266r xat24cr xexx8yu xyri2b x18d9i69 x1c1uobl xw4jnvo x1qx5ct2 x1yzq74r xv4jd37 xhslqc4">
+                    <span aria-hidden="true"><Icon name="ic-search" size={20} /></span>
+                  </div>
+                  <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x1iyjqo2">
+                    <input
+                      role="textbox"
+                      aria-label="Search"
+                      placeholder="Search"
+                      value={searchQuery}
+                      onChange={e => setSearchQuery(e.target.value)}
+                      className="html-input xdj266r x14z9mp xat24cr x1lziwak xexx8yu x18d9i69 x1c1uobl x14ug900 xjbqb8w x1v8p93f x1o3jo1z x16stqrj xv5lvn5 x1ejq31n x18oe1m7 x1sy0etr xstzfhl x972fbf x10w94by x1qhh985 x14e42zd x9f619 x1qx5ct2 xlyipyv xh8yej3 x1uvtmcs x1hcheoe x1nzty39 xkrh14z x1f6kntn xjb2p0i x8r4c90 xo1l8bm x1ic7a3i x12xpedu"
+                      type="text"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Settings Menu Items */}
-          {menuItems.map((item) => (
-            <div
-              key={item.id}
-              role="button"
-              tabIndex={0}
-              onClick={() => setSubpage(item.id as SettingsSubpage)}
-              className="x10l6tqk x13vifvy x1ey2m1c xhtitgo xhslqc4 x47corl x87ps6o xh9ts4v x1k6rcq7 x1o0tod x6prxxf"
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '24px',
-                padding: '16px 24px',
-                cursor: 'pointer',
-                borderBottom: '1px solid var(--border-default, rgba(134, 150, 160, 0.08))',
-              }}
-            >
-              <div style={{ color: 'var(--icon, #aebac1)', display: 'flex' }}>
-                <Icon name={item.icon} size={22} />
+            {/* Listbox */}
+            <div role="listbox" data-testid="dropdown" className="x78zum5 x1iyjqo2 xw2csxc x1odjw0f">
+              <div tabIndex={-1} className="x78zum5 xdt5ytf x1iyjqo2 x2lah0s xdl72j9 x1odjw0f xh8yej3">
+                <div className="x1c4vz4f xs83m0k xdl72j9 x1g77sc7 x78zum5 xozqiw3 x1oa3qoh x12fk4p8 xeuugli x2lwn1j x1nhvcw1 xdt5ytf x1qjc9v5 x16ovd2e x1nzty39 x12xbjc7 x12w63v0" data-testid="menu-controller-focus-receiver" tabIndex={0}>
+                  <div className="x3psx0u xat24cr x1280gxy x1h678fw xv6tirj x1c1uobl xyri2b">
+                    {filteredItems.map(item => (
+                      <div
+                        key={item.id}
+                        data-testid={item.testid}
+                        aria-disabled="false"
+                        role="listitem"
+                        onClick={item.onClick}
+                        style={{ cursor: 'pointer' }}
+                      >
+                        <div className="x78zum5 xh8yej3 x1iyjqo2 x1n2onr6 x9f619 xkh2ocl" data-testid="cell-frame-container" aria-disabled="false" role="button" tabIndex={-1}>
+                          <div className="xs83m0k xdl72j9 x1g77sc7 x78zum5 xozqiw3 x1oa3qoh x12fk4p8 xeuugli x1nhvcw1 x1q0g3np x9f619 x1iyjqo2 x1qjc9v5 x879a55 x16ydxro xyo1k6t xlr9sxt xvvg52n xwd4zgb xq8v1ta x17gydlx x1jsj9aw">
+                            <div className="x1c4vz4f xdl72j9 x1g77sc7 x78zum5 xozqiw3 x1oa3qoh x12fk4p8 x2lwn1j xl56j7k x1q0g3np x6s0dn4 xz9dl7a xsag5q8 xe2zdcy x1pic42t x1fns5xo xn95wi4" style={{ flexShrink: 0 }}>
+                              <div className="xhslqc4">
+                                <span aria-hidden="true"><Icon name={item.icon} size={24} /></span>
+                              </div>
+                            </div>
+                            <div className="x78zum5 xdl72j9 xdt5ytf x1iyjqo2 xl56j7k xeuugli x1n1b19v">
+                              <div role="gridcell" aria-colindex={2} className="x6s0dn4 x78zum5 xggjnk3 x1yc453h">
+                                <div className="x14ug900 x78zum5 x1iyjqo2 x1jchvi3 xdod15v x6ikm8r x10wlt62 x1mzt3pk x1yc453h xo1l8bm" data-testid="cell-frame-title">
+                                  <span dir="auto" title={item.label} className="x1iyjqo2 x6ikm8r x10wlt62 x1n2onr6 xlyipyv xuxw1ft xnpuxes" style={{ minHeight: '0px' }}>{item.label}</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-              <div style={{ fontSize: '16px', color: 'var(--primary, #e9edef)' }}>
-                {item.label}
-              </div>
-            </div>
-          ))}
-
-          {/* Log Out */}
-          <div
-            role="button"
-            tabIndex={0}
-            className="x10l6tqk x13vifvy x1ey2m1c xhtitgo xhslqc4 x47corl x87ps6o xh9ts4v x1k6rcq7 x1o0tod x6prxxf"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '24px',
-              padding: '16px 24px',
-              cursor: 'pointer',
-              color: '#ea4335',
-            }}
-          >
-            <div style={{ display: 'flex' }}>
-              <Icon name="ic-close" size={22} color="#ea4335" />
-            </div>
-            <div style={{ fontSize: '16px', fontWeight: 500 }}>
-              Log out
             </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* Subpage: Theme */}
-      {subpage === 'theme' && (
-        <div style={{ padding: '24px' }}>
-          <div style={{ fontSize: '14px', color: 'var(--secondary, #8696a0)', marginBottom: '16px' }}>
-            Choose a theme
+        {/* Subpage View */}
+        {activeSubpage && (
+          <div style={{ padding: '24px 20px', color: 'var(--primary, #e9edef)' }}>
+            <h3 style={{ fontSize: '16px', fontWeight: 500, marginBottom: '16px' }}>{activeSubpage} Options</h3>
+            <p style={{ fontSize: '14px', color: 'var(--secondary, #8696a0)', lineHeight: '20px' }}>
+              Manage your {activeSubpage.toLowerCase()} settings and preferences.
+            </p>
           </div>
-          {(['dark', 'light', 'system'] as const).map((t) => (
-            <label
-              key={t}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '16px',
-                padding: '12px 0',
-                cursor: 'pointer',
-                color: 'var(--primary, #e9edef)',
-                fontSize: '15px',
-                textTransform: 'capitalize',
-              }}
-            >
-              <input
-                type="radio"
-                name="theme"
-                value={t}
-                checked={selectedTheme === t}
-                onChange={() => setSelectedTheme(t)}
-                style={{ accentColor: '#00a884', width: '18px', height: '18px' }}
-              />
-              <span>{t === 'system' ? 'System default' : t}</span>
-            </label>
-          ))}
-        </div>
-      )}
-
-      {/* Subpage: Notifications */}
-      {subpage === 'notifications' && (
-        <div style={{ padding: '24px' }}>
-          <div style={{ fontSize: '15px', color: 'var(--primary, #e9edef)', fontWeight: 500, marginBottom: '8px' }}>
-            Messages
-          </div>
-          <div style={{ fontSize: '13px', color: 'var(--secondary, #8696a0)', marginBottom: '20px' }}>
-            Show notifications for new messages
-          </div>
-          <label style={{ display: 'flex', alignItems: 'center', gap: '12px', color: 'var(--primary, #e9edef)', fontSize: '14px' }}>
-            <input type="checkbox" defaultChecked style={{ accentColor: '#00a884' }} />
-            <span>Message sounds</span>
-          </label>
-        </div>
-      )}
-
-      {/* Subpage: Privacy */}
-      {subpage === 'privacy' && (
-        <div style={{ padding: '24px' }}>
-          <div style={{ fontSize: '15px', color: 'var(--primary, #e9edef)', fontWeight: 500, marginBottom: '8px' }}>
-            Who can see my personal info
-          </div>
-          <div style={{ fontSize: '13px', color: 'var(--secondary, #8696a0)', marginBottom: '16px' }}>
-            Last seen and online: Everyone
-          </div>
-          <div style={{ fontSize: '13px', color: 'var(--secondary, #8696a0)', marginBottom: '16px' }}>
-            Profile photo: Everyone
-          </div>
-          <div style={{ fontSize: '13px', color: 'var(--secondary, #8696a0)', marginBottom: '16px' }}>
-            About: Everyone
-          </div>
-          <div style={{ fontSize: '13px', color: 'var(--secondary, #8696a0)', marginBottom: '16px' }}>
-            Read receipts: On
-          </div>
-        </div>
-      )}
-
-      {/* Subpage: Security */}
-      {subpage === 'security' && (
-        <div style={{ padding: '24px' }}>
-          <div style={{ fontSize: '15px', color: 'var(--primary, #e9edef)', fontWeight: 500, marginBottom: '8px' }}>
-            End-to-end encryption
-          </div>
-          <div style={{ fontSize: '13px', color: 'var(--secondary, #8696a0)', lineHeight: '20px' }}>
-            Messages and calls in end-to-end encrypted chats stay between you and the people you choose. Not even WhatsApp can read or listen to them.
-          </div>
-        </div>
-      )}
-
-      {/* Subpage: Shortcuts */}
-      {subpage === 'shortcuts' && (
-        <div style={{ padding: '20px', flex: 1, overflowY: 'auto' }}>
-          {[
-            { key: 'Ctrl + Alt + N', desc: 'New chat' },
-            { key: 'Ctrl + Alt + Shift + [', desc: 'Previous chat' },
-            { key: 'Ctrl + Alt + Shift + ]', desc: 'Next chat' },
-            { key: 'Ctrl + Alt + Shift + M', desc: 'Mute chat' },
-            { key: 'Ctrl + Alt + Backspace', desc: 'Delete chat' },
-            { key: 'Ctrl + Alt + Shift + U', desc: 'Mark as unread' },
-            { key: 'Ctrl + Alt + Shift + P', desc: 'Pin chat' },
-            { key: 'Ctrl + Alt + /', desc: 'Search chat' },
-          ].map((item, idx) => (
-            <div
-              key={idx}
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                padding: '12px 0',
-                borderBottom: '1px solid var(--border-default, rgba(134, 150, 160, 0.08))',
-              }}
-            >
-              <span style={{ fontSize: '14px', color: 'var(--primary, #e9edef)' }}>{item.desc}</span>
-              <kbd style={{ backgroundColor: '#202c33', padding: '3px 8px', borderRadius: '4px', fontSize: '12px', color: 'var(--secondary, #8696a0)' }}>
-                {item.key}
-              </kbd>
-            </div>
-          ))}
-        </div>
-      )}
-
-      {/* Subpage: Help */}
-      {subpage === 'help' && (
-        <div style={{ padding: '24px' }}>
-          <div style={{ fontSize: '15px', color: 'var(--primary, #e9edef)', fontWeight: 500, marginBottom: '8px' }}>
-            Help Center
-          </div>
-          <div style={{ fontSize: '13px', color: 'var(--secondary, #8696a0)', marginBottom: '16px' }}>
-            WhatsApp Web version 2.3000.1030025732
-          </div>
-          <div style={{ fontSize: '13px', color: '#00a884', cursor: 'pointer' }}>
-            Terms & Privacy Policy
-          </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };

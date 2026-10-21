@@ -1,0 +1,163 @@
+__d("WAWebSyncdConst", [
+    "$InternalEnum",
+    "WATimeUtils"
+], function(t, n, r, o, a, i, l) {
+    "use strict";
+    let e;
+    const s = 1000;
+    const u = 1000 * 60 * 60;
+    const c = 2;
+    const d = o("WATimeUtils").DAY_MILLISECONDS * 2;
+    const m = 0;
+    const p = 3;
+    const _ = 1;
+    const f = 1;
+    const g = 7;
+    const h = 0;
+    const y = (e = n("$InternalEnum"))({
+        Star: "star",
+        Contact: "contact",
+        Mute: "mute",
+        PinDEPRECATED: "pin",
+        Pin: "pin_v1",
+        SettingPushName: "setting_pushName",
+        LabelEdit: "label_edit",
+        LabelJid: "label_jid",
+        LabelSublist: "label_sublist",
+        QuickReply: "quick_reply",
+        LocaleSetting: "setting_locale",
+        Archive: "archive",
+        MarkChatAsRead: "markChatAsRead",
+        ClearChat: "clearChat",
+        DeleteMessageForMe: "deleteMessageForMe",
+        Sentinel: "sentinel",
+        UnarchiveChatsSetting: "setting_unarchiveChats",
+        DeleteChat: "deleteChat",
+        AndroidUnsupportedActions: "android_unsupported_actions",
+        PrimaryFeature: "primary_feature",
+        Subscription: "subscription",
+        Nux: "nux",
+        Agent: "deviceAgent",
+        TimeFormat: "time_format",
+        UserStatusMute: "userStatusMute",
+        PrimaryVersion: "primary_version",
+        RemoveRecentSticker: "removeRecentSticker",
+        ChatAssignment: "agentChatAssignment",
+        ChatAssignmentOpenedStatus: "agentChatAssignmentOpenedStatus",
+        FavoriteSticker: "favoriteSticker",
+        PnForLidChat: "pnForLidChat",
+        ShareOwnPn: "shareOwnPn",
+        ExternalWebBeta: "external_web_beta",
+        MarketingMessage: "marketingMessage",
+        MarketingMessageBroadcast: "marketingMessageBroadcast",
+        StatusPrivacy: "status_privacy",
+        BotWelcomeRequest: "bot_welcome_request",
+        LabelReordering: "label_reordering",
+        PaymentInfo: "payment_info",
+        CustomPaymentMethods: "custom_payment_methods",
+        LockChat: "lock",
+        ChatLockSettings: "setting_chatLock",
+        DeviceCapabilities: "device_capabilities",
+        DeviceCapabilitiesV2: "device_capabilities_v2",
+        DisableLinkPreviews: "setting_disableLinkPreviews",
+        NoteEdit: "note_edit",
+        Favorites: "favorites",
+        MerchantPaymentPartner: "merchant_payment_partner",
+        AvatarUpdated: "avatar_updated_action",
+        AiThreadRename: "ai_thread_rename",
+        AiThreadDelete: "ai_thread_delete",
+        AiThreadPin: "thread_pin",
+        VoipRelayAllCalls: "setting_relayAllCalls",
+        CallLog: "call_log",
+        WaffleAccountLinkState: "waffle_account_link_state",
+        PaymentTos: "payment_tos",
+        Broadcast: "broadcast",
+        BroadcastJid: "broadcast_jid",
+        BusinessBroadcastList: "business_broadcast_list",
+        BusinessBroadcastCampaign: "business_broadcast_campaign",
+        DetectedOutcomeStatus: "detected_outcomes_status_action",
+        InteractiveMessageAction: "interactive_message_action",
+        LidContact: "lid_contact",
+        AdsCtwaPerCustomerDataSharing: "ctwaPerCustomerDataSharing",
+        SettingsSync: "settings_sync",
+        NctSaltSync: "nct_salt_sync",
+        BusinessBroadcastInsights: "business_broadcast_insights_sync",
+        ContactManagerMetadata: "contact_manager_metadata",
+        CustomerData: "customer_data",
+        OutContact: "out_contact",
+        SubscriptionsSyncV2: "subscriptions_sync_v2",
+        BizAiSettingsNudge: "biz_ai_settings_nudge",
+        WasaRootSecret: "wasa_root_secret",
+        GroupHistoryToggle: "group_history_toggle",
+        BBProPendingCustomerBaseAction: "bb_pro_pending_customer_base_action"
+    });
+    const C = e({
+        Regular: "regular",
+        RegularLow: "regular_low",
+        RegularHigh: "regular_high",
+        CriticalBlock: "critical_block",
+        CriticalUnblockLow: "critical_unblock_low"
+    });
+    const b = e.Mirrored([
+        "Success",
+        "SuccessHasMore",
+        "Conflict",
+        "ConflictHasMore",
+        "ErrorRetry",
+        "ErrorFatal",
+        "Blocked"
+    ]);
+    const v = e.Mirrored([
+        "UpToDate",
+        "Dirty",
+        "FailingFiniteRetry",
+        "Fatal",
+        "Blocked"
+    ]);
+    const S = e.Mirrored([
+        "Success",
+        "Malformed",
+        "Orphan",
+        "Unsupported",
+        "Skipped",
+        "Failed"
+    ]);
+    const R = e.Mirrored([
+        "Msg",
+        "Chat",
+        "Agent",
+        "ChatAssignment",
+        "UserStatusMute",
+        "Account",
+        "FavoriteSticker",
+        "Thread"
+    ]);
+    const L = e.Mirrored([
+        "ApplyRemoteAndDropLocal",
+        "SkipRemote",
+        "SkipRemoteAndDropLocal"
+    ]);
+    const E = e.Mirrored([
+        "Patch",
+        "Snapshot",
+        "Local"
+    ]);
+    l.BACKOFF_MIN_TIMEOUT = s;
+    l.BACKOFF_MAX_TIMEOUT = u;
+    l.BACKOFF_BASE = c;
+    l.FINITE_FAILURE_EXPIRY_DURATION = d;
+    l.DEFAULT_COLLECTION_VERSION = m;
+    l.LABEL_ASSOCIATION_SYNC_VERSION = p;
+    l.LABEL_SUBLIST_SYNC_VERSION = _;
+    l.CONTACT_MANAGER_METADATA_SYNC_VERSION = f;
+    l.CHAT_ASSIGNMENT_SYNC_VERSION = g;
+    l.MUTATION_NAME_INDEX = h;
+    l.Actions = y;
+    l.CollectionName = C;
+    l.CollectionState = b;
+    l.CollectionSyncState = v;
+    l.SyncActionState = S;
+    l.SyncModelType = R;
+    l.ConflictResolutionState = L;
+    l.SyncDataType = E;
+}, 98);

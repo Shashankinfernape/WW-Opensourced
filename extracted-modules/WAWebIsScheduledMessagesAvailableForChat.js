@@ -1,0 +1,16 @@
+__d("WAWebIsScheduledMessagesAvailableForChat", [
+    "WAWebABProps",
+    "WAWebBizCoexUtils",
+    "WAWebChatGetters",
+    "WAWebFrontendChatGetters",
+    "WAWebScheduledMessagesGatingUtils"
+], function(t, n, r, o, a, i, l) {
+    function e(e) {
+        return !o("WAWebChatGetters").getIsBot(e) && !o("WAWebChatGetters").getIsNewsletter(e) && !o("WAWebFrontendChatGetters").getIsCAG(e) && !o("WAWebFrontendChatGetters").getIsCapiHostedGroup(e) && !o("WAWebBizCoexUtils").isCloudApiContact(e.contact) && !o("WAWebBizCoexUtils").isMeOrCurrentContactHosted(e.contact) && o("WAWebScheduledMessagesGatingUtils").isScheduledMessagesSenderEnabled();
+    }
+    function s(t) {
+        return e(t) && o("WAWebABProps").getABPropConfigValue("scheduled_messages_photo_video_sender_enabled");
+    }
+    l.isScheduledMessagesAvailableForChat = e;
+    l.isScheduledMediaAvailableForChat = s;
+}, 98);

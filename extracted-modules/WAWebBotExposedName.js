@@ -1,0 +1,43 @@
+__d("WAWebBotExposedName", [
+    "fbt",
+    "WAWebBotPrimaryFeaturesFrontend",
+    "WAWebBotProductGating",
+    "WAWebBotStaticProfiles",
+    "WAWebBotSupportState"
+], function(t, n, r, o, a, i, l, s) {
+    function e() {
+        return s._("Unknown account").toString();
+    }
+    function u(e, t, n) {
+        if (o("WAWebBotStaticProfiles").isStaticProfile(e) || n != null && n !== "") {
+            return true;
+        }
+        return !c(t);
+    }
+    function c(e) {
+        const t = o("WAWebBotSupportState").evaluateBotSupport(e, function(e) {
+            return o("WAWebBotProductGating").isBotProductGateOn(e, o("WAWebBotPrimaryFeaturesFrontend").getBotPrimaryFeatures());
+        });
+        if (t.kind === o("WAWebBotSupportState").BotSupportStateKind.UNRESOLVED || t.kind === o("WAWebBotSupportState").BotSupportStateKind.DEPRECATED || t.kind === o("WAWebBotSupportState").BotSupportStateKind.UNSUPPORTED) {
+            return true;
+        }
+        if (t.kind === o("WAWebBotSupportState").BotSupportStateKind.DELETED) {
+            return !o("WAWebBotSupportState").hasCustomDeletedTombstone(t);
+        }
+        if (t.kind === o("WAWebBotSupportState").BotSupportStateKind.SUPPORTED) {
+            return false;
+        }
+        return (()=>{
+            throw Error(`Match: No case succesfully matched. Make exhaustive or add a wildcard case using '_'. Argument: ${t.kind}`);
+        })();
+    }
+    function d() {
+        return s._("Agent").toString();
+    }
+    const m = "Meta AI";
+    l.getUnknownAccountName = e;
+    l.shouldDisplayProfileName = u;
+    l.isBotProfileViewOnly = c;
+    l.getAgentSubtitle = d;
+    l.META_AI_THREAD_SUBTITLE = m;
+}, 226);

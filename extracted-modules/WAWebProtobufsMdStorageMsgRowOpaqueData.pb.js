@@ -1,0 +1,436 @@
+__d("WAWebProtobufsMdStorageMsgRowOpaqueData.pb", [
+    "$InternalEnum",
+    "WAProtoConst"
+], function(t, n, r, o, a, i, l) {
+    let e;
+    const s = n("$InternalEnum")({
+        POLL: 0,
+        QUIZ: 1
+    });
+    const u = n("$InternalEnum")({
+        UNKNOWN: 0,
+        TEXT: 1,
+        IMAGE: 2
+    });
+    const c = {};
+    const d = {};
+    const m = {};
+    const p = {};
+    const _ = {};
+    const f = {};
+    const g = {};
+    const h = {};
+    c.name = "MsgRowOpaqueData";
+    c.internalSpec = {
+        currentMsg: [
+            1,
+            (e = o("WAProtoConst")).TYPES.MESSAGE,
+            m
+        ],
+        quotedMsg: [
+            2,
+            e.TYPES.MESSAGE,
+            m
+        ]
+    };
+    d.name = "PollEncValue";
+    d.internalSpec = {
+        encPayload: [
+            1,
+            e.TYPES.BYTES
+        ],
+        encIv: [
+            2,
+            e.TYPES.BYTES
+        ]
+    };
+    m.name = "MsgOpaqueData";
+    m.internalSpec = {
+        body: [
+            1,
+            e.TYPES.STRING
+        ],
+        caption: [
+            3,
+            e.TYPES.STRING
+        ],
+        lng: [
+            5,
+            e.TYPES.DOUBLE
+        ],
+        isLive: [
+            6,
+            e.TYPES.BOOL
+        ],
+        lat: [
+            7,
+            e.TYPES.DOUBLE
+        ],
+        paymentAmount1000: [
+            8,
+            e.TYPES.INT32
+        ],
+        paymentNoteMsgBody: [
+            9,
+            e.TYPES.STRING
+        ],
+        matchedText: [
+            11,
+            e.TYPES.STRING
+        ],
+        title: [
+            12,
+            e.TYPES.STRING
+        ],
+        description: [
+            13,
+            e.TYPES.STRING
+        ],
+        futureproofBuffer: [
+            14,
+            e.TYPES.BYTES
+        ],
+        clientUrl: [
+            15,
+            e.TYPES.STRING
+        ],
+        loc: [
+            16,
+            e.TYPES.STRING
+        ],
+        pollName: [
+            17,
+            e.TYPES.STRING
+        ],
+        pollOptions: [
+            18,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            h
+        ],
+        pollSelectableOptionsCount: [
+            20,
+            e.TYPES.UINT32
+        ],
+        messageSecret: [
+            21,
+            e.TYPES.BYTES
+        ],
+        originalSelfAuthor: [
+            51,
+            e.TYPES.STRING
+        ],
+        senderTimestampMs: [
+            22,
+            e.TYPES.INT64
+        ],
+        pollUpdateParentKey: [
+            23,
+            e.TYPES.STRING
+        ],
+        encPollVote: [
+            24,
+            e.TYPES.MESSAGE,
+            d
+        ],
+        isSentCagPollCreation: [
+            28,
+            e.TYPES.BOOL
+        ],
+        pollContentType: [
+            42,
+            e.TYPES.ENUM,
+            u
+        ],
+        pollType: [
+            46,
+            e.TYPES.ENUM,
+            s
+        ],
+        correctOptionIndex: [
+            47,
+            e.TYPES.INT32
+        ],
+        pollVotesSnapshot: [
+            41,
+            e.TYPES.MESSAGE,
+            f
+        ],
+        encReactionTargetMessageKey: [
+            25,
+            e.TYPES.STRING
+        ],
+        encReactionEncPayload: [
+            26,
+            e.TYPES.BYTES
+        ],
+        encReactionEncIv: [
+            27,
+            e.TYPES.BYTES
+        ],
+        botMessageSecret: [
+            29,
+            e.TYPES.BYTES
+        ],
+        targetMessageKey: [
+            30,
+            e.TYPES.STRING
+        ],
+        encPayload: [
+            31,
+            e.TYPES.BYTES
+        ],
+        encIv: [
+            32,
+            e.TYPES.BYTES
+        ],
+        eventName: [
+            33,
+            e.TYPES.STRING
+        ],
+        isEventCanceled: [
+            34,
+            e.TYPES.BOOL
+        ],
+        eventDescription: [
+            35,
+            e.TYPES.STRING
+        ],
+        eventJoinLink: [
+            36,
+            e.TYPES.STRING
+        ],
+        eventStartTime: [
+            37,
+            e.TYPES.INT64
+        ],
+        eventLocation: [
+            38,
+            e.TYPES.MESSAGE,
+            _
+        ],
+        eventEndTime: [
+            40,
+            e.TYPES.INT64
+        ],
+        eventIsScheduledCall: [
+            44,
+            e.TYPES.BOOL
+        ],
+        eventExtraGuestsAllowed: [
+            45,
+            e.TYPES.BOOL
+        ],
+        plainProtobufBytes: [
+            43,
+            e.TYPES.BYTES
+        ],
+        quarantineExtractedText: [
+            48,
+            e.TYPES.STRING
+        ],
+        pollEndTime: [
+            49,
+            e.TYPES.INT64
+        ],
+        pollHideVoterNames: [
+            50,
+            e.TYPES.BOOL
+        ],
+        pollAllowAddOption: [
+            52,
+            e.TYPES.BOOL
+        ],
+        sharableEventInviteId: [
+            53,
+            e.TYPES.STRING
+        ],
+        sharableEventInviteTitle: [
+            54,
+            e.TYPES.STRING
+        ],
+        sharableEventInviteStartTime: [
+            55,
+            e.TYPES.INT64
+        ],
+        sharableEventInviteEndTime: [
+            56,
+            e.TYPES.INT64
+        ],
+        sharableEventInviteCaption: [
+            57,
+            e.TYPES.STRING
+        ],
+        sharableEventInviteIsCanceled: [
+            58,
+            e.TYPES.BOOL
+        ],
+        sharableEventInviteJpegThumbnail: [
+            59,
+            e.TYPES.BYTES
+        ],
+        sharableEventInviteCallLink: [
+            60,
+            e.TYPES.STRING
+        ],
+        mediaPngThumbnail: [
+            61,
+            e.TYPES.STRING
+        ],
+        qrUrl: [
+            62,
+            e.TYPES.STRING
+        ],
+        musicData: [
+            63,
+            e.TYPES.MESSAGE,
+            p
+        ]
+    };
+    p.name = "MsgOpaqueData$MusicData";
+    p.internalSpec = {
+        musicContentMediaId: [
+            1,
+            e.TYPES.STRING
+        ],
+        songId: [
+            2,
+            e.TYPES.STRING
+        ],
+        author: [
+            3,
+            e.TYPES.STRING
+        ],
+        title: [
+            4,
+            e.TYPES.STRING
+        ],
+        songUri: [
+            5,
+            e.TYPES.STRING
+        ],
+        artworkUri: [
+            6,
+            e.TYPES.STRING
+        ],
+        style: [
+            7,
+            e.TYPES.INT32
+        ],
+        songStartTimeMs: [
+            8,
+            e.TYPES.INT32
+        ],
+        clipDurationMs: [
+            9,
+            e.TYPES.INT32
+        ],
+        isExplicit: [
+            10,
+            e.TYPES.BOOL
+        ],
+        countryBlocklist: [
+            11,
+            e.TYPES.BYTES
+        ],
+        artistAttribution: [
+            12,
+            e.TYPES.STRING
+        ],
+        artworkDirectPath: [
+            13,
+            e.TYPES.STRING
+        ],
+        artworkSha256: [
+            14,
+            e.TYPES.BYTES
+        ],
+        artworkEncSha256: [
+            15,
+            e.TYPES.BYTES
+        ],
+        artworkMediaKey: [
+            16,
+            e.TYPES.BYTES
+        ],
+        consumptionCheckedAtS: [
+            17,
+            e.TYPES.INT64
+        ],
+        isAvailableForConsumption: [
+            18,
+            e.TYPES.BOOL
+        ]
+    };
+    _.name = "MsgOpaqueData$EventLocation";
+    _.internalSpec = {
+        degreesLatitude: [
+            1,
+            e.TYPES.DOUBLE
+        ],
+        degreesLongitude: [
+            2,
+            e.TYPES.DOUBLE
+        ],
+        name: [
+            3,
+            e.TYPES.STRING
+        ],
+        address: [
+            4,
+            e.TYPES.STRING
+        ],
+        url: [
+            5,
+            e.TYPES.STRING
+        ],
+        jpegThumbnail: [
+            6,
+            e.TYPES.BYTES
+        ]
+    };
+    f.name = "MsgOpaqueData$PollVotesSnapshot";
+    f.internalSpec = {
+        pollVotes: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            g
+        ]
+    };
+    g.name = "MsgOpaqueData$PollVoteSnapshot";
+    g.internalSpec = {
+        option: [
+            1,
+            e.TYPES.MESSAGE,
+            h
+        ],
+        optionVoteCount: [
+            2,
+            e.TYPES.INT32
+        ]
+    };
+    h.name = "MsgOpaqueData$PollOption";
+    h.internalSpec = {
+        name: [
+            1,
+            e.TYPES.STRING
+        ],
+        hash: [
+            2,
+            e.TYPES.STRING
+        ],
+        addOptionMsgKey: [
+            3,
+            e.TYPES.STRING
+        ]
+    };
+    l.MsgOpaqueData$PollType = s;
+    l.MsgOpaqueData$PollContentType = u;
+    l.MsgRowOpaqueDataSpec = c;
+    l.PollEncValueSpec = d;
+    l.MsgOpaqueDataSpec = m;
+    l.MsgOpaqueData$MusicDataSpec = p;
+    l.MsgOpaqueData$EventLocationSpec = _;
+    l.MsgOpaqueData$PollVotesSnapshotSpec = f;
+    l.MsgOpaqueData$PollVoteSnapshotSpec = g;
+    l.MsgOpaqueData$PollOptionSpec = h;
+}, 98);

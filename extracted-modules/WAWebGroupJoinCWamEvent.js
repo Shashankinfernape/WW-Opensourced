@@ -1,0 +1,24 @@
+__d("WAWebGroupJoinCWamEvent", [
+    "WAWebWamCodegenUtils"
+], function(t, n, r, o, a, i, l) {
+    const e = o("WAWebWamCodegenUtils").defineEvents({
+        GroupJoinC: [
+            158,
+            {
+                dedupKey: [
+                    1,
+                    o("WAWebWamCodegenUtils").TYPES.INTEGER
+                ]
+            },
+            [
+                1,
+                1,
+                1
+            ],
+            "regular"
+        ]
+    }, {
+        GroupJoinC: []
+    });
+    l.GroupJoinCWamEvent = e;
+}, 98);

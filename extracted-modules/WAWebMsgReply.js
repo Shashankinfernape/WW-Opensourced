@@ -1,0 +1,79 @@
+__d("WAWebMsgReply", [
+    "WAWebBotGenTypingIndicatorMsg",
+    "WAWebChatCommunityUtils",
+    "WAWebChatGetters",
+    "WAWebChatGroupUtils",
+    "WAWebEnvironment",
+    "WAWebFrontendChatGetters",
+    "WAWebFrontendMsgGetters",
+    "WAWebGroupAgentParticipant",
+    "WAWebGroupMetadataGetters",
+    "WAWebKeepInChatMsgUtils",
+    "WAWebLimitSharingGatingUtils",
+    "WAWebMiscGatingUtils",
+    "WAWebMsgGetters",
+    "WAWebMsgMayFail",
+    "WAWebMsgModelUtils",
+    "WAWebMsgType",
+    "WAWebNewsletterGatingUtils",
+    "WAWebQuotedMsgModelUtils",
+    "WAWebRichResponseFrontendUtils",
+    "WAWebStateUtils"
+], function(t, n, r, o, a, i, l) {
+    function e(e) {
+        const t = o("WAWebStateUtils").unproxy(e);
+        const n = o("WAWebQuotedMsgModelUtils").getQuotedMsgObj(t);
+        if (n != null) {
+            return o("WAWebMsgGetters").getIsStatus(n.unsafe());
+        }
+        return false;
+    }
+    function s(e) {
+        const t = o("WAWebStateUtils").unproxy(e);
+        const n = o("WAWebFrontendMsgGetters").getChat(t);
+        return !o("WAWebMsgMayFail").msgMayFail(t) && !o("WAWebMsgGetters").getIsNotification(t) && !o("WAWebChatGroupUtils").isSuspendedGroup(n) && !o("WAWebChatGroupUtils").isTerminatedGroup(n) && t.type !== o("WAWebMsgType").MSG_TYPE.UNKNOWN && t.type !== o("WAWebMsgType").MSG_TYPE.CIPHERTEXT && t.type !== o("WAWebMsgType").MSG_TYPE.DEBUG_PLACEHOLDER && t.type !== o("WAWebMsgType").MSG_TYPE.OVERSIZED && t.type !== o("WAWebMsgType").MSG_TYPE.REVOKED && o("WAWebMsgModelUtils").interactiveButtonsReleased(t) && !o("WAWebKeepInChatMsgUtils").isExpiredAndNotKept(t) && !(t.type === o("WAWebMsgType").MSG_TYPE.CHAT && t.subtype === o("WAWebBotGenTypingIndicatorMsg").BOT_TYPING_PLACEHOLDER_MSG_SUBTYPE);
+    }
+    function u(e) {
+        const t = o("WAWebStateUtils").unproxy(e);
+        const n = o("WAWebFrontendMsgGetters").getChat(t);
+        if (o("WAWebChatGetters").getIsBroadcast(n) || o("WAWebChatGetters").getIsNewsletter(n) && !o("WAWebNewsletterGatingUtils").isNewsletterSendingAdminRepliesEnabled() || t.isCarouselCard || o("WAWebMsgGetters").getIsBotFutureproofPlaceholder(t) || o("WAWebFrontendMsgGetters").getAsRichResponse(e) && !o("WAWebRichResponseFrontendUtils").canReplyRichResponse(e) || o("WAWebLimitSharingGatingUtils").isChatAcp2Restricted(n)) {
+            return false;
+        }
+        if (o("WAWebFrontendChatGetters").getIsCAG(n)) {
+            return t.messageSecret != null;
+        }
+        if (r("WAWebEnvironment").isWeb && t.type === o("WAWebMsgType").MSG_TYPE.CALL_LOG && t.senderObj == null) {
+            return false;
+        }
+        return n.canSend && s(e);
+    }
+    function c(e) {
+        let t;
+        const n = o("WAWebStateUtils").unproxy(e);
+        const r = o("WAWebFrontendMsgGetters").getChat(n);
+        if (o("WAWebGroupAgentParticipant").isBotAuthorDirectMessagingBlocked(n.author, r) || o("WAWebChatGetters").getIsNewsletter(r)) {
+            return false;
+        }
+        if (n.isCarouselCard) {
+            return n.isCarouselCard;
+        }
+        if (o("WAWebMsgGetters").getIsBotFutureproofPlaceholder(n) || o("WAWebFrontendMsgGetters").getAsRichResponse(e) && !o("WAWebRichResponseFrontendUtils").canReplyRichResponse(e) || (t = n.author) != null && t.isLid() && r.groupMetadata != null && o("WAWebGroupMetadataGetters").getIsCag(r.groupMetadata) || o("WAWebChatCommunityUtils").shouldMaskPhoneNumberForChat(r, o("WAWebFrontendMsgGetters").getSenderObj(n)) || r.isSuspendedOrTerminated() && o("WAWebMiscGatingUtils").isGroupSuspendV2Enabled()) {
+            return false;
+        }
+        return !o("WAWebMsgMayFail").msgMayFail(n) && !o("WAWebMsgGetters").getIsNotification(n) && n.type !== o("WAWebMsgType").MSG_TYPE.UNKNOWN && n.type !== o("WAWebMsgType").MSG_TYPE.CIPHERTEXT && n.type !== o("WAWebMsgType").MSG_TYPE.DEBUG_PLACEHOLDER && n.type !== o("WAWebMsgType").MSG_TYPE.OVERSIZED && n.type !== o("WAWebMsgType").MSG_TYPE.REVOKED && !o("WAWebMsgGetters").getIsSentByMe(n) && o("WAWebMsgGetters").getIsGroupMsg(n) && o("WAWebMsgModelUtils").interactiveButtonsReleased(n) && !o("WAWebKeepInChatMsgUtils").isExpiredAndNotKept(n);
+    }
+    function d(e) {
+        let t;
+        const n = o("WAWebStateUtils").unproxy(e);
+        const r = o("WAWebFrontendMsgGetters").getChat(n);
+        if ((t = n.author) != null && t.isLid() && r.groupMetadata != null && o("WAWebGroupMetadataGetters").getIsCag(r.groupMetadata) || o("WAWebChatCommunityUtils").shouldMaskPhoneNumberForChat(r, o("WAWebFrontendMsgGetters").getSenderObj(n)) || o("WAWebFrontendMsgGetters").getAsRichResponse(e) && !o("WAWebRichResponseFrontendUtils").canReplyRichResponse(e) || o("WAWebGroupAgentParticipant").isBotAuthorDirectMessagingBlocked(n.author, r)) {
+            return false;
+        }
+        return r.isAnnounceGrpRestrict === true && !r.isReadOnly && !o("WAWebMsgMayFail").msgMayFail(n) && !o("WAWebMsgGetters").getIsSentByMe(n) && !o("WAWebMsgGetters").getIsNotification(n) && n.type !== o("WAWebMsgType").MSG_TYPE.UNKNOWN && n.type !== o("WAWebMsgType").MSG_TYPE.CIPHERTEXT && n.type !== o("WAWebMsgType").MSG_TYPE.OVERSIZED && n.type !== o("WAWebMsgType").MSG_TYPE.REVOKED && o("WAWebMsgModelUtils").interactiveButtonsReleased(n) && !o("WAWebKeepInChatMsgUtils").isExpiredAndNotKept(n) && !n.isCarouselCard;
+    }
+    l.isStatusReplyMsg = e;
+    l.replyChecks = s;
+    l.canReplyMsg = u;
+    l.canPrivateReply = c;
+    l.canPrivateReplyInRestrictedGrp = d;
+}, 98);

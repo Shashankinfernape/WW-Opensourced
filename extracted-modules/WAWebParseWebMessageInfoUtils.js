@@ -1,0 +1,1120 @@
+__d("WAWebParseWebMessageInfoUtils", [
+    "WAJids",
+    "WALogger",
+    "WATimeUtils",
+    "WAWebBotGroupGatingUtils",
+    "WAWebCTWAGatingUtils",
+    "WAWebCommonMsgSubtypeTypes",
+    "WAWebDecodeJid",
+    "WAWebGroupAgentPrivacyNoticeParams",
+    "WAWebLimitSharingGatingUtils",
+    "WAWebLimitSharingPropMappingUtils",
+    "WAWebMsgKey",
+    "WAWebMsgType",
+    "WAWebParseMsgPaymentInfo",
+    "WAWebProcessBaseMsgInfo",
+    "WAWebProtobufsWeb.pb",
+    "WAWebUserPrefsMeUser",
+    "WAWebViewMode.flow",
+    "WAWebWid",
+    "WAWebWidFactory",
+    "getErrorSafe",
+    "nullthrows"
+], function(t, n, r, o, a, i, l) {
+    let e;
+    let s;
+    function u(e) {
+        if (e.originalSelfAuthorUserJidString == null) {
+            return o("WAWebUserPrefsMeUser").getMaybeMePnUser();
+        }
+        return o("WAWebDecodeJid").decodeJid(e.originalSelfAuthorUserJidString);
+    }
+    function c(t, n) {
+        const a = o("WAWebDecodeJid").decodeJidAndValidate(n.remoteJid, "remoteJid");
+        let i = o("WAWebDecodeJid").decodeJidAndValidate(n.participant, "participant");
+        const l = u(t);
+        let author = o("WAWebDecodeJid").decodeJidAndValidate(t.participant, "participant");
+        if (i == null && a != null && r("WAWebWid").isWid(a) && a === o("WAWebWidFactory").createWid(o("WAJids").PSA_JID)) {
+            i = o("WAWebWidFactory").createWid(o("WAJids").PSA_JID);
+        }
+        if (r("WAWebWid").isGroup(a) || r("WAWebWid").isStatus(a)) {
+            if (i == null) {
+                if (n.fromMe === true) {
+                    i = l;
+                } else if (t.participant != null) {
+                    i = o("WAWebDecodeJid").decodeJid(t.participant);
+                }
+            }
+            author = author ?? i;
+        }
+        try {
+            const c = new (r("WAWebMsgKey"))({
+                fromMe: r("nullthrows")(n.fromMe),
+                remote: a,
+                id: r("nullthrows")(n.id),
+                participant: i
+            });
+            return {
+                msgKey: c,
+                author
+            };
+        } catch (error) {
+            const d = r("getErrorSafe")(error);
+            o("WALogger").WARN(e || (e = babelHelpers.taggedTemplateLiteralLoose([
+                "drop: cannot create MsgKey: ",
+                ", ",
+                ""
+            ])), d.message, d.stack).sendLogs("history-sync-message-drop-cannot-create-msgkey", {
+                sampling: 0.01
+            });
+            return;
+        }
+    }
+    function d(e, t) {
+        if (e.messageStubType != null) {
+            const n = o("WAWebProtobufsWeb.pb").WebMessageInfo$StubType;
+            let r;
+            e: {
+                if (e.messageStubType === n.REVOKE) {
+                    t.type = "revoked";
+                    t.subtype = "sender";
+                    t.kind = o("WAWebMsgType").MsgKind.RevokedMessage;
+                    const a = e.messageStubParameters;
+                    const i = a != null && a.length > 0 ? a[0] : null;
+                    if (i != null) {
+                        t.protocolMessageKey = c(e, babelHelpers.extends({}, e.key, {
+                            id: i
+                        }))?.msgKey;
+                    }
+                    r = t;
+                    break e;
+                }
+                if (e.messageStubType === n.CIPHERTEXT) {
+                    t.type = "ciphertext";
+                    t.kind = o("WAWebMsgType").MsgKind.Ciphertext;
+                    r = t;
+                    break e;
+                }
+                if (e.messageStubType === n.OVERSIZED) {
+                    t.type = "oversized";
+                    t.kind = o("WAWebMsgType").MsgKind.Oversized;
+                    r = t;
+                    break e;
+                }
+                if (e.messageStubType === n.FUTUREPROOF) {
+                    t.kind = o("WAWebMsgType").MsgKind.Unknown;
+                    t.subtype = "phone";
+                    r = t;
+                    break e;
+                }
+                if (e.messageStubType === n.CAPI_GROUP_NE2EE_SYSTEM_MESSAGE) {
+                    t.type = "notification_template";
+                    t.subtype = "is_capi_hosted_group";
+                    r = t;
+                    break e;
+                }
+                if (e.messageStubType === n.QUARANTINED_MESSAGE) {
+                    t.type = o("WAWebMsgType").MSG_TYPE.QUARANTINED;
+                    t.kind = o("WAWebMsgType").MsgKind.QuarantinedMessage;
+                    t.quarantineOriginalProtobuf = e.quarantinedMessage?.originalData;
+                    t.quarantineExtractedText = e.quarantinedMessage?.extractedText;
+                    r = t;
+                    break e;
+                }
+                if (e.messageStubType === n.SCHEDULED_MESSAGE_CREATED) {
+                    t.type = o("WAWebMsgType").MSG_TYPE.NOTIFICATION;
+                    t.subtype = o("WAWebCommonMsgSubtypeTypes").MsgSubtype.ScheduledMessageCreated;
+                    t.kind = o("WAWebMsgType").MsgKind.Notification;
+                    r = t;
+                    break e;
+                }
+                {
+                    r = m(e, t);
+                    break e;
+                }
+            }
+            return r;
+        }
+    }
+    function m(e, t) {
+        if (e.messageStubType != null) {
+            const u = o("WAWebProtobufsWeb.pb").WebMessageInfo$StubType;
+            t.type = "notification_template";
+            t.kind = o("WAWebMsgType").MsgKind.NotificationTemplate;
+            t.templateParams = Array.isArray(e.messageStubParameters) ? e.messageStubParameters.map((t)=>{
+                if (e.messageStubType === u.GROUP_CREATE || e.messageStubType === u.GROUP_CHANGE_SUBJECT) {
+                    return t;
+                }
+                return o("WAWebDecodeJid").decodeJid(t);
+            }) : undefined;
+            if (e.messageStubType == null) {
+                t.templateParams = undefined;
+                return t;
+            }
+            switch(e.messageStubType){
+                case u.NON_VERIFIED_TRANSITION:
+                    t.subtype = "non_verified_transition";
+                    break;
+                case u.UNVERIFIED_TRANSITION:
+                    t.subtype = "unverified_transition";
+                    break;
+                case u.VERIFIED_TRANSITION:
+                    t.subtype = "verified_transition";
+                    break;
+                case u.VERIFIED_LOW_UNKNOWN:
+                    t.subtype = "verified_low_unknown";
+                    break;
+                case u.VERIFIED_HIGH:
+                    t.subtype = "verified_high";
+                    break;
+                case u.VERIFIED_INITIAL_UNKNOWN:
+                    t.subtype = "verified_initial_unknown";
+                    break;
+                case u.VERIFIED_INITIAL_LOW:
+                    t.subtype = "verified_initial_low";
+                    break;
+                case u.VERIFIED_INITIAL_HIGH:
+                    t.subtype = "verified_initial_high";
+                    break;
+                case u.VERIFIED_TRANSITION_ANY_TO_NONE:
+                    t.subtype = "verified_transition_any_to_none";
+                    break;
+                case u.VERIFIED_TRANSITION_ANY_TO_HIGH:
+                    t.subtype = "verified_transition_any_to_high";
+                    break;
+                case u.VERIFIED_TRANSITION_HIGH_TO_LOW:
+                    t.subtype = "verified_transition_high_to_low";
+                    break;
+                case u.VERIFIED_TRANSITION_HIGH_TO_UNKNOWN:
+                    t.subtype = "verified_transition_high_to_unknown";
+                    break;
+                case u.VERIFIED_TRANSITION_UNKNOWN_TO_LOW:
+                    t.subtype = "verified_transition_unknown_to_low";
+                    break;
+                case u.VERIFIED_TRANSITION_LOW_TO_UNKNOWN:
+                    t.subtype = "verified_transition_low_to_unknown";
+                    break;
+                case u.VERIFIED_TRANSITION_NONE_TO_LOW:
+                    t.subtype = "verified_transition_none_to_low";
+                    break;
+                case u.VERIFIED_TRANSITION_NONE_TO_UNKNOWN:
+                    t.subtype = "verified_transition_none_to_unknown";
+                    break;
+                case u.GROUP_CREATE:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "create";
+                    t.body = t.templateParams[0];
+                    t.templateParams = undefined;
+                    break;
+                case u.REPORT_TO_ADMIN_ENABLED_STATUS:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "allow_admin_reports";
+                    break;
+                case u.GROUP_DELETE:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "delete";
+                    t.templateParams = undefined;
+                    break;
+                case u.GROUP_CHANGE_SUBJECT:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "subject";
+                    t.body = t.templateParams[0];
+                    t.templateParams = undefined;
+                    break;
+                case u.GROUP_CHANGE_ICON:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "picture";
+                    t.body = t.templateParams[0];
+                    t.templateParams = undefined;
+                    break;
+                case u.GROUP_CHANGE_INVITE_LINK:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "revoke_invite";
+                    break;
+                case u.GROUP_CHANGE_DESCRIPTION:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "description";
+                    t.body = t.templateParams[0];
+                    break;
+                case u.GROUP_CHANGE_RESTRICT:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "restrict";
+                    t.body = t.templateParams[0];
+                    break;
+                case u.GROUP_CHANGE_ANNOUNCE:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "announce";
+                    t.body = t.templateParams[0];
+                    break;
+                case u.GROUP_CHANGE_NO_FREQUENTLY_FORWARDED:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "no_frequently_forwarded";
+                    t.body = t.templateParams[0];
+                    break;
+                case u.GROUP_ANNOUNCE_MODE_MESSAGE_BOUNCE:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "announce_msg_bounce";
+                    t.templateParams = undefined;
+                    break;
+                case u.GROUP_PARTICIPANT_ADD:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "add";
+                    t.recipients = t.templateParams;
+                    t.templateParams = undefined;
+                    if (Array.isArray(t.recipients) && t.recipients.length === 1 && t.author === t.recipients[0]) {
+                        t.author = undefined;
+                    }
+                    if (r("WAWebWid").isPSA(t.author)) {
+                        t.author = undefined;
+                    }
+                    break;
+                case u.GROUP_PARTICIPANT_REMOVE:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "remove";
+                    t.recipients = t.templateParams;
+                    t.templateParams = undefined;
+                    break;
+                case u.GROUP_PARTICIPANT_PROMOTE:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "promote";
+                    t.recipients = t.templateParams;
+                    t.templateParams = undefined;
+                    break;
+                case u.GROUP_PARTICIPANT_DEMOTE:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "demote";
+                    t.recipients = t.templateParams;
+                    t.templateParams = undefined;
+                    break;
+                case u.GROUP_PARTICIPANT_INVITE:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "invite";
+                    t.recipients = t.templateParams;
+                    t.templateParams = undefined;
+                    break;
+                case u.GROUP_PARTICIPANT_LEAVE:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "leave";
+                    t.recipients = t.templateParams;
+                    t.templateParams = undefined;
+                    break;
+                case u.GROUP_PARTICIPANT_CHANGE_NUMBER:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "modify";
+                    t.recipients = t.templateParams;
+                    t.templateParams = undefined;
+                    break;
+                case u.GROUP_V4_ADD_INVITE_SENT:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "v4_add_invite_sent";
+                    t.recipients = t.templateParams;
+                    t.templateParams = undefined;
+                    break;
+                case u.GROUP_PARTICIPANT_ADD_REQUEST_JOIN:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "v4_add_invite_join";
+                    t.recipients = t.templateParams;
+                    t.templateParams = undefined;
+                    break;
+                case u.GROUP_INVITE_LINK_GROWTH_LOCKED:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = t.templateParams[0] === "true" ? "growth_locked" : "growth_unlocked";
+                    t.body = "invite";
+                    t.templateParams = undefined;
+                    break;
+                case u.GROUP_PARTICIPANT_LINKED_GROUP_JOIN:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "linked_group_join";
+                    t.recipients = t.templateParams;
+                    t.templateParams = undefined;
+                    break;
+                case u.BROADCAST_CREATE:
+                    t.type = "broadcast_notification";
+                    t.kind = o("WAWebMsgType").MsgKind.BroadcastNotification;
+                    t.subtype = o("WAWebCommonMsgSubtypeTypes").MsgSubtype.Create;
+                    t.body = t.templateParams[0] ?? "0";
+                    t.templateParams = undefined;
+                    break;
+                case u.BB_PRO_BROADCAST_CHAT_CARD:
+                    t.type = "broadcast_notification";
+                    t.kind = o("WAWebMsgType").MsgKind.BroadcastNotification;
+                    t.subtype = o("WAWebCommonMsgSubtypeTypes").MsgSubtype.BbProCreate;
+                    t.body = t.templateParams[0] ?? "0";
+                    t.templateParams = undefined;
+                    break;
+                case u.BROADCAST_ADD:
+                    t.type = "broadcast_notification";
+                    t.kind = o("WAWebMsgType").MsgKind.BroadcastNotification;
+                    t.subtype = "add";
+                    t.recipients = t.templateParams;
+                    t.templateParams = undefined;
+                    break;
+                case u.BROADCAST_REMOVE:
+                    t.type = "broadcast_notification";
+                    t.kind = o("WAWebMsgType").MsgKind.BroadcastNotification;
+                    t.subtype = "remove";
+                    t.recipients = t.templateParams;
+                    t.templateParams = undefined;
+                    break;
+                case u.GENERIC_NOTIFICATION:
+                    t.type = "notification";
+                    t.kind = o("WAWebMsgType").MsgKind.Notification;
+                    t.body = t.templateParams[0];
+                    t.templateParams = undefined;
+                    break;
+                case u.E2E_IDENTITY_CHANGED:
+                    t.type = "e2e_notification";
+                    t.kind = o("WAWebMsgType").MsgKind.E2eNotification;
+                    t.subtype = "identity";
+                    t.body = t.templateParams[0] instanceof r("WAWebWid") ? t.templateParams[0].toString() : t.templateParams[0];
+                    t.templateParams = undefined;
+                    break;
+                case u.E2E_IDENTITY_UNAVAILABLE:
+                    t.type = "e2e_notification";
+                    t.kind = o("WAWebMsgType").MsgKind.E2eNotification;
+                    t.subtype = "e2e_identity_unavailable";
+                    break;
+                case u.CHAT_PSA:
+                    t.type = "e2e_notification";
+                    t.kind = o("WAWebMsgType").MsgKind.E2eNotification;
+                    t.subtype = "chat_psa";
+                    break;
+                case u.E2E_DEVICE_CHANGED:
+                    t.type = "e2e_notification";
+                    t.kind = o("WAWebMsgType").MsgKind.E2eNotification;
+                    t.subtype = "device";
+                    t.body = t.templateParams[0] instanceof r("WAWebWid") ? t.templateParams[0].toString() : t.templateParams[0];
+                    t.devicesAdded = parseInt(t.templateParams[1], 10);
+                    t.devicesRemoved = parseInt(t.templateParams[2], 10);
+                    t.templateParams = undefined;
+                    break;
+                case u.E2E_ENCRYPTED:
+                    t.type = "e2e_notification";
+                    t.kind = o("WAWebMsgType").MsgKind.E2eNotification;
+                    t.subtype = "encrypt";
+                    break;
+                case u.E2E_ENCRYPTED_NOW:
+                    t.type = "e2e_notification";
+                    t.kind = o("WAWebMsgType").MsgKind.E2eNotification;
+                    t.subtype = "encrypt_now";
+                    break;
+                case u.CALL_MISSED_VOICE:
+                    t.type = "call_log";
+                    t.kind = o("WAWebMsgType").MsgKind.CallLog;
+                    t.subtype = "miss";
+                    break;
+                case u.CALL_MISSED_VIDEO:
+                    t.type = "call_log";
+                    t.kind = o("WAWebMsgType").MsgKind.CallLog;
+                    t.subtype = "miss_video";
+                    break;
+                case u.CALL_MISSED_GROUP_VOICE:
+                    t.type = "call_log";
+                    t.kind = o("WAWebMsgType").MsgKind.CallLog;
+                    t.subtype = "miss_group";
+                    break;
+                case u.CALL_MISSED_GROUP_VIDEO:
+                    t.type = "call_log";
+                    t.kind = o("WAWebMsgType").MsgKind.CallLog;
+                    t.subtype = "miss_group_video";
+                    break;
+                case u.SILENCED_UNKNOWN_CALLER_AUDIO:
+                case u.SILENCED_UNKNOWN_CALLER_VIDEO:
+                    t.type = "call_log";
+                    t.kind = o("WAWebMsgType").MsgKind.CallLog;
+                    t.subtype = "silence";
+                    break;
+                case u.INDIVIDUAL_CHANGE_NUMBER:
+                    t.subtype = "change_number";
+                    break;
+                case u.CHANGE_LID:
+                    t.subtype = "change_lid";
+                    break;
+                case u.SENDER_INVITE:
+                    t.subtype = "sender_invite";
+                    break;
+                case u.RECEIVER_INVITE:
+                    t.subtype = "receiver_invite";
+                    break;
+                case u.MASKED_THREAD_CREATED:
+                    t.subtype = "masked_thread_created";
+                    break;
+                case u.CAG_MASKED_THREAD_CREATED:
+                    t.subtype = "cag_masked_thread_created";
+                    break;
+                case u.CHANGE_EPHEMERAL_SETTING:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "ephemeral";
+                    t.author = t.templateParams[1] instanceof r("WAWebWid") ? t.templateParams[1] : undefined;
+                    break;
+                case u.PAYMENT_CIPHERTEXT:
+                    t.type = "payment";
+                    t.kind = o("WAWebMsgType").MsgKind.Payment;
+                    t.subtype = "ciphertext";
+                    if (e.paymentInfo != null) {
+                        const d = o("WAWebParseMsgPaymentInfo").parseMsgPaymentInfo(e.paymentInfo);
+                        t.paymentStatus = d.paymentStatus;
+                        t.paymentTxnStatus = d.paymentTxnStatus;
+                        t.paymentCurrency = d.paymentCurrency;
+                        t.paymentAmount1000 = d.paymentAmount1000;
+                        t.paymentMessageReceiverJid = d.paymentMessageReceiverJid;
+                        t.paymentExpiryTimestamp = d.paymentExpiryTimestamp;
+                        t.paymentTransactionTimestamp = d.paymentTransactionTimestamp;
+                    }
+                    break;
+                case u.PAYMENT_FUTUREPROOF:
+                    t.type = "payment";
+                    t.kind = o("WAWebMsgType").MsgKind.Payment;
+                    t.subtype = "futureproof";
+                    if (e.paymentInfo != null) {
+                        const m = o("WAWebParseMsgPaymentInfo").parseMsgPaymentInfo(e.paymentInfo);
+                        t.paymentStatus = m.paymentStatus;
+                        t.paymentTxnStatus = m.paymentTxnStatus;
+                        t.paymentCurrency = m.paymentCurrency;
+                        t.paymentAmount1000 = m.paymentAmount1000;
+                        t.paymentMessageReceiverJid = m.paymentMessageReceiverJid;
+                        t.paymentExpiryTimestamp = m.paymentExpiryTimestamp;
+                        t.paymentTransactionTimestamp = m.paymentTransactionTimestamp;
+                    }
+                    break;
+                case u.PAYMENT_ACTION_REQUEST_CANCELLED:
+                    t.subtype = "payment_transaction_request_cancelled";
+                    break;
+                case u.PAYMENT_TRANSACTION_STATUS_UPDATE_FAILED:
+                    t.subtype = "payment_transaction_status_update_failed";
+                    break;
+                case u.PAYMENT_TRANSACTION_STATUS_UPDATE_REFUNDED:
+                    t.subtype = "payment_transaction_status_update_refunded";
+                    break;
+                case u.PAYMENT_TRANSACTION_STATUS_UPDATE_REFUND_FAILED:
+                    t.subtype = "payment_transaction_status_update_refund_failed";
+                    break;
+                case u.PAYMENT_TRANSACTION_STATUS_RECEIVER_PENDING_SETUP:
+                    t.subtype = "payment_transaction_status_receiver_pending_setup";
+                    break;
+                case u.PAYMENT_TRANSACTION_STATUS_RECEIVER_SUCCESS_AFTER_HICCUP:
+                    t.subtype = "payment_transaction_status_receiver_success_after_hiccup";
+                    break;
+                case u.PAYMENT_ACTION_ACCOUNT_SETUP_REMINDER:
+                    t.subtype = "payment_action_account_setup_reminder";
+                    break;
+                case u.PAYMENT_ACTION_SEND_PAYMENT_REMINDER:
+                    t.subtype = "payment_action_send_payment_reminder";
+                    break;
+                case u.PAYMENT_ACTION_SEND_PAYMENT_INVITATION:
+                    t.subtype = "payment_action_send_payment_invitation";
+                    break;
+                case u.PAYMENT_ACTION_REQUEST_DECLINED:
+                    t.subtype = "payment_action_request_declined";
+                    break;
+                case u.PAYMENT_ACTION_REQUEST_EXPIRED:
+                    t.subtype = "payment_action_request_expired";
+                    break;
+                case u.BIZ_VERIFIED_TRANSITION_TOP_TO_BOTTOM:
+                    t.subtype = "biz_verified_transition_top_to_bottom";
+                    break;
+                case u.BIZ_VERIFIED_TRANSITION_BOTTOM_TO_TOP:
+                    t.subtype = "biz_verified_transition_bottom_to_top";
+                    break;
+                case u.BIZ_INTRO_TOP:
+                    t.subtype = "biz_intro_top";
+                    break;
+                case u.BIZ_INTRO_BOTTOM:
+                    t.subtype = "biz_intro_bottom";
+                    break;
+                case u.BIZ_NAME_CHANGE:
+                    t.subtype = "biz_name_change";
+                    break;
+                case u.BIZ_MOVE_TO_CONSUMER_APP:
+                    t.subtype = "biz_move_to_consumer_app";
+                    break;
+                case u.BIZ_TWO_TIER_MIGRATION_TOP:
+                    t.subtype = "biz_two_tier_migration_top";
+                    break;
+                case u.BIZ_TWO_TIER_MIGRATION_BOTTOM:
+                    t.subtype = "biz_two_tier_migration_bottom";
+                    break;
+                case u.BLUE_MSG_BSP_FB_TO_BSP_PREMISE:
+                    t.subtype = "blue_msg_bsp_fb_to_bsp_premise";
+                    break;
+                case u.BLUE_MSG_BSP_FB_TO_SELF_FB:
+                    t.subtype = "blue_msg_bsp_fb_to_self_fb";
+                    break;
+                case u.BLUE_MSG_BSP_FB_TO_SELF_PREMISE:
+                    t.subtype = "blue_msg_bsp_fb_to_self_premise";
+                    break;
+                case u.BLUE_MSG_BSP_FB_UNVERIFIED:
+                    t.subtype = "blue_msg_bsp_fb_unverified";
+                    break;
+                case u.BLUE_MSG_BSP_FB_UNVERIFIED_TO_BSP_PREMISE_VERIFIED:
+                    t.subtype = "blue_msg_bsp_fb_unverified_to_bsp_premise_verified";
+                    break;
+                case u.BLUE_MSG_BSP_FB_UNVERIFIED_TO_SELF_FB_VERIFIED:
+                    t.subtype = "blue_msg_bsp_fb_unverified_to_self_fb_verified";
+                    break;
+                case u.BLUE_MSG_BSP_FB_UNVERIFIED_TO_SELF_PREMISE_VERIFIED:
+                    t.subtype = "blue_msg_bsp_fb_unverified_to_self_premise_verified";
+                    break;
+                case u.BLUE_MSG_BSP_FB_VERIFIED:
+                    t.subtype = "blue_msg_bsp_fb_verified";
+                    break;
+                case u.BLUE_MSG_BSP_FB_VERIFIED_TO_BSP_PREMISE_UNVERIFIED:
+                    t.subtype = "blue_msg_bsp_fb_verified_to_bsp_premise_unverified";
+                    break;
+                case u.BLUE_MSG_BSP_FB_VERIFIED_TO_SELF_FB_UNVERIFIED:
+                    t.subtype = "blue_msg_bsp_fb_verified_to_self_fb_unverified";
+                    break;
+                case u.BLUE_MSG_BSP_FB_VERIFIED_TO_SELF_PREMISE_UNVERIFIED:
+                    t.subtype = "blue_msg_bsp_fb_verified_to_self_premise_unverified";
+                    break;
+                case u.BLUE_MSG_BSP_PREMISE_TO_SELF_PREMISE:
+                    t.subtype = "blue_msg_bsp_premise_to_self_premise";
+                    break;
+                case u.BLUE_MSG_BSP_PREMISE_UNVERIFIED:
+                    t.subtype = "blue_msg_bsp_premise_unverified";
+                    break;
+                case u.BLUE_MSG_BSP_PREMISE_UNVERIFIED_TO_SELF_PREMISE_VERIFIED:
+                    t.subtype = "blue_msg_bsp_premise_unverified_to_self_premise_verified";
+                    break;
+                case u.BLUE_MSG_BSP_PREMISE_VERIFIED:
+                    t.subtype = "blue_msg_bsp_premise_verified";
+                    break;
+                case u.BLUE_MSG_BSP_PREMISE_VERIFIED_TO_SELF_PREMISE_UNVERIFIED:
+                    t.subtype = "blue_msg_bsp_premise_verified_to_self_premise_unverified";
+                    break;
+                case u.BLUE_MSG_CONSUMER_TO_BSP_FB_UNVERIFIED:
+                    t.subtype = "blue_msg_consumer_to_bsp_fb_unverified";
+                    break;
+                case u.BLUE_MSG_CONSUMER_TO_BSP_PREMISE_UNVERIFIED:
+                    t.subtype = "blue_msg_consumer_to_bsp_premise_unverified";
+                    break;
+                case u.BLUE_MSG_CONSUMER_TO_SELF_FB_UNVERIFIED:
+                    t.subtype = "blue_msg_consumer_to_self_fb_unverified";
+                    break;
+                case u.BLUE_MSG_CONSUMER_TO_SELF_PREMISE_UNVERIFIED:
+                    t.subtype = "blue_msg_consumer_to_self_premise_unverified";
+                    break;
+                case u.BLUE_MSG_SELF_FB_TO_BSP_PREMISE:
+                    t.subtype = "blue_msg_self_fb_to_bsp_premise";
+                    break;
+                case u.BLUE_MSG_SELF_FB_TO_SELF_PREMISE:
+                    t.subtype = "blue_msg_self_fb_to_self_premise";
+                    break;
+                case u.BLUE_MSG_SELF_FB_UNVERIFIED:
+                    t.subtype = "blue_msg_self_fb_unverified";
+                    break;
+                case u.BLUE_MSG_SELF_FB_UNVERIFIED_TO_BSP_PREMISE_VERIFIED:
+                    t.subtype = "blue_msg_self_fb_unverified_to_bsp_premise_verified";
+                    break;
+                case u.BLUE_MSG_SELF_FB_UNVERIFIED_TO_SELF_PREMISE_VERIFIED:
+                    t.subtype = "blue_msg_self_fb_unverified_to_self_premise_verified";
+                    break;
+                case u.BLUE_MSG_SELF_FB_VERIFIED:
+                    t.subtype = "blue_msg_self_fb_verified";
+                    break;
+                case u.BLUE_MSG_SELF_FB_VERIFIED_TO_BSP_PREMISE_UNVERIFIED:
+                    t.subtype = "blue_msg_self_fb_verified_to_bsp_premise_unverified";
+                    break;
+                case u.BLUE_MSG_SELF_FB_VERIFIED_TO_SELF_PREMISE_UNVERIFIED:
+                    t.subtype = "blue_msg_self_fb_verified_to_self_premise_unverified";
+                    break;
+                case u.BLUE_MSG_SELF_PREMISE_TO_BSP_PREMISE:
+                    t.subtype = "blue_msg_self_premise_to_bsp_premise";
+                    break;
+                case u.BLUE_MSG_SELF_PREMISE_UNVERIFIED:
+                    t.subtype = "blue_msg_self_premise_unverified";
+                    break;
+                case u.BLUE_MSG_SELF_PREMISE_VERIFIED:
+                    t.subtype = "blue_msg_self_premise_verified";
+                    break;
+                case u.BLUE_MSG_TO_BSP_FB:
+                    t.subtype = "blue_msg_to_bsp_fb";
+                    break;
+                case u.BLUE_MSG_TO_CONSUMER:
+                    t.subtype = "blue_msg_to_consumer";
+                    break;
+                case u.BLUE_MSG_TO_SELF_FB:
+                    t.subtype = "blue_msg_to_self_fb";
+                    break;
+                case u.BLUE_MSG_UNVERIFIED_TO_BSP_FB_VERIFIED:
+                    t.subtype = "blue_msg_unverified_to_bsp_fb_verified";
+                    break;
+                case u.BLUE_MSG_UNVERIFIED_TO_BSP_PREMISE_VERIFIED:
+                    t.subtype = "blue_msg_unverified_to_bsp_premise_verified";
+                    break;
+                case u.BLUE_MSG_UNVERIFIED_TO_SELF_FB_VERIFIED:
+                    t.subtype = "blue_msg_unverified_to_self_fb_verified";
+                    break;
+                case u.BLUE_MSG_UNVERIFIED_TO_VERIFIED:
+                    t.subtype = "blue_msg_unverified_to_verified";
+                    break;
+                case u.BLUE_MSG_VERIFIED_TO_BSP_FB_UNVERIFIED:
+                    t.subtype = "blue_msg_verified_to_bsp_fb_unverified";
+                    break;
+                case u.BLUE_MSG_VERIFIED_TO_BSP_PREMISE_UNVERIFIED:
+                    t.subtype = "blue_msg_verified_to_bsp_premise_unverified";
+                    break;
+                case u.BLUE_MSG_VERIFIED_TO_SELF_FB_UNVERIFIED:
+                    t.subtype = "blue_msg_verified_to_self_fb_unverified";
+                    break;
+                case u.BLUE_MSG_VERIFIED_TO_UNVERIFIED:
+                    t.subtype = "blue_msg_verified_to_unverified";
+                    break;
+                case u.BIZ_PRIVACY_MODE_INIT_FB:
+                    t.subtype = "biz_privacy_mode_init_fb";
+                    if (t.id?.remote?.isBot()) {
+                        t.subtype = "bot_init";
+                    }
+                    break;
+                case u.BIZ_PRIVACY_MODE_INIT_BSP:
+                    t.subtype = "biz_privacy_mode_init_bsp";
+                    break;
+                case u.BIZ_PRIVACY_MODE_TO_FB:
+                    t.subtype = "biz_privacy_mode_to_fb";
+                    if (t.id?.remote?.isBot()) {
+                        t.subtype = "bot_init";
+                    }
+                    break;
+                case u.BIZ_PRIVACY_MODE_TO_BSP:
+                    t.subtype = "biz_privacy_mode_to_bsp";
+                    break;
+                case u.DISAPPEARING_MODE:
+                    t.subtype = "disappearing_mode";
+                    break;
+                case u.BLOCK_CONTACT:
+                    t.subtype = "block_contact";
+                    break;
+                case u.ADMIN_REVOKE:
+                    {
+                        t.type = "revoked";
+                        t.subtype = "admin";
+                        t.kind = o("WAWebMsgType").MsgKind.RevokedMessage;
+                        t.revokeSender = t.templateParams[1] instanceof r("WAWebWid") ? t.templateParams[1] : undefined;
+                        if (!t.revokeSender) {
+                            o("WALogger").LOG(s || (s = babelHelpers.taggedTemplateLiteralLoose([
+                                "ProtocolParser: admin revoke came without admin JID"
+                            ])));
+                        }
+                        const _ = t.templateParams[0];
+                        t.protocolMessageKey = c(e, {
+                            remoteJid: e.key.remoteJid,
+                            fromMe: o("WAWebUserPrefsMeUser").isMeAccount(t.from),
+                            id: _,
+                            participant: e.key.participant
+                        })?.msgKey;
+                        t.templateParams = undefined;
+                        break;
+                    }
+                case u.COMMUNITY_LINK_PARENT_GROUP:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "parent_group_link";
+                    break;
+                case u.COMMUNITY_LINK_SIBLING_GROUP:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "sibling_group_link";
+                    break;
+                case u.COMMUNITY_LINK_SUB_GROUP:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "sub_group_link";
+                    break;
+                case u.COMMUNITY_CREATE:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "community_create";
+                    break;
+                case u.COMMUNITY_UNLINK_PARENT_GROUP:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "parent_group_unlink";
+                    break;
+                case u.INTEGRITY_UNLINK_PARENT_GROUP:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "integrity_parent_group_unlink";
+                    break;
+                case u.COMMUNITY_UNLINK_SIBLING_GROUP:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "sibling_group_unlink";
+                    break;
+                case u.COMMUNITY_UNLINK_SUB_GROUP:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "sub_group_unlink";
+                    break;
+                case u.COMMUNITY_PARTICIPANT_PROMOTE:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "linked_group_promote";
+                    t.recipients = t.templateParams;
+                    t.templateParams = undefined;
+                    break;
+                case u.COMMUNITY_PARTICIPANT_DEMOTE:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "linked_group_demote";
+                    t.recipients = t.templateParams;
+                    t.templateParams = undefined;
+                    break;
+                case u.EPHEMERAL_KEEP_IN_CHAT:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "ephemeral_keep_in_chat";
+                    break;
+                case u.GROUP_MEMBERSHIP_JOIN_APPROVAL_MODE:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "membership_approval_mode";
+                    break;
+                case u.GROUP_MEMBER_ADD_MODE:
+                    {
+                        t.type = "gp2";
+                        t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                        t.subtype = "member_add_mode";
+                        break;
+                    }
+                case u.GROUP_MEMBERSHIP_JOIN_APPROVAL_REQUEST_NON_ADMIN_ADD:
+                    {
+                        t.type = "gp2";
+                        t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                        t.recipients = t.templateParams;
+                        t.subtype = "created_membership_requests";
+                        break;
+                    }
+                case u.GROUP_MEMBERSHIP_JOIN_APPROVAL_REQUEST:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "membership_approval_request";
+                    break;
+                case u.GROUP_PARTICIPANT_JOINED_GROUP_AND_PARENT_GROUP:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "auto_add";
+                    break;
+                case u.COMMUNITY_PARENT_GROUP_DELETED:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "delete_parent_group";
+                    break;
+                case u.BIZ_CHAT_ASSIGNMENT:
+                    t.subtype = "chat_assignment";
+                    break;
+                case u.BIZ_CHAT_ASSIGNMENT_UNASSIGN:
+                    t.subtype = "chat_assignment_unassign";
+                    break;
+                case u.COMMUNITY_PARENT_GROUP_SUBJECT_CHANGED:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "subject";
+                    t.body = t.templateParams[1];
+                    break;
+                case u.CAG_INVITE_AUTO_ADD:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "invite_auto_add";
+                    t.recipients = [
+                        o("WAWebUserPrefsMeUser").getMaybeMePnUser()
+                    ];
+                    break;
+                case u.CAG_INVITE_AUTO_JOINED:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "invite_auto_add";
+                    t.recipients = t.templateParams;
+                    t.templateParams = undefined;
+                    break;
+                case u.COMMUNITY_PARTICIPANT_ADD_RICH:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "community_participant_add_rich";
+                    break;
+                case u.SUB_GROUP_PARTICIPANT_ADD_RICH:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "sub_group_participant_add_rich";
+                    break;
+                case u.SUB_GROUP_INVITE_RICH:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "sub_group_invite_rich";
+                    t.author = undefined;
+                    break;
+                case u.COMMUNITY_INVITE_AUTO_ADD_RICH:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "community_invite_auto_add_rich";
+                    t.author = undefined;
+                    break;
+                case u.COMMUNITY_INVITE_RICH:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "community_invite_rich";
+                    t.author = undefined;
+                    break;
+                case u.COMMUNITY_LINK_PARENT_GROUP_RICH:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "community_link_parent_group_rich";
+                    break;
+                case u.COMMUNITY_CHANGE_DESCRIPTION:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "parent_group_description";
+                    t.body = t.templateParams[0];
+                    break;
+                case u.PINNED_MESSAGE_IN_CHAT:
+                    {
+                        t.type = "pinned_message";
+                        t.kind = o("WAWebMsgType").MsgKind.PinnedMessage;
+                        break;
+                    }
+                case u.COMMUNITY_ALLOW_MEMBER_ADDED_GROUPS:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "allow_non_admin_sub_group_creation";
+                    break;
+                case u.EMPTY_SUBGROUP_CREATE:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "empty_subgroup_create";
+                    break;
+                case u.SUGGESTED_SUBGROUP_ANNOUNCE:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "created_subgroup_suggestion";
+                    break;
+                case u.SUBGROUP_ADMIN_TRIGGERED_AUTO_ADD_RICH:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "subgroup_admin_triggered_auto_add";
+                    break;
+                case u.GENERAL_CHAT_ADD:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "general_chat_add";
+                    break;
+                case u.GENERAL_CHAT_AUTO_ADD_DISABLED:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "general_chat_auto_add_disabled";
+                    break;
+                case u.BIZ_BOT_1P_MESSAGING_ENABLED:
+                    t.type = o("WAWebMsgType").MSG_TYPE.NOTIFICATION_TEMPLATE;
+                    t.kind = o("WAWebMsgType").MsgKind.NotificationTemplate;
+                    t.subtype = "biz_bot_1p_disclosure";
+                    break;
+                case u.BIZ_BOT_3P_MESSAGING_ENABLED:
+                    t.type = o("WAWebMsgType").MSG_TYPE.NOTIFICATION_TEMPLATE;
+                    t.kind = o("WAWebMsgType").MsgKind.NotificationTemplate;
+                    t.subtype = "biz_bot_3p_disclosure";
+                    break;
+                case u.CHANGE_USERNAME:
+                    t.type = o("WAWebMsgType").MSG_TYPE.NOTIFICATION_TEMPLATE;
+                    t.kind = o("WAWebMsgType").MsgKind.NotificationTemplate;
+                    t.subtype = "change_username";
+                    if (r("WAWebWid").isGroup(t.id.remote)) {
+                        t.viewMode = o("WAWebViewMode.flow").ViewModeType.GROUP_MEMBER_UPDATES;
+                    }
+                    break;
+                case u.BIZ_COEX_PRIVACY_INIT_SELF:
+                    t.type = o("WAWebMsgType").MSG_TYPE.NOTIFICATION_TEMPLATE;
+                    t.kind = o("WAWebMsgType").MsgKind.NotificationTemplate;
+                    t.subtype = "biz_me_account_type_is_hosted";
+                    break;
+                case u.BIZ_COEX_PRIVACY_TRANSITION_SELF:
+                    t.type = o("WAWebMsgType").MSG_TYPE.NOTIFICATION_TEMPLATE;
+                    t.kind = o("WAWebMsgType").MsgKind.NotificationTemplate;
+                    t.subtype = "biz_me_account_type_is_hosted_transition";
+                    break;
+                case u.BIZ_COEX_PRIVACY_INIT:
+                    t.type = o("WAWebMsgType").MSG_TYPE.NOTIFICATION_TEMPLATE;
+                    t.kind = o("WAWebMsgType").MsgKind.NotificationTemplate;
+                    t.subtype = "biz_account_type_is_hosted";
+                    break;
+                case u.BIZ_COEX_PRIVACY_TRANSITION:
+                    t.type = o("WAWebMsgType").MSG_TYPE.NOTIFICATION_TEMPLATE;
+                    t.kind = o("WAWebMsgType").MsgKind.NotificationTemplate;
+                    t.subtype = "biz_account_type_changed_to_hosted";
+                    break;
+                case u.SUPPORT_AI_EDUCATION:
+                    t.type = o("WAWebMsgType").MSG_TYPE.NOTIFICATION_TEMPLATE;
+                    t.kind = o("WAWebMsgType").MsgKind.NotificationTemplate;
+                    t.subtype = "saga_init";
+                    break;
+                case u.EVENT_CANCELED:
+                case u.EVENT_UPDATED:
+                    {
+                        const g = babelHelpers.extends({}, o("WAWebProcessBaseMsgInfo").msgDataToBaseMsgInfo(t), {
+                            type: o("WAWebMsgType").MSG_TYPE.PROTOCOL,
+                            subtype: "event_edit_decrypted",
+                            kind: o("WAWebMsgType").MsgKind.ProtocolEventEdit,
+                            eventName: t.templateParams[0],
+                            eventStartTime: o("WATimeUtils").unixTime(),
+                            isEventCanceled: e.messageStubType === u.EVENT_CANCELED,
+                            protocolMessageKey: r("nullthrows")(c(e, r("nullthrows")(e.targetMessageId))?.msgKey, "Error: buildMsgKey or targetMessageId is null or missing for event edit system message history sync parsing"),
+                            editMsgType: o("WAWebMsgType").MSG_TYPE.EVENT_CREATION,
+                            latestEditMsgKey: undefined,
+                            latestEditSenderTimestampMs: undefined
+                        });
+                        return g;
+                    }
+                case u.COMMUNITY_OWNER_UPDATED:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = "community_owner_update";
+                    break;
+                case u.COMMUNITY_SUB_GROUP_VISIBILITY_HIDDEN:
+                    if (t.templateParams[0] === "on") {
+                        t.type = "gp2";
+                        t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                        t.subtype = "community_hidden_group";
+                    }
+                    break;
+                case u.SUPPORT_SYSTEM_MESSAGE:
+                    t.subtype = "support_system_message";
+                    break;
+                case u.BIZ_AUTOMATICALLY_LABELED_CHAT_SYSTEM_MESSAGE:
+                    t.subtype = "biz_automatically_labeled_chat_system_message";
+                    t.type = o("WAWebMsgType").MSG_TYPE.NOTIFICATION_TEMPLATE;
+                    t.kind = o("WAWebMsgType").MsgKind.NotificationTemplate;
+                    break;
+                case u.BIZ_AI_REPLIES_MUTED_IRRELEVANT_HISTORICAL_CHAT:
+                    t.subtype = "biz_ai_replies_muted_irrelevant_historical_chat";
+                    t.type = o("WAWebMsgType").MSG_TYPE.NOTIFICATION_TEMPLATE;
+                    t.kind = o("WAWebMsgType").MsgKind.NotificationTemplate;
+                    break;
+                case u.CHAT_WITH_BUSINESS_IN_DIRECTORY:
+                    t.subtype = "chat_with_business_in_directory";
+                    t.type = o("WAWebMsgType").MSG_TYPE.NOTIFICATION_TEMPLATE;
+                    t.kind = o("WAWebMsgType").MsgKind.NotificationTemplate;
+                    break;
+                case u.META_AI_THREAD_CREATED:
+                    t.subtype = "meta_ai_thread_created";
+                    t.type = o("WAWebMsgType").MSG_TYPE.NOTIFICATION_TEMPLATE;
+                    t.kind = o("WAWebMsgType").MsgKind.NotificationTemplate;
+                    break;
+                case u.META_AI_CONNECTOR_LINKED:
+                    t.subtype = "meta_ai_connector_linked";
+                    t.type = o("WAWebMsgType").MSG_TYPE.NOTIFICATION_TEMPLATE;
+                    t.kind = o("WAWebMsgType").MsgKind.NotificationTemplate;
+                    break;
+                case u.SPLIT_PAYMENT_MARKED_AS_PAID:
+                    t.subtype = "split_payment_marked_as_paid";
+                    t.type = o("WAWebMsgType").MSG_TYPE.NOTIFICATION_TEMPLATE;
+                    t.kind = o("WAWebMsgType").MsgKind.NotificationTemplate;
+                    break;
+                case u.GROUP_OPEN_BOT_ADDED:
+                    if (o("WAWebBotGroupGatingUtils").isOpenGroupBotParticipantAddEnabled() || o("WAWebBotGroupGatingUtils").isStandardBotProfileGroupEnabled() && o("WAWebGroupAgentPrivacyNoticeParams").getSyncedGroupAgentPrivacyNoticeAgent(t.templateParams) != null) {
+                        t.subtype = "group_transition_to_bot_group";
+                        t.type = o("WAWebMsgType").MSG_TYPE.NOTIFICATION_TEMPLATE;
+                        t.kind = o("WAWebMsgType").MsgKind.NotificationTemplate;
+                        break;
+                    } else {
+                        t.templateParams = undefined;
+                        break;
+                    }
+                case u.GROUP_TEE_BOT_ADDED:
+                    if (o("WAWebBotGroupGatingUtils").isTEEGroupBotParticipantAddEnabled()) {
+                        t.subtype = "group_transition_to_tee_bot_group";
+                        t.type = o("WAWebMsgType").MSG_TYPE.NOTIFICATION_TEMPLATE;
+                        t.kind = o("WAWebMsgType").MsgKind.NotificationTemplate;
+                        break;
+                    } else {
+                        t.templateParams = undefined;
+                        break;
+                    }
+                case u.CONTACT_INFO:
+                    t.subtype = o("WAWebCommonMsgSubtypeTypes").MsgSubtype.ContactInfoCard;
+                    t.type = o("WAWebMsgType").MSG_TYPE.NOTIFICATION_TEMPLATE;
+                    t.kind = o("WAWebMsgType").MsgKind.NotificationTemplate;
+                    break;
+                case u.BIZ_CUSTOMER_3PD_DATA_SHARING_OPT_IN_MESSAGE:
+                    if (o("WAWebCTWAGatingUtils").isPerCustomerDataSharingControlsEnabled()) {
+                        t.subtype = "biz_per_customer_3pd_data_share_opt_in";
+                        t.type = o("WAWebMsgType").MSG_TYPE.NOTIFICATION_TEMPLATE;
+                        t.kind = o("WAWebMsgType").MsgKind.NotificationTemplate;
+                        break;
+                    } else {
+                        t.templateParams = undefined;
+                        break;
+                    }
+                case u.BIZ_CUSTOMER_3PD_DATA_SHARING_OPT_OUT_MESSAGE:
+                    if (o("WAWebCTWAGatingUtils").isPerCustomerDataSharingControlsEnabled()) {
+                        t.subtype = "biz_per_customer_3pd_data_share_opt_out";
+                        t.type = o("WAWebMsgType").MSG_TYPE.NOTIFICATION_TEMPLATE;
+                        t.kind = o("WAWebMsgType").MsgKind.NotificationTemplate;
+                        break;
+                    } else {
+                        t.templateParams = undefined;
+                        break;
+                    }
+                case u.CHANGE_LIMIT_SHARING:
+                    t.viewMode = o("WAWebViewMode.flow").ViewModeType.HIDDEN;
+                    break;
+                case u.CHANGE_ACP2_SETTING:
+                    {
+                        if (!o("WAWebLimitSharingGatingUtils").isAcp2Enabled()) {
+                            t.viewMode = o("WAWebViewMode.flow").ViewModeType.HIDDEN;
+                            break;
+                        }
+                        const C = e.messageStubParameters ?? [];
+                        const b = C[0];
+                        const v = C[1];
+                        const S = C[2];
+                        t.subtype = o("WAWebCommonMsgSubtypeTypes").MsgSubtype.Acp2SystemMessage;
+                        t.templateParams = undefined;
+                        t.acp2Setting = {
+                            enabled: b === "1" || b === "true",
+                            trigger: o("WAWebLimitSharingPropMappingUtils").getLimitSharingTriggerFromHistorySyncStubParameter(String(v ?? "")),
+                            settingTimestamp: Number(S ?? 0) * 1000,
+                            initiatedByMe: e.key?.fromMe === true
+                        };
+                        break;
+                    }
+                case u.GROUP_MEMBER_SHARE_GROUP_HISTORY_MODE:
+                    t.type = "gp2";
+                    t.kind = o("WAWebMsgType").MsgKind.Gp2;
+                    t.subtype = o("WAWebCommonMsgSubtypeTypes").MsgSubtype.MemberShareGroupHistoryMode;
+                    break;
+                case u.CTWA_CONSUMER_DISCLOSURE:
+                    t.subtype = "ctwa_consumer_data_sharing_disclosure_system_message";
+                    t.type = o("WAWebMsgType").MSG_TYPE.NOTIFICATION_TEMPLATE;
+                    t.kind = o("WAWebMsgType").MsgKind.NotificationTemplate;
+                    break;
+                default:
+                    t.templateParams = undefined;
+                    break;
+            }
+            return t;
+        }
+    }
+    l.getMeJid = u;
+    l.buildMsgKey = c;
+    l.parseMsgStubProto = d;
+}, 98);

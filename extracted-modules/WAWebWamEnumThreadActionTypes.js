@@ -1,0 +1,35 @@
+__d("WAWebWamEnumThreadActionTypes", [], function(t, n, r, o, a, i) {
+    const e = Object.freeze({
+        PIN: 1,
+        UNPIN: 2,
+        DELETE: 3,
+        RENAME: 4,
+        CLICK_NEW_CHAT: 5,
+        CLICK_CHAT_HISTORY: 6,
+        CLICK_CONVERSATION_THREAD: 7,
+        THREAD_ENTER: 8,
+        THREAD_EXIT: 9,
+        THREAD_LIST_IMPRESSION: 10,
+        THREE_DOT_MENU: 11,
+        FIRST_PROMPT_SENT: 12,
+        SEARCH_RESULT_CLICK: 13,
+        SEARCH_RESULT_SHOWN: 14,
+        AI_HOME_IMPRESSION: 15,
+        CLICK_CONTINUE_CHAT_MODULE: 16,
+        CREATION_SHEET_SHOWN: 17,
+        THREAD_PHOTO_CHANGED: 18,
+        THREAD_CREATE_REQUEST: 19,
+        THREAD_CREATE_RESPONSE: 20,
+        GREETING_RECEIVED: 21,
+        CLICK_CHAT_INFO: 22,
+        CREATION_SHEET_DISMISSED: 23,
+        TOP_NAV: 24,
+        MUTE: 25,
+        UNMUTE: 26,
+        CLEAR: 27,
+        SHARE: 28,
+        ARCHIVE: 29,
+        UNARCHIVE: 30
+    });
+    i.THREAD_ACTION_TYPES = e;
+}, 66);

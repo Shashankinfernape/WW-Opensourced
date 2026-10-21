@@ -1,0 +1,32 @@
+__d("WAWebSupportChatStrings", [
+    "fbt"
+], function(t, n, r, o, a, i, l, s) {
+    function e() {
+        return s._("Official Support Account");
+    }
+    function u() {
+        return s._("This chat is with the official account of WhatsApp Support. Click to learn more.");
+    }
+    function c() {
+        return s._("Learn more about chats with WhatsApp Support.");
+    }
+    function d() {
+        return s._("WhatsApp secures your messages and calls with this account.");
+    }
+    function m() {
+        return s._("This is the official chat of WhatsApp Support. More than 2 billion people in over 180 countries use WhatsApp to stay in touch with friends and family, anytime and anywhere. WhatsApp is free and offers simple, secure and reliable messaging and calling, available on phones all over the world.");
+    }
+    function p() {
+        return s._("Start chat");
+    }
+    function _() {
+        return s._("By clicking Send, you acknowledge WhatsApp may review diagnostic and performance information and the metadata associated with your account to try to troubleshoot and solve your reported issue.");
+    }
+    l.SupportChatSubtitle = e;
+    l.SupportChatSystemMessage = u;
+    l.SupportChatLearnMoreLinkText = c;
+    l.SupportChatSecurityModalText = d;
+    l.SupportChatDescription = m;
+    l.SupportChatStartButtonText = p;
+    l.SupportChatDeviceInfoDisclaimer = _;
+}, 226);

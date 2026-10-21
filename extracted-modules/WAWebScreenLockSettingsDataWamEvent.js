@@ -1,0 +1,28 @@
+__d("WAWebScreenLockSettingsDataWamEvent", [
+    "WAWebWamCodegenUtils"
+], function(t, n, r, o, a, i, l) {
+    const e = o("WAWebWamCodegenUtils").defineEvents({
+        ScreenLockSettingsData: [
+            4802,
+            {
+                dedupKey: [
+                    2,
+                    o("WAWebWamCodegenUtils").TYPES.INTEGER
+                ],
+                screenAutoLockDuration: [
+                    1,
+                    o("WAWebWamCodegenUtils").TYPES.INTEGER
+                ]
+            },
+            [
+                1,
+                1,
+                1
+            ],
+            "regular"
+        ]
+    }, {
+        ScreenLockSettingsData: []
+    });
+    l.ScreenLockSettingsDataWamEvent = e;
+}, 98);

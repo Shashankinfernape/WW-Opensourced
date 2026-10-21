@@ -1,0 +1,219 @@
+__d("WAWebProtobufsDeviceCapabilities.pb", [
+    "$InternalEnum",
+    "WAProtoConst"
+], function(t, n, r, o, a, i, l) {
+    let e;
+    let s;
+    const u = (s = n("$InternalEnum"))({
+        PRODUCT_UNSPECIFIED: 0,
+        HATCH: 1
+    });
+    const c = s({
+        NONE: 0,
+        INFRA: 1,
+        FULL: 2
+    });
+    const d = s({
+        DISABLED: 0,
+        RECEIVER_ENABLED: 1,
+        SENDER_ENABLED: 2
+    });
+    const m = s({
+        NONE: 0,
+        MINIMAL: 1,
+        FULL: 2
+    });
+    const p = {};
+    const _ = {};
+    const f = {};
+    const g = {};
+    const h = {};
+    const y = {};
+    const C = {};
+    const b = {};
+    const v = {};
+    const S = {};
+    const R = {};
+    p.name = "DeviceCapabilities";
+    p.internalSpec = {
+        chatLockSupportLevel: [
+            1,
+            (e = o("WAProtoConst")).TYPES.ENUM,
+            m
+        ],
+        lidMigration: [
+            2,
+            e.TYPES.MESSAGE,
+            R
+        ],
+        businessBroadcast: [
+            3,
+            e.TYPES.MESSAGE,
+            S
+        ],
+        userHasAvatar: [
+            4,
+            e.TYPES.MESSAGE,
+            v
+        ],
+        memberNameTagPrimarySupport: [
+            5,
+            e.TYPES.ENUM,
+            d
+        ],
+        aiThread: [
+            6,
+            e.TYPES.MESSAGE,
+            b
+        ],
+        aiFbidMigration: [
+            7,
+            e.TYPES.MESSAGE,
+            C
+        ],
+        bizAiSettingsSync: [
+            8,
+            e.TYPES.MESSAGE,
+            y
+        ],
+        contactRefresh: [
+            9,
+            e.TYPES.MESSAGE,
+            h
+        ],
+        reverseHistorySync: [
+            10,
+            e.TYPES.MESSAGE,
+            g
+        ],
+        newsletterChatsMigration: [
+            11,
+            e.TYPES.MESSAGE,
+            f
+        ],
+        hostWriteMutationSupport: [
+            12,
+            e.TYPES.MESSAGE,
+            _
+        ]
+    };
+    _.name = "DeviceCapabilities$HostWriteMutationSupport";
+    _.internalSpec = {
+        mutationNames: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.STRING
+        ]
+    };
+    f.name = "DeviceCapabilities$NewsletterChatsMigration";
+    f.internalSpec = {
+        effectiveMigrated: [
+            1,
+            e.TYPES.BOOL
+        ],
+        countdownEndsAt: [
+            2,
+            e.TYPES.INT64
+        ],
+        rolledBack: [
+            3,
+            e.TYPES.BOOL
+        ]
+    };
+    g.name = "DeviceCapabilities$ReverseHistorySync";
+    g.internalSpec = {
+        enabledProducts: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.ENUM,
+            u
+        ]
+    };
+    h.name = "DeviceCapabilities$ContactRefresh";
+    h.internalSpec = {
+        refreshSupported: [
+            1,
+            e.TYPES.BOOL
+        ]
+    };
+    y.name = "DeviceCapabilities$BizAiSettingsSync";
+    y.internalSpec = {
+        handoffRemovalTimingEnabled: [
+            1,
+            e.TYPES.BOOL
+        ]
+    };
+    C.name = "DeviceCapabilities$AiFbidMigration";
+    C.internalSpec = {
+        chatDbMigrationTimestamp: [
+            1,
+            e.TYPES.UINT64
+        ],
+        supportVersion: [
+            2,
+            e.TYPES.UINT32
+        ]
+    };
+    b.name = "DeviceCapabilities$AiThread";
+    b.internalSpec = {
+        supportLevel: [
+            1,
+            e.TYPES.ENUM,
+            c
+        ]
+    };
+    v.name = "DeviceCapabilities$UserHasAvatar";
+    v.internalSpec = {
+        userHasAvatar: [
+            1,
+            e.TYPES.BOOL
+        ]
+    };
+    S.name = "DeviceCapabilities$BusinessBroadcast";
+    S.internalSpec = {
+        importListEnabled: [
+            1,
+            e.TYPES.BOOL
+        ],
+        companionSupportEnabled: [
+            2,
+            e.TYPES.BOOL
+        ],
+        campaignSyncEnabled: [
+            3,
+            e.TYPES.BOOL
+        ],
+        insightsSyncEnabled: [
+            4,
+            e.TYPES.BOOL
+        ],
+        recipientLimit: [
+            5,
+            e.TYPES.INT32
+        ],
+        proCompanionSupportEnabled: [
+            6,
+            e.TYPES.BOOL
+        ]
+    };
+    R.name = "DeviceCapabilities$LIDMigration";
+    R.internalSpec = {
+        chatDbMigrationTimestamp: [
+            1,
+            e.TYPES.UINT64
+        ]
+    };
+    l.DeviceCapabilities$ReverseHistorySync$Product = u;
+    l.DeviceCapabilities$AiThread$SupportLevel = c;
+    l.DeviceCapabilities$MemberNameTagPrimarySupport = d;
+    l.DeviceCapabilities$ChatLockSupportLevel = m;
+    l.DeviceCapabilitiesSpec = p;
+    l.DeviceCapabilities$HostWriteMutationSupportSpec = _;
+    l.DeviceCapabilities$NewsletterChatsMigrationSpec = f;
+    l.DeviceCapabilities$ReverseHistorySyncSpec = g;
+    l.DeviceCapabilities$ContactRefreshSpec = h;
+    l.DeviceCapabilities$BizAiSettingsSyncSpec = y;
+    l.DeviceCapabilities$AiFbidMigrationSpec = C;
+    l.DeviceCapabilities$AiThreadSpec = b;
+    l.DeviceCapabilities$UserHasAvatarSpec = v;
+    l.DeviceCapabilities$BusinessBroadcastSpec = S;
+    l.DeviceCapabilities$LIDMigrationSpec = R;
+}, 98);

@@ -1,0 +1,7857 @@
+__d("WAWebProtobufsE2E.pb", [
+    "$InternalEnum",
+    "WAProtoConst",
+    "WAWebProtobufsAICommon.pb",
+    "WAWebProtobufsAICommonDeprecated.pb",
+    "WAWebProtobufsAdv.pb",
+    "WAWebProtobufsAea.pb",
+    "WAWebProtobufsCompanionReg.pb",
+    "WAWebProtobufsMmsRetry.pb",
+    "WAWebProtobufsProtocol.pb",
+    "WAWebProtobufsServerSync.pb",
+    "WAWebProtobufsStatusAttributions.pb"
+], function(t, n, r, o, a, i, l) {
+    let e;
+    let s;
+    let u;
+    let c;
+    let d;
+    const m = (d = n("$InternalEnum"))({
+        AUTO: 0,
+        COMPACT: 1,
+        FULL: 2,
+        IMMERSIVE: 3
+    });
+    const p = d({
+        FIRST_PARTY: 0,
+        THIRD_PARTY: 1,
+        USER_CREATED: 2
+    });
+    const _ = d({
+        MASK_LINKED_DEVICES: 0
+    });
+    const f = d({
+        UNKNOWN: 0,
+        AUDIO: 1,
+        VIDEO: 2
+    });
+    const g = d({
+        CONNECTED: 0,
+        MISSED: 1,
+        FAILED: 2,
+        REJECTED: 3,
+        ACCEPTED_ELSEWHERE: 4,
+        ONGOING: 5,
+        SILENCED_BY_DND: 6,
+        SILENCED_UNKNOWN_CALLER: 7
+    });
+    const h = d({
+        REGULAR: 0,
+        SCHEDULED_CALL: 1,
+        VOICE_CHAT: 2
+    });
+    const y = d({
+        UNKNOWN: 0,
+        CANCEL: 1
+    });
+    const C = d({
+        UNKNOWN: 0,
+        VOICE: 1,
+        VIDEO: 2
+    });
+    const b = d({
+        UNKNOWN: 0,
+        GOING: 1,
+        NOT_GOING: 2,
+        MAYBE: 3
+    });
+    const v = d({
+        UNKNOWN_TYPE: 0,
+        PIN_FOR_ALL: 1,
+        UNPIN_FOR_ALL: 2
+    });
+    const S = d({
+        UNKNOWN: 0,
+        REACTION: 1
+    });
+    const R = d({
+        POLL: 0,
+        QUIZ: 1
+    });
+    const L = d({
+        UNKNOWN: 0,
+        TEXT: 1,
+        IMAGE: 2
+    });
+    const E = d({
+        UNKNOWN: 0,
+        DISPLAY_TEXT: 1
+    });
+    const k = d({
+        UNKNOWN: 0,
+        RESPONSE: 1,
+        NATIVE_FLOW: 2
+    });
+    const I = d({
+        UNKNOWN: 0,
+        EMPTY: 1,
+        TEXT: 2,
+        DOCUMENT: 3,
+        IMAGE: 4,
+        VIDEO: 5,
+        LOCATION: 6
+    });
+    const T = d({
+        UNKNOWN: 0,
+        SCHEDULED_MESSAGE: 1
+    });
+    const D = d({
+        UNKNOWN: 0,
+        EVENT_EDIT: 1,
+        MESSAGE_EDIT: 2,
+        MESSAGE_SCHEDULE: 3,
+        POLL_EDIT: 4,
+        POLL_ADD_OPTION: 5
+    });
+    const x = d({
+        UNKNOWN: 0,
+        CANCEL: 1
+    });
+    const $ = d({
+        UNKNOWN: 0,
+        ACTIVE: 1,
+        CANCELED: 2,
+        SUSPENDED: 3,
+        DELETED: 4,
+        LEFT_EVENT: 5,
+        REMOVED_FROM_INVITE_LIST: 6
+    });
+    const P = d({
+        DEFAULT: 0,
+        PARENT: 1
+    });
+    const N = d({
+        DEFAULT: 0,
+        EXTENSIONS_1: 1
+    });
+    const M = d({
+        UNKNOWN: 0,
+        HSCROLL_CARDS: 1,
+        ALBUM_IMAGE: 2
+    });
+    const w = d({
+        UNKNOWN_SURFACE: 0,
+        FB: 1,
+        IG: 2,
+        WA: 3
+    });
+    const A = d({
+        UNKNOWN: 0,
+        SINGLE_SELECT: 1
+    });
+    const F = d({
+        UNKNOWN: 0,
+        SINGLE_SELECT: 1,
+        PRODUCT_LIST: 2
+    });
+    const O = d({
+        CATALOG: 1
+    });
+    const B = d({
+        INQUIRY: 1,
+        ACCEPTED: 2,
+        DECLINED: 3
+    });
+    const W = d({
+        QUESTION_ANSWER: 1
+    });
+    const q = d({
+        PENDING: 0,
+        PAID: 1
+    });
+    const U = d({
+        REMINDER_STATUS_UNKNOWN: 0,
+        ACTIVE: 1,
+        CANCELLED_BY_CREATOR: 2,
+        STOPPED_BY_RECEIVER: 3,
+        EXPIRED: 4,
+        PAID: 5
+    });
+    const V = d({
+        REMINDER_FREQUENCY_UNKNOWN: 0,
+        WEEKLY: 1,
+        BI_WEEKLY: 2,
+        MONTHLY: 3,
+        QUARTERLY: 4
+    });
+    const H = d({
+        DEFAULT: 0,
+        MAPPER: 1
+    });
+    const G = d({
+        UNKNOWN: 0,
+        FBPAY: 1,
+        NOVI: 2,
+        UPI: 3,
+        PIX: 4
+    });
+    const z = d({
+        GREGORIAN: 1,
+        SOLAR_HIJRI: 2
+    });
+    const j = d({
+        MONDAY: 1,
+        TUESDAY: 2,
+        WEDNESDAY: 3,
+        THURSDAY: 4,
+        FRIDAY: 5,
+        SATURDAY: 6,
+        SUNDAY: 7
+    });
+    const K = d({
+        GENERATION_ERROR: 1,
+        CHUNK_CONSUMED: 2,
+        TIMEOUT: 3,
+        SESSION_EXHAUSTED: 4,
+        CHUNK_EXHAUSTED: 5,
+        DUPLICATED_REQUEST: 6
+    });
+    const Q = d({
+        REQUEST_SUCCESS: 0,
+        REQUEST_TIME_EXPIRED: 1,
+        DECLINED_SHARING_HISTORY: 2,
+        GENERIC_ERROR: 3,
+        ERROR_REQUEST_ON_NON_SMB_PRIMARY: 4,
+        ERROR_HOSTED_DEVICE_NOT_CONNECTED: 5,
+        ERROR_HOSTED_DEVICE_LOGIN_TIME_NOT_SET: 6,
+        ERROR_MULTI_PROVIDER_NOT_CONFIGURED: 7
+    });
+    const X = d({
+        NOTIFY_LAUNCH: 1,
+        DOWNLOAD_RESPONSES: 2
+    });
+    const Y = d({
+        SENT: 0,
+        DELIVERED: 1,
+        READ: 2,
+        REPLIED: 3,
+        QUICK_REPLIED: 4
+    });
+    const J = d({
+        UPLOAD_STICKER: 0,
+        SEND_RECENT_STICKER_BOOTSTRAP: 1,
+        GENERATE_LINK_PREVIEW: 2,
+        HISTORY_SYNC_ON_DEMAND: 3,
+        PLACEHOLDER_MESSAGE_RESEND: 4,
+        WAFFLE_LINKING_NONCE_FETCH: 5,
+        FULL_HISTORY_SYNC_ON_DEMAND: 6,
+        COMPANION_META_NONCE_FETCH: 7,
+        COMPANION_SYNCD_SNAPSHOT_FATAL_RECOVERY: 8,
+        COMPANION_CANONICAL_USER_NONCE_FETCH: 9,
+        HISTORY_SYNC_CHUNK_RETRY: 10,
+        GALAXY_FLOW_ACTION: 11,
+        BUSINESS_BROADCAST_INSIGHTS_DELIVERED_TO: 12,
+        BUSINESS_BROADCAST_INSIGHTS_REFRESH: 13,
+        CONTACT_REFRESH_REQUEST: 14,
+        RECENT_CONVERSATIONS_ON_DEMAND_REQUEST: 15
+    });
+    const Z = d({
+        UNKNOWN: 0,
+        LID: 1,
+        PHONE_NUMBER: 2
+    });
+    const ee = d({
+        INITIAL_BOOTSTRAP: 0,
+        INITIAL_STATUS_V3: 1,
+        FULL: 2,
+        RECENT: 3,
+        PUSH_NAME: 4,
+        NON_BLOCKING_DATA: 5,
+        ON_DEMAND: 6,
+        NO_HISTORY: 7,
+        MESSAGE_ACCESS_STATUS: 8,
+        RECENT_CONVERSATIONS_ON_DEMAND: 9
+    });
+    const te = d({
+        CHAT_OPEN: 0,
+        COMPANION_PAIRING: 1
+    });
+    const ne = d({
+        EMPTY: 0,
+        NON_EMPTY: 1
+    });
+    const re = d({
+        REVOKE: 0,
+        EPHEMERAL_SETTING: 3,
+        EPHEMERAL_SYNC_RESPONSE: 4,
+        HISTORY_SYNC_NOTIFICATION: 5,
+        APP_STATE_SYNC_KEY_SHARE: 6,
+        APP_STATE_SYNC_KEY_REQUEST: 7,
+        MSG_FANOUT_BACKFILL_REQUEST: 8,
+        INITIAL_SECURITY_NOTIFICATION_SETTING_SYNC: 9,
+        APP_STATE_FATAL_EXCEPTION_NOTIFICATION: 10,
+        SHARE_PHONE_NUMBER: 11,
+        MESSAGE_EDIT: 14,
+        PEER_DATA_OPERATION_REQUEST_MESSAGE: 16,
+        PEER_DATA_OPERATION_REQUEST_RESPONSE_MESSAGE: 17,
+        REQUEST_WELCOME_MESSAGE: 18,
+        BOT_FEEDBACK_MESSAGE: 19,
+        MEDIA_NOTIFY_MESSAGE: 20,
+        CLOUD_API_THREAD_CONTROL_NOTIFICATION: 21,
+        LID_MIGRATION_MAPPING_SYNC: 22,
+        REMINDER_MESSAGE: 23,
+        BOT_MEMU_ONBOARDING_MESSAGE: 24,
+        STATUS_MENTION_MESSAGE: 25,
+        STOP_GENERATION_MESSAGE: 26,
+        LIMIT_SHARING: 27,
+        AI_PSI_METADATA: 28,
+        AI_QUERY_FANOUT: 29,
+        GROUP_MEMBER_LABEL_CHANGE: 30,
+        AI_MEDIA_COLLECTION_MESSAGE: 31,
+        MESSAGE_UNSCHEDULE: 32,
+        CHAT_THEME_SETTING: 34,
+        AI_METADATA_OPERATION: 35,
+        MARK_AS_VERIFIED_ACTION: 36,
+        COEX_STATE_SYNC: 37,
+        ACP2_SETTING: 39,
+        SHARED_DEVICE_CONTACT_HASH_KEY_SHARE: 40,
+        SHARED_DEVICE_CONTACT_HASH_KEY_REQUEST: 41
+    });
+    const oe = d({
+        UNKNOWN: 0,
+        CONTROL_PASSED: 1,
+        CONTROL_TAKEN: 2,
+        INFO: 3
+    });
+    const ae = d({
+        USER_VIDEO: 0,
+        AI_GENERATED: 1
+    });
+    const ie = d({
+        NONE: 0,
+        GIPHY: 1,
+        TENOR: 2,
+        KLIPY: 3
+    });
+    const le = d({
+        UNKNOWN: 0,
+        VINYL: 1,
+        MESSAGE_BUBBLE: 2,
+        LYRICS: 3
+    });
+    const se = d({
+        DEFAULT: 0,
+        PARENT: 1,
+        SUB: 2,
+        DEFAULT_SUB: 3
+    });
+    const ue = d({
+        NONE: 0,
+        VIDEO: 1,
+        PLACEHOLDER: 4,
+        IMAGE: 5,
+        PAYMENT_LINKS: 6,
+        PROFILE: 7
+    });
+    const ce = d({
+        SYSTEM: 0,
+        SYSTEM_TEXT: 1,
+        FB_SCRIPT: 2,
+        SYSTEM_BOLD: 6,
+        MORNINGBREEZE_REGULAR: 7,
+        CALISTOGA_REGULAR: 8,
+        EXO2_EXTRABOLD: 9,
+        COURIERPRIME_BOLD: 10
+    });
+    const de = d({
+        NONE: 0,
+        REEL: 1,
+        LIVE_VIDEO: 2,
+        LONG_VIDEO: 3,
+        SINGLE_IMAGE: 4,
+        CAROUSEL: 5
+    });
+    const me = d({
+        LINK_PREVIEW: 0,
+        ORDER: 1
+    });
+    const pe = d({
+        UNKNOWN: 0,
+        STATUS_ADD_YOURS: 1,
+        STATUS_RESHARE: 2,
+        STATUS_QUESTION_ANSWER_RESHARE: 3,
+        STATUS_GROUP_STATUS_REPLY: 4
+    });
+    const _e = d({
+        IMAGE: 0,
+        PDF: 1
+    });
+    const fe = d({
+        USER_IMAGE: 0,
+        AI_GENERATED: 1,
+        AI_MODIFIED: 2,
+        RASTERIZED_TEXT_STATUS: 3
+    });
+    const ge = d({
+        MEDIA_KEY_DOMAIN_UNKNOWN: 0,
+        MEDIA_KEY_DOMAIN_E2EE: 1,
+        MEDIA_KEY_DOMAIN_NON_E2EE: 2
+    });
+    const he = d({
+        ENTRY_POINT_UNKNOWN: 0,
+        P2P_LINK_SHARE: 1,
+        CONTACT_CARD_SHARING: 2,
+        PHONE_NUMBER: 3,
+        STATUS: 4,
+        IN_THREAD_CONTEXT_CARD: 5
+    });
+    const ye = d({
+        UNKNOWN: 0,
+        VIEW_BUSINESS: 1,
+        CHAT: 2,
+        CALL: 3,
+        CATALOG: 4,
+        CHANNEL: 5,
+        BOOK_APPOINTMENT: 6,
+        OFFERS: 7,
+        BESTSELLERS: 8,
+        MENU: 9,
+        ABOUT: 10,
+        SHOP: 11,
+        ORDER: 12
+    });
+    const Ce = d({
+        CROSS_APP_SOURCE_UNKNOWN: 0,
+        CROSS_APP_SOURCE_INSTAGRAM: 1,
+        CROSS_APP_SOURCE_FACEBOOK: 2
+    });
+    const be = d({
+        EXPLICIT: 0,
+        AUTO: 1
+    });
+    const ve = d({
+        UNKNOWN: 0,
+        CLOSE_FRIENDS: 1,
+        CUSTOM_LIST: 2,
+        NETWORK: 3
+    });
+    const Se = d({
+        UNKNOWN: 0,
+        CHAT: 1,
+        STATUS: 2,
+        CHANNELS: 3,
+        META_AI: 4,
+        UGC: 5
+    });
+    const Re = d({
+        IMAGE: 0,
+        VIDEO: 1,
+        GIF: 2,
+        AUDIO: 3,
+        TEXT: 4,
+        MUSIC_STANDALONE: 5
+    });
+    const Le = d({
+        NOT_PAIRED_MEDIA: 0,
+        SD_VIDEO_PARENT: 1,
+        HD_VIDEO_CHILD: 2,
+        SD_IMAGE_PARENT: 3,
+        HD_IMAGE_CHILD: 4,
+        MOTION_PHOTO_PARENT: 5,
+        MOTION_PHOTO_CHILD: 6,
+        HEVC_VIDEO_PARENT: 7,
+        HEVC_VIDEO_CHILD: 8,
+        AV1_VIDEO_PARENT: 9,
+        AV1_VIDEO_CHILD: 10,
+        STREAMED_VIDEO_PARENT: 11,
+        STREAMED_VIDEO_CHILD: 12
+    });
+    const Ee = d({
+        NONE: 0,
+        RESHARED_FROM_MENTION: 1,
+        RESHARED_FROM_POST: 2,
+        RESHARED_FROM_POST_MANY_TIMES: 3,
+        FORWARDED_FROM_STATUS: 4
+    });
+    const ke = d({
+        SHOW_MM_DISCLOSURE_ON_CLICK: 1,
+        SHOW_MM_DISCLOSURE_ON_READ: 2
+    });
+    const Ie = d({
+        UPDATE: 1,
+        UPDATE_CARD: 2,
+        LINK_CARD: 3
+    });
+    const Te = d({
+        CTWA: 0,
+        CAWC: 1
+    });
+    const De = d({
+        NONE: 0,
+        IMAGE: 1,
+        VIDEO: 2
+    });
+    const xe = d({
+        NONE: 0,
+        IMAGE: 1,
+        VIDEO: 2
+    });
+    const $e = d({
+        UNKNOWN: 0,
+        MEDIA_ALBUM: 1,
+        BOT_PLUGIN: 2,
+        EVENT_COVER_IMAGE: 3,
+        STATUS_POLL: 4,
+        HD_VIDEO_DUAL_UPLOAD: 5,
+        STATUS_EXTERNAL_RESHARE: 6,
+        MEDIA_POLL: 7,
+        STATUS_ADD_YOURS: 8,
+        STATUS_NOTIFICATION: 9,
+        HD_IMAGE_DUAL_UPLOAD: 10,
+        STICKER_ANNOTATION: 11,
+        MOTION_PHOTO: 12,
+        STATUS_LINK_ACTION: 13,
+        VIEW_ALL_REPLIES: 14,
+        STATUS_ADD_YOURS_AI_IMAGINE: 15,
+        STATUS_QUESTION: 16,
+        STATUS_ADD_YOURS_DIWALI: 17,
+        STATUS_REACTION: 18,
+        HEVC_VIDEO_DUAL_UPLOAD: 19,
+        POLL_ADD_OPTION: 20,
+        AV1_VIDEO_DUAL_UPLOAD: 21,
+        STREAMED_HD_VIDEO_DUAL_UPLOAD: 22
+    });
+    const Pe = d({
+        UNKNOWN: 0,
+        VIEW_REPLIES: 1,
+        AI_THREAD: 2
+    });
+    const Ne = d({
+        WEBVIEW: 0,
+        SYSTEM: 1
+    });
+    const Me = d({
+        STATIC: 1,
+        DEPENDENT_ON_PARENT: 2
+    });
+    const we = d({
+        RASTERIZED_LINK_PREVIEW: 1,
+        RASTERIZED_LINK_TRUNCATED: 2,
+        RASTERIZED_LINK_FULL_URL: 3
+    });
+    const Ae = d({
+        FULL: 1,
+        TALL: 2,
+        COMPACT: 3
+    });
+    const Fe = d({
+        UNKNOWN: 0,
+        DEFAULT: 1
+    });
+    const Oe = d({
+        UNKNOWN: 0,
+        CHAT_SETTING: 1,
+        ACCOUNT_SETTING: 2,
+        BULK_CHANGE: 3,
+        BIZ_SUPPORTS_FB_HOSTING: 4,
+        UNKNOWN_GROUPS: 5
+    });
+    const Be = d({
+        CHANGED_IN_CHAT: 0,
+        INITIATED_BY_ME: 1,
+        INITIATED_BY_OTHER: 2,
+        BIZ_UPGRADE_FB_HOSTING: 3
+    });
+    const We = d({
+        UNKNOWN: 0,
+        KEEP_FOR_ALL: 1,
+        UNDO_KEEP_FOR_ALL: 2
+    });
+    const qe = d({
+        UNDEFINED: 0,
+        LOW: 1,
+        MID: 2,
+        HIGH: 3
+    });
+    const Ue = {};
+    const Ve = {};
+    const He = {};
+    const Ge = {};
+    const ze = {};
+    const je = {};
+    const Ke = {};
+    const Qe = {};
+    const Xe = {};
+    const Ye = {};
+    const Je = {};
+    const Ze = {};
+    const et = {};
+    const tt = {};
+    const nt = {};
+    const rt = {};
+    const ot = {};
+    const at = {};
+    const it = {};
+    const lt = {};
+    const st = {};
+    const ut = {};
+    const ct = {};
+    const dt = {};
+    const mt = {};
+    const pt = {};
+    const _t = {};
+    const ft = {};
+    const gt = {};
+    const ht = {};
+    const yt = {};
+    const Ct = {};
+    const bt = {};
+    const vt = {};
+    const St = {};
+    const Rt = {};
+    const Lt = {};
+    const Et = {};
+    const kt = {};
+    const It = {};
+    const Tt = {};
+    const Dt = {};
+    const xt = {};
+    const $t = {};
+    const Pt = {};
+    const Nt = {};
+    const Mt = {};
+    const wt = {};
+    const At = {};
+    const Ft = {};
+    const Ot = {};
+    const Bt = {};
+    const Wt = {};
+    const qt = {};
+    const Ut = {};
+    const Vt = {};
+    const Ht = {};
+    const Gt = {};
+    const zt = {};
+    const jt = {};
+    const Kt = {};
+    const Qt = {};
+    const Xt = {};
+    const Yt = {};
+    const Jt = {};
+    const Zt = {};
+    const en = {};
+    const tn = {};
+    const nn = {};
+    const rn = {};
+    const on = {};
+    const an = {};
+    const ln = {};
+    const sn = {};
+    const un = {};
+    const cn = {};
+    const dn = {};
+    const mn = {};
+    const pn = {};
+    const _n = {};
+    const fn = {};
+    const gn = {};
+    const hn = {};
+    const yn = {};
+    const Cn = {};
+    const bn = {};
+    const vn = {};
+    const Sn = {};
+    const Rn = {};
+    const Ln = {};
+    const En = {};
+    const kn = {};
+    const In = {};
+    const Tn = {};
+    const Dn = {};
+    const xn = {};
+    const $n = {};
+    const Pn = {};
+    const Nn = {};
+    const Mn = {};
+    const wn = {};
+    const An = {};
+    const Fn = {};
+    const On = {};
+    const Bn = {};
+    const Wn = {};
+    const qn = {};
+    const Un = {};
+    const Vn = {};
+    const Hn = {};
+    const Gn = {};
+    const zn = {};
+    const jn = {};
+    const Kn = {};
+    const Qn = {};
+    const Xn = {};
+    const Yn = {};
+    const Jn = {};
+    const Zn = {};
+    const er = {};
+    const tr = {};
+    const nr = {};
+    const rr = {};
+    const or = {};
+    const ar = {};
+    const ir = {};
+    const lr = {};
+    const sr = {};
+    const ur = {};
+    const cr = {};
+    const dr = {};
+    const mr = {};
+    const pr = {};
+    const _r = {};
+    const fr = {};
+    const gr = {};
+    const hr = {};
+    const yr = {};
+    const Cr = {};
+    const br = {};
+    const vr = {};
+    const Sr = {};
+    const Rr = {};
+    const Lr = {};
+    const Er = {};
+    const kr = {};
+    const Ir = {};
+    const Tr = {};
+    const Dr = {};
+    const xr = {};
+    const $r = {};
+    const Pr = {};
+    const Nr = {};
+    const Mr = {};
+    const wr = {};
+    const Ar = {};
+    const Fr = {};
+    const Or = {};
+    const Br = {};
+    const Wr = {};
+    const qr = {};
+    const Ur = {};
+    const Vr = {};
+    const Hr = {};
+    const Gr = {};
+    const zr = {};
+    const jr = {};
+    const Kr = {};
+    const Qr = {};
+    const Xr = {};
+    const Yr = {};
+    const Jr = {};
+    const Zr = {};
+    const eo = {};
+    const to = {};
+    const no = {};
+    const ro = {};
+    const oo = {};
+    const ao = {};
+    const io = {};
+    const lo = {};
+    const so = {};
+    const uo = {};
+    const co = {};
+    const mo = {};
+    const po = {};
+    const _o = {};
+    const fo = {};
+    const go = {};
+    const ho = {};
+    const yo = {};
+    const Co = {};
+    const bo = {};
+    const vo = {};
+    const So = {};
+    const Ro = {};
+    const Lo = {};
+    const Eo = {};
+    const ko = {};
+    const Io = {};
+    const To = {};
+    const Do = {};
+    const xo = {};
+    const $o = {};
+    const Po = {};
+    const No = {};
+    const Mo = {};
+    const wo = {};
+    const Ao = {};
+    const Fo = {};
+    const Oo = {};
+    const Bo = {};
+    const Wo = {};
+    const qo = {};
+    const Uo = {};
+    const Vo = {};
+    const Ho = {};
+    const Go = {};
+    const zo = {};
+    const jo = {};
+    const Ko = {};
+    const Qo = {};
+    const Xo = {};
+    const Yo = {};
+    const Jo = {};
+    const Zo = {};
+    const ea = {};
+    const ta = {};
+    const na = {};
+    const ra = {};
+    const oa = {};
+    const aa = {};
+    const ia = {};
+    const la = {};
+    const sa = {};
+    const ua = {};
+    Ue.name = "Message";
+    Ue.internalSpec = {
+        conversation: [
+            1,
+            (e = o("WAProtoConst")).TYPES.STRING
+        ],
+        senderKeyDistributionMessage: [
+            2,
+            e.TYPES.MESSAGE,
+            lo
+        ],
+        imageMessage: [
+            3,
+            e.TYPES.MESSAGE,
+            ao
+        ],
+        contactMessage: [
+            4,
+            e.TYPES.MESSAGE,
+            ro
+        ],
+        locationMessage: [
+            5,
+            e.TYPES.MESSAGE,
+            to
+        ],
+        extendedTextMessage: [
+            6,
+            e.TYPES.MESSAGE,
+            zr
+        ],
+        documentMessage: [
+            7,
+            e.TYPES.MESSAGE,
+            Gr
+        ],
+        audioMessage: [
+            8,
+            e.TYPES.MESSAGE,
+            Hr
+        ],
+        videoMessage: [
+            9,
+            e.TYPES.MESSAGE,
+            Ur
+        ],
+        call: [
+            10,
+            e.TYPES.MESSAGE,
+            qr
+        ],
+        chat: [
+            11,
+            e.TYPES.MESSAGE,
+            Wr
+        ],
+        protocolMessage: [
+            12,
+            e.TYPES.MESSAGE,
+            Fr
+        ],
+        contactsArrayMessage: [
+            13,
+            e.TYPES.MESSAGE,
+            Fn
+        ],
+        highlyStructuredMessage: [
+            14,
+            e.TYPES.MESSAGE,
+            $n
+        ],
+        fastRatchetKeySenderKeyDistributionMessage: [
+            15,
+            e.TYPES.MESSAGE,
+            lo
+        ],
+        sendPaymentMessage: [
+            16,
+            e.TYPES.MESSAGE,
+            xn
+        ],
+        liveLocationMessage: [
+            18,
+            e.TYPES.MESSAGE,
+            vn
+        ],
+        requestPaymentMessage: [
+            22,
+            e.TYPES.MESSAGE,
+            Dn
+        ],
+        declinePaymentRequestMessage: [
+            23,
+            e.TYPES.MESSAGE,
+            Tn
+        ],
+        cancelPaymentRequestMessage: [
+            24,
+            e.TYPES.MESSAGE,
+            In
+        ],
+        templateMessage: [
+            25,
+            e.TYPES.MESSAGE,
+            hn
+        ],
+        stickerMessage: [
+            26,
+            e.TYPES.MESSAGE,
+            bn
+        ],
+        groupInviteMessage: [
+            28,
+            e.TYPES.MESSAGE,
+            qt
+        ],
+        templateButtonReplyMessage: [
+            29,
+            e.TYPES.MESSAGE,
+            gn
+        ],
+        productMessage: [
+            30,
+            e.TYPES.MESSAGE,
+            mn
+        ],
+        deviceSentMessage: [
+            31,
+            e.TYPES.MESSAGE,
+            Mt
+        ],
+        messageContextInfo: [
+            35,
+            e.TYPES.MESSAGE,
+            xo
+        ],
+        listMessage: [
+            36,
+            e.TYPES.MESSAGE,
+            rn
+        ],
+        viewOnceMessage: [
+            37,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        orderMessage: [
+            38,
+            e.TYPES.MESSAGE,
+            dn
+        ],
+        listResponseMessage: [
+            39,
+            e.TYPES.MESSAGE,
+            tn
+        ],
+        ephemeralMessage: [
+            40,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        invoiceMessage: [
+            41,
+            e.TYPES.MESSAGE,
+            oo
+        ],
+        buttonsMessage: [
+            42,
+            e.TYPES.MESSAGE,
+            It
+        ],
+        buttonsResponseMessage: [
+            43,
+            e.TYPES.MESSAGE,
+            kt
+        ],
+        paymentInviteMessage: [
+            44,
+            e.TYPES.MESSAGE,
+            kn
+        ],
+        interactiveMessage: [
+            45,
+            e.TYPES.MESSAGE,
+            Gt
+        ],
+        reactionMessage: [
+            46,
+            e.TYPES.MESSAGE,
+            Et
+        ],
+        stickerSyncRmrMessage: [
+            47,
+            e.TYPES.MESSAGE,
+            Lt
+        ],
+        interactiveResponseMessage: [
+            48,
+            e.TYPES.MESSAGE,
+            Ut
+        ],
+        pollCreationMessage: [
+            49,
+            e.TYPES.MESSAGE,
+            St
+        ],
+        pollUpdateMessage: [
+            50,
+            e.TYPES.MESSAGE,
+            vt
+        ],
+        keepInChatMessage: [
+            51,
+            e.TYPES.MESSAGE,
+            dt
+        ],
+        documentWithCaptionMessage: [
+            53,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        requestPhoneNumberMessage: [
+            54,
+            e.TYPES.MESSAGE,
+            Ft
+        ],
+        viewOnceMessageV2: [
+            55,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        encReactionMessage: [
+            56,
+            e.TYPES.MESSAGE,
+            ut
+        ],
+        editedMessage: [
+            58,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        viewOnceMessageV2Extension: [
+            59,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        pollCreationMessageV2: [
+            60,
+            e.TYPES.MESSAGE,
+            St
+        ],
+        scheduledCallCreationMessage: [
+            61,
+            e.TYPES.MESSAGE,
+            rt
+        ],
+        groupMentionedMessage: [
+            62,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        pinInChatMessage: [
+            63,
+            e.TYPES.MESSAGE,
+            ct
+        ],
+        pollCreationMessageV3: [
+            64,
+            e.TYPES.MESSAGE,
+            St
+        ],
+        scheduledCallEditMessage: [
+            65,
+            e.TYPES.MESSAGE,
+            nt
+        ],
+        ptvMessage: [
+            66,
+            e.TYPES.MESSAGE,
+            Ur
+        ],
+        botInvokeMessage: [
+            67,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        callLogMesssage: [
+            69,
+            e.TYPES.MESSAGE,
+            et
+        ],
+        messageHistoryBundle: [
+            70,
+            e.TYPES.MESSAGE,
+            Ze
+        ],
+        encCommentMessage: [
+            71,
+            e.TYPES.MESSAGE,
+            st
+        ],
+        bcallMessage: [
+            72,
+            e.TYPES.MESSAGE,
+            Ke
+        ],
+        lottieStickerMessage: [
+            74,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        eventMessage: [
+            75,
+            e.TYPES.MESSAGE,
+            it
+        ],
+        encEventResponseMessage: [
+            76,
+            e.TYPES.MESSAGE,
+            at
+        ],
+        commentMessage: [
+            77,
+            e.TYPES.MESSAGE,
+            lt
+        ],
+        newsletterAdminInviteMessage: [
+            78,
+            e.TYPES.MESSAGE,
+            Wt
+        ],
+        placeholderMessage: [
+            80,
+            e.TYPES.MESSAGE,
+            je
+        ],
+        secretEncryptedMessage: [
+            82,
+            e.TYPES.MESSAGE,
+            Pt
+        ],
+        albumMessage: [
+            83,
+            e.TYPES.MESSAGE,
+            ze
+        ],
+        eventCoverImage: [
+            85,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        stickerPackMessage: [
+            86,
+            e.TYPES.MESSAGE,
+            He
+        ],
+        statusMentionMessage: [
+            87,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        pollResultSnapshotMessage: [
+            88,
+            e.TYPES.MESSAGE,
+            ft
+        ],
+        pollCreationOptionImageMessage: [
+            90,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        associatedChildMessage: [
+            91,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        groupStatusMentionMessage: [
+            92,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        pollCreationMessageV4: [
+            93,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        statusAddYours: [
+            95,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        groupStatusMessage: [
+            96,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        richResponseMessage: [
+            97,
+            e.TYPES.MESSAGE,
+            ia
+        ],
+        statusNotificationMessage: [
+            98,
+            e.TYPES.MESSAGE,
+            no
+        ],
+        limitSharingMessage: [
+            99,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        botTaskMessage: [
+            100,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        questionMessage: [
+            101,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        messageHistoryNotice: [
+            102,
+            e.TYPES.MESSAGE,
+            Je
+        ],
+        groupStatusMessageV2: [
+            103,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        botForwardedMessage: [
+            104,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        statusQuestionAnswerMessage: [
+            105,
+            e.TYPES.MESSAGE,
+            _t
+        ],
+        questionReplyMessage: [
+            106,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        questionResponseMessage: [
+            107,
+            e.TYPES.MESSAGE,
+            mt
+        ],
+        statusQuotedMessage: [
+            109,
+            e.TYPES.MESSAGE,
+            fn
+        ],
+        statusStickerInteractionMessage: [
+            110,
+            e.TYPES.MESSAGE,
+            pt
+        ],
+        pollCreationMessageV5: [
+            111,
+            e.TYPES.MESSAGE,
+            St
+        ],
+        newsletterFollowerInviteMessageV2: [
+            113,
+            e.TYPES.MESSAGE,
+            Bt
+        ],
+        pollResultSnapshotMessageV3: [
+            115,
+            e.TYPES.MESSAGE,
+            ft
+        ],
+        newsletterAdminProfileMessage: [
+            116,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        spoilerMessage: [
+            118,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        pollCreationMessageV6: [
+            119,
+            e.TYPES.MESSAGE,
+            St
+        ],
+        conditionalRevealMessage: [
+            120,
+            e.TYPES.MESSAGE,
+            $t
+        ],
+        pollAddOptionMessage: [
+            121,
+            e.TYPES.MESSAGE,
+            ht
+        ],
+        eventInviteMessage: [
+            122,
+            e.TYPES.MESSAGE,
+            Ot
+        ],
+        groupRootKeyShare: [
+            123,
+            e.TYPES.MESSAGE,
+            sa
+        ],
+        paymentReminderMessage: [
+            124,
+            e.TYPES.MESSAGE,
+            En
+        ],
+        splitPaymentMessage: [
+            125,
+            e.TYPES.MESSAGE,
+            Ln
+        ],
+        newsletterAdminProfileStatusMessage: [
+            126,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        rootSecretDistributeMessage: [
+            127,
+            e.TYPES.MESSAGE,
+            io
+        ],
+        splitPaymentUpdateMessage: [
+            128,
+            e.TYPES.MESSAGE,
+            Sn
+        ],
+        musicMessage: [
+            129,
+            e.TYPES.MESSAGE,
+            Vr
+        ],
+        statusLinkPreviewMetadata: [
+            130,
+            e.TYPES.MESSAGE,
+            Ve
+        ],
+        botPlatformRegistrationSuccessMessage: [
+            131,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        newsletterScheduledMessage: [
+            132,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        acp2SettingMessage: [
+            133,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        audioStickerMessage: [
+            134,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        instantImageMessage: [
+            135,
+            e.TYPES.MESSAGE,
+            ao
+        ],
+        requestLocationMessage: [
+            136,
+            e.TYPES.MESSAGE,
+            At
+        ],
+        botGroupParticipantMessage: [
+            137,
+            e.TYPES.MESSAGE,
+            Nt
+        ],
+        requestLocationUpdateMessage: [
+            138,
+            e.TYPES.MESSAGE,
+            wt
+        ]
+    };
+    Ve.name = "Message$StatusLinkPreviewMetadata";
+    Ve.internalSpec = {
+        style: [
+            1,
+            e.TYPES.ENUM,
+            m
+        ]
+    };
+    He.name = "Message$StickerPackMessage";
+    He.internalSpec = {
+        stickerPackId: [
+            1,
+            e.TYPES.STRING
+        ],
+        name: [
+            2,
+            e.TYPES.STRING
+        ],
+        publisher: [
+            3,
+            e.TYPES.STRING
+        ],
+        stickers: [
+            4,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Ge
+        ],
+        fileLength: [
+            5,
+            e.TYPES.UINT64
+        ],
+        fileSha256: [
+            6,
+            e.TYPES.BYTES
+        ],
+        fileEncSha256: [
+            7,
+            e.TYPES.BYTES
+        ],
+        mediaKey: [
+            8,
+            e.TYPES.BYTES
+        ],
+        directPath: [
+            9,
+            e.TYPES.STRING
+        ],
+        caption: [
+            10,
+            e.TYPES.STRING
+        ],
+        contextInfo: [
+            11,
+            e.TYPES.MESSAGE,
+            co
+        ],
+        packDescription: [
+            12,
+            e.TYPES.STRING
+        ],
+        mediaKeyTimestamp: [
+            13,
+            e.TYPES.INT64
+        ],
+        trayIconFileName: [
+            14,
+            e.TYPES.STRING
+        ],
+        thumbnailDirectPath: [
+            15,
+            e.TYPES.STRING
+        ],
+        thumbnailSha256: [
+            16,
+            e.TYPES.BYTES
+        ],
+        thumbnailEncSha256: [
+            17,
+            e.TYPES.BYTES
+        ],
+        thumbnailHeight: [
+            18,
+            e.TYPES.UINT32
+        ],
+        thumbnailWidth: [
+            19,
+            e.TYPES.UINT32
+        ],
+        imageDataHash: [
+            20,
+            e.TYPES.STRING
+        ],
+        stickerPackSize: [
+            21,
+            e.TYPES.UINT64
+        ],
+        stickerPackOrigin: [
+            22,
+            e.TYPES.ENUM,
+            p
+        ]
+    };
+    Ge.name = "Message$StickerPackMessage$Sticker";
+    Ge.internalSpec = {
+        fileName: [
+            1,
+            e.TYPES.STRING
+        ],
+        isAnimated: [
+            2,
+            e.TYPES.BOOL
+        ],
+        emojis: [
+            3,
+            e.FLAGS.REPEATED | e.TYPES.STRING
+        ],
+        accessibilityLabel: [
+            4,
+            e.TYPES.STRING
+        ],
+        isLottie: [
+            5,
+            e.TYPES.BOOL
+        ],
+        mimetype: [
+            6,
+            e.TYPES.STRING
+        ],
+        premium: [
+            7,
+            e.TYPES.INT32
+        ]
+    };
+    ze.name = "Message$AlbumMessage";
+    ze.internalSpec = {
+        expectedImageCount: [
+            2,
+            e.TYPES.UINT32
+        ],
+        expectedVideoCount: [
+            3,
+            e.TYPES.UINT32
+        ],
+        contextInfo: [
+            17,
+            e.TYPES.MESSAGE,
+            co
+        ]
+    };
+    je.name = "Message$PlaceholderMessage";
+    je.internalSpec = {
+        type: [
+            1,
+            e.TYPES.ENUM,
+            _
+        ]
+    };
+    Ke.name = "Message$BCallMessage";
+    Ke.internalSpec = {
+        sessionId: [
+            1,
+            e.TYPES.STRING
+        ],
+        mediaType: [
+            2,
+            e.TYPES.ENUM,
+            f
+        ],
+        masterKey: [
+            3,
+            e.TYPES.BYTES
+        ],
+        caption: [
+            4,
+            e.TYPES.STRING
+        ]
+    };
+    Qe.name = "Message$MessageHistoryMetadata";
+    Qe.internalSpec = {
+        historyReceivers: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.STRING
+        ],
+        oldestMessageTimestampInWindow: [
+            2,
+            e.TYPES.INT64
+        ],
+        messageCount: [
+            3,
+            e.TYPES.INT64
+        ],
+        nonHistoryReceivers: [
+            4,
+            e.FLAGS.REPEATED | e.TYPES.STRING
+        ],
+        oldestMessageTimestampInBundle: [
+            5,
+            e.TYPES.INT64
+        ],
+        includesChatTheme: [
+            6,
+            e.TYPES.BOOL
+        ]
+    };
+    Xe.name = "Message$HistoryShareMessageEntry";
+    Xe.internalSpec = {
+        stanzaId: [
+            1,
+            e.TYPES.STRING
+        ],
+        messageSecretProof: [
+            2,
+            e.TYPES.BYTES
+        ]
+    };
+    Ye.name = "Message$BotHistoryShareSyncMetadata";
+    Ye.internalSpec = {
+        botJid: [
+            1,
+            e.TYPES.STRING
+        ],
+        historyShareCutoffTimestamp: [
+            2,
+            e.TYPES.INT64
+        ],
+        historyShareMessages: [
+            3,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Xe
+        ]
+    };
+    Je.name = "Message$MessageHistoryNotice";
+    Je.internalSpec = {
+        contextInfo: [
+            1,
+            e.TYPES.MESSAGE,
+            co
+        ],
+        messageHistoryMetadata: [
+            2,
+            e.TYPES.MESSAGE,
+            Qe
+        ],
+        botHistoryShareSyncMetadata: [
+            3,
+            e.TYPES.MESSAGE,
+            Ye
+        ]
+    };
+    Ze.name = "Message$MessageHistoryBundle";
+    Ze.internalSpec = {
+        mimetype: [
+            1,
+            e.TYPES.STRING
+        ],
+        fileSha256: [
+            2,
+            e.TYPES.BYTES
+        ],
+        mediaKey: [
+            3,
+            e.TYPES.BYTES
+        ],
+        fileEncSha256: [
+            4,
+            e.TYPES.BYTES
+        ],
+        directPath: [
+            5,
+            e.TYPES.STRING
+        ],
+        mediaKeyTimestamp: [
+            6,
+            e.TYPES.INT64
+        ],
+        contextInfo: [
+            7,
+            e.TYPES.MESSAGE,
+            co
+        ],
+        messageHistoryMetadata: [
+            8,
+            e.TYPES.MESSAGE,
+            Qe
+        ]
+    };
+    et.name = "Message$CallLogMessage";
+    et.internalSpec = {
+        isVideo: [
+            1,
+            e.TYPES.BOOL
+        ],
+        callOutcome: [
+            2,
+            e.TYPES.ENUM,
+            g
+        ],
+        durationSecs: [
+            3,
+            e.TYPES.INT64
+        ],
+        callType: [
+            4,
+            e.TYPES.ENUM,
+            h
+        ],
+        participants: [
+            5,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            tt
+        ]
+    };
+    tt.name = "Message$CallLogMessage$CallParticipant";
+    tt.internalSpec = {
+        jid: [
+            1,
+            e.TYPES.STRING
+        ],
+        callOutcome: [
+            2,
+            e.TYPES.ENUM,
+            g
+        ]
+    };
+    nt.name = "Message$ScheduledCallEditMessage";
+    nt.internalSpec = {
+        key: [
+            1,
+            e.TYPES.MESSAGE,
+            (s = o("WAWebProtobufsProtocol.pb")).MessageKeySpec
+        ],
+        editType: [
+            2,
+            e.TYPES.ENUM,
+            y
+        ]
+    };
+    rt.name = "Message$ScheduledCallCreationMessage";
+    rt.internalSpec = {
+        scheduledTimestampMs: [
+            1,
+            e.TYPES.INT64
+        ],
+        callType: [
+            2,
+            e.TYPES.ENUM,
+            C
+        ],
+        title: [
+            3,
+            e.TYPES.STRING
+        ]
+    };
+    ot.name = "Message$EventResponseMessage";
+    ot.internalSpec = {
+        response: [
+            1,
+            e.TYPES.ENUM,
+            b
+        ],
+        timestampMs: [
+            2,
+            e.TYPES.INT64
+        ],
+        extraGuestCount: [
+            3,
+            e.TYPES.INT32
+        ]
+    };
+    at.name = "Message$EncEventResponseMessage";
+    at.internalSpec = {
+        eventCreationMessageKey: [
+            1,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ],
+        encPayload: [
+            2,
+            e.TYPES.BYTES
+        ],
+        encIv: [
+            3,
+            e.TYPES.BYTES
+        ]
+    };
+    it.name = "Message$EventMessage";
+    it.internalSpec = {
+        contextInfo: [
+            1,
+            e.TYPES.MESSAGE,
+            co
+        ],
+        isCanceled: [
+            2,
+            e.TYPES.BOOL
+        ],
+        name: [
+            3,
+            e.TYPES.STRING
+        ],
+        description: [
+            4,
+            e.TYPES.STRING
+        ],
+        location: [
+            5,
+            e.TYPES.MESSAGE,
+            to
+        ],
+        joinLink: [
+            6,
+            e.TYPES.STRING
+        ],
+        startTime: [
+            7,
+            e.TYPES.INT64
+        ],
+        endTime: [
+            8,
+            e.TYPES.INT64
+        ],
+        extraGuestsAllowed: [
+            9,
+            e.TYPES.BOOL
+        ],
+        isScheduleCall: [
+            10,
+            e.TYPES.BOOL
+        ],
+        hasReminder: [
+            11,
+            e.TYPES.BOOL
+        ],
+        reminderOffsetSec: [
+            12,
+            e.TYPES.INT64
+        ]
+    };
+    lt.name = "Message$CommentMessage";
+    lt.internalSpec = {
+        message: [
+            1,
+            e.TYPES.MESSAGE,
+            Ue
+        ],
+        targetMessageKey: [
+            2,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ]
+    };
+    st.name = "Message$EncCommentMessage";
+    st.internalSpec = {
+        targetMessageKey: [
+            1,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ],
+        encPayload: [
+            2,
+            e.TYPES.BYTES
+        ],
+        encIv: [
+            3,
+            e.TYPES.BYTES
+        ]
+    };
+    ut.name = "Message$EncReactionMessage";
+    ut.internalSpec = {
+        targetMessageKey: [
+            1,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ],
+        encPayload: [
+            2,
+            e.TYPES.BYTES
+        ],
+        encIv: [
+            3,
+            e.TYPES.BYTES
+        ]
+    };
+    ct.name = "Message$PinInChatMessage";
+    ct.internalSpec = {
+        key: [
+            1,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ],
+        type: [
+            2,
+            e.TYPES.ENUM,
+            v
+        ],
+        senderTimestampMs: [
+            3,
+            e.TYPES.INT64
+        ]
+    };
+    dt.name = "Message$KeepInChatMessage";
+    dt.internalSpec = {
+        key: [
+            1,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ],
+        keepType: [
+            2,
+            e.TYPES.ENUM,
+            We
+        ],
+        timestampMs: [
+            3,
+            e.TYPES.INT64
+        ]
+    };
+    mt.name = "Message$QuestionResponseMessage";
+    mt.internalSpec = {
+        key: [
+            1,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ],
+        text: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    pt.name = "Message$StatusStickerInteractionMessage";
+    pt.internalSpec = {
+        key: [
+            1,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ],
+        stickerKey: [
+            2,
+            e.TYPES.STRING
+        ],
+        type: [
+            3,
+            e.TYPES.ENUM,
+            S
+        ]
+    };
+    _t.name = "Message$StatusQuestionAnswerMessage";
+    _t.internalSpec = {
+        key: [
+            1,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ],
+        text: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    ft.name = "Message$PollResultSnapshotMessage";
+    ft.internalSpec = {
+        name: [
+            1,
+            e.TYPES.STRING
+        ],
+        pollVotes: [
+            2,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            gt
+        ],
+        contextInfo: [
+            3,
+            e.TYPES.MESSAGE,
+            co
+        ],
+        pollType: [
+            4,
+            e.TYPES.ENUM,
+            R
+        ]
+    };
+    gt.name = "Message$PollResultSnapshotMessage$PollVote";
+    gt.internalSpec = {
+        optionName: [
+            1,
+            e.TYPES.STRING
+        ],
+        optionVoteCount: [
+            2,
+            e.TYPES.INT64
+        ]
+    };
+    ht.name = "Message$PollAddOptionMessage";
+    ht.internalSpec = {
+        pollCreationMessageKey: [
+            1,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ],
+        addOption: [
+            2,
+            e.TYPES.MESSAGE,
+            Rt
+        ],
+        metadata: [
+            3,
+            e.TYPES.MESSAGE,
+            bt
+        ]
+    };
+    yt.name = "Message$PollVoteMessage";
+    yt.internalSpec = {
+        selectedOptions: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.BYTES
+        ]
+    };
+    Ct.name = "Message$PollEncValue";
+    Ct.internalSpec = {
+        encPayload: [
+            1,
+            e.TYPES.BYTES
+        ],
+        encIv: [
+            2,
+            e.TYPES.BYTES
+        ]
+    };
+    bt.name = "Message$PollUpdateMessageMetadata";
+    bt.internalSpec = {
+        pollNameHash: [
+            1,
+            e.TYPES.BYTES
+        ],
+        lastEditStanzaId: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    vt.name = "Message$PollUpdateMessage";
+    vt.internalSpec = {
+        pollCreationMessageKey: [
+            1,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ],
+        vote: [
+            2,
+            e.TYPES.MESSAGE,
+            Ct
+        ],
+        metadata: [
+            3,
+            e.TYPES.MESSAGE,
+            bt
+        ],
+        senderTimestampMs: [
+            4,
+            e.TYPES.INT64
+        ]
+    };
+    St.name = "Message$PollCreationMessage";
+    St.internalSpec = {
+        encKey: [
+            1,
+            e.TYPES.BYTES
+        ],
+        name: [
+            2,
+            e.TYPES.STRING
+        ],
+        options: [
+            3,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Rt
+        ],
+        selectableOptionsCount: [
+            4,
+            e.TYPES.UINT32
+        ],
+        contextInfo: [
+            5,
+            e.TYPES.MESSAGE,
+            co
+        ],
+        pollContentType: [
+            6,
+            e.TYPES.ENUM,
+            L
+        ],
+        pollType: [
+            7,
+            e.TYPES.ENUM,
+            R
+        ],
+        correctAnswer: [
+            8,
+            e.TYPES.MESSAGE,
+            Rt
+        ],
+        endTime: [
+            9,
+            e.TYPES.INT64
+        ],
+        hideParticipantName: [
+            10,
+            e.TYPES.BOOL
+        ],
+        allowAddOption: [
+            11,
+            e.TYPES.BOOL
+        ]
+    };
+    Rt.name = "Message$PollCreationMessage$Option";
+    Rt.internalSpec = {
+        optionName: [
+            1,
+            e.TYPES.STRING
+        ],
+        optionHash: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    Lt.name = "Message$StickerSyncRMRMessage";
+    Lt.internalSpec = {
+        filehash: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.STRING
+        ],
+        rmrSource: [
+            2,
+            e.TYPES.STRING
+        ],
+        requestTimestamp: [
+            3,
+            e.TYPES.INT64
+        ]
+    };
+    Et.name = "Message$ReactionMessage";
+    Et.internalSpec = {
+        key: [
+            1,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ],
+        text: [
+            2,
+            e.TYPES.STRING
+        ],
+        groupingKey: [
+            3,
+            e.TYPES.STRING
+        ],
+        senderTimestampMs: [
+            4,
+            e.TYPES.INT64
+        ]
+    };
+    kt.name = "Message$ButtonsResponseMessage";
+    kt.internalSpec = {
+        selectedButtonId: [
+            1,
+            e.TYPES.STRING
+        ],
+        contextInfo: [
+            3,
+            e.TYPES.MESSAGE,
+            co
+        ],
+        type: [
+            4,
+            e.TYPES.ENUM,
+            E
+        ],
+        selectedDisplayText: [
+            2,
+            e.TYPES.STRING
+        ],
+        __oneofs__: {
+            response: [
+                "selectedDisplayText"
+            ]
+        }
+    };
+    It.name = "Message$ButtonsMessage";
+    It.internalSpec = {
+        contentText: [
+            6,
+            e.TYPES.STRING
+        ],
+        footerText: [
+            7,
+            e.TYPES.STRING
+        ],
+        contextInfo: [
+            8,
+            e.TYPES.MESSAGE,
+            co
+        ],
+        buttons: [
+            9,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Tt
+        ],
+        headerType: [
+            10,
+            e.TYPES.ENUM,
+            I
+        ],
+        text: [
+            1,
+            e.TYPES.STRING
+        ],
+        documentMessage: [
+            2,
+            e.TYPES.MESSAGE,
+            Gr
+        ],
+        imageMessage: [
+            3,
+            e.TYPES.MESSAGE,
+            ao
+        ],
+        videoMessage: [
+            4,
+            e.TYPES.MESSAGE,
+            Ur
+        ],
+        locationMessage: [
+            5,
+            e.TYPES.MESSAGE,
+            to
+        ],
+        __oneofs__: {
+            header: [
+                "text",
+                "documentMessage",
+                "imageMessage",
+                "videoMessage",
+                "locationMessage"
+            ]
+        }
+    };
+    Tt.name = "Message$ButtonsMessage$Button";
+    Tt.internalSpec = {
+        buttonId: [
+            1,
+            e.TYPES.STRING
+        ],
+        buttonText: [
+            2,
+            e.TYPES.MESSAGE,
+            xt
+        ],
+        type: [
+            3,
+            e.TYPES.ENUM,
+            k
+        ],
+        nativeFlowInfo: [
+            4,
+            e.TYPES.MESSAGE,
+            Dt
+        ]
+    };
+    Dt.name = "Message$ButtonsMessage$Button$NativeFlowInfo";
+    Dt.internalSpec = {
+        name: [
+            1,
+            e.TYPES.STRING
+        ],
+        paramsJson: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    xt.name = "Message$ButtonsMessage$Button$ButtonText";
+    xt.internalSpec = {
+        displayText: [
+            1,
+            e.TYPES.STRING
+        ]
+    };
+    $t.name = "Message$ConditionalRevealMessage";
+    $t.internalSpec = {
+        encPayload: [
+            1,
+            e.TYPES.BYTES
+        ],
+        encIv: [
+            2,
+            e.TYPES.BYTES
+        ],
+        conditionalRevealMessageType: [
+            3,
+            e.TYPES.ENUM,
+            T
+        ],
+        revealKeyId: [
+            4,
+            e.TYPES.STRING
+        ]
+    };
+    Pt.name = "Message$SecretEncryptedMessage";
+    Pt.internalSpec = {
+        targetMessageKey: [
+            1,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ],
+        encPayload: [
+            2,
+            e.TYPES.BYTES
+        ],
+        encIv: [
+            3,
+            e.TYPES.BYTES
+        ],
+        secretEncType: [
+            4,
+            e.TYPES.ENUM,
+            D
+        ],
+        remoteKeyId: [
+            5,
+            e.TYPES.STRING
+        ]
+    };
+    Nt.name = "Message$FutureProofMessage";
+    Nt.internalSpec = {
+        message: [
+            1,
+            e.TYPES.MESSAGE,
+            Ue
+        ]
+    };
+    Mt.name = "Message$DeviceSentMessage";
+    Mt.internalSpec = {
+        destinationJid: [
+            1,
+            e.TYPES.STRING
+        ],
+        message: [
+            2,
+            e.TYPES.MESSAGE,
+            Ue
+        ],
+        phash: [
+            3,
+            e.TYPES.STRING
+        ]
+    };
+    wt.name = "Message$RequestLocationUpdateMessage";
+    wt.internalSpec = {
+        key: [
+            1,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ],
+        updateType: [
+            2,
+            e.TYPES.ENUM,
+            x
+        ],
+        senderTimestampMs: [
+            3,
+            e.TYPES.INT64
+        ]
+    };
+    At.name = "Message$RequestLocationMessage";
+    At.internalSpec = {
+        contextInfo: [
+            1,
+            e.TYPES.MESSAGE,
+            co
+        ]
+    };
+    Ft.name = "Message$RequestPhoneNumberMessage";
+    Ft.internalSpec = {
+        contextInfo: [
+            1,
+            e.TYPES.MESSAGE,
+            co
+        ]
+    };
+    Ot.name = "Message$EventInviteMessage";
+    Ot.internalSpec = {
+        contextInfo: [
+            1,
+            e.TYPES.MESSAGE,
+            co
+        ],
+        eventId: [
+            2,
+            e.TYPES.STRING
+        ],
+        eventTitle: [
+            3,
+            e.TYPES.STRING
+        ],
+        jpegThumbnail: [
+            4,
+            e.TYPES.BYTES
+        ],
+        startTime: [
+            5,
+            e.TYPES.INT64
+        ],
+        caption: [
+            6,
+            e.TYPES.STRING
+        ],
+        isCanceled: [
+            7,
+            e.TYPES.BOOL
+        ],
+        endTime: [
+            8,
+            e.TYPES.INT64
+        ],
+        callLink: [
+            9,
+            e.TYPES.STRING
+        ],
+        coverImageHandle: [
+            10,
+            e.TYPES.STRING
+        ],
+        locationName: [
+            11,
+            e.TYPES.STRING
+        ],
+        lastUpdatedTsUsec: [
+            12,
+            e.TYPES.INT64
+        ],
+        status: [
+            13,
+            e.TYPES.ENUM,
+            $
+        ]
+    };
+    Bt.name = "Message$NewsletterFollowerInviteMessage";
+    Bt.internalSpec = {
+        newsletterJid: [
+            1,
+            e.TYPES.STRING
+        ],
+        newsletterName: [
+            2,
+            e.TYPES.STRING
+        ],
+        jpegThumbnail: [
+            3,
+            e.TYPES.BYTES
+        ],
+        caption: [
+            4,
+            e.TYPES.STRING
+        ],
+        contextInfo: [
+            5,
+            e.TYPES.MESSAGE,
+            co
+        ]
+    };
+    Wt.name = "Message$NewsletterAdminInviteMessage";
+    Wt.internalSpec = {
+        newsletterJid: [
+            1,
+            e.TYPES.STRING
+        ],
+        newsletterName: [
+            2,
+            e.TYPES.STRING
+        ],
+        jpegThumbnail: [
+            3,
+            e.TYPES.BYTES
+        ],
+        caption: [
+            4,
+            e.TYPES.STRING
+        ],
+        inviteExpiration: [
+            5,
+            e.TYPES.INT64
+        ],
+        contextInfo: [
+            6,
+            e.TYPES.MESSAGE,
+            co
+        ]
+    };
+    qt.name = "Message$GroupInviteMessage";
+    qt.internalSpec = {
+        groupJid: [
+            1,
+            e.TYPES.STRING
+        ],
+        inviteCode: [
+            2,
+            e.TYPES.STRING
+        ],
+        inviteExpiration: [
+            3,
+            e.TYPES.INT64
+        ],
+        groupName: [
+            4,
+            e.TYPES.STRING
+        ],
+        jpegThumbnail: [
+            5,
+            e.TYPES.BYTES
+        ],
+        caption: [
+            6,
+            e.TYPES.STRING
+        ],
+        contextInfo: [
+            7,
+            e.TYPES.MESSAGE,
+            co
+        ],
+        groupType: [
+            8,
+            e.TYPES.ENUM,
+            P
+        ]
+    };
+    Ut.name = "Message$InteractiveResponseMessage";
+    Ut.internalSpec = {
+        body: [
+            1,
+            e.TYPES.MESSAGE,
+            Ht
+        ],
+        contextInfo: [
+            15,
+            e.TYPES.MESSAGE,
+            co
+        ],
+        nativeFlowResponseMessage: [
+            2,
+            e.TYPES.MESSAGE,
+            Vt
+        ],
+        __oneofs__: {
+            interactiveResponseMessage: [
+                "nativeFlowResponseMessage"
+            ]
+        }
+    };
+    Vt.internalDefaults = {
+        version: 1
+    };
+    Vt.name = "Message$InteractiveResponseMessage$NativeFlowResponseMessage";
+    Vt.internalSpec = {
+        name: [
+            1,
+            e.TYPES.STRING
+        ],
+        paramsJson: [
+            2,
+            e.TYPES.STRING
+        ],
+        version: [
+            3,
+            e.TYPES.INT32
+        ]
+    };
+    Ht.internalDefaults = {
+        format: N.DEFAULT
+    };
+    Ht.name = "Message$InteractiveResponseMessage$Body";
+    Ht.internalSpec = {
+        text: [
+            1,
+            e.TYPES.STRING
+        ],
+        format: [
+            2,
+            e.TYPES.ENUM,
+            N
+        ]
+    };
+    Gt.name = "Message$InteractiveMessage";
+    Gt.internalSpec = {
+        header: [
+            1,
+            e.TYPES.MESSAGE,
+            en
+        ],
+        body: [
+            2,
+            e.TYPES.MESSAGE,
+            Zt
+        ],
+        footer: [
+            3,
+            e.TYPES.MESSAGE,
+            Jt
+        ],
+        bloksWidget: [
+            8,
+            e.TYPES.MESSAGE,
+            Yt
+        ],
+        contextInfo: [
+            15,
+            e.TYPES.MESSAGE,
+            co
+        ],
+        urlTrackingMap: [
+            16,
+            e.TYPES.MESSAGE,
+            ra
+        ],
+        shopStorefrontMessage: [
+            4,
+            e.TYPES.MESSAGE,
+            Xt
+        ],
+        collectionMessage: [
+            5,
+            e.TYPES.MESSAGE,
+            Qt
+        ],
+        nativeFlowMessage: [
+            6,
+            e.TYPES.MESSAGE,
+            jt
+        ],
+        carouselMessage: [
+            7,
+            e.TYPES.MESSAGE,
+            zt
+        ],
+        __oneofs__: {
+            interactiveMessage: [
+                "shopStorefrontMessage",
+                "collectionMessage",
+                "nativeFlowMessage",
+                "carouselMessage"
+            ]
+        }
+    };
+    zt.internalDefaults = {
+        messageVersion: 1,
+        carouselCardType: M.HSCROLL_CARDS
+    };
+    zt.name = "Message$InteractiveMessage$CarouselMessage";
+    zt.internalSpec = {
+        cards: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Gt
+        ],
+        messageVersion: [
+            2,
+            e.TYPES.INT32
+        ],
+        carouselCardType: [
+            3,
+            e.TYPES.ENUM,
+            M
+        ]
+    };
+    jt.internalDefaults = {
+        messageVersion: 1
+    };
+    jt.name = "Message$InteractiveMessage$NativeFlowMessage";
+    jt.internalSpec = {
+        buttons: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Kt
+        ],
+        messageParamsJson: [
+            2,
+            e.TYPES.STRING
+        ],
+        messageVersion: [
+            3,
+            e.TYPES.INT32
+        ]
+    };
+    Kt.name = "Message$InteractiveMessage$NativeFlowMessage$NativeFlowButton";
+    Kt.internalSpec = {
+        name: [
+            1,
+            e.TYPES.STRING
+        ],
+        buttonParamsJson: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    Qt.internalDefaults = {
+        messageVersion: 1
+    };
+    Qt.name = "Message$InteractiveMessage$CollectionMessage";
+    Qt.internalSpec = {
+        bizJid: [
+            1,
+            e.TYPES.STRING
+        ],
+        id: [
+            2,
+            e.TYPES.STRING
+        ],
+        messageVersion: [
+            3,
+            e.TYPES.INT32
+        ]
+    };
+    Xt.internalDefaults = {
+        messageVersion: 1
+    };
+    Xt.name = "Message$InteractiveMessage$ShopMessage";
+    Xt.internalSpec = {
+        id: [
+            1,
+            e.TYPES.STRING
+        ],
+        surface: [
+            2,
+            e.TYPES.ENUM,
+            w
+        ],
+        messageVersion: [
+            3,
+            e.TYPES.INT32
+        ]
+    };
+    Yt.name = "Message$InteractiveMessage$BloksWidget";
+    Yt.internalSpec = {
+        uuid: [
+            1,
+            e.TYPES.STRING
+        ],
+        data: [
+            2,
+            e.TYPES.STRING
+        ],
+        type: [
+            3,
+            e.TYPES.STRING
+        ],
+        fallback: [
+            4,
+            e.TYPES.STRING
+        ]
+    };
+    Jt.name = "Message$InteractiveMessage$Footer";
+    Jt.internalSpec = {
+        text: [
+            1,
+            e.TYPES.STRING
+        ],
+        hasMediaAttachment: [
+            3,
+            e.TYPES.BOOL
+        ],
+        audioMessage: [
+            2,
+            e.TYPES.MESSAGE,
+            Hr
+        ],
+        __oneofs__: {
+            media: [
+                "audioMessage"
+            ]
+        }
+    };
+    Zt.name = "Message$InteractiveMessage$Body";
+    Zt.internalSpec = {
+        text: [
+            1,
+            e.TYPES.STRING
+        ]
+    };
+    en.name = "Message$InteractiveMessage$Header";
+    en.internalSpec = {
+        title: [
+            1,
+            e.TYPES.STRING
+        ],
+        subtitle: [
+            2,
+            e.TYPES.STRING
+        ],
+        hasMediaAttachment: [
+            5,
+            e.TYPES.BOOL
+        ],
+        bloksWidget: [
+            10,
+            e.TYPES.MESSAGE,
+            Yt
+        ],
+        documentMessage: [
+            3,
+            e.TYPES.MESSAGE,
+            Gr
+        ],
+        imageMessage: [
+            4,
+            e.TYPES.MESSAGE,
+            ao
+        ],
+        jpegThumbnail: [
+            6,
+            e.TYPES.BYTES
+        ],
+        videoMessage: [
+            7,
+            e.TYPES.MESSAGE,
+            Ur
+        ],
+        locationMessage: [
+            8,
+            e.TYPES.MESSAGE,
+            to
+        ],
+        productMessage: [
+            9,
+            e.TYPES.MESSAGE,
+            mn
+        ],
+        __oneofs__: {
+            media: [
+                "documentMessage",
+                "imageMessage",
+                "jpegThumbnail",
+                "videoMessage",
+                "locationMessage",
+                "productMessage"
+            ]
+        }
+    };
+    tn.name = "Message$ListResponseMessage";
+    tn.internalSpec = {
+        title: [
+            1,
+            e.TYPES.STRING
+        ],
+        listType: [
+            2,
+            e.TYPES.ENUM,
+            A
+        ],
+        singleSelectReply: [
+            3,
+            e.TYPES.MESSAGE,
+            nn
+        ],
+        contextInfo: [
+            4,
+            e.TYPES.MESSAGE,
+            co
+        ],
+        description: [
+            5,
+            e.TYPES.STRING
+        ]
+    };
+    nn.name = "Message$ListResponseMessage$SingleSelectReply";
+    nn.internalSpec = {
+        selectedRowId: [
+            1,
+            e.TYPES.STRING
+        ]
+    };
+    rn.name = "Message$ListMessage";
+    rn.internalSpec = {
+        title: [
+            1,
+            e.TYPES.STRING
+        ],
+        description: [
+            2,
+            e.TYPES.STRING
+        ],
+        buttonText: [
+            3,
+            e.TYPES.STRING
+        ],
+        listType: [
+            4,
+            e.TYPES.ENUM,
+            F
+        ],
+        sections: [
+            5,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            un
+        ],
+        productListInfo: [
+            6,
+            e.TYPES.MESSAGE,
+            on
+        ],
+        footerText: [
+            7,
+            e.TYPES.STRING
+        ],
+        contextInfo: [
+            8,
+            e.TYPES.MESSAGE,
+            co
+        ]
+    };
+    on.name = "Message$ListMessage$ProductListInfo";
+    on.internalSpec = {
+        productSections: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            ln
+        ],
+        headerImage: [
+            2,
+            e.TYPES.MESSAGE,
+            an
+        ],
+        businessOwnerJid: [
+            3,
+            e.TYPES.STRING
+        ]
+    };
+    an.name = "Message$ListMessage$ProductListHeaderImage";
+    an.internalSpec = {
+        productId: [
+            1,
+            e.TYPES.STRING
+        ],
+        jpegThumbnail: [
+            2,
+            e.TYPES.BYTES
+        ]
+    };
+    ln.name = "Message$ListMessage$ProductSection";
+    ln.internalSpec = {
+        title: [
+            1,
+            e.TYPES.STRING
+        ],
+        products: [
+            2,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            sn
+        ]
+    };
+    sn.name = "Message$ListMessage$Product";
+    sn.internalSpec = {
+        productId: [
+            1,
+            e.TYPES.STRING
+        ]
+    };
+    un.name = "Message$ListMessage$Section";
+    un.internalSpec = {
+        title: [
+            1,
+            e.TYPES.STRING
+        ],
+        rows: [
+            2,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            cn
+        ]
+    };
+    cn.name = "Message$ListMessage$Row";
+    cn.internalSpec = {
+        title: [
+            1,
+            e.TYPES.STRING
+        ],
+        description: [
+            2,
+            e.TYPES.STRING
+        ],
+        rowId: [
+            3,
+            e.TYPES.STRING
+        ]
+    };
+    dn.internalDefaults = {
+        messageVersion: 1
+    };
+    dn.name = "Message$OrderMessage";
+    dn.internalSpec = {
+        orderId: [
+            1,
+            e.TYPES.STRING
+        ],
+        thumbnail: [
+            2,
+            e.TYPES.BYTES
+        ],
+        itemCount: [
+            3,
+            e.TYPES.INT32
+        ],
+        status: [
+            4,
+            e.TYPES.ENUM,
+            B
+        ],
+        surface: [
+            5,
+            e.TYPES.ENUM,
+            O
+        ],
+        message: [
+            6,
+            e.TYPES.STRING
+        ],
+        orderTitle: [
+            7,
+            e.TYPES.STRING
+        ],
+        sellerJid: [
+            8,
+            e.TYPES.STRING
+        ],
+        token: [
+            9,
+            e.TYPES.STRING
+        ],
+        totalAmount1000: [
+            10,
+            e.TYPES.INT64
+        ],
+        totalCurrencyCode: [
+            11,
+            e.TYPES.STRING
+        ],
+        contextInfo: [
+            17,
+            e.TYPES.MESSAGE,
+            co
+        ],
+        messageVersion: [
+            12,
+            e.TYPES.INT32
+        ],
+        orderRequestMessageId: [
+            13,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ],
+        catalogType: [
+            15,
+            e.TYPES.STRING
+        ]
+    };
+    mn.name = "Message$ProductMessage";
+    mn.internalSpec = {
+        product: [
+            1,
+            e.TYPES.MESSAGE,
+            pn
+        ],
+        businessOwnerJid: [
+            2,
+            e.TYPES.STRING
+        ],
+        catalog: [
+            4,
+            e.TYPES.MESSAGE,
+            _n
+        ],
+        body: [
+            5,
+            e.TYPES.STRING
+        ],
+        footer: [
+            6,
+            e.TYPES.STRING
+        ],
+        contextInfo: [
+            17,
+            e.TYPES.MESSAGE,
+            co
+        ]
+    };
+    pn.name = "Message$ProductMessage$ProductSnapshot";
+    pn.internalSpec = {
+        productImage: [
+            1,
+            e.TYPES.MESSAGE,
+            ao
+        ],
+        productId: [
+            2,
+            e.TYPES.STRING
+        ],
+        title: [
+            3,
+            e.TYPES.STRING
+        ],
+        description: [
+            4,
+            e.TYPES.STRING
+        ],
+        currencyCode: [
+            5,
+            e.TYPES.STRING
+        ],
+        priceAmount1000: [
+            6,
+            e.TYPES.INT64
+        ],
+        retailerId: [
+            7,
+            e.TYPES.STRING
+        ],
+        url: [
+            8,
+            e.TYPES.STRING
+        ],
+        productImageCount: [
+            9,
+            e.TYPES.UINT32
+        ],
+        firstImageId: [
+            11,
+            e.TYPES.STRING
+        ],
+        salePriceAmount1000: [
+            12,
+            e.TYPES.INT64
+        ],
+        signedUrl: [
+            13,
+            e.TYPES.STRING
+        ]
+    };
+    _n.name = "Message$ProductMessage$CatalogSnapshot";
+    _n.internalSpec = {
+        catalogImage: [
+            1,
+            e.TYPES.MESSAGE,
+            ao
+        ],
+        title: [
+            2,
+            e.TYPES.STRING
+        ],
+        description: [
+            3,
+            e.TYPES.STRING
+        ]
+    };
+    fn.name = "Message$StatusQuotedMessage";
+    fn.internalSpec = {
+        type: [
+            1,
+            e.TYPES.ENUM,
+            W
+        ],
+        text: [
+            2,
+            e.TYPES.STRING
+        ],
+        thumbnail: [
+            3,
+            e.TYPES.BYTES
+        ],
+        originalStatusId: [
+            4,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ]
+    };
+    gn.name = "Message$TemplateButtonReplyMessage";
+    gn.internalSpec = {
+        selectedId: [
+            1,
+            e.TYPES.STRING
+        ],
+        selectedDisplayText: [
+            2,
+            e.TYPES.STRING
+        ],
+        contextInfo: [
+            3,
+            e.TYPES.MESSAGE,
+            co
+        ],
+        selectedIndex: [
+            4,
+            e.TYPES.UINT32
+        ],
+        selectedCarouselCardIndex: [
+            5,
+            e.TYPES.UINT32
+        ]
+    };
+    hn.name = "Message$TemplateMessage";
+    hn.internalSpec = {
+        contextInfo: [
+            3,
+            e.TYPES.MESSAGE,
+            co
+        ],
+        hydratedTemplate: [
+            4,
+            e.TYPES.MESSAGE,
+            yn
+        ],
+        templateId: [
+            9,
+            e.TYPES.STRING
+        ],
+        fourRowTemplate: [
+            1,
+            e.TYPES.MESSAGE,
+            Cn
+        ],
+        hydratedFourRowTemplate: [
+            2,
+            e.TYPES.MESSAGE,
+            yn
+        ],
+        interactiveMessageTemplate: [
+            5,
+            e.TYPES.MESSAGE,
+            Gt
+        ],
+        __oneofs__: {
+            format: [
+                "fourRowTemplate",
+                "hydratedFourRowTemplate",
+                "interactiveMessageTemplate"
+            ]
+        }
+    };
+    yn.name = "Message$TemplateMessage$HydratedFourRowTemplate";
+    yn.internalSpec = {
+        hydratedContentText: [
+            6,
+            e.TYPES.STRING
+        ],
+        hydratedFooterText: [
+            7,
+            e.TYPES.STRING
+        ],
+        hydratedButtons: [
+            8,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Vo
+        ],
+        templateId: [
+            9,
+            e.TYPES.STRING
+        ],
+        maskLinkedDevices: [
+            10,
+            e.TYPES.BOOL
+        ],
+        documentMessage: [
+            1,
+            e.TYPES.MESSAGE,
+            Gr
+        ],
+        hydratedTitleText: [
+            2,
+            e.TYPES.STRING
+        ],
+        imageMessage: [
+            3,
+            e.TYPES.MESSAGE,
+            ao
+        ],
+        videoMessage: [
+            4,
+            e.TYPES.MESSAGE,
+            Ur
+        ],
+        locationMessage: [
+            5,
+            e.TYPES.MESSAGE,
+            to
+        ],
+        __oneofs__: {
+            title: [
+                "documentMessage",
+                "hydratedTitleText",
+                "imageMessage",
+                "videoMessage",
+                "locationMessage"
+            ]
+        }
+    };
+    Cn.name = "Message$TemplateMessage$FourRowTemplate";
+    Cn.internalSpec = {
+        content: [
+            6,
+            e.TYPES.MESSAGE,
+            $n
+        ],
+        footer: [
+            7,
+            e.TYPES.MESSAGE,
+            $n
+        ],
+        buttons: [
+            8,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Bo
+        ],
+        documentMessage: [
+            1,
+            e.TYPES.MESSAGE,
+            Gr
+        ],
+        highlyStructuredMessage: [
+            2,
+            e.TYPES.MESSAGE,
+            $n
+        ],
+        imageMessage: [
+            3,
+            e.TYPES.MESSAGE,
+            ao
+        ],
+        videoMessage: [
+            4,
+            e.TYPES.MESSAGE,
+            Ur
+        ],
+        locationMessage: [
+            5,
+            e.TYPES.MESSAGE,
+            to
+        ],
+        __oneofs__: {
+            title: [
+                "documentMessage",
+                "highlyStructuredMessage",
+                "imageMessage",
+                "videoMessage",
+                "locationMessage"
+            ]
+        }
+    };
+    bn.name = "Message$StickerMessage";
+    bn.internalSpec = {
+        url: [
+            1,
+            e.TYPES.STRING
+        ],
+        fileSha256: [
+            2,
+            e.TYPES.BYTES
+        ],
+        fileEncSha256: [
+            3,
+            e.TYPES.BYTES
+        ],
+        mediaKey: [
+            4,
+            e.TYPES.BYTES
+        ],
+        mimetype: [
+            5,
+            e.TYPES.STRING
+        ],
+        height: [
+            6,
+            e.TYPES.UINT32
+        ],
+        width: [
+            7,
+            e.TYPES.UINT32
+        ],
+        directPath: [
+            8,
+            e.TYPES.STRING
+        ],
+        fileLength: [
+            9,
+            e.TYPES.UINT64
+        ],
+        mediaKeyTimestamp: [
+            10,
+            e.TYPES.INT64
+        ],
+        firstFrameLength: [
+            11,
+            e.TYPES.UINT32
+        ],
+        firstFrameSidecar: [
+            12,
+            e.TYPES.BYTES
+        ],
+        isAnimated: [
+            13,
+            e.TYPES.BOOL
+        ],
+        pngThumbnail: [
+            16,
+            e.TYPES.BYTES
+        ],
+        contextInfo: [
+            17,
+            e.TYPES.MESSAGE,
+            co
+        ],
+        stickerSentTs: [
+            18,
+            e.TYPES.INT64
+        ],
+        isAvatar: [
+            19,
+            e.TYPES.BOOL
+        ],
+        isAiSticker: [
+            20,
+            e.TYPES.BOOL
+        ],
+        isLottie: [
+            21,
+            e.TYPES.BOOL
+        ],
+        accessibilityLabel: [
+            22,
+            e.TYPES.STRING
+        ],
+        premium: [
+            24,
+            e.TYPES.INT32
+        ],
+        emojis: [
+            25,
+            e.TYPES.STRING
+        ],
+        audioMessage: [
+            26,
+            e.TYPES.MESSAGE,
+            Hr
+        ],
+        __oneofs__: {
+            audio: [
+                "audioMessage"
+            ]
+        }
+    };
+    vn.name = "Message$LiveLocationMessage";
+    vn.internalSpec = {
+        degreesLatitude: [
+            1,
+            e.TYPES.DOUBLE
+        ],
+        degreesLongitude: [
+            2,
+            e.TYPES.DOUBLE
+        ],
+        accuracyInMeters: [
+            3,
+            e.TYPES.UINT32
+        ],
+        speedInMps: [
+            4,
+            e.TYPES.FLOAT
+        ],
+        degreesClockwiseFromMagneticNorth: [
+            5,
+            e.TYPES.UINT32
+        ],
+        caption: [
+            6,
+            e.TYPES.STRING
+        ],
+        sequenceNumber: [
+            7,
+            e.TYPES.INT64
+        ],
+        timeOffset: [
+            8,
+            e.TYPES.UINT32
+        ],
+        jpegThumbnail: [
+            16,
+            e.TYPES.BYTES
+        ],
+        contextInfo: [
+            17,
+            e.TYPES.MESSAGE,
+            co
+        ]
+    };
+    Sn.name = "Message$SplitPaymentUpdateMessage";
+    Sn.internalSpec = {
+        splitId: [
+            1,
+            e.TYPES.STRING
+        ],
+        participantJid: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    Rn.name = "Message$SplitPaymentParticipant";
+    Rn.internalSpec = {
+        jid: [
+            1,
+            e.TYPES.STRING
+        ],
+        amount: [
+            2,
+            e.TYPES.MESSAGE,
+            jo
+        ],
+        status: [
+            3,
+            e.TYPES.ENUM,
+            q
+        ]
+    };
+    Ln.name = "Message$SplitPaymentMessage";
+    Ln.internalSpec = {
+        splitId: [
+            1,
+            e.TYPES.STRING
+        ],
+        totalAmount: [
+            2,
+            e.TYPES.MESSAGE,
+            jo
+        ],
+        description: [
+            3,
+            e.TYPES.STRING
+        ],
+        requesterJid: [
+            4,
+            e.TYPES.STRING
+        ],
+        participants: [
+            5,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Rn
+        ],
+        createdAtMs: [
+            6,
+            e.TYPES.INT64
+        ],
+        contextInfo: [
+            17,
+            e.TYPES.MESSAGE,
+            co
+        ]
+    };
+    En.name = "Message$PaymentReminderMessage";
+    En.internalSpec = {
+        reminderId: [
+            1,
+            e.TYPES.STRING
+        ],
+        instanceId: [
+            2,
+            e.TYPES.STRING
+        ],
+        description: [
+            3,
+            e.TYPES.STRING
+        ],
+        frequency: [
+            4,
+            e.TYPES.ENUM,
+            V
+        ],
+        status: [
+            5,
+            e.TYPES.ENUM,
+            U
+        ],
+        payeeVpa: [
+            6,
+            e.TYPES.STRING
+        ],
+        payeeJid: [
+            7,
+            e.TYPES.STRING
+        ],
+        payerJid: [
+            8,
+            e.TYPES.STRING
+        ],
+        amount: [
+            9,
+            e.TYPES.MESSAGE,
+            jo
+        ]
+    };
+    kn.name = "Message$PaymentInviteMessage";
+    kn.internalSpec = {
+        serviceType: [
+            1,
+            e.TYPES.ENUM,
+            G
+        ],
+        expiryTimestamp: [
+            2,
+            e.TYPES.INT64
+        ],
+        incentiveEligible: [
+            3,
+            e.TYPES.BOOL
+        ],
+        referralId: [
+            4,
+            e.TYPES.STRING
+        ],
+        inviteType: [
+            5,
+            e.TYPES.ENUM,
+            H
+        ]
+    };
+    In.name = "Message$CancelPaymentRequestMessage";
+    In.internalSpec = {
+        key: [
+            1,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ]
+    };
+    Tn.name = "Message$DeclinePaymentRequestMessage";
+    Tn.internalSpec = {
+        key: [
+            1,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ]
+    };
+    Dn.name = "Message$RequestPaymentMessage";
+    Dn.internalSpec = {
+        noteMessage: [
+            4,
+            e.TYPES.MESSAGE,
+            Ue
+        ],
+        currencyCodeIso4217: [
+            1,
+            e.TYPES.STRING
+        ],
+        amount1000: [
+            2,
+            e.TYPES.UINT64
+        ],
+        requestFrom: [
+            3,
+            e.TYPES.STRING
+        ],
+        expiryTimestamp: [
+            5,
+            e.TYPES.INT64
+        ],
+        amount: [
+            6,
+            e.TYPES.MESSAGE,
+            jo
+        ],
+        background: [
+            7,
+            e.TYPES.MESSAGE,
+            Ko
+        ]
+    };
+    xn.name = "Message$SendPaymentMessage";
+    xn.internalSpec = {
+        noteMessage: [
+            2,
+            e.TYPES.MESSAGE,
+            Ue
+        ],
+        requestMessageKey: [
+            3,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ],
+        background: [
+            4,
+            e.TYPES.MESSAGE,
+            Ko
+        ],
+        transactionData: [
+            5,
+            e.TYPES.STRING
+        ]
+    };
+    $n.name = "Message$HighlyStructuredMessage";
+    $n.internalSpec = {
+        namespace: [
+            1,
+            e.TYPES.STRING
+        ],
+        elementName: [
+            2,
+            e.TYPES.STRING
+        ],
+        params: [
+            3,
+            e.FLAGS.REPEATED | e.TYPES.STRING
+        ],
+        fallbackLg: [
+            4,
+            e.TYPES.STRING
+        ],
+        fallbackLc: [
+            5,
+            e.TYPES.STRING
+        ],
+        localizableParams: [
+            6,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Pn
+        ],
+        deterministicLg: [
+            7,
+            e.TYPES.STRING
+        ],
+        deterministicLc: [
+            8,
+            e.TYPES.STRING
+        ],
+        hydratedHsm: [
+            9,
+            e.TYPES.MESSAGE,
+            hn
+        ]
+    };
+    Pn.name = "Message$HighlyStructuredMessage$HSMLocalizableParameter";
+    Pn.internalSpec = {
+        default: [
+            1,
+            e.TYPES.STRING
+        ],
+        currency: [
+            2,
+            e.TYPES.MESSAGE,
+            An
+        ],
+        dateTime: [
+            3,
+            e.TYPES.MESSAGE,
+            Nn
+        ],
+        __oneofs__: {
+            paramOneof: [
+                "currency",
+                "dateTime"
+            ]
+        }
+    };
+    Nn.name = "Message$HighlyStructuredMessage$HSMLocalizableParameter$HSMDateTime";
+    Nn.internalSpec = {
+        component: [
+            1,
+            e.TYPES.MESSAGE,
+            wn
+        ],
+        unixEpoch: [
+            2,
+            e.TYPES.MESSAGE,
+            Mn
+        ],
+        __oneofs__: {
+            datetimeOneof: [
+                "component",
+                "unixEpoch"
+            ]
+        }
+    };
+    Mn.name = "Message$HighlyStructuredMessage$HSMLocalizableParameter$HSMDateTime$HSMDateTimeUnixEpoch";
+    Mn.internalSpec = {
+        timestamp: [
+            1,
+            e.TYPES.INT64
+        ]
+    };
+    wn.name = "Message$HighlyStructuredMessage$HSMLocalizableParameter$HSMDateTime$HSMDateTimeComponent";
+    wn.internalSpec = {
+        dayOfWeek: [
+            1,
+            e.TYPES.ENUM,
+            j
+        ],
+        year: [
+            2,
+            e.TYPES.UINT32
+        ],
+        month: [
+            3,
+            e.TYPES.UINT32
+        ],
+        dayOfMonth: [
+            4,
+            e.TYPES.UINT32
+        ],
+        hour: [
+            5,
+            e.TYPES.UINT32
+        ],
+        minute: [
+            6,
+            e.TYPES.UINT32
+        ],
+        calendar: [
+            7,
+            e.TYPES.ENUM,
+            z
+        ]
+    };
+    An.name = "Message$HighlyStructuredMessage$HSMLocalizableParameter$HSMCurrency";
+    An.internalSpec = {
+        currencyCode: [
+            1,
+            e.TYPES.STRING
+        ],
+        amount1000: [
+            2,
+            e.TYPES.INT64
+        ]
+    };
+    Fn.name = "Message$ContactsArrayMessage";
+    Fn.internalSpec = {
+        displayName: [
+            1,
+            e.TYPES.STRING
+        ],
+        contacts: [
+            2,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            ro
+        ],
+        contextInfo: [
+            17,
+            e.TYPES.MESSAGE,
+            co
+        ]
+    };
+    On.name = "Message$InitialSecurityNotificationSettingSync";
+    On.internalSpec = {
+        securityNotificationEnabled: [
+            1,
+            e.TYPES.BOOL
+        ]
+    };
+    Bn.name = "Message$PeerDataOperationRequestResponseMessage";
+    Bn.internalSpec = {
+        peerDataOperationRequestType: [
+            1,
+            e.TYPES.ENUM,
+            J
+        ],
+        stanzaId: [
+            2,
+            e.TYPES.STRING
+        ],
+        peerDataOperationResult: [
+            3,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Wn
+        ]
+    };
+    Wn.name = "Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult";
+    Wn.internalSpec = {
+        mediaUploadResult: [
+            1,
+            e.TYPES.ENUM,
+            o("WAWebProtobufsMmsRetry.pb").MediaRetryNotification$ResultType
+        ],
+        stickerMessage: [
+            2,
+            e.TYPES.MESSAGE,
+            bn
+        ],
+        linkPreviewResponse: [
+            3,
+            e.TYPES.MESSAGE,
+            Jn
+        ],
+        placeholderMessageResendResponse: [
+            4,
+            e.TYPES.MESSAGE,
+            Yn
+        ],
+        waffleNonceFetchRequestResponse: [
+            5,
+            e.TYPES.MESSAGE,
+            Qn
+        ],
+        fullHistorySyncOnDemandRequestResponse: [
+            6,
+            e.TYPES.MESSAGE,
+            Xn
+        ],
+        companionMetaNonceFetchRequestResponse: [
+            7,
+            e.TYPES.MESSAGE,
+            Kn
+        ],
+        syncdSnapshotFatalRecoveryResponse: [
+            8,
+            e.TYPES.MESSAGE,
+            zn
+        ],
+        companionCanonicalUserNonceFetchRequestResponse: [
+            9,
+            e.TYPES.MESSAGE,
+            jn
+        ],
+        historySyncChunkRetryResponse: [
+            10,
+            e.TYPES.MESSAGE,
+            Gn
+        ],
+        flowResponsesCsvBundle: [
+            11,
+            e.TYPES.MESSAGE,
+            qn
+        ],
+        bizBroadcastInsightsContactListResponse: [
+            12,
+            e.TYPES.MESSAGE,
+            Vn
+        ],
+        contactRefreshResponse: [
+            13,
+            e.TYPES.MESSAGE,
+            Un
+        ]
+    };
+    qn.name = "Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$FlowResponsesCsvBundle";
+    qn.internalSpec = {
+        flowId: [
+            1,
+            e.TYPES.STRING
+        ],
+        galaxyFlowDownloadRequestId: [
+            2,
+            e.TYPES.STRING
+        ],
+        fileName: [
+            3,
+            e.TYPES.STRING
+        ],
+        mimetype: [
+            4,
+            e.TYPES.STRING
+        ],
+        fileSha256: [
+            5,
+            e.TYPES.BYTES
+        ],
+        mediaKey: [
+            6,
+            e.TYPES.BYTES
+        ],
+        fileEncSha256: [
+            7,
+            e.TYPES.BYTES
+        ],
+        directPath: [
+            8,
+            e.TYPES.STRING
+        ],
+        mediaKeyTimestamp: [
+            9,
+            e.TYPES.INT64
+        ],
+        fileLength: [
+            10,
+            e.TYPES.UINT64
+        ]
+    };
+    Un.name = "Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$ContactRefreshResponse";
+    Un.internalSpec = {
+        coveredRequestIds: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.STRING
+        ],
+        collectionVersion: [
+            2,
+            e.TYPES.UINT64
+        ],
+        primaryDurationMs: [
+            3,
+            e.TYPES.INT64
+        ],
+        uniqueContactCount: [
+            4,
+            e.TYPES.UINT32
+        ]
+    };
+    Vn.name = "Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$BizBroadcastInsightsContactListResponse";
+    Vn.internalSpec = {
+        campaignId: [
+            1,
+            e.TYPES.STRING
+        ],
+        timestampMs: [
+            2,
+            e.TYPES.INT64
+        ],
+        contacts: [
+            3,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Hn
+        ]
+    };
+    Hn.name = "Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$BizBroadcastInsightsContactState";
+    Hn.internalSpec = {
+        contactJid: [
+            1,
+            e.TYPES.STRING
+        ],
+        state: [
+            2,
+            e.TYPES.ENUM,
+            Y
+        ]
+    };
+    Gn.name = "Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$HistorySyncChunkRetryResponse";
+    Gn.internalSpec = {
+        syncType: [
+            1,
+            e.TYPES.ENUM,
+            ee
+        ],
+        chunkOrder: [
+            2,
+            e.TYPES.UINT32
+        ],
+        requestId: [
+            3,
+            e.TYPES.STRING
+        ],
+        responseCode: [
+            4,
+            e.TYPES.ENUM,
+            K
+        ],
+        canRecover: [
+            5,
+            e.TYPES.BOOL
+        ]
+    };
+    zn.name = "Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$SyncDSnapshotFatalRecoveryResponse";
+    zn.internalSpec = {
+        collectionSnapshot: [
+            1,
+            e.TYPES.BYTES
+        ],
+        isCompressed: [
+            2,
+            e.TYPES.BOOL
+        ]
+    };
+    jn.name = "Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$CompanionCanonicalUserNonceFetchResponse";
+    jn.internalSpec = {
+        nonce: [
+            1,
+            e.TYPES.STRING
+        ],
+        waFbid: [
+            2,
+            e.TYPES.STRING
+        ],
+        forceRefresh: [
+            3,
+            e.TYPES.BOOL
+        ]
+    };
+    Kn.name = "Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$CompanionMetaNonceFetchResponse";
+    Kn.internalSpec = {
+        nonce: [
+            1,
+            e.TYPES.STRING
+        ]
+    };
+    Qn.name = "Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$WaffleNonceFetchResponse";
+    Qn.internalSpec = {
+        nonce: [
+            1,
+            e.TYPES.STRING
+        ],
+        waEntFbid: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    Xn.name = "Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$FullHistorySyncOnDemandRequestResponse";
+    Xn.internalSpec = {
+        requestMetadata: [
+            1,
+            e.TYPES.MESSAGE,
+            fr
+        ],
+        responseCode: [
+            2,
+            e.TYPES.ENUM,
+            Q
+        ]
+    };
+    Yn.name = "Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$PlaceholderMessageResendResponse";
+    Yn.internalSpec = {
+        webMessageInfoBytes: [
+            1,
+            e.TYPES.BYTES
+        ]
+    };
+    Jn.name = "Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$LinkPreviewResponse";
+    Jn.internalSpec = {
+        url: [
+            1,
+            e.TYPES.STRING
+        ],
+        title: [
+            2,
+            e.TYPES.STRING
+        ],
+        description: [
+            3,
+            e.TYPES.STRING
+        ],
+        thumbData: [
+            4,
+            e.TYPES.BYTES
+        ],
+        matchText: [
+            6,
+            e.TYPES.STRING
+        ],
+        previewType: [
+            7,
+            e.TYPES.STRING
+        ],
+        hqThumbnail: [
+            8,
+            e.TYPES.MESSAGE,
+            er
+        ],
+        previewMetadata: [
+            9,
+            e.TYPES.MESSAGE,
+            Zn
+        ]
+    };
+    Zn.name = "Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$LinkPreviewResponse$PaymentLinkPreviewMetadata";
+    Zn.internalSpec = {
+        isBusinessVerified: [
+            1,
+            e.TYPES.BOOL
+        ],
+        providerName: [
+            2,
+            e.TYPES.STRING
+        ],
+        amount: [
+            3,
+            e.TYPES.STRING
+        ],
+        offset: [
+            4,
+            e.TYPES.STRING
+        ],
+        currency: [
+            5,
+            e.TYPES.STRING
+        ]
+    };
+    er.name = "Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$LinkPreviewResponse$LinkPreviewHighQualityThumbnail";
+    er.internalSpec = {
+        directPath: [
+            1,
+            e.TYPES.STRING
+        ],
+        thumbHash: [
+            2,
+            e.TYPES.STRING
+        ],
+        encThumbHash: [
+            3,
+            e.TYPES.STRING
+        ],
+        mediaKey: [
+            4,
+            e.TYPES.BYTES
+        ],
+        mediaKeyTimestampMs: [
+            5,
+            e.TYPES.INT64
+        ],
+        thumbWidth: [
+            6,
+            e.TYPES.INT32
+        ],
+        thumbHeight: [
+            7,
+            e.TYPES.INT32
+        ]
+    };
+    tr.name = "Message$PeerDataOperationRequestMessage";
+    tr.internalSpec = {
+        peerDataOperationRequestType: [
+            1,
+            e.TYPES.ENUM,
+            J
+        ],
+        requestStickerReupload: [
+            2,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            pr
+        ],
+        requestUrlPreview: [
+            3,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            mr
+        ],
+        historySyncOnDemandRequest: [
+            4,
+            e.TYPES.MESSAGE,
+            dr
+        ],
+        placeholderMessageResendRequest: [
+            5,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            ur
+        ],
+        fullHistorySyncOnDemandRequest: [
+            6,
+            e.TYPES.MESSAGE,
+            cr
+        ],
+        syncdCollectionFatalRecoveryRequest: [
+            7,
+            e.TYPES.MESSAGE,
+            sr
+        ],
+        historySyncChunkRetryRequest: [
+            8,
+            e.TYPES.MESSAGE,
+            lr
+        ],
+        galaxyFlowAction: [
+            9,
+            e.TYPES.MESSAGE,
+            ir
+        ],
+        companionCanonicalUserNonceFetchRequest: [
+            10,
+            e.TYPES.MESSAGE,
+            ar
+        ],
+        bizBroadcastInsightsContactListRequest: [
+            11,
+            e.TYPES.MESSAGE,
+            or
+        ],
+        bizBroadcastInsightsRefreshRequest: [
+            12,
+            e.TYPES.MESSAGE,
+            rr
+        ],
+        recentConversationsOnDemandRequest: [
+            13,
+            e.TYPES.MESSAGE,
+            nr
+        ]
+    };
+    nr.name = "Message$PeerDataOperationRequestMessage$RecentConversationsOnDemandRequest";
+    nr.internalSpec = {
+        conversationCount: [
+            1,
+            e.TYPES.UINT32
+        ],
+        messagesPerConversation: [
+            2,
+            e.TYPES.UINT32
+        ]
+    };
+    rr.name = "Message$PeerDataOperationRequestMessage$BizBroadcastInsightsRefreshRequest";
+    rr.internalSpec = {
+        campaignId: [
+            1,
+            e.TYPES.STRING
+        ]
+    };
+    or.name = "Message$PeerDataOperationRequestMessage$BizBroadcastInsightsContactListRequest";
+    or.internalSpec = {
+        campaignId: [
+            1,
+            e.TYPES.STRING
+        ]
+    };
+    ar.name = "Message$PeerDataOperationRequestMessage$CompanionCanonicalUserNonceFetchRequest";
+    ar.internalSpec = {
+        registrationTraceId: [
+            1,
+            e.TYPES.STRING
+        ]
+    };
+    ir.name = "Message$PeerDataOperationRequestMessage$GalaxyFlowAction";
+    ir.internalSpec = {
+        type: [
+            1,
+            e.TYPES.ENUM,
+            X
+        ],
+        flowId: [
+            2,
+            e.TYPES.STRING
+        ],
+        stanzaId: [
+            3,
+            e.TYPES.STRING
+        ],
+        galaxyFlowDownloadRequestId: [
+            4,
+            e.TYPES.STRING
+        ],
+        agmId: [
+            5,
+            e.TYPES.STRING
+        ]
+    };
+    lr.name = "Message$PeerDataOperationRequestMessage$HistorySyncChunkRetryRequest";
+    lr.internalSpec = {
+        syncType: [
+            1,
+            e.TYPES.ENUM,
+            ee
+        ],
+        chunkOrder: [
+            2,
+            e.TYPES.UINT32
+        ],
+        chunkNotificationId: [
+            3,
+            e.TYPES.STRING
+        ],
+        regenerateChunk: [
+            4,
+            e.TYPES.BOOL
+        ]
+    };
+    sr.name = "Message$PeerDataOperationRequestMessage$SyncDCollectionFatalRecoveryRequest";
+    sr.internalSpec = {
+        collectionName: [
+            1,
+            e.TYPES.STRING
+        ],
+        timestamp: [
+            2,
+            e.TYPES.INT64
+        ]
+    };
+    ur.name = "Message$PeerDataOperationRequestMessage$PlaceholderMessageResendRequest";
+    ur.internalSpec = {
+        messageKey: [
+            1,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ]
+    };
+    cr.name = "Message$PeerDataOperationRequestMessage$FullHistorySyncOnDemandRequest";
+    cr.internalSpec = {
+        requestMetadata: [
+            1,
+            e.TYPES.MESSAGE,
+            fr
+        ],
+        historySyncConfig: [
+            2,
+            e.TYPES.MESSAGE,
+            o("WAWebProtobufsCompanionReg.pb").DeviceProps$HistorySyncConfigSpec
+        ],
+        fullHistorySyncOnDemandConfig: [
+            3,
+            e.TYPES.MESSAGE,
+            _r
+        ]
+    };
+    dr.name = "Message$PeerDataOperationRequestMessage$HistorySyncOnDemandRequest";
+    dr.internalSpec = {
+        chatJid: [
+            1,
+            e.TYPES.STRING
+        ],
+        oldestMsgId: [
+            2,
+            e.TYPES.STRING
+        ],
+        oldestMsgFromMe: [
+            3,
+            e.TYPES.BOOL
+        ],
+        onDemandMsgCount: [
+            4,
+            e.TYPES.INT32
+        ],
+        oldestMsgTimestampMs: [
+            5,
+            e.TYPES.INT64
+        ],
+        accountLid: [
+            6,
+            e.TYPES.STRING
+        ],
+        supportInlineResponse: [
+            7,
+            e.TYPES.BOOL
+        ]
+    };
+    mr.name = "Message$PeerDataOperationRequestMessage$RequestUrlPreview";
+    mr.internalSpec = {
+        url: [
+            1,
+            e.TYPES.STRING
+        ],
+        includeHqThumbnail: [
+            2,
+            e.TYPES.BOOL
+        ]
+    };
+    pr.name = "Message$PeerDataOperationRequestMessage$RequestStickerReupload";
+    pr.internalSpec = {
+        fileSha256: [
+            1,
+            e.TYPES.STRING
+        ]
+    };
+    _r.name = "Message$FullHistorySyncOnDemandConfig";
+    _r.internalSpec = {
+        historyFromTimestamp: [
+            1,
+            e.TYPES.UINT64
+        ],
+        historyDurationDays: [
+            2,
+            e.TYPES.UINT32
+        ]
+    };
+    fr.name = "Message$FullHistorySyncOnDemandRequestMetadata";
+    fr.internalSpec = {
+        requestId: [
+            1,
+            e.TYPES.STRING
+        ],
+        businessProduct: [
+            2,
+            e.TYPES.STRING
+        ],
+        opaqueClientData: [
+            3,
+            e.TYPES.BYTES
+        ],
+        connection: [
+            4,
+            e.TYPES.MESSAGE,
+            gr
+        ]
+    };
+    gr.name = "Message$CoexConnectionDescriptor";
+    gr.internalSpec = {
+        providerId: [
+            1,
+            e.TYPES.INT64
+        ],
+        product: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    hr.name = "Message$AppStateFatalExceptionNotification";
+    hr.internalSpec = {
+        collectionNames: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.STRING
+        ],
+        timestamp: [
+            2,
+            e.TYPES.INT64
+        ]
+    };
+    yr.name = "Message$SharedDeviceContactHashKeyRequest";
+    yr.internalSpec = {
+        knownEpoch: [
+            1,
+            e.TYPES.UINT32
+        ]
+    };
+    Cr.name = "Message$SharedDeviceContactHashKeyShare";
+    Cr.internalSpec = {
+        keys: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            br
+        ]
+    };
+    br.name = "Message$SharedDeviceContactHashKey";
+    br.internalSpec = {
+        epoch: [
+            1,
+            e.TYPES.UINT32
+        ],
+        kind: [
+            2,
+            e.TYPES.ENUM,
+            Z
+        ],
+        keyData: [
+            3,
+            e.TYPES.BYTES
+        ]
+    };
+    vr.name = "Message$AppStateSyncKeyRequest";
+    vr.internalSpec = {
+        keyIds: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Er
+        ]
+    };
+    Sr.name = "Message$AppStateSyncKeyShare";
+    Sr.internalSpec = {
+        keys: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            kr
+        ]
+    };
+    Rr.name = "Message$AppStateSyncKeyData";
+    Rr.internalSpec = {
+        keyData: [
+            1,
+            e.TYPES.BYTES
+        ],
+        fingerprint: [
+            2,
+            e.TYPES.MESSAGE,
+            Lr
+        ],
+        timestamp: [
+            3,
+            e.TYPES.INT64
+        ]
+    };
+    Lr.name = "Message$AppStateSyncKeyFingerprint";
+    Lr.internalSpec = {
+        rawId: [
+            1,
+            e.TYPES.UINT32
+        ],
+        currentIndex: [
+            2,
+            e.TYPES.UINT32
+        ],
+        deviceIndexes: [
+            3,
+            e.FLAGS.REPEATED | e.FLAGS.PACKED | e.TYPES.UINT32
+        ]
+    };
+    Er.name = "Message$AppStateSyncKeyId";
+    Er.internalSpec = {
+        keyId: [
+            1,
+            e.TYPES.BYTES
+        ]
+    };
+    kr.name = "Message$AppStateSyncKey";
+    kr.internalSpec = {
+        keyId: [
+            1,
+            e.TYPES.MESSAGE,
+            Er
+        ],
+        keyData: [
+            2,
+            e.TYPES.MESSAGE,
+            Rr
+        ]
+    };
+    Ir.name = "Message$HistorySyncNotification";
+    Ir.internalSpec = {
+        fileSha256: [
+            1,
+            e.TYPES.BYTES
+        ],
+        fileLength: [
+            2,
+            e.TYPES.UINT64
+        ],
+        mediaKey: [
+            3,
+            e.TYPES.BYTES
+        ],
+        fileEncSha256: [
+            4,
+            e.TYPES.BYTES
+        ],
+        directPath: [
+            5,
+            e.TYPES.STRING
+        ],
+        syncType: [
+            6,
+            e.TYPES.ENUM,
+            ee
+        ],
+        chunkOrder: [
+            7,
+            e.TYPES.UINT32
+        ],
+        originalMessageId: [
+            8,
+            e.TYPES.STRING
+        ],
+        progress: [
+            9,
+            e.TYPES.UINT32
+        ],
+        oldestMsgInChunkTimestampSec: [
+            10,
+            e.TYPES.INT64
+        ],
+        initialHistBootstrapInlinePayload: [
+            11,
+            e.TYPES.BYTES
+        ],
+        peerDataRequestSessionId: [
+            12,
+            e.TYPES.STRING
+        ],
+        fullHistorySyncOnDemandRequestMetadata: [
+            13,
+            e.TYPES.MESSAGE,
+            fr
+        ],
+        encHandle: [
+            14,
+            e.TYPES.STRING
+        ],
+        messageAccessStatus: [
+            15,
+            e.TYPES.MESSAGE,
+            Tr
+        ]
+    };
+    Tr.name = "Message$HistorySyncMessageAccessStatus";
+    Tr.internalSpec = {
+        completeAccessGranted: [
+            1,
+            e.TYPES.BOOL
+        ]
+    };
+    Dr.name = "Message$RequestWelcomeMessageMetadata";
+    Dr.internalSpec = {
+        localChatState: [
+            1,
+            e.TYPES.ENUM,
+            ne
+        ],
+        welcomeTrigger: [
+            2,
+            e.TYPES.ENUM,
+            te
+        ],
+        botAgentMetadata: [
+            3,
+            e.TYPES.MESSAGE,
+            (u = o("WAWebProtobufsAICommon.pb")).BotAgentMetadataSpec
+        ]
+    };
+    xr.name = "Message$ChatAnimatedWallpaper";
+    xr.internalSpec = {
+        animatedWallpaperId: [
+            1,
+            e.TYPES.STRING
+        ],
+        dimLevel: [
+            2,
+            e.TYPES.FLOAT
+        ]
+    };
+    $r.name = "Message$ChatStockImageWallpaper";
+    $r.internalSpec = {
+        stockImageId: [
+            1,
+            e.TYPES.STRING
+        ],
+        dimLevel: [
+            2,
+            e.TYPES.FLOAT
+        ]
+    };
+    Pr.name = "Message$ChatSolidColorWallpaper";
+    Pr.internalSpec = {
+        backgroundLightArgb: [
+            1,
+            e.TYPES.FIXED32
+        ],
+        backgroundDarkArgb: [
+            2,
+            e.TYPES.FIXED32
+        ],
+        isDoodleEnabled: [
+            3,
+            e.TYPES.BOOL
+        ],
+        doodleLightArgb: [
+            4,
+            e.TYPES.FIXED32
+        ],
+        doodleDarkArgb: [
+            5,
+            e.TYPES.FIXED32
+        ]
+    };
+    Nr.name = "Message$ChatDefaultWallpaper";
+    Nr.internalSpec = {
+        isDoodleEnabled: [
+            1,
+            e.TYPES.BOOL
+        ]
+    };
+    Mr.name = "Message$ChatCustomImageWallpaper";
+    Mr.internalSpec = {
+        directPath: [
+            1,
+            e.TYPES.STRING
+        ],
+        mediaKey: [
+            2,
+            e.TYPES.BYTES
+        ],
+        fileEncSha256: [
+            3,
+            e.TYPES.BYTES
+        ],
+        fileSha256: [
+            4,
+            e.TYPES.BYTES
+        ],
+        dimLevel: [
+            5,
+            e.TYPES.FLOAT
+        ]
+    };
+    wr.name = "Message$ChatThemeSetting";
+    wr.internalSpec = {
+        settingTimestampMs: [
+            1,
+            e.TYPES.INT64
+        ],
+        clearTheme: [
+            2,
+            e.TYPES.BOOL
+        ],
+        colorSchemeId: [
+            3,
+            e.TYPES.STRING
+        ],
+        defaultWallpaper: [
+            10,
+            e.TYPES.MESSAGE,
+            Nr
+        ],
+        solidColor: [
+            11,
+            e.TYPES.MESSAGE,
+            Pr
+        ],
+        stockImage: [
+            12,
+            e.TYPES.MESSAGE,
+            $r
+        ],
+        customImage: [
+            13,
+            e.TYPES.MESSAGE,
+            Mr
+        ],
+        animatedWallpaper: [
+            14,
+            e.TYPES.MESSAGE,
+            xr
+        ],
+        __oneofs__: {
+            wallpaper: [
+                "defaultWallpaper",
+                "solidColor",
+                "stockImage",
+                "customImage",
+                "animatedWallpaper"
+            ]
+        }
+    };
+    Ar.name = "Message$MarkAsVerifiedAction";
+    Ar.internalSpec = {
+        userJidString: [
+            1,
+            e.TYPES.STRING
+        ],
+        verified: [
+            2,
+            e.TYPES.BOOL
+        ],
+        verifiedIdentityKey: [
+            3,
+            e.TYPES.BYTES
+        ],
+        actionSeq: [
+            4,
+            e.TYPES.UINT64
+        ]
+    };
+    Fr.name = "Message$ProtocolMessage";
+    Fr.internalSpec = {
+        key: [
+            1,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ],
+        type: [
+            2,
+            e.TYPES.ENUM,
+            re
+        ],
+        ephemeralExpiration: [
+            4,
+            e.TYPES.UINT32
+        ],
+        ephemeralSettingTimestamp: [
+            5,
+            e.TYPES.INT64
+        ],
+        historySyncNotification: [
+            6,
+            e.TYPES.MESSAGE,
+            Ir
+        ],
+        appStateSyncKeyShare: [
+            7,
+            e.TYPES.MESSAGE,
+            Sr
+        ],
+        appStateSyncKeyRequest: [
+            8,
+            e.TYPES.MESSAGE,
+            vr
+        ],
+        initialSecurityNotificationSettingSync: [
+            9,
+            e.TYPES.MESSAGE,
+            On
+        ],
+        appStateFatalExceptionNotification: [
+            10,
+            e.TYPES.MESSAGE,
+            hr
+        ],
+        disappearingMode: [
+            11,
+            e.TYPES.MESSAGE,
+            Xo
+        ],
+        editedMessage: [
+            14,
+            e.TYPES.MESSAGE,
+            Ue
+        ],
+        timestampMs: [
+            15,
+            e.TYPES.INT64
+        ],
+        peerDataOperationRequestMessage: [
+            16,
+            e.TYPES.MESSAGE,
+            tr
+        ],
+        peerDataOperationRequestResponseMessage: [
+            17,
+            e.TYPES.MESSAGE,
+            Bn
+        ],
+        botFeedbackMessage: [
+            18,
+            e.TYPES.MESSAGE,
+            u.BotFeedbackMessageSpec
+        ],
+        invokerJid: [
+            19,
+            e.TYPES.STRING
+        ],
+        requestWelcomeMessageMetadata: [
+            20,
+            e.TYPES.MESSAGE,
+            Dr
+        ],
+        mediaNotifyMessage: [
+            21,
+            e.TYPES.MESSAGE,
+            ea
+        ],
+        cloudApiThreadControlNotification: [
+            22,
+            e.TYPES.MESSAGE,
+            Or
+        ],
+        lidMigrationMappingSyncMessage: [
+            23,
+            e.TYPES.MESSAGE,
+            ta
+        ],
+        limitSharing: [
+            24,
+            e.TYPES.MESSAGE,
+            s.LimitSharingSpec
+        ],
+        aiPsiMetadata: [
+            25,
+            e.TYPES.BYTES
+        ],
+        aiQueryFanout: [
+            26,
+            e.TYPES.MESSAGE,
+            la
+        ],
+        memberLabel: [
+            27,
+            e.TYPES.MESSAGE,
+            aa
+        ],
+        aiMediaCollectionMessage: [
+            28,
+            e.TYPES.MESSAGE,
+            u.AIMediaCollectionMessageSpec
+        ],
+        afterReadDuration: [
+            29,
+            e.TYPES.UINT32
+        ],
+        chatThemeSetting: [
+            30,
+            e.TYPES.MESSAGE,
+            wr
+        ],
+        aiMetadataOperation: [
+            31,
+            e.TYPES.MESSAGE,
+            u.AIMetadataOperationSpec
+        ],
+        markAsVerifiedAction: [
+            32,
+            e.TYPES.MESSAGE,
+            Ar
+        ],
+        coexStateSync: [
+            33,
+            e.TYPES.MESSAGE,
+            o("WAWebProtobufsServerSync.pb").CoexStateSyncSpec
+        ],
+        acp2Setting: [
+            35,
+            e.TYPES.MESSAGE,
+            s.ACP2SettingSpec
+        ],
+        sharedDeviceContactHashKeyShare: [
+            36,
+            e.TYPES.MESSAGE,
+            Cr
+        ],
+        sharedDeviceContactHashKeyRequest: [
+            37,
+            e.TYPES.MESSAGE,
+            yr
+        ],
+        additionalPromptIds: [
+            38,
+            e.FLAGS.REPEATED | e.TYPES.STRING
+        ]
+    };
+    Or.name = "Message$CloudAPIThreadControlNotification";
+    Or.internalSpec = {
+        status: [
+            1,
+            e.TYPES.ENUM,
+            oe
+        ],
+        senderNotificationTimestampMs: [
+            2,
+            e.TYPES.INT64
+        ],
+        consumerLid: [
+            3,
+            e.TYPES.STRING
+        ],
+        consumerPhoneNumber: [
+            4,
+            e.TYPES.STRING
+        ],
+        notificationContent: [
+            5,
+            e.TYPES.MESSAGE,
+            Br
+        ],
+        shouldSuppressNotification: [
+            6,
+            e.TYPES.BOOL
+        ]
+    };
+    Br.name = "Message$CloudAPIThreadControlNotification$CloudAPIThreadControlNotificationContent";
+    Br.internalSpec = {
+        handoffNotificationText: [
+            1,
+            e.TYPES.STRING
+        ],
+        extraJson: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    Wr.name = "Message$Chat";
+    Wr.internalSpec = {
+        displayName: [
+            1,
+            e.TYPES.STRING
+        ],
+        id: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    qr.name = "Message$Call";
+    qr.internalSpec = {
+        callKey: [
+            1,
+            e.TYPES.BYTES
+        ],
+        conversionSource: [
+            2,
+            e.TYPES.STRING
+        ],
+        conversionData: [
+            3,
+            e.TYPES.BYTES
+        ],
+        conversionDelaySeconds: [
+            4,
+            e.TYPES.UINT32
+        ],
+        ctwaSignals: [
+            5,
+            e.TYPES.STRING
+        ],
+        ctwaPayload: [
+            6,
+            e.TYPES.BYTES
+        ],
+        contextInfo: [
+            7,
+            e.TYPES.MESSAGE,
+            co
+        ],
+        nativeFlowCallButtonPayload: [
+            8,
+            e.TYPES.STRING
+        ],
+        deeplinkPayload: [
+            9,
+            e.TYPES.STRING
+        ],
+        messageContextInfo: [
+            10,
+            e.TYPES.MESSAGE,
+            xo
+        ],
+        callEntryPoint: [
+            11,
+            e.TYPES.UINT32
+        ],
+        callReason: [
+            12,
+            e.TYPES.STRING
+        ]
+    };
+    Ur.name = "Message$VideoMessage";
+    Ur.internalSpec = {
+        url: [
+            1,
+            e.TYPES.STRING
+        ],
+        mimetype: [
+            2,
+            e.TYPES.STRING
+        ],
+        fileSha256: [
+            3,
+            e.TYPES.BYTES
+        ],
+        fileLength: [
+            4,
+            e.TYPES.UINT64
+        ],
+        seconds: [
+            5,
+            e.TYPES.UINT32
+        ],
+        mediaKey: [
+            6,
+            e.TYPES.BYTES
+        ],
+        caption: [
+            7,
+            e.TYPES.STRING
+        ],
+        gifPlayback: [
+            8,
+            e.TYPES.BOOL
+        ],
+        height: [
+            9,
+            e.TYPES.UINT32
+        ],
+        width: [
+            10,
+            e.TYPES.UINT32
+        ],
+        fileEncSha256: [
+            11,
+            e.TYPES.BYTES
+        ],
+        interactiveAnnotations: [
+            12,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Ao
+        ],
+        directPath: [
+            13,
+            e.TYPES.STRING
+        ],
+        mediaKeyTimestamp: [
+            14,
+            e.TYPES.INT64
+        ],
+        jpegThumbnail: [
+            16,
+            e.TYPES.BYTES
+        ],
+        contextInfo: [
+            17,
+            e.TYPES.MESSAGE,
+            co
+        ],
+        streamingSidecar: [
+            18,
+            e.TYPES.BYTES
+        ],
+        gifAttribution: [
+            19,
+            e.TYPES.ENUM,
+            ie
+        ],
+        viewOnce: [
+            20,
+            e.TYPES.BOOL
+        ],
+        thumbnailDirectPath: [
+            21,
+            e.TYPES.STRING
+        ],
+        thumbnailSha256: [
+            22,
+            e.TYPES.BYTES
+        ],
+        thumbnailEncSha256: [
+            23,
+            e.TYPES.BYTES
+        ],
+        staticUrl: [
+            24,
+            e.TYPES.STRING
+        ],
+        annotations: [
+            25,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Ao
+        ],
+        accessibilityLabel: [
+            26,
+            e.TYPES.STRING
+        ],
+        processedVideos: [
+            27,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            na
+        ],
+        externalShareFullVideoDurationInSeconds: [
+            28,
+            e.TYPES.UINT32
+        ],
+        motionPhotoPresentationOffsetMs: [
+            29,
+            e.TYPES.UINT64
+        ],
+        metadataUrl: [
+            30,
+            e.TYPES.STRING
+        ],
+        videoSourceType: [
+            31,
+            e.TYPES.ENUM,
+            ae
+        ],
+        dashManifestUrl: [
+            33,
+            e.TYPES.STRING
+        ],
+        smartThumbnailTs: [
+            34,
+            e.TYPES.INT64
+        ]
+    };
+    Vr.name = "Message$MusicMessage";
+    Vr.internalSpec = {
+        embeddedMusic: [
+            1,
+            e.TYPES.MESSAGE,
+            No
+        ],
+        songUri: [
+            2,
+            e.TYPES.STRING
+        ],
+        artworkUri: [
+            3,
+            e.TYPES.STRING
+        ],
+        style: [
+            4,
+            e.TYPES.INT32
+        ],
+        contextInfo: [
+            5,
+            e.TYPES.MESSAGE,
+            co
+        ]
+    };
+    Hr.name = "Message$AudioMessage";
+    Hr.internalSpec = {
+        url: [
+            1,
+            e.TYPES.STRING
+        ],
+        mimetype: [
+            2,
+            e.TYPES.STRING
+        ],
+        fileSha256: [
+            3,
+            e.TYPES.BYTES
+        ],
+        fileLength: [
+            4,
+            e.TYPES.UINT64
+        ],
+        seconds: [
+            5,
+            e.TYPES.UINT32
+        ],
+        ptt: [
+            6,
+            e.TYPES.BOOL
+        ],
+        mediaKey: [
+            7,
+            e.TYPES.BYTES
+        ],
+        fileEncSha256: [
+            8,
+            e.TYPES.BYTES
+        ],
+        directPath: [
+            9,
+            e.TYPES.STRING
+        ],
+        mediaKeyTimestamp: [
+            10,
+            e.TYPES.INT64
+        ],
+        contextInfo: [
+            17,
+            e.TYPES.MESSAGE,
+            co
+        ],
+        streamingSidecar: [
+            18,
+            e.TYPES.BYTES
+        ],
+        waveform: [
+            19,
+            e.TYPES.BYTES
+        ],
+        backgroundArgb: [
+            20,
+            e.TYPES.FIXED32
+        ],
+        viewOnce: [
+            21,
+            e.TYPES.BOOL
+        ],
+        accessibilityLabel: [
+            22,
+            e.TYPES.STRING
+        ]
+    };
+    Gr.name = "Message$DocumentMessage";
+    Gr.internalSpec = {
+        url: [
+            1,
+            e.TYPES.STRING
+        ],
+        mimetype: [
+            2,
+            e.TYPES.STRING
+        ],
+        title: [
+            3,
+            e.TYPES.STRING
+        ],
+        fileSha256: [
+            4,
+            e.TYPES.BYTES
+        ],
+        fileLength: [
+            5,
+            e.TYPES.UINT64
+        ],
+        pageCount: [
+            6,
+            e.TYPES.UINT32
+        ],
+        mediaKey: [
+            7,
+            e.TYPES.BYTES
+        ],
+        fileName: [
+            8,
+            e.TYPES.STRING
+        ],
+        fileEncSha256: [
+            9,
+            e.TYPES.BYTES
+        ],
+        directPath: [
+            10,
+            e.TYPES.STRING
+        ],
+        mediaKeyTimestamp: [
+            11,
+            e.TYPES.INT64
+        ],
+        contactVcard: [
+            12,
+            e.TYPES.BOOL
+        ],
+        thumbnailDirectPath: [
+            13,
+            e.TYPES.STRING
+        ],
+        thumbnailSha256: [
+            14,
+            e.TYPES.BYTES
+        ],
+        thumbnailEncSha256: [
+            15,
+            e.TYPES.BYTES
+        ],
+        jpegThumbnail: [
+            16,
+            e.TYPES.BYTES
+        ],
+        contextInfo: [
+            17,
+            e.TYPES.MESSAGE,
+            co
+        ],
+        thumbnailHeight: [
+            18,
+            e.TYPES.UINT32
+        ],
+        thumbnailWidth: [
+            19,
+            e.TYPES.UINT32
+        ],
+        caption: [
+            20,
+            e.TYPES.STRING
+        ],
+        accessibilityLabel: [
+            21,
+            e.TYPES.STRING
+        ]
+    };
+    zr.name = "Message$ExtendedTextMessage";
+    zr.internalSpec = {
+        text: [
+            1,
+            e.TYPES.STRING
+        ],
+        matchedText: [
+            2,
+            e.TYPES.STRING
+        ],
+        description: [
+            5,
+            e.TYPES.STRING
+        ],
+        title: [
+            6,
+            e.TYPES.STRING
+        ],
+        textArgb: [
+            7,
+            e.TYPES.FIXED32
+        ],
+        backgroundArgb: [
+            8,
+            e.TYPES.FIXED32
+        ],
+        font: [
+            9,
+            e.TYPES.ENUM,
+            ce
+        ],
+        previewType: [
+            10,
+            e.TYPES.ENUM,
+            ue
+        ],
+        jpegThumbnail: [
+            16,
+            e.TYPES.BYTES
+        ],
+        contextInfo: [
+            17,
+            e.TYPES.MESSAGE,
+            co
+        ],
+        doNotPlayInline: [
+            18,
+            e.TYPES.BOOL
+        ],
+        thumbnailDirectPath: [
+            19,
+            e.TYPES.STRING
+        ],
+        thumbnailSha256: [
+            20,
+            e.TYPES.BYTES
+        ],
+        thumbnailEncSha256: [
+            21,
+            e.TYPES.BYTES
+        ],
+        mediaKey: [
+            22,
+            e.TYPES.BYTES
+        ],
+        mediaKeyTimestamp: [
+            23,
+            e.TYPES.INT64
+        ],
+        thumbnailHeight: [
+            24,
+            e.TYPES.UINT32
+        ],
+        thumbnailWidth: [
+            25,
+            e.TYPES.UINT32
+        ],
+        inviteLinkGroupType: [
+            26,
+            e.TYPES.ENUM,
+            se
+        ],
+        inviteLinkParentGroupSubjectV2: [
+            27,
+            e.TYPES.STRING
+        ],
+        inviteLinkParentGroupThumbnailV2: [
+            28,
+            e.TYPES.BYTES
+        ],
+        inviteLinkGroupTypeV2: [
+            29,
+            e.TYPES.ENUM,
+            se
+        ],
+        viewOnce: [
+            30,
+            e.TYPES.BOOL
+        ],
+        videoHeight: [
+            31,
+            e.TYPES.UINT32
+        ],
+        videoWidth: [
+            32,
+            e.TYPES.UINT32
+        ],
+        faviconMmsMetadata: [
+            33,
+            e.TYPES.MESSAGE,
+            eo
+        ],
+        linkPreviewMetadata: [
+            34,
+            e.TYPES.MESSAGE,
+            jr
+        ],
+        paymentLinkMetadata: [
+            35,
+            e.TYPES.MESSAGE,
+            Xr
+        ],
+        endCardTiles: [
+            36,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            so
+        ],
+        videoContentUrl: [
+            37,
+            e.TYPES.STRING
+        ],
+        musicMetadata: [
+            38,
+            e.TYPES.MESSAGE,
+            No
+        ],
+        paymentExtendedMetadata: [
+            39,
+            e.TYPES.MESSAGE,
+            Qr
+        ]
+    };
+    jr.name = "Message$LinkPreviewMetadata";
+    jr.internalSpec = {
+        paymentLinkMetadata: [
+            1,
+            e.TYPES.MESSAGE,
+            Xr
+        ],
+        urlMetadata: [
+            2,
+            e.TYPES.MESSAGE,
+            Kr
+        ],
+        fbExperimentId: [
+            3,
+            e.TYPES.UINT32
+        ],
+        linkMediaDuration: [
+            4,
+            e.TYPES.UINT32
+        ],
+        socialMediaPostType: [
+            5,
+            e.TYPES.ENUM,
+            de
+        ],
+        linkInlineVideoMuted: [
+            6,
+            e.TYPES.BOOL
+        ],
+        videoContentUrl: [
+            7,
+            e.TYPES.STRING
+        ],
+        musicMetadata: [
+            8,
+            e.TYPES.MESSAGE,
+            No
+        ],
+        videoContentCaption: [
+            9,
+            e.TYPES.STRING
+        ]
+    };
+    Kr.name = "Message$URLMetadata";
+    Kr.internalSpec = {
+        fbExperimentId: [
+            1,
+            e.TYPES.UINT32
+        ]
+    };
+    Qr.name = "Message$PaymentExtendedMetadata";
+    Qr.internalSpec = {
+        type: [
+            1,
+            e.TYPES.UINT32
+        ],
+        platform: [
+            2,
+            e.TYPES.STRING
+        ],
+        messageParamsJson: [
+            3,
+            e.TYPES.STRING
+        ]
+    };
+    Xr.name = "Message$PaymentLinkMetadata";
+    Xr.internalSpec = {
+        button: [
+            1,
+            e.TYPES.MESSAGE,
+            Zr
+        ],
+        header: [
+            2,
+            e.TYPES.MESSAGE,
+            Jr
+        ],
+        provider: [
+            3,
+            e.TYPES.MESSAGE,
+            Yr
+        ]
+    };
+    Yr.name = "Message$PaymentLinkMetadata$PaymentLinkProvider";
+    Yr.internalSpec = {
+        paramsJson: [
+            1,
+            e.TYPES.STRING
+        ]
+    };
+    Jr.name = "Message$PaymentLinkMetadata$PaymentLinkHeader";
+    Jr.internalSpec = {
+        headerType: [
+            1,
+            e.TYPES.ENUM,
+            me
+        ]
+    };
+    Zr.name = "Message$PaymentLinkMetadata$PaymentLinkButton";
+    Zr.internalSpec = {
+        displayText: [
+            1,
+            e.TYPES.STRING
+        ]
+    };
+    eo.name = "Message$MMSThumbnailMetadata";
+    eo.internalSpec = {
+        thumbnailDirectPath: [
+            1,
+            e.TYPES.STRING
+        ],
+        thumbnailSha256: [
+            2,
+            e.TYPES.BYTES
+        ],
+        thumbnailEncSha256: [
+            3,
+            e.TYPES.BYTES
+        ],
+        mediaKey: [
+            4,
+            e.TYPES.BYTES
+        ],
+        mediaKeyTimestamp: [
+            5,
+            e.TYPES.INT64
+        ],
+        thumbnailHeight: [
+            6,
+            e.TYPES.UINT32
+        ],
+        thumbnailWidth: [
+            7,
+            e.TYPES.UINT32
+        ]
+    };
+    to.name = "Message$LocationMessage";
+    to.internalSpec = {
+        degreesLatitude: [
+            1,
+            e.TYPES.DOUBLE
+        ],
+        degreesLongitude: [
+            2,
+            e.TYPES.DOUBLE
+        ],
+        name: [
+            3,
+            e.TYPES.STRING
+        ],
+        address: [
+            4,
+            e.TYPES.STRING
+        ],
+        url: [
+            5,
+            e.TYPES.STRING
+        ],
+        isLive: [
+            6,
+            e.TYPES.BOOL
+        ],
+        accuracyInMeters: [
+            7,
+            e.TYPES.UINT32
+        ],
+        speedInMps: [
+            8,
+            e.TYPES.FLOAT
+        ],
+        degreesClockwiseFromMagneticNorth: [
+            9,
+            e.TYPES.UINT32
+        ],
+        comment: [
+            11,
+            e.TYPES.STRING
+        ],
+        jpegThumbnail: [
+            16,
+            e.TYPES.BYTES
+        ],
+        contextInfo: [
+            17,
+            e.TYPES.MESSAGE,
+            co
+        ]
+    };
+    no.name = "Message$StatusNotificationMessage";
+    no.internalSpec = {
+        responseMessageKey: [
+            1,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ],
+        originalMessageKey: [
+            2,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ],
+        type: [
+            3,
+            e.TYPES.ENUM,
+            pe
+        ]
+    };
+    ro.name = "Message$ContactMessage";
+    ro.internalSpec = {
+        displayName: [
+            1,
+            e.TYPES.STRING
+        ],
+        vcard: [
+            16,
+            e.TYPES.STRING
+        ],
+        contextInfo: [
+            17,
+            e.TYPES.MESSAGE,
+            co
+        ],
+        isSelfContact: [
+            18,
+            e.TYPES.BOOL
+        ]
+    };
+    oo.name = "Message$InvoiceMessage";
+    oo.internalSpec = {
+        note: [
+            1,
+            e.TYPES.STRING
+        ],
+        token: [
+            2,
+            e.TYPES.STRING
+        ],
+        attachmentType: [
+            3,
+            e.TYPES.ENUM,
+            _e
+        ],
+        attachmentMimetype: [
+            4,
+            e.TYPES.STRING
+        ],
+        attachmentMediaKey: [
+            5,
+            e.TYPES.BYTES
+        ],
+        attachmentMediaKeyTimestamp: [
+            6,
+            e.TYPES.INT64
+        ],
+        attachmentFileSha256: [
+            7,
+            e.TYPES.BYTES
+        ],
+        attachmentFileEncSha256: [
+            8,
+            e.TYPES.BYTES
+        ],
+        attachmentDirectPath: [
+            9,
+            e.TYPES.STRING
+        ],
+        attachmentJpegThumbnail: [
+            10,
+            e.TYPES.BYTES
+        ]
+    };
+    ao.name = "Message$ImageMessage";
+    ao.internalSpec = {
+        url: [
+            1,
+            e.TYPES.STRING
+        ],
+        mimetype: [
+            2,
+            e.TYPES.STRING
+        ],
+        caption: [
+            3,
+            e.TYPES.STRING
+        ],
+        fileSha256: [
+            4,
+            e.TYPES.BYTES
+        ],
+        fileLength: [
+            5,
+            e.TYPES.UINT64
+        ],
+        height: [
+            6,
+            e.TYPES.UINT32
+        ],
+        width: [
+            7,
+            e.TYPES.UINT32
+        ],
+        mediaKey: [
+            8,
+            e.TYPES.BYTES
+        ],
+        fileEncSha256: [
+            9,
+            e.TYPES.BYTES
+        ],
+        interactiveAnnotations: [
+            10,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Ao
+        ],
+        directPath: [
+            11,
+            e.TYPES.STRING
+        ],
+        mediaKeyTimestamp: [
+            12,
+            e.TYPES.INT64
+        ],
+        jpegThumbnail: [
+            16,
+            e.TYPES.BYTES
+        ],
+        contextInfo: [
+            17,
+            e.TYPES.MESSAGE,
+            co
+        ],
+        firstScanSidecar: [
+            18,
+            e.TYPES.BYTES
+        ],
+        firstScanLength: [
+            19,
+            e.TYPES.UINT32
+        ],
+        experimentGroupId: [
+            20,
+            e.TYPES.UINT32
+        ],
+        scansSidecar: [
+            21,
+            e.TYPES.BYTES
+        ],
+        scanLengths: [
+            22,
+            e.FLAGS.REPEATED | e.TYPES.UINT32
+        ],
+        midQualityFileSha256: [
+            23,
+            e.TYPES.BYTES
+        ],
+        midQualityFileEncSha256: [
+            24,
+            e.TYPES.BYTES
+        ],
+        viewOnce: [
+            25,
+            e.TYPES.BOOL
+        ],
+        thumbnailDirectPath: [
+            26,
+            e.TYPES.STRING
+        ],
+        thumbnailSha256: [
+            27,
+            e.TYPES.BYTES
+        ],
+        thumbnailEncSha256: [
+            28,
+            e.TYPES.BYTES
+        ],
+        staticUrl: [
+            29,
+            e.TYPES.STRING
+        ],
+        annotations: [
+            30,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Ao
+        ],
+        imageSourceType: [
+            31,
+            e.TYPES.ENUM,
+            fe
+        ],
+        accessibilityLabel: [
+            32,
+            e.TYPES.STRING
+        ],
+        qrUrl: [
+            34,
+            e.TYPES.STRING
+        ]
+    };
+    io.name = "Message$RootSecretDistributeMessage";
+    io.internalSpec = {
+        chatJid: [
+            1,
+            e.TYPES.STRING
+        ]
+    };
+    lo.name = "Message$SenderKeyDistributionMessage";
+    lo.internalSpec = {
+        groupId: [
+            1,
+            e.TYPES.STRING
+        ],
+        axolotlSenderKeyDistributionMessage: [
+            2,
+            e.TYPES.BYTES
+        ]
+    };
+    so.name = "Message$VideoEndCard";
+    so.internalSpec = {
+        username: [
+            1,
+            e.FLAGS.REQUIRED | e.TYPES.STRING
+        ],
+        caption: [
+            2,
+            e.FLAGS.REQUIRED | e.TYPES.STRING
+        ],
+        thumbnailImageUrl: [
+            3,
+            e.FLAGS.REQUIRED | e.TYPES.STRING
+        ],
+        profilePictureUrl: [
+            4,
+            e.FLAGS.REQUIRED | e.TYPES.STRING
+        ]
+    };
+    uo.name = "MediaDomainInfo";
+    uo.internalSpec = {
+        mediaKeyDomain: [
+            1,
+            e.TYPES.ENUM,
+            ge
+        ],
+        e2EeMediaKey: [
+            2,
+            e.TYPES.BYTES
+        ]
+    };
+    co.name = "ContextInfo";
+    co.internalSpec = {
+        stanzaId: [
+            1,
+            e.TYPES.STRING
+        ],
+        participant: [
+            2,
+            e.TYPES.STRING
+        ],
+        quotedMessage: [
+            3,
+            e.TYPES.MESSAGE,
+            Ue
+        ],
+        remoteJid: [
+            4,
+            e.TYPES.STRING
+        ],
+        mentionedJid: [
+            15,
+            e.FLAGS.REPEATED | e.TYPES.STRING
+        ],
+        conversionSource: [
+            18,
+            e.TYPES.STRING
+        ],
+        conversionData: [
+            19,
+            e.TYPES.BYTES
+        ],
+        conversionDelaySeconds: [
+            20,
+            e.TYPES.UINT32
+        ],
+        forwardingScore: [
+            21,
+            e.TYPES.UINT32
+        ],
+        isForwarded: [
+            22,
+            e.TYPES.BOOL
+        ],
+        quotedAd: [
+            23,
+            e.TYPES.MESSAGE,
+            ko
+        ],
+        placeholderKey: [
+            24,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ],
+        expiration: [
+            25,
+            e.TYPES.UINT32
+        ],
+        ephemeralSettingTimestamp: [
+            26,
+            e.TYPES.INT64
+        ],
+        ephemeralSharedSecret: [
+            27,
+            e.TYPES.BYTES
+        ],
+        externalAdReply: [
+            28,
+            e.TYPES.MESSAGE,
+            Eo
+        ],
+        entryPointConversionSource: [
+            29,
+            e.TYPES.STRING
+        ],
+        entryPointConversionApp: [
+            30,
+            e.TYPES.STRING
+        ],
+        entryPointConversionDelaySeconds: [
+            31,
+            e.TYPES.UINT32
+        ],
+        disappearingMode: [
+            32,
+            e.TYPES.MESSAGE,
+            Xo
+        ],
+        actionLink: [
+            33,
+            e.TYPES.MESSAGE,
+            Yo
+        ],
+        groupSubject: [
+            34,
+            e.TYPES.STRING
+        ],
+        parentGroupJid: [
+            35,
+            e.TYPES.STRING
+        ],
+        trustBannerType: [
+            37,
+            e.TYPES.STRING
+        ],
+        trustBannerAction: [
+            38,
+            e.TYPES.UINT32
+        ],
+        isSampled: [
+            39,
+            e.TYPES.BOOL
+        ],
+        groupMentions: [
+            40,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Jo
+        ],
+        utm: [
+            41,
+            e.TYPES.MESSAGE,
+            Lo
+        ],
+        forwardedNewsletterMessageInfo: [
+            43,
+            e.TYPES.MESSAGE,
+            Ro
+        ],
+        businessMessageForwardInfo: [
+            44,
+            e.TYPES.MESSAGE,
+            Io
+        ],
+        smbClientCampaignId: [
+            45,
+            e.TYPES.STRING
+        ],
+        smbServerCampaignId: [
+            46,
+            e.TYPES.STRING
+        ],
+        dataSharingContext: [
+            47,
+            e.TYPES.MESSAGE,
+            bo
+        ],
+        alwaysShowAdAttribution: [
+            48,
+            e.TYPES.BOOL
+        ],
+        featureEligibilities: [
+            49,
+            e.TYPES.MESSAGE,
+            Co
+        ],
+        entryPointConversionExternalSource: [
+            50,
+            e.TYPES.STRING
+        ],
+        entryPointConversionExternalMedium: [
+            51,
+            e.TYPES.STRING
+        ],
+        ctwaSignals: [
+            54,
+            e.TYPES.STRING
+        ],
+        ctwaPayload: [
+            55,
+            e.TYPES.BYTES
+        ],
+        forwardedAiBotMessageInfo: [
+            56,
+            e.TYPES.MESSAGE,
+            u.ForwardedAIBotMessageInfoSpec
+        ],
+        statusAttributionType: [
+            57,
+            e.TYPES.ENUM,
+            Ee
+        ],
+        urlTrackingMap: [
+            58,
+            e.TYPES.MESSAGE,
+            ra
+        ],
+        pairedMediaType: [
+            59,
+            e.TYPES.ENUM,
+            Le
+        ],
+        rankingVersion: [
+            60,
+            e.TYPES.UINT32
+        ],
+        memberLabel: [
+            62,
+            e.TYPES.MESSAGE,
+            aa
+        ],
+        isQuestion: [
+            63,
+            e.TYPES.BOOL
+        ],
+        statusSourceType: [
+            64,
+            e.TYPES.ENUM,
+            Re
+        ],
+        statusAttributions: [
+            65,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            o("WAWebProtobufsStatusAttributions.pb").StatusAttributionSpec
+        ],
+        isGroupStatus: [
+            66,
+            e.TYPES.BOOL
+        ],
+        forwardOrigin: [
+            67,
+            e.TYPES.ENUM,
+            Se
+        ],
+        questionReplyQuotedMessage: [
+            68,
+            e.TYPES.MESSAGE,
+            So
+        ],
+        statusAudienceMetadata: [
+            69,
+            e.TYPES.MESSAGE,
+            ho
+        ],
+        nonJidMentions: [
+            70,
+            e.TYPES.UINT32
+        ],
+        quotedType: [
+            71,
+            e.TYPES.ENUM,
+            be
+        ],
+        botMessageSharingInfo: [
+            72,
+            e.TYPES.MESSAGE,
+            u.BotMessageSharingInfoSpec
+        ],
+        isSpoiler: [
+            73,
+            e.TYPES.BOOL
+        ],
+        mediaDomainInfo: [
+            74,
+            e.TYPES.MESSAGE,
+            uo
+        ],
+        partiallySelectedContent: [
+            75,
+            e.TYPES.MESSAGE,
+            yo
+        ],
+        afterReadDuration: [
+            76,
+            e.TYPES.UINT32
+        ],
+        crossAppSource: [
+            77,
+            e.TYPES.ENUM,
+            Ce
+        ],
+        businessInteractionPills: [
+            78,
+            e.TYPES.MESSAGE,
+            po
+        ],
+        posterStatusId: [
+            79,
+            e.TYPES.STRING
+        ],
+        instagramThreadLink: [
+            80,
+            e.TYPES.MESSAGE,
+            mo
+        ],
+        aiProvenance: [
+            81,
+            e.TYPES.MESSAGE,
+            u.AIProvenanceSpec
+        ],
+        experienceIds: [
+            82,
+            e.FLAGS.REPEATED | e.FLAGS.PACKED | e.TYPES.UINT32
+        ],
+        partnerDeepLinkToken: [
+            83,
+            e.TYPES.STRING
+        ],
+        sourceExperienceId: [
+            84,
+            e.TYPES.UINT32
+        ]
+    };
+    mo.name = "ContextInfo$InstagramThreadLink";
+    mo.internalSpec = {
+        url: [
+            1,
+            e.TYPES.STRING
+        ]
+    };
+    po.name = "ContextInfo$BusinessInteractionPills";
+    po.internalSpec = {
+        businessJid: [
+            1,
+            e.TYPES.STRING
+        ],
+        pills: [
+            2,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            go
+        ],
+        entryPoint: [
+            3,
+            e.TYPES.ENUM,
+            he
+        ],
+        signedPayload: [
+            4,
+            e.TYPES.BYTES
+        ],
+        signatureEnvelope: [
+            5,
+            e.TYPES.MESSAGE,
+            u.BotSignatureVerificationMetadataSpec
+        ],
+        unauthenticatedBusinessMetadata: [
+            6,
+            e.TYPES.MESSAGE,
+            _o
+        ]
+    };
+    _o.name = "ContextInfo$BusinessInteractionPills$UnauthenticatedBusinessMetadata";
+    _o.internalSpec = {
+        businessName: [
+            1,
+            e.TYPES.STRING
+        ],
+        businessCategory: [
+            2,
+            e.TYPES.STRING
+        ],
+        businessIsOpen: [
+            3,
+            e.TYPES.BOOL
+        ],
+        businessIsOpenSnapshotMs: [
+            4,
+            e.TYPES.INT64
+        ]
+    };
+    fo.name = "ContextInfo$BusinessInteractionPills$SignedPayload";
+    fo.internalSpec = {
+        verifiedName: [
+            1,
+            e.TYPES.STRING
+        ],
+        pills: [
+            2,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            go
+        ]
+    };
+    go.name = "ContextInfo$BusinessInteractionPills$Pill";
+    go.internalSpec = {
+        pillType: [
+            1,
+            e.TYPES.ENUM,
+            ye
+        ],
+        actionUrl: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    ho.name = "ContextInfo$StatusAudienceMetadata";
+    ho.internalSpec = {
+        audienceType: [
+            1,
+            e.TYPES.ENUM,
+            ve
+        ],
+        listName: [
+            2,
+            e.TYPES.STRING
+        ],
+        listEmoji: [
+            3,
+            e.TYPES.STRING
+        ],
+        networkId: [
+            4,
+            e.TYPES.STRING
+        ]
+    };
+    yo.name = "ContextInfo$PartiallySelectedContent";
+    yo.internalSpec = {
+        text: [
+            1,
+            e.TYPES.STRING
+        ]
+    };
+    Co.internalDefaults = {
+        cannotBeReactedTo: false,
+        cannotBeRanked: false,
+        canRequestFeedback: false,
+        canBeReshared: false,
+        canReceiveMultiReact: false
+    };
+    Co.name = "ContextInfo$FeatureEligibilities";
+    Co.internalSpec = {
+        cannotBeReactedTo: [
+            1,
+            e.TYPES.BOOL
+        ],
+        cannotBeRanked: [
+            2,
+            e.TYPES.BOOL
+        ],
+        canRequestFeedback: [
+            3,
+            e.TYPES.BOOL
+        ],
+        canBeReshared: [
+            4,
+            e.TYPES.BOOL
+        ],
+        canReceiveMultiReact: [
+            5,
+            e.TYPES.BOOL
+        ]
+    };
+    bo.name = "ContextInfo$DataSharingContext";
+    bo.internalSpec = {
+        showMmDisclosure: [
+            1,
+            e.TYPES.BOOL
+        ],
+        encryptedSignalTokenConsented: [
+            2,
+            e.TYPES.STRING
+        ],
+        parameters: [
+            3,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            vo
+        ],
+        dataSharingFlags: [
+            4,
+            e.TYPES.INT32
+        ]
+    };
+    vo.name = "ContextInfo$DataSharingContext$Parameters";
+    vo.internalSpec = {
+        key: [
+            1,
+            e.TYPES.STRING
+        ],
+        stringData: [
+            2,
+            e.TYPES.STRING
+        ],
+        intData: [
+            3,
+            e.TYPES.INT64
+        ],
+        floatData: [
+            4,
+            e.TYPES.FLOAT
+        ],
+        contents: [
+            5,
+            e.TYPES.MESSAGE,
+            vo
+        ]
+    };
+    So.name = "ContextInfo$QuestionReplyQuotedMessage";
+    So.internalSpec = {
+        serverQuestionId: [
+            1,
+            e.TYPES.INT32
+        ],
+        quotedQuestion: [
+            2,
+            e.TYPES.MESSAGE,
+            Ue
+        ],
+        quotedResponse: [
+            3,
+            e.TYPES.MESSAGE,
+            Ue
+        ]
+    };
+    Ro.name = "ContextInfo$ForwardedNewsletterMessageInfo";
+    Ro.internalSpec = {
+        newsletterJid: [
+            1,
+            e.TYPES.STRING
+        ],
+        serverMessageId: [
+            2,
+            e.TYPES.INT32
+        ],
+        newsletterName: [
+            3,
+            e.TYPES.STRING
+        ],
+        contentType: [
+            4,
+            e.TYPES.ENUM,
+            Ie
+        ],
+        accessibilityText: [
+            5,
+            e.TYPES.STRING
+        ],
+        profileName: [
+            6,
+            e.TYPES.STRING
+        ]
+    };
+    Lo.name = "ContextInfo$UTMInfo";
+    Lo.internalSpec = {
+        utmSource: [
+            1,
+            e.TYPES.STRING
+        ],
+        utmCampaign: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    Eo.name = "ContextInfo$ExternalAdReplyInfo";
+    Eo.internalSpec = {
+        title: [
+            1,
+            e.TYPES.STRING
+        ],
+        body: [
+            2,
+            e.TYPES.STRING
+        ],
+        mediaType: [
+            3,
+            e.TYPES.ENUM,
+            De
+        ],
+        thumbnailUrl: [
+            4,
+            e.TYPES.STRING
+        ],
+        mediaUrl: [
+            5,
+            e.TYPES.STRING
+        ],
+        thumbnail: [
+            6,
+            e.TYPES.BYTES
+        ],
+        sourceType: [
+            7,
+            e.TYPES.STRING
+        ],
+        sourceId: [
+            8,
+            e.TYPES.STRING
+        ],
+        sourceUrl: [
+            9,
+            e.TYPES.STRING
+        ],
+        containsAutoReply: [
+            10,
+            e.TYPES.BOOL
+        ],
+        renderLargerThumbnail: [
+            11,
+            e.TYPES.BOOL
+        ],
+        showAdAttribution: [
+            12,
+            e.TYPES.BOOL
+        ],
+        ctwaClid: [
+            13,
+            e.TYPES.STRING
+        ],
+        ref: [
+            14,
+            e.TYPES.STRING
+        ],
+        clickToWhatsappCall: [
+            15,
+            e.TYPES.BOOL
+        ],
+        adContextPreviewDismissed: [
+            16,
+            e.TYPES.BOOL
+        ],
+        sourceApp: [
+            17,
+            e.TYPES.STRING
+        ],
+        automatedGreetingMessageShown: [
+            18,
+            e.TYPES.BOOL
+        ],
+        greetingMessageBody: [
+            19,
+            e.TYPES.STRING
+        ],
+        ctaPayload: [
+            20,
+            e.TYPES.STRING
+        ],
+        disableNudge: [
+            21,
+            e.TYPES.BOOL
+        ],
+        originalImageUrl: [
+            22,
+            e.TYPES.STRING
+        ],
+        automatedGreetingMessageCtaType: [
+            23,
+            e.TYPES.STRING
+        ],
+        wtwaAdFormat: [
+            24,
+            e.TYPES.BOOL
+        ],
+        adType: [
+            25,
+            e.TYPES.ENUM,
+            Te
+        ],
+        wtwaWebsiteUrl: [
+            26,
+            e.TYPES.STRING
+        ],
+        adPreviewUrl: [
+            27,
+            e.TYPES.STRING
+        ],
+        containsCtwaFlowsAutoReply: [
+            28,
+            e.TYPES.BOOL
+        ],
+        agmThumbnailStrategy: [
+            29,
+            e.TYPES.INT32
+        ],
+        agmTitleStrategy: [
+            30,
+            e.TYPES.INT32
+        ],
+        agmSubtitleStrategy: [
+            31,
+            e.TYPES.INT32
+        ],
+        agmHeaderInteractionStrategy: [
+            32,
+            e.TYPES.INT32
+        ],
+        containsCtwaFlowsAutoLabel: [
+            33,
+            e.TYPES.BOOL
+        ],
+        productId: [
+            34,
+            e.TYPES.STRING
+        ],
+        containsCtwaPromo: [
+            35,
+            e.TYPES.BOOL
+        ],
+        ctwaPromoResponseId: [
+            36,
+            e.TYPES.STRING
+        ],
+        ctwaPromoOfferId: [
+            37,
+            e.TYPES.STRING
+        ],
+        ctwaPromoAdEntryId: [
+            38,
+            e.TYPES.STRING
+        ],
+        ctwaPromoResponseExpiresAtSeconds: [
+            39,
+            e.TYPES.UINT64
+        ],
+        ctwaPromoSchemaVersion: [
+            40,
+            e.TYPES.UINT32
+        ],
+        ctwaPromoAdgroupId: [
+            41,
+            e.TYPES.STRING
+        ]
+    };
+    ko.name = "ContextInfo$AdReplyInfo";
+    ko.internalSpec = {
+        advertiserName: [
+            1,
+            e.TYPES.STRING
+        ],
+        mediaType: [
+            2,
+            e.TYPES.ENUM,
+            xe
+        ],
+        jpegThumbnail: [
+            16,
+            e.TYPES.BYTES
+        ],
+        caption: [
+            17,
+            e.TYPES.STRING
+        ]
+    };
+    Io.name = "ContextInfo$BusinessMessageForwardInfo";
+    Io.internalSpec = {
+        businessOwnerJid: [
+            1,
+            e.TYPES.STRING
+        ]
+    };
+    To.name = "MessageAssociation";
+    To.internalSpec = {
+        associationType: [
+            1,
+            e.TYPES.ENUM,
+            $e
+        ],
+        parentMessageKey: [
+            2,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ],
+        messageIndex: [
+            3,
+            e.TYPES.INT32
+        ]
+    };
+    Do.name = "ThreadID";
+    Do.internalSpec = {
+        threadType: [
+            1,
+            e.TYPES.ENUM,
+            Pe
+        ],
+        threadKey: [
+            2,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ]
+    };
+    xo.name = "MessageContextInfo";
+    xo.internalSpec = {
+        deviceListMetadata: [
+            1,
+            e.TYPES.MESSAGE,
+            $o
+        ],
+        deviceListMetadataVersion: [
+            2,
+            e.TYPES.INT32
+        ],
+        messageSecret: [
+            3,
+            e.TYPES.BYTES
+        ],
+        paddingBytes: [
+            4,
+            e.TYPES.BYTES
+        ],
+        messageAddOnDurationInSecs: [
+            5,
+            e.TYPES.UINT32
+        ],
+        botMessageSecret: [
+            6,
+            e.TYPES.BYTES
+        ],
+        botMetadata: [
+            7,
+            e.TYPES.MESSAGE,
+            u.BotMetadataSpec
+        ],
+        reportingTokenVersion: [
+            8,
+            e.TYPES.INT32
+        ],
+        messageAddOnExpiryType: [
+            9,
+            e.TYPES.ENUM,
+            Me
+        ],
+        messageAssociation: [
+            10,
+            e.TYPES.MESSAGE,
+            To
+        ],
+        capiCreatedGroup: [
+            11,
+            e.TYPES.BOOL
+        ],
+        supportPayload: [
+            12,
+            e.TYPES.STRING
+        ],
+        limitSharing: [
+            13,
+            e.TYPES.MESSAGE,
+            s.LimitSharingSpec
+        ],
+        limitSharingV2: [
+            14,
+            e.TYPES.MESSAGE,
+            s.LimitSharingSpec
+        ],
+        threadId: [
+            15,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Do
+        ],
+        weblinkRenderConfig: [
+            16,
+            e.TYPES.ENUM,
+            Ne
+        ],
+        teeBotMetadata: [
+            17,
+            e.TYPES.BYTES
+        ],
+        accountEncryptionAttestation: [
+            18,
+            e.TYPES.MESSAGE,
+            o("WAWebProtobufsAea.pb").NonE2EEAttestationSpec
+        ],
+        associatedPrimaryIdentityKey: [
+            19,
+            e.TYPES.BYTES
+        ],
+        teeContextAnchorMessageId: [
+            20,
+            e.TYPES.STRING
+        ],
+        acp2Setting: [
+            21,
+            e.TYPES.MESSAGE,
+            s.ACP2SettingSpec
+        ],
+        lightE2Ee: [
+            22,
+            e.TYPES.BOOL
+        ]
+    };
+    $o.internalDefaults = {
+        senderAccountType: (c = o("WAWebProtobufsAdv.pb")).ADVEncryptionType.E2EE,
+        receiverAccountType: c.ADVEncryptionType.E2EE
+    };
+    $o.name = "DeviceListMetadata";
+    $o.internalSpec = {
+        senderKeyHash: [
+            1,
+            e.TYPES.BYTES
+        ],
+        senderTimestamp: [
+            2,
+            e.TYPES.UINT64
+        ],
+        senderKeyIndexes: [
+            3,
+            e.FLAGS.REPEATED | e.FLAGS.PACKED | e.TYPES.UINT32
+        ],
+        senderAccountType: [
+            4,
+            e.TYPES.ENUM,
+            c.ADVEncryptionType
+        ],
+        receiverAccountType: [
+            5,
+            e.TYPES.ENUM,
+            c.ADVEncryptionType
+        ],
+        recipientKeyHash: [
+            8,
+            e.TYPES.BYTES
+        ],
+        recipientTimestamp: [
+            9,
+            e.TYPES.UINT64
+        ],
+        recipientKeyIndexes: [
+            10,
+            e.FLAGS.REPEATED | e.FLAGS.PACKED | e.TYPES.UINT32
+        ]
+    };
+    Po.name = "EmbeddedMessage";
+    Po.internalSpec = {
+        stanzaId: [
+            1,
+            e.TYPES.STRING
+        ],
+        message: [
+            2,
+            e.TYPES.MESSAGE,
+            Ue
+        ]
+    };
+    No.name = "EmbeddedMusic";
+    No.internalSpec = {
+        musicContentMediaId: [
+            1,
+            e.TYPES.STRING
+        ],
+        songId: [
+            2,
+            e.TYPES.STRING
+        ],
+        author: [
+            3,
+            e.TYPES.STRING
+        ],
+        title: [
+            4,
+            e.TYPES.STRING
+        ],
+        artworkDirectPath: [
+            5,
+            e.TYPES.STRING
+        ],
+        artworkSha256: [
+            6,
+            e.TYPES.BYTES
+        ],
+        artworkEncSha256: [
+            7,
+            e.TYPES.BYTES
+        ],
+        artistAttribution: [
+            8,
+            e.TYPES.STRING
+        ],
+        countryBlocklist: [
+            9,
+            e.TYPES.BYTES
+        ],
+        isExplicit: [
+            10,
+            e.TYPES.BOOL
+        ],
+        artworkMediaKey: [
+            11,
+            e.TYPES.BYTES
+        ],
+        musicSongStartTimeInMs: [
+            12,
+            e.TYPES.INT64
+        ],
+        derivedContentStartTimeInMs: [
+            13,
+            e.TYPES.INT64
+        ],
+        overlapDurationInMs: [
+            14,
+            e.TYPES.INT64
+        ]
+    };
+    Mo.name = "EmbeddedContent";
+    Mo.internalSpec = {
+        embeddedMessage: [
+            1,
+            e.TYPES.MESSAGE,
+            Po
+        ],
+        embeddedMusic: [
+            2,
+            e.TYPES.MESSAGE,
+            No
+        ],
+        __oneofs__: {
+            content: [
+                "embeddedMessage",
+                "embeddedMusic"
+            ]
+        }
+    };
+    wo.name = "TapLinkAction";
+    wo.internalSpec = {
+        title: [
+            1,
+            e.TYPES.STRING
+        ],
+        tapUrl: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    Ao.name = "InteractiveAnnotation";
+    Ao.internalSpec = {
+        polygonVertices: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            Fo
+        ],
+        shouldSkipConfirmation: [
+            4,
+            e.TYPES.BOOL
+        ],
+        embeddedContent: [
+            5,
+            e.TYPES.MESSAGE,
+            Mo
+        ],
+        statusLinkType: [
+            8,
+            e.TYPES.ENUM,
+            we
+        ],
+        location: [
+            2,
+            e.TYPES.MESSAGE,
+            Oo
+        ],
+        newsletter: [
+            3,
+            e.TYPES.MESSAGE,
+            Ro
+        ],
+        embeddedAction: [
+            6,
+            e.TYPES.BOOL
+        ],
+        tapAction: [
+            7,
+            e.TYPES.MESSAGE,
+            wo
+        ],
+        __oneofs__: {
+            action: [
+                "location",
+                "newsletter",
+                "embeddedAction",
+                "tapAction"
+            ]
+        }
+    };
+    Fo.name = "Point";
+    Fo.internalSpec = {
+        xDeprecated: [
+            1,
+            e.TYPES.INT32
+        ],
+        yDeprecated: [
+            2,
+            e.TYPES.INT32
+        ],
+        x: [
+            3,
+            e.TYPES.DOUBLE
+        ],
+        y: [
+            4,
+            e.TYPES.DOUBLE
+        ]
+    };
+    Oo.name = "Location";
+    Oo.internalSpec = {
+        degreesLatitude: [
+            1,
+            e.TYPES.DOUBLE
+        ],
+        degreesLongitude: [
+            2,
+            e.TYPES.DOUBLE
+        ],
+        name: [
+            3,
+            e.TYPES.STRING
+        ]
+    };
+    Bo.name = "TemplateButton";
+    Bo.internalSpec = {
+        index: [
+            4,
+            e.TYPES.UINT32
+        ],
+        quickReplyButton: [
+            1,
+            e.TYPES.MESSAGE,
+            Uo
+        ],
+        urlButton: [
+            2,
+            e.TYPES.MESSAGE,
+            qo
+        ],
+        callButton: [
+            3,
+            e.TYPES.MESSAGE,
+            Wo
+        ],
+        __oneofs__: {
+            button: [
+                "quickReplyButton",
+                "urlButton",
+                "callButton"
+            ]
+        }
+    };
+    Wo.name = "TemplateButton$CallButton";
+    Wo.internalSpec = {
+        displayText: [
+            1,
+            e.TYPES.MESSAGE,
+            $n
+        ],
+        phoneNumber: [
+            2,
+            e.TYPES.MESSAGE,
+            $n
+        ]
+    };
+    qo.name = "TemplateButton$URLButton";
+    qo.internalSpec = {
+        displayText: [
+            1,
+            e.TYPES.MESSAGE,
+            $n
+        ],
+        url: [
+            2,
+            e.TYPES.MESSAGE,
+            $n
+        ]
+    };
+    Uo.name = "TemplateButton$QuickReplyButton";
+    Uo.internalSpec = {
+        displayText: [
+            1,
+            e.TYPES.MESSAGE,
+            $n
+        ],
+        id: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    Vo.name = "HydratedTemplateButton";
+    Vo.internalSpec = {
+        index: [
+            4,
+            e.TYPES.UINT32
+        ],
+        quickReplyButton: [
+            1,
+            e.TYPES.MESSAGE,
+            zo
+        ],
+        urlButton: [
+            2,
+            e.TYPES.MESSAGE,
+            Go
+        ],
+        callButton: [
+            3,
+            e.TYPES.MESSAGE,
+            Ho
+        ],
+        __oneofs__: {
+            hydratedButton: [
+                "quickReplyButton",
+                "urlButton",
+                "callButton"
+            ]
+        }
+    };
+    Ho.name = "HydratedTemplateButton$HydratedCallButton";
+    Ho.internalSpec = {
+        displayText: [
+            1,
+            e.TYPES.STRING
+        ],
+        phoneNumber: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    Go.name = "HydratedTemplateButton$HydratedURLButton";
+    Go.internalSpec = {
+        displayText: [
+            1,
+            e.TYPES.STRING
+        ],
+        url: [
+            2,
+            e.TYPES.STRING
+        ],
+        consentedUsersUrl: [
+            3,
+            e.TYPES.STRING
+        ],
+        webviewPresentation: [
+            4,
+            e.TYPES.ENUM,
+            Ae
+        ]
+    };
+    zo.name = "HydratedTemplateButton$HydratedQuickReplyButton";
+    zo.internalSpec = {
+        displayText: [
+            1,
+            e.TYPES.STRING
+        ],
+        id: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    jo.name = "Money";
+    jo.internalSpec = {
+        value: [
+            1,
+            e.TYPES.INT64
+        ],
+        offset: [
+            2,
+            e.TYPES.UINT32
+        ],
+        currencyCode: [
+            3,
+            e.TYPES.STRING
+        ]
+    };
+    Ko.name = "PaymentBackground";
+    Ko.internalSpec = {
+        id: [
+            1,
+            e.TYPES.STRING
+        ],
+        fileLength: [
+            2,
+            e.TYPES.UINT64
+        ],
+        width: [
+            3,
+            e.TYPES.UINT32
+        ],
+        height: [
+            4,
+            e.TYPES.UINT32
+        ],
+        mimetype: [
+            5,
+            e.TYPES.STRING
+        ],
+        placeholderArgb: [
+            6,
+            e.TYPES.FIXED32
+        ],
+        textArgb: [
+            7,
+            e.TYPES.FIXED32
+        ],
+        subtextArgb: [
+            8,
+            e.TYPES.FIXED32
+        ],
+        mediaData: [
+            9,
+            e.TYPES.MESSAGE,
+            Qo
+        ],
+        type: [
+            10,
+            e.TYPES.ENUM,
+            Fe
+        ]
+    };
+    Qo.name = "PaymentBackground$MediaData";
+    Qo.internalSpec = {
+        mediaKey: [
+            1,
+            e.TYPES.BYTES
+        ],
+        mediaKeyTimestamp: [
+            2,
+            e.TYPES.INT64
+        ],
+        fileSha256: [
+            3,
+            e.TYPES.BYTES
+        ],
+        fileEncSha256: [
+            4,
+            e.TYPES.BYTES
+        ],
+        directPath: [
+            5,
+            e.TYPES.STRING
+        ]
+    };
+    Xo.name = "DisappearingMode";
+    Xo.internalSpec = {
+        initiator: [
+            1,
+            e.TYPES.ENUM,
+            Be
+        ],
+        trigger: [
+            2,
+            e.TYPES.ENUM,
+            Oe
+        ],
+        initiatorDeviceJid: [
+            3,
+            e.TYPES.STRING
+        ],
+        initiatedByMe: [
+            4,
+            e.TYPES.BOOL
+        ]
+    };
+    Yo.name = "ActionLink";
+    Yo.internalSpec = {
+        url: [
+            1,
+            e.TYPES.STRING
+        ],
+        buttonTitle: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    Jo.name = "GroupMention";
+    Jo.internalSpec = {
+        groupJid: [
+            1,
+            e.TYPES.STRING
+        ],
+        groupSubject: [
+            2,
+            e.TYPES.STRING
+        ]
+    };
+    Zo.name = "MessageSecretMessage";
+    Zo.internalSpec = {
+        version: [
+            1,
+            e.TYPES.SFIXED32
+        ],
+        encIv: [
+            2,
+            e.TYPES.BYTES
+        ],
+        encPayload: [
+            3,
+            e.TYPES.BYTES
+        ]
+    };
+    ea.name = "MediaNotifyMessage";
+    ea.internalSpec = {
+        expressPathUrl: [
+            1,
+            e.TYPES.STRING
+        ],
+        fileEncSha256: [
+            2,
+            e.TYPES.BYTES
+        ],
+        fileLength: [
+            3,
+            e.TYPES.UINT64
+        ]
+    };
+    ta.name = "LIDMigrationMappingSyncMessage";
+    ta.internalSpec = {
+        encodedMappingPayload: [
+            1,
+            e.TYPES.BYTES
+        ]
+    };
+    na.name = "ProcessedVideo";
+    na.internalSpec = {
+        directPath: [
+            1,
+            e.TYPES.STRING
+        ],
+        fileSha256: [
+            2,
+            e.TYPES.BYTES
+        ],
+        height: [
+            3,
+            e.TYPES.UINT32
+        ],
+        width: [
+            4,
+            e.TYPES.UINT32
+        ],
+        fileLength: [
+            5,
+            e.TYPES.UINT64
+        ],
+        bitrate: [
+            6,
+            e.TYPES.UINT32
+        ],
+        quality: [
+            7,
+            e.TYPES.ENUM,
+            qe
+        ],
+        capabilities: [
+            8,
+            e.FLAGS.REPEATED | e.TYPES.STRING
+        ]
+    };
+    ra.name = "UrlTrackingMap";
+    ra.internalSpec = {
+        urlTrackingMapElements: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            oa
+        ]
+    };
+    oa.name = "UrlTrackingMap$UrlTrackingMapElement";
+    oa.internalSpec = {
+        originalUrl: [
+            1,
+            e.TYPES.STRING
+        ],
+        unconsentedUsersUrl: [
+            2,
+            e.TYPES.STRING
+        ],
+        consentedUsersUrl: [
+            3,
+            e.TYPES.STRING
+        ],
+        cardIndex: [
+            4,
+            e.TYPES.UINT32
+        ]
+    };
+    aa.name = "MemberLabel";
+    aa.internalSpec = {
+        label: [
+            1,
+            e.TYPES.STRING
+        ],
+        labelTimestamp: [
+            2,
+            e.TYPES.INT64
+        ]
+    };
+    ia.name = "AIRichResponseMessage";
+    ia.internalSpec = {
+        messageType: [
+            1,
+            e.TYPES.ENUM,
+            o("WAWebProtobufsAICommonDeprecated.pb").AIRichResponseMessageType
+        ],
+        submessages: [
+            2,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            o("WAWebProtobufsAICommonDeprecated.pb").AIRichResponseSubMessageSpec
+        ],
+        unifiedResponse: [
+            3,
+            e.TYPES.MESSAGE,
+            u.AIRichResponseUnifiedResponseSpec
+        ],
+        contextInfo: [
+            4,
+            e.TYPES.MESSAGE,
+            co
+        ],
+        originalRecipientMetadata: [
+            5,
+            e.TYPES.MESSAGE,
+            u.AIRichResponseUnifiedResponseSpec
+        ]
+    };
+    la.name = "AIQueryFanout";
+    la.internalSpec = {
+        messageKey: [
+            1,
+            e.TYPES.MESSAGE,
+            s.MessageKeySpec
+        ],
+        message: [
+            2,
+            e.TYPES.MESSAGE,
+            Ue
+        ],
+        timestamp: [
+            3,
+            e.TYPES.INT64
+        ]
+    };
+    sa.name = "GroupRootKeyShare";
+    sa.internalSpec = {
+        keys: [
+            1,
+            e.FLAGS.REPEATED | e.TYPES.MESSAGE,
+            ua
+        ]
+    };
+    ua.name = "GroupRootKeyShareEntry";
+    ua.internalSpec = {
+        groupRootKey: [
+            1,
+            e.TYPES.BYTES
+        ],
+        keyId: [
+            2,
+            e.TYPES.STRING
+        ],
+        expiryTimestampMs: [
+            3,
+            e.TYPES.INT64
+        ],
+        createdTimestampMs: [
+            4,
+            e.TYPES.INT64
+        ]
+    };
+    l.Message$StatusLinkPreviewMetadata$Style = m;
+    l.Message$StickerPackMessage$StickerPackOrigin = p;
+    l.Message$PlaceholderMessage$PlaceholderType = _;
+    l.Message$BCallMessage$MediaType = f;
+    l.Message$CallLogMessage$CallOutcome = g;
+    l.Message$CallLogMessage$CallType = h;
+    l.Message$ScheduledCallEditMessage$EditType = y;
+    l.Message$ScheduledCallCreationMessage$CallType = C;
+    l.Message$EventResponseMessage$EventResponseType = b;
+    l.Message$PinInChatMessage$Type = v;
+    l.Message$StatusStickerInteractionMessage$StatusStickerType = S;
+    l.Message$PollType = R;
+    l.Message$PollContentType = L;
+    l.Message$ButtonsResponseMessage$Type = E;
+    l.Message$ButtonsMessage$Button$Type = k;
+    l.Message$ButtonsMessage$HeaderType = I;
+    l.Message$ConditionalRevealMessage$ConditionalRevealMessageType = T;
+    l.Message$SecretEncryptedMessage$SecretEncType = D;
+    l.Message$RequestLocationUpdateMessage$UpdateType = x;
+    l.Message$EventInviteMessage$EventStatus = $;
+    l.Message$GroupInviteMessage$GroupType = P;
+    l.Message$InteractiveResponseMessage$Body$Format = N;
+    l.Message$InteractiveMessage$CarouselMessage$CarouselCardType = M;
+    l.Message$InteractiveMessage$ShopMessage$Surface = w;
+    l.Message$ListResponseMessage$ListType = A;
+    l.Message$ListMessage$ListType = F;
+    l.Message$OrderMessage$OrderSurface = O;
+    l.Message$OrderMessage$OrderStatus = B;
+    l.Message$StatusQuotedMessage$StatusQuotedMessageType = W;
+    l.Message$SplitPaymentParticipant$SplitPaymentStatus = q;
+    l.Message$PaymentReminderMessage$ReminderStatus = U;
+    l.Message$PaymentReminderMessage$ReminderFrequency = V;
+    l.Message$PaymentInviteMessage$InviteType = H;
+    l.Message$PaymentInviteMessage$ServiceType = G;
+    l.Message$HighlyStructuredMessage$HSMLocalizableParameter$HSMDateTime$HSMDateTimeComponent$CalendarType = z;
+    l.Message$HighlyStructuredMessage$HSMLocalizableParameter$HSMDateTime$HSMDateTimeComponent$DayOfWeekType = j;
+    l.Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$HistorySyncChunkRetryResponseCode = K;
+    l.Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$FullHistorySyncOnDemandResponseCode = Q;
+    l.Message$PeerDataOperationRequestMessage$GalaxyFlowAction$GalaxyFlowActionType = X;
+    l.Message$InsightDeliveryState = Y;
+    l.Message$PeerDataOperationRequestType = J;
+    l.Message$SharedDeviceContactHashKey$Kind = Z;
+    l.Message$HistorySyncType = ee;
+    l.Message$RequestWelcomeMessageMetadata$WelcomeTrigger = te;
+    l.Message$RequestWelcomeMessageMetadata$LocalChatState = ne;
+    l.Message$ProtocolMessage$Type = re;
+    l.Message$CloudAPIThreadControlNotification$CloudAPIThreadControl = oe;
+    l.Message$VideoMessage$VideoSourceType = ae;
+    l.Message$VideoMessage$Attribution = ie;
+    l.Message$MusicMessage$MusicMessageStyle = le;
+    l.Message$ExtendedTextMessage$InviteLinkGroupType = se;
+    l.Message$ExtendedTextMessage$PreviewType = ue;
+    l.Message$ExtendedTextMessage$FontType = ce;
+    l.Message$LinkPreviewMetadata$SocialMediaPostType = de;
+    l.Message$PaymentLinkMetadata$PaymentLinkHeader$PaymentLinkHeaderType = me;
+    l.Message$StatusNotificationMessage$StatusNotificationType = pe;
+    l.Message$InvoiceMessage$AttachmentType = _e;
+    l.Message$ImageMessage$ImageSourceType = fe;
+    l.MediaKeyDomain = ge;
+    l.ContextInfo$BusinessInteractionPills$EntryPoint = he;
+    l.ContextInfo$BusinessInteractionPills$PillType = ye;
+    l.ContextInfo$CrossAppSource = Ce;
+    l.ContextInfo$QuotedType = be;
+    l.ContextInfo$StatusAudienceMetadata$AudienceType = ve;
+    l.ContextInfo$ForwardOrigin = Se;
+    l.ContextInfo$StatusSourceType = Re;
+    l.ContextInfo$PairedMediaType = Le;
+    l.ContextInfo$StatusAttributionType = Ee;
+    l.ContextInfo$DataSharingContext$DataSharingFlags = ke;
+    l.ContextInfo$ForwardedNewsletterMessageInfo$ContentType = Ie;
+    l.ContextInfo$ExternalAdReplyInfo$AdType = Te;
+    l.ContextInfo$ExternalAdReplyInfo$MediaType = De;
+    l.ContextInfo$AdReplyInfo$MediaType = xe;
+    l.MessageAssociation$AssociationType = $e;
+    l.ThreadID$ThreadType = Pe;
+    l.WebLinkRenderConfig = Ne;
+    l.MessageContextInfo$MessageAddonExpiryType = Me;
+    l.InteractiveAnnotation$StatusLinkType = we;
+    l.HydratedTemplateButton$HydratedURLButton$WebviewPresentationType = Ae;
+    l.PaymentBackground$Type = Fe;
+    l.DisappearingMode$Trigger = Oe;
+    l.DisappearingMode$Initiator = Be;
+    l.KeepType = We;
+    l.ProcessedVideo$VideoQuality = qe;
+    l.MessageSpec = Ue;
+    l.Message$StatusLinkPreviewMetadataSpec = Ve;
+    l.Message$StickerPackMessageSpec = He;
+    l.Message$StickerPackMessage$StickerSpec = Ge;
+    l.Message$AlbumMessageSpec = ze;
+    l.Message$PlaceholderMessageSpec = je;
+    l.Message$BCallMessageSpec = Ke;
+    l.Message$MessageHistoryMetadataSpec = Qe;
+    l.Message$HistoryShareMessageEntrySpec = Xe;
+    l.Message$BotHistoryShareSyncMetadataSpec = Ye;
+    l.Message$MessageHistoryNoticeSpec = Je;
+    l.Message$MessageHistoryBundleSpec = Ze;
+    l.Message$CallLogMessageSpec = et;
+    l.Message$CallLogMessage$CallParticipantSpec = tt;
+    l.Message$ScheduledCallEditMessageSpec = nt;
+    l.Message$ScheduledCallCreationMessageSpec = rt;
+    l.Message$EventResponseMessageSpec = ot;
+    l.Message$EncEventResponseMessageSpec = at;
+    l.Message$EventMessageSpec = it;
+    l.Message$CommentMessageSpec = lt;
+    l.Message$EncCommentMessageSpec = st;
+    l.Message$EncReactionMessageSpec = ut;
+    l.Message$PinInChatMessageSpec = ct;
+    l.Message$KeepInChatMessageSpec = dt;
+    l.Message$QuestionResponseMessageSpec = mt;
+    l.Message$StatusStickerInteractionMessageSpec = pt;
+    l.Message$StatusQuestionAnswerMessageSpec = _t;
+    l.Message$PollResultSnapshotMessageSpec = ft;
+    l.Message$PollResultSnapshotMessage$PollVoteSpec = gt;
+    l.Message$PollAddOptionMessageSpec = ht;
+    l.Message$PollVoteMessageSpec = yt;
+    l.Message$PollEncValueSpec = Ct;
+    l.Message$PollUpdateMessageMetadataSpec = bt;
+    l.Message$PollUpdateMessageSpec = vt;
+    l.Message$PollCreationMessageSpec = St;
+    l.Message$PollCreationMessage$OptionSpec = Rt;
+    l.Message$StickerSyncRMRMessageSpec = Lt;
+    l.Message$ReactionMessageSpec = Et;
+    l.Message$ButtonsResponseMessageSpec = kt;
+    l.Message$ButtonsMessageSpec = It;
+    l.Message$ButtonsMessage$ButtonSpec = Tt;
+    l.Message$ButtonsMessage$Button$NativeFlowInfoSpec = Dt;
+    l.Message$ButtonsMessage$Button$ButtonTextSpec = xt;
+    l.Message$ConditionalRevealMessageSpec = $t;
+    l.Message$SecretEncryptedMessageSpec = Pt;
+    l.Message$FutureProofMessageSpec = Nt;
+    l.Message$DeviceSentMessageSpec = Mt;
+    l.Message$RequestLocationUpdateMessageSpec = wt;
+    l.Message$RequestLocationMessageSpec = At;
+    l.Message$RequestPhoneNumberMessageSpec = Ft;
+    l.Message$EventInviteMessageSpec = Ot;
+    l.Message$NewsletterFollowerInviteMessageSpec = Bt;
+    l.Message$NewsletterAdminInviteMessageSpec = Wt;
+    l.Message$GroupInviteMessageSpec = qt;
+    l.Message$InteractiveResponseMessageSpec = Ut;
+    l.Message$InteractiveResponseMessage$NativeFlowResponseMessageSpec = Vt;
+    l.Message$InteractiveResponseMessage$BodySpec = Ht;
+    l.Message$InteractiveMessageSpec = Gt;
+    l.Message$InteractiveMessage$CarouselMessageSpec = zt;
+    l.Message$InteractiveMessage$NativeFlowMessageSpec = jt;
+    l.Message$InteractiveMessage$NativeFlowMessage$NativeFlowButtonSpec = Kt;
+    l.Message$InteractiveMessage$CollectionMessageSpec = Qt;
+    l.Message$InteractiveMessage$ShopMessageSpec = Xt;
+    l.Message$InteractiveMessage$BloksWidgetSpec = Yt;
+    l.Message$InteractiveMessage$FooterSpec = Jt;
+    l.Message$InteractiveMessage$BodySpec = Zt;
+    l.Message$InteractiveMessage$HeaderSpec = en;
+    l.Message$ListResponseMessageSpec = tn;
+    l.Message$ListResponseMessage$SingleSelectReplySpec = nn;
+    l.Message$ListMessageSpec = rn;
+    l.Message$ListMessage$ProductListInfoSpec = on;
+    l.Message$ListMessage$ProductListHeaderImageSpec = an;
+    l.Message$ListMessage$ProductSectionSpec = ln;
+    l.Message$ListMessage$ProductSpec = sn;
+    l.Message$ListMessage$SectionSpec = un;
+    l.Message$ListMessage$RowSpec = cn;
+    l.Message$OrderMessageSpec = dn;
+    l.Message$ProductMessageSpec = mn;
+    l.Message$ProductMessage$ProductSnapshotSpec = pn;
+    l.Message$ProductMessage$CatalogSnapshotSpec = _n;
+    l.Message$StatusQuotedMessageSpec = fn;
+    l.Message$TemplateButtonReplyMessageSpec = gn;
+    l.Message$TemplateMessageSpec = hn;
+    l.Message$TemplateMessage$HydratedFourRowTemplateSpec = yn;
+    l.Message$TemplateMessage$FourRowTemplateSpec = Cn;
+    l.Message$StickerMessageSpec = bn;
+    l.Message$LiveLocationMessageSpec = vn;
+    l.Message$SplitPaymentUpdateMessageSpec = Sn;
+    l.Message$SplitPaymentParticipantSpec = Rn;
+    l.Message$SplitPaymentMessageSpec = Ln;
+    l.Message$PaymentReminderMessageSpec = En;
+    l.Message$PaymentInviteMessageSpec = kn;
+    l.Message$CancelPaymentRequestMessageSpec = In;
+    l.Message$DeclinePaymentRequestMessageSpec = Tn;
+    l.Message$RequestPaymentMessageSpec = Dn;
+    l.Message$SendPaymentMessageSpec = xn;
+    l.Message$HighlyStructuredMessageSpec = $n;
+    l.Message$HighlyStructuredMessage$HSMLocalizableParameterSpec = Pn;
+    l.Message$HighlyStructuredMessage$HSMLocalizableParameter$HSMDateTimeSpec = Nn;
+    l.Message$HighlyStructuredMessage$HSMLocalizableParameter$HSMDateTime$HSMDateTimeUnixEpochSpec = Mn;
+    l.Message$HighlyStructuredMessage$HSMLocalizableParameter$HSMDateTime$HSMDateTimeComponentSpec = wn;
+    l.Message$HighlyStructuredMessage$HSMLocalizableParameter$HSMCurrencySpec = An;
+    l.Message$ContactsArrayMessageSpec = Fn;
+    l.Message$InitialSecurityNotificationSettingSyncSpec = On;
+    l.Message$PeerDataOperationRequestResponseMessageSpec = Bn;
+    l.Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResultSpec = Wn;
+    l.Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$FlowResponsesCsvBundleSpec = qn;
+    l.Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$ContactRefreshResponseSpec = Un;
+    l.Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$BizBroadcastInsightsContactListResponseSpec = Vn;
+    l.Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$BizBroadcastInsightsContactStateSpec = Hn;
+    l.Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$HistorySyncChunkRetryResponseSpec = Gn;
+    l.Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$SyncDSnapshotFatalRecoveryResponseSpec = zn;
+    l.Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$CompanionCanonicalUserNonceFetchResponseSpec = jn;
+    l.Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$CompanionMetaNonceFetchResponseSpec = Kn;
+    l.Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$WaffleNonceFetchResponseSpec = Qn;
+    l.Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$FullHistorySyncOnDemandRequestResponseSpec = Xn;
+    l.Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$PlaceholderMessageResendResponseSpec = Yn;
+    l.Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$LinkPreviewResponseSpec = Jn;
+    l.Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$LinkPreviewResponse$PaymentLinkPreviewMetadataSpec = Zn;
+    l.Message$PeerDataOperationRequestResponseMessage$PeerDataOperationResult$LinkPreviewResponse$LinkPreviewHighQualityThumbnailSpec = er;
+    l.Message$PeerDataOperationRequestMessageSpec = tr;
+    l.Message$PeerDataOperationRequestMessage$RecentConversationsOnDemandRequestSpec = nr;
+    l.Message$PeerDataOperationRequestMessage$BizBroadcastInsightsRefreshRequestSpec = rr;
+    l.Message$PeerDataOperationRequestMessage$BizBroadcastInsightsContactListRequestSpec = or;
+    l.Message$PeerDataOperationRequestMessage$CompanionCanonicalUserNonceFetchRequestSpec = ar;
+    l.Message$PeerDataOperationRequestMessage$GalaxyFlowActionSpec = ir;
+    l.Message$PeerDataOperationRequestMessage$HistorySyncChunkRetryRequestSpec = lr;
+    l.Message$PeerDataOperationRequestMessage$SyncDCollectionFatalRecoveryRequestSpec = sr;
+    l.Message$PeerDataOperationRequestMessage$PlaceholderMessageResendRequestSpec = ur;
+    l.Message$PeerDataOperationRequestMessage$FullHistorySyncOnDemandRequestSpec = cr;
+    l.Message$PeerDataOperationRequestMessage$HistorySyncOnDemandRequestSpec = dr;
+    l.Message$PeerDataOperationRequestMessage$RequestUrlPreviewSpec = mr;
+    l.Message$PeerDataOperationRequestMessage$RequestStickerReuploadSpec = pr;
+    l.Message$FullHistorySyncOnDemandConfigSpec = _r;
+    l.Message$FullHistorySyncOnDemandRequestMetadataSpec = fr;
+    l.Message$CoexConnectionDescriptorSpec = gr;
+    l.Message$AppStateFatalExceptionNotificationSpec = hr;
+    l.Message$SharedDeviceContactHashKeyRequestSpec = yr;
+    l.Message$SharedDeviceContactHashKeyShareSpec = Cr;
+    l.Message$SharedDeviceContactHashKeySpec = br;
+    l.Message$AppStateSyncKeyRequestSpec = vr;
+    l.Message$AppStateSyncKeyShareSpec = Sr;
+    l.Message$AppStateSyncKeyDataSpec = Rr;
+    l.Message$AppStateSyncKeyFingerprintSpec = Lr;
+    l.Message$AppStateSyncKeyIdSpec = Er;
+    l.Message$AppStateSyncKeySpec = kr;
+    l.Message$HistorySyncNotificationSpec = Ir;
+    l.Message$HistorySyncMessageAccessStatusSpec = Tr;
+    l.Message$RequestWelcomeMessageMetadataSpec = Dr;
+    l.Message$ChatAnimatedWallpaperSpec = xr;
+    l.Message$ChatStockImageWallpaperSpec = $r;
+    l.Message$ChatSolidColorWallpaperSpec = Pr;
+    l.Message$ChatDefaultWallpaperSpec = Nr;
+    l.Message$ChatCustomImageWallpaperSpec = Mr;
+    l.Message$ChatThemeSettingSpec = wr;
+    l.Message$MarkAsVerifiedActionSpec = Ar;
+    l.Message$ProtocolMessageSpec = Fr;
+    l.Message$CloudAPIThreadControlNotificationSpec = Or;
+    l.Message$CloudAPIThreadControlNotification$CloudAPIThreadControlNotificationContentSpec = Br;
+    l.Message$ChatSpec = Wr;
+    l.Message$CallSpec = qr;
+    l.Message$VideoMessageSpec = Ur;
+    l.Message$MusicMessageSpec = Vr;
+    l.Message$AudioMessageSpec = Hr;
+    l.Message$DocumentMessageSpec = Gr;
+    l.Message$ExtendedTextMessageSpec = zr;
+    l.Message$LinkPreviewMetadataSpec = jr;
+    l.Message$URLMetadataSpec = Kr;
+    l.Message$PaymentExtendedMetadataSpec = Qr;
+    l.Message$PaymentLinkMetadataSpec = Xr;
+    l.Message$PaymentLinkMetadata$PaymentLinkProviderSpec = Yr;
+    l.Message$PaymentLinkMetadata$PaymentLinkHeaderSpec = Jr;
+    l.Message$PaymentLinkMetadata$PaymentLinkButtonSpec = Zr;
+    l.Message$MMSThumbnailMetadataSpec = eo;
+    l.Message$LocationMessageSpec = to;
+    l.Message$StatusNotificationMessageSpec = no;
+    l.Message$ContactMessageSpec = ro;
+    l.Message$InvoiceMessageSpec = oo;
+    l.Message$ImageMessageSpec = ao;
+    l.Message$RootSecretDistributeMessageSpec = io;
+    l.Message$SenderKeyDistributionMessageSpec = lo;
+    l.Message$VideoEndCardSpec = so;
+    l.MediaDomainInfoSpec = uo;
+    l.ContextInfoSpec = co;
+    l.ContextInfo$InstagramThreadLinkSpec = mo;
+    l.ContextInfo$BusinessInteractionPillsSpec = po;
+    l.ContextInfo$BusinessInteractionPills$UnauthenticatedBusinessMetadataSpec = _o;
+    l.ContextInfo$BusinessInteractionPills$SignedPayloadSpec = fo;
+    l.ContextInfo$BusinessInteractionPills$PillSpec = go;
+    l.ContextInfo$StatusAudienceMetadataSpec = ho;
+    l.ContextInfo$PartiallySelectedContentSpec = yo;
+    l.ContextInfo$FeatureEligibilitiesSpec = Co;
+    l.ContextInfo$DataSharingContextSpec = bo;
+    l.ContextInfo$DataSharingContext$ParametersSpec = vo;
+    l.ContextInfo$QuestionReplyQuotedMessageSpec = So;
+    l.ContextInfo$ForwardedNewsletterMessageInfoSpec = Ro;
+    l.ContextInfo$UTMInfoSpec = Lo;
+    l.ContextInfo$ExternalAdReplyInfoSpec = Eo;
+    l.ContextInfo$AdReplyInfoSpec = ko;
+    l.ContextInfo$BusinessMessageForwardInfoSpec = Io;
+    l.MessageAssociationSpec = To;
+    l.ThreadIDSpec = Do;
+    l.MessageContextInfoSpec = xo;
+    l.DeviceListMetadataSpec = $o;
+    l.EmbeddedMessageSpec = Po;
+    l.EmbeddedMusicSpec = No;
+    l.EmbeddedContentSpec = Mo;
+    l.TapLinkActionSpec = wo;
+    l.InteractiveAnnotationSpec = Ao;
+    l.PointSpec = Fo;
+    l.LocationSpec = Oo;
+    l.TemplateButtonSpec = Bo;
+    l.TemplateButton$CallButtonSpec = Wo;
+    l.TemplateButton$URLButtonSpec = qo;
+    l.TemplateButton$QuickReplyButtonSpec = Uo;
+    l.HydratedTemplateButtonSpec = Vo;
+    l.HydratedTemplateButton$HydratedCallButtonSpec = Ho;
+    l.HydratedTemplateButton$HydratedURLButtonSpec = Go;
+    l.HydratedTemplateButton$HydratedQuickReplyButtonSpec = zo;
+    l.MoneySpec = jo;
+    l.PaymentBackgroundSpec = Ko;
+    l.PaymentBackground$MediaDataSpec = Qo;
+    l.DisappearingModeSpec = Xo;
+    l.ActionLinkSpec = Yo;
+    l.GroupMentionSpec = Jo;
+    l.MessageSecretMessageSpec = Zo;
+    l.MediaNotifyMessageSpec = ea;
+    l.LIDMigrationMappingSyncMessageSpec = ta;
+    l.ProcessedVideoSpec = na;
+    l.UrlTrackingMapSpec = ra;
+    l.UrlTrackingMap$UrlTrackingMapElementSpec = oa;
+    l.MemberLabelSpec = aa;
+    l.AIRichResponseMessageSpec = ia;
+    l.AIQueryFanoutSpec = la;
+    l.GroupRootKeyShareSpec = sa;
+    l.GroupRootKeyShareEntrySpec = ua;
+}, 98);

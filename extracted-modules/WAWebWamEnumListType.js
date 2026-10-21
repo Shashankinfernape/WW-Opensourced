@@ -1,0 +1,19 @@
+__d("WAWebWamEnumListType", [], function(t, n, r, o, a, i) {
+    const e = Object.freeze({
+        NONE: 0,
+        UNREAD: 1,
+        GROUP: 2,
+        FAVORITE: 3,
+        PREDEFINED: 4,
+        CUSTOM: 5,
+        COMMUNITY: 6,
+        BUSINESS_AI: 7,
+        DRAFTS: 8,
+        CAMPAIGN_REPLIES: 9,
+        SERVER_ASSIGNED: 10,
+        TO_YOU: 11,
+        ONE_ON_ONE: 12,
+        BUSINESS_FOLDER: 13
+    });
+    i.LIST_TYPE = e;
+}, 66);

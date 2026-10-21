@@ -1,0 +1,71 @@
+__d("WAWebDBMsgOpaqueDataKeys", [], function(t, n, r, o, a, i) {
+    const e = [
+        "body",
+        "caption",
+        "paymentAmount1000",
+        "futureproofBuffer",
+        "messageSecret",
+        "clientUrl",
+        "loc",
+        "lng",
+        "lat",
+        "isLive",
+        "matchedText",
+        "title",
+        "description",
+        "pollName",
+        "pollSelectableOptionsCount",
+        "isSentCagPollCreation",
+        "pollEndTime",
+        "pollHideVoterNames",
+        "pollAllowAddOption",
+        "pollUpdateParentKey",
+        "encPollVote",
+        "senderTimestampMs",
+        "targetMessageKey",
+        "encIv",
+        "encPayload",
+        "eventName",
+        "isEventCanceled",
+        "eventDescription",
+        "eventJoinLink",
+        "eventStartTime",
+        "eventLocation",
+        "eventEndTime",
+        "eventIsScheduledCall",
+        "eventExtraGuestsAllowed",
+        "quarantineExtractedText",
+        "sharableEventInviteId",
+        "sharableEventInviteTitle",
+        "sharableEventInviteStartTime",
+        "sharableEventInviteEndTime",
+        "sharableEventInviteCaption",
+        "sharableEventInviteIsCanceled",
+        "sharableEventInviteJpegThumbnail",
+        "sharableEventInviteCallLink",
+        "mediaPngThumbnail",
+        "qrUrl",
+        "musicData"
+    ];
+    const l = [
+        "targetMessageKey",
+        "pollUpdateParentKey"
+    ];
+    const s = {
+        targetMessageKey: "encReactionTargetMessageKey",
+        encIv: "encReactionEncIv",
+        encPayload: "encReactionEncPayload",
+        encReactionTargetMessageKey: "targetMessageKey",
+        encReactionEncIv: "encIv",
+        encReactionEncPayload: "encPayload"
+    };
+    function u(e, t) {
+        if (e === "reaction_enc") {
+            return s[t];
+        }
+        return t;
+    }
+    i.MSG_OPAQUE_DATA_KEYS = e;
+    i.MsgKeyFieldsInOpaqueData = l;
+    i.getKey = u;
+}, 66);

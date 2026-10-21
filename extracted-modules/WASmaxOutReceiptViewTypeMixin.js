@@ -1,0 +1,16 @@
+__d("WASmaxOutReceiptViewTypeMixin", [
+    "WASmaxJsx",
+    "WASmaxMixins"
+], function(t, n, r, o, a, i, l) {
+    function e() {
+        const e = o("WASmaxJsx").smax("receipt", {
+            type: "view"
+        });
+        return e;
+    }
+    function s(t) {
+        const n = e();
+        return o("WASmaxMixins").mergeStanzas(t, n);
+    }
+    l.mergeViewTypeMixin = s;
+}, 98);

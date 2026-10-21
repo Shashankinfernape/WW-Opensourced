@@ -1,0 +1,25 @@
+{
+  "width": 600,
+  "liveMeas": {
+    "railWidth": 64,
+    "sideWidth": 336,
+    "mainWidth": 0
+  },
+  "reconMeas": {
+    "railWidth": 64,
+    "sideWidth": 270,
+    "mainWidth": 266
+  },
+  "railDiff": {
+    "compared_pixels": 47168,
+    "changed_pixels": 3185,
+    "changed_ratio": 0.06752459294436906,
+    "mean_delta": 3.5326439535278156
+  },
+  "sideHeaderDiff": {
+    "compared_pixels": 17280,
+    "changed_pixels": 1370,
+    "changed_ratio": 0.07928240740740741,
+    "mean_delta": 4.236979166666667
+  }
+}

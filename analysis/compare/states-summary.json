@@ -1,0 +1,122 @@
+{
+  "chat-row-hover": {
+    "rect": [
+      65,
+      320,
+      413,
+      72
+    ],
+    "compared_pixels": 29736,
+    "changed_pixels": 19222,
+    "changed_ratio": 0.646421845574388,
+    "mean_absolute_channel_delta": 13.432094094700027
+  },
+  "chat-row-selected": {
+    "rect": [
+      65,
+      280,
+      413,
+      72
+    ],
+    "compared_pixels": 29736,
+    "changed_pixels": 21009,
+    "changed_ratio": 0.7065173527037933,
+    "mean_absolute_channel_delta": 16.778349475383372
+  },
+  "wallpaper-area": {
+    "rect": [
+      478,
+      64,
+      556,
+      609
+    ],
+    "compared_pixels": 338604,
+    "changed_pixels": 160329,
+    "changed_ratio": 0.4735000177198143,
+    "mean_absolute_channel_delta": 15.79118749335507
+  },
+  "bubbles-structure": {
+    "rect": [
+      478,
+      64,
+      556,
+      300
+    ],
+    "compared_pixels": 166800,
+    "changed_pixels": 91517,
+    "changed_ratio": 0.5486630695443645,
+    "mean_absolute_channel_delta": 24.020503597122303
+  },
+  "attach-menu": {
+    "rect": [
+      478,
+      400,
+      300,
+      273
+    ],
+    "compared_pixels": 81900,
+    "changed_pixels": 58837,
+    "changed_ratio": 0.7184004884004884,
+    "mean_absolute_channel_delta": 8.757875457875459
+  },
+  "chat-menu": {
+    "rect": [
+      800,
+      64,
+      220,
+      280
+    ],
+    "compared_pixels": 61600,
+    "changed_pixels": 42808,
+    "changed_ratio": 0.694935064935065,
+    "mean_absolute_channel_delta": 13.364074675324675
+  },
+  "status-panel": {
+    "rect": [
+      65,
+      0,
+      413,
+      737
+    ],
+    "compared_pixels": 304381,
+    "changed_pixels": 17241,
+    "changed_ratio": 0.056642825931973416,
+    "mean_absolute_channel_delta": 3.9805416566737084
+  },
+  "channels-panel": {
+    "rect": [
+      65,
+      0,
+      413,
+      737
+    ],
+    "compared_pixels": 304381,
+    "changed_pixels": 59008,
+    "changed_ratio": 0.19386229758099224,
+    "mean_absolute_channel_delta": 12.696980100597607
+  },
+  "communities-panel": {
+    "rect": [
+      65,
+      0,
+      413,
+      737
+    ],
+    "compared_pixels": 304381,
+    "changed_pixels": 37208,
+    "changed_ratio": 0.12224153281578022,
+    "mean_absolute_channel_delta": 8.642216498401675
+  },
+  "calls-panel": {
+    "rect": [
+      65,
+      0,
+      413,
+      737
+    ],
+    "compared_pixels": 304381,
+    "changed_pixels": 62283,
+    "changed_ratio": 0.2046218390766835,
+    "mean_absolute_channel_delta": 7.716960815556819
+  }
+}

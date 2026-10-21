@@ -1,0 +1,497 @@
+{
+  "leaksCount": 92,
+  "leaks": [
+    {
+      "file": "reconstruction\\src\\components\\ChatListContextMenu.tsx",
+      "type": "LIVE_CONTACT_NAME",
+      "match": "Unread"
+    },
+    {
+      "file": "reconstruction\\src\\components\\ChatListPanel.tsx",
+      "type": "LIVE_CONTACT_NAME",
+      "match": "All"
+    },
+    {
+      "file": "reconstruction\\src\\components\\ChatListPanel.tsx",
+      "type": "LIVE_CONTACT_NAME",
+      "match": "Unread"
+    },
+    {
+      "file": "reconstruction\\src\\components\\ChatListPanel.tsx",
+      "type": "LIVE_CONTACT_NAME",
+      "match": "Favourites"
+    },
+    {
+      "file": "reconstruction\\src\\components\\ChatListPanel.tsx",
+      "type": "LIVE_CONTACT_NAME",
+      "match": "Groups"
+    },
+    {
+      "file": "reconstruction\\src\\components\\ContactInfoDrawer.tsx",
+      "type": "PHONE_NUMBER",
+      "match": "+1 (555) 019-2834"
+    },
+    {
+      "file": "reconstruction\\src\\icons\\svg-icons.json",
+      "type": "PHONE_NUMBER",
+      "match": "13631142757928"
+    },
+    {
+      "file": "reconstruction\\src\\icons\\svg-icons.json",
+      "type": "PHONE_NUMBER",
+      "match": "13631142757928"
+    },
+    {
+      "file": "reconstruction\\src\\icons\\svg-icons.json",
+      "type": "PHONE_NUMBER",
+      "match": "13631142757928"
+    },
+    {
+      "file": "reconstruction\\dist\\assets\\index-8KeQ-Obj.js",
+      "type": "LIVE_CONTACT_NAME",
+      "match": "All"
+    },
+    {
+      "file": "reconstruction\\dist\\assets\\index-8KeQ-Obj.js",
+      "type": "LIVE_CONTACT_NAME",
+      "match": "Unread"
+    },
+    {
+      "file": "reconstruction\\dist\\assets\\index-8KeQ-Obj.js",
+      "type": "LIVE_CONTACT_NAME",
+      "match": "Favourites"
+    },
+    {
+      "file": "reconstruction\\dist\\assets\\index-8KeQ-Obj.js",
+      "type": "LIVE_CONTACT_NAME",
+      "match": "Groups"
+    },
+    {
+      "file": "reconstruction\\dist\\assets\\index-8KeQ-Obj.js",
+      "type": "PHONE_NUMBER",
+      "match": "1073741823"
+    },
+    {
+      "file": "reconstruction\\dist\\assets\\index-8KeQ-Obj.js",
+      "type": "PHONE_NUMBER",
+      "match": "1073741824"
+    },
+    {
+      "file": "reconstruction\\dist\\assets\\index-8KeQ-Obj.js",
+      "type": "PHONE_NUMBER",
+      "match": "1073741824"
+    },
+    {
+      "file": "reconstruction\\dist\\assets\\index-8KeQ-Obj.js",
+      "type": "PHONE_NUMBER",
+      "match": "1073741824"
+    },
+    {
+      "file": "reconstruction\\dist\\assets\\index-8KeQ-Obj.js",
+      "type": "PHONE_NUMBER",
+      "match": "1073741825"
+    },
+    {
+      "file": "reconstruction\\dist\\assets\\index-8KeQ-Obj.js",
+      "type": "PHONE_NUMBER",
+      "match": "1073741824"
+    },
+    {
+      "file": "reconstruction\\dist\\assets\\index-8KeQ-Obj.js",
+      "type": "PHONE_NUMBER",
+      "match": "1073741824"
+    },
+    {
+      "file": "reconstruction\\dist\\assets\\index-8KeQ-Obj.js",
+      "type": "PHONE_NUMBER",
+      "match": "1073741824"
+    },
+    {
+      "file": "reconstruction\\dist\\assets\\index-8KeQ-Obj.js",
+      "type": "PHONE_NUMBER",
+      "match": "1073741824"
+    },
+    {
+      "file": "reconstruction\\dist\\assets\\index-8KeQ-Obj.js",
+      "type": "PHONE_NUMBER",
+      "match": "1073741824"
+    },
+    {
+      "file": "reconstruction\\dist\\assets\\index-8KeQ-Obj.js",
+      "type": "PHONE_NUMBER",
+      "match": "1073741824"
+    },
+    {
+      "file": "reconstruction\\dist\\assets\\index-8KeQ-Obj.js",
+      "type": "PHONE_NUMBER",
+      "match": "1073741824"
+    },
+    {
+      "file": "reconstruction\\dist\\assets\\index-8KeQ-Obj.js",
+      "type": "PHONE_NUMBER",
+      "match": "1073741824"
+    },
+    {
+      "file": "reconstruction\\dist\\assets\\index-8KeQ-Obj.js",
+      "type": "PHONE_NUMBER",
+      "match": "8080-20240426"
+    },
+    {
+      "file": "reconstruction\\dist\\assets\\index-8KeQ-Obj.js",
+      "type": "PHONE_NUMBER",
+      "match": "8080-20240426"
+    },
+    {
+      "file": "reconstruction\\dist\\assets\\index-8KeQ-Obj.js",
+      "type": "PHONE_NUMBER",
+      "match": "13631142757928"
+    },
+    {
+      "file": "reconstruction\\dist\\assets\\index-8KeQ-Obj.js",
+      "type": "PHONE_NUMBER",
+      "match": "13631142757928"
+    },
+    {
+      "file": "reconstruction\\dist\\assets\\index-8KeQ-Obj.js",
+      "type": "PHONE_NUMBER",
+      "match": "13631142757928"
+    },
+    {
+      "file": "reconstruction\\dist\\assets\\index-8KeQ-Obj.js",
+      "type": "PHONE_NUMBER",
+      "match": "+1 (555) 019-2834"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "LIVE_CONTACT_NAME",
+      "match": "All"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "LIVE_CONTACT_NAME",
+      "match": "JDX"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "86666666666667"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "20000000298023"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "20000000298023"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "20000000298023"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "20000000298023"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "20000000298023"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "86666666666667"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "86666666666667"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "86666666666667"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "20000000298023"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "20000000298023"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "20000000298023"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "20000000298023"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "20000000298023"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "20000000298023"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "20000000298023"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "20000000298023"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "20000000298023"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "20000000298023"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "86666666666667"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "86666666666667"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "00000001 11"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "00000003 21"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "00000006 29"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "00000010 40"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "00000016 44"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "00000025 51"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "00000034 59"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "00000053 88"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "8333333333"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "86666666666667"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "86666666666667"
+    },
+    {
+      "file": "reconstruction\\dist\\css\\production.css",
+      "type": "PHONE_NUMBER",
+      "match": "8333333333"
+    },
+    {
+      "file": "analysis/evidence-ledger.md",
+      "type": "LIVE_CONTACT_NAME",
+      "match": "All"
+    },
+    {
+      "file": "analysis/evidence-ledger.md",
+      "type": "PHONE_NUMBER",
+      "match": "22130552887"
+    },
+    {
+      "file": "analysis/evidence-ledger.md",
+      "type": "PHONE_NUMBER",
+      "match": "52222300052"
+    },
+    {
+      "file": "analysis/evidence-ledger.md",
+      "type": "PHONE_NUMBER",
+      "match": "77762021507"
+    },
+    {
+      "file": "analysis/evidence-ledger.md",
+      "type": "PHONE_NUMBER",
+      "match": "7512221333"
+    },
+    {
+      "file": "analysis/evidence-ledger.md",
+      "type": "PHONE_NUMBER",
+      "match": "57993831741265"
+    },
+    {
+      "file": "analysis/evidence-ledger.md",
+      "type": "PHONE_NUMBER",
+      "match": "57993831741265"
+    },
+    {
+      "file": "analysis/evidence-ledger.md",
+      "type": "PHONE_NUMBER",
+      "match": "68628642387"
+    },
+    {
+      "file": "analysis/evidence-ledger.md",
+      "type": "PHONE_NUMBER",
+      "match": "68628642387"
+    },
+    {
+      "file": "analysis/evidence-ledger.md",
+      "type": "PHONE_NUMBER",
+      "match": "68628642387"
+    },
+    {
+      "file": "analysis/evidence-ledger.md",
+      "type": "PHONE_NUMBER",
+      "match": "68628642387"
+    },
+    {
+      "file": "analysis/evidence-ledger.md",
+      "type": "PHONE_NUMBER",
+      "match": "13631142757928"
+    },
+    {
+      "file": "analysis/evidence-ledger.md",
+      "type": "PHONE_NUMBER",
+      "match": "68628642387"
+    },
+    {
+      "file": "analysis/evidence-ledger.md",
+      "type": "PHONE_NUMBER",
+      "match": "68628642387"
+    },
+    {
+      "file": "analysis/evidence-ledger.md",
+      "type": "PHONE_NUMBER",
+      "match": "68628642387"
+    },
+    {
+      "file": "analysis/evidence-ledger.md",
+      "type": "PHONE_NUMBER",
+      "match": "57993831741265"
+    },
+    {
+      "file": "analysis/evidence-ledger.md",
+      "type": "PHONE_NUMBER",
+      "match": "68628642387"
+    },
+    {
+      "file": "analysis/evidence-ledger.md",
+      "type": "PHONE_NUMBER",
+      "match": "10940656147"
+    },
+    {
+      "file": "analysis/evidence-ledger.md",
+      "type": "PHONE_NUMBER",
+      "match": "10964519333318"
+    },
+    {
+      "file": "analysis/evidence-ledger.md",
+      "type": "PHONE_NUMBER",
+      "match": "67164041426"
+    },
+    {
+      "file": "analysis/evidence-ledger.md",
+      "type": "PHONE_NUMBER",
+      "match": "77762021507"
+    },
+    {
+      "file": "analysis/PROGRESS.md",
+      "type": "LIVE_CONTACT_NAME",
+      "match": "All"
+    },
+    {
+      "file": "analysis/PROGRESS.md",
+      "type": "LIVE_CONTACT_NAME",
+      "match": "Unread"
+    },
+    {
+      "file": "analysis/PROGRESS.md",
+      "type": "LIVE_CONTACT_NAME",
+      "match": "Favourites"
+    },
+    {
+      "file": "analysis/PROGRESS.md",
+      "type": "LIVE_CONTACT_NAME",
+      "match": "Groups"
+    }
+  ],
+  "sourceControlAudit": [
+    {
+      "path": "target_artifacts/whatsapp-web/",
+      "description": "Raw live full-page DOM & CDP artifacts",
+      "trackedInGit": true,
+      "status": "FAIL (LEAKED TO GIT)"
+    },
+    {
+      "path": "analysis/live-*.html",
+      "description": "Raw extracted live DOM snippets",
+      "trackedInGit": true,
+      "status": "FAIL (LEAKED TO GIT)"
+    },
+    {
+      "path": "analysis/compare/live-*.json",
+      "description": "Captured live component screenshot artifacts",
+      "trackedInGit": true,
+      "status": "FAIL (LEAKED TO GIT)"
+    },
+    {
+      "path": "analysis/compare/live-*.png",
+      "description": "Rendered live component PNG bitmaps",
+      "trackedInGit": true,
+      "status": "FAIL (LEAKED TO GIT)"
+    },
+    {
+      "path": "C:\\whatsapp-rea-profile",
+      "description": "Isolated user Chrome debugging profile",
+      "trackedInGit": false,
+      "status": "PASS (EXCLUDED FROM GIT)"
+    }
+  ]
+}

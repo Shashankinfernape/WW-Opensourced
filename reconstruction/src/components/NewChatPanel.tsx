@@ -29,7 +29,7 @@ export const NewChatPanel: React.FC<NewChatPanelProps> = ({ onClose, onSelectCon
     <div
       className="x9f619 x1n2onr6 x5yr21d x17dzmu4 x1i1dayz x2ipvbc xjdofhw x78zum5 xdt5ytf x12xzxwr x1plvlek xryxfnj x570efc x18dvir5 xxljpkc x18pi947 xck4lzl x1gluznb xahwd2o x10fiusa x1a0bplq xc995h1"
       style={{
-        width: '414px',
+        width: '100%',
         flexShrink: 0,
         height: '100%',
         display: 'flex',

@@ -10,6 +10,10 @@ chrome-profile/
 
 # Live Screenshots & Captures
 captures/
+analysis/compare/live-*
+analysis/compare/recon-*
+analysis/compare/*.png
+analysis/compare/altered-*
 target_artifacts/whatsapp-web/live-screenshot*
 target_artifacts/whatsapp-web/recon-screenshot*
 target_artifacts/whatsapp-web/page-capture.json

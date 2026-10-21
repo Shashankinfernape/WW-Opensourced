@@ -70,6 +70,7 @@ export const Icon: React.FC<IconProps> = ({
 
   return (
     <svg
+      data-icon={name}
       viewBox={viewBox}
       width={resolvedWidth}
       height={resolvedHeight}

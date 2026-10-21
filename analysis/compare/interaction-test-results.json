@@ -1,0 +1,157 @@
+{
+  "total": 30,
+  "passed": 30,
+  "failed": 0,
+  "results": [
+    {
+      "name": "Initial active chat",
+      "status": "PASS",
+      "details": "Header: Alex Rivera"
+    },
+    {
+      "name": "Switch to chat \"Jordan Lee\"",
+      "status": "PASS",
+      "details": "Header: Jordan Lee"
+    },
+    {
+      "name": "Switch to chat \"Taylor Brooks\"",
+      "status": "PASS",
+      "details": "Header: Taylor Brooks"
+    },
+    {
+      "name": "Switch back to chat \"Alex Rivera\"",
+      "status": "PASS",
+      "details": "Header: Alex Rivera"
+    },
+    {
+      "name": "Filter pill \"Unread\" active",
+      "status": "PASS",
+      "details": "Active: Unread, Rows: 2"
+    },
+    {
+      "name": "Filter pill \"Favourites\" active",
+      "status": "PASS",
+      "details": "Active: Favourites"
+    },
+    {
+      "name": "Filter pill \"Groups\" active",
+      "status": "PASS",
+      "details": "Active: Groups"
+    },
+    {
+      "name": "Filter pill \"All\" reset",
+      "status": "PASS",
+      "details": "Active: All, Rows: 5"
+    },
+    {
+      "name": "Search for \"Taylor\"",
+      "status": "PASS",
+      "details": "Results: [\"Taylor Brooks\"]"
+    },
+    {
+      "name": "Clear search restores chat list",
+      "status": "PASS",
+      "details": "Rows count: 5"
+    },
+    {
+      "name": "Message sent with initial ACK 1 (single check)",
+      "status": "PASS",
+      "details": "Ack state: single=true, dbl=false"
+    },
+    {
+      "name": "ACK progression to ACK 3 (read receipts double check)",
+      "status": "PASS",
+      "details": "Ack state: single=false, dbl=true"
+    },
+    {
+      "name": "Chatlist menu opened",
+      "status": "PASS",
+      "details": "Items found in menu"
+    },
+    {
+      "name": "Chatlist menu closed",
+      "status": "PASS",
+      "details": "Menu dismissed"
+    },
+    {
+      "name": "Conversation menu opened",
+      "status": "PASS",
+      "details": "Items found in menu"
+    },
+    {
+      "name": "Conversation menu closed",
+      "status": "PASS",
+      "details": "Menu dismissed"
+    },
+    {
+      "name": "Attach menu opened",
+      "status": "PASS",
+      "details": "Attach options rendered"
+    },
+    {
+      "name": "Emoji panel opened",
+      "status": "PASS",
+      "details": "Emoji tabs rendered"
+    },
+    {
+      "name": "Contact Info drawer opened",
+      "status": "PASS",
+      "details": "Contact details displayed"
+    },
+    {
+      "name": "Contact Info drawer closed",
+      "status": "PASS",
+      "details": "Drawer dismissed"
+    },
+    {
+      "name": "Chat Search drawer opened",
+      "status": "PASS",
+      "details": "Search drawer displayed"
+    },
+    {
+      "name": "Chat Search drawer closed",
+      "status": "PASS",
+      "details": "Search drawer dismissed"
+    },
+    {
+      "name": "New Chat panel opened",
+      "status": "PASS",
+      "details": "New chat contact list displayed"
+    },
+    {
+      "name": "New Chat panel closed",
+      "status": "PASS",
+      "details": "Returned to chat list"
+    },
+    {
+      "name": "Rail: Status tab",
+      "status": "PASS",
+      "details": "Header: Status"
+    },
+    {
+      "name": "Rail: Channels tab",
+      "status": "PASS",
+      "details": "Header: Channels"
+    },
+    {
+      "name": "Rail: Communities tab",
+      "status": "PASS",
+      "details": "Header: Communities"
+    },
+    {
+      "name": "Rail: Calls tab",
+      "status": "PASS",
+      "details": "Header: Calls"
+    },
+    {
+      "name": "Rail: Settings tab",
+      "status": "PASS",
+      "details": "Settings options rendered"
+    },
+    {
+      "name": "Rail: Return to Chats tab",
+      "status": "PASS",
+      "details": "Chat list header active"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { LeftNavRail } from './LeftNavRail';
 import { ChatListHeader } from './ChatListHeader';
 import { ChatListPanel, ChatSummary } from './ChatListPanel';
@@ -191,12 +191,33 @@ export const ChatShell: React.FC<ChatShellProps> = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [messagesMap, setMessagesMap] = useState<Record<string, ChatMessage[]>>(NEUTRAL_MESSAGES);
 
+  const [windowWidth, setWindowWidth] = useState<number>(
+    typeof window !== 'undefined' ? window.innerWidth : 1034
+  );
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const getSideWidth = () => {
+    if (windowWidth >= 1210) {
+      return 432;
+    }
+    if (windowWidth < 700) {
+      return 336;
+    }
+    return 414;
+  };
+
   const selectedChat = chats.find((c) => c.id === selectedChatId) || chats[0];
   const activeMessages = messagesMap[selectedChatId] || [];
 
   const handleSendMessage = (text: string) => {
     const now = new Date();
     const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const targetChatId = selectedChatId;
     const newMessage: ChatMessage = {
       id: `m_${Date.now()}`,
       sender: 'me',
@@ -207,25 +228,25 @@ export const ChatShell: React.FC<ChatShellProps> = () => {
 
     setMessagesMap((prev) => ({
       ...prev,
-      [selectedChatId]: [...(prev[selectedChatId] || []), newMessage],
+      [targetChatId]: [...(prev[targetChatId] || []), newMessage],
     }));
 
     setChats((prev) =>
-      prev.map((c) => (c.id === selectedChatId ? { ...c, lastMessage: text, time: timeStr, ack: 1 } : c))
+      prev.map((c) => (c.id === targetChatId ? { ...c, lastMessage: text, time: timeStr, ack: 1 } : c))
     );
 
-    // Simulate server ACK update to READ (ack = 3) after 1.5s
+    // Simulate server ACK update to READ (ack = 3) after 800ms
     setTimeout(() => {
       setMessagesMap((prev) => ({
         ...prev,
-        [selectedChatId]: (prev[selectedChatId] || []).map((m) =>
+        [targetChatId]: (prev[targetChatId] || []).map((m) =>
           m.id === newMessage.id ? { ...m, ack: 3 } : m
         ),
       }));
       setChats((prev) =>
-        prev.map((c) => (c.id === selectedChatId ? { ...c, ack: 3 } : c))
+        prev.map((c) => (c.id === targetChatId ? { ...c, ack: 3 } : c))
       );
-    }, 1500);
+    }, 800);
   };
 
   const handleSelectMenuItem = (id: string) => {
@@ -256,81 +277,96 @@ export const ChatShell: React.FC<ChatShellProps> = () => {
           setActiveTab(tab);
           setLeftDrawer('none');
         }}
-        onOpenSettings={() => setLeftDrawer('settings')}
+        onOpenSettings={() => {
+          setActiveTab('chats');
+          setLeftDrawer('settings');
+        }}
       />
 
-      {/* Column 2: Secondary Rail Screen OR Chat List Column (width: 414px) */}
-      {activeTab === 'status' ? (
-        <StatusPanel />
-      ) : activeTab === 'channels' ? (
-        <ChannelsPanel />
-      ) : activeTab === 'communities' ? (
-        <CommunitiesPanel />
-      ) : activeTab === 'calls' ? (
-        <CallsPanel />
-      ) : leftDrawer === 'newchat' ? (
-        <NewChatPanel
-          onClose={() => setLeftDrawer('none')}
-          onSelectContact={(c) => {
-            if (!chats.some((item) => item.id === c.id)) {
-              setChats([c, ...chats]);
-            }
-            setSelectedChatId(c.id);
-            setLeftDrawer('none');
-          }}
-        />
-      ) : leftDrawer === 'archived' ? (
-        <ArchivedChatsPanel
-          onClose={() => setLeftDrawer('none')}
-          onSelectChat={(id) => {
-            setSelectedChatId(id);
-            setLeftDrawer('none');
-          }}
-        />
-      ) : leftDrawer === 'starred' ? (
-        <StarredMessagesPanel onClose={() => setLeftDrawer('none')} />
-      ) : leftDrawer === 'settings' ? (
-        <SettingsPanel
-          onClose={() => setLeftDrawer('none')}
-          onOpenProfile={() => setLeftDrawer('profile')}
-        />
-      ) : leftDrawer === 'profile' ? (
-        <ProfilePanel onClose={() => setLeftDrawer('settings')} />
-      ) : (
-        <div
-          className="x9f619 x1n2onr6 x5yr21d x17dzmu4 x1i1dayz x2ipvbc xjdofhw x78zum5 xdt5ytf x12xzxwr x1plvlek xryxfnj x570efc x18dvir5 xxljpkc x18pi947 xck4lzl x1gluznb xahwd2o x10fiusa x1a0bplq xc995h1"
-          style={{
-            width: '414px',
-            flexShrink: 0,
-            height: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            position: 'relative',
-          }}
-        >
-          <ChatListHeader
-            onNewChat={() => setLeftDrawer('newchat')}
-            onOpenMenu={() => setIsChatListMenuOpen(true)}
+      {/* Column 2: Secondary Rail Screen OR Chat List Column */}
+      <div
+        id="side_column"
+        className="x9f619 x1n2onr6 x5yr21d x17dzmu4 x1i1dayz x2ipvbc xjdofhw x78zum5 xdt5ytf x12xzxwr x1plvlek xryxfnj x570efc x18dvir5 xxljpkc x18pi947 xck4lzl x1gluznb xahwd2o x10fiusa x1a0bplq xc995h1"
+        style={{
+          width: `${getSideWidth()}px`,
+          flexShrink: 0,
+          flexGrow: 0,
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          position: 'relative',
+        }}
+      >
+        {activeTab === 'status' ? (
+          <StatusPanel />
+        ) : activeTab === 'channels' ? (
+          <ChannelsPanel />
+        ) : activeTab === 'communities' ? (
+          <CommunitiesPanel />
+        ) : activeTab === 'calls' ? (
+          <CallsPanel />
+        ) : leftDrawer === 'newchat' ? (
+          <NewChatPanel
+            onClose={() => setLeftDrawer('none')}
+            onSelectContact={(c) => {
+              if (!chats.some((item) => item.id === c.id)) {
+                setChats([c, ...chats]);
+              }
+              setSelectedChatId(c.id);
+              setLeftDrawer('none');
+            }}
           />
-          <MenuDropdown
-            isOpen={isChatListMenuOpen}
-            onClose={() => setIsChatListMenuOpen(false)}
-            items={CHATLIST_MENU_ITEMS}
-            onSelectItem={handleSelectMenuItem}
-            top="54px"
-            left="180px"
+        ) : leftDrawer === 'archived' ? (
+          <ArchivedChatsPanel
+            onClose={() => setLeftDrawer('none')}
+            onSelectChat={(id) => {
+              setSelectedChatId(id);
+              setLeftDrawer('none');
+            }}
           />
-          <ChatListPanel
-            chats={chats}
-            selectedChatId={selectedChatId}
-            onSelectChat={setSelectedChatId}
-            filter={filter}
-            onFilterChange={setFilter}
-            searchQuery={searchQuery}
-            onSearchChange={setSearchQuery}
+        ) : leftDrawer === 'starred' ? (
+          <StarredMessagesPanel onClose={() => setLeftDrawer('none')} />
+        ) : leftDrawer === 'settings' ? (
+          <SettingsPanel
+            onClose={() => setLeftDrawer('none')}
+            onOpenProfile={() => setLeftDrawer('profile')}
           />
-        </div>
-      )}
+        ) : leftDrawer === 'profile' ? (
+          <ProfilePanel onClose={() => setLeftDrawer('settings')} />
+        ) : (
+          <div
+            style={{
+              width: '100%',
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              position: 'relative',
+            }}
+          >
+            <ChatListHeader
+              onNewChat={() => setLeftDrawer('newchat')}
+              onOpenMenu={() => setIsChatListMenuOpen(true)}
+            />
+            <MenuDropdown
+              isOpen={isChatListMenuOpen}
+              onClose={() => setIsChatListMenuOpen(false)}
+              items={CHATLIST_MENU_ITEMS}
+              onSelectItem={handleSelectMenuItem}
+              top="54px"
+              left="180px"
+            />
+            <ChatListPanel
+              chats={chats}
+              selectedChatId={selectedChatId}
+              onSelectChat={setSelectedChatId}
+              filter={filter}
+              onFilterChange={setFilter}
+              searchQuery={searchQuery}
+              onSearchChange={setSearchQuery}
+            />
+          </div>
+        )}
+      </div>
 
       {/* Column 3: Active Conversation Column (flex: 1 1 0; min-width: 0;) */}
       <div

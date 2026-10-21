@@ -200,6 +200,44 @@ export const ChatShell: React.FC<ChatShellProps> = () => {
   );
 
   useEffect(() => {
+    const applyUrlParams = () => {
+      if (typeof window === 'undefined') return;
+      const params = new URLSearchParams(window.location.search);
+      const tab = params.get('tab');
+      if (tab === 'calls' || tab === 'status' || tab === 'channels' || tab === 'communities' || tab === 'chats') {
+        setActiveTab(tab);
+      }
+      const drawer = params.get('drawer');
+      if (drawer === 'newchat' || drawer === 'archived' || drawer === 'starred' || drawer === 'settings' || drawer === 'profile' || drawer === 'none') {
+        setLeftDrawer(drawer as any);
+      }
+      const right = params.get('right');
+      if (right === 'contact_info' || right === 'chat_search' || right === 'none') {
+        setRightDrawer(right as any);
+      }
+      const chat = params.get('chat');
+      if (chat) {
+        setSelectedChatId(chat);
+      }
+      if (params.get('attach') === 'true') {
+        setIsAttachOpen(true);
+      }
+      if (params.get('emoji') === 'true') {
+        setIsEmojiOpen(true);
+      }
+      if (params.get('menu') === 'chatlist') {
+        setIsChatListMenuOpen(true);
+      }
+      if (params.get('menu') === 'chat') {
+        setIsChatMenuOpen(true);
+      }
+    };
+    applyUrlParams();
+    window.addEventListener('popstate', applyUrlParams);
+    return () => window.removeEventListener('popstate', applyUrlParams);
+  }, []);
+
+  useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);

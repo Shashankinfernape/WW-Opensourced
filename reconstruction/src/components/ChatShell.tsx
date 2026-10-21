@@ -35,6 +35,7 @@ const NEUTRAL_CHATS: ChatSummary[] = [
     time: '11:42 AM',
     unreadCount: 0,
     isOnline: true,
+    isPinned: true,
     ack: 3,
   },
   {
@@ -45,6 +46,7 @@ const NEUTRAL_CHATS: ChatSummary[] = [
     lastMessage: 'Voice message (0:18)',
     time: '10:15 AM',
     unreadCount: 1,
+    isMuted: true,
     ack: 3,
   },
   {
@@ -63,6 +65,7 @@ const NEUTRAL_CHATS: ChatSummary[] = [
     color: '#d9534f',
     lastMessage: 'See you on Monday morning.',
     time: 'Tuesday',
+    draft: 'Drafting notes for Monday',
     ack: 1,
   },
 ];

@@ -11,6 +11,10 @@ export interface ChatSummary {
   unreadCount?: number;
   isOnline?: boolean;
   ack?: 0 | 1 | 2 | 3;
+  isPinned?: boolean;
+  isMuted?: boolean;
+  isTyping?: boolean;
+  draft?: string;
 }
 
 interface ChatListPanelProps {
@@ -511,7 +515,7 @@ export const ChatListPanel: React.FC<ChatListPanelProps> = ({
                             </div>
                           </div>
 
-                          {/* Secondary line: preview + ack ticks + unread badge */}
+                          {/* Secondary line: preview / typing / draft + ack ticks + unread badge + muted/pinned */}
                           <div
                             data-testid="cell-frame-secondary"
                             className="x6s0dn4 x78zum5 x1nxh6w3 x1fc57z9 xr9ek0c xisnujt xhslqc4 x1fcty0u"
@@ -521,55 +525,81 @@ export const ChatListPanel: React.FC<ChatListPanelProps> = ({
                               className="xjbqb8w x1iyjqo2 x1f6kntn x1fc57z9 x6ikm8r x10wlt62 x1yc453h xlyipyv xuxw1ft xo1l8bm"
                               style={{ display: 'flex', alignItems: 'center', gap: '4px', overflow: 'hidden' }}
                             >
-                              {chat.ack != null && (
-                                  <span style={{ display: 'inline-flex', alignItems: 'center', flexShrink: 0 }}>
-                                    {chat.ack === 3 ? (
-                                      <Icon name="wds-ic-read" size={18} color="var(--icon-ack, #53bdeb)" />
-                                    ) : chat.ack === 2 ? (
-                                      <Icon name="wds-ic-read" size={18} color="var(--bubble-meta, rgba(233, 237, 239, 0.6))" />
-                                    ) : (
-                                      <Icon name="msg-check" size={18} color="var(--bubble-meta, rgba(233, 237, 239, 0.6))" />
-                                    )}
+                              {chat.isTyping ? (
+                                <span style={{ fontSize: '14px', color: '#00a884', fontWeight: 500 }}>
+                                  typing...
+                                </span>
+                              ) : chat.draft ? (
+                                <span style={{ fontSize: '14px', color: 'var(--secondary, #8696a0)' }}>
+                                  <span style={{ color: '#00a884', fontWeight: 500 }}>Draft: </span>
+                                  {chat.draft}
+                                </span>
+                              ) : (
+                                <>
+                                  {chat.ack != null && (
+                                    <span style={{ display: 'inline-flex', alignItems: 'center', flexShrink: 0 }}>
+                                      {chat.ack === 3 ? (
+                                        <Icon name="wds-ic-read" size={18} color="var(--icon-ack, #53bdeb)" />
+                                      ) : chat.ack === 2 ? (
+                                        <Icon name="wds-ic-read" size={18} color="var(--bubble-meta, rgba(233, 237, 239, 0.6))" />
+                                      ) : (
+                                        <Icon name="msg-check" size={18} color="var(--bubble-meta, rgba(233, 237, 239, 0.6))" />
+                                      )}
+                                    </span>
+                                  )}
+                                  <span
+                                    data-testid="last-msg-status"
+                                    className="x78zum5 x1cy8zhl"
+                                    style={{
+                                      fontSize: '14px',
+                                      color: 'var(--secondary, #8696a0)',
+                                      overflow: 'hidden',
+                                      textOverflow: 'ellipsis',
+                                      whiteSpace: 'nowrap',
+                                    }}
+                                  >
+                                    {chat.lastMessage}
                                   </span>
+                                </>
                               )}
-                              <span
-                                data-testid="last-msg-status"
-                                className="x78zum5 x1cy8zhl"
-                                style={{
-                                  fontSize: '14px',
-                                  color: 'var(--secondary, #8696a0)',
-                                  overflow: 'hidden',
-                                  textOverflow: 'ellipsis',
-                                  whiteSpace: 'nowrap',
-                                }}
-                              >
-                                {chat.lastMessage}
-                              </span>
                             </div>
 
-                            {Boolean(chat.unreadCount && chat.unreadCount > 0) && (
-                              <div
-                                role="gridcell"
-                                aria-colindex={1}
-                                className="xhslqc4 x1c4vz4f x2lah0s x1pg5gke x1fc57z9 xdzw4kq x193iq5w"
-                                style={{ flexShrink: 0, marginLeft: '6px' }}
-                              >
-                                <span
-                                  data-testid="icon-unread-count"
-                                  className="x1rg5ohu x1gxa6cn x1j8ymqv xa0aww2 x4tra6z x1pse0pq x16dsc37 xlup9mm x15kz4h8 x2b8uid xt8t1vi x1xc408v x129tdwq x15urzxu xyp3urf"
-                                  style={{
-                                    backgroundColor: '#00a884',
-                                    color: '#111b21',
-                                    borderRadius: '10px',
-                                    padding: '1px 6px',
-                                    fontSize: '12px',
-                                    fontWeight: 600,
-                                  }}
-                                >
-                                  {chat.unreadCount}
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexShrink: 0 }}>
+                              {chat.isMuted && (
+                                <span title="Muted" style={{ display: 'inline-flex', color: 'var(--secondary, #8696a0)' }}>
+                                  <Icon name="ic-notifications-off" size={16} />
                                 </span>
-                              </div>
-                            )}
+                              )}
+                              {chat.isPinned && (
+                                <span title="Pinned chat" style={{ display: 'inline-flex', color: 'var(--secondary, #8696a0)' }}>
+                                  <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+                                    <path d="M4.5 2a.5.5 0 0 0-.5.5v2.879a1.5 1.5 0 0 1-.44 1.06L2.354 7.646a.5.5 0 0 0 .353.854H7v5.5a.5.5 0 0 0 1 0V8.5h4.293a.5.5 0 0 0 .353-.854L11.44 6.44a1.5 1.5 0 0 1-.44-1.06V2.5a.5.5 0 0 0-.5-.5h-6z"/>
+                                  </svg>
+                                </span>
+                              )}
+                              {Boolean(chat.unreadCount && chat.unreadCount > 0) && (
+                                <div
+                                  role="gridcell"
+                                  aria-colindex={1}
+                                  className="xhslqc4 x1c4vz4f x2lah0s x1pg5gke x1fc57z9 xdzw4kq x193iq5w"
+                                >
+                                  <span
+                                    data-testid="icon-unread-count"
+                                    className="x1rg5ohu x1gxa6cn x1j8ymqv xa0aww2 x4tra6z x1pse0pq x16dsc37 xlup9mm x15kz4h8 x2b8uid xt8t1vi x1xc408v x129tdwq x15urzxu xyp3urf"
+                                    style={{
+                                      backgroundColor: '#00a884',
+                                      color: '#111b21',
+                                      borderRadius: '10px',
+                                      padding: '1px 6px',
+                                      fontSize: '12px',
+                                      fontWeight: 600,
+                                    }}
+                                  >
+                                    {chat.unreadCount}
+                                  </span>
+                                </div>
+                              )}
+                            </div>
                           </div>
                         </div>
                       </div>

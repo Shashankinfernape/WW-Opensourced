@@ -48,13 +48,15 @@ export const Icon: React.FC<IconProps> = ({
     if (Array.isArray(iconDef.paths)) {
       return iconDef.paths.map((p, idx) => {
         if (typeof p === 'string') {
-          return <path key={idx} d={p} fill={color} />;
+          return <path key={idx} d={p} fill={color} fillRule="evenodd" clipRule="evenodd" />;
         }
         return (
           <path
             key={idx}
             d={p.d}
             fill={p.fill === 'currentColor' || !p.fill ? color : p.fill}
+            fillRule="evenodd"
+            clipRule="evenodd"
             className={p.className}
           />
         );
@@ -62,7 +64,7 @@ export const Icon: React.FC<IconProps> = ({
     }
 
     if (iconDef.path) {
-      return <path d={iconDef.path} fill={color} />;
+      return <path d={iconDef.path} fill={color} fillRule="evenodd" clipRule="evenodd" />;
     }
 
     return null;

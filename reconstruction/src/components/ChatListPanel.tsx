@@ -313,51 +313,6 @@ export const ChatListPanel: React.FC<ChatListPanelProps> = ({
         className="x1n2onr6 x1vjfegm x78zum5 xdt5ytf x1iyjqo2 x1odjw0f x1280gxy"
         style={{ flex: 1, overflowY: 'auto' }}
       >
-        {/* Archived Row */}
-        <button
-          className="xjb2p0i xk390pu x1heor9g x1ypdohk xjbqb8w x972fbf x10w94by x1qhh985 x14e42zd x1fmog5m xu25z0z x140muxe xo1y3bh xexx8yu xyri2b x18d9i69 x1c1uobl x2lah0s xav9cv8 x4tpdpg x1lziwak x14z9mp xtnn1bt x9v5kkp xmw7ebm xrdum7p"
-          tabIndex={0}
-          data-tab="4"
-          data-testid="chatlist-panel-archived-button"
-          aria-disabled="false"
-          type="button"
-          aria-label="Archived "
-          onClick={onOpenArchived}
-        >
-          <div data-testid="cell-frame-container" className="xlr9sxt xvvg52n xwd4zgb xq8v1ta x78zum5 x1q0g3np x1hm9lzh x1sa5p1d x71s49j x1n2onr6 xjbqb8w x3ffywh x1ubxc9n">
-            <div className="x78zum5">
-              <div className="x6s0dn4 x78zum5 x1c4vz4f x2lah0s xdj266r xexx8yu x18d9i69 x1q3ajuy xbmws1g">
-                <div className="x1c4vz4f xs83m0k xdl72j9 x1g77sc7 x78zum5 xozqiw3 x1oa3qoh x12fk4p8 xeuugli x2lwn1j xl56j7k x1q0g3np x6s0dn4 x1g3ev5e x3ffywh xhslqc4">
-                  <span aria-hidden="true">
-                    <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" className="" fill="currentColor">
-                      <title>ic-archive</title>
-                      <path fill="currentColor" d="M5 21c-.55 0-1.02-.2-1.41-.59-.4-.39-.59-.86-.59-1.41V6.5c0-.25.04-.47.13-.67.08-.2.19-.4.32-.58l1.4-1.7c.13-.18.3-.32.5-.41.2-.1.42-.14.65-.14h12c.23 0 .45.05.65.14.2.09.37.23.5.41l1.4 1.7c.13.18.24.38.32.58.09.2.13.42.13.67V19c0 .55-.2 1.02-.59 1.41-.39.4-.86.59-1.41.59H5Zm.4-15h13.2l-.85-1H6.25L5.4 6ZM5 19h14V8H5v11Zm7-1.43c.13 0 .26-.02.38-.06a.88.88 0 0 0 .32-.21l2.6-2.6a.95.95 0 0 0 .27-.7.96.96 0 0 0-.27-.7.95.95 0 0 0-.7-.28c-.28 0-.52.1-.7.28l-.9.9V11c0-.28-.1-.52-.29-.71A.97.97 0 0 0 12 10c-.28 0-.52.1-.71.29A.94.94 0 0 0 11 11v3.2l-.9-.9a.95.95 0 0 0-.7-.28.95.95 0 0 0-.97.97c0 .3.09.53.27.71l2.6 2.6c.1.1.2.17.32.21.12.04.25.06.38.06Z" />
-                    </svg>
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="x78zum5 xdl72j9 xdt5ytf x1iyjqo2 xl56j7k xeuugli x1n1b19v">
-              <div role="group" className="x6s0dn4 x78zum5 xggjnk3 x1yc453h">
-                <div data-testid="cell-frame-title" className="x14ug900 x78zum5 x1iyjqo2 x1jchvi3 xdod15v x6ikm8r x10wlt62 x1mzt3pk x1yc453h xo1l8bm">
-                  <span
-                    className="x140p0ai x1gufx9m x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x193iq5w xeuugli x13faqbe x1vvkbs x1lliihq x1fj9vlw xhslqc4 x1hx0egp x1jchvi3 xjb2p0i xo1l8bm x17mssa0 x1ic7a3i"
-                    style={{
-                      ['--x-fontSize' as any]: '16px',
-                      ['--x-lineHeight' as any]: '11.375px',
-                      ['--x-8dd7yt' as any]: '-0.0137em',
-                      ['--x-hxtmnb' as any]: '0.0137em',
-                    }}
-                  >
-                    Archived
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="xl56j7k xeuugli x6s0dn4 xamitd3 x9f619 x78zum5 xdl72j9 x1c4vz4f x2lah0s x5yr21d x1hwfens x1q0g3np" />
-          </div>
-        </button>
-
         {/* Chat List Virtual Grid */}
         <div data-testid="chat-list" tabIndex={-1}>
           <div

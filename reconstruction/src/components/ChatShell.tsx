@@ -20,6 +20,7 @@ import { ProfilePanel } from './ProfilePanel';
 import { ArchivedChatsPanel } from './ArchivedChatsPanel';
 import { StarredMessagesPanel } from './StarredMessagesPanel';
 import { IntroPanel } from './IntroPanel';
+import { MiddleDrawerEmptyState } from './MiddleDrawerEmptyState';
 
 interface ChatShellProps {
   onBackToLogin?: () => void;
@@ -29,45 +30,97 @@ interface ChatShellProps {
 const NEUTRAL_CHATS: ChatSummary[] = [
   {
     id: 'chat_1',
-    name: 'Alex Rivera',
-    initial: 'A',
+    name: 'JDX',
+    initial: 'J',
     color: '#00a884',
-    lastMessage: 'Great, see you then!',
-    time: '11:42 AM',
+    lastMessage: 'Sticker',
+    time: '3:10 am',
     unreadCount: 0,
-    isOnline: true,
     isPinned: true,
     ack: 3,
   },
   {
     id: 'chat_2',
-    name: 'Jordan Lee',
-    initial: 'J',
+    name: 'Kong',
+    initial: 'K',
     color: '#1f7a8c',
-    lastMessage: 'Voice message (0:18)',
-    time: '10:15 AM',
-    unreadCount: 1,
-    isMuted: true,
+    lastMessage: 'Sticker',
+    time: '12:16 am',
+    unreadCount: 0,
     ack: 3,
   },
   {
     id: 'chat_3',
-    name: 'Taylor Brooks',
-    initial: 'T',
+    name: 'Marvadi Association pvt Ltd',
+    initial: 'M',
     color: '#6b5b95',
-    lastMessage: 'Quarterly_Report_2026.pdf',
-    time: 'Yesterday',
+    lastMessage: 'Sunil: Sticker',
+    time: 'yesterday',
     ack: 2,
   },
   {
     id: 'chat_4',
-    name: 'Morgan Smith',
-    initial: 'M',
+    name: 'Vicky',
+    initial: 'V',
     color: '#d9534f',
-    lastMessage: 'See you on Monday morning.',
-    time: 'Tuesday',
-    draft: 'Drafting notes for Monday',
+    lastMessage: 'Sticker',
+    time: 'yesterday',
     ack: 1,
+  },
+  {
+    id: 'chat_5',
+    name: 'Tamil arasan Tamil',
+    initial: 'T',
+    color: '#25d366',
+    lastMessage: 'Macha',
+    time: 'yesterday',
+    ack: 3,
+  },
+  {
+    id: 'chat_6',
+    name: 'MöM',
+    initial: 'M',
+    color: '#e67e22',
+    lastMessage: 'https://youtube.com/shorts/4LL1VWu9bQY',
+    time: 'yesterday',
+    ack: 3,
+  },
+  {
+    id: 'chat_7',
+    name: 'CSE B',
+    initial: 'C',
+    color: '#3498db',
+    lastMessage: 'Anusuya Mam: Tomorrow is the last date for NM record sign...',
+    time: 'yesterday',
+    unreadCount: 2,
+    ack: 2,
+  },
+  {
+    id: 'chat_8',
+    name: 'FINAL YEAR CSE B (2023-2027)',
+    initial: 'F',
+    color: '#9b59b6',
+    lastMessage: 'Dear students... Those who completed the dues...',
+    time: 'yesterday',
+    ack: 2,
+  },
+  {
+    id: 'chat_9',
+    name: 'Infernapeshashank (You)',
+    initial: 'I',
+    color: '#1abc9c',
+    lastMessage: 'AnyDesk.apk',
+    time: 'yesterday',
+    ack: 3,
+  },
+  {
+    id: 'chat_10',
+    name: 'Aishu Akka',
+    initial: 'A',
+    color: '#e74c3c',
+    lastMessage: 'Tq ra',
+    time: 'tuesday',
+    ack: 3,
   },
 ];
 
@@ -410,6 +463,7 @@ export const ChatShell: React.FC<ChatShellProps> = () => {
               onFilterChange={setFilter}
               searchQuery={searchQuery}
               onSearchChange={setSearchQuery}
+              onOpenArchived={() => setLeftDrawer('archived')}
             />
           </div>
         )}
@@ -493,6 +547,8 @@ export const ChatShell: React.FC<ChatShellProps> = () => {
               onEmojiClick={() => setIsEmojiOpen(!isEmojiOpen)}
             />
           </div>
+        ) : (activeTab === 'status' || activeTab === 'channels' || activeTab === 'communities') ? (
+          <MiddleDrawerEmptyState type={activeTab} />
         ) : (
           <IntroPanel
             onGoToCalls={() => {

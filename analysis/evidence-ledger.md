@@ -1,138 +1,396 @@
-# WhatsApp Web Reconstruction — Cryptographic Evidence Ledger
+# REA Decompiled Evidence & Structural Truth Ledger
 
-This ledger records the SHA-256 digests and provenance of all target artifacts, extracted ground-truth specs, decompiled source chunks, reconstructed components, and verification diff artifacts.
+## Native REA Module Inspection Evidence IDs (rea inspect-analysis-view)
 
-Every entry is tagged:
-- **[DIRECT]**: Read verbatim from evidence on disk (source file & line/offset verified).
-- **[INFERRED]**: Derived from runtime/AST evidence logic.
-- **[APPROXIMATE]**: Fallback approximation (none allowed in final build).
-
----
-
-## 1. Asset & Specification Ledger
-
-| Provenance Tag | Category | File Path | SHA-256 Digest | Source Reference & Description |
-| :--- | :--- | :--- | :--- | :--- |
-| **[DIRECT]** | **Chat Doodle Wallpaper Vector** | `target_artifacts/whatsapp-web/assets/doodle.svg` | `03fa80f7734829f2b455633163a38f7f4222b87c3b2473bce83f3b2784539b98` | Resource `89515` from `https://static.whatsapp.net/rsrc.php/yx/r/voSdkk88H7C.svg`. Mask size constants: `540px 960px` (std), `412.5px 749.25px` (2dppx) from `chunk_17` module 98. |
-| **[DIRECT]** | **Meta AI Multi-Colored Ring Bitmap** | `target_artifacts/whatsapp-web/assets/meta-ai-ring.webp` | `920b63086387c92d1cdfbe7d5170ec9789ce301ab1c2d0e7da7102d0b5e3df2e` | Resource `88729` from `https://static.whatsapp.net/rsrc.php/yS/r/T_xj3a3ApC9.webp` resolved in manifest at `live-dom-rendered.html:386715`. Used by `WAWebMetaAIIcon.react` via `bx("88729")`. |
-| **[DIRECT]** | **Live Rendered DOM Capture** | `captures/live-dom-rendered.html` | `dcff4f48329a8dc7ac723bf80ab0930e66585d1c96cd3c04fbadd4e062bd26e5` | Evaluated directly via CDP (`Runtime.evaluate` of `document.documentElement.outerHTML`) on live WhatsApp Web target `2D0E840D62F22130552887F93BEDABE9`. Contains Meta `bx` resource map. |
-| **[DIRECT]** | **Target Production Stylesheet** | `target_artifacts/whatsapp-web/css/production.css` | `ff9d4e6dbc21fbdd5f8434562dc4bfb1c83fa35b650b658dd1c9f8553fffaa13` | Captured WhatsApp Web production stylesheet (1.45 MB from `static.whatsapp.net`). |
-| **[DIRECT]** | **Target Live Screenshot Artifact** | `target_artifacts/whatsapp-web/live-screenshot-artifact.json` | `c405866b9cb2a6ce8f2ff362dde738c52222300052f34be64840d75849965e43` | Extracted live viewport PNG artifact JSON from CDP capture. |
-| **[DIRECT]** | **Target Live Page Capture** | `target_artifacts/whatsapp-web/page-capture.json` | `2d4163179b9d9a9e32a5d8f91b499f18aa19dca6861e62937762f131384a9dde` | Full DOM, accessibility tree, and 26 V8 script sources capture (`ev_6be7f038...`). |
-| **[DIRECT]** | **Extracted CSS Tokens** | `analysis/css-tokens.json` | `fe879247b277835dc72e6ba227928c53e8eae1a711d7b6943ca4fa0f8ca48ea2` | 3,208 CSS custom properties extracted from `production.css`. |
-| **[DIRECT]** | **Extracted SVG Icons** | `analysis/svg-icons.json` | `bdbbf01f1279f28f387ddd928bbf251fa86ecc72f013a77762021507a3d8a856` | 27 verified AST SVG vector paths and viewBoxes directly extracted from recovered modules (`WAWebWrapperTailIcon.react`, `WDSIconWdsIcDelivered.react`, `WDSIconWdsIcRead.react`, `WDSIconIcCheck.react`, and WDS Nav Icons). |
-| **[DIRECT]** | **Bubble Grouping Rules** | `analysis/bubble-grouping-rules.md` | `0c67e0a4618653d3b050004943abfc1207440ce81bad52e5f5a5f34eae52a974` | Message clustering, directional tails, and boundary rules from `chunk_17`. |
-| **[DIRECT]** | **Tick State Machine** | `analysis/tick-state-machine.md` | `4def2caa39513ab5e2307ea7c93c43030d73b4c96ed8871c1884c3db1689dc78` | ACK progression logic (CLOCK: 0, SENT: 1, RECEIVED: 2, READ: 3) from `chunk_10` & `chunk_19`. |
-| **[DIRECT]** | **Layout Geometry Specifications** | `analysis/layout-geometry.md` | `97cbbb01cd4a77cab13b6073f897a5b7512221333cb23051dd18a1acdc5cbf74` | 3-column layout constants (`NAVBAR_WIDTH = 64px`, `MIN_CHATLIST = 265px`, `MAX = 380px`, `MIN_CONVERSATION = 600px`) from `WAWebAdaptiveLayoutConfig` in `chunk_10#L262865`. |
-
-### 1.1 Ground-Truth SVG Icons (Step 2 Artifacts)
-
-| Provenance Tag | Icon Name | Module Name | Source Chunk & Line | ViewBox | SHA-256 of Source File |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **[DIRECT]** | `tail-in` | `WAWebWrapperTailIcon.react` | `chunk_17_7Tf0qWLsuo3__bundle.js#L56376` | `0 0 8 13` | `393994f1f94d57993831741265b91e24ad2632f96180ab7a7234d704eafa1b15` |
-| **[DIRECT]** | `tail-out` | `WAWebWrapperTailIcon.react` | `chunk_17_7Tf0qWLsuo3__bundle.js#L56376` | `0 0 8 13` | `393994f1f94d57993831741265b91e24ad2632f96180ab7a7234d704eafa1b15` |
-| **[DIRECT]** | `msg-check` | `WDSIconWdsIcDelivered.react` | `chunk_05_Sp7m9vtWcB2__bundle.js#L12847` | `0 0 24 24` | `421691f7f1ee34cb6ed9c08be07d403edc7adac1804e8c66a5c8f59501583e40` |
-| **[DIRECT]** | `msg-dblcheck` | `WDSIconWdsIcRead.react` | `chunk_05_Sp7m9vtWcB2__bundle.js#L12855` | `0 0 24 24` | `421691f7f1ee34cb6ed9c08be07d403edc7adac1804e8c66a5c8f59501583e40` |
-| **[DIRECT]** | `msg-check-single` | `WDSIconIcCheck.react` | `chunk_20_source-20-c0413ff55b8f39805b2d620ec891eb__bundle.js#L37560` | `0 0 24 24` | `a681532e9c12deaad841d8d8898a10ea73bb65edfd30523f434d8aa9cbb66366` |
-| **[DIRECT]** | `nav-chats` | `WDSIconWdsIcChat.react` | `chunk_09_source-9-122c3e652dc14fd507309af34868b6f__bundle.js#L5139` | `0 0 24 24` | `fd9077e58385e4325f1d57554695c748d2c375bc459e282e6e46fbd90b9f4510` |
-| **[DIRECT]** | `nav-chats-filled` | `WDSIconWdsIcChatFilled.react` | `chunk_26_source-26-d9b5cb7fdfe11a88b2d9ce3c290436__bundle.js#L24681` | `0 0 24 24` | `99990e3eeac712b0c0b8c584390d68628642387e05e166faa00f5d9022d8d6af` |
-| **[DIRECT]** | `nav-status` | `WDSIconWdsIcStatus.react` | `chunk_26_source-26-d9b5cb7fdfe11a88b2d9ce3c290436__bundle.js#L221479` | `0 0 24 24` | `99990e3eeac712b0c0b8c584390d68628642387e05e166faa00f5d9022d8d6af` |
-| **[DIRECT]** | `nav-status-filled` | `WDSIconWdsIcStatusFilled.react` | `chunk_09_source-9-122c3e652dc14fd507309af34868b6f__bundle.js#L108063` | `0 0 24 24` | `fd9077e58385e4325f1d57554695c748d2c375bc459e282e6e46fbd90b9f4510` |
-| **[DIRECT]** | `nav-channels` | `WDSIconWdsIcChannels.react` | `chunk_26_source-26-d9b5cb7fdfe11a88b2d9ce3c290436__bundle.js#L202075` | `0 0 24 24` | `99990e3eeac712b0c0b8c584390d68628642387e05e166faa00f5d9022d8d6af` |
-| **[DIRECT]** | `nav-channels-filled` | `WDSIconWdsIcChannelsFilled.react` | `chunk_09_source-9-122c3e652dc14fd507309af34868b6f__bundle.js#L95666` | `0 0 24 24` | `fd9077e58385e4325f1d57554695c748d2c375bc459e282e6e46fbd90b9f4510` |
-| **[DIRECT]** | `nav-communities` | `WDSIconWdsIcCommunities.react` | `chunk_26_source-26-d9b5cb7fdfe11a88b2d9ce3c290436__bundle.js#L221461` | `0 0 24 24` | `99990e3eeac712b0c0b8c584390d68628642387e05e166faa00f5d9022d8d6af` |
-| **[DIRECT]** | `nav-communities-filled` | `WDSIconWdsIcCommunitiesFilled.react` | `chunk_09_source-9-122c3e652dc14fd507309af34868b6f__bundle.js#L95684` | `0 0 24 24` | `fd9077e58385e4325f1d57554695c748d2c375bc459e282e6e46fbd90b9f4510` |
-| **[DIRECT]** | `nav-archived` | `WDSIconIcArchive.react` | `chunk_09_source-9-122c3e652dc14fd507309af34868b6f__bundle.js#L60967` | `0 0 24 24` | `fd9077e58385e4325f1d57554695c748d2c375bc459e282e6e46fbd90b9f4510` |
-| **[DIRECT]** | `nav-archived-filled` | `WDSIconIcArchiveFilled.react` | `chunk_10_3nzqNpHbcmc__bundle.js#L40830` | `0 -960 960 960` | `c9ee467ef768fb5f80a5a03409c54e665ab9b1f42fe8c1ed81e140646f5870de` |
-| **[DIRECT]** | `nav-settings` | `WDSIconIcSettings.react` | `chunk_20_source-20-c0413ff55b8f39805b2d620ec891eb__bundle.js#L6370` | `0 0 24 24` | `a681532e9c12deaad841d8d8898a10ea73bb65edfd30523f434d8aa9cbb66366` |
-| **[DIRECT]** | `nav-settings-filled` | `WDSIconIcSettingsFilled.react` | `chunk_09_source-9-122c3e652dc14fd507309af34868b6f__bundle.js#L108055` | `0 0 24 24` | `fd9077e58385e4325f1d57554695c748d2c375bc459e282e6e46fbd90b9f4510` |
-| **[DIRECT]** | `nav-calls` | `WDSIconIcCall.react` | `chunk_02_source-2-60d621455d3fd13631142757928dac4__bundle.js#L6249` (Byte offset `233992`) | `0 0 24 24` | `83eaae608112d7b539bfb1b70211756cf8544cb482ce385b2e9871578e0dbf80` |
-| **[DIRECT]** | `nav-calls-filled` | `WDSIconIcCallFilled.react` | `chunk_20_source-20-c0413ff55b8f39805b2d620ec891eb__bundle.js#L6354` (Byte offset `239781`) | `0 0 24 24` | `a681532e9c12deaad841d8d8898a10ea73bb65edfd30523f434d8aa9cbb66366` |
-| **[DIRECT]** | `nav-meta-ai` | `WDSIconWdsIcLogoMetaAi.react` | `chunk_04_source-4-796019e71d254ebef877276fc670825__bundle.js#L154674` (Byte offset `5490362`) | `0 0 24 24` | `784d5df65d13149a4e09f44f91e9fbf246d8cf4b3dc05e0455db114dca216149` |
-| **[DIRECT]** | `chat-new` | `WDSIconWdsIcNewChat.react` | `chunk_10_3nzqNpHbcmc__bundle.js#L13360` | `0 0 24 24` | `c9ee467ef768fb5f80a5a03409c54e665ab9b1f42fe8c1ed81e140646f5870de` |
-| **[DIRECT]** | `search` | `WDSIconIcSearch.react` | `chunk_09_source-9-122c3e652dc14fd507309af34868b6f__bundle.js#L52068` | `0 0 24 24` | `fd9077e58385e4325f1d57554695c748d2c375bc459e282e6e46fbd90b9f4510` |
-| **[DIRECT]** | `filter` | `WDSIconIcFilter.react` | `chunk_26_source-26-d9b5cb7fdfe11a88b2d9ce3c290436__bundle.js#L158713` | `0 0 24 24` | `99990e3eeac712b0c0b8c584390d68628642387e05e166faa00f5d9022d8d6af` |
-| **[DIRECT]** | `menu` | `WDSIconIcMoreVert.react` | `chunk_20_source-20-c0413ff55b8f39805b2d620ec891eb__bundle.js#L7820` | `0 0 24 24` | `a681532e9c12deaad841d8d8898a10ea73bb65edfd30523f434d8aa9cbb66366` |
-| **[DIRECT]** | `attach` | `WDSIconIcAttachFile.react` | `chunk_26_source-26-d9b5cb7fdfe11a88b2d9ce3c290436__bundle.js#L137078` | `0 0 24 24` | `99990e3eeac712b0c0b8c584390d68628642387e05e166faa00f5d9022d8d6af` |
-| **[DIRECT]** | `mic` | `WDSIconIcMic.react` | `chunk_26_source-26-d9b5cb7fdfe11a88b2d9ce3c290436__bundle.js#L25318` | `0 0 24 24` | `99990e3eeac712b0c0b8c584390d68628642387e05e166faa00f5d9022d8d6af` |
-| **[DIRECT]** | `send` | `WDSIconIcSendFilled.react` | `chunk_05_Sp7m9vtWcB2__bundle.js#L28849` | `0 0 24 24` | `421691f7f1ee34cb6ed9c08be07d403edc7adac1804e8c66a5c8f59501583e40` |
-
-### 1.2 Ground-Truth CSS Variable Resolution Chains (Step 3 Exact Byte Offsets)
-
-All byte offsets are character indices into `target_artifacts/whatsapp-web/css/production.css` (SHA-256: `ff9d4e6dbc21fbdd5f8434562dc4bfb1c83fa35b650b658dd1c9f8553fffaa13`).
-
-| Provenance Tag | Token / Property | Resolution Chain in `production.css` | Exact Byte Offset | Target Selector & Context | Final Evaluated Value |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **[DIRECT]** | `--outgoing-background` | `--outgoing-background: var(--WDS-systems-bubble-surface-outgoing);` | `1428002` | `:root,.dark` | Resolves to `#144D37` |
-| **[DIRECT]** | `--WDS-systems-bubble-surface-outgoing` | `--WDS-systems-bubble-surface-outgoing: #144D37;` | `836401` | `@media (prefers-color-scheme: dark){.xfmqtgv.xfmqtgv,...}` | `#144D37` (RGB: `20, 77, 55` at `836444`) |
-| **[DIRECT]** | `--incoming-background` | `--incoming-background: var(--WDS-systems-bubble-surface-incoming);` | `1428067` | `:root,.dark` | Resolves to `#242626` |
-| **[DIRECT]** | `--WDS-systems-bubble-surface-incoming` | `--WDS-systems-bubble-surface-incoming: #242626;` | `836302` | `@media (prefers-color-scheme: dark){.xfmqtgv.xfmqtgv,...}` | `#242626` (RGB: `36, 38, 38` at `836345`) |
-| **[DIRECT]** | `--icon-ack` | `--icon-ack: var(--WDS-content-read);` | `1428132` | `:root,.dark` | Resolves to `#53BDEB` |
-| **[DIRECT]** | `--WDS-content-read` | `--WDS-content-read: #53BDEB;` | `833811` | `@media (prefers-color-scheme: dark){.xfmqtgv.xfmqtgv,...}` | `#53BDEB` (RGB: `83, 189, 235`) |
-| **[DIRECT]** | Wallpaper Base Background | `--WDS-systems-chat-background-wallpaper: #161717;` | `836699` | `@media (prefers-color-scheme: dark){.xfmqtgv.xfmqtgv,...}` | `#161717` (RGB: `22, 23, 23`) |
-| **[DIRECT]** | Wallpaper Foreground Doodle | `--WDS-systems-chat-foreground-wallpaper: rgba(255, 255, 255, .1);` | `836802` | `@media (prefers-color-scheme: dark){.xfmqtgv.xfmqtgv,...}` | `rgba(255, 255, 255, 0.1)` |
-| **[DIRECT]** | Composer Surface | `--WDS-systems-chat-surface-composer: #242626;` | `836924` | `@media (prefers-color-scheme: dark){.xfmqtgv.xfmqtgv,...}` | `#242626` (RGB: `36, 38, 38`) |
-| **[APPROXIMATE]** | Legacy Outgoing Bubble Hex | Legacy pre-WDS variable token | — | Hardcoded legacy dark mode constant | `#005c4b` (Superseeded by `#144D37` in WDS `.xfmqtgv`) |
-| **[APPROXIMATE]** | Legacy Incoming Bubble Hex | Legacy pre-WDS variable token | — | Hardcoded legacy dark mode constant | `#202c33` (Superseeded by `#242626` in WDS `.xfmqtgv`) |
+| Node ID | Module / Symbol | Evidence ID |
+| :--- | :--- | :--- |
+| jag_node_1752bf1f8d0... | require:require("LexicalSelection") | ev_e09233dce29b3e8f98910514045cd57767b7f66d38ac46233aeea945c9bc7770 |
+| jag_node_1ec4532c2f4... | chunk_17_7Tf0qWLsuo3__bundle.js | ev_f0270e29597f979418b7a27506aed1a8876077a865b1ce7288e5118e1b0794ea |
+| jag_node_23a42af9e25... | require:require("react") | ev_054a2c754ef9bd6aa690fb87692106d440bdf72bccc0735ce73229f8634e8f72 |
+| jag_node_252265bd5fc... | require:require("Promise") | ev_db8274ec7d0daa89b6784eb94fb8e7acbb1f89491bf6f89b1a2cacd8359bf4bd |
+| jag_node_252c7161511... | require:require("LexicalClipboard") | ev_6bf2ec26967000f585ded34e3b8c21850602ee75139bef5541bc792af538fee9 |
+| jag_node_2f601c76073... | require:require("LexicalExtensionEditorStateExtension") | ev_3868c414e89b741e5aea91a3105f0e34c0f14cfcf8429ddd34b7da6f7440b2c9 |
+| jag_node_37a5e3cbc7a... | require:require("LexicalExtensionGetPeerDependencyFromEditor") | ev_f23cc77f82a28c6f6ee0f413b091eb5413fff473a17676fbf4fac33628cb6b11 |
+| jag_node_38f4217165e... | chunk_09_source-9-122c3e652dc14fd507309af34868b6f__bundle.js | ev_774935d52defe5248e7ca711f093fba825af1f14081c7167f7b093f862193fcd |
+| jag_node_4f89e6c4f27... | require:require("LexicalReactProviderExtension") | ev_af00ffd63fbaba48013b28ecbb2124120968c1edcbd56ad1e9255ed6bfe6b06c |
+| jag_node_5825718c6c8... | require:require("LexicalExtensionNormalizeTripleClickSelectionExtension") | ev_5df9b18beddd55501308d4faaa2ef788f072f06a5e9e6352f0bdd0a2c878a6ea |
+| jag_node_6af6e55ac35... | require:require("ReactDOM") | ev_d34960317372f5624e5d0a76c5be557762df8207ed9c10795fcce41506fa44c7 |
+| jag_node_6ecfeaebc9b... | require:require("LexicalHtml") | ev_19ae3bdccc39238c2cd4dc49d89f29aab460043731c77b232bb8bc37ec9babe2 |
+| jag_node_738107b58af... | require:require("LexicalContentEditable") | ev_40e38b9b3dece39dd7d3ffd57895e6d1756f6a785c207353576b90395051354c |
+| jag_node_75dda4f9084... | chunk_10_3nzqNpHbcmc__bundle.js | ev_74bfcaabff2333336c495f2e9115c3c42a458c8433f97944ac7d655499469b9b |
+| jag_node_8075adaf193... | require:require("LexicalComposerContext") | ev_271f0c52c3b43a5f8c68ff8ec66d2109eec79a8fc7b088ddb4a1c957b88502de |
+| jag_node_81888cb86b7... | require:require("LexicalExtensionConfig") | ev_be9659818f2f51fbb63f4351302204712b542ef4bd944c31f748e6318677b501 |
+| jag_node_93412265e6f... | require:require("LexicalExtensionInitialStateExtension") | ev_ea842ee245c29bac1ca5e0ef403ed0cb0057d7ae8a56c94a28340b9bba80c495 |
+| jag_node_a029a25158c... | require:require("LexicalExtensionLexicalBuilder") | ev_e16425c3a07254dd7b9bac5ea21550c63be46c785c71615f9716eb5ad967fa02 |
+| jag_node_a0c25add5d4... | require:require("LexicalExtensionWatchedSignal") | ev_1d03c5e483bd032481fd779c5ba9e00a7afd244524f9b80c87175f716f75d500 |
+| jag_node_a9a8f2ac56e... | require:require("LexicalUtils") | ev_b55428af8208796a6a800d0356a4bba2bfbf54f5e5a76f36b68874c0764d9490 |
+| jag_node_ac3d3ea35d0... | require:require("LexicalExtensionGetExtensionDependencyFromEditor") | ev_b362b0cd02f0692a8bbea8cd3265f62dfb31ffa7a90e0ddc995e8a92b4a63f4c |
+| jag_node_b0a8c4d570b... | require:require("LexicalExtensionNormalizeInlineElementsExtension") | ev_97443f5b54538e30d20765de18bb4a0325ae7445601613d9cb8c1fa7ef8534f2 |
+| jag_node_c435a610593... | require:require("LexicalExtensionSignals") | ev_ae57d6828e99870921b9196efc01083d97552b96b407e0b9b66e89fa7ccbeadb |
+| jag_node_c602f20b12b... | require:require("LexicalExtensionHorizontalRuleExtension") | ev_bd72de72065c94614f2135541d1a60acd28e4dfffdce2270cad8ec429abe9a1e |
+| jag_node_cb6b6bf1c4a... | chunk_05_Sp7m9vtWcB2__bundle.js | ev_a4ac793e84b75a2e12b5a4807f6bbdcfbf7066d679726d94b9b550269ff86b5a |
+| jag_node_cceda3fcac2... | require:require("LexicalExtensionNodeSelectionExtension") | ev_670ebb7c1b0427ddd667efdb207d36f3242d1d1b8fd7474bba038d267e5bffd2 |
+| jag_node_cf89ba59cec... | require:require("LexicalDragon") | ev_556db7629d07b2a600d9f219c10346d85b0fdf99e3ba1a0e937661eef93e5f49 |
+| jag_node_d8e3797c6c5... | require:require("LexicalExtensionGetExtensionDependency") | ev_183117331f5693067ea22c5c6f6737893c8dac1f6058dc2d33242a123558d3e5 |
+| jag_node_df43d21a6e1... | require:require("LexicalErrorBoundary") | ev_8c38da5005d8af374797dc6654ff101fbae76714b7f5e41ece1e9d1e1c8e6bf0 |
+| jag_node_fb455cf7420... | require:require("LexicalExtensionNamedSignals") | ev_c2a341f81592b43498b2fe1fd25728e7ebe99185f3371ada058d1a71fee93d61 |
+| jag_node_fd0636a9062... | require:require("Lexical") | ev_9d9822e4b71b1531a3ad920a203fb36a73290020f62d6b324fc8a023f7a809b7 |
 
 ---
 
-## 2. Decompiled Bundle Provenance
+## Panel: ProfileDrawer
 
-| Provenance Tag | Decompiled Module | SHA-256 Digest | Key Exported Capabilities |
-| :--- | :--- | :--- | :--- |
-| **[DIRECT]** | `recovered-modules-combined/chunk_01_ZMZDw6zKHcP__bundle.js` | `2237a1920fba7e3957f84adaaf7ce139b49eb9b610935e28b3ecee6ae59c1dc7` | `WAWebWallpaper` (opacity values: dark `0.06`, light `0.1`, background base `#161717`). |
-| **[DIRECT]** | `recovered-modules-combined/chunk_05_Sp7m9vtWcB2__bundle.js` | `421691f7f1ee34cb6ed9c08be07d403edc7adac1804e8c66a5c8f59501583e40` | `WAWebIconFactory`, system icon vector registrations. |
-| **[DIRECT]** | `recovered-modules-combined/chunk_09_source-9-122c3e652dc14fd507309af34868b6f__bundle.js` | `fd9077e58385e4325f1d57554695c748d2c375bc459e282e6e46fbd90b9f4510` | Left navigation rail, search, and system action icons. |
-| **[DIRECT]** | `recovered-modules-combined/chunk_10_3nzqNpHbcmc__bundle.js` | `c9ee467ef768fb5f80a5a03409c54e665ab9b1f42fe8c1ed81e140646f5870de` | `WAWebConversationPreview.react`, tick status, `WAWebConversationPanelWrapper.stylex`. |
-| **[DIRECT]** | `recovered-modules-combined/chunk_17_7Tf0qWLsuo3__bundle.js` | `393994f1f94d57993831741265b91e24ad2632f96180ab7a7234d704eafa1b15` | `WAWebConversationBackground.react` (mask size: `540px 960px` / `412.5px 749.25px`, repeat: `repeat`, alpha mode). |
-| **[DIRECT]** | `recovered-modules-combined/chunk_19_36kJFHJBFHp__bundle.js` | `233f1728014d6295a19ae30a78316968be813d8950e501b35cbd1b89f4a3c4eb` | Ack state bindings and conversation list selection. |
-| **[DIRECT]** | `recovered-modules-combined/chunk_26_source-26-d9b5cb7fdfe11a88b2d9ce3c290436__bundle.js` | `99990e3eeac712b0c0b8c584390d68628642387e05e166faa00f5d9022d8d6af` | Composer bar, attachments, dynamic microphone / send toggle. |
+### Traced & Decompiled Modules
+#### `WAWebProfileImage.react.js`
+- **Path**: `extracted-modules/WAWebProfileImage.react.js`
+- **StyleX Atomic Classes Count**: 77
+- **Sample Classes**: `x5lhr3w x16ye13r x1od0jb8 x3psx0u xhslqc4 x1c9tyrk xeusxvb x1pahc9y x1ertn4p x4u6w88 x1g40iwv xl1xv1r xh8yej3 x5yr21d x1n2onr6`
+- **SVG Path Samples**:
+  ```
+  d: "xnnr8r"...
+  ```
+  ```
+  d: "x14z9mp"...
+  ```
+  ```
+  d: "x14z9mp"...
+  ```
 
----
+#### `BaseProfilePhoto.react.js`
+- **Path**: `extracted-modules/BaseProfilePhoto.react.js`
+- **StyleX Atomic Classes Count**: 15
+- **Sample Classes**: `x1tgjyoi xy5qijl xsoyeob x10l6tqk x1m9mm8y xitx4z4 x4v1no5 x3yj52l x11lhmoz x9ggj5r x147yg2k x1ey2m1c xu96u03 x3m8u43 x13vifvy`
 
-## 3. Verification & Comparison Artifacts (Step 6 — Incomplete / Pending Signed-In Baseline)
+#### `WAWebDefaultProfilePicture.react.js`
+- **Path**: `extracted-modules/WAWebDefaultProfilePicture.react.js`
+- **StyleX Atomic Classes Count**: 4
+- **Sample Classes**: `x1od0jb8 xhslqc4 xg0jo4d xuv0xuj`
 
-> [!WARNING]
-> Step 6 is NOT complete. The earlier live baseline (`live-screenshot-artifact.json` / `da70b7b4...`) was captured on the unauthenticated QR landing screen of `web.whatsapp.com`, rendering pixel comparison against the 3-column signed-in chat UI invalid (`0.9991` diff ratio). Step 6 remains strictly incomplete pending an authentic signed-in viewport screenshot capture at 1034x737 uploaded by the user.
+## Panel: NewChatDrawer
 
-| Provenance Tag | Verification Artifact | SHA-256 Digest | Description |
-| :--- | :--- | :--- | :--- |
-| **[DIRECT]** | `target_artifacts/whatsapp-web/recon-screenshot-evidence.json` | `7ad60c1d686f0b480c7ba8d30e03be189ee6cf80ee2c949c8112526e8ce24521` | CDP screenshot observation Evidence of reconstructed 3-column chat shell target at 1034x737 (`ev_60428207...`). |
-| **[DIRECT]** | `target_artifacts/whatsapp-web/recon-screenshot-artifact.json` | `23e6979d3416f19a6b5d21ab99e368c539d206e726cae8e625d64a28d28645a8` | CDP screenshot inner artifact JSON extracted from `recon-screenshot-evidence.json` at exact 1034x737 viewport. |
-| **[DIRECT]** | `target_artifacts/whatsapp-web/recon-screenshot.png` | `5e11c37e6b54db1c4fd6cb8cb10940656147c70c552a357cfddc5e10055906a6` | Viewport PNG image of reconstructed 3-column chat shell. |
-| **[APPROXIMATE]** | `target_artifacts/whatsapp-web/live-screenshot-artifact.json` | `da70b7b496f5d5ef10964519333318d77107f3c100caf2fc6876a7204daf1d75` | **REJECTED BASELINE**: Unauthenticated QR login screen capture. Does not represent signed-in 3-column chat shell. |
-| **[APPROXIMATE]** | `analysis/screenshot-pixel-diff.json` | `a7b61db931e076ed34b1667cf076926777ca360cbd9f987b024eeaff0f3c41b9` | **INVALIDATED DIFF**: Diffs signed-in reconstruction against unauthenticated QR baseline. Proves zero reconstruction fidelity. |
+### Traced & Decompiled Modules
+#### `WAWebNewChatMenuBarItem.react.js`
+- **Path**: `extracted-modules/WAWebNewChatMenuBarItem.react.js`
+- **StyleX Atomic Classes Count**: 0
+- **Sample Classes**: ``
+- **SVG Path Samples**:
+  ```
+  d: "new-chat-outline"...
+  ```
 
----
+#### `WAWebNewGroupChatlistHeaderDropdownItem.react.js`
+- **Path**: `extracted-modules/WAWebNewGroupChatlistHeaderDropdownItem.react.js`
+- **StyleX Atomic Classes Count**: 0
+- **Sample Classes**: ``
 
-## 4. Component Loop: Component 1 — Nav Rail (`WAWebNavigationBar.react`)
+#### `WDSIconWdsIcNewChatFilled.react.js`
+- **Path**: `extracted-modules/WDSIconWdsIcNewChatFilled.react.js`
+- **StyleX Atomic Classes Count**: 0
+- **Sample Classes**: ``
+- **SVG Path Samples**:
+  ```
+  d: "M19.33 4C20.81 4 22 5.2 22 6.67v10.66c0 1.48-1.2 2.67-2.67 2.67H5.67A2.67 2.67 0 0 1 3 17.33V8.8...
+  ```
 
-| Provenance Tag | Stage | File / Artifact | Exact Location & ID | SHA-256 Digest | Details & Evidence Citations |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **[DIRECT]** | **1. REA Trace** | `analysis/traces/trace_navrail_node.json` | Node ID `jag_node_75dda4f9...` | `f6aa7c2501c1583c967fc1fc39ecad50a46f9b83ec053b8c5a6a8ec2c36f54b7` | Seed `jag_node_75dda4f908461c3391b41080ef440ed6dcf21ded18b2fcf2aaa63ef57f9a3e2d` traced with `traceApplicationFeatureEvidenceValidated` in REA WSL toolchain. Trace ID `jatr_056c560beca6...` (46 paths, 104 nodes, 567 edges). |
-| **[DIRECT]** | **2. REA Inspect** | `analysis/traces/inspect_navrail_node.json` | Byte offset `1570504`, Line `41094`, Module ID `98` | `db663b776dc3d50c82270d02decc67164041426a67690aba93344e32b80aafcc` | Project item view receipt `ev_74bfcaabff2333336c495f2e9115c3c42a458c8433f97944ac7d655499469b9b` from `inspectAnalysisViewValidated` (`collection: "modules"`). Rendering module: `WAWebNavigationBar.react` in `chunk_10_3nzqNpHbcmc__bundle.js#L41617`. |
-| **[DIRECT]** | **3. Rebuilt Component** | `reconstruction/src/components/LeftNavRail.tsx` | Target component | `1329350a69a86594d8ee8f10654c15a867bce806f75cef7be6852e4517ecdcf6` | Rebuilt 1:1 element tree: `<header data-testid="chatlist-header">` -> `<div data-testid="navbar-primary-section">` (Chats, Calls, Status, Channels, Communities, `<hr>`, Meta AI) -> `<div data-testid="navbar-footer-section">` (Settings, Profile avatar circle). Atomic StyleX classes mounted from `production.css`. |
-| **[DIRECT]** | **4. WDSIcon Modules** | `analysis/svg-icons.json` | All 13 icons verified | `bdbbf01f1279f28f387ddd928bbf251fa86ecc72f013a77762021507a3d8a856` | `WDSIconWdsIcChat.react`, `WDSIconWdsIcChatFilled.react`, `WDSIconIcCall.react`, `WDSIconIcCallFilled.react`, `WDSIconWdsIcStatus.react`, `WDSIconWdsIcStatusFilled.react`, `WDSIconWdsIcChannels.react`, `WDSIconWdsIcChannelsFilled.react`, `WDSIconWdsIcCommunities.react`, `WDSIconWdsIcCommunitiesFilled.react`, `WDSIconWdsIcLogoMetaAi.react`, `WDSIconIcSettings.react`, `WDSIconIcSettingsFilled.react`. All viewBoxes `0 0 24 24`. |
-| **[INFERRED]** | **Keyboard Entry Point on Nav Rail** | `WAWebNavigationBar.react` | Byte offset `1591200`, Line `41709` | — | The nav rail `<header>` has `data-testid="chatlist-header"` and `data-tab=1` (`TAB_ORDER.CHATLIST_HEADER`) because it acts as the primary keyboard navigation tab stop before the chat list panel. |
-| **[DIRECT]** | **Dark Theme Token Selector (Unconditional)** | `production.css` | Byte offset `211253` | `ff9d4e6dbc...` | Class `.x1umy8rd` unconditionally defines all `--WDS-*` dark tokens (surface `#1D1F1F`, lines divider `rgba(255,255,255,.1)`, active list row `rgba(255,255,255,.1)`, de-emphasized content `rgba(255,255,255,.6)`). Applied to `<html>` to guarantee dark mode independent of OS theme. |
-| **[DIRECT]** | **Dark Theme Variable Mappings** | `production.css` | Byte offset `1427629` | `ff9d4e6dbc...` | Class `.dark` maps legacy and component tokens to `--WDS-*` dark tokens (`--outgoing-background: var(--WDS-systems-bubble-surface-outgoing);`, etc.). |
-| **[DIRECT]** | **Dark Theme Media Query (OS-dependent)** | `production.css` | Byte offset `829259` | `ff9d4e6dbc...` | `@media (prefers-color-scheme: dark){.xfmqtgv.xfmqtgv,...}` applies WDS dark tokens conditionally if OS prefers dark mode. |
+## Panel: SettingsDrawer
 
-### 4.1 Nav Rail Color Variable Resolution Offsets in `production.css`
+### Traced & Decompiled Modules
+#### `WAWebSettingsNavBarItem.react.js`
+- **Path**: `extracted-modules/WAWebSettingsNavBarItem.react.js`
+- **StyleX Atomic Classes Count**: 0
+- **Sample Classes**: ``
 
-All offsets are byte offsets into `target_artifacts/whatsapp-web/css/production.css` (SHA-256: `ff9d4e6dbc21fbdd5f8434562dc4bfb1c83fa35b650b658dd1c9f8553fffaa13`):
+#### `WAWebSettingsPopup.react.js`
+- **Path**: `extracted-modules/WAWebSettingsPopup.react.js`
+- **StyleX Atomic Classes Count**: 1
+- **Sample Classes**: `x1c436fg`
 
-| Token / Class | Role in Nav Rail | Exact Byte Offset | Rule Context | Value in Dark Mode |
-| :--- | :--- | :--- | :--- | :--- |
-| `.x1h3rtpe` | Rail Outer Background Class | `974715` | `.x1h3rtpe{background-color:var(--WDS-surface-emphasized)}` | Uses `--WDS-surface-emphasized` |
-| `--WDS-surface-emphasized` | Rail Background Variable | `835436` | `@media (prefers-color-scheme: dark){.xfmqtgv.xfmqtgv,...}` | `#1D1F1F` |
-| `.xx42vgk` | Separator `<hr>` Line Class | `1354517` | `.xx42vgk{border-top-color:var(--WDS-lines-divider)}` | Uses `--WDS-lines-divider` |
-| `--WDS-lines-divider` | Separator Line Variable | `833874` | `@media (prefers-color-scheme: dark){.xfmqtgv.xfmqtgv,...}` | `rgba(255, 255, 255, .1)` |
-| `.x1fe8iih` | Active Item Background Class | `968382` | `.x1fe8iih{background-color:var(--WDS-components-active-list-row)}` | Uses `--WDS-components-active-list-row` |
-| `--WDS-components-active-list-row` | Active Background Variable | `829963` | `@media (prefers-color-scheme: dark){.xfmqtgv.xfmqtgv,...}` | `rgba(255, 255, 255, .1)` |
-| `.xhslqc4` | Inactive Item Color Class | `1115647` | `.xhslqc4{color:var(--WDS-content-deemphasized)}` | Uses `--WDS-content-deemphasized` |
-| `--WDS-content-deemphasized` | Inactive Icon Color Variable | `833358` | `@media (prefers-color-scheme: dark){.xfmqtgv.xfmqtgv,...}` | `rgba(255, 255, 255, .6)` |
-| `--WDS-content-default` | Active Icon Color Variable | `833454` | `@media (prefers-color-scheme: dark){.xfmqtgv.xfmqtgv,...}` | `#FAFAFA` |
+#### `WAWebChatSetting.react.js`
+- **Path**: `extracted-modules/WAWebChatSetting.react.js`
+- **StyleX Atomic Classes Count**: 1
+- **Sample Classes**: `x1f6kntn`
 
+## Panel: ArchivedDrawer
+
+### Traced & Decompiled Modules
+#### `WAWebChatArchivedEntryPoint.react.js`
+- **Path**: `extracted-modules/WAWebChatArchivedEntryPoint.react.js`
+- **StyleX Atomic Classes Count**: 4
+- **Sample Classes**: `x1rg5ohu xw4jnvo x1qx5ct2 x1r8hjv8`
+- **SVG Path Samples**:
+  ```
+  d: "xnnr8r"...
+  ```
+  ```
+  d: "mentions-refreshed"...
+  ```
+
+#### `WAWebArchivedChatlistHeaderDropdownItem.react.js`
+- **Path**: `extracted-modules/WAWebArchivedChatlistHeaderDropdownItem.react.js`
+- **StyleX Atomic Classes Count**: 0
+- **Sample Classes**: ``
+
+#### `WDSIconIcArchive.react.js`
+- **Path**: `extracted-modules/WDSIconIcArchive.react.js`
+- **StyleX Atomic Classes Count**: 0
+- **Sample Classes**: ``
+
+## Panel: StarredDrawer
+
+### Traced & Decompiled Modules
+#### `WAWebStarredChatlistHeaderDropdownItem.react.js`
+- **Path**: `extracted-modules/WAWebStarredChatlistHeaderDropdownItem.react.js`
+- **StyleX Atomic Classes Count**: 0
+- **Sample Classes**: ``
+
+#### `WDSIllustrationWdsPictoStar.react.js`
+- **Path**: `extracted-modules/WDSIllustrationWdsPictoStar.react.js`
+- **StyleX Atomic Classes Count**: 0
+- **Sample Classes**: ``
+- **SVG Path Samples**:
+  ```
+  <path fill="#25d366" stroke="#111b21" strokeMiterlimit={10} strokeWidth={1.5} d="M44 76.99a33 33 0 0...
+  ```
+  ```
+  <path fill="#25d366" stroke="#111b21" strokeMiterlimit={10} strokeWidth={1.5} d="M70.13 44a26.13 26....
+  ```
+  ```
+  <path stroke="#111b21" strokeLinejoin="round" strokeWidth={1.5} d="M43.98 29.46q.54 0 1.04.23.42.19....
+  ```
+
+## Panel: CallsPanel
+
+### Traced & Decompiled Modules
+#### `WAWebCallLogEntryCell.react.js`
+- **Path**: `extracted-modules/WAWebCallLogEntryCell.react.js`
+- **StyleX Atomic Classes Count**: 1
+- **Sample Classes**: `x30a034`
+
+#### `WAWebCallDropdownMenuItems.react.js`
+- **Path**: `extracted-modules/WAWebCallDropdownMenuItems.react.js`
+- **StyleX Atomic Classes Count**: 9
+- **Sample Classes**: `xkh2ocl x78zum5 xdl72j9 x1iyjqo2 x2lah0s x6ikm8r x10wlt62 x1yc453h xh8yej3`
+
+#### `WAWebCallsNavBarItemLoadable.react.js`
+- **Path**: `extracted-modules/WAWebCallsNavBarItemLoadable.react.js`
+- **StyleX Atomic Classes Count**: 0
+- **Sample Classes**: ``
+
+## Panel: ChannelsPanel
+
+### Traced & Decompiled Modules
+#### `WAWebChannelsChatlistHeaderDropdownItems.react.js`
+- **Path**: `extracted-modules/WAWebChannelsChatlistHeaderDropdownItems.react.js`
+- **StyleX Atomic Classes Count**: 0
+- **Sample Classes**: ``
+
+#### `WAWebDefaultNewsletterIcon.react.js`
+- **Path**: `extracted-modules/WAWebDefaultNewsletterIcon.react.js`
+- **StyleX Atomic Classes Count**: 0
+- **Sample Classes**: ``
+- **SVG Path Samples**:
+  ```
+  <path fill="#FFFFFF" d="M157.12 99.03c-3.1-23.49-22.5-42.21-46.02-44.33-30.55-2.8-55.78 20.69-56.35 ...
+  ```
+
+## Panel: CommunitiesDrawer
+
+### Traced & Decompiled Modules
+#### `WAWebCommunityCells.react.js`
+- **Path**: `extracted-modules/WAWebCommunityCells.react.js`
+- **StyleX Atomic Classes Count**: 17
+- **Sample Classes**: `xk50ysn x1rgrh6f xo1mcw5 x1iikomf xzoqdy8 x30a034 x1ccui7m x1y332i5 xhslqc4 x16dsc37 x1ypdohk xg8q4mo xh42h1r x1380le5 xefnzgg`
+- **SVG Path Samples**:
+  ```
+  d: "x1ccui7m"...
+  ```
+  ```
+  d: "community-group"...
+  ```
+
+#### `WAWebCommunitiesNavBarItem.react.js`
+- **Path**: `extracted-modules/WAWebCommunitiesNavBarItem.react.js`
+- **StyleX Atomic Classes Count**: 0
+- **Sample Classes**: ``
+
+#### `WAWebCommunitySquircleIcon.react.js`
+- **Path**: `extracted-modules/WAWebCommunitySquircleIcon.react.js`
+- **StyleX Atomic Classes Count**: 0
+- **Sample Classes**: ``
+- **SVG Path Samples**:
+  ```
+  <path fill="currentColor" d="M90 0C0 0 0 0 0 90s0 90 90 90 90 0 90-90 0-90-90-90Z"...
+  ```
+  ```
+  <path fill="#fff" fillRule="evenodd" d="M116.07 77.37a12.46 12.46 0 0 0 1.48 4.34 11.53 11.53 0 0 0 ...
+  ```
+
+## Panel: StatusDrawer
+
+### Traced & Decompiled Modules
+#### `WAWebHeaderStatus.react.js`
+- **Path**: `extracted-modules/WAWebHeaderStatus.react.js`
+- **StyleX Atomic Classes Count**: 0
+- **Sample Classes**: ``
+
+#### `WAWebStatusNavBarItem.react.js`
+- **Path**: `extracted-modules/WAWebStatusNavBarItem.react.js`
+- **StyleX Atomic Classes Count**: 0
+- **Sample Classes**: ``
+
+#### `WAWebAudioStatusIcon.react.js`
+- **Path**: `extracted-modules/WAWebAudioStatusIcon.react.js`
+- **StyleX Atomic Classes Count**: 0
+- **Sample Classes**: ``
+- **SVG Path Samples**:
+  ```
+  <path fill="#FFFFFF" d="M8.48.46C4.03.76.76 4.63.76 8.96v5.03a3.75 3.75 0 0 0 3.76 3.76h.75c1.65 0 3...
+  ```
+  ```
+  <path fill="currentColor" d="M8.7 1.9c-3.58.23-6.3 3.38-6.3 6.99v5.03c0 1.25 1 2.26 2.25 2.26h.76c.8...
+  ```
+
+## Panel: ContactInfoDrawer
+
+### Traced & Decompiled Modules
+#### `WAWebContactInfoCard.react.js`
+- **Path**: `extracted-modules/WAWebContactInfoCard.react.js`
+- **StyleX Atomic Classes Count**: 4
+- **Sample Classes**: `x5w4yej xh8yej3 x1y1aw1k x1lliihq`
+- **SVG Path Samples**:
+  ```
+  d: "psa-verified-blue"...
+  ```
+  ```
+  d: "fmx-card-block-btn"...
+  ```
+  ```
+  d: "fmx-card-profile-btn"...
+  ```
+
+#### `WAWebBusinessProfileIconSection.react.js`
+- **Path**: `extracted-modules/WAWebBusinessProfileIconSection.react.js`
+- **StyleX Atomic Classes Count**: 14
+- **Sample Classes**: `xcknrev x1k70j0n xhslqc4 xlh3980 xvmahel x1lkfr7t x1t1x2f9 x1iyjqo2 x37zpob x6ikm8r x10wlt62 x2lah0s xvy4d1p xxk0z11`
+- **SVG Path Samples**:
+  ```
+  d: "xcknrev"...
+  ```
+
+## Panel: ChatSearchDrawer
+
+### Traced & Decompiled Modules
+#### `WAWebChatSearchDrawerLoadable.js`
+- **Path**: `extracted-modules/WAWebChatSearchDrawerLoadable.js`
+- **StyleX Atomic Classes Count**: 0
+- **Sample Classes**: ``
+
+#### `WAWebChatSearchModel.js`
+- **Path**: `extracted-modules/WAWebChatSearchModel.js`
+- **StyleX Atomic Classes Count**: 0
+- **Sample Classes**: ``
+
+## Panel: ChatHeader
+
+### Traced & Decompiled Modules
+#### `useWAWebConversationHeaderActions.js`
+- **Path**: `extracted-modules/useWAWebConversationHeaderActions.js`
+- **StyleX Atomic Classes Count**: 0
+- **Sample Classes**: ``
+
+#### `WAWebChatHeaderTextStatusBubble.react.js`
+- **Path**: `extracted-modules/WAWebChatHeaderTextStatusBubble.react.js`
+- **StyleX Atomic Classes Count**: 8
+- **Sample Classes**: `x6ikm8r x10wlt62 xlyipyv xuxw1ft x1nxh6w3 xd4r4e8 x14ug900 x193iq5w`
+
+## Panel: ComposerBar
+
+### Traced & Decompiled Modules
+#### `WAWebComposeBox.react.js`
+- **Path**: `extracted-modules/WAWebComposeBox.react.js`
+- **StyleX Atomic Classes Count**: 24
+- **Sample Classes**: `x1n2onr6 xhtitgo x78zum5 x1q0g3np xuk3077 x193iq5w x122xwht xhjsbib xjbqb8w x1wiwyrm xquzyny x1okw0bk xo1ph6p xh8yej3 xexx8yu`
+- **SVG Path Samples**:
+  ```
+  d: "xyri2b"...
+  ```
+  ```
+  d: "
+                ])));
+            });
+        };
+        const Pt = useState(!!GeRef.current);
+...
+  ```
+
+#### `WAWebComposeBoxExpressionPanels.react.js`
+- **Path**: `extracted-modules/WAWebComposeBoxExpressionPanels.react.js`
+- **StyleX Atomic Classes Count**: 0
+- **Sample Classes**: ``
+
+## Panel: IntroPanel
+
+### Traced & Decompiled Modules
+#### `WAWebIntroPanelStartCallEmptyState.react.js`
+- **Path**: `extracted-modules/WAWebIntroPanelStartCallEmptyState.react.js`
+- **StyleX Atomic Classes Count**: 0
+- **Sample Classes**: ``
+- **SVG Path Samples**:
+  ```
+  d: "start-call-tile"...
+  ```
+  ```
+  d: "start_call"...
+  ```
+
+#### `WAWebStartup.react.js`
+- **Path**: `extracted-modules/WAWebStartup.react.js`
+- **StyleX Atomic Classes Count**: 0
+- **Sample Classes**: ``
+
+## Panel: ChatListPanel
+
+### Traced & Decompiled Modules
+#### `useWAWebChatlistRowHeight.js`
+- **Path**: `extracted-modules/useWAWebChatlistRowHeight.js`
+- **StyleX Atomic Classes Count**: 0
+- **Sample Classes**: ``
+
+#### `WDSPreviewListItemMetrics.js`
+- **Path**: `extracted-modules/WDSPreviewListItemMetrics.js`
+- **StyleX Atomic Classes Count**: 0
+- **Sample Classes**: ``
+
+#### `WDSListItemConfig.stylex.js`
+- **Path**: `extracted-modules/WDSListItemConfig.stylex.js`
+- **StyleX Atomic Classes Count**: 50
+- **Sample Classes**: `x6nvzda x4i4b9w xhl9efl xj65ea0 x78zum5 xdt5ytf x16ovd2e x12xbjc7 x1iw51ew xde1mab x1n2onr6 x1qvou4u xh8yej3 xt0e3qv x1lxidc1`
+- **SVG Path Samples**:
+  ```
+  d: "xde1mab"...
+  ```
+  ```
+  d: "xtijo5x"...
+  ```
+  ```
+  d: "xtijo5x"...
+  ```
+
+#### `WDSPreviewListItemConfig.stylex.js`
+- **Path**: `extracted-modules/WDSPreviewListItemConfig.stylex.js`
+- **StyleX Atomic Classes Count**: 44
+- **Sample Classes**: `x1tiyuxx x1nbhmlj x2lwn1j x78zum5 xdt5ytf xeuugli xh8yej3 x6s0dn4 x1c4vz4f xs83m0k x1trrmfo x1iyjqo2 x150mmf0 x6ikm8r x10wlt62`
+
+## Panel: LeftNavRail
+
+### Traced & Decompiled Modules
+#### `WAWebNavigationBar.react.js`
+- **Path**: `extracted-modules/WAWebNavigationBar.react.js`
+- **StyleX Atomic Classes Count**: 12
+- **Sample Classes**: `x889kno x1a8lsjc x12xzxwr x1n2onr6 x78zum5 x6s0dn4 xq3y45c xbyj736 x5yr21d x1h3rtpe xh8yej3 x129bwdz`
+
+#### `WAWebChatsNavBarItem.react.js`
+- **Path**: `extracted-modules/WAWebChatsNavBarItem.react.js`
+- **StyleX Atomic Classes Count**: 0
+- **Sample Classes**: ``
 

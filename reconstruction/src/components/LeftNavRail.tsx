@@ -37,10 +37,30 @@ export const LeftNavRail: React.FC<LeftNavRailProps> = ({
   const baseButtonClasses =
     'x78zum5 x6s0dn4 xl56j7k x100vrsf x1vqgdyp x11g6tue x972fbf x10w94by x1qhh985 x14e42zd x1ejq31n x18oe1m7 x1sy0etr xstzfhl x1c1uobl';
 
-  const getItemWrapperClass = (isActive: boolean) =>
-    isActive
-      ? 'x1n2onr6 x1fe8iih x100vrsf x1vqgdyp x11g6tue x972fbf x10w94by x1qhh985 x14e42zd x1ejq31n x78zum5 x6s0dn4 xl56j7k'
-      : 'x1n2onr6 x100vrsf x1vqgdyp x11g6tue x972fbf x10w94by x1qhh985 x14e42zd x1ejq31n x78zum5 x6s0dn4 xl56j7k';
+  const getItemWrapperStyle = (isActive: boolean): React.CSSProperties => ({
+    width: '40px',
+    height: '40px',
+    borderRadius: '9999px',
+    backgroundColor: isActive ? 'rgba(255, 255, 255, 0.1)' : 'transparent',
+    margin: '4px auto',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  });
+
+  const getButtonStyle = (isActive: boolean): React.CSSProperties => ({
+    width: '40px',
+    height: '40px',
+    borderRadius: '9999px',
+    background: 'transparent',
+    border: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    cursor: 'pointer',
+    color: isActive ? '#ffffff' : 'var(--icon-lighter, #8696a0)',
+    padding: 0,
+  });
 
   return (
     <header
@@ -58,7 +78,7 @@ export const LeftNavRail: React.FC<LeftNavRailProps> = ({
         >
           <div className="x78zum5 xdt5ytf x129bwdz">
             {/* Chats Tab */}
-            <div className={getItemWrapperClass(isChats)}>
+            <div className="x1n2onr6 x1vqgdyp x100vrsf xt8t1vi x1xc408v x129tdwq x15urzxu x78zum5 x6s0dn4 xl56j7k" style={getItemWrapperStyle(isChats)}>
               <button
                 type="button"
                 aria-label="Chats"
@@ -68,13 +88,14 @@ export const LeftNavRail: React.FC<LeftNavRailProps> = ({
                 tabIndex={-1}
                 onClick={() => onTabChange?.('chats')}
                 className={`${baseButtonClasses} ${isChats ? '' : 'xhslqc4'}`}
+                style={getButtonStyle(isChats)}
               >
-                <Icon name={isChats ? 'nav-chats-filled' : 'nav-chats'} size={24} />
+                <Icon name={isChats ? 'nav-chats-filled' : 'nav-chats'} size={24} color={isChats ? '#ffffff' : 'var(--icon-lighter, #8696a0)'} />
               </button>
             </div>
 
             {/* Calls Tab */}
-            <div className={getItemWrapperClass(isCalls)}>
+            <div className="x1n2onr6 x1vqgdyp x100vrsf xt8t1vi x1xc408v x129tdwq x15urzxu x78zum5 x6s0dn4 xl56j7k" style={getItemWrapperStyle(isCalls)}>
               <button
                 type="button"
                 aria-label="Calls"
@@ -84,13 +105,14 @@ export const LeftNavRail: React.FC<LeftNavRailProps> = ({
                 tabIndex={-1}
                 onClick={() => onTabChange?.('calls')}
                 className={`${baseButtonClasses} ${isCalls ? '' : 'xhslqc4'}`}
+                style={getButtonStyle(isCalls)}
               >
-                <Icon name={isCalls ? 'nav-calls-filled' : 'nav-calls'} size={24} />
+                <Icon name={isCalls ? 'nav-calls-filled' : 'nav-calls'} size={24} color={isCalls ? '#ffffff' : 'var(--icon-lighter, #8696a0)'} />
               </button>
             </div>
 
             {/* Status Tab */}
-            <div className={getItemWrapperClass(isStatus)}>
+            <div className="x1n2onr6 x1vqgdyp x100vrsf xt8t1vi x1xc408v x129tdwq x15urzxu x78zum5 x6s0dn4 xl56j7k" style={getItemWrapperStyle(isStatus)}>
               <button
                 type="button"
                 aria-label="Status"
@@ -100,13 +122,14 @@ export const LeftNavRail: React.FC<LeftNavRailProps> = ({
                 tabIndex={-1}
                 onClick={() => onTabChange?.('status')}
                 className={`${baseButtonClasses} ${isStatus ? '' : 'xhslqc4'}`}
+                style={getButtonStyle(isStatus)}
               >
-                <Icon name={isStatus ? 'nav-status-filled' : 'nav-status'} size={24} />
+                <Icon name={isStatus ? 'nav-status-filled' : 'nav-status'} size={24} color={isStatus ? '#ffffff' : 'var(--icon-lighter, #8696a0)'} />
               </button>
             </div>
 
             {/* Channels Tab */}
-            <div className={getItemWrapperClass(isChannels)}>
+            <div className="x1n2onr6 x1vqgdyp x100vrsf xt8t1vi x1xc408v x129tdwq x15urzxu x78zum5 x6s0dn4 xl56j7k" style={getItemWrapperStyle(isChannels)}>
               <button
                 type="button"
                 aria-label="Channels"
@@ -116,13 +139,14 @@ export const LeftNavRail: React.FC<LeftNavRailProps> = ({
                 tabIndex={-1}
                 onClick={() => onTabChange?.('channels')}
                 className={`${baseButtonClasses} ${isChannels ? '' : 'xhslqc4'}`}
+                style={getButtonStyle(isChannels)}
               >
-                <Icon name={isChannels ? 'nav-channels-filled' : 'nav-channels'} size={24} />
+                <Icon name={isChannels ? 'nav-channels-filled' : 'nav-channels'} size={24} color={isChannels ? '#ffffff' : 'var(--icon-lighter, #8696a0)'} />
               </button>
             </div>
 
             {/* Communities Tab */}
-            <div className={getItemWrapperClass(isCommunities)}>
+            <div className="x1n2onr6 x1vqgdyp x100vrsf xt8t1vi x1xc408v x129tdwq x15urzxu x78zum5 x6s0dn4 xl56j7k" style={getItemWrapperStyle(isCommunities)}>
               <button
                 type="button"
                 aria-label="Communities"
@@ -132,8 +156,9 @@ export const LeftNavRail: React.FC<LeftNavRailProps> = ({
                 tabIndex={-1}
                 onClick={() => onTabChange?.('communities')}
                 className={`${baseButtonClasses} ${isCommunities ? '' : 'xhslqc4'}`}
+                style={getButtonStyle(isCommunities)}
               >
-                <Icon name={isCommunities ? 'nav-communities-filled' : 'nav-communities'} size={24} />
+                <Icon name={isCommunities ? 'nav-communities-filled' : 'nav-communities'} size={24} color={isCommunities ? '#ffffff' : 'var(--icon-lighter, #8696a0)'} />
               </button>
             </div>
 
@@ -141,7 +166,7 @@ export const LeftNavRail: React.FC<LeftNavRailProps> = ({
             <hr className="xh8yej3 xjm9jq1 x178xt8z x13fuv20 xx42vgk x18oe1m7 x1sy0etr xstzfhl" />
 
             {/* Meta AI Tab (WAWebMetaAIIcon.react with asset 88729: meta-ai-ring.webp) */}
-            <div className="x1n2onr6 x100vrsf x1vqgdyp x11g6tue x972fbf x10w94by x1qhh985 x14e42zd x1ejq31n x78zum5 x6s0dn4 xl56j7k">
+            <div className="x1n2onr6 x100vrsf x1vqgdyp x11g6tue x972fbf x10w94by x1qhh985 x14e42zd x1ejq31n x78zum5 x6s0dn4 xl56j7k" style={getItemWrapperStyle(false)}>
               <button
                 type="button"
                 aria-label="Meta AI"
@@ -150,6 +175,7 @@ export const LeftNavRail: React.FC<LeftNavRailProps> = ({
                 data-navbar-item-selected="false"
                 tabIndex={-1}
                 className={baseButtonClasses}
+                style={getButtonStyle(false)}
               >
                 <img
                   src="/assets/meta-ai-ring.webp"
@@ -172,7 +198,7 @@ export const LeftNavRail: React.FC<LeftNavRailProps> = ({
         >
           <div className="x78zum5 xdt5ytf x129bwdz">
             {/* Media Hub Tab (WAWebMediaHubNavBarItem.react, Icon: WDSIconIcFilter.react) */}
-            <div className="x1n2onr6 x100vrsf x1vqgdyp x11g6tue x972fbf x10w94by x1qhh985 x14e42zd x1ejq31n x78zum5 x6s0dn4 xl56j7k">
+            <div className="x1n2onr6 x100vrsf x1vqgdyp x11g6tue x972fbf x10w94by x1qhh985 x14e42zd x1ejq31n x78zum5 x6s0dn4 xl56j7k" style={getItemWrapperStyle(false)}>
               <button
                 type="button"
                 aria-label="Media"
@@ -181,13 +207,14 @@ export const LeftNavRail: React.FC<LeftNavRailProps> = ({
                 data-navbar-item-selected="false"
                 tabIndex={-1}
                 className={`${baseButtonClasses} xhslqc4`}
+                style={getButtonStyle(false)}
               >
-                <Icon name="nav-media" size={24} />
+                <Icon name="nav-media" size={24} color="var(--icon-lighter, #8696a0)" />
               </button>
             </div>
 
             {/* You Tab (WAWebMeTabNavBarItem.react, isMeTabEnabled() === true) */}
-            <div className="x1n2onr6 x100vrsf x1vqgdyp x11g6tue x972fbf x10w94by x1qhh985 x14e42zd x1ejq31n x78zum5 x6s0dn4 xl56j7k">
+            <div className="x1n2onr6 x100vrsf x1vqgdyp x11g6tue x972fbf x10w94by x1qhh985 x14e42zd x1ejq31n x78zum5 x6s0dn4 xl56j7k" style={getItemWrapperStyle(false)}>
               <button
                 type="button"
                 aria-label="You"
@@ -197,6 +224,7 @@ export const LeftNavRail: React.FC<LeftNavRailProps> = ({
                 tabIndex={-1}
                 onClick={onOpenSettings}
                 className={baseButtonClasses}
+                style={getButtonStyle(false)}
               >
                 <div
                   className="x78zum5 x6s0dn4 xl56j7k x1c9tyrk xeusxvb x1pahc9y x1ertn4p"

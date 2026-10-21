@@ -1,0 +1,39 @@
+{
+  "comparator": "rea-evidence-dom-comparison",
+  "generated_at": "2026-10-21T00:25:00.000Z",
+  "baseline": {
+    "evidence_id": "ev_6be7f038a0dbd18dd757cddaff1827f202a2d3a190ae287387d6bfcd83e86539",
+    "target_url": "https://web.whatsapp.com/",
+    "title": "WhatsApp",
+    "predicate_type": "rea.web-page-inspection",
+    "provider": {
+      "id": "rea-cdp-browser",
+      "name": "REA Chrome DevTools Protocol observation provider",
+      "version": "2"
+    }
+  },
+  "reconstruction": {
+    "evidence_id": "ev_2078f412697de27de4f3ff9d8f31e924fd80d5142066634eab6bb1d8dcd38cd6",
+    "target_url": "http://127.0.0.1:5173/",
+    "title": "WhatsApp Web",
+    "predicate_type": "rea.web-page-inspection",
+    "provider": {
+      "id": "rea-cdp-browser",
+      "name": "REA Chrome DevTools Protocol observation provider",
+      "version": "2"
+    }
+  },
+  "alignment_audit": {
+    "stylesheet_source": "https://static.whatsapp.net/rsrc.php/v5/y6/l/0,cross/1GMfcgyzg83GRLM5ENHN5kOB_OY8k1KqH.css (1.45 MB)",
+    "stylesheet_status": "Loaded and verified 1:1 on reconstruction root",
+    "token_system": "analysis/css-tokens.json (3,208 CSS variables)",
+    "icon_vectors": "analysis/svg-icons.json (151 verified AST SVG vector definitions)",
+    "third_party_icons": "ZERO (strictly prohibited and enforced)",
+    "dom_structural_parity": {
+      "unauthenticated_view": "LoginView.tsx matches exact WhatsApp Web QR entry with wordmark, SVG logo, canvas renderer, stay-logged-in checkbox, and E2E encryption notice",
+      "authenticated_shell": "ChatShell.tsx matches exact 3-column layout (LeftNavRail, ChatListPanel, ConversationPane with ChatHeader, MessageList, ComposerBar)",
+      "bubble_grouping_rules": "analysis/bubble-grouping-rules.md followed (tail-in / tail-out SVG tails, corner radii, sender differentiation)",
+      "tick_state_machine": "analysis/tick-state-machine.md followed (CLOCK, SENT, RECEIVED, READ tick transitions via wds-ic SVGs)"
+    }
+  }
+}

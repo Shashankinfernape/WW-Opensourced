@@ -1,0 +1,443 @@
+[
+  {
+    "token": "--WDS-surface-emphasized",
+    "byteOffset": 130372,
+    "decl": "--WDS-surface-emphasized:#F7F5F3;",
+    "selector": ".x1aj9qoi.x1aj9qoi,.x1aj9qoi.x1aj9qoi:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-surface-emphasized",
+    "byteOffset": 203140,
+    "decl": "--WDS-surface-emphasized:#F7F5F3;",
+    "selector": ".x1tkf7af.x1tkf7af,.x1tkf7af.x1tkf7af:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-surface-emphasized",
+    "byteOffset": 217398,
+    "decl": "--WDS-surface-emphasized:#1D1F1F;",
+    "selector": ".x1umy8rd.x1umy8rd,.x1umy8rd.x1umy8rd:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-surface-emphasized",
+    "byteOffset": 247874,
+    "decl": "--WDS-surface-emphasized:#12181C;",
+    "selector": ".x1w9d4se.x1w9d4se,.x1w9d4se.x1w9d4se:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-surface-emphasized",
+    "byteOffset": 345026,
+    "decl": "--WDS-surface-emphasized:#1D1F1F;",
+    "selector": ".x4skxjj.x4skxjj,.x4skxjj.x4skxjj:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-surface-emphasized",
+    "byteOffset": 518538,
+    "decl": "--WDS-surface-emphasized:#F7F5F3;",
+    "selector": ".xfmqtgv.xfmqtgv,.xfmqtgv.xfmqtgv:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-surface-emphasized",
+    "byteOffset": 552241,
+    "decl": "--WDS-surface-emphasized:#242626;",
+    "selector": ".xhtg2ui.xhtg2ui,.xhtg2ui.xhtg2ui:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-surface-emphasized",
+    "byteOffset": 589890,
+    "decl": "--WDS-surface-emphasized:#F4F4F4;",
+    "selector": ".xm7eazi.xm7eazi,.xm7eazi.xm7eazi:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-surface-emphasized",
+    "byteOffset": 621844,
+    "decl": "--WDS-surface-emphasized:#F7F5F3;",
+    "selector": ".xodxds6.xodxds6,.xodxds6.xodxds6:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-surface-emphasized",
+    "byteOffset": 703645,
+    "decl": "--WDS-surface-emphasized:#F7F5F3;",
+    "selector": ".xuxuz6f.xuxuz6f,.xuxuz6f.xuxuz6f:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-surface-emphasized",
+    "byteOffset": 781191,
+    "decl": "--WDS-surface-emphasized:#1D1F1F;",
+    "selector": "@media (prefers-color-scheme: dark){.x1tkf7af.x1tkf7af,.x1tkf7af.x1tkf7af:root",
+    "media": "@media (prefers-color-scheme: dark)"
+  },
+  {
+    "token": "--WDS-surface-emphasized",
+    "byteOffset": 835436,
+    "decl": "--WDS-surface-emphasized:#1D1F1F;",
+    "selector": "@media (prefers-color-scheme: dark){.xfmqtgv.xfmqtgv,.xfmqtgv.xfmqtgv:root",
+    "media": "@media (prefers-color-scheme: dark)"
+  },
+  {
+    "token": "--WDS-lines-divider",
+    "byteOffset": 128823,
+    "decl": "--WDS-lines-divider:rgba(0, 0, 0, .1);",
+    "selector": ".x1aj9qoi.x1aj9qoi,.x1aj9qoi.x1aj9qoi:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-lines-divider",
+    "byteOffset": 201591,
+    "decl": "--WDS-lines-divider:rgba(0, 0, 0, .1);",
+    "selector": ".x1tkf7af.x1tkf7af,.x1tkf7af.x1tkf7af:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-lines-divider",
+    "byteOffset": 215836,
+    "decl": "--WDS-lines-divider:rgba(255, 255, 255, .1);",
+    "selector": ".x1umy8rd.x1umy8rd,.x1umy8rd.x1umy8rd:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-lines-divider",
+    "byteOffset": 246312,
+    "decl": "--WDS-lines-divider:rgba(255, 255, 255, .1);",
+    "selector": ".x1w9d4se.x1w9d4se,.x1w9d4se.x1w9d4se:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-lines-divider",
+    "byteOffset": 343464,
+    "decl": "--WDS-lines-divider:rgba(255, 255, 255, .1);",
+    "selector": ".x4skxjj.x4skxjj,.x4skxjj.x4skxjj:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-lines-divider",
+    "byteOffset": 516989,
+    "decl": "--WDS-lines-divider:rgba(0, 0, 0, .1);",
+    "selector": ".xfmqtgv.xfmqtgv,.xfmqtgv.xfmqtgv:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-lines-divider",
+    "byteOffset": 550679,
+    "decl": "--WDS-lines-divider:rgba(255, 255, 255, .1);",
+    "selector": ".xhtg2ui.xhtg2ui,.xhtg2ui.xhtg2ui:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-lines-divider",
+    "byteOffset": 588341,
+    "decl": "--WDS-lines-divider:rgba(0, 0, 0, .2);",
+    "selector": ".xm7eazi.xm7eazi,.xm7eazi.xm7eazi:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-lines-divider",
+    "byteOffset": 620295,
+    "decl": "--WDS-lines-divider:rgba(0, 0, 0, .1);",
+    "selector": ".xodxds6.xodxds6,.xodxds6.xodxds6:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-lines-divider",
+    "byteOffset": 702084,
+    "decl": "--WDS-lines-divider:rgba(17, 27, 33, .1);",
+    "selector": ".xuxuz6f.xuxuz6f,.xuxuz6f.xuxuz6f:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-lines-divider",
+    "byteOffset": 779629,
+    "decl": "--WDS-lines-divider:rgba(255, 255, 255, .1);",
+    "selector": "@media (prefers-color-scheme: dark){.x1tkf7af.x1tkf7af,.x1tkf7af.x1tkf7af:root",
+    "media": "@media (prefers-color-scheme: dark)"
+  },
+  {
+    "token": "--WDS-lines-divider",
+    "byteOffset": 833874,
+    "decl": "--WDS-lines-divider:rgba(255, 255, 255, .1);",
+    "selector": "@media (prefers-color-scheme: dark){.xfmqtgv.xfmqtgv,.xfmqtgv.xfmqtgv:root",
+    "media": "@media (prefers-color-scheme: dark)"
+  },
+  {
+    "token": "--WDS-components-active-list-row",
+    "byteOffset": 124913,
+    "decl": "--WDS-components-active-list-row:rgba(194, 189, 184, .15);",
+    "selector": ".x1aj9qoi.x1aj9qoi,.x1aj9qoi.x1aj9qoi:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-components-active-list-row",
+    "byteOffset": 197681,
+    "decl": "--WDS-components-active-list-row:rgba(194, 189, 184, .15);",
+    "selector": ".x1tkf7af.x1tkf7af,.x1tkf7af.x1tkf7af:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-components-active-list-row",
+    "byteOffset": 211925,
+    "decl": "--WDS-components-active-list-row:rgba(255, 255, 255, .1);",
+    "selector": ".x1umy8rd.x1umy8rd,.x1umy8rd.x1umy8rd:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-components-active-list-row",
+    "byteOffset": 242416,
+    "decl": "--WDS-components-active-list-row:rgba(255, 255, 255, .1);",
+    "selector": ".x1w9d4se.x1w9d4se,.x1w9d4se.x1w9d4se:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-components-active-list-row",
+    "byteOffset": 339553,
+    "decl": "--WDS-components-active-list-row:rgba(255, 255, 255, .1);",
+    "selector": ".x4skxjj.x4skxjj,.x4skxjj.x4skxjj:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-components-active-list-row",
+    "byteOffset": 513079,
+    "decl": "--WDS-components-active-list-row:rgba(194, 189, 184, .15);",
+    "selector": ".xfmqtgv.xfmqtgv,.xfmqtgv.xfmqtgv:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-components-active-list-row",
+    "byteOffset": 546784,
+    "decl": "--WDS-components-active-list-row:rgba(255, 255, 255, .1);",
+    "selector": ".xhtg2ui.xhtg2ui,.xhtg2ui.xhtg2ui:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-components-active-list-row",
+    "byteOffset": 584435,
+    "decl": "--WDS-components-active-list-row:rgba(194, 189, 184, .15);",
+    "selector": ".xm7eazi.xm7eazi,.xm7eazi.xm7eazi:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-components-active-list-row",
+    "byteOffset": 616385,
+    "decl": "--WDS-components-active-list-row:rgba(194, 189, 184, .15);",
+    "selector": ".xodxds6.xodxds6,.xodxds6.xodxds6:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-components-active-list-row",
+    "byteOffset": 698181,
+    "decl": "--WDS-components-active-list-row:rgba(194, 189, 184, .15);",
+    "selector": ".xuxuz6f.xuxuz6f,.xuxuz6f.xuxuz6f:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-components-active-list-row",
+    "byteOffset": 775718,
+    "decl": "--WDS-components-active-list-row:rgba(255, 255, 255, .1);",
+    "selector": "@media (prefers-color-scheme: dark){.x1tkf7af.x1tkf7af,.x1tkf7af.x1tkf7af:root",
+    "media": "@media (prefers-color-scheme: dark)"
+  },
+  {
+    "token": "--WDS-components-active-list-row",
+    "byteOffset": 829963,
+    "decl": "--WDS-components-active-list-row:rgba(255, 255, 255, .1);",
+    "selector": "@media (prefers-color-scheme: dark){.xfmqtgv.xfmqtgv,.xfmqtgv.xfmqtgv:root",
+    "media": "@media (prefers-color-scheme: dark)"
+  },
+  {
+    "token": "--WDS-content-deemphasized",
+    "byteOffset": 128314,
+    "decl": "--WDS-content-deemphasized:rgba(0, 0, 0, .6);",
+    "selector": ".x1aj9qoi.x1aj9qoi,.x1aj9qoi.x1aj9qoi:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-content-deemphasized",
+    "byteOffset": 166980,
+    "decl": "--WDS-content-deemphasized:var(--xpb0mib);",
+    "selector": ".x1o6itod.x1o6itod,.x1o6itod.x1o6itod:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-content-deemphasized",
+    "byteOffset": 201082,
+    "decl": "--WDS-content-deemphasized:rgba(0, 0, 0, .6);",
+    "selector": ".x1tkf7af.x1tkf7af,.x1tkf7af.x1tkf7af:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-content-deemphasized",
+    "byteOffset": 215320,
+    "decl": "--WDS-content-deemphasized:rgba(255, 255, 255, .6);",
+    "selector": ".x1umy8rd.x1umy8rd,.x1umy8rd.x1umy8rd:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-content-deemphasized",
+    "byteOffset": 245811,
+    "decl": "--WDS-content-deemphasized:#8D9599;",
+    "selector": ".x1w9d4se.x1w9d4se,.x1w9d4se.x1w9d4se:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-content-deemphasized",
+    "byteOffset": 342948,
+    "decl": "--WDS-content-deemphasized:rgba(255, 255, 255, .6);",
+    "selector": ".x4skxjj.x4skxjj,.x4skxjj.x4skxjj:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-content-deemphasized",
+    "byteOffset": 516480,
+    "decl": "--WDS-content-deemphasized:rgba(0, 0, 0, .6);",
+    "selector": ".xfmqtgv.xfmqtgv,.xfmqtgv.xfmqtgv:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-content-deemphasized",
+    "byteOffset": 550179,
+    "decl": "--WDS-content-deemphasized:#959393;",
+    "selector": ".xhtg2ui.xhtg2ui,.xhtg2ui.xhtg2ui:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-content-deemphasized",
+    "byteOffset": 587836,
+    "decl": "--WDS-content-deemphasized:#6A6C6C;",
+    "selector": ".xm7eazi.xm7eazi,.xm7eazi.xm7eazi:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-content-deemphasized",
+    "byteOffset": 619786,
+    "decl": "--WDS-content-deemphasized:rgba(0, 0, 0, .6);",
+    "selector": ".xodxds6.xodxds6,.xodxds6.xodxds6:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-content-deemphasized",
+    "byteOffset": 701582,
+    "decl": "--WDS-content-deemphasized:#5B6368;",
+    "selector": ".xuxuz6f.xuxuz6f,.xuxuz6f.xuxuz6f:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-content-deemphasized",
+    "byteOffset": 779113,
+    "decl": "--WDS-content-deemphasized:rgba(255, 255, 255, .6);",
+    "selector": "@media (prefers-color-scheme: dark){.x1tkf7af.x1tkf7af,.x1tkf7af.x1tkf7af:root",
+    "media": "@media (prefers-color-scheme: dark)"
+  },
+  {
+    "token": "--WDS-content-deemphasized",
+    "byteOffset": 833358,
+    "decl": "--WDS-content-deemphasized:rgba(255, 255, 255, .6);",
+    "selector": "@media (prefers-color-scheme: dark){.xfmqtgv.xfmqtgv,.xfmqtgv.xfmqtgv:root",
+    "media": "@media (prefers-color-scheme: dark)"
+  },
+  {
+    "token": "--WDS-content-default",
+    "byteOffset": 128398,
+    "decl": "--WDS-content-default:#0A0A0A;",
+    "selector": ".x1aj9qoi.x1aj9qoi,.x1aj9qoi.x1aj9qoi:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-content-default",
+    "byteOffset": 167022,
+    "decl": "--WDS-content-default:var(--xp8sa82);",
+    "selector": ".x1o6itod.x1o6itod,.x1o6itod.x1o6itod:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-content-default",
+    "byteOffset": 201166,
+    "decl": "--WDS-content-default:#0A0A0A;",
+    "selector": ".x1tkf7af.x1tkf7af,.x1tkf7af.x1tkf7af:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-content-default",
+    "byteOffset": 215416,
+    "decl": "--WDS-content-default:#FAFAFA;",
+    "selector": ".x1umy8rd.x1umy8rd,.x1umy8rd.x1umy8rd:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-content-default",
+    "byteOffset": 245891,
+    "decl": "--WDS-content-default:#F7F8FA;",
+    "selector": ".x1w9d4se.x1w9d4se,.x1w9d4se.x1w9d4se:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-content-default",
+    "byteOffset": 343044,
+    "decl": "--WDS-content-default:#FAFAFA;",
+    "selector": ".x4skxjj.x4skxjj,.x4skxjj.x4skxjj:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-content-default",
+    "byteOffset": 516564,
+    "decl": "--WDS-content-default:#0A0A0A;",
+    "selector": ".xfmqtgv.xfmqtgv,.xfmqtgv.xfmqtgv:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-content-default",
+    "byteOffset": 550259,
+    "decl": "--WDS-content-default:#FAFAFA;",
+    "selector": ".xhtg2ui.xhtg2ui,.xhtg2ui.xhtg2ui:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-content-default",
+    "byteOffset": 587916,
+    "decl": "--WDS-content-default:#0A0A0A;",
+    "selector": ".xm7eazi.xm7eazi,.xm7eazi.xm7eazi:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-content-default",
+    "byteOffset": 619870,
+    "decl": "--WDS-content-default:#0A0A0A;",
+    "selector": ".xodxds6.xodxds6,.xodxds6.xodxds6:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-content-default",
+    "byteOffset": 701660,
+    "decl": "--WDS-content-default:#0A1014;",
+    "selector": ".xuxuz6f.xuxuz6f,.xuxuz6f.xuxuz6f:root",
+    "media": null
+  },
+  {
+    "token": "--WDS-content-default",
+    "byteOffset": 779209,
+    "decl": "--WDS-content-default:#FAFAFA;",
+    "selector": "@media (prefers-color-scheme: dark){.x1tkf7af.x1tkf7af,.x1tkf7af.x1tkf7af:root",
+    "media": "@media (prefers-color-scheme: dark)"
+  },
+  {
+    "token": "--WDS-content-default",
+    "byteOffset": 833454,
+    "decl": "--WDS-content-default:#FAFAFA;",
+    "selector": "@media (prefers-color-scheme: dark){.xfmqtgv.xfmqtgv,.xfmqtgv.xfmqtgv:root",
+    "media": "@media (prefers-color-scheme: dark)"
+  },
+  {
+    "token": "--WDS-content-default",
+    "byteOffset": 886861,
+    "decl": "--WDS-content-default:#ffffff}.x1ppz1d2{--WDS-systems-bubble-surface-outgoing:var(--WDS-systems-chat-foreground-wallpaper)}.x1qg1ob{--xeia6u2:0px}.x1sbyv9i{--divider:var(--WDS-lines-outline-default)}.x1srzqgc{--glimmer-animation-timing-function:ease-in-out}.x1sv5zqs{--glimmer-opacity-min:.09}.x1tomd6h{--glimmer-opacity-max:.22}.x1tq6e3e{--audio-progress-outgoing:var(--WDS-content-default)}.x1uskrxl{--glimmer-animation-duration:1s}.x1vzaafi{--audio-track-outgoing:rgba(255,255,255,.2)}.x1w830k3{--primary-stronger:#ffffff}.x1wg436h{--button-bubble:#ffffff}.x1wu0eqq{--input-border-active:var(--WDS-content-default)}.x1xj1co4{--audio-progress-played-outgoing:var(--WDS-content-default)}.x4waw3b{--ptt-waveform-outgoing-played:var(--WDS-content-default)}.x531f83{--audio-progress-incoming:var(--WDS-accent)}.x7yjeqb{--message-placeholder-icon:rgba(255,255,255,.5)}.x85wx34{--edit-opacity:0}.x8w6msn{--ptt-waveform-outgoing-unplayed:rgba(var(--WDS-systems-bubble-content-deemphasized-RGB),.3)}.x9kql8n{--hover-overlay:var(--WDS-surface-highlight)}.x9lmoot{--WDS-systems-bubble-surface-incoming:var(--WDS-systems-chat-foreground-wallpaper)}.xbgy0q5{--ptt-thumb-outgoing-played:var(--WDS-content-default)}.xd53t3{--always-white:var(--WDS-persistent-always-white)}.xhv23hs{--reactions-search-color:var(--WDS-content-deemphasized)}.xibni3v{--primary-strong:#ffffff}.xipi97s{--reactions-panel-background-color:var(--WDS-surface-elevated-default)}.xiz2v2z{--always-dark-overlay:var(--WDS-surface-highlight)}.xkbu4vg{--ptt-green:var(--WDS-accent)}.xlgza3w{--dropdown-background:var(--WDS-surface-elevated-default)}.xm9wxh{--WDS-surface-highlight-RGB:var(--WDS-persistent-always-black-RGB)}.xmam0eg{--secondary:rgba(255,255,255,.6)}.xobodt7{--icon-strong-rgb:255,255,255}.xpx3cv0{--primary-strong-rgb:255,255,255}.xq27zc8{--dialog-corner-radius:16px}.xqtmrrc{--dialog-anchor-vertical-padding:20px}.xt5v0pj{--forwarded-indicator-text:rgba(255,255,255,.5)}.xt6t7n6{--secondary-lighter:rgba(255,255,255,.5)}.xtp32ql{--bubble-meta:rgba(255,255,255,.8)}.xu7j3m8{--audio-progress-played-outgoing:var(--WDS-content-read)}.xv7i4pt{--audio-progress-played-incoming:var(--WDS-content-read)}.xv8ol63{--audio-track-outgoing:var(--WDS-content-disabled)}.xvcldg8{--ptt-thumb-incoming-played:var(--WDS-content-read)}.xvevfp2{--glimmer-stagger-time:-.1s}.xvjfkcs{--reactions-tray-active-round-background:var(--WDS-surface-highlight)}.xyejjpt{--base-line-clamp-line-height:var(--x---base-line-clamp-line-height)}.xsohdcw:focus-within{--input-border:var(--WDS-content-default)}.xi52gnm:hover{--edit-opacity:1}.xr9tke2:hover{--WAWeb-msg-hover-tint:1}.xxx6ivz:hover{--xeia6u2:-34px}@media (min-width: 801px) and (max-width: 900px){.x17u5etd.x17u5etd{--width-announcement-bubble:max(calc((100vw / 2.14) - 10px),333px)}}@media (min-width: 901px) and (max-width: 980px){.x1la26m9.x1la26m9{--width-announcement-bubble:max(calc(100vw / 2.28),333px)}}@media (max-width: 1560px){.x1qq3xje.x1qq3xje{--width-announcement-bubble:calc((100vw / 3.25) - 10px)}}@media (max-width: 800px){.x2xivva.x2xivva{--width-announcement-bubble:max(calc((100vw / 2.18) - 10px),333px)}}@media (prefers-reduced-motion: reduce){.xp52qmy.xp52qmy{--glimmer-animation-duration:0s}}@media (min-width: 981px) and (max-width: 1024px){.xvvywth.xvvywth{--width-announcement-bubble:max(calc(100vw / 2.14),333px)}}.x104how{background:radial-gradient(at top right,#2b2c2c 60%,transparent 80%)}.x11g6tue{background:none}.x12hflea{background:linear-gradient(180deg,#33333370,#3330)}.x1417sbz{background:#0006}.x14a5xrd{background:#f5f7f8}.x152gpt9{background:linear-gradient(to top,#0009,#0000)}.x1595w2n{background:radial-gradient(circle at top right,rgba(var(--WDS-systems-bubble-surface-outgoing-RGB),1) 40%,rgba(var(--WDS-systems-bubble-surface-outgoing-RGB),0) 80%)}.x164nj1r{background:radial-gradient(#c2bdb873,#c2bdb800)}.x179ni5g{background:var(--fds-highlight)}.x18aeczl{background:linear-gradient(180deg,#953ec199 -234.46%,#3e83eb99 182.12%)}.x18bz5l2{background:radial-gradient(84.59% 87% at 93.5% 13%,#0000004d,#0000)}.x18k6ek{background:linear-gradient(180deg,var(--WDS-background-dimmer) 0%,rgba(255,255,255,0) 100%)}.x19e21cy{background:linear-gradient(to bottom,transparent 0%,var(--card-background) 100%)}.x1cr7w2r{background:rgba(var(--web-always-black),.5)}.x1d8sa2z{background:linear-gradient(34deg,rgba(var(--WDS-systems-bubble-surface-incoming-RGB),0) 0%,rgba(var(--WDS-systems-bubble-surface-incoming-RGB),0) 50%,var(--WDS-systems-bubble-surface-incoming) 70%)}.x1f0yzma{background:linear-gradient(to top,rgba(0,0,0,.6),transparent)}.x1gqzrjq{background:var(--big-blue-50)}.x1ie7x4c{background:radial-gradient(at top right,var(--WDS-systems-bubble-surface-overlay) 60%,transparent 80%)}.x1jnmtmn{background:linear-gradient(180deg,#0000,#0000000d 50.52%,#0003)}.x1lj1f8w{grid-template:1fr 1fr / 1fr 1fr}.x1lsgnfv{background:var(--transient-background)}.x1m7ywf0{background:var(--ig-background-always-dark-blur)}.x1md70p1{background:transparent}.x1n92vqa{background:radial-gradient(at top right,rgba(var(--WDS-systems-bubble-surface-incoming-RGB),1) 60%,rgba(var(--WDS-systems-bubble-surface-incoming-RGB),0) 80%)}.x1nd36k{background:#0009}.x1oomfc{background:linear-gradient(34deg,rgba(var(--WDS-systems-bubble-surface-outgoing-RGB),0) 0%,rgba(var(--WDS-systems-bubble-surface-outgoing-RGB),0) 50%,var(--WDS-systems-bubble-surface-outgoing) 70%)}.x1pincqn{background:linear-gradient(to left,#0003,#0000),linear-gradient(to right,#0003,#0000),linear-gradient(to top,#0003,#0000),linear-gradient(to bottom,#0003,#0000)}.x1qcilzy{background:linear-gradient(360deg,#0000,#00000026)}.x1qzfwts{background:var(--WDS-surface-highlight)}.x1ucmu8n{background:var(--WDS-background-wash-inset)}.x1ue4b2t{background:linear-gradient(0deg,#33333370,#3330)}.x1uew315{background:#d8d8d8}.x1uus05e{background:#ebfedd}.x1vkjmz6{background:var(--media-inner-border)}.x1xijdtg{background:var(--fds-white)}.x2ed6v8{background:var(--WDS-lines-divider)}.x2ts8ay{background:#0000001a}.x3s0fgx{background:var(--big-blue-gray-5)}.x64ygrw{background:radial-gradient(at top left,rgba(var(--WDS-systems-bubble-surface-outgoing-RGB),1) 60%,rgba(var(--WDS-systems-bubble-surface-outgoing-RGB),0) 80%)}.x8b8lpe{background:linear-gradient(var(--WDS-surface-highlight),var(--WDS-surface-highlight)),var(--WDS-surface-default)}.x9d0jvq{background:var(--WDS-persistent-always-branded)}.xa2owlq{background:#000}.xe4h88v{background:#fcf5eb}.xe5due1{background:var(--WDS-accent)}.xgx14ks{background:rgb(var(--ig-separator))}.xh5507f{background:var(--WDS-accent-deemphasized)}.xhg9xfh{background:var(--fds-black-alpha-60)}.xi9vxav{background:#c6c9cc}.xjw5052{background:linear-gradient(180deg,#953ec1 -525.46%,#3e83eb 148.61%),#ffffff1f}.xjw9qsh{background:radial-gradient(at top left,rgba(var(--WDS-systems-bubble-surface-incoming-RGB),1) 60%,rgba(var(--WDS-systems-bubble-surface-incoming-RGB),0) 80%)}.xln7xf2{font:inherit}.xlrljjx{background:var(--WDS-systems-bubble-surface-incoming)}.xn2kgx5{grid-template:repeat(2,1fr) / repeat(2,1fr)}.xnff01w{background:var(--fds-black-alpha-50)}.xnukdne{background:radial-gradient(#d9d9d94d,#f7f5f300)}.xnvtxd0{background:linear-gradient(to bottom,#00000080,#0000)}.xo90atz{background:linear-gradient(to bottom,#000c,#0000)}.xp3fus3{background:#1a1a1acc}.xp8kixx{background:var(--WDS-surface-elevated-emphasized)}.xpfvu57{background:var(--WDS-surface-emphasized)}.xq6dov1{background:linear-gradient(to bottom,#0009,#0000)}.xrumn1r{background:linear-gradient(15deg,rgba(var(--overlay-rgb),0) 0% 45%,rgba(var(--overlay-rgb),.12) 70%,rgba(var(--overlay-rgb),.33))}.xs6gss{background:var(--big-green-40)}.xsluj4e{background:linear-gradient(to right,rgba(var(--WDS-systems-bubble-surface-overlay-RGB),0),rgba(var(--WDS-systems-bubble-surface-overlay-RGB),1) 50%)}.xsm26vf{background:var(--WDS-surface-default)}.xtc4mwu{background:linear-gradient(to top,rgba(var(--overlay-rgb),.5),rgba(var(--overlay-rgb),0))}.xudi1rl{background:var(--WDS-surface-pressed)}.xudvloq{background:linear-gradient(to top,#00000080,#0000)}.xums3t4{background:var(--video-player-background)}.xvfnxmo{background:linear-gradient(-15deg,rgba(var(--overlay-rgb),0) 0% 45%,rgba(var(--overlay-rgb),.12) 70%,rgba(var(--overlay-rgb),.33))}.xx0f3s1{background:radial-gradient(at top right,var(--WDS-systems-chat-foreground-wallpaper) 60%,transparent 80%)}.xzudefj{background:linear-gradient(180deg,#953ec1 -234.46%,#3e83eb 182.12%)}.x1081cuy{transition:transform .15s cubic-bezier(.31,.94,.34,1),background-color .15s ease}.x111pd7f{transition:background-color .15s ease}.x112ta8{border-bottom:none}.x11eg80g{transition:all .4s ease-in-out}.x12lumcd{flex:1 1 auto}.x12zc9zx{outline:2px solid var(--WDS-accent)}.x136sy06{transition:grid-template-rows .2s cubic-bezier(.08,.52,.52,1)}.x139wjo3{outline:2px solid var(--WDS-content-default)}.x13dq6ri{transition:width .3s cubic-bezier(.1,.82,.25,1)}.x13k7yer{transition:opacity .4s ease-in-out}.x13qkkhc{flex:0 0 100px}.x14sdrxx{transition:transform .15s ease}.x154egtw{transition:opacity .18s linear,transform .09s ease-out}.x158usst{background-position:50%}.x15cnf4b{transition:width .3s}.x15kfjtz{transition:-webkit-filter .16s linear}.x16fllpm{transition:opacity .3s ease-out,transform .3s ease-out}.x17e1izs{transition:transform .3s cubic-bezier(.1,.82,.25,1),opacity .2s cubic-bezier(.1,.82,.25,1)}.x17j15dm{transition:opacity 75ms ease-out}.x17pgkn5{flex:0 0 32px}.x17vty23{transition:opacity .15s ease-out}.x18314t{transition:padding-left .3s var(--xi237gd)}.x188jz7k{border-inline-start:1px solid var(--WDS-lines-divider)}.x18acrvh{transition:opacity .2s cubic-bezier(0,0,.9,.1)}.x18dvir5{flex:0 0 30%}.x19seqdo{transition:opacity .3s var(--xi237gd),transform .3s var(--xi237gd)}.x1a2a7pz{outline:none}.x1agz8ms{background-position:0 0}.x1ah53aw{transition:transform .15s ease,opacity .15s ease,background-color .15s ease}.x1aocelp{transition:filter .3s ease-out}.x1b6ykf0{outline:0}.x1b959el{transition:opacity .2s ease-out}.x1bbs9h{transition:opacity .1s ease,max-height .1s ease,padding-bottom .1s ease}.x1brnrfz{flex:1 1 calc(25% - 8px)}.x1bvjpef{text-decoration:underline}.x1c9mt56{transition:transform 75ms ease-out,opacity .25s ease-in-out}.x1cgt1ok{flex:0 0 20%}.x1cqoux5{flex:1 1 0}.x1cup607{transition:max-height .25s,padding .25s}.x1cz01zg{transition:grid-template-columns .2s var(--xi237gd),opacity .16s var(--xi237gd)}.x1dgx9ea{flex:0 0 calc(1200%/35)}.x1el4u5y{transition:transform .3s ease}.x1ewm37j{transition:background .3s ease-out .1s}.x1f4dtem{transition:transform 1s cubic-bezier(.66,0,.34,1)}.x1fui87n{transition:.2s}.x1g55bwk{transition:opacity .24s var(--xi237gd)}.x1gebrk9{flex:1 1 100%}.x1gje4rg{outline:var(--focus-ring-outline-link)}.x1h2kqdt{transition:background-color .2s}.x1hl2dhg{text-decoration:none}.x1hw4fh5{mask:var(--x-mask)}.x1hzlkrz{transition:all .3s cubic-bezier(.4,0,.2,1)}.x1isitws{flex:auto}.x1j8cyr6{font-variant:all-small-caps}.x1jaox4c{transition:transform .2s ease}.x1jtmdvd{transition:opacity .2s ease-in}.x1lbc34v{transition:max-width var(--transition-duration) ease-out}.x1lkwvkz{transition:border-radius .3s}.x1lqm0kl{flex:0 999 auto}.x1lvsgvq{background-position:center center}.x1m0b2ad{transition:border-radius .3s,box-shadow .3s}.x1m9eaqm{transition:height var(--xw2yakm) ease}.x1okw0bk{flex:none}.x1p0mfcu{transition:border-radius .3s linear .2s,box-shadow .3s linear .25s}.x1q46pyc{place-self:center}.x1qszlou{transition:transform var(--xw2yakm) ease}.x1sazirq{transition:all .5s cubic-bezier(.4,0,.2,1)}.x1syfmzz{transition:transform .15s cubic-bezier(.31,.94,.34,1)}.x1trvaba{transition:transform .2s}.x1u8qi29{flex:0 0 33%}.x1ucz5p{outline:unset}.x1ux5q4u{transition:transform .2s ease-in-out}.x1vq37if{transition:opacity .15s ease-in-out}.x1w3ydq2{transition:padding .12s ease-out}.x1xgqf3o{transition:inset-inline-start .1s ease}.x1xsqp64{background-position:center}.x1y2wqyl{transition:opacity .1s ease-out}.x1yf5jnz{transition:border-radius .3s linear .2s,margin .3s}.x1yg1uw6{transition:border-width var(--x10iiam7) cubic-bezier(.09,.87,.72,1)}.x1yhwi1h{transition:flex .5s}.x1yjeaew{transition:padding-left .3s var(--x1rslf0m)}.x1yssd5k{transition:transform .3s}.x22zity{transition:transform 75ms ease-out,-webkit-transform 75ms ease-out,opacity .25s ease-in-out}.x23gdha{transition:opacity 75ms}.x252dbw{transition:height .4s cubic-bezier(.69,0,.79,.14)}.x2c3f24{transition:opacity .16s var(--xi237gd)}.x2gvlc5{outline:2px solid var(--WDS-content-action-emphasized)}.x2r35ed{transition:.2s ease border-color}.x3a6vul{transition:opacity .12s ease-out}.x3psx0u{flex:0 0 auto}.x3uy0m3{transition:background-color .12s ease-in-out}.x4u6w88{outline:1px solid var(--progress-background)}.x5gkzjs{transition:background-color .2s ease}.x5lk768{transition:box-shadow .25s ease-in-out,top .25s ease-in-out,transform .25s ease-in-out}.x5mp9sv{flex:1 0 0}.x6q2ic0{transition:margin .3s}.x7a90jq{transition:all .24s cubic-bezier(.4,0,.2,1) .06s}.x7aqg34{outline:3px solid var(--gray-150)}.x7d9zo5{transition:opacity .8s ease-in-out}.x7gkmsb{transition:opacity .5s cubic-bezier(.1,.82,.25,1)}.x7og5b9{border-top:1px solid var(--big-gray-30)}.x8hos8a{transition:.5s}.x92akz8{text-decoration:none!important}.x98rzlu{flex:1}.x9ukxhc{transition:height .3s ease}.x9v64kc{transition:border-color .15s ease,background-color .15s ease}.xagbzdv{outline:2px solid var(--WDS-secondary-positive)}.xc8qplx{flex:1 0 auto}.xcrclan{transition:height .3s ease-in-out}.xcxita6{transition:transform .2s ease,opacity .2s ease}.xeh1a47{transition:color .33s linear .5s,border-color ease-out .5s,background-color .33s linear 0s}.xf8xn22{background-position:top left}.xgw9rtw{mask:radial-gradient(circle at 12% 62%,transparent 14px,black 14px)}.xh9ts4v{transition:opacity .08s linear}.xhfbhpw{scroll-snap-type:x mandatory}.xid8q7e{transition:right 75ms ease-out,top 75ms ease-out,opacity 75ms ease-out}.xish69e{overscroll-behavior:contain}.xj9rc82{transition:background-color .15s ease,opacity .15s ease}.xk82a7y{transition:opacity .2s ease-in-out}.xktt2wv{transition:transform .3s cubic-bezier(.1,.82,.25,1),opacity .1s cubic-bezier(.1,.82,.25,1)}.xkz0k9k{flex:0 1 auto}.xl0co6n{transition:transform .3s,opacity .3s}.xlkovuz{transition:background-color .3s ease}.xmqliwb{text-decoration:line-through}.xnhwuio{transition:max-height .2s}.xnlqfti{border-bottom:1px solid #C4C4C4}.xo9andd{transition:padding-inline-end .2s var(--xi237gd)}.xpbwgaa{transition:visibility .3s,opacity .3s var(--xi237gd)}.xq2gx43{transition:none}.xqc0922{transition:background .25s}.xqu7myx{transition:visibility .3s,opacity .3s cubic-bezier(.1,.82,.25,1)}.xqz5vs7{transition:opacity .3s ease}.xr5tw4k{text-decoration:var(--xyw6ga5)}.xt1zwq9{transition:opacity .3s var(--xi237gd)}.xt3erj5{transition:fill .2s ease-in-out}.xv17emg{transition:opacity .18s linear,transform .09s ease-in}.xvewczl{transition:border-color .2s}.xvjtoec{transition:grid-template-rows .28s cubic-bezier(.4,0,.2,1),margin-block .28s cubic-bezier(.4,0,.2,1),opacity .2s ease-out,visibility .28s}.xx9udhw{transition:width .1s ease-out,transform .2s ease-out,left 0s linear .05s,right 0s linear .05s}.xy3jww0{flex:1 0 100%}.xy8ot30{transition:width .2s cubic-bezier(.08,.52,.52,1)}.xy9syeq{transition:all .2s ease-in-out}.xzdg38j{transition:opacity .2s ease}.xzdwc1v{transition:max-height .2s cubic-bezier(.08,.52,.52,1)}.xztyhrg{background-position:50% 50%}.xzya46m{transition:background .3s ease-out}.x18z0m94:focus-visible{outline:2px solid var(--WDS-accent)}.x1901edu:-webkit-autofill{transition:background-color 31557600s 0s,color 31557600s 0s,-webkit-text-fill-color 31557600s 0s}.x1iy98g:focus-visible{outline:3px solid var(--WDS-accent)}.x1m6ll81:-webkit-autofill{transition:background-color 31557600s 0s}.x1s3xk63:-webkit-autofill{transition:background-color 31557600s 0s,color 31557600s 0s}.x1xirp8a:focus-visible{text-decoration:none}.xbvygy2:focus-visible{text-decoration:underline}.xdfradd:focus-visible{outline:3px solid var(--WDS-green-500)}.x18br7mf:hover{transition:transform .2s ease-in-out}.x1edh9d7:hover{text-decoration:inherit}.x1lku1pv:hover{text-decoration:none}.x1tvyudi:hover{outline:3px solid rgba(var(--thumb-border-viewer-active-rgb),.7)}.x2j15wl:hover{outline:none}.xt0b8zv:hover{text-decoration:underline}.xv658tw:hover{text-decoration:none!important}.x1uvtmcs:focus{outline:none}.x11iimpl:active{text-decoration:none}.x16j0l1c:active{transition:background-color .1s ease}.x1eo1aoc:active{text-decoration:underline}.x1wp9yj1:focus-visible:hover{text-decoration:none}@media (min-width: 1024px){.x1vz1ssi.x1vz1ssi{flex-flow:row wrap}}@media (prefers-reduced-motion: reduce){.x9kvfbb.x9kvfbb{transition:none}}@media (min-width: 1024px){.xq7czo8.xq7czo8{flex:0 1 50%}}@media (forced-colors: active){.xvetz19.xvetz19{outline:var(--focus-ring-outline-forced-colors)}}.x1e2wovf:focus-visible:active{text-decoration:none}.xv854yx:active:focus-visible{text-decoration:none}@media (forced-colors: active){.x1i4ix8p.x1i4ix8p:focus{outline:var(--focus-ring-outline-forced-colors)}}.x10025mt{font-weight:var(--x7vf1kf)}.x100la0o{color:var(--audio-progress-played-outgoing)}.x100nk6e{color:var(--secondary-destructive-button-icon)}.x101kupi{margin-inline-end:56px}.x101yacv{line-height:25px}.x1024aj3{color:var(--xz9lgvt)}.x1028phh{border-inline-end-width:8px}.x1029psz{color:var(--x1trz6ej)}.x10322wi{outline-color:var(--WDS-secondary-negative)}.x1033uif{border-start-end-radius:999px}.x104kibb{display:-webkit-box}.x104qc98{box-shadow:0 12px 28px 0 var(--shadow-2),0 2px 4px 0 var(--shadow-1),inset 0 0 0 1px var(--shadow-inset)}.x10519g{border-end-start-radius:8%}.x105f6xi{border-inline-end-color:var(--button-reject-background-hover)}.x105ttfm{transform:translateY(-100%)}.x106a9eq{padding-inline-start:20px}.x106wr5q{animation-name:x1u38n1b-B}.x107h2d7{outline-style:dashed}.x10886xy{animation-name:unset}.x10a5rjv{color:var(--x184htih)}.x10a7dvz{border-inline-start-color:var(--warning)}.x10acdqo{border-start-start-radius:var(--xw290w2)}.x10b8xyx{border-end-start-radius:var(--xlvhrx)}.x10bpwj5{border-inline-start-color:var(--fds-divider-on-white)}.x10c80rt{padding-inline-start:120px}.x10co9cg{color:rgba(var(--primary-rgb),.3)}.x10d0gm4{font-stretch:var(--text-input-field-font-stretch)}.x10d9sdx{font-size:2rem!important}.x10dhlfy{color:var(--placeholder-text-on-media)}.x10do2q5{border-start-start-radius:2px 50%}.x10ds1b2{margin-inline-start:120px}.x10du0as{border-end-start-radius:calc(var(--x5t84p7) - var(--x190aigg))}.x10dujrv{background-color:var(--video-primary)}.x10e1pyi{color:var(--x11nnfiv)}.x10e4vud{animation-fill-mode:forwards}.x10eyzkn{border-inline-start-color:#fff}.x10f5nwc{box-shadow:0 0 0 1px var(--shadow-1)}.x10flsy6{font-family:var(--font-family-default)}.x10givlx{border-inline-start-color:var(--x1lwowbg)}.x10grn0k{border-inline-end-color:var(--x148q5kp)}.x10h14z0{background-color:var(--xyx3zd1)}.x10h2w50{border-start-end-radius:var(--x1p6lp5i)}.x10h3on{box-shadow:0 2px 12px var(--shadow-2)}.x10jj89s{padding-inline-end:var(--menu-base-list-item-padding-horizontal)}.x10jshiv{border-start-end-radius:var(--chip-corner-radius)}.x10ksdce{margin-inline-end:var(--button-inner-icon-spacing-large)}.x10l5999{background-color:var(--glimmer)}.x10l6tqk{position:absolute}.x10lqkbw{background-color:var(--fds-white-alpha-60)}.x10nbx9m{border-inline-start-color:#111b21}.x10nd7l6{border-inline-end-color:var(--xl1v46g)}.x10pp7p3{animation-name:x18f3kag-B}.x10q8g1b{font-family:var(--font-family-default)!important}.x10rp43c{margin-inline-start:60px}.x10tr6eu{background-color:var(--badge-critical-background-color)}.x10w1jpo{background-color:var(--xasgz0f)}.x10w94by{border-inline-end-width:0}.x10xvuev{border-start-start-radius:var(--x1pidvoh)}.x10y9f9r{aspect-ratio:var(--x-aspectRatio)}.x10zcvz6{border-inline-start-color:var(--x1ttayb5)}.x10zy8in{padding-inline-start:var(--chat-bubble-padding-horizontal,12px)}.x110972j{padding-inline-start:28px}.x1109wk8{background-color:var(--map-overlay-background)}.x111a3t{background-color:var(--labels-plus-icon-background)}.x111bo7f{background-color:var(--barcelona-primary-button-background)}.x113zjs7{background-color:var(--glimmer-base-opaque)}.x1142k65{border-start-start-radius:9999px}.x1143rjc{border-start-end-radius:100px}.x1146j2{cursor:help}.x114g2xr{border-inline-start-color:var(--card-background)}.x114oybw{column-gap:var(--x1q2ui7u)}.x1158fpu{transform:rotate(45deg)}.x115dhu7{object-position:center}.x115rs3l{color:var(--x1f8aael)}.x115tmdl{background-color:var(--x15xjgfg)}.x115zmq3{font-family:var(--body-large-emphasized-font-family),var(--font-family-segoe)!important}.x1163a87{cursor:var(--x-cursor)}.x1164gpu{color:var(--x13jgnd1)}.x117hm8{color:var(--button-reject)}.x117nqv4{font-weight:700}.x117ovt8{accent-color:var(--xyx3zd1)}.x117rol3{fill:currentColor}.x119zby7{box-shadow:0 1px 2px rgba(var(--WDS-persistent-always-black-RGB),.15)}.x11ahuha{padding-inline-start:19px}.x11aj5t7{animation-name:xghu3w3-B}.x11askks{color:var(--WDS-surface-default)}.x11bcyhp{animation-name:x1ak5mrm-B}.x11c0o6g{border-start-end-radius:var(--x1gsux0z)}.x11c3vth{border-inline-end-color:var(--x15cmd4y)}.x11dcrhx{inset-inline-end:8px}.x11dpxr5{border-inline-end-color:var(--geodesic-color-icon-error-active)}.x11dt26t{line-height:1.1563}.x11e568v{transform:translate(-10px)}.x11ecxm0{border-end-start-radius:var(--x1lagdqq)}.x11em0eu{color:var(--x1pbvpep)}.x11emb26{background-color:var(--xv4iti8)}.x11fhae5{border-start-end-radius:var(--x73mj06)}.x11flhfp{background-color:var(--x1689szq)}.x11fwcs0{opacity:var(--glimmer-opacity-min)}.x11g5so6{inset-inline-start:calc(50% - 36px)}.x11g758w{box-shadow:0 1px 3px var(--WDS-lines-outline-deemphasized)}.x11gauq7{stroke:rgba(var(--WDS-persistent-always-white-RGB),.9)}.x11gldyt{margin-inline-end:40px}.x11goek{background-color:var(--base-blue)}.x11hdunq{margin-inline-start:40px}.x11hqq3w{border-inline-start-color:var(--ptt-draft-waveform-background-border)}.x11i6shi{color:var(--x163rsvb)}.x11iowje{box-shadow:0 1px 4px rgba(var(--WDS-persistent-always-black-RGB),.12)}.x11j5cmb{stroke:var(--progress-ring-on-secondary-button-track)}.x11jlvup{background-color:var(--chat-outgoing-message-bubble-background-color)}.x11khuac{font-family:var(--display-medium-font-family),var(--font-family-segoe)!important}.x11kor8s{padding-inline-end:var(--size16)}.x11kx9fa{font-family:var(--x1xbp41d)!important}.x11l1eyt{border-inline-end-color:var(--xhla6c7)}.x11lfxj5{padding-inline-end:4px}.x11lhmoz{transform:translate(-50%,-50%)}.x11lmomm{border-inline-start-color:var(--text-disabled)}.x11lt19s{margin-inline-end:-2px}.x11lwdb5{border-start-start-radius:var(--input-corner-radius)}.x11mme1x{color:var(--xoirde7)}.x11mqxog{animation-name:x9hsi78-B}.x11n186e{grid-template-columns:repeat(auto-fit,minmax(min(160px,100%),1fr))}.x11njtxf{vertical-align:baseline}.x11nt7xy{border-inline-start-style:dashed}.x11o2k40{background-color:var(--x1x164yq)}.x11o6v7j{border-end-start-radius:var(--xbjhqfc)}.x11pne5e{transition-timing-function:cubic-bezier(.42,0,.58,1)}.x11ppq56{border-inline-end-color:rgba(var(--ig-toggle-background-on-prism),.05)}.x11qwu0y{transform:scale(.6667)}.x11r6d5e{display:table}.x11siwd2{color:var(--xt4b30x)}.x11t6m9b{transform:rotate(135deg)}.x11t971q{margin-inline-end:auto}.x11tp94h{caret-color:var(--WDS-content-default)}.x11uqc5h{z-index:100}.x11v37me{border-end-end-radius:var(--xpaog5i)}.x11wup94{background-color:var(--chip-background)}.x11x3m1q{font-family:var(--meta-emphasized-font-family),var(--font-family-segoe)!important}.x11xecg{vertical-align:textTop}.x11xpdln{transition-property:transform}.x11xz8zw{padding-inline-end:var(--xe5buds)}.x11z5cog{transform:translateY(-7px)}.x11zcahw{border-inline-start-style:hidden}.x120eax6{padding-inline-end:var(--x-paddingInlineEnd)}.x120xd9q{border-start-start-radius:30px}.x12133zs{background-color:var(--x96nfoq)}.x1215byi{font-family:var(--headline3-font-family),var(--font-family-segoe)!important}.x1218ygk{box-shadow:0 0 5px rgba(var(--shadow-rgb),.06)}.x121lspk{column-gap:1px}.x121sasi{row-gap:var(--xpaog5i)}.x121z25r{border-inline-start-color:var(--lines-primary)}.x122cvgu{animation-name:xehbzi3-B}.x122ond3{list-style-type:upper-alpha}.x123ep6o{background-image:linear-gradient(180deg,#0000,#00000001 11.79%,#00000003 21.38%,#00000006 29.12%,#0000000b 35.34%,#00000010 40.37%,#00000016 44.56%,#0000001d 48.24%,#00000025 51.76%,#0000002c 55.44%,#00000034 59.63%,#0000003c 64.66%,#0004 70.88%,#0000004c 78.62%,#00000053 88.21%,#00000059)}.x123sfga{transform:translate(-14px)}.x124kx0k{background-color:rgb(var(--ig-primary-text))}.x12573ex{border-start-end-radius:var(--x1ihu1wm)}.x125q6hc{grid-template-columns:repeat(4,auto)}.x126k92a{white-space:pre-wrap}.x126x6cc{flex-basis:136px}.x1273586{border-inline-end-color:currentColor}.x127hrn9{color:rgb(var(--ig-success))}.x127lhb5{animation-name:xekv6nw-B}.x1280gxy{background-color:var(--WDS-surface-default)}.x128c8uf{border-inline-end-width:.5px}.x1291uj{border-end-start-radius:var(--xse1e7w)}.x129bwdz{row-gap:var(--x3s3u4o)}.x129tdwq{border-end-end-radius:var(--x1lh8xxe)}.x12ax4m5{color:var(--x1sd9p38)}.x12b2ns1{border-inline-start-color:#b0bcc8}.x12bhq1d{background-color:var(--xuq9phc)}.x12bjzxj{margin-inline-start:calc(var(--x10aegb7) * -1)}.x12cbgk8{animation-delay:.198s,.198s}.x12cdsrl{background-color:var(--geodesic-color-background-error-muted)}.x12ckx54{margin-inline-start:52px}.x12dgle5{border-inline-start-width:var(--x190aigg)}.x12dzccl{background-color:var(--x1en5jo3)}.x12e60rz{margin-inline-end:var(--separator-menu-item-margin-horizontal)}.x12ejxvf{flex-shrink:inherit}.x12em2mw{inset-inline-end:13px}.x12fcfp7{animation-duration:var(--fds-duration-long-in)}.x12fk4p8{justify-self:auto}.x12gmtvw{background-color:#1e1e1e}.x12h1iku{container-type:inline-size}.x12h7gaj{color:var(--fig-primary-text)}.x12hhv0b{background-color:#111b2133}.x12hqe0l{background-color:var(--x1248yc5)}.x12jkypp{text-wrap:nowrap!important}.x12l2aii{border-start-start-radius:14px}.x12lhmx5{color:var(----secondary-lighter)}.x12llq9{border-inline-start-color:var(--WDS-lines-outline-deemphasized)}.x12lo8hy{font-size:.6875rem}.x12lqup9{font-size:.8875rem}.x12n1cvc{font-family:\"Droid Serif\",serif!important}.x12ol6y4{border-start-start-radius:20px}.x12oo3zp{letter-spacing:0}.x12peec7{background-color:#fff}.x12q0m0e{stroke:var(--xp8sa82)}.x12qp5cl{font-family:var(--body-font-family),var(--font-family-segoe)!important}.x12rq6i6{inset-inline-start:10%}.x12s1jxh{transition-duration:.08s}.x12scifz{color:var(--placeholder-text)}.x12sjp1n{background-color:var(--x8w5o7o)}.x12tvco5{z-index:35}.x12txcfa{border-inline-start-width:var(--x1xfia83)}.x12u3hy8{color:var(--xrnvflv)}.x12u81az{border-inline-start-color:var(--divider)}.x12vejzz{background-color:var(--x390k3g)}.x12w63v0{padding-inline-start:var(--x1qxx2f)}.x12ws5rt{border-inline-start-color:unset}.x12wy4tn{color:#262626}.x12xlgek{background-color:var(--WDS-content-action-default)}.x12xpedu{letter-spacing:.01rem}.x12xzxwr{z-index:var(--xm343uc)}.x12y6twl{transform:scale(.8)}.x12y7upn{border-inline-end-color:var(--xk2tvnb)}.x12yyfci{color:var(--xhla6c7)}.x130j6nr{font-weight:var(--x1l4kwij)}.x1311tq3{background-color:var(--WDS-content-inverse)}.x1315kfy{margin-inline-start:10%}.x131a0oe{inset-inline-end:calc(-1 * var(--x3s3u4o))}.x131gcsw{grid-template-columns:0fr}.x131p8rn{transform:translateY(50%)}.x131uzpj{animation-name:xjqn293-B}.x132q4wb{line-height:1.25}.x13494qd{color:var(--x1jlnx4j)}.x1355qak{z-index:20}.x135b78x{padding-inline-start:4px}.x135icu2{transform:rotate(-180deg)}.x13727yd{background-color:var(--x1dh7chn)}.x137613r{stroke:var(--primary-text)}.x137a6hf{border-end-end-radius:var(--input-dense-corner-radius)}.x137kccz{margin-inline-start:-5px}.x137oa3i{letter-spacing:var(--x9h07vm)}.x137y3gz{transform:translateY(-10px) scale(.734)}.x138ruz1{inset-inline-start:22px}.x13a6bvl{justify-content:flex-end}.x13a6qad{background-color:var(--glimmer-on-white-background)}.x13a8xbf{font-size:.78125rem}.x13a9art{column-gap:var(--xbevxdb)}.x13abue9{box-shadow:var(--xleti5b)}.x13aenv5{line-height:var(--x149rnkn)}.x13b0p5u{transition-property:none}.x13bpw7r{box-shadow:0 1px 3px var(--big-gray-50)}.x13c4wfe{font-family:var(--font-family-apple)!important}.x13chq93{color:var(--x1pfoezs)}.x13cq9vo{flex-basis:30%}.x13dflua{transition-duration:.2s}.x13dr7gu{border-inline-end-color:var(--avatar-border)}.x13e7jni{-webkit-backdrop-filter:blur(20px) saturate(180%);",
+    "selector": ".x1ppcl28",
+    "media": null
+  }
+]

@@ -1,0 +1,88 @@
+{
+  "source": {
+    "path": "/mnt/c/Users/user/Desktop/El projecto/WW/exported-scripts/files/isolated/source-15-27d51190a6adf162925f23833e7a8c35b968dffd56f66e4dfc3c3edf7e7f3025.js",
+    "snapshot_path": "/tmp/rea-wakaru-i9zTK9/inputs/bundle.js",
+    "sha256": "647cd7fe5904cb33f5420bcf0d86ff6620e5d364ec2f3b3c91c3fabbffee01f6",
+    "bytes": 84505,
+    "published_copy": {
+      "path": "/mnt/c/Users/user/Desktop/El projecto/WW/recovered-chunks/chunk_15_source-15-27d51190a6adf162925f23833e7a8c/inputs/bundle.js",
+      "sha256": "647cd7fe5904cb33f5420bcf0d86ff6620e5d364ec2f3b3c91c3fabbffee01f6",
+      "bytes": 84505
+    }
+  },
+  "engine": {
+    "id": "wakaru",
+    "version": "1.14.0",
+    "executable": {
+      "path": "/root/.local/bin/wakaru",
+      "sha256": "664fa06782a61eda7ed15885134b52525fd565dd77607e642062ceb6cd927c38",
+      "bytes": 26793296
+    },
+    "audited_source_revision": "8219bf5016a063d7fb215101a8c45d5959ec733f",
+    "executed_source_revision": null
+  },
+  "options": {
+    "extraction_mode": "structural",
+    "rewrite_level": "standard"
+  },
+  "status": "complete",
+  "detected_formats": [],
+  "reported_safety": "normal",
+  "reported_strategy": "structural",
+  "reported_format": "unknown",
+  "total": 1,
+  "failed": 0,
+  "modules": [
+    {
+      "reported_filename": "bundle.js",
+      "reported_status": "decompiled",
+      "artifact": {
+        "path": "/mnt/c/Users/user/Desktop/El projecto/WW/recovered-chunks/chunk_15_source-15-27d51190a6adf162925f23833e7a8c/modules/bundle.js",
+        "sha256": "234cbf0e863b19b3e9ced593ba3d2e7b872d3f3d2c3f47db3255c52f3b5da789",
+        "bytes": 143371
+      },
+      "source_map": {
+        "path": "/mnt/c/Users/user/Desktop/El projecto/WW/recovered-chunks/chunk_15_source-15-27d51190a6adf162925f23833e7a8c/modules/bundle.js.map",
+        "sha256": "dfbe8a9c2afd0b8f1ad4955692adadf2c34963d640fd26793cdde7cccaf83a2d",
+        "bytes": 81913
+      },
+      "provenance": {
+        "reported_input": "/tmp/rea-wakaru-i9zTK9/inputs/bundle.js",
+        "original_path": "/mnt/c/Users/user/Desktop/El projecto/WW/exported-scripts/files/isolated/source-15-27d51190a6adf162925f23833e7a8c35b968dffd56f66e4dfc3c3edf7e7f3025.js",
+        "original_sha256": "647cd7fe5904cb33f5420bcf0d86ff6620e5d364ec2f3b3c91c3fabbffee01f6",
+        "extraction": "structural",
+        "byte_ranges": [
+          {
+            "start": 0,
+            "end": 84505
+          }
+        ],
+        "context_byte_ranges": [],
+        "range_semantics": "half-open-utf8-bytes"
+      }
+    }
+  ],
+  "warnings": [],
+  "report": {
+    "path": "/mnt/c/Users/user/Desktop/El projecto/WW/recovered-chunks/chunk_15_source-15-27d51190a6adf162925f23833e7a8c/reports/stdout.json",
+    "sha256": "0bb9260cff6b43267f25e4030d03ff4cc8e62723810031b7fb5509aae0358788",
+    "bytes": 173
+  },
+  "provenance": {
+    "path": "/mnt/c/Users/user/Desktop/El projecto/WW/recovered-chunks/chunk_15_source-15-27d51190a6adf162925f23833e7a8c/reports/provenance.json",
+    "sha256": "a9489e488e1a0ddcd7d8a2f8b44aa4ad4b815322d2733961cecf6806f5b0eb5c",
+    "bytes": 195
+  },
+  "analysis_input": {
+    "input_path": "/mnt/c/Users/user/Desktop/El projecto/WW/recovered-chunks/chunk_15_source-15-27d51190a6adf162925f23833e7a8c/modules",
+    "format": "directory"
+  },
+  "runtime_equivalence": "unknown",
+  "limitations": [
+    "Recovered sources are derived artifacts; original variable names and runtime equivalence are not established.",
+    "Extraction ranges refer to half-open UTF-8 byte offsets in the original input, not rewritten line positions or whole-bundle coverage.",
+    "Emitted source maps are preserved as reported by the engine; their mapping accuracy is not independently established.",
+    "Inspection mode may produce non-executable regions. No input or recovered application code is executed.",
+    "Linux adapter: one worker, 1 GiB address-space ceiling, 120-second deadline, 64 MiB total input, 128 MiB output, 10000 output entries and 8 MiB per diagnostic/report stream. Resource limits are per operation, not aggregate host containment."
+  ]
+}

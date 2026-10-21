@@ -1,0 +1,7 @@
+{
+  "format": "unknown",
+  "strategy": "structural",
+  "modules": {
+    "bundle.js": {"input": "/tmp/rea-wakaru-xSxamp/inputs/bundle.js", "ranges": [[0,1138508]], "extraction": "structural"}
+  }
+}

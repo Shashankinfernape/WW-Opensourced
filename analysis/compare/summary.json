@@ -1,0 +1,86 @@
+{
+  "nav-rail": {
+    "rect": [
+      0,
+      0,
+      64,
+      737
+    ],
+    "compared_pixels": 47168,
+    "changed_pixels": 1779,
+    "changed_ratio": 0.03771624830393487,
+    "mean_absolute_channel_delta": 2.4184828697421983
+  },
+  "chatlist-header": {
+    "rect": [
+      65,
+      0,
+      413,
+      64
+    ],
+    "compared_pixels": 26432,
+    "changed_pixels": 0,
+    "changed_ratio": 0,
+    "mean_absolute_channel_delta": 0
+  },
+  "chatlist-search-bar": {
+    "rect": [
+      65,
+      64,
+      413,
+      48
+    ],
+    "compared_pixels": 19824,
+    "changed_pixels": 0,
+    "changed_ratio": 0,
+    "mean_absolute_channel_delta": 0
+  },
+  "chatlist-filter-pills": {
+    "rect": [
+      65,
+      112,
+      413,
+      42
+    ],
+    "compared_pixels": 17346,
+    "changed_pixels": 2118,
+    "changed_ratio": 0.12210307851954341,
+    "mean_absolute_channel_delta": 5.013216303470541
+  },
+  "archived-row": {
+    "rect": [
+      65,
+      230,
+      413,
+      50
+    ],
+    "compared_pixels": 20650,
+    "changed_pixels": 2924,
+    "changed_ratio": 0.14159806295399516,
+    "mean_absolute_channel_delta": 5.012917675544794
+  },
+  "chat-header": {
+    "rect": [
+      478,
+      0,
+      556,
+      64
+    ],
+    "compared_pixels": 35584,
+    "changed_pixels": 4330,
+    "changed_ratio": 0.12168390287769784,
+    "mean_absolute_channel_delta": 9.761262084082734
+  },
+  "composer": {
+    "rect": [
+      478,
+      673,
+      556,
+      64
+    ],
+    "compared_pixels": 35584,
+    "changed_pixels": 3677,
+    "changed_ratio": 0.10333295863309352,
+    "mean_absolute_channel_delta": 1.863962736061151
+  }
+}

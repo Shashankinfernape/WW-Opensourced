@@ -1,0 +1,88 @@
+{
+  "source": {
+    "path": "/mnt/c/Users/user/Desktop/El projecto/WW/exported-scripts/files/origins/c2c4cb14deb4d26b68c007c9bdea73a4db4d851a37a0037cbd4aeeda14a1c6ba/rsrc.php/v4/yY/r/QtG3JCvbF1p.js",
+    "snapshot_path": "/tmp/rea-wakaru-lAvVd5/inputs/bundle.js",
+    "sha256": "bbed25de50229a7e8d591d5d7bea6f711ee56972b3672904b37275af157a44fa",
+    "bytes": 172081,
+    "published_copy": {
+      "path": "/mnt/c/Users/user/Desktop/El projecto/WW/recovered-chunks/chunk_11_QtG3JCvbF1p/inputs/bundle.js",
+      "sha256": "bbed25de50229a7e8d591d5d7bea6f711ee56972b3672904b37275af157a44fa",
+      "bytes": 172081
+    }
+  },
+  "engine": {
+    "id": "wakaru",
+    "version": "1.14.0",
+    "executable": {
+      "path": "/root/.local/bin/wakaru",
+      "sha256": "664fa06782a61eda7ed15885134b52525fd565dd77607e642062ceb6cd927c38",
+      "bytes": 26793296
+    },
+    "audited_source_revision": "8219bf5016a063d7fb215101a8c45d5959ec733f",
+    "executed_source_revision": null
+  },
+  "options": {
+    "extraction_mode": "structural",
+    "rewrite_level": "standard"
+  },
+  "status": "complete",
+  "detected_formats": [],
+  "reported_safety": "normal",
+  "reported_strategy": "structural",
+  "reported_format": "unknown",
+  "total": 1,
+  "failed": 0,
+  "modules": [
+    {
+      "reported_filename": "bundle.js",
+      "reported_status": "decompiled",
+      "artifact": {
+        "path": "/mnt/c/Users/user/Desktop/El projecto/WW/recovered-chunks/chunk_11_QtG3JCvbF1p/modules/bundle.js",
+        "sha256": "cd59cd903aad68ddc8d9d55b8e7983a1baeac2f6fe6281ccc2a1454ddc1165b5",
+        "bytes": 252345
+      },
+      "source_map": {
+        "path": "/mnt/c/Users/user/Desktop/El projecto/WW/recovered-chunks/chunk_11_QtG3JCvbF1p/modules/bundle.js.map",
+        "sha256": "7a65321002945cb73efd519289849ad001af80e6b24b3acd81f57015f8ec4739",
+        "bytes": 101100
+      },
+      "provenance": {
+        "reported_input": "/tmp/rea-wakaru-lAvVd5/inputs/bundle.js",
+        "original_path": "/mnt/c/Users/user/Desktop/El projecto/WW/exported-scripts/files/origins/c2c4cb14deb4d26b68c007c9bdea73a4db4d851a37a0037cbd4aeeda14a1c6ba/rsrc.php/v4/yY/r/QtG3JCvbF1p.js",
+        "original_sha256": "bbed25de50229a7e8d591d5d7bea6f711ee56972b3672904b37275af157a44fa",
+        "extraction": "structural",
+        "byte_ranges": [
+          {
+            "start": 0,
+            "end": 172081
+          }
+        ],
+        "context_byte_ranges": [],
+        "range_semantics": "half-open-utf8-bytes"
+      }
+    }
+  ],
+  "warnings": [],
+  "report": {
+    "path": "/mnt/c/Users/user/Desktop/El projecto/WW/recovered-chunks/chunk_11_QtG3JCvbF1p/reports/stdout.json",
+    "sha256": "f360421b890629f0f0945b454de60338a8583d18f4f1528ac87e0e754ce3541a",
+    "bytes": 173
+  },
+  "provenance": {
+    "path": "/mnt/c/Users/user/Desktop/El projecto/WW/recovered-chunks/chunk_11_QtG3JCvbF1p/reports/provenance.json",
+    "sha256": "c3a509607055394aa70e21318a1263cb53381a96e477baa5a52c27d6e9f75104",
+    "bytes": 196
+  },
+  "analysis_input": {
+    "input_path": "/mnt/c/Users/user/Desktop/El projecto/WW/recovered-chunks/chunk_11_QtG3JCvbF1p/modules",
+    "format": "directory"
+  },
+  "runtime_equivalence": "unknown",
+  "limitations": [
+    "Recovered sources are derived artifacts; original variable names and runtime equivalence are not established.",
+    "Extraction ranges refer to half-open UTF-8 byte offsets in the original input, not rewritten line positions or whole-bundle coverage.",
+    "Emitted source maps are preserved as reported by the engine; their mapping accuracy is not independently established.",
+    "Inspection mode may produce non-executable regions. No input or recovered application code is executed.",
+    "Linux adapter: one worker, 1 GiB address-space ceiling, 120-second deadline, 64 MiB total input, 128 MiB output, 10000 output entries and 8 MiB per diagnostic/report stream. Resource limits are per operation, not aggregate host containment."
+  ]
+}

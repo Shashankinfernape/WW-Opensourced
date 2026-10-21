@@ -1,0 +1,674 @@
+{
+  "capture_path": "C:\\Users\\user\\Desktop\\El projecto\\WW\\captures\\live-page-capture.json",
+  "capture_sha256": "2d4163179b9d9a9e32a5d8f91b499f18aa19dca6861e62937762f131384a9dde",
+  "capture_kind": "page-inspection",
+  "source_evidence_id": "ev_6be7f038a0dbd18dd757cddaff1827f202a2d3a190ae287387d6bfcd83e86539",
+  "capture_completeness": {
+    "status": "policy_filtered",
+    "conditions": [
+      "attach_limited",
+      "policy_filtered"
+    ],
+    "policy_filtered_sections": [
+      "console_text",
+      "metadata",
+      "resources",
+      "scripts",
+      "storage_keys",
+      "websocket_shapes",
+      "workers"
+    ],
+    "attach_limited_sections": [
+      "console_events",
+      "metadata",
+      "network_requests",
+      "websocket_connections",
+      "websocket_frames"
+    ],
+    "truncated_sections": [],
+    "unavailable_sections": [],
+    "excluded": [
+      {
+        "section": "console_text",
+        "reason": "not_approved",
+        "count": null
+      },
+      {
+        "section": "metadata",
+        "reason": "unsupported_url",
+        "count": 33
+      },
+      {
+        "section": "resources",
+        "reason": "unsupported_url",
+        "count": 6
+      },
+      {
+        "section": "scripts",
+        "reason": "unsupported_url",
+        "count": 1
+      },
+      {
+        "section": "storage_keys",
+        "reason": "not_approved",
+        "count": null
+      },
+      {
+        "section": "websocket_shapes",
+        "reason": "not_approved",
+        "count": null
+      },
+      {
+        "section": "workers",
+        "reason": "out_of_target_scope",
+        "count": 4
+      },
+      {
+        "section": "workers",
+        "reason": "unattributed_origin",
+        "count": 3
+      }
+    ],
+    "dropped_events": {
+      "scripts": 0,
+      "network_requests": 0,
+      "console_events": 0,
+      "websocket_connections": 0,
+      "websocket_frames": 0,
+      "webmcp_tools": 0,
+      "timeline_events": 0,
+      "total": 0
+    }
+  },
+  "output_directory": "C:\\Users\\user\\Desktop\\El projecto\\WW\\exported-scripts",
+  "analysis_input": {
+    "input_path": "C:\\Users\\user\\Desktop\\El projecto\\WW\\exported-scripts\\files",
+    "format": "directory"
+  },
+  "scripts": [
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_0307c73fa7ee9ec06ff27e23684e0b82ff232275ef20aef2b64240150c565c47",
+        "frame_id": "2D0E840D62F22130552887F93BEDABE9",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://static.whatsapp.net/rsrc.php/v4iST_4/yl/l/en_GB-j/ZMZDw6zKHcP.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/c2c4cb14deb4d26b68c007c9bdea73a4db4d851a37a0037cbd4aeeda14a1c6ba/rsrc.php/v4iST_4/yl/l/en_GB-j/ZMZDw6zKHcP.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "8b7dacf125a31fbf79ed7eacd1f26cf9fc9bc2fc07aa70e6394b8baa06a8db68",
+        "bytes": 3812555,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_0bbfe8f8ba9fcdce916de7c74d279dc7b4df3cacf22d8923295d17e60ee3405a",
+        "frame_id": "2D0E840D62F22130552887F93BEDABE9",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://static.whatsapp.net/rsrc.php/v4iVxZ4/yO/l/en_GB-j/0VuqctH7e60ybmQZGQvdhzMUG-51HH_zQsXSds_kkOIpORp01ieEyxDkq3L4wajB5zxsOzVRrXrg3ogUCWQH8_gBeg7qJ_X_0QSBrTyuA9t1of4sFW0PTgjcCnibTaYOA9K2uAsfv7hYp-ZFHMunQtQFwXhEzw8WydF8GhC4sM8pHXEUA5ozYrwZkdb4edM1ml2BnAX5fE-PB_vJVKUb-R8qTq3QPoJAsAWgdmmrf8laDauL0nU3iz0UHagE7vWlxVMD6LQ8rowLoIWXtr08LtRAC4BK0Z4Kt-qgQyWDCoIUpY77KLfjIkB67_ZKw9j_cUVu92oDgl.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-2-60d621455d3fd13631142757928dac4ec49ebbe8eb67603e994dfb12cf91b86f.js",
+        "layout": "isolated",
+        "layout_reason": "URL path is not an ordinary portable JavaScript module path.",
+        "sha256": "6e8972eb93a1d19aa0e51527bf7c7747ad8013fedcd970be0ab6a72c181e0f93",
+        "bytes": 152768,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_15f8f70404676e0a768c90677110d4961a034f617760b88cb885ddc029f65089",
+        "frame_id": "2D0E840D62F22130552887F93BEDABE9",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://static.whatsapp.net/rsrc.php/v4isiO4/yF/l/en_GB-j/4o5cOr-cRnP.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/c2c4cb14deb4d26b68c007c9bdea73a4db4d851a37a0037cbd4aeeda14a1c6ba/rsrc.php/v4isiO4/yF/l/en_GB-j/4o5cOr-cRnP.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "04b6392c259bdae0afa81ef39bf735000cf0d48dbde298b01d5d2945fbc68e49",
+        "bytes": 1822781,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_25fc10a3f0abec8a76e6a9213ab1aefea098df3338788dc5d31235a9afdb0b7d",
+        "frame_id": "2D0E840D62F22130552887F93BEDABE9",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://static.whatsapp.net/rsrc.php/v4i4rs4/yM/l/en_GB-j/2-4UQ8P_qHZg_htM_SgH3FpQiSKVUrd4Ijs5qyFJOabo60-FHUtBbrRexEF0ovomqDOR4cMh9w5yWpSUcXOT3Q7Vs6_sfqPy0D-9wOG39rwPJYyjj-LjYpyS0PsHB1ibGrbJPhJXlW4UC66kCFGujikubOkBzLOJCDNX71iKsn8dh0KRjjhnml6x-re1PtK2xV8E397rZQrzh2svrvTRwA9W_GX53GwiKfNuXcl.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-4-796019e71d254ebef877276fc67082542fc7ab3c1b3cde3def6ef02394ad911c.js",
+        "layout": "isolated",
+        "layout_reason": "URL path is not an ordinary portable JavaScript module path.",
+        "sha256": "f54ea095322ed7ec01fce2ce99ecd6ef9346142395fd04ec4cc90f8031cb8534",
+        "bytes": 6246431,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_3adee7803dd05253311c63b59abd044d63294efd518b99adba0f69b05126b067",
+        "frame_id": "2D0E840D62F22130552887F93BEDABE9",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://static.whatsapp.net/rsrc.php/v4iahZ4/yz/l/en_GB-j/Sp7m9vtWcB2.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/c2c4cb14deb4d26b68c007c9bdea73a4db4d851a37a0037cbd4aeeda14a1c6ba/rsrc.php/v4iahZ4/yz/l/en_GB-j/Sp7m9vtWcB2.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "b526a458f64269b550daa51921f043b700f074350dee1308436d125ff26052f7",
+        "bytes": 716892,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_3e858f354212a9fa842f61c976eb889b696607b297cf26a8c088fa44736148fc",
+        "frame_id": "2D0E840D62F22130552887F93BEDABE9",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://static.whatsapp.net/rsrc.php/v4/yB/r/dHbqtdrFvun.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/c2c4cb14deb4d26b68c007c9bdea73a4db4d851a37a0037cbd4aeeda14a1c6ba/rsrc.php/v4/yB/r/dHbqtdrFvun.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "933589ad299f1d21ca22b431716b322ff200b2af7ea2bcaacda22bafdbc430da",
+        "bytes": 400,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_3f4ac7b3014140f57b553ce3fac955419a92c1bc6e55a73332e10c8c9e6ec2fb",
+        "frame_id": "2D0E840D62F22130552887F93BEDABE9",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://static.whatsapp.net/rsrc.php/v4/yK/r/nOapcPsRwpZ.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/c2c4cb14deb4d26b68c007c9bdea73a4db4d851a37a0037cbd4aeeda14a1c6ba/rsrc.php/v4/yK/r/nOapcPsRwpZ.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "ae09544e9288f23efbf71abb9c4332f30baf83830cfa224e33cfaef6baf768d1",
+        "bytes": 410,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_4670b8f0969eea884ea2efd4afefba326e4fd3407efa8dcecec5f9ce47891ac8",
+        "frame_id": "2D0E840D62F22130552887F93BEDABE9",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://static.whatsapp.net/rsrc.php/v4/y5/r/cVYdllI_5fX.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/c2c4cb14deb4d26b68c007c9bdea73a4db4d851a37a0037cbd4aeeda14a1c6ba/rsrc.php/v4/y5/r/cVYdllI_5fX.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "594fb90b24b031ab01f2e09b8c55c2004fa3993d480d4ca75b7beb37ee45e3be",
+        "bytes": 2220,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_51c9e809490626ebcee964662eb498faf8aadf61452c789552d0cfbcc38b5b3e",
+        "frame_id": "2D0E840D62F22130552887F93BEDABE9",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://static.whatsapp.net/rsrc.php/v4it9g4/yK/l/en_GB-j/XtXfu7Kt4GFT3r-V1qdcAwRW9j7KmURitHs6D-yE3p59dVNcJDnmSWZp6IN6LDkYaMUVqza2dRpgNBlxeJdEKhFXPZ6mv355BAcudM2IA-wlBCiL9nC_PdIxmqoxGpq-42nOP17R_g10IG7Xbww7vad0QdRbmtPZeCQ-8m3Y8B91Tz4d-1YNxL46Zgs8nNS4cJd5D0fXj59NZEN6_aiVr9w42NxC-M9EJ36RzmgEUc9oG3_1uQym8xVIVbs4CNCmt4nH0qeDw8qnegHBIRaDdfKwugFxMtlVnH2zvzISNlq8-6u5DfEGLvovRXLF19FoY5dKuoQUPi.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-9-122c3e652dc14fd507309af34868b6fe5a856ead7759a585240896860fb10f6b.js",
+        "layout": "isolated",
+        "layout_reason": "URL path is not an ordinary portable JavaScript module path.",
+        "sha256": "94e4e5b1fcb79937e14e8230a8efb6d36213f163417f0771b780d52cd019ff86",
+        "bytes": 2512087,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_5a9622657ee3e7265bdb90da91ece802cba16cb2ac07d5be8b7ba0f644ce101d",
+        "frame_id": "2D0E840D62F22130552887F93BEDABE9",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://static.whatsapp.net/rsrc.php/v4i0sQ4/yO/l/en_GB-j/3nzqNpHbcmc.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/c2c4cb14deb4d26b68c007c9bdea73a4db4d851a37a0037cbd4aeeda14a1c6ba/rsrc.php/v4i0sQ4/yO/l/en_GB-j/3nzqNpHbcmc.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "8b2589060dc31da320d44c1e3b6ebd6a44d504942d8d25e323023f152136cc6e",
+        "bytes": 1138508,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_5b9678efe71371b7799f8307b002a709e4b10cfa4909c2fe348b8cba2a99ec99",
+        "frame_id": "2D0E840D62F22130552887F93BEDABE9",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://static.whatsapp.net/rsrc.php/v4/yY/r/QtG3JCvbF1p.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/c2c4cb14deb4d26b68c007c9bdea73a4db4d851a37a0037cbd4aeeda14a1c6ba/rsrc.php/v4/yY/r/QtG3JCvbF1p.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "bbed25de50229a7e8d591d5d7bea6f711ee56972b3672904b37275af157a44fa",
+        "bytes": 172081,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_6bd7c8950d1b0536f0629ac9db13fec81426c3e670bbc4babbb73ffc1e16f486",
+        "frame_id": "2D0E840D62F22130552887F93BEDABE9",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://static.whatsapp.net/rsrc.php/v4/yR/r/eLgcBUdngJY.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/c2c4cb14deb4d26b68c007c9bdea73a4db4d851a37a0037cbd4aeeda14a1c6ba/rsrc.php/v4/yR/r/eLgcBUdngJY.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "8a899e5d24cf980d7d86cef9798463ad80b7d9c1c8f00b9c39f7fc0a57d171f7",
+        "bytes": 303650,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_6e4189de8045030fcf55d2ddcb648be6319185e734270d50d28fdad2d074a0c9",
+        "frame_id": "2D0E840D62F22130552887F93BEDABE9",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://static.whatsapp.net/rsrc.php/v4/yI/r/7H3wYU6kQ3t.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/c2c4cb14deb4d26b68c007c9bdea73a4db4d851a37a0037cbd4aeeda14a1c6ba/rsrc.php/v4/yI/r/7H3wYU6kQ3t.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "70b0c08f8af9f1d04e33ee6bb3ee9cba2a00259ed1695e78f2e8fd11b651d0c6",
+        "bytes": 5903,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_73d31e5563d72a6ff8dc464a34ef011aa82c4276d9f773ca265944d7301a52aa",
+        "frame_id": "2D0E840D62F22130552887F93BEDABE9",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://static.whatsapp.net/rsrc.php/v4/yE/r/zXcpgwOyXi-.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/c2c4cb14deb4d26b68c007c9bdea73a4db4d851a37a0037cbd4aeeda14a1c6ba/rsrc.php/v4/yE/r/zXcpgwOyXi-.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "86db968d586d263550f7cd19fcff97e2ab9133f5227e2ea0417476f64e915dc3",
+        "bytes": 1269066,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_7ad29b116654b5539b44513a81b2d15ef9a0ea77d4b1aac0a1e01a62e53c840b",
+        "frame_id": "2D0E840D62F22130552887F93BEDABE9",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://static.whatsapp.net/rsrc.php/v4io3A4/yV/l/en_GB-j/biWL4VgRlwLk2EzOnODma3O2WMSUVsbCdMK9DCxCOQ2j9EDcMwtjgmOUqqiaLeI6G7bF8dTOsL9IeBFdet3YeyPHsZtEnkESFlidfEZ8E0s3VjeWSjRoJd0kUE5W5KmQqBOf4QMMBK4ERxF_WbHZRXwx7GhAwq_P-04_NFR4JKtPeHr4zbow5qelr6gQ5TA2DyVYXs_QTaehv337B36Nl9eQtYUglSOJmFB6VcBoAel9pC5kVrGlblDVDR7WXtuh4wos9pBTPUbN_XE5HxgdQFq66uj0hpfadFyKAQkAUBy57olT7s-XCwamb14RsoKZiCZp8pgh5q.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-15-27d51190a6adf162925f23833e7a8c35b968dffd56f66e4dfc3c3edf7e7f3025.js",
+        "layout": "isolated",
+        "layout_reason": "URL path is not an ordinary portable JavaScript module path.",
+        "sha256": "647cd7fe5904cb33f5420bcf0d86ff6620e5d364ec2f3b3c91c3fabbffee01f6",
+        "bytes": 84505,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_871104c102711a08db26994154aec1c7bad26f7fbbf3f229516aaac03f40b65e",
+        "frame_id": "2D0E840D62F22130552887F93BEDABE9",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://static.whatsapp.net/rsrc.php/v4im0G4/yT/l/en_GB-j/pky2eiGIH8VJ81U9dXLl3_xhmf9npstv92vFlJhMedjL10sPn3UVMiBIMj-ckjdoC9nhyXeOa3JV_GWGFXil8x1QKY6Py2MVxGQ1xb3-XOhxLxibJkO_PKzLnRAS2jPAnPHIe0qnL2dG90Hso6pjbbzH2bV9RKrJiDbsG.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/c2c4cb14deb4d26b68c007c9bdea73a4db4d851a37a0037cbd4aeeda14a1c6ba/rsrc.php/v4im0G4/yT/l/en_GB-j/pky2eiGIH8VJ81U9dXLl3_xhmf9npstv92vFlJhMedjL10sPn3UVMiBIMj-ckjdoC9nhyXeOa3JV_GWGFXil8x1QKY6Py2MVxGQ1xb3-XOhxLxibJkO_PKzLnRAS2jPAnPHIe0qnL2dG90Hso6pjbbzH2bV9RKrJiDbsG.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "abeb354c4163454ddb308c62dc9c7972f963dd542feadcc71d683bb3d4206363",
+        "bytes": 513021,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_88ee9be596ccba555a72ece0a0b32b0f273e103a0d696a361019e36166621fbb",
+        "frame_id": "2D0E840D62F22130552887F93BEDABE9",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://static.whatsapp.net/rsrc.php/v4iFRA4/yO/l/en_GB-j/7Tf0qWLsuo3.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/c2c4cb14deb4d26b68c007c9bdea73a4db4d851a37a0037cbd4aeeda14a1c6ba/rsrc.php/v4iFRA4/yO/l/en_GB-j/7Tf0qWLsuo3.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "3bb8be05dacb12e03943a984c616c12b4be85677b327eed0ec666fabb70c68e5",
+        "bytes": 1155000,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_9870fa5df0ff7de7ffa13316b495a15e05d293e303fae9adf4aa578b52343562",
+        "frame_id": "2D0E840D62F22130552887F93BEDABE9",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://static.whatsapp.net/rsrc.php/v4/yC/r/KSaS6XqRFN6.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/c2c4cb14deb4d26b68c007c9bdea73a4db4d851a37a0037cbd4aeeda14a1c6ba/rsrc.php/v4/yC/r/KSaS6XqRFN6.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "81485f6bafd3d09eee0e0e56f4301c7b47c78fcf846a789e8d73f4bafc6113f7",
+        "bytes": 236855,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_a7e6275bfad1a65fd54d75fbc880d0ec0fe1c1c5485b5afb6a17059472110a55",
+        "frame_id": "2D0E840D62F22130552887F93BEDABE9",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://static.whatsapp.net/rsrc.php/v4ihnM4/yr/l/en_GB-j/36kJFHJBFHp.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/c2c4cb14deb4d26b68c007c9bdea73a4db4d851a37a0037cbd4aeeda14a1c6ba/rsrc.php/v4ihnM4/yr/l/en_GB-j/36kJFHJBFHp.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "80eb040ff499b60724fc87266bd3bb7b21e2190e4f28389ff81250e1044a3012",
+        "bytes": 1243676,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_bfbd8a767d724c737be07f505d0ea86af76ed77640b15e8802c834bf4c29dca0",
+        "frame_id": "2D0E840D62F22130552887F93BEDABE9",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://static.whatsapp.net/rsrc.php/v4iMIC4/yV/l/en_GB-j/LFEDVLclvLyEh28TgjUDfNqa8MxVTn9JJNl9ZYyREraxnEHsdRQRiCcVmIHUz_jTaWXM0rJpn7nAIgf5ZzSkPy3Nx8iM1FIThXEWUUKocWarAuU8Fzn8lyVY6hRgxME01XdE_23LEffI1_Xwo8zQ5TASp1LFlfENy9hub8GN3Ofl-_QZBG5Pz7vmDjr7KJoSQKFgmFOYAuspDhlhzZk-PQqXYsbbfC5vFGT0p2_zdZJywGwzJ6oLMM7hEen3_i9SaU-4ORb_j0YAvs-ocQZkb0pXIL6h44yX5uCHgEKa919dvV4H__B-VCQnNwLMVJjqLHCXmPk0ZW.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-20-c0413ff55b8f39805b2d620ec891eb803784a995a32f756fcdd100162bff2b82.js",
+        "layout": "isolated",
+        "layout_reason": "URL path is not an ordinary portable JavaScript module path.",
+        "sha256": "dd0ffa3b3c23e13144b9e4a14b16441b8cd7f3e7ad180c9ed3a49f59b7fd6159",
+        "bytes": 982373,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_d09cd893b5c25a43ddb1c91fafe492dfcf015271908aebb85933d492e7a7655f",
+        "frame_id": "2D0E840D62F22130552887F93BEDABE9",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://static.whatsapp.net/rsrc.php/v4/yw/r/HEkR1W-RTCq.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/c2c4cb14deb4d26b68c007c9bdea73a4db4d851a37a0037cbd4aeeda14a1c6ba/rsrc.php/v4/yw/r/HEkR1W-RTCq.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "aa8b945d69837884751dbc6ddb4ca0e1606294d35e2a9dc327a86ca3e5cd83d7",
+        "bytes": 363,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_d22421a72bb3f0ac35f5fe2caca208cf37b3e8739e9af99a5667ee4d80807797",
+        "frame_id": "2D0E840D62F22130552887F93BEDABE9",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://static.whatsapp.net/rsrc.php/v4/y0/r/tnEjHdBgVSP.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/c2c4cb14deb4d26b68c007c9bdea73a4db4d851a37a0037cbd4aeeda14a1c6ba/rsrc.php/v4/y0/r/tnEjHdBgVSP.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "c70fec1c86b2786dcd11f1ce2d24112ce0f9409509629b0a02edc15be3dc9fab",
+        "bytes": 1164,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_d25e3e2b57de38cb5d08c8596073cc936f1d0fba50f8da7dfaab34c6fe5fca36",
+        "frame_id": "2D0E840D62F22130552887F93BEDABE9",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://static.whatsapp.net/rsrc.php/v4/y7/r/pcyxXvywiME.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/c2c4cb14deb4d26b68c007c9bdea73a4db4d851a37a0037cbd4aeeda14a1c6ba/rsrc.php/v4/y7/r/pcyxXvywiME.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "bd006cbe5ce83401a912a75f183ba7907aee60e910229da1c3fa5a2e396f3b05",
+        "bytes": 1296,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_d6fc464547051ca4e4f944855378ee1f5cf4dc389b042caf99cf4b5802450e34",
+        "frame_id": "2D0E840D62F22130552887F93BEDABE9",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://static.whatsapp.net/rsrc.php/v4/yK/r/kG2V_iGOhsY.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/c2c4cb14deb4d26b68c007c9bdea73a4db4d851a37a0037cbd4aeeda14a1c6ba/rsrc.php/v4/yK/r/kG2V_iGOhsY.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "f4497ba99fb096409584219a42cf2b2548ff83667e0f049782c4db5fbe87022a",
+        "bytes": 278476,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_db23754bb86659d817b30fd6f9d910c0ab01932069dd56524603c3a6c35c6e58",
+        "frame_id": "2D0E840D62F22130552887F93BEDABE9",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://static.whatsapp.net/rsrc.php/v4/yo/r/8wDk0JreDMJ.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "origins/c2c4cb14deb4d26b68c007c9bdea73a4db4d851a37a0037cbd4aeeda14a1c6ba/rsrc.php/v4/yo/r/8wDk0JreDMJ.js",
+        "layout": "url-path",
+        "layout_reason": null,
+        "sha256": "e1b0155b68133a42fca7f8619eacc0370f9179f541cee259ed1c6e959c59abbf",
+        "bytes": 251,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    },
+    {
+      "source": {
+        "kind": "page-script",
+        "script_key": "scr_edd92b4a602cadff9a209e2aee0812684801c02314c2c7ac9f15ae0c3b3b696a",
+        "frame_id": "2D0E840D62F22130552887F93BEDABE9",
+        "is_module": false,
+        "language": "JavaScript",
+        "source_map_url": null
+      },
+      "url": "https://static.whatsapp.net/rsrc.php/v4iq2q4/yM/l/en_GB-j/yaYoyCkQT4hGIWIf6j0j5OMeZcOhBB3KHFXttEqfA6Q2_QazhKV4haK3GtbnMrSJ4H7oGl0fvwyHCemzuVEJhGUHY11Jtf_VptkqaNgTtx1bZ-s6ZbP_Ci3c1Xs_dvSDgiqSJVHKa9Qyv5GOMDQOYwSzNi0hGs50ELPCMNQcjWXOTY_Afdp4FyojXL3sjhNI7YUhiv.js",
+      "content": {
+        "state": "exported",
+        "relative_path": "isolated/source-26-d9b5cb7fdfe11a88b2d9ce3c290436cc3185eac6ec4c9686d54582cceba5e24d.js",
+        "layout": "isolated",
+        "layout_reason": "URL path is not an ordinary portable JavaScript module path.",
+        "sha256": "1a3b59fe13034521eededcdff925da8be6e275803f2e0068d7083c777cf3d324",
+        "bytes": 5333005,
+        "media_type": "text/javascript",
+        "redacted": null,
+        "representation": "debugger-source-utf8"
+      }
+    }
+  ],
+  "limitations": [
+    "Observation starts when REA attaches; prior network and console activity is unavailable.",
+    "Raw network headers, bodies, cookies, storage values, console objects, and WebSocket payloads are never retained; explicitly requested primitive console text is retained verbatim, while payload captures retain value-free shapes.",
+    "Source maps are reported only as declarative URLs and are not fetched.",
+    "URL-less scripts and console events without an allowed source URL are excluded because their origin cannot be proven.",
+    "CDP discovery omitted the target attachment state; attached is reported as unknown.",
+    "Only script bytes retained in this capture are exported. Sources are not refetched or executed, and a response or Debugger source does not prove execution.",
+    "Ordinary unambiguous URL paths preserve relative module layouts by origin, including case-distinct spellings. Query variants, exact path collisions, file/directory prefixes, inline sources, and unrepresentable paths are isolated. A case-distinct pair is isolated only when the destination filesystem cannot store both spellings; the record names that pair. Browser module relationships of isolated paths remain unknown.",
+    "Local JavaScript analysis does not implement browser import maps, root-relative URL resolution, remote URL loading, or browser runtime behavior. It may strip import queries and fragments; isolated variants are not canonical targets.",
+    "Source-map declarations are retained as metadata. No source maps or missing dependencies are fetched or reconstructed.",
+    "Scenario response bytes preserve the output of Playwright's Response.body() API; any source-body provenance caveat from the capture is retained in this manifest. Debugger sources are the exposed text encoded as UTF-8. Redacted bytes are exported exactly as retained, and may no longer parse as JavaScript."
+  ]
+}

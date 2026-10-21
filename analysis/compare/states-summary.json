@@ -55,9 +55,9 @@
       273
     ],
     "compared_pixels": 81900,
-    "changed_pixels": 597,
-    "changed_ratio": 0.007289377289377289,
-    "mean_absolute_channel_delta": 0.1421825396825397
+    "changed_pixels": 61614,
+    "changed_ratio": 0.7523076923076923,
+    "mean_absolute_channel_delta": 10.756608669108669
   },
   "chat-menu": {
     "rect": [
@@ -67,9 +67,9 @@
       280
     ],
     "compared_pixels": 61600,
-    "changed_pixels": 1481,
-    "changed_ratio": 0.024042207792207792,
-    "mean_absolute_channel_delta": 2.4049594155844156
+    "changed_pixels": 42808,
+    "changed_ratio": 0.694935064935065,
+    "mean_absolute_channel_delta": 13.364074675324675
   },
   "status-panel": {
     "rect": [
@@ -79,9 +79,9 @@
       737
     ],
     "compared_pixels": 304381,
-    "changed_pixels": 10938,
-    "changed_ratio": 0.03593522591751785,
-    "mean_absolute_channel_delta": 2.3991806321682367
+    "changed_pixels": 10742,
+    "changed_ratio": 0.035291296105867315,
+    "mean_absolute_channel_delta": 2.3184052224021867
   },
   "channels-panel": {
     "rect": [
@@ -91,9 +91,9 @@
       737
     ],
     "compared_pixels": 304381,
-    "changed_pixels": 54828,
-    "changed_ratio": 0.18012950874069011,
-    "mean_absolute_channel_delta": 12.311013170992933
+    "changed_pixels": 54784,
+    "changed_ratio": 0.17998495306868695,
+    "mean_absolute_channel_delta": 12.273911643630845
   },
   "communities-panel": {
     "rect": [
@@ -103,9 +103,9 @@
       737
     ],
     "compared_pixels": 304381,
-    "changed_pixels": 24603,
-    "changed_ratio": 0.08082961814305098,
-    "mean_absolute_channel_delta": 6.51673560439055
+    "changed_pixels": 24407,
+    "changed_ratio": 0.08018568833140045,
+    "mean_absolute_channel_delta": 6.464619999277222
   },
   "calls-panel": {
     "rect": [
@@ -115,8 +115,8 @@
       737
     ],
     "compared_pixels": 304381,
-    "changed_pixels": 70434,
-    "changed_ratio": 0.23140077731527264,
-    "mean_absolute_channel_delta": 7.767885479054212
+    "changed_pixels": 72524,
+    "changed_ratio": 0.2382671717354237,
+    "mean_absolute_channel_delta": 8.569301303300797
   }
 }

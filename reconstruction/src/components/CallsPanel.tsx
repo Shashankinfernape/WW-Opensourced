@@ -65,7 +65,7 @@ export const CallsPanel: React.FC = () => {
                         <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x78zum5 xdt5ytf">
                           <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x6s0dn4 x78zum5 x1q0g3np xh8yej3 xl56j7k">
                             <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x6s0dn4 x78zum5 x1vjfegm">
-                              <span aria-hidden="true" className="xxk0z11 xvy4d1p"><Icon name="ic-add" size={24} /></span>
+                              <span aria-hidden="true" className="xxk0z11 xvy4d1p"><Icon name="ic-add-call-filled" size={24} /></span>
                             </div>
                             <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl xdt5ytf x6s0dn4 x78zum5 x1vjfegm x1c4vz4f"></div>
                           </div>
@@ -110,13 +110,33 @@ export const CallsPanel: React.FC = () => {
           <div role="status" data-testid="calls_tab_notifications_off_banner_wrapper" className="x2lah0s x1uvdrpn x14mko6t x1380le5 xefnzgg">
             <div className="x1n2onr6">
               <div className="x67dgr1 x10l6tqk x1ngp85i">
-                <div className="x6s0dn4 xs2akgl x78zum5 x1q0g3np x6nvzda x4i4b9w xhl9efl xj65ea0 x1xrf6ya xvtqlqk xscbp6u xdx6fka x1abdmlv" style={{ display: 'flex', alignItems: 'center', padding: '16px 20px', gap: '16px', backgroundColor: 'var(--WDS-surface-sunken, #111b21)', borderBottom: '1px solid var(--border-default, rgba(134, 150, 160, 0.15))' }}>
-                  <span aria-hidden="true" className="x1v5yvga x19kjcj4" style={{ color: '#00a884' }}><Icon name="ic-notifications-off" size={32} /></span>
-                  <div className="x78zum5 xdt5ytf x129bwdz x1yc453h" style={{ flex: 1 }}>
+                <span className="html-span xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x1hl2dhg x16tdsg8 x1vvkbs x4k7w5x x1h91t0o x1h9r5lt x1jfb8zj xv2umb2 x1beo9mf xaigb6o x12ejxvf x3igimt xarpa2k xedcshv x1lytzrv x1t2pt76 x7ja8zs x1qrby5j">
+                  <button
+                    data-tab="4"
+                    aria-label="Close"
+                    aria-disabled="false"
+                    tabIndex={0}
+                    type="button"
+                    onClick={() => setShowBanner(false)}
+                    className="html-button xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x178xt8z x1lun4ml xso031l xpilrb4 x1n2onr6 x1ejq31n x18oe1m7 x1sy0etr xstzfhl x1so62im x1syfmzz x1ja2u2z x1ypdohk x1s928wv x1j6awrg x1m1drc7 x1iygr5g x4eaejv x1wsn0xg x1r0yslu x2q1x1w xapdjt xr6f91l x5rv0tg x1akc3lz xikp0eg x1xl5mkn x1mfml39 x1l5mzlr xgmdoj8 x1f1wgk5 x1x3ic1u xjbqb8w xuwfzo9 x1wb366y xtnn1bt x9v5kkp xmw7ebm xrdum7p x2lah0s x1lliihq xk8lq53 x9f619 xt8t1vi x1xc408v x129tdwq x15urzxu x1vqgdyp x100vrsf"
+                  >
+                    <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x78zum5 xdt5ytf">
+                      <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x6s0dn4 x78zum5 x1q0g3np xh8yej3 xl56j7k">
+                        <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x6s0dn4 x78zum5 x1vjfegm">
+                          <span aria-hidden="true" className="xxk0z11 xvy4d1p"><Icon name="ic-close" size={24} /></span>
+                        </div>
+                        <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl xdt5ytf x6s0dn4 x78zum5 x1vjfegm x1c4vz4f" />
+                      </div>
+                    </div>
+                  </button>
+                </span>
+                <div className="x6s0dn4 xs2akgl x78zum5 x1q0g3np x6nvzda x4i4b9w xhl9efl xj65ea0 x1xrf6ya xvtqlqk xscbp6u xdx6fka x1abdmlv">
+                  <span aria-hidden="true" className="x1v5yvga x19kjcj4"><Icon name="ic-notifications-off" size={36} /></span>
+                  <div className="x78zum5 xdt5ytf x129bwdz x1yc453h">
                     <div className="xp48ta0">
-                      <span className="x140p0ai x1gufx9m x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x193iq5w xeuugli x13faqbe x1vvkbs x1lliihq x1fj9vlw x14ug900 x1hx0egp x1f6kntn xjb2p0i x8r4c90 xo1l8bm x1ic7a3i x12xpedu" style={{ fontSize: '14px', lineHeight: '18px', color: 'var(--primary, #e9edef)' }}>
-                        Notifications are off.&nbsp;
-                        <button data-tab="4" type="button" onClick={() => setShowBanner(false)} style={{ background: 'none', border: 'none', color: '#00a884', fontWeight: 500, cursor: 'pointer', padding: 0 }}>Turn on</button>
+                      <span className="x140p0ai x1gufx9m x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x193iq5w xeuugli x13faqbe x1vvkbs x1lliihq x1fj9vlw x14ug900 x1hx0egp x1f6kntn xjb2p0i x8r4c90 xo1l8bm x1ic7a3i x12xpedu">
+                        Message and call notifications are off.&nbsp;
+                        <button data-tab="4" type="button" onClick={() => setShowBanner(false)} className="xjb2p0i x1qlqyl8 x972fbf x10w94by x1qhh985 x14e42zd xexx8yu xyri2b x18d9i69 x1c1uobl x11g6tue x1a2a7pz x1ypdohk x1ph7ams x17f7hit xuv8nkb x1hl2dhg xt0b8zv x1eo1aoc xbvygy2 x1wp9yj1 xv854yx x1k74hu9 xp30eni xrys4gj xhmieyt">Turn on</button>
                       </span>
                     </div>
                   </div>
@@ -151,7 +171,7 @@ export const CallsPanel: React.FC = () => {
                       <div className="xs83m0k xdl72j9 x1g77sc7 x78zum5 xozqiw3 x1oa3qoh x12fk4p8 xeuugli x1nhvcw1 x1q0g3np x9f619 x1iyjqo2 x1qjc9v5 x879a55 x16ydxro xyo1k6t xlr9sxt xvvg52n xwd4zgb xq8v1ta x17gydlx x1jsj9aw" style={{ display: 'flex', alignItems: 'center', width: '100%', gap: '15px' }}>
                         <div className="x1c4vz4f xdl72j9 x1g77sc7 x78zum5 xozqiw3 x1oa3qoh x12fk4p8 x2lwn1j xl56j7k x1q0g3np x6s0dn4 xz9dl7a xsag5q8 xe2zdcy x1pic42t x1fns5xo xn95wi4" style={{ flexShrink: 0 }}>
                           <div className="x78zum5 x6s0dn4 xl56j7k x1pse0pq xe5due1 x1c9tyrk xeusxvb x1pahc9y x1ertn4p x100vrsf x1vqgdyp" style={{ backgroundColor: '#00a884', borderRadius: '50%', width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
-                            <span aria-hidden="true"><Icon name="ic-add" size={24} /></span>
+                            <span aria-hidden="true"><Icon name="ic-person-add-filled" size={24} /></span>
                           </div>
                         </div>
                         <div className="x1g77sc7 x78zum5 xozqiw3 x1oa3qoh x12fk4p8 xeuugli x2lwn1j xdt5ytf x12lumcd x1qjc9v5 xl56j7k x9f619 x2vl965 xz9dl7a xsag5q8 x1mz2wy7 xw36f2b xn95wi4" style={{ flexGrow: 1 }}>
@@ -206,8 +226,18 @@ export const CallsPanel: React.FC = () => {
                               </div>
                             </div>
                             <div className="x6s0dn4 xhslqc4 x78zum5 x1nxh6w3 x1fc57z9 xr9ek0c xisnujt" data-testid="cell-frame-secondary" style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '3px' }}>
-                              <span style={{ color: call.missed ? '#ea4335' : '#00a884', fontSize: '13px' }}>{call.incoming ? '↙' : '↗'}</span>
-                              <span style={{ fontSize: '13px', color: call.missed ? '#ea4335' : 'var(--secondary, #8696a0)' }}>{call.missed ? 'Missed' : (call.incoming ? 'Incoming' : 'Outgoing')}</span>
+                              <span aria-hidden="true" className={call.missed ? 'x30a034' : ''}>
+                                {call.missed ? (
+                                  <Icon name="ic-phone-callback-filled" size={16} color="#ea4335" />
+                                ) : call.isVideo ? (
+                                  <Icon name="wds-ic-call-video-received-filled" size={16} color="#00a884" />
+                                ) : (
+                                  <Icon name="wds-ic-phone-call-made-filled" size={16} color="#00a884" />
+                                )}
+                              </span>
+                              <span dir="auto" className={`x1iyjqo2 x6ikm8r x10wlt62 x1n2onr6 xlyipyv xuxw1ft xnpuxes ${call.missed ? 'x30a034' : ''}`} style={{ minHeight: '0px', color: call.missed ? '#ea4335' : 'var(--secondary, #8696a0)' }}>
+                                {call.missed ? 'Missed' : (call.incoming ? 'Incoming' : 'Outgoing')}
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -215,6 +245,18 @@ export const CallsPanel: React.FC = () => {
                     </div>
                   </div>
                 ))}
+              </div>
+
+              {/* End-to-end encryption message */}
+              <div className="x9f619 x78zum5 x6s0dn4 xl56j7k xcxhlts x1ys307a x1fqp7bg xyqm7xq x889kno x178xt8z x13fuv20 xx42vgk x14ug900" data-testid="calls-e2e-message" style={{ height: '29px' }}>
+                <div className="x2b8uid xl56j7k x78zum5">
+                  <div className="x1pg5gke x1fcty0u xvq8zen x1mzt3pk xeaf4i8" style={{ display: 'flex', alignItems: 'center' }}>
+                    <span aria-hidden="true" className="xvijh9v x1p8j9ns"><Icon name="ic-lock" size={10} color="var(--secondary, #8696a0)" /></span>
+                    <span className="x140p0ai x1gufx9m x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x193iq5w xeuugli x13faqbe x1vvkbs x1lliihq x1fj9vlw xhslqc4 x1hx0egp x1f6kntn xjb2p0i xo1l8bm x1ic7a3i x12xpedu" style={{ fontSize: '12px', color: 'var(--secondary, #8696a0)', marginLeft: '4px' }}>
+                      Your personal calls are <span data-testid="calls-e2e-message-link" role="button" tabIndex={0} style={{ color: '#00a884', cursor: 'pointer' }}>end-to-end encrypted</span>
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

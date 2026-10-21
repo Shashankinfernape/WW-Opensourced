@@ -11,14 +11,14 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose, onOpenPro
   const [activeSubpage, setActiveSubpage] = useState<string | null>(null);
 
   const menuItems = [
-    { id: 'profile', testid: 'li-profile', label: 'Profile', icon: 'ic-account-circle', onClick: onOpenProfile },
-    { id: 'account', testid: 'li-account', label: 'Account', icon: 'ic-key', onClick: () => setActiveSubpage('Account') },
-    { id: 'privacy', testid: 'settings-drawer-item-privacy', label: 'Privacy', icon: 'ic-lock', onClick: () => setActiveSubpage('Privacy') },
-    { id: 'chats', testid: 'li-chats', label: 'Chats', icon: 'wds-ic-chat', onClick: () => setActiveSubpage('Chats') },
-    { id: 'notifications', testid: 'li-notifications', label: 'Notifications', icon: 'ic-notifications', onClick: () => setActiveSubpage('Notifications') },
-    { id: 'shortcuts', testid: 'li-keyboard-shortcuts', label: 'Keyboard shortcuts', icon: 'ic-keyboard', onClick: () => setActiveSubpage('Keyboard shortcuts') },
-    { id: 'help', testid: 'li-help', label: 'Help', icon: 'ic-help', onClick: () => setActiveSubpage('Help') },
-    { id: 'logout', testid: 'li-logout', label: 'Log out', icon: 'ic-logout', onClick: onClose }
+    { id: 'profile', testid: 'li-profile', label: 'Profile', subtitle: 'Name, profile picture, username', icon: 'ic-account-circle', onClick: onOpenProfile },
+    { id: 'account', testid: 'li-account', label: 'Account', subtitle: 'Security notifications, account info', icon: 'ic-key', onClick: () => setActiveSubpage('Account') },
+    { id: 'privacy', testid: 'settings-drawer-item-privacy', label: 'Privacy', subtitle: 'Blocked contacts, disappearing messages', icon: 'ic-lock', onClick: () => setActiveSubpage('Privacy') },
+    { id: 'chats', testid: 'li-chats', label: 'Chats', subtitle: 'Theme, wallpaper, chat settings', icon: 'wds-ic-chat', onClick: () => setActiveSubpage('Chats') },
+    { id: 'notifications', testid: 'li-notifications', label: 'Notifications', subtitle: 'Messages, groups, sounds', icon: 'ic-notifications', onClick: () => setActiveSubpage('Notifications') },
+    { id: 'shortcuts', testid: 'li-keyboard-shortcuts', label: 'Keyboard shortcuts', subtitle: 'Quick actions', icon: 'ic-keyboard', onClick: () => setActiveSubpage('Keyboard shortcuts') },
+    { id: 'help', testid: 'li-help', label: 'Help and feedback', subtitle: 'Help centre, contact us, privacy policy', icon: 'ic-help', onClick: () => setActiveSubpage('Help') },
+    { id: 'logout', testid: 'li-logout', label: 'Log out', icon: 'ic-logout', danger: true, onClick: onClose }
   ];
 
   const filteredItems = menuItems.filter(item =>
@@ -97,31 +97,46 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = ({ onClose, onOpenPro
                 <div className="x1c4vz4f xs83m0k xdl72j9 x1g77sc7 x78zum5 xozqiw3 x1oa3qoh x12fk4p8 xeuugli x2lwn1j x1nhvcw1 xdt5ytf x1qjc9v5 x16ovd2e x1nzty39 x12xbjc7 x12w63v0" data-testid="menu-controller-focus-receiver" tabIndex={0}>
                   <div className="x3psx0u xat24cr x1280gxy x1h678fw xv6tirj x1c1uobl xyri2b">
                     {filteredItems.map(item => (
-                      <div
+                      <button
                         key={item.id}
                         data-testid={item.testid}
                         aria-disabled="false"
+                        type="button"
                         role="listitem"
+                        tabIndex={0}
+                        data-tab="0"
                         onClick={item.onClick}
-                        style={{ cursor: 'pointer' }}
+                        className="xjb2p0i xk390pu x1heor9g x1ypdohk xjbqb8w x972fbf x10w94by x1qhh985 x14e42zd x1fmog5m xu25z0z x140muxe xo1y3bh xexx8yu xyri2b x18d9i69 x1c1uobl x1yc453h x6ikm8r x10wlt62 x78zum5 x1iyjqo2 x2lah0s xdl72j9 xkh2ocl xh8yej3"
+                        style={{ width: '100%', textAlign: 'left', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
                       >
-                        <div className="x78zum5 xh8yej3 x1iyjqo2 x1n2onr6 x9f619 xkh2ocl" data-testid="cell-frame-container" aria-disabled="false" role="button" tabIndex={-1}>
-                          <div className="xs83m0k xdl72j9 x1g77sc7 x78zum5 xozqiw3 x1oa3qoh x12fk4p8 xeuugli x1nhvcw1 x1q0g3np x9f619 x1iyjqo2 x1qjc9v5 x879a55 x16ydxro xyo1k6t xlr9sxt xvvg52n xwd4zgb xq8v1ta x17gydlx x1jsj9aw">
-                            <div className="x1c4vz4f xdl72j9 x1g77sc7 x78zum5 xozqiw3 x1oa3qoh x12fk4p8 x2lwn1j xl56j7k x1q0g3np x6s0dn4 xz9dl7a xsag5q8 xe2zdcy x1pic42t x1fns5xo xn95wi4" style={{ flexShrink: 0 }}>
-                              <div className="xhslqc4">
-                                <span aria-hidden="true"><Icon name={item.icon} size={24} /></span>
+                        <div className="x78zum5 xh8yej3 x1iyjqo2 x1n2onr6 x9f619 xkh2ocl" data-testid="cell-frame-container" aria-disabled="false" role="button" tabIndex={-1} style={{ width: '100%' }}>
+                          <div className="xs83m0k xdl72j9 x1g77sc7 x78zum5 xozqiw3 x1oa3qoh x12fk4p8 xeuugli x1nhvcw1 x1q0g3np x9f619 x1iyjqo2 x1qjc9v5 x879a55 x16ydxro xyo1k6t xlr9sxt xvvg52n xwd4zgb xq8v1ta x17gydlx x1jsj9aw" style={{ width: '100%', display: 'flex', alignItems: 'center' }}>
+                            <div className="x1c4vz4f xdl72j9 x1g77sc7 x78zum5 xozqiw3 x1oa3qoh x12fk4p8 x2lwn1j xl56j7k x1q0g3np x6s0dn4 xz9dl7a xsag5q8 xe2zdcy x1pic42t x1fns5xo xn95wi4" style={{ flexShrink: 0, marginRight: '16px' }}>
+                              <div className={item.danger ? '' : 'xhslqc4'}>
+                                <span aria-hidden="true"><Icon name={item.icon} size={24} color={item.danger ? '#ea4335' : 'var(--icon, #8696a0)'} /></span>
                               </div>
                             </div>
-                            <div className="x78zum5 xdl72j9 xdt5ytf x1iyjqo2 xl56j7k xeuugli x1n1b19v">
-                              <div role="gridcell" aria-colindex={2} className="x6s0dn4 x78zum5 xggjnk3 x1yc453h">
-                                <div className="x14ug900 x78zum5 x1iyjqo2 x1jchvi3 xdod15v x6ikm8r x10wlt62 x1mzt3pk x1yc453h xo1l8bm" data-testid="cell-frame-title">
-                                  <span dir="auto" title={item.label} className="x1iyjqo2 x6ikm8r x10wlt62 x1n2onr6 xlyipyv xuxw1ft xnpuxes" style={{ minHeight: '0px' }}>{item.label}</span>
+                            <div className="x1g77sc7 x78zum5 xozqiw3 x1oa3qoh x12fk4p8 xeuugli x2lwn1j xdt5ytf x12lumcd x1qjc9v5 xl56j7k x9f619 xz9dl7a xsag5q8 x1mz2wy7 xw36f2b xn95wi4" style={{ flexBasis: 'auto', flexGrow: 1, flexShrink: 1 }}>
+                              <div className="x1c4vz4f xs83m0k xdl72j9 x1g77sc7 x78zum5 xozqiw3 x1oa3qoh x12fk4p8 xeuugli x2lwn1j x1nhvcw1 x1q0g3np x6s0dn4">
+                                <div className="xs83m0k xdl72j9 x1g77sc7 xeuugli x2lwn1j xozqiw3 x1oa3qoh x12fk4p8 x6ikm8r x10wlt62 xuxw1ft xlyipyv x9f619 xggjnk3 xw36f2b" style={{ flexGrow: 1 }}>
+                                  <span className="x140p0ai x1gufx9m x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x193iq5w xeuugli x13faqbe x1vvkbs x1lliihq x1fj9vlw x14ug900 x1hx0egp x1jchvi3 xjb2p0i xo1l8bm x17mssa0 x1ic7a3i" style={{ fontSize: '16px', lineHeight: '11.375px', color: item.danger ? '#ea4335' : 'var(--primary, #e9edef)' }}>
+                                    {item.label}
+                                  </span>
                                 </div>
                               </div>
+                              {item.subtitle && (
+                                <div className="x1c4vz4f xs83m0k xdl72j9 x1g77sc7 x78zum5 xozqiw3 x1oa3qoh x12fk4p8 xeuugli x2lwn1j x1nhvcw1 x1q0g3np x1cy8zhl">
+                                  <div className="xs83m0k xdl72j9 x1g77sc7 xeuugli x2lwn1j xozqiw3 x1oa3qoh x12fk4p8 x6ikm8r x10wlt62 xuxw1ft xlyipyv x9f619 xw36f2b" style={{ flexGrow: 1 }}>
+                                    <span className="x140p0ai x1gufx9m x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x193iq5w xeuugli x13faqbe x1vvkbs x1lliihq x1fj9vlw xhslqc4 x1hx0egp x1f6kntn xjb2p0i x8r4c90 xo1l8bm x1ic7a3i x12xpedu" style={{ fontSize: '14px', lineHeight: '9.9531px', color: 'var(--secondary, #8696a0)' }}>
+                                      {item.subtitle}
+                                    </span>
+                                  </div>
+                                </div>
+                              )}
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </button>
                     ))}
                   </div>
                 </div>

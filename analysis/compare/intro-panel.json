@@ -1,5 +1,5 @@
 {
-  "evidence_id": "ev_0d10debd642c8b49d79d91340f97725e0b9c3c89af01eaad6f1ad8f3d637d6a0",
+  "evidence_id": "ev_0af1df32e4a04bf362cc2844b4bdbee6c79a9afabf4f1d71a763df4d56199548",
   "subject": null,
   "provider": {
     "id": "rea-cdp-browser",
@@ -10,19 +10,19 @@
   "predicate_type": "rea.web-screenshot-diff",
   "operation": "compare_web_screenshots",
   "parameters": {
-    "before_artifact_sha256": "7f186b3369598ca5123d3c6cf3b8b87e9db6b80982f72f7b5fcd4c03cc1cc3a9",
-    "after_artifact_sha256": "82ae1bc6a51c69e2c34713b47ff5c543a0fd7701d177adf820723e676a833563",
+    "before_artifact_sha256": "a0e1c736909bf9a0450109cce760ff3890f5edd6f9e40648c0156881e4730398",
+    "after_artifact_sha256": "f4b9e0067c5c2ffe61f8f5879b1021053cef3884ccf6d01bd88e7e1ee9f059b7",
     "channel_threshold": 10
   },
   "raw_result": null,
   "normalized_result": {
     "before": {
       "width": 944,
-      "height": 737
+      "height": 765
     },
     "after": {
       "width": 944,
-      "height": 737
+      "height": 765
     },
     "channel_threshold": 10,
     "limitations": [
@@ -31,11 +31,11 @@
       "PNG tRNS transparency is accepted only as a six-byte RGB color key; tRNS on RGBA or with another length is rejected."
     ],
     "status": "different",
-    "compared_pixels": 695728,
-    "changed_pixels": 89876,
-    "changed_ratio": 0.12918266908906928,
+    "compared_pixels": 722160,
+    "changed_pixels": 5971,
+    "changed_ratio": 0.008268250803146117,
     "maximum_channel_delta": 235,
-    "mean_absolute_channel_delta": 6.4597975070717295
+    "mean_absolute_channel_delta": 0.7483767447657029
   },
   "confidence": "observed",
   "authority": "external-service",

@@ -415,11 +415,16 @@ export const ChatListPanel: React.FC<ChatListPanelProps> = ({
         </button>
 
         {/* Chat List Virtual Grid */}
-        <div data-testid="chat-list">
+        <div data-testid="chat-list" tabIndex={-1}>
           <div
             role="grid"
             aria-label="Chat list"
             className="x1y332i5 x1n2onr6 x6ikm8r x10wlt62 x16ovd2e"
+            style={{
+              height: `${filteredChats.length * 72}px`,
+              position: 'relative',
+              width: '100%',
+            }}
           >
             {filteredChats.map((chat, idx) => {
               const isSelected = chat.id === selectedChatId;
@@ -429,7 +434,12 @@ export const ChatListPanel: React.FC<ChatListPanelProps> = ({
                   role="row"
                   data-testid={`list-item-${idx}`}
                   className="x10l6tqk xh8yej3 x1g42fcv"
-                  style={{ height: '72px' }}
+                  style={{
+                    height: '72px',
+                    transform: `translateY(${idx * 72}px)`,
+                    zIndex: 1000 - idx,
+                    width: '100%',
+                  }}
                 >
                   <div
                     role="gridcell"

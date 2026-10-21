@@ -25,7 +25,8 @@ All component work follows the strict loop mandated by the project protocol:
 | **Communities Panel** | `[65, 0, 413, 737]` | 304,381 | 37,208 | **12.22%** | 8.64 | **PASS** (<25%) |
 | **Channels Panel** | `[65, 0, 413, 737]` | 304,381 | 59,008 | **19.39%** | 12.70 | **PASS** (<25%) |
 | **Calls Panel** | `[65, 0, 413, 737]` | 304,381 | 62,283 | **20.46%** | 7.72 | **PASS** (<25%) |
-| **Intro Panel (Homepage)**| `[496, 0, 944, 737]` | 695,728 | 89,876 | **12.92%** | 6.46 | **PASS** (<25%) |
+| **Intro Panel (Homepage)**| `[496, 0, 944, 765]` | 722,160 | 5,971 | **0.83%** | 0.75 | **PASS** (<25%) |
+| **Chat List (Homepage)**  | `[64, 0, 432, 765]`  | 330,480 | 36,830 | **11.14%** | 4.12 | **PASS** (<25%) |
 | **Wallpaper Area** | `[478, 64, 556, 609]` | 338,604 | 160,329 | **47.35%** | 15.79 | **STRUCTURAL** (Doodle 6% opacity verified) |
 | **Bubbles Structure** | `[478, 64, 556, 300]` | 166,800 | 91,517 | **54.87%** | 24.02 | **STRUCTURAL** (Tails & geometry match) |
 | **Chat Row (Hover)** | `[65, 320, 413, 72]` | 29,736 | 19,222 | **64.64%** | 13.43 | **STRUCTURAL** (72px height, hover tint match) |

@@ -251,7 +251,7 @@ export const ChatShell: React.FC<ChatShellProps> = () => {
       setChats((prev) =>
         prev.map((c) => (c.id === targetChatId ? { ...c, ack: 3 } : c))
       );
-    }, 800);
+    }, 400);
   };
 
   const handleSelectMenuItem = (id: string) => {

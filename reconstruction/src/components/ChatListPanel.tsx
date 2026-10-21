@@ -6,11 +6,15 @@ export interface ChatSummary {
   name: string;
   initial: string;
   color: string;
+  avatarUrl?: string;
   lastMessage: string;
   time: string;
   unreadCount?: number;
   isOnline?: boolean;
   ack?: 0 | 1 | 2 | 3;
+  fromMe?: boolean;
+  senderPrefix?: string;
+  mediaType?: 'text' | 'sticker' | 'image' | 'video' | 'audio' | 'document';
   isPinned?: boolean;
   isMuted?: boolean;
   isTyping?: boolean;
@@ -360,26 +364,39 @@ export const ChatListPanel: React.FC<ChatListPanelProps> = ({
                           padding: '0 16px',
                         }}
                       >
-                        {/* Avatar: initials circle strictly per rule [DEVIATION] */}
+                        {/* Avatar */}
                         <div className="x78zum5" style={{ marginRight: '15px', flexShrink: 0 }}>
-                          <div
-                            className="x78zum5 x6s0dn4 xl56j7k"
-                            style={{
-                              width: '48px',
-                              height: '48px',
-                              borderRadius: '50%',
-                              backgroundColor: chat.color,
-                              color: '#ffffff',
-                              display: 'flex',
-                              alignItems: 'center',
-                              justifyContent: 'center',
-                              fontWeight: 600,
-                              fontSize: '18px',
-                              userSelect: 'none',
-                            }}
-                          >
-                            {chat.initial}
-                          </div>
+                          {chat.avatarUrl ? (
+                            <img
+                              src={chat.avatarUrl}
+                              alt={chat.name}
+                              style={{
+                                width: '48px',
+                                height: '48px',
+                                borderRadius: '50%',
+                                objectFit: 'cover',
+                              }}
+                            />
+                          ) : (
+                            <div
+                              className="x78zum5 x6s0dn4 xl56j7k"
+                              style={{
+                                width: '48px',
+                                height: '48px',
+                                borderRadius: '50%',
+                                backgroundColor: chat.color,
+                                color: '#ffffff',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                fontWeight: 600,
+                                fontSize: '18px',
+                                userSelect: 'none',
+                              }}
+                            >
+                              {chat.initial}
+                            </div>
+                          )}
                         </div>
 
                         {/* Text info column */}
@@ -427,12 +444,12 @@ export const ChatListPanel: React.FC<ChatListPanelProps> = ({
                           {/* Secondary line: preview / typing / draft + ack ticks + unread badge + muted/pinned */}
                           <div
                             data-testid="cell-frame-secondary"
-                            className="x6s0dn4 x78zum5 x1nxh6w3 x1fc57z9 xr9ek0c xisnujt xhslqc4 x1fcty0u"
+                            className="x6s0dn4 xhslqc4 x78zum5 x1nxh6w3 x1fc57z9 xr9ek0c xisnujt"
                             style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
                           >
                             <div
                               className="xjbqb8w x1iyjqo2 x1f6kntn x1fc57z9 x6ikm8r x10wlt62 x1yc453h xlyipyv xuxw1ft xo1l8bm"
-                              style={{ display: 'flex', alignItems: 'center', gap: '4px', overflow: 'hidden' }}
+                              style={{ display: 'flex', alignItems: 'center', overflow: 'hidden' }}
                             >
                               {chat.isTyping ? (
                                 <span style={{ fontSize: '14px', color: '#00a884', fontWeight: 500 }}>
@@ -444,21 +461,61 @@ export const ChatListPanel: React.FC<ChatListPanelProps> = ({
                                   {chat.draft}
                                 </span>
                               ) : (
-                                <>
-                                  {chat.ack != null && (
-                                    <span style={{ display: 'inline-flex', alignItems: 'center', flexShrink: 0 }}>
-                                      {chat.ack === 3 ? (
-                                        <Icon name="wds-ic-read" size={18} color="var(--icon-ack, #53bdeb)" />
-                                      ) : chat.ack === 2 ? (
-                                        <Icon name="wds-ic-read" size={18} color="var(--bubble-meta, rgba(233, 237, 239, 0.6))" />
-                                      ) : (
-                                        <Icon name="msg-check" size={18} color="var(--bubble-meta, rgba(233, 237, 239, 0.6))" />
-                                      )}
-                                    </span>
+                                <span
+                                  className="x78zum5 x1cy8zhl"
+                                  title={chat.mediaType === 'sticker' ? '‪Sticker‬' : chat.lastMessage}
+                                  data-testid="last-msg-status"
+                                  style={{ display: 'flex', alignItems: 'center', overflow: 'hidden' }}
+                                >
+                                  {/* Ack checkmark ONLY when fromMe === true */}
+                                  {chat.fromMe && chat.ack != null && (
+                                    <div
+                                      className="x78zum5 x1okw0bk xhslqc4 x1xp8n7a xamitd3 xl56j7k x16q7b9a"
+                                      style={{ display: 'inline-flex', alignItems: 'center', marginRight: '4px', flexShrink: 0 }}
+                                    >
+                                      <span aria-hidden="true">
+                                        {chat.ack === 3 ? (
+                                          <Icon name="wds-ic-read" size={18} color="var(--icon-ack, #53bdeb)" />
+                                        ) : chat.ack === 2 ? (
+                                          <Icon name="wds-ic-read" size={18} color="var(--bubble-meta, rgba(233, 237, 239, 0.6))" />
+                                        ) : (
+                                          <Icon name="msg-check" size={18} color="var(--bubble-meta, rgba(233, 237, 239, 0.6))" />
+                                        )}
+                                      </span>
+                                    </div>
                                   )}
+
+                                  {/* Incoming group sender prefix when NOT fromMe */}
+                                  {!chat.fromMe && chat.senderPrefix && (
+                                    <>
+                                      <div className="x1c4vz4f x3nfvp2 xuce83p x1bft6iq x1i7k8ik xq9mrsl x6s0dn4" style={{ display: 'inline-flex' }}>
+                                        <div className="x78zum5">
+                                          <span dir="auto" className="x1rg5ohu xnpuxes" style={{ minHeight: '0px', color: 'var(--secondary, #8696a0)', fontSize: '14px' }}>
+                                            {chat.senderPrefix}
+                                          </span>
+                                        </div>
+                                      </div>
+                                      <span style={{ color: 'var(--secondary, #8696a0)', fontSize: '14px' }}>:&nbsp;</span>
+                                    </>
+                                  )}
+
+                                  {/* Inline 16x20 / 16x16 Sticker Symbol */}
+                                  {chat.mediaType === 'sticker' && (
+                                    <div
+                                      className="x1rg5ohu x1c4vz4f x2lah0s xdl72j9 xhslqc4 x16dsc37 x1qx5ct2 x1p8j9ns"
+                                      data-testid="chat-msg-symbol"
+                                      style={{ display: 'inline-flex', alignItems: 'center', marginRight: '4px', flexShrink: 0 }}
+                                    >
+                                      <span aria-hidden="true">
+                                        <Icon name="wds-ic-sticker" width={16} height={20} color="var(--secondary, #8696a0)" />
+                                      </span>
+                                    </div>
+                                  )}
+
+                                  {/* Message preview text */}
                                   <span
-                                    data-testid="last-msg-status"
-                                    className="x78zum5 x1cy8zhl"
+                                    dir="auto"
+                                    className="x1iyjqo2 x6ikm8r x10wlt62 x1n2onr6 xlyipyv xuxw1ft x1rg5ohu xnpuxes"
                                     style={{
                                       fontSize: '14px',
                                       color: 'var(--secondary, #8696a0)',
@@ -469,22 +526,30 @@ export const ChatListPanel: React.FC<ChatListPanelProps> = ({
                                   >
                                     {chat.lastMessage}
                                   </span>
-                                </>
+                                </span>
                               )}
                             </div>
 
+                            {/* Right-column meta slot: Muted, Pinned, Unread Badge */}
                             <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexShrink: 0 }}>
                               {chat.isMuted && (
-                                <span title="Muted" style={{ display: 'inline-flex', color: 'var(--secondary, #8696a0)' }}>
-                                  <Icon name="ic-notifications-off" size={16} />
-                                </span>
+                                <div
+                                  className="x1rg5ohu xf6vk7d x1j53mea x16dsc37 xhslqc4"
+                                  data-testid="mute-notifications-refreshed"
+                                  aria-label="Muted chat"
+                                  style={{ display: 'inline-flex', color: 'var(--secondary, #8696a0)' }}
+                                >
+                                  <Icon name="ic-notifications-off" width={20} height={20} />
+                                </div>
                               )}
                               {chat.isPinned && (
-                                <span title="Pinned chat" style={{ display: 'inline-flex', color: 'var(--secondary, #8696a0)' }}>
-                                  <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
-                                    <path d="M4.5 2a.5.5 0 0 0-.5.5v2.879a1.5 1.5 0 0 1-.44 1.06L2.354 7.646a.5.5 0 0 0 .353.854H7v5.5a.5.5 0 0 0 1 0V8.5h4.293a.5.5 0 0 0 .353-.854L11.44 6.44a1.5 1.5 0 0 1-.44-1.06V2.5a.5.5 0 0 0-.5-.5h-6z"/>
-                                  </svg>
-                                </span>
+                                <div
+                                  className="x1rg5ohu xf6vk7d x1j53mea x16dsc37 xhslqc4"
+                                  aria-label="Pinned chat"
+                                  style={{ display: 'inline-flex', color: 'var(--secondary, #8696a0)' }}
+                                >
+                                  <Icon name="ic-pin" width={20} height={20} />
+                                </div>
                               )}
                               {Boolean(chat.unreadCount && chat.unreadCount > 0) && (
                                 <div

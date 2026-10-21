@@ -40,26 +40,30 @@ export const LeftNavRail: React.FC<LeftNavRailProps> = ({
   const getItemWrapperStyle = (isActive: boolean): React.CSSProperties => ({
     width: '40px',
     height: '40px',
-    borderRadius: '9999px',
+    borderRadius: '50%',
     backgroundColor: isActive ? 'rgba(255, 255, 255, 0.1)' : 'transparent',
     margin: '4px auto',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    overflow: 'hidden',
   });
 
   const getButtonStyle = (isActive: boolean): React.CSSProperties => ({
     width: '40px',
     height: '40px',
-    borderRadius: '9999px',
-    background: 'transparent',
+    borderRadius: '50%',
+    backgroundColor: 'transparent',
     border: 'none',
+    outline: 'none',
+    boxShadow: 'none',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     cursor: 'pointer',
     color: isActive ? '#ffffff' : 'var(--icon-lighter, #8696a0)',
     padding: 0,
+    margin: 0,
   });
 
   return (

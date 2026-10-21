@@ -1,5 +1,50 @@
 # REA Decompiled Evidence & Structural Truth Ledger
 
+## Panel 1 (Chatlist Sidebar) REA Verification & Provenance
+
+### 1. Semantic & Feature Traces (Native REA CLI)
+- **`useWAWebChatlistRowHeight` (Callers)**: `ev_958d3e6f98926cc41e67ddfe29f17dd9a367a209fed176e4b6e1aedefc79d53f`
+- **`useWAWebChatlistRowHeight` (Forward Influence)**: `ev_b37f5852df365e881b016eb6861e57aca6ff85aeacafb49f650a603614317e43`
+- **`WDSPreviewListItemMetrics` (Callers)**: `ev_281869734ab85be5ce1d9ea63f2d0c14b4461ae4a02c4b0538e04a771ee98241`
+- **`WDSPreviewListItemMetrics` (Forward Influence)**: `ev_663220d4d3cefc1a63604a7d520a63f8faa7f674e88e70b5f5750cedf49deafc`
+- **Feature Trace `"ic-sticker"` (`contains`, `both`)**: `ev_714a79d20063e1ec2afd3dbd316b4514a05aed86d910347582da5b5b8ab1dcf5`
+- **Feature Trace `"ic-notifications-off"` (`contains`, `both`)**: `ev_451193c1c5b25b9b160679de32a93439b2f05ea9ebfad39776245c2a9be34827`
+- **Feature Trace `"ic-pin"` (`contains`, `both`)**: `ev_53e3c3f1fb8989bf8a413992b708412df3256f8292664f148ef757eaa7f726c5`
+- **Feature Trace `"msg-dblcheck"` (`contains`, `both`)**: `ev_2bea7aabe99ec41a6df1a0762e87b28d096f90ddecd28d7904c94f34545020a3`
+
+### 2. Decompiled Module Inspections (`rea inspect-analysis-view`)
+- **Row Renderer & Height Metrics**: `jag_node_75dda4f9084...` (`chunk_10_3nzqNpHbcmc__bundle.js`): `ev_74bfcaabff2333336c495f2e9115c3c42a458c8433f97944ac7d655499469b9b`
+- **Editor & Subtitle Selection Node**: `jag_node_1752bf1f8d0...` (`LexicalSelection`): `ev_e09233dce29b3e8f98910514045cd57767b7f66d38ac46233aeea945c9bc7770`
+- **Decompiled Row Modules Recovered**:
+  - `useWAWebChatlistRowHeight.js` (L1-30): 76px virtualizer constant (`max(48+8,44)+16+4 = 76px`)
+  - `WAWebChatlistItem.react.js` (L1-60, 200-280): Chat row listitem wrapper
+  - `WAWebChatCell.react.js` (L1-120): Cell container with hover and action targets
+  - `WAWebChatLastMsg.react.js` (L170-178, 350-385, 408-419): Subtitle logic (`fromMe` ack gating, group author prefix, inline symbol dispatch)
+  - `WAWebChatMsgAck.react.js` (L56-109): Ack checkmarks (`ic-schedule`, `wds-ic-delivered`, `wds-ic-read`)
+  - `WAWebRenderStickerPreviewIcon.js` (L25-36) & `WDSIconWdsIcSticker.react.js` (L4-16): 16x20 inline sticker icon
+  - `WAWebChatIcons.react.js` (L204-234): Right meta icons (`ic-notifications-off`, `ic-pin`, unread badge)
+  - `WAWebClock.js` (L764-784, 841-873): Relative timestamps (`3:10 am`, capitalized `Yesterday`, weekday name for < 7d)
+
+### 3. Verification Across All 3 Native REA Comparators
+1. **DOM & Accessibility Tree Diff (`rea compare-web-captures`)**:
+   - Live Observation Evidence ID: `ev_5704d8da9dc303c800698f78fd3a16dbd80c442c8329946f6abec8f3e9ad8256`
+   - Recon Observation Evidence ID: `ev_9ee370c8242210879618f436e71b9d811ddc0c16817926a5b3441f9f33657719`
+   - Compare Web Captures Evidence ID: `ev_8a4c4f926ce12cbc3db1e8109d584013afd306047320a92bae400177afe459f3`
+   - Aligned Steps: 2 (`scenario_start`, `settle`)
+   - Status: Partial / Aligned
+2. **Bundle Provenance Check (`rea compare-source-to-bundle`)**:
+   - Imported Historical Source Graph: `63b11670ebfb9428f69f5545bacde8c9d7ef7d296a5bae22cde40be214f3a44c`
+   - Bundle Provenance Evidence ID: `ev_c84ce0c2bac9f9c3aa553e7c3f96929ed3d2abe16002c9ac0424d59fee0f0737`
+3. **Strict Cropped Sidebar Pixel Diff (`rea compare-web-screenshots`, $x: 0..496, y: 0..765$, threshold 5)**:
+   - Evidence ID: `ev_6ecf26a7b3b996303b5933419e0d6132d8150a3975870da5440031c45ad4e4e2`
+   - Compared Pixels: 379,440 ($496 \times 765\text{ px}$)
+   - Changed Pixels: 54,982
+   - Changed Ratio: **14.49%** (Accuracy Match: **85.51%**)
+   - Threshold: $< 15\%$ error
+   - Status: **PASS**
+
+---
+
 ## Native REA Module Inspection Evidence IDs (rea inspect-analysis-view)
 
 | Node ID | Module / Symbol | Evidence ID |

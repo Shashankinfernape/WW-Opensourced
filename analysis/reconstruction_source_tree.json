@@ -1,0 +1,990 @@
+{
+  "schema": "HistoricalSourceGraph",
+  "authority": "historical-reference",
+  "root_alias": "$REFERENCE_ROOT",
+  "root_sha256": "63b11670ebfb9428f69f5545bacde8c9d7ef7d296a5bae22cde40be214f3a44c",
+  "inventory_state": "partial",
+  "entries": [
+    {
+      "path": "App.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "9e2dceffc3b23a94bcd21e984c2ed35542c3b85d1b1f252c1af11c6648f51e7a",
+      "size": 1170,
+      "content_state": "hashed"
+    },
+    {
+      "path": "components",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "directory",
+      "tree_state": "enumerated"
+    },
+    {
+      "path": "components/ArchivedChatsPanel.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "2d88e0513bd60faf8586c63fc789a5d02de6bf09baad45327f8380ebac1e984c",
+      "size": 8475,
+      "content_state": "hashed"
+    },
+    {
+      "path": "components/AttachMenu.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "6b3550940469caed631463334660f7ced75f039dc3b4b7e4207aa1992c0301eb",
+      "size": 3521,
+      "content_state": "hashed"
+    },
+    {
+      "path": "components/CallsPanel.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "858bd855cd90e7fd3436929081a2b371f39400212a692d9f13eba67e7a98f98e",
+      "size": 23015,
+      "content_state": "hashed"
+    },
+    {
+      "path": "components/ChannelsPanel.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "e338b4022d8a256b6cfb9a6dc44dffbe651a030e60e987e5e746c8b9d84be006",
+      "size": 18902,
+      "content_state": "hashed"
+    },
+    {
+      "path": "components/ChatHeader.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "9f03b17066a2e2837448b3a1691e28e939a5e1b4b8dc819554dcbb1e1cfb1a3c",
+      "size": 9432,
+      "content_state": "hashed"
+    },
+    {
+      "path": "components/ChatListContextMenu.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "97b3047b689fbb762ee6a51ea6d15b65b58f955dc06bd40991f7fd737013f38c",
+      "size": 2160,
+      "content_state": "hashed"
+    },
+    {
+      "path": "components/ChatListHeader.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "2dbd4cd48c9834c4c8abc608e436ecbc90967f3fa5cce77f2b06bf3e0bfe4266",
+      "size": 6744,
+      "content_state": "hashed"
+    },
+    {
+      "path": "components/ChatListPanel.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "6c0431b59af177fe5cdf40fd779d79f338e6f7c89dfb77e7ffcc1be7025c756c",
+      "size": 34788,
+      "content_state": "hashed"
+    },
+    {
+      "path": "components/ChatSearchDrawer.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "82ff89b0f7ee67dfa2004d34f3d12169d1bcb96cb7de90301e6e913f635e37a5",
+      "size": 4333,
+      "content_state": "hashed"
+    },
+    {
+      "path": "components/ChatShell.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "b0c6828d67802b3361fc2bb2944a7707195dcc3489a8eb81d17d1b817ce045c6",
+      "size": 18552,
+      "content_state": "hashed"
+    },
+    {
+      "path": "components/CommunitiesPanel.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "1c557d60483137842499ba820b6a6ebc75528e4268e2db3c3e5531ec8dd0bb96",
+      "size": 15422,
+      "content_state": "hashed"
+    },
+    {
+      "path": "components/ComposerBar.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "37eb6f08e1e846c61ef2b0d58126baffcc7f61f52cfc74be263881eafe4ea856",
+      "size": 10386,
+      "content_state": "hashed"
+    },
+    {
+      "path": "components/ContactInfoDrawer.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "c06afc8a8530a4750f4ec0de14dc1649fbbe98f71a36b9a56dfed354c1285f72",
+      "size": 6605,
+      "content_state": "hashed"
+    },
+    {
+      "path": "components/EmojiGifPanel.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "a778ca27582d641c343598f796a46496bdd769ef7047190737cade0aa96e585f",
+      "size": 5604,
+      "content_state": "hashed"
+    },
+    {
+      "path": "components/IntroPanel.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "9368f6aaafd957e3fc9c1b096285cad987aaad8a4641d5702899e5a844849e71",
+      "size": 35353,
+      "content_state": "hashed"
+    },
+    {
+      "path": "components/LeftNavRail.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "4ca57665770830c6216ca5671f946fd6364124d4f523efc1cd7be63eebc33da7",
+      "size": 11372,
+      "content_state": "hashed"
+    },
+    {
+      "path": "components/LoginView.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "3ca3fc76ba140c8fdc33735e01ebf8de8eafd42c0c9a45cd7dd6f3197272e9b9",
+      "size": 24215,
+      "content_state": "hashed"
+    },
+    {
+      "path": "components/MenuDropdown.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "4c0ccfe8acc3a2d0a65a0fbb58100e2ca2c5d5ce334526da11e9d566c13ac93f",
+      "size": 2862,
+      "content_state": "hashed"
+    },
+    {
+      "path": "components/MessageContextMenu.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "460636efc6db486b8a72c5b99ec0c811c6ebf141de0e33a634fbc6fbbca85af9",
+      "size": 3662,
+      "content_state": "hashed"
+    },
+    {
+      "path": "components/MessageList.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "385e8169e1dc881e42407db510335657dac9f056a177224993e5a75b46e990e1",
+      "size": 15466,
+      "content_state": "hashed"
+    },
+    {
+      "path": "components/MiddleDrawerEmptyState.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "c20be181aafc420d4f43355cf4b6f00b3044fa9a92d8765374bd009c2e7e6bb8",
+      "size": 5577,
+      "content_state": "hashed"
+    },
+    {
+      "path": "components/NewChatPanel.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "3616276754a55be4147deab6cd5f996f4664e3921c25ecc47f90460aac70a631",
+      "size": 17038,
+      "content_state": "hashed"
+    },
+    {
+      "path": "components/ProfilePanel.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "a8fdffd82891b53233efe80b3baa4cb1bd3ec24b725c132b64b8ec6b34cbd08b",
+      "size": 16780,
+      "content_state": "hashed"
+    },
+    {
+      "path": "components/SettingsPanel.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "90da138f99d84c150b61ae7dd9b97b211fb92404717766d4630f58af57a4c398",
+      "size": 12034,
+      "content_state": "hashed"
+    },
+    {
+      "path": "components/StarredMessagesPanel.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "0b2fdcb70c4e3abd4c65e0a94ca313a4e4e5879b80d6898a144ea5d09457c681",
+      "size": 9417,
+      "content_state": "hashed"
+    },
+    {
+      "path": "components/StatusPanel.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "08b07ec4775be6d23cbe87eddb3839e714f487133ddf638f410ea63984c288a0",
+      "size": 15952,
+      "content_state": "hashed"
+    },
+    {
+      "path": "icons",
+      "classifications": [
+        "unknown"
+      ],
+      "limitations": [],
+      "kind": "directory",
+      "tree_state": "enumerated"
+    },
+    {
+      "path": "icons/Icon.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "1d9c49e4d94187c9bc644887b55f366bfafc83f530ef76b39726315d36673eba",
+      "size": 2072,
+      "content_state": "hashed"
+    },
+    {
+      "path": "icons/svg-icons.json",
+      "classifications": [
+        "config"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "JSON",
+      "sha256": "7eba5a3e3c2617b2dece9d183f1c7fb82dbc00543130d22d22b73ae48405ef10",
+      "size": 78144,
+      "content_state": "hashed"
+    },
+    {
+      "path": "main.tsx",
+      "classifications": [
+        "source"
+      ],
+      "limitations": [],
+      "kind": "file",
+      "language": "TSX",
+      "sha256": "d0d0106738c56a5d81ad2452bb2e4939578a80eac5b42cfbde992a2eebfd5c91",
+      "size": 281,
+      "content_state": "hashed"
+    }
+  ],
+  "relationships": [
+    {
+      "from_path": "App.tsx",
+      "to": "components/ChatShell.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "App.tsx",
+      "to": "components/LoginView.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "App.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ArchivedChatsPanel.tsx",
+      "to": "components/ChatListPanel.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ArchivedChatsPanel.tsx",
+      "to": "icons/Icon.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ArchivedChatsPanel.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/AttachMenu.tsx",
+      "to": "icons/Icon.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/AttachMenu.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/CallsPanel.tsx",
+      "to": "icons/Icon.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/CallsPanel.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChannelsPanel.tsx",
+      "to": "icons/Icon.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChannelsPanel.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatHeader.tsx",
+      "to": "components/ChatListPanel.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatHeader.tsx",
+      "to": "icons/Icon.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatHeader.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatListContextMenu.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatListHeader.tsx",
+      "to": "icons/Icon.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatListHeader.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatListPanel.tsx",
+      "to": "icons/Icon.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatListPanel.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatSearchDrawer.tsx",
+      "to": "components/ChatListPanel.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatSearchDrawer.tsx",
+      "to": "icons/Icon.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatSearchDrawer.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatShell.tsx",
+      "to": "components/ArchivedChatsPanel.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatShell.tsx",
+      "to": "components/AttachMenu.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatShell.tsx",
+      "to": "components/CallsPanel.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatShell.tsx",
+      "to": "components/ChannelsPanel.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatShell.tsx",
+      "to": "components/ChatHeader.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatShell.tsx",
+      "to": "components/ChatListHeader.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatShell.tsx",
+      "to": "components/ChatListPanel.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatShell.tsx",
+      "to": "components/ChatSearchDrawer.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatShell.tsx",
+      "to": "components/CommunitiesPanel.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatShell.tsx",
+      "to": "components/ComposerBar.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatShell.tsx",
+      "to": "components/ContactInfoDrawer.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatShell.tsx",
+      "to": "components/EmojiGifPanel.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatShell.tsx",
+      "to": "components/IntroPanel.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatShell.tsx",
+      "to": "components/LeftNavRail.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatShell.tsx",
+      "to": "components/MenuDropdown.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatShell.tsx",
+      "to": "components/MessageList.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatShell.tsx",
+      "to": "components/MiddleDrawerEmptyState.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatShell.tsx",
+      "to": "components/NewChatPanel.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatShell.tsx",
+      "to": "components/ProfilePanel.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatShell.tsx",
+      "to": "components/SettingsPanel.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatShell.tsx",
+      "to": "components/StarredMessagesPanel.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatShell.tsx",
+      "to": "components/StatusPanel.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ChatShell.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/CommunitiesPanel.tsx",
+      "to": "icons/Icon.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/CommunitiesPanel.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ComposerBar.tsx",
+      "to": "icons/Icon.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ComposerBar.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ContactInfoDrawer.tsx",
+      "to": "components/ChatListPanel.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ContactInfoDrawer.tsx",
+      "to": "icons/Icon.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ContactInfoDrawer.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/EmojiGifPanel.tsx",
+      "to": "icons/Icon.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/EmojiGifPanel.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/IntroPanel.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/LeftNavRail.tsx",
+      "to": "icons/Icon.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/LeftNavRail.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/LoginView.tsx",
+      "to": "icons/Icon.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/LoginView.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/MenuDropdown.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/MessageContextMenu.tsx",
+      "to": "icons/Icon.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/MessageContextMenu.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/MessageList.tsx",
+      "to": "icons/Icon.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/MessageList.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/MiddleDrawerEmptyState.tsx",
+      "to": "icons/Icon.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/MiddleDrawerEmptyState.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/NewChatPanel.tsx",
+      "to": "components/ChatListPanel.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/NewChatPanel.tsx",
+      "to": "icons/Icon.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/NewChatPanel.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ProfilePanel.tsx",
+      "to": "icons/Icon.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/ProfilePanel.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/SettingsPanel.tsx",
+      "to": "icons/Icon.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/SettingsPanel.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/StarredMessagesPanel.tsx",
+      "to": "icons/Icon.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/StarredMessagesPanel.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/StatusPanel.tsx",
+      "to": "icons/Icon.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "components/StatusPanel.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "icons/Icon.tsx",
+      "to": "icons/svg-icons.json",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "icons/Icon.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "main.tsx",
+      "to": "App.tsx",
+      "kind": "imports",
+      "resolution": "internal",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "main.tsx",
+      "to": "react",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    },
+    {
+      "from_path": "main.tsx",
+      "to": "react-dom/client",
+      "kind": "imports",
+      "resolution": "external",
+      "parse_state": "parsed"
+    }
+  ],
+  "parse_failures": [],
+  "exclusions": [],
+  "languages": [
+    "JSON",
+    "TSX"
+  ],
+  "manifests": [],
+  "vcs": {
+    "kind": "git",
+    "head": "aea8834721ab7f216c7f759abf02a8ca056d5f9a",
+    "dirty": null
+  },
+  "provenance": {
+    "importer": "rea-agents",
+    "importer_version": "6.7.0",
+    "caller": "rea-cli"
+  },
+  "limitations": [
+    "Path identity is revalidated around operations; Node lacks portable descriptor-relative openat traversal, so a syscall-boundary pathname race remains."
+  ]
+}

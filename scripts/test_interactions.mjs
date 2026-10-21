@@ -50,13 +50,24 @@ async function runInteractionTests() {
   }
 
   // ==========================================
-  // 1. SWITCHING CHATS
+  // 1. SWITCHING CHATS & HOMEPAGE INTRO
   // ==========================================
-  console.log('\n--- Test Suite 1: Switching Chats ---');
+  console.log('\n--- Test Suite 1: Switching Chats & Homepage Intro ---');
 
-  // Verify initial chat is Alex Rivera
+  // Verify initial landing page shows intro-panel
+  let hasIntro = await evaluate(`!!document.querySelector('[data-testid="intro-panel"]')`);
+  assert('Initial landing page shows intro-panel', hasIntro === true, `Intro present: ${hasIntro}`);
+
+  // Click on Chat 1 (Alex Rivera) to open conversation
+  await evaluate(`(() => {
+    const rows = Array.from(document.querySelectorAll('[data-testid="cell-frame-container"]'));
+    const row1 = rows.find(r => r.innerText.includes('Alex Rivera'));
+    if (row1) row1.click();
+  })()`);
+  await new Promise(r => setTimeout(r, 300));
+
   let currentHeader = await evaluate(`document.querySelector('[data-testid="conversation-info-header-chat-title"]')?.innerText`);
-  assert('Initial active chat', currentHeader === 'Alex Rivera', `Header: ${currentHeader}`);
+  assert('Open active chat "Alex Rivera"', currentHeader === 'Alex Rivera', `Header: ${currentHeader}`);
 
   // Click on Chat 2 (Jordan Lee)
   await evaluate(`(() => {

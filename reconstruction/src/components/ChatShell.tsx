@@ -19,6 +19,7 @@ import { SettingsPanel } from './SettingsPanel';
 import { ProfilePanel } from './ProfilePanel';
 import { ArchivedChatsPanel } from './ArchivedChatsPanel';
 import { StarredMessagesPanel } from './StarredMessagesPanel';
+import { IntroPanel } from './IntroPanel';
 
 interface ChatShellProps {
   onBackToLogin?: () => void;
@@ -189,7 +190,7 @@ export const ChatShell: React.FC<ChatShellProps> = () => {
   const [isChatMenuOpen, setIsChatMenuOpen] = useState(false);
 
   const [chats, setChats] = useState<ChatSummary[]>(NEUTRAL_CHATS);
-  const [selectedChatId, setSelectedChatId] = useState<string>('chat_1');
+  const [selectedChatId, setSelectedChatId] = useState<string | null>(null);
   const [filter, setFilter] = useState<'all' | 'unread' | 'favourites' | 'groups'>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [messagesMap, setMessagesMap] = useState<Record<string, ChatMessage[]>>(NEUTRAL_MESSAGES);
@@ -214,10 +215,11 @@ export const ChatShell: React.FC<ChatShellProps> = () => {
     return 414;
   };
 
-  const selectedChat = chats.find((c) => c.id === selectedChatId) || chats[0];
-  const activeMessages = messagesMap[selectedChatId] || [];
+  const selectedChat = selectedChatId ? chats.find((c) => c.id === selectedChatId) || null : null;
+  const activeMessages = selectedChatId ? messagesMap[selectedChatId] || [] : [];
 
   const handleSendMessage = (text: string) => {
+    if (!selectedChatId) return;
     const now = new Date();
     const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     const targetChatId = selectedChatId;
@@ -259,6 +261,10 @@ export const ChatShell: React.FC<ChatShellProps> = () => {
       setLeftDrawer('starred');
     } else if (id === 'contact_info') {
       setRightDrawer('contact_info');
+    } else if (id === 'close_chat') {
+      setSelectedChatId(null);
+      setRightDrawer('none');
+      setIsChatMenuOpen(false);
     }
   };
 
@@ -382,82 +388,107 @@ export const ChatShell: React.FC<ChatShellProps> = () => {
           position: 'relative',
         }}
       >
-        <div
-          id="main"
-          className="x78zum5 xdt5ytf x5yr21d xyyilfv xlkovuz x1q80dvb"
-          style={{
-            flex: '1 1 0',
-            minWidth: 0,
-            height: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            position: 'relative',
-            backgroundColor: 'var(--WDS-surface-default, #161717)',
-          }}
-        >
-          {/* Conversation Header (height: 64px) */}
-          <ChatHeader
-            chat={selectedChat}
-            onContactInfoClick={() => setRightDrawer(rightDrawer === 'contact_info' ? 'none' : 'contact_info')}
-            onSearchClick={() => setRightDrawer(rightDrawer === 'chat_search' ? 'none' : 'chat_search')}
-            onMenuClick={() => setIsChatMenuOpen(true)}
-          />
-
-          <MenuDropdown
-            isOpen={isChatMenuOpen}
-            onClose={() => setIsChatMenuOpen(false)}
-            items={CHAT_MENU_ITEMS}
-            onSelectItem={handleSelectMenuItem}
-            top="54px"
-            right="16px"
-          />
-
-          {/* Conversation Message List & Doodle Wallpaper */}
+        {selectedChatId && selectedChat ? (
           <div
-            className="x1n2onr6 x1vjfegm x1cqoux5 x14yy4lh"
-            data-testid="conversation-panel-body"
+            id="main"
+            className="x78zum5 xdt5ytf x5yr21d xyyilfv xlkovuz x1q80dvb"
             style={{
               flex: '1 1 0',
-              minHeight: 0,
-              overflowY: 'auto',
+              minWidth: 0,
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
               position: 'relative',
-              zIndex: 1,
+              backgroundColor: 'var(--WDS-surface-default, #161717)',
             }}
           >
-            <MessageList messages={activeMessages} />
+            {/* Conversation Header (height: 64px) */}
+            <ChatHeader
+              chat={selectedChat}
+              onContactInfoClick={() => setRightDrawer(rightDrawer === 'contact_info' ? 'none' : 'contact_info')}
+              onSearchClick={() => setRightDrawer(rightDrawer === 'chat_search' ? 'none' : 'chat_search')}
+              onMenuClick={() => setIsChatMenuOpen(true)}
+            />
+
+            <MenuDropdown
+              isOpen={isChatMenuOpen}
+              onClose={() => setIsChatMenuOpen(false)}
+              items={CHAT_MENU_ITEMS}
+              onSelectItem={handleSelectMenuItem}
+              top="54px"
+              right="16px"
+            />
+
+            {/* Conversation Message List & Doodle Wallpaper */}
+            <div
+              className="x1n2onr6 x1vjfegm x1cqoux5 x14yy4lh"
+              data-testid="conversation-panel-body"
+              style={{
+                flex: '1 1 0',
+                minHeight: 0,
+                overflowY: 'auto',
+                position: 'relative',
+                zIndex: 1,
+              }}
+            >
+              <MessageList messages={activeMessages} />
+            </div>
+
+            {/* Attach Menu */}
+            <AttachMenu
+              isOpen={isAttachOpen}
+              onClose={() => setIsAttachOpen(false)}
+              onSelectOption={(opt) => console.log('Selected attach:', opt)}
+            />
+
+            {/* Emoji / GIF / Sticker Panel */}
+            <EmojiGifPanel
+              isOpen={isEmojiOpen}
+              onClose={() => setIsEmojiOpen(false)}
+              onSelectEmoji={(emoji) => handleSendMessage(emoji)}
+            />
+
+            {/* Conversation Composer Bar (height: 64px) */}
+            <ComposerBar
+              onSendMessage={handleSendMessage}
+              onAttachClick={() => setIsAttachOpen(!isAttachOpen)}
+              onEmojiClick={() => setIsEmojiOpen(!isEmojiOpen)}
+            />
           </div>
-
-          {/* Attach Menu */}
-          <AttachMenu
-            isOpen={isAttachOpen}
-            onClose={() => setIsAttachOpen(false)}
-            onSelectOption={(opt) => console.log('Selected attach:', opt)}
+        ) : (
+          <IntroPanel
+            onGoToCalls={() => {
+              setActiveTab('calls');
+              setLeftDrawer('none');
+            }}
+            onSendDocument={() => {
+              setSelectedChatId('chat_3');
+            }}
+            onAddContact={() => {
+              setLeftDrawer('newchat');
+            }}
+            onInviteFriend={() => {
+              alert('Invite link copied: https://web.whatsapp.com');
+            }}
+            onNewCall={() => {
+              setActiveTab('calls');
+              setLeftDrawer('none');
+            }}
+            onAskMetaAi={() => {
+              setLeftDrawer('none');
+            }}
           />
-
-          {/* Emoji / GIF / Sticker Panel */}
-          <EmojiGifPanel
-            isOpen={isEmojiOpen}
-            onClose={() => setIsEmojiOpen(false)}
-            onSelectEmoji={(emoji) => handleSendMessage(emoji)}
-          />
-
-          {/* Conversation Composer Bar (height: 64px) */}
-          <ComposerBar
-            onSendMessage={handleSendMessage}
-            onAttachClick={() => setIsAttachOpen(!isAttachOpen)}
-            onEmojiClick={() => setIsEmojiOpen(!isEmojiOpen)}
-          />
-        </div>
+        )}
 
         {/* Right Drawer: Contact Info OR Chat Search */}
-        {rightDrawer === 'contact_info' && (
+        {rightDrawer === 'contact_info' && selectedChat && (
           <ContactInfoDrawer
             isOpen={true}
             onClose={() => setRightDrawer('none')}
             chat={selectedChat}
           />
         )}
-        {rightDrawer === 'chat_search' && (
+        {rightDrawer === 'chat_search' && selectedChat && (
           <ChatSearchDrawer
             isOpen={true}
             onClose={() => setRightDrawer('none')}

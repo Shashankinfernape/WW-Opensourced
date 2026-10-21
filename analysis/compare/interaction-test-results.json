@@ -1,10 +1,15 @@
 {
-  "total": 30,
-  "passed": 30,
+  "total": 31,
+  "passed": 31,
   "failed": 0,
   "results": [
     {
-      "name": "Initial active chat",
+      "name": "Initial landing page shows intro-panel",
+      "status": "PASS",
+      "details": "Intro present: true"
+    },
+    {
+      "name": "Open active chat \"Alex Rivera\"",
       "status": "PASS",
       "details": "Header: Alex Rivera"
     },

@@ -25,6 +25,7 @@ All component work follows the strict loop mandated by the project protocol:
 | **Communities Panel** | `[65, 0, 413, 737]` | 304,381 | 37,208 | **12.22%** | 8.64 | **PASS** (<25%) |
 | **Channels Panel** | `[65, 0, 413, 737]` | 304,381 | 59,008 | **19.39%** | 12.70 | **PASS** (<25%) |
 | **Calls Panel** | `[65, 0, 413, 737]` | 304,381 | 62,283 | **20.46%** | 7.72 | **PASS** (<25%) |
+| **Intro Panel (Homepage)**| `[496, 0, 944, 737]` | 695,728 | 89,876 | **12.92%** | 6.46 | **PASS** (<25%) |
 | **Wallpaper Area** | `[478, 64, 556, 609]` | 338,604 | 160,329 | **47.35%** | 15.79 | **STRUCTURAL** (Doodle 6% opacity verified) |
 | **Bubbles Structure** | `[478, 64, 556, 300]` | 166,800 | 91,517 | **54.87%** | 24.02 | **STRUCTURAL** (Tails & geometry match) |
 | **Chat Row (Hover)** | `[65, 320, 413, 72]` | 29,736 | 19,222 | **64.64%** | 13.43 | **STRUCTURAL** (72px height, hover tint match) |
@@ -74,7 +75,7 @@ Full automated end-to-end interactions driven over CDP:
   * Calls Tab -> `<h1>Calls</h1>`
   * Settings Tab -> `<h2>Settings</h2>` with subpages
   * Return to Chats Tab -> `<header data-testid="chatlist-header">`
-* **Total Results:** **30 passed / 0 failed (100.0%)**
+* **Total Results:** **31 passed / 0 failed (100.0%)**
 
 ---
 
@@ -92,12 +93,12 @@ Full automated end-to-end interactions driven over CDP:
 
 ## 5. Strict Verification Scripts Status
 
-1. `node scripts/strict_verify_icons.js`: **40 / 40 passed** (0 failures).
+1. `node scripts/strict_verify_icons.js`: **45 / 45 passed** (0 failures).
 2. `node scripts/audit_evidence_ledger.js`: **15 / 15 passed** (0 mismatches).
-3. `node scripts/test_interactions.mjs`: **30 / 30 passed** (0 failures).
+3. `node scripts/test_interactions.mjs`: **31 / 31 passed** (0 failures).
 4. `node scripts/compare_breakpoints.mjs`: **4 / 4 passed** (0 failures).
 5. `node scripts/check_live_leakage.mjs`: **0 leaks detected**.
-6. `npm run build` in `reconstruction/`: **0 errors, 0 warnings** (TypeScript strict compile clean, 55 modules transformed in <1.0s).
+6. `npm run build` in `reconstruction/`: **0 errors, 0 warnings** (TypeScript strict compile clean, 56 modules transformed in <1.0s).
 
 ---
 

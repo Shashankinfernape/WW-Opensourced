@@ -19,7 +19,7 @@ export interface ChatSummary {
 
 interface ChatListPanelProps {
   chats: ChatSummary[];
-  selectedChatId: string;
+  selectedChatId: string | null;
   onSelectChat: (id: string) => void;
   filter: 'all' | 'unread' | 'favourites' | 'groups';
   onFilterChange: (f: 'all' | 'unread' | 'favourites' | 'groups') => void;

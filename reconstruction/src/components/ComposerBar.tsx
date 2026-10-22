@@ -5,12 +5,16 @@ interface ComposerBarProps {
   onSendMessage: (text: string, type?: 'text' | 'audio') => void;
   onAttachClick?: () => void;
   onEmojiClick?: () => void;
+  replyingTo?: { senderName: string; text: string } | null;
+  onCancelReply?: () => void;
 }
 
 export const ComposerBar: React.FC<ComposerBarProps> = ({
   onSendMessage,
   onAttachClick,
   onEmojiClick,
+  replyingTo,
+  onCancelReply,
 }) => {
   const [text, setText] = useState('');
   const [isRecording, setIsRecording] = useState(false);
@@ -306,7 +310,67 @@ export const ComposerBar: React.FC<ComposerBarProps> = ({
             </div>
           ) : (
             <span className="">
-              <div className="x78zum5 xuk3077">
+              <div className="x78zum5 xuk3077" style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
+                {/* Quoted Message / Replying-to Preview Bar */}
+                {replyingTo && (
+                  <div
+                    data-testid="quoted-message-preview"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      padding: '8px 12px',
+                      backgroundColor: 'rgba(255, 255, 255, 0.06)',
+                      borderLeft: '4px solid #00a884',
+                      borderRadius: '8px 8px 0 0',
+                      marginBottom: '4px',
+                      width: '100%',
+                      boxSizing: 'border-box',
+                    }}
+                  >
+                    <div style={{ flex: 1, minWidth: 0, paddingRight: '8px' }}>
+                      <div
+                        style={{
+                          fontSize: '12.5px',
+                          fontWeight: 600,
+                          color: '#00a884',
+                          marginBottom: '2px',
+                        }}
+                      >
+                        {replyingTo.senderName}
+                      </div>
+                      <div
+                        style={{
+                          fontSize: '13px',
+                          color: 'var(--secondary, #8696a0)',
+                          overflow: 'hidden',
+                          textOverflow: 'ellipsis',
+                          whiteSpace: 'nowrap',
+                        }}
+                      >
+                        {replyingTo.text}
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      aria-label="Cancel reply"
+                      onClick={onCancelReply}
+                      style={{
+                        background: 'transparent',
+                        border: 'none',
+                        color: 'var(--secondary, #8696a0)',
+                        cursor: 'pointer',
+                        padding: '4px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexShrink: 0,
+                      }}
+                    >
+                      <Icon name="ic-close" size={18} color="var(--secondary, #8696a0)" />
+                    </button>
+                  </div>
+                )}
                 <div className="x78zum5 x98rzlu xuk3077 xeuugli">
                   {/* Unified input container pill wrapping attach, emoji, and text input */}
                   <div

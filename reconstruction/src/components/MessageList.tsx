@@ -1,5 +1,6 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { Icon } from '../icons/Icon';
+import { MessageContextMenu } from './MessageContextMenu';
 
 export interface ChatMessage {
   id: string;
@@ -24,10 +25,23 @@ export interface ChatMessage {
 interface MessageListProps {
   messages: ChatMessage[];
   onReply?: (msg: ChatMessage) => void;
+  onReact?: (msgId: string, emoji: string) => void;
+  onDeleteMessage?: (msgId: string) => void;
 }
 
-export const MessageList: React.FC<MessageListProps> = ({ messages, onReply }) => {
+export const MessageList: React.FC<MessageListProps> = ({
+  messages,
+  onReply,
+  onReact,
+  onDeleteMessage,
+}) => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [hoveredMsgId, setHoveredMsgId] = useState<string | null>(null);
+  const [contextMenu, setContextMenu] = useState<{
+    msg: ChatMessage;
+    x: number;
+    y: number;
+  } | null>(null);
 
   const scrollToBottom = () => {
     if (scrollRef.current) {
@@ -148,12 +162,24 @@ export const MessageList: React.FC<MessageListProps> = ({ messages, onReply }) =
           const prevMsg = messages[index - 1];
           const isFirstInGroup = !prevMsg || prevMsg.sender !== msg.sender;
           const bubbleColor = isMe ? 'var(--outgoing-background, #144D37)' : 'var(--incoming-background, #242626)';
+          const isHovered = hoveredMsgId === msg.id;
 
           return (
             <div
               key={msg.id}
               data-testid="msg-container"
               className={isMe ? 'message-out' : 'message-in'}
+              onMouseEnter={() => setHoveredMsgId(msg.id)}
+              onMouseLeave={() => setHoveredMsgId(null)}
+              onContextMenu={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setContextMenu({
+                  msg,
+                  x: Math.min(e.clientX, window.innerWidth - 220),
+                  y: Math.min(e.clientY, window.innerHeight - 250),
+                });
+              }}
               style={{
                 display: 'flex',
                 justifyContent: isMe ? 'flex-end' : 'flex-start',
@@ -198,6 +224,41 @@ export const MessageList: React.FC<MessageListProps> = ({ messages, onReply }) =
                       style={{ width: '8px', height: '13px', display: 'block' }}
                     />
                   </span>
+                )}
+
+                {/* Hover Message Action Trigger */}
+                {isHovered && (
+                  <button
+                    type="button"
+                    data-testid="down-context"
+                    aria-label="Message options"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      const rect = e.currentTarget.getBoundingClientRect();
+                      setContextMenu({
+                        msg,
+                        x: Math.min(rect.left - 120, window.innerWidth - 220),
+                        y: Math.min(rect.bottom + 4, window.innerHeight - 250),
+                      });
+                    }}
+                    style={{
+                      position: 'absolute',
+                      top: '2px',
+                      right: '4px',
+                      background: 'rgba(0,0,0,0.2)',
+                      borderRadius: '50%',
+                      border: 'none',
+                      padding: '2px',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: 'var(--secondary, #8696a0)',
+                      zIndex: 10,
+                    }}
+                  >
+                    <Icon name="ic-chevron-down" size={16} color="var(--secondary, #8696a0)" />
+                  </button>
                 )}
 
                 {/* Quoted Message / Reply Preview */}
@@ -394,6 +455,28 @@ export const MessageList: React.FC<MessageListProps> = ({ messages, onReply }) =
       >
         <Icon name="ic-chevron-down" size={20} />
       </button>
+
+      {/* Floating Message Context Menu */}
+      {contextMenu && (
+        <MessageContextMenu
+          isOpen={true}
+          x={contextMenu.x}
+          y={contextMenu.y}
+          onClose={() => setContextMenu(null)}
+          onReply={() => {
+            onReply?.(contextMenu.msg);
+            setContextMenu(null);
+          }}
+          onReact={(emoji) => {
+            onReact?.(contextMenu.msg.id, emoji);
+            setContextMenu(null);
+          }}
+          onDelete={() => {
+            onDeleteMessage?.(contextMenu.msg.id);
+            setContextMenu(null);
+          }}
+        />
+      )}
     </div>
   );
 };

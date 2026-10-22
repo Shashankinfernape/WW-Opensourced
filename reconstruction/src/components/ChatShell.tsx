@@ -347,6 +347,8 @@ export const ChatShell: React.FC<ChatShellProps> = () => {
   const selectedChat = selectedChatId ? chats.find((c) => c.id === selectedChatId) || null : null;
   const activeMessages = selectedChatId ? messagesMap[selectedChatId] || [] : [];
 
+  const [replyingTo, setReplyingTo] = useState<ChatMessage | null>(null);
+
   const handleSendMessage = (text: string, type: 'text' | 'audio' = 'text') => {
     if (!selectedChatId) return;
     const now = new Date();
@@ -360,7 +362,15 @@ export const ChatShell: React.FC<ChatShellProps> = () => {
       ack: 1, // SENT
       type,
       media: type === 'audio' ? { duration: '0:06' } : undefined,
+      replyTo: replyingTo
+        ? {
+            senderName: replyingTo.sender === 'me' ? 'You' : (selectedChat?.name || 'Contact'),
+            text: replyingTo.text || 'Media',
+          }
+        : undefined,
     };
+
+    setReplyingTo(null);
 
     setMessagesMap((prev) => ({
       ...prev,
@@ -393,6 +403,33 @@ export const ChatShell: React.FC<ChatShellProps> = () => {
         prev.map((c) => (c.id === targetChatId ? { ...c, ack: 3 } : c))
       );
     }, 400);
+  };
+
+  const handleToggleReaction = (msgId: string, emoji: string) => {
+    if (!selectedChatId) return;
+    setMessagesMap((prev) => ({
+      ...prev,
+      [selectedChatId]: (prev[selectedChatId] || []).map((m) => {
+        if (m.id !== msgId) return m;
+        const currentReactions = m.reactions || [];
+        const existingIdx = currentReactions.findIndex((r) => r.emoji === emoji);
+        let newReactions;
+        if (existingIdx >= 0) {
+          newReactions = currentReactions.filter((_, idx) => idx !== existingIdx);
+        } else {
+          newReactions = [...currentReactions, { emoji, count: 1 }];
+        }
+        return { ...m, reactions: newReactions };
+      }),
+    }));
+  };
+
+  const handleDeleteMessage = (msgId: string) => {
+    if (!selectedChatId) return;
+    setMessagesMap((prev) => ({
+      ...prev,
+      [selectedChatId]: (prev[selectedChatId] || []).filter((m) => m.id !== msgId),
+    }));
   };
 
   const handleSelectMenuItem = (id: string) => {
@@ -634,7 +671,12 @@ export const ChatShell: React.FC<ChatShellProps> = () => {
                 zIndex: 1,
               }}
             >
-              <MessageList messages={activeMessages} />
+              <MessageList
+                messages={activeMessages}
+                onReply={(msg) => setReplyingTo(msg)}
+                onReact={handleToggleReaction}
+                onDeleteMessage={handleDeleteMessage}
+              />
             </div>
 
             {/* Attach Menu */}
@@ -656,6 +698,18 @@ export const ChatShell: React.FC<ChatShellProps> = () => {
               onSendMessage={handleSendMessage}
               onAttachClick={() => setIsAttachOpen(!isAttachOpen)}
               onEmojiClick={() => setIsEmojiOpen(!isEmojiOpen)}
+              replyingTo={
+                replyingTo
+                  ? {
+                      senderName:
+                        replyingTo.sender === 'me'
+                          ? 'You'
+                          : selectedChat?.name || 'Contact',
+                      text: replyingTo.text || 'Media',
+                    }
+                  : null
+              }
+              onCancelReply={() => setReplyingTo(null)}
             />
           </div>
         ) : (activeTab === 'status' || activeTab === 'channels' || activeTab === 'communities') ? (

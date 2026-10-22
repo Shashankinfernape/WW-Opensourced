@@ -7,13 +7,15 @@ interface ChannelItem {
   followers: string;
   color: string;
   initials: string;
+  verified?: boolean;
 }
 
 const FIXTURE_CHANNELS: ChannelItem[] = [
-  { id: '1', name: 'WhatsApp', followers: '182M followers', color: '#00a884', initials: 'WA' },
-  { id: '2', name: 'Real Madrid C.F.', followers: '45M followers', color: '#34b7f1', initials: 'RM' },
-  { id: '3', name: 'TechCrunch', followers: '12M followers', color: '#008069', initials: 'TC' },
-  { id: '4', name: 'National Geographic', followers: '28M followers', color: '#ffb900', initials: 'NG' }
+  { id: '1', name: 'Chat GPT AI Prompt', followers: '6L followers', color: '#10a37f', initials: 'AI' },
+  { id: '2', name: 'Pharma Job Vacancy', followers: '59K followers', color: '#1f7a8c', initials: 'PJ' },
+  { id: '3', name: 'Learn MS Excel', followers: '7L followers', color: '#107c41', initials: 'XL' },
+  { id: '4', name: 'WhatsApp', followers: '23.3Cr followers', color: '#00a884', initials: 'WA', verified: true },
+  { id: '5', name: 'Prompt ⬇️✨', followers: '13.9L followers', color: '#e0245e', initials: 'PR' }
 ];
 
 export const ChannelsPanel: React.FC = () => {
@@ -96,7 +98,14 @@ export const ChannelsPanel: React.FC = () => {
                                       <span className="x140p0ai x1gufx9m x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x193iq5w xeuugli x13faqbe x1vvkbs x1lliihq x1fj9vlw x14ug900 x1hx0egp x1jchvi3 xjb2p0i xo1l8bm x17mssa0 x1ic7a3i" style={{ fontSize: '16px', lineHeight: '21px' }}>
                                         <span className="x1c4vz4f x3nfvp2 x1i7k8ik xq9mrsl x6s0dn4 x6ikm8r x10wlt62 x193iq5w">
                                           <span className="x78zum5 xeuugli x6ikm8r x10wlt62 xlyipyv xuxw1ft">
-                                            <span dir="auto" className="x1iyjqo2 x6ikm8r x10wlt62 x1n2onr6 xlyipyv xuxw1ft x1rg5ohu xnpuxes" style={{ minHeight: '0px' }}>{channel.name}</span>
+                                            <span dir="auto" className="x1iyjqo2 x6ikm8r x10wlt62 x1n2onr6 xlyipyv xuxw1ft x1rg5ohu xnpuxes" style={{ minHeight: '0px', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                                              {channel.name}
+                                              {channel.verified && (
+                                                <span style={{ color: '#00a884', display: 'inline-flex', marginLeft: '4px' }}>
+                                                  <Icon name="wds-ic-verified-filled" size={16} />
+                                                </span>
+                                              )}
+                                            </span>
                                           </span>
                                         </span>
                                       </span>

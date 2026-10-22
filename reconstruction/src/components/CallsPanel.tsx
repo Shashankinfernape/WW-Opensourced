@@ -21,7 +21,7 @@ const FIXTURE_CALLS: CallRecord[] = [
 
 export const CallsPanel: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [showBanner, setShowBanner] = useState(true);
+  const [showBanner, setShowBanner] = useState(false);
 
   const filteredCalls = FIXTURE_CALLS.filter(c =>
     c.name.toLowerCase().includes(searchQuery.toLowerCase())

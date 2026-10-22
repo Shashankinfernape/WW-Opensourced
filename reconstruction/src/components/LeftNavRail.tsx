@@ -50,6 +50,7 @@ export const LeftNavRail: React.FC<LeftNavRailProps> = ({
     alignItems: 'center',
     justifyContent: 'center',
     overflow: 'hidden',
+    position: 'relative',
   });
 
   const getButtonStyle = (isActive: boolean): React.CSSProperties => ({
@@ -57,6 +58,7 @@ export const LeftNavRail: React.FC<LeftNavRailProps> = ({
     height: '40px',
     borderRadius: '50%',
     backgroundColor: 'transparent',
+    background: 'none',
     border: 'none',
     outline: 'none',
     boxShadow: 'none',
@@ -67,6 +69,7 @@ export const LeftNavRail: React.FC<LeftNavRailProps> = ({
     color: isActive ? '#ffffff' : 'var(--icon-lighter, #8696a0)',
     padding: 0,
     margin: 0,
+    WebkitAppearance: 'none',
   });
 
   return (

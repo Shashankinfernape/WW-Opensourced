@@ -1,0 +1,419 @@
+{
+  "timestamp": "2026-10-22T01:20:46.859Z",
+  "panels": {
+    "chatlist": {
+      "semantic_traces": [
+        {
+          "seed": "useWAWebChatlistRowHeight",
+          "direction": "callers",
+          "evidence_id": "ev_958d3e6f98926cc41e67ddfe29f17dd9a367a209fed176e4b6e1aedefc79d53f"
+        },
+        {
+          "seed": "WDSPreviewListItemMetrics",
+          "direction": "callers",
+          "evidence_id": "ev_281869734ab85be5ce1d9ea63f2d0c14b4461ae4a02c4b0538e04a771ee98241"
+        }
+      ],
+      "feature_traces": [
+        {
+          "seed": "ic-sticker",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_714a79d20063e1ec2afd3dbd316b4514a05aed86d910347582da5b5b8ab1dcf5"
+        },
+        {
+          "seed": "ic-notifications-off",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_451193c1c5b25b9b160679de32a93439b2f05ea9ebfad39776245c2a9be34827"
+        },
+        {
+          "seed": "ic-pin",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_53e3c3f1fb8989bf8a413992b708412df3256f8292664f148ef757eaa7f726c5"
+        },
+        {
+          "seed": "msg-dblcheck",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_2bea7aabe99ec41a6df1a0762e87b28d096f90ddecd28d7904c94f34545020a3"
+        }
+      ]
+    },
+    "profile_drawer": {
+      "semantic_traces": [
+        {
+          "seed": "BaseProfilePhoto",
+          "direction": "callers",
+          "evidence_id": "ev_16719905e477def4a87152c3e73f905424ba757f79e93199ea6a38cdfc8d5829"
+        },
+        {
+          "seed": "WDSProfilePhoto",
+          "direction": "callers",
+          "evidence_id": "ev_c52b0a56f751dbccfe406f89555e9667944cd6ecd79cb1dff21300a333b8d411"
+        }
+      ],
+      "feature_traces": [
+        {
+          "seed": "ic-add-a-photo",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_216b45f95e7aae7223b672fe430816bd71bb49a917abdc8c3039e64a9edce656"
+        },
+        {
+          "seed": "ic-alternate-email",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_7d5dae3a2845aea00831f1af821c9249dcc4a372ad330785d539252cc30569e6"
+        },
+        {
+          "seed": "ic-call",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_2ade8d53abce048f967aeebd522cc403c828c56ac312a7463307d809c9d97130"
+        }
+      ]
+    },
+    "newchat_drawer": {
+      "semantic_traces": [
+        {
+          "seed": "WAWebNewChatMenuBarItem",
+          "direction": "callers",
+          "evidence_id": "ev_0da607303b1ce2f3a0ff91cf264cb0be4a55870b1f44b0dd18577af52cffc7b3"
+        }
+      ],
+      "feature_traces": [
+        {
+          "seed": "wds-ic-new-chat",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_51b395ca71d497b2e9c471944593c3b3db2a257384f6904bc61a1b2f1f2a81e6"
+        },
+        {
+          "seed": "new-group",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_a78407c3efd3fcf01f1f5774ddcdd2c93a8d3a19cee1caf69d94aec450c6becd"
+        },
+        {
+          "seed": "new-community",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_242dc51753f909c0d368590a7a24cd2ec113457f2f73bc0a267790f44c28800b"
+        }
+      ]
+    },
+    "settings_drawer": {
+      "semantic_traces": [
+        {
+          "seed": "WAWebSettingsPopup",
+          "direction": "callers",
+          "evidence_id": "ev_2f18f875638d8c3681616f8dcbf85b9f44a63b44b586077ae0b4d1b7141a963b"
+        }
+      ],
+      "feature_traces": [
+        {
+          "seed": "ic-settings",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_42ac15e51cadd4b684b7deecced0cbb52d222b96175cad04b01dea44d4dc1be8"
+        },
+        {
+          "seed": "ic-notifications",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_51c1e10f3122944fe1e6e645948b628fb79ceb1cf3d8077e08113ec8a26d43aa"
+        },
+        {
+          "seed": "ic-security",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_89ac7c4a38b569027b857e1a7cdc54b14d171b3fa69fadd1a632d9e245dc8bcd"
+        }
+      ]
+    },
+    "archived_drawer": {
+      "semantic_traces": [
+        {
+          "seed": "WAWebChatArchivedEntryPoint",
+          "direction": "callers",
+          "evidence_id": "ev_a0b0840cd8ee15ff6bd4ed77f7dc953e32a3afc25f84cbe219390174f84927be"
+        }
+      ],
+      "feature_traces": [
+        {
+          "seed": "ic-archive",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_104ace42eb91b5b72f05787080879a48d6366447cc520d648aaf80b040d30c26"
+        },
+        {
+          "seed": "unarchive",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_6f197f8a7afd2d9c89dba9abae8025fbcbea67a68777b0e2877ec034a16d5fc9"
+        }
+      ]
+    },
+    "starred_drawer": {
+      "semantic_traces": [
+        {
+          "seed": "WAWebStarredChatlistHeaderDropdownItem",
+          "direction": "callers",
+          "evidence_id": "ev_466bc59c9f5b5f9fe8f04a586dbccc56e0e8ddaec13a3dadc34145c91505f6d7"
+        }
+      ],
+      "feature_traces": [
+        {
+          "seed": "ic-star",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_50babb93666600a6d330265bb706114887b4d25fcb649c53425e9511162ec8c3"
+        },
+        {
+          "seed": "starred-messages",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_1fb82074325fc882866779ed3cd60cf5d63a6e317e65243978ea45551ddff882"
+        }
+      ]
+    },
+    "calls_panel": {
+      "semantic_traces": [
+        {
+          "seed": "WAWebCallLogEntryCell",
+          "direction": "callers",
+          "evidence_id": "ev_6d16ab7fbbed480eb5160b7b1caddbe65dbeabcadf0d592e023d2d0d59de7a85"
+        }
+      ],
+      "feature_traces": [
+        {
+          "seed": "ic-call",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_2ade8d53abce048f967aeebd522cc403c828c56ac312a7463307d809c9d97130"
+        },
+        {
+          "seed": "call-link",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_b5775e706ebc4f465cb57d28d69d93f9b63cca156ffc841d83c9cacb7582c2f0"
+        }
+      ]
+    },
+    "channels_panel": {
+      "semantic_traces": [
+        {
+          "seed": "WAWebNewslettersNavBarItem",
+          "direction": "callers",
+          "evidence_id": "ev_c0cb17265f4fbc8548d2eecdf930bdfb649d2896d88ec6b23efc9bbdf3c08f43"
+        }
+      ],
+      "feature_traces": [
+        {
+          "seed": "wds-ic-channels",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_8b3f86a4b5b7811a20f4fe2a91966270ab753cee7e705b6b5def69eec844faa8"
+        },
+        {
+          "seed": "newsletter",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_34badf426e08333d21e66d4d2a7bca655b70038ae8a2797a4d74dc43e3c86731"
+        }
+      ]
+    },
+    "communities_drawer": {
+      "semantic_traces": [
+        {
+          "seed": "WAWebCommunitiesNavBarItem",
+          "direction": "callers",
+          "evidence_id": "ev_5bbac2e7d69570b9797ffadf11d02bda20e6f2c521470aef3f6e1f2204ab091f"
+        }
+      ],
+      "feature_traces": [
+        {
+          "seed": "wds-ic-communities",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_d9a0c7cdba039a332cbc7b643edea6d82286dbe28a09097045c0a702202c564a"
+        },
+        {
+          "seed": "community-list",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_0ac3ca3a066c6aaafde73c7be9c26881fac43e8e851645e3ffa4de5deb153c6c"
+        }
+      ]
+    },
+    "status_drawer": {
+      "semantic_traces": [
+        {
+          "seed": "WAWebStatusNavBarItem",
+          "direction": "callers",
+          "evidence_id": "ev_00b5664fc50b19bf378d11bed1f444c4e42855577371a5a2cba9eaab1f4c2a29"
+        }
+      ],
+      "feature_traces": [
+        {
+          "seed": "wds-ic-status",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_f6282d8be8a60cb109f5025f0ec7652c025099f2788a9dfa6ec38a27b71448ad"
+        },
+        {
+          "seed": "my-status",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_04cf392f443f57c9a0af27a198719ffeb0ba9c3124661a9f9c7fac129222daab"
+        }
+      ]
+    },
+    "intro_panel": {
+      "semantic_traces": [
+        {
+          "seed": "WAWebIntroPanelV2",
+          "direction": "callers",
+          "evidence_id": "ev_adb96319aac019dd942acf6b08dfac76dc1aa14a9ccb2c2c644c74400d098549"
+        }
+      ],
+      "feature_traces": [
+        {
+          "seed": "intro-title",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_67b243563422178c8d1fccb46a65d536db43dd1f79f36ac9aa7f46eb91450017"
+        },
+        {
+          "seed": "intro-md-beta",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_61ba4030278c0eb002dbf2a170e0d901d936b17788c64c078e2932e6026895ce"
+        }
+      ]
+    },
+    "active_chat": {
+      "semantic_traces": [
+        {
+          "seed": "WAWebConversationMsgs",
+          "direction": "callers",
+          "evidence_id": "ev_bf06071f128b895260f22fd74e45b23c9e56d037d6387528bb0ff25ea73f8b05"
+        }
+      ],
+      "feature_traces": [
+        {
+          "seed": "msg-container",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_b32751f8af1af6caf970ad2fc5f0189cf14d79c1fbf6a33ce52447969dcf161d"
+        },
+        {
+          "seed": "tail-in",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_0a0e5661a3767541567216dc00797b27156e28cf10cb11e593c557b33155251b"
+        },
+        {
+          "seed": "tail-out",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_e31b0f4dc3d18e9bdd7e1425d3e00c300f1fff3775a9092751b26725d77a2d75"
+        }
+      ]
+    },
+    "active_chat_header": {
+      "semantic_traces": [
+        {
+          "seed": "WAWebHeader",
+          "direction": "callers",
+          "evidence_id": "ev_f27e8d19d916c3646e4ebaf57d73fc66ac3d8863f82968d32c9a9d5fd55c537d"
+        }
+      ],
+      "feature_traces": [
+        {
+          "seed": "conversation-header",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_e5cd52f4b01230dedaf3e2a9ac2875214774e1152e3c8eb86ee4acc776633993"
+        },
+        {
+          "seed": "header-title",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_6cb87e8ed1601ee698b00c2a84c7e83dece5ac05a8ec5ea372c1e2027915a0f5"
+        }
+      ]
+    },
+    "composer": {
+      "semantic_traces": [
+        {
+          "seed": "WAWebComposeBox",
+          "direction": "callers",
+          "evidence_id": "ev_d3882a364d8e75e303bb3fbcc66d88769f7e5bdad5ea4434a0ddfeb05f398a59"
+        }
+      ],
+      "feature_traces": [
+        {
+          "seed": "compose-box-input",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_5307e81f456a7ee069c30ea9949c18c7e11d52c827de3b88254a927793df2e8e"
+        },
+        {
+          "seed": "btn-send",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_eaaa5389b6c27e5faa0e7a59ca34eac05ccfd27825526087180efb43218cdc16"
+        }
+      ]
+    },
+    "contact_info_drawer": {
+      "semantic_traces": [
+        {
+          "seed": "WAWebChatInfoDrawerRow",
+          "direction": "callers",
+          "evidence_id": "ev_2f6218a49cbf3bd5dbaf723fc11c201ae2941e6cfe7171d347d20e249f1c56d8"
+        }
+      ],
+      "feature_traces": [
+        {
+          "seed": "contact-info",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_55116d498003a9a926dc60b17ed6acfad54314cf19f81e613ec4ff02d0135913"
+        },
+        {
+          "seed": "media-links-docs",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_f4503a6fcfc5a6cdb921d087bebbefb48a5dcd5f2ae940d82ef28b57b960913a"
+        }
+      ]
+    },
+    "chat_search_drawer": {
+      "semantic_traces": [
+        {
+          "seed": "WAWebDrawer",
+          "direction": "callers",
+          "evidence_id": "ev_af08111c2a563ee8e21c9e68cdc6ba0301db702f6d68c951d5c12a7fea557524"
+        }
+      ],
+      "feature_traces": [
+        {
+          "seed": "search-messages",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_23fd32460e481c9a4b97d0282436ee1c7c72607ebee9647d8b1bdf28692bab3d"
+        },
+        {
+          "seed": "chat-search",
+          "match": "contains",
+          "direction": "both",
+          "evidence_id": "ev_71645a120992cade717fa0bd408f1a643a32dfe3190872ba1d0619405bf8c275"
+        }
+      ]
+    }
+  }
+}

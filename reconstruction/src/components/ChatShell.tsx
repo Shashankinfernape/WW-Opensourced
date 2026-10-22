@@ -59,7 +59,7 @@ const NEUTRAL_CHATS: ChatSummary[] = [
     senderPrefix: 'David',
     lastMessage: 'Sticker',
     mediaType: 'sticker',
-    time: 'Yesterday',
+    time: 'yesterday',
     unreadCount: 0,
     fromMe: false,
   },
@@ -70,7 +70,7 @@ const NEUTRAL_CHATS: ChatSummary[] = [
     color: '#d9534f',
     lastMessage: 'Sticker',
     mediaType: 'sticker',
-    time: 'Yesterday',
+    time: 'yesterday',
     unreadCount: 0,
     fromMe: true,
     ack: 3,
@@ -81,7 +81,7 @@ const NEUTRAL_CHATS: ChatSummary[] = [
     initial: 'J',
     color: '#25d366',
     lastMessage: 'Macha',
-    time: 'Yesterday',
+    time: 'yesterday',
     unreadCount: 0,
     fromMe: false,
   },
@@ -91,7 +91,7 @@ const NEUTRAL_CHATS: ChatSummary[] = [
     initial: 'M',
     color: '#e67e22',
     lastMessage: 'https://example.com/watch?v=k9X8jL2mQ1w',
-    time: 'Yesterday',
+    time: 'yesterday',
     unreadCount: 0,
     fromMe: false,
   },
@@ -102,7 +102,7 @@ const NEUTRAL_CHATS: ChatSummary[] = [
     color: '#3498db',
     senderPrefix: 'Prof. Smith',
     lastMessage: 'Tomorrow is the last date for NM record sign... No more excuses',
-    time: 'Yesterday',
+    time: 'yesterday',
     unreadCount: 0,
     isMuted: true,
     fromMe: false,
@@ -114,7 +114,7 @@ const NEUTRAL_CHATS: ChatSummary[] = [
     color: '#9b59b6',
     senderPrefix: 'Prof. Smith',
     lastMessage: 'Dear students... Those who completed the dues kindly collect the NO-DUES form...',
-    time: 'Yesterday',
+    time: 'yesterday',
     unreadCount: 0,
     fromMe: false,
   },
@@ -124,7 +124,7 @@ const NEUTRAL_CHATS: ChatSummary[] = [
     initial: 'W',
     color: '#1abc9c',
     lastMessage: 'Setup-Guide.pdf',
-    time: 'Yesterday',
+    time: 'yesterday',
     unreadCount: 0,
     fromMe: true,
     ack: 3,
@@ -135,7 +135,7 @@ const NEUTRAL_CHATS: ChatSummary[] = [
     initial: 'E',
     color: '#e74c3c',
     lastMessage: 'Thank you!',
-    time: 'Tuesday',
+    time: 'tuesday',
     unreadCount: 0,
     fromMe: false,
     ack: 3,
@@ -451,7 +451,7 @@ export const ChatShell: React.FC<ChatShellProps> = () => {
             onOpenProfile={() => setLeftDrawer('profile')}
           />
         ) : leftDrawer === 'profile' ? (
-          <ProfilePanel onClose={() => setLeftDrawer('settings')} />
+          <ProfilePanel onClose={() => setLeftDrawer('none')} />
         ) : (
           <div
             style={{

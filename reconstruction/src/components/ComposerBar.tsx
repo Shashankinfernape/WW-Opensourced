@@ -1,3 +1,4 @@
+// Module: WAWebPttComposer.react
 import React, { useState, useRef, useEffect } from 'react';
 import { Icon } from '../icons/Icon';
 

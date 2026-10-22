@@ -1,3 +1,4 @@
+// Module: WAWebHeader.react
 import React from 'react';
 import { Icon } from '../icons/Icon';
 import { ChatSummary } from './ChatListPanel';
@@ -33,6 +34,7 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({
         justifyContent: 'space-between',
         padding: '0 16px',
         boxSizing: 'border-box',
+        backgroundColor: 'rgb(22, 23, 23)',
         borderBottom: '1px solid var(--border-default, rgba(134, 150, 160, 0.15))',
         flexShrink: 0,
         zIndex: 10,
@@ -97,7 +99,7 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({
               </div>
             </div>
           </div>
-          {chat.isOnline && (
+          {chat.isOnline ? (
             <div data-testid="chat-subtitle" className="x78zum5 x1cy8zhl xeuugli xisnujt x1nxh6w3 xcgms0a xhslqc4">
               <span
                 data-testid="selectable-text"
@@ -107,7 +109,18 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({
                 online
               </span>
             </div>
-          )}
+          ) : chat.lastSeen ? (
+            <div data-testid="chat-subtitle" className="x78zum5 x1cy8zhl xeuugli xisnujt x1nxh6w3 xcgms0a xhslqc4">
+              <span
+                data-testid="selectable-text"
+                title={chat.lastSeen}
+                className="x1iyjqo2 x6ikm8r x10wlt62 xlyipyv xuxw1ft xnpuxes selectable-text copyable-text"
+                style={{ minHeight: '0px', fontSize: '13px', color: 'var(--secondary, #8696a0)' }}
+              >
+                {chat.lastSeen}
+              </span>
+            </div>
+          ) : null}
         </div>
       </div>
 

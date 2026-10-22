@@ -34,4 +34,24 @@ Thumbs.db
 
 analysis/*.png
 analysis/**/*.png
+!analysis/receipts/**/*.png
+
+# Temporary analysis JSON dumps
+analysis/test_*.json
+analysis/test_*.png
+analysis/targets/
+analysis/*_evidence.json
+analysis/*_view.json
+analysis/*_req.json
+analysis/*_sc*.json
+analysis/*_art*.json
+analysis/*_tree.json
+analysis/*_norm*.json
+analysis/*_raw.json
+analysis/current_*.json
+analysis/dark_*.json
+analysis/input_*.json
+analysis/obligation_*.json
+analysis/inspections/
+analysis/scenarios_16/
 analysis/panel_1_chatlist/

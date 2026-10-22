@@ -12,6 +12,7 @@ export interface ChatSummary {
   time: string;
   unreadCount?: number;
   isOnline?: boolean;
+  lastSeen?: string;
   ack?: 0 | 1 | 2 | 3;
   fromMe?: boolean;
   senderPrefix?: string;

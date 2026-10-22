@@ -31,3 +31,7 @@ analysis/views/
 # OS metadata
 .DS_Store
 Thumbs.db
+
+analysis/*.png
+analysis/**/*.png
+analysis/panel_1_chatlist/

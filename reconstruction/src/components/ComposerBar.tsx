@@ -14,19 +14,67 @@ export const ComposerBar: React.FC<ComposerBarProps> = ({
 }) => {
   const [text, setText] = useState('');
   const [isRecording, setIsRecording] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const [isViewOnce, setIsViewOnce] = useState(false);
   const [recordSeconds, setRecordSeconds] = useState(0);
   const inputRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     let timer: any;
-    if (isRecording) {
-      setRecordSeconds(0);
+    if (isRecording && !isPaused) {
       timer = setInterval(() => {
         setRecordSeconds((prev) => prev + 1);
       }, 1000);
     }
     return () => clearInterval(timer);
-  }, [isRecording]);
+  }, [isRecording, isPaused]);
+
+  // Live Waveform Canvas animation during recording
+  useEffect(() => {
+    let animId: number;
+    if (isRecording && canvasRef.current) {
+      const canvas = canvasRef.current;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      const barWidth = 3;
+      const gap = 2;
+      const step = barWidth + gap;
+      const numBars = Math.floor(canvas.width / step);
+
+      const render = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.lineCap = 'round';
+        ctx.fillStyle = '#8696a0';
+
+        const now = Date.now() / 150;
+        for (let i = 0; i < numBars; i++) {
+          const x = i * step;
+          let h = isPaused
+            ? 8 + Math.sin(i * 0.4) * 4
+            : 6 + Math.abs(Math.sin(now + i * 0.3) * Math.cos(now * 0.5 + i * 0.2)) * 22;
+          h = Math.max(4, Math.min(canvas.height - 4, h));
+          const y = (canvas.height - h) / 2;
+
+          ctx.beginPath();
+          if (ctx.roundRect) {
+            ctx.roundRect(x, y, barWidth, h, 1.5);
+          } else {
+            ctx.rect(x, y, barWidth, h);
+          }
+          ctx.fill();
+        }
+
+        if (!isPaused) {
+          animId = requestAnimationFrame(render);
+        }
+      };
+
+      animId = requestAnimationFrame(render);
+    }
+    return () => cancelAnimationFrame(animId);
+  }, [isRecording, isPaused]);
 
   const handleSend = () => {
     const trimmed = text.trim();
@@ -40,11 +88,14 @@ export const ComposerBar: React.FC<ComposerBarProps> = ({
 
   const handleSendVoiceNote = () => {
     setIsRecording(false);
+    setIsPaused(false);
+    setRecordSeconds(0);
     onSendMessage('Voice message', 'audio');
   };
 
   const handleCancelVoiceNote = () => {
     setIsRecording(false);
+    setIsPaused(false);
     setRecordSeconds(0);
   };
 
@@ -76,63 +127,165 @@ export const ComposerBar: React.FC<ComposerBarProps> = ({
       <div className="xnpuxes x1n2onr6 xhtitgo x9f619 x78zum5 x1q0g3np xuk3077 xjbqb8w x1wiwyrm xquzyny xvc5jky x11t971q copyable-area">
         <div data-testid="compose-box" className="x1n2onr6 x98rzlu xh8yej3 xeuugli x1gg8mnh">
           {isRecording ? (
-            /* Live Voice Recording State */
+            /* Decompiled WAWebPttComposer.react Layout */
             <div
+              className="x78zum5 x6s0dn4 xh8yej3 x19ygybj"
+              tabIndex={0}
               style={{
+                width: '100%',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'space-between',
-                width: '100%',
-                padding: '8px 16px',
-                backgroundColor: 'var(--panel-background, #202c33)',
-                borderRadius: '24px',
+                padding: '5px 16px',
+                boxSizing: 'border-box',
+                minHeight: '62px',
+                backgroundColor: 'var(--composer-panel-background, #202c33)',
+                gap: '8px',
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                <button
-                  type="button"
-                  aria-label="Cancel voice note"
-                  onClick={handleCancelVoiceNote}
-                  style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#ea4335', display: 'flex', alignItems: 'center' }}
+              {/* Cancel button: WDSIconIcDelete.react (Trash) */}
+              <button
+                data-testid="ptt-cancel-btn"
+                title="Cancel"
+                aria-label="Cancel"
+                type="button"
+                onClick={handleCancelVoiceNote}
+                className={buttonClass}
+                style={{
+                  background: 'transparent',
+                  border: 'none',
+                  cursor: 'pointer',
+                  padding: '8px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'var(--secondary, #8696a0)',
+                }}
+              >
+                <Icon name="ic-delete" size={24} color="var(--secondary, #8696a0)" />
+              </button>
+
+              {/* Center: Red dot + Timer + Live Waveform Canvas */}
+              <div
+                className="x1n2onr6 x78zum5 x1iyjqo2 xs83m0k x1r8uery x6s0dn4 x5yr21d"
+                style={{
+                  flex: 1,
+                  display: 'flex',
+                  alignItems: 'center',
+                  backgroundColor: '#111b21',
+                  borderRadius: '8px',
+                  padding: '0 16px',
+                  height: '42px',
+                  gap: '8px',
+                }}
+              >
+                {/* Red recording dot */}
+                <div
+                  className="x170jfvy x1fsd2vl x1b0f5k1 x1c9tyrk xeusxvb x1pahc9y x1ertn4p x1uvdrpn x14mko6t"
+                  style={{
+                    width: '10px',
+                    height: '10px',
+                    borderRadius: '50%',
+                    backgroundColor: '#ea4335',
+                    flexShrink: 0,
+                    animation: isPaused ? 'none' : 'pulse 1.2s infinite',
+                  }}
+                />
+
+                {/* Timer */}
+                <div
+                  role="timer"
+                  className="x2c5eco xunn93x"
+                  style={{
+                    color: 'var(--primary, #e9edef)',
+                    fontSize: '14.5px',
+                    fontFamily: 'inherit',
+                    userSelect: 'none',
+                    minWidth: '38px',
+                    flexShrink: 0,
+                  }}
                 >
-                  <Icon name="ic-close" size={24} />
-                </button>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <div
-                    style={{
-                      width: '10px',
-                      height: '10px',
-                      borderRadius: '50%',
-                      backgroundColor: '#ea4335',
-                      animation: 'pulse 1s infinite alternate',
-                    }}
+                  {formatSeconds(recordSeconds)}
+                </div>
+
+                {/* Live Waveform Canvas */}
+                <div
+                  className="x78zum5 x1iyjqo2 xs83m0k x1r8uery x1sikpz7 x1sa5p1d x1wbi8v6"
+                  style={{
+                    flex: 1,
+                    height: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    overflow: 'hidden',
+                    padding: '0 4px',
+                  }}
+                >
+                  <canvas
+                    ref={canvasRef}
+                    width={400}
+                    height={32}
+                    style={{ width: '100%', height: '32px' }}
                   />
-                  <span style={{ fontSize: '15px', color: 'var(--primary, #e9edef)', fontWeight: 500, fontVariantNumeric: 'tabular-nums' }}>
-                    {formatSeconds(recordSeconds)}
-                  </span>
                 </div>
               </div>
 
-              {/* Waveform graphic */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '3px', flex: 1, margin: '0 24px' }}>
-                {[12, 22, 16, 28, 14, 24, 18, 30, 20, 15, 26, 18, 22, 14, 28, 16].map((h, i) => (
-                  <div
-                    key={i}
-                    style={{
-                      width: '3px',
-                      height: `${h}px`,
-                      backgroundColor: '#00a884',
-                      borderRadius: '2px',
-                      opacity: 0.8,
-                    }}
-                  />
-                ))}
-              </div>
-
-              {/* Send Voice Note Button */}
+              {/* Pause / Resume Button: WDSIconIcPauseFilled / WDSIconIcKeyboardVoiceFilled */}
               <button
+                data-testid="ptt-pause-and-resume-recording-button"
+                title={isPaused ? 'Resume recording' : 'Pause recording'}
+                aria-label={isPaused ? 'Resume recording' : 'Pause recording'}
                 type="button"
-                aria-label="Send voice message"
+                onClick={() => setIsPaused((prev) => !prev)}
+                className={buttonClass}
+                style={{
+                  background: 'transparent',
+                  border: 'none',
+                  cursor: 'pointer',
+                  padding: '8px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: '#ea4335',
+                }}
+              >
+                <Icon
+                  name={isPaused ? 'ic-keyboard-voice-filled' : 'ic-pause-filled'}
+                  size={24}
+                  color="#ea4335"
+                />
+              </button>
+
+              {/* View Once Button: WDSIconWdsIcViewOnce */}
+              <button
+                data-testid="ptt-view-once-button"
+                title="View once"
+                aria-label="View once"
+                type="button"
+                onClick={() => setIsViewOnce((prev) => !prev)}
+                className={buttonClass}
+                style={{
+                  background: 'transparent',
+                  border: 'none',
+                  cursor: 'pointer',
+                  padding: '8px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: isViewOnce ? '#00a884' : 'var(--secondary, #8696a0)',
+                }}
+              >
+                <Icon
+                  name="wds-ic-view-once"
+                  size={24}
+                  color={isViewOnce ? '#00a884' : 'var(--secondary, #8696a0)'}
+                />
+              </button>
+
+              {/* Send Button: WDSIconIcSendFilled in 40px green circle */}
+              <button
+                data-testid="ptt-send-btn"
+                title="Send"
+                aria-label="Send"
+                type="button"
                 onClick={handleSendVoiceNote}
                 style={{
                   width: '40px',
@@ -140,14 +293,15 @@ export const ComposerBar: React.FC<ComposerBarProps> = ({
                   borderRadius: '50%',
                   backgroundColor: '#00a884',
                   border: 'none',
-                  color: '#ffffff',
+                  cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  cursor: 'pointer',
+                  flexShrink: 0,
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.3)',
                 }}
               >
-                <Icon name="send" size={20} />
+                <Icon name="ic-send-filled" size={20} color="#ffffff" />
               </button>
             </div>
           ) : (

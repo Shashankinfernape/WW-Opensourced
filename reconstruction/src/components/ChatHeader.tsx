@@ -17,6 +17,7 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({
   onMenuClick,
   onContactInfoClick,
   onVideoCall,
+  onVoiceCall,
 }) => {
   const headerBtnClass =
     'html-button xdj266r x14z9mp xat24cr x1lziwak xexx8yu x18d9i69 x178xt8z x1lun4ml xso031l xpilrb4 x1n2onr6 x1ejq31n x18oe1m7 x1sy0etr xstzfhl x1so62im x1syfmzz x1ja2u2z x1ypdohk x1s928wv x1j6awrg x1m1drc7 x1iygr5g x4eaejv x1wsn0xg x1r0yslu x2q1x1w xapdjt xr6f91l x5rv0tg x1akc3lz xikp0eg x1xl5mkn x1mfml39 x1l5mzlr xgmdoj8 x1f1wgk5 x1x3ic1u xjbqb8w xuwfzo9 x1wb366y xtnn1bt x9v5kkp xmw7ebm xrdum7p x2lah0s x1lliihq xk8lq53 x9f619 xt8t1vi x1xc408v x129tdwq x15urzxu x1vqgdyp x100vrsf';
@@ -96,15 +97,17 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({
               </div>
             </div>
           </div>
-          <div data-testid="chat-subtitle" className="x78zum5 x1cy8zhl xeuugli xisnujt x1nxh6w3 xcgms0a xhslqc4">
-            <span
-              data-testid="selectable-text"
-              className="x1iyjqo2 x6ikm8r x10wlt62 xlyipyv xuxw1ft xnpuxes selectable-text copyable-text"
-              style={{ minHeight: '0px', fontSize: '13px', color: chat.isOnline ? '#00a884' : 'var(--secondary, #8696a0)' }}
-            >
-              {chat.isOnline ? 'online' : 'click here for contact info'}
-            </span>
-          </div>
+          {chat.isOnline && (
+            <div data-testid="chat-subtitle" className="x78zum5 x1cy8zhl xeuugli xisnujt x1nxh6w3 xcgms0a xhslqc4">
+              <span
+                data-testid="selectable-text"
+                className="x1iyjqo2 x6ikm8r x10wlt62 xlyipyv xuxw1ft xnpuxes selectable-text copyable-text"
+                style={{ minHeight: '0px', fontSize: '13px', color: '#00a884' }}
+              >
+                online
+              </span>
+            </div>
+          )}
         </div>
       </div>
 
@@ -124,6 +127,25 @@ export const ChatHeader: React.FC<ChatHeaderProps> = ({
               <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x6s0dn4 x78zum5 x1q0g3np xh8yej3 xl56j7k">
                 <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x6s0dn4 x78zum5 x1vjfegm">
                   <span aria-hidden="true" className="xxk0z11 xvy4d1p"><Icon name="ic-videocam" size={24} /></span>
+                </div>
+                <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl xdt5ytf x6s0dn4 x78zum5 x1vjfegm x1c4vz4f" />
+              </div>
+            </div>
+          </button>
+
+          {/* Voice call button */}
+          <button
+            aria-label="Voice call"
+            aria-disabled="false"
+            tabIndex={0}
+            type="button"
+            onClick={onVoiceCall}
+            className={headerBtnClass}
+          >
+            <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x78zum5 xdt5ytf">
+              <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x6s0dn4 x78zum5 x1q0g3np xh8yej3 xl56j7k">
+                <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x6s0dn4 x78zum5 x1vjfegm">
+                  <span aria-hidden="true" className="xxk0z11 xvy4d1p"><Icon name="ic-call" size={24} /></span>
                 </div>
                 <div className="html-div xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl xdt5ytf x6s0dn4 x78zum5 x1vjfegm x1c4vz4f" />
               </div>

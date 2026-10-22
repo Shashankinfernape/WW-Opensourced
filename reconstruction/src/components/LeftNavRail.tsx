@@ -22,6 +22,7 @@ export interface LeftNavRailProps {
   activeDrawer?: 'none' | 'newchat' | 'archived' | 'starred' | 'settings' | 'profile';
   onTabChange?: (tab: 'chats' | 'calls' | 'status' | 'channels' | 'communities') => void;
   onOpenSettings?: () => void;
+  unreadChatsCount?: number;
 }
 
 export const LeftNavRail: React.FC<LeftNavRailProps> = ({
@@ -29,6 +30,7 @@ export const LeftNavRail: React.FC<LeftNavRailProps> = ({
   activeDrawer = 'none',
   onTabChange,
   onOpenSettings,
+  unreadChatsCount,
 }) => {
   const isYouActive = activeDrawer === 'profile' || activeDrawer === 'settings';
   const isChats = !isYouActive && activeTab === 'chats';
@@ -88,7 +90,7 @@ export const LeftNavRail: React.FC<LeftNavRailProps> = ({
         >
           <div className="x78zum5 xdt5ytf x129bwdz">
             {/* Chats Tab */}
-            <div className="x1n2onr6 x1vqgdyp x100vrsf xt8t1vi x1xc408v x129tdwq x15urzxu x78zum5 x6s0dn4 xl56j7k" style={getItemWrapperStyle(isChats)}>
+            <div className="x1n2onr6 x1vqgdyp x100vrsf xt8t1vi x1xc408v x129tdwq x15urzxu x78zum5 x6s0dn4 xl56j7k" style={{ ...getItemWrapperStyle(isChats), overflow: 'visible' }}>
               <button
                 type="button"
                 aria-label="Chats"
@@ -102,6 +104,30 @@ export const LeftNavRail: React.FC<LeftNavRailProps> = ({
               >
                 <Icon name={isChats ? 'nav-chats-filled' : 'nav-chats'} size={24} color={isChats ? '#ffffff' : 'var(--icon-lighter, #8696a0)'} />
               </button>
+              {Boolean(unreadChatsCount && unreadChatsCount > 0) && (
+                <span
+                  style={{
+                    position: 'absolute',
+                    top: '2px',
+                    right: '2px',
+                    backgroundColor: '#00a884',
+                    color: '#111b21',
+                    fontSize: '11px',
+                    fontWeight: 700,
+                    borderRadius: '10px',
+                    minWidth: '16px',
+                    height: '16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '0 3px',
+                    pointerEvents: 'none',
+                    zIndex: 10,
+                  }}
+                >
+                  {unreadChatsCount}
+                </span>
+              )}
             </div>
 
             {/* Calls Tab */}

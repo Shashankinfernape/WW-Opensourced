@@ -203,7 +203,9 @@ export const ChatListPanel: React.FC<ChatListPanelProps> = ({
                           >
                             <span className="html-span xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x1hl2dhg x16tdsg8 x1vvkbs x1lliihq x1plvlek xryxfnj x1n2onr6">
                               <span className="html-span xdj266r x14z9mp xat24cr x1lziwak xexx8yu xyri2b x18d9i69 x1c1uobl x1hl2dhg x16tdsg8 x1vvkbs x1lliihq x193iq5w x6ikm8r x10wlt62 xlyipyv xuxw1ft">
-                                Unread
+                                {chats.filter((c) => Boolean(c.unreadCount && c.unreadCount > 0)).length > 0
+                                  ? `Unread ${chats.filter((c) => Boolean(c.unreadCount && c.unreadCount > 0)).length}`
+                                  : 'Unread'}
                               </span>
                             </span>
                           </span>

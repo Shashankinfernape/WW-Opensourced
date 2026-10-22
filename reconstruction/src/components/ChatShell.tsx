@@ -483,6 +483,7 @@ export const ChatShell: React.FC<ChatShellProps> = () => {
           setActiveTab('chats');
           setLeftDrawer('settings');
         }}
+        unreadChatsCount={chats.filter((c) => Boolean(c.unreadCount && c.unreadCount > 0)).length}
       />
 
       {/* Column 2: Secondary Rail Screen OR Chat List Column */}

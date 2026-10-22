@@ -20,7 +20,7 @@ export const ContactInfoDrawer: React.FC<ContactInfoDrawerProps> = ({
       data-testid="drawer-right"
       className="x9f619 x1n2onr6 xupqr0c x5yr21d x6ikm8r x10wlt62 x17dzmu4 x1i1dayz x2ipvbc xjdofhw x1vb5itz x2ydcri x1873f8k x1fkvrks"
       style={{
-        width: '420px',
+        width: '400px',
         height: '100%',
         backgroundColor: 'var(--WDS-surface-default, #161717)',
         borderLeft: '1px solid var(--border-default, rgba(134, 150, 160, 0.15))',

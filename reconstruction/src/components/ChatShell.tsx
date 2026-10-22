@@ -236,6 +236,7 @@ const CHATLIST_MENU_ITEMS: MenuItem[] = [
   { id: 'new_group', label: 'New group' },
   { id: 'new_community', label: 'New community' },
   { id: 'starred', label: 'Starred messages' },
+  { id: 'archived', label: 'Archived chats' },
   { id: 'select_chats', label: 'Select chats' },
   { id: 'settings', label: 'Settings' },
   { id: 'logout', label: 'Log out', danger: true },
@@ -368,6 +369,13 @@ export const ChatShell: React.FC<ChatShellProps> = () => {
       setLeftDrawer('settings');
     } else if (id === 'starred') {
       setLeftDrawer('starred');
+    } else if (id === 'archived') {
+      setLeftDrawer('archived');
+    } else if (id === 'new_group') {
+      setLeftDrawer('newchat');
+    } else if (id === 'new_community') {
+      setActiveTab('communities');
+      setLeftDrawer('none');
     } else if (id === 'contact_info') {
       setRightDrawer('contact_info');
     } else if (id === 'close_chat') {

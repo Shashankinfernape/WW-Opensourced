@@ -13,7 +13,10 @@ interface StatusItem {
 const FIXTURE_STATUSES: StatusItem[] = [
   { id: '1', name: 'Alex Rivera', time: 'Yesterday at 11:46 pm', color: '#00a884', initials: 'AR' },
   { id: '2', name: 'Jordan Lee', time: 'Yesterday at 11:11 pm', color: '#34b7f1', initials: 'JL', broken: true },
-  { id: '3', name: 'Taylor Sam', time: 'Yesterday at 7:54 am', color: '#a62c2b', initials: 'TS' }
+  { id: '3', name: 'Taylor Sam', time: 'Yesterday at 7:54 am', color: '#a62c2b', initials: 'TS' },
+  { id: '4', name: 'Bailey Chen', time: 'Yesterday at 1:15 am', color: '#1f7a8c', initials: 'BC' },
+  { id: '5', name: 'Morgan Smith', time: 'Wednesday at 9:30 pm', color: '#ffb900', initials: 'MS', broken: true },
+  { id: '6', name: 'Cameron Diaz', time: 'Wednesday at 4:10 pm', color: '#6b5b95', initials: 'CD' }
 ];
 
 interface StatusPanelProps {

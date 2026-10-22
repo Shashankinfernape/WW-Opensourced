@@ -15,7 +15,9 @@ const FIXTURE_CHANNELS: ChannelItem[] = [
   { id: '2', name: 'Pharma Job Vacancy', followers: '59K followers', color: '#1f7a8c', initials: 'PJ' },
   { id: '3', name: 'Learn MS Excel', followers: '7L followers', color: '#107c41', initials: 'XL' },
   { id: '4', name: 'WhatsApp', followers: '23.3Cr followers', color: '#00a884', initials: 'WA', verified: true },
-  { id: '5', name: 'Prompt ⬇️✨', followers: '13.9L followers', color: '#e0245e', initials: 'PR' }
+  { id: '5', name: 'Prompt ⬇️✨', followers: '13.9L followers', color: '#e0245e', initials: 'PR' },
+  { id: '6', name: 'Tech Innovations', followers: '4.2M followers', color: '#34b7f1', initials: 'TI' },
+  { id: '7', name: 'Daily Motivation', followers: '1.8M followers', color: '#ffb900', initials: 'DM' }
 ];
 
 export const ChannelsPanel: React.FC = () => {

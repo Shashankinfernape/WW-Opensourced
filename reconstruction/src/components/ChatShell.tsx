@@ -316,13 +316,10 @@ export const ChatShell: React.FC<ChatShellProps> = () => {
   }, []);
 
   const getSideWidth = () => {
-    if (windowWidth >= 1210) {
-      return 432;
-    }
     if (windowWidth < 700) {
       return 336;
     }
-    return 414;
+    return 432;
   };
 
   const selectedChat = selectedChatId ? chats.find((c) => c.id === selectedChatId) || null : null;

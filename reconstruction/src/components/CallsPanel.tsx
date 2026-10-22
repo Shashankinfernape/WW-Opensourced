@@ -13,10 +13,14 @@ interface CallRecord {
 }
 
 const FIXTURE_CALLS: CallRecord[] = [
-  { id: '1', name: 'Alex Rivera', time: 'Friday', incoming: false, isVideo: false, missed: true, initials: 'AR', color: '#00a884' },
-  { id: '2', name: 'Jordan Lee', time: 'Friday', incoming: false, isVideo: false, initials: 'JL', color: '#34b7f1' },
-  { id: '3', name: 'Taylor Brooks', time: '13/10/2026', incoming: true, missed: true, initials: 'TB', color: '#ea4335' },
-  { id: '4', name: 'Morgan Smith', time: '13/10/2026', incoming: true, isVideo: false, initials: 'MS', color: '#ffb900' }
+  { id: '1', name: 'Alex Rivera', time: 'Friday at 4:15 pm', incoming: false, isVideo: false, missed: true, initials: 'AR', color: '#00a884' },
+  { id: '2', name: 'Jordan Lee', time: 'Friday at 1:30 pm', incoming: false, isVideo: true, initials: 'JL', color: '#34b7f1' },
+  { id: '3', name: 'Taylor Brooks', time: '13/10/2026, 8:45 pm', incoming: true, missed: true, initials: 'TB', color: '#ea4335' },
+  { id: '4', name: 'Morgan Smith', time: '13/10/2026, 11:20 am', incoming: true, isVideo: false, initials: 'MS', color: '#ffb900' },
+  { id: '5', name: 'Bailey Chen', time: '11/10/2026, 6:05 pm', incoming: false, isVideo: false, initials: 'BC', color: '#1f7a8c' },
+  { id: '6', name: 'Cameron Diaz', time: '10/10/2026, 9:15 am', incoming: true, isVideo: true, initials: 'CD', color: '#6b5b95' },
+  { id: '7', name: 'Devon Patel', time: '08/10/2026, 3:40 pm', incoming: false, isVideo: false, missed: true, initials: 'DP', color: '#d9534f' },
+  { id: '8', name: 'Elena Gomez', time: '05/10/2026, 7:22 pm', incoming: true, isVideo: false, initials: 'EG', color: '#3b5998' }
 ];
 
 export const CallsPanel: React.FC = () => {
@@ -150,7 +154,7 @@ export const CallsPanel: React.FC = () => {
         <div className="x1n2onr6 x1n2onr6 xupqr0c x78zum5 x1r8uery x1iyjqo2 xdt5ytf x6ikm8r x1odjw0f x1hc1fzr x9w6j0p x1anedsm">
           <div tabIndex={0} className="" data-tab="3">
             <div tabIndex={-1} className="">
-              <div className="x1y332i5 x1n2onr6 x6ikm8r x10wlt62" role="list" aria-label="Chat list" style={{ height: '700px', position: 'relative' }}>
+              <div className="x1y332i5 x1n2onr6 x6ikm8r x10wlt62" role="list" aria-label="Chat list" style={{ height: `${193 + filteredCalls.length * 76 + 20}px`, position: 'relative' }}>
                 {/* list-item-0: Favourites Heading */}
                 <div className="x10l6tqk xh8yej3 x1g42fcv" role="row" data-testid="list-item-0" style={{ zIndex: 1000000, height: '56px', transform: 'translateY(0px)' }}>
                   <div className="x78zum5 xdt5ytf xh8yej3">

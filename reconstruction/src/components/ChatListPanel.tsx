@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Icon } from '../icons/Icon';
+import { MenuDropdown } from './MenuDropdown';
 
 export interface ChatSummary {
   id: string;
@@ -30,6 +31,12 @@ interface ChatListPanelProps {
   searchQuery: string;
   onSearchChange: (q: string) => void;
   onOpenArchived?: () => void;
+  archivedCount?: number;
+  onArchiveChat?: (id: string) => void;
+  onMuteChat?: (id: string) => void;
+  onPinChat?: (id: string) => void;
+  onToggleUnread?: (id: string) => void;
+  onDeleteChat?: (id: string) => void;
 }
 
 export const ChatListPanel: React.FC<ChatListPanelProps> = ({
@@ -41,7 +48,20 @@ export const ChatListPanel: React.FC<ChatListPanelProps> = ({
   searchQuery,
   onSearchChange,
   onOpenArchived,
+  archivedCount = 0,
+  onArchiveChat,
+  onMuteChat,
+  onPinChat,
+  onToggleUnread,
+  onDeleteChat,
 }) => {
+  const [hoveredChatId, setHoveredChatId] = useState<string | null>(null);
+  const [contextMenu, setContextMenu] = useState<{
+    chat: ChatSummary;
+    x: number;
+    y: number;
+  } | null>(null);
+
   const filteredChats = chats.filter((c) => {
     if (filter === 'unread' && !c.unreadCount) return false;
     if (searchQuery.trim() && !c.name.toLowerCase().includes(searchQuery.toLowerCase())) {
@@ -317,6 +337,80 @@ export const ChatListPanel: React.FC<ChatListPanelProps> = ({
         className="x1n2onr6 x1vjfegm x78zum5 xdt5ytf x1iyjqo2 x1odjw0f x1280gxy"
         style={{ flex: 1, overflowY: 'auto' }}
       >
+        {/* Archived Entry Point Button */}
+        {onOpenArchived && (
+          <div
+            style={{
+              height: '49px',
+              borderBottom: '1px solid var(--border-default, rgba(134, 150, 160, 0.15))',
+              flexShrink: 0,
+            }}
+          >
+            <button
+              data-testid="chatlist-panel-archived-button"
+              data-tab="3"
+              type="button"
+              onClick={onOpenArchived}
+              aria-label={`Archived ${archivedCount ? `${archivedCount} unread` : ''}`}
+              className="html-button"
+              style={{
+                width: '100%',
+                height: '100%',
+                display: 'flex',
+                alignItems: 'center',
+                padding: '0 16px',
+                backgroundColor: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+                color: 'inherit',
+              }}
+            >
+              <div
+                style={{
+                  width: '48px',
+                  marginRight: '15px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  color: '#00a884',
+                  flexShrink: 0,
+                }}
+              >
+                <Icon name="nav-archived" size={20} color="#00a884" />
+              </div>
+              <div
+                style={{
+                  flex: 1,
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: '16px',
+                    color: 'var(--primary, #e9edef)',
+                    fontWeight: 400,
+                  }}
+                >
+                  Archived
+                </span>
+                {Boolean(archivedCount && archivedCount > 0) && (
+                  <span
+                    style={{
+                      fontSize: '12px',
+                      fontWeight: 600,
+                      color: '#00a884',
+                    }}
+                  >
+                    {archivedCount}
+                  </span>
+                )}
+              </div>
+            </button>
+          </div>
+        )}
+
         {/* Chat List Virtual Grid */}
         <div data-testid="chat-list" tabIndex={-1}>
           <div
@@ -331,12 +425,25 @@ export const ChatListPanel: React.FC<ChatListPanelProps> = ({
           >
             {filteredChats.map((chat, idx) => {
               const isSelected = chat.id === selectedChatId;
+              const isHovered = hoveredChatId === chat.id;
+
               return (
                 <div
                   key={chat.id}
                   role="row"
                   data-testid={`list-item-${idx}`}
                   className="x10l6tqk xh8yej3 x1g42fcv"
+                  onMouseEnter={() => setHoveredChatId(chat.id)}
+                  onMouseLeave={() => setHoveredChatId(null)}
+                  onContextMenu={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setContextMenu({
+                      chat,
+                      x: Math.min(e.clientX, window.innerWidth - 220),
+                      y: Math.min(e.clientY, window.innerHeight - 250),
+                    });
+                  }}
                   style={{
                     height: '76px',
                     transform: `translateY(${idx * 76}px)`,
@@ -530,8 +637,8 @@ export const ChatListPanel: React.FC<ChatListPanelProps> = ({
                               )}
                             </div>
 
-                            {/* Right-column meta slot: Muted, Pinned, Unread Badge */}
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexShrink: 0 }}>
+                            {/* Right-column meta slot: Muted, Pinned, Unread Badge, Hover chevron */}
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexShrink: 0, position: 'relative' }}>
                               {chat.isMuted && (
                                 <div
                                   className="x1rg5ohu xf6vk7d x1j53mea x16dsc37 xhslqc4"
@@ -573,6 +680,34 @@ export const ChatListPanel: React.FC<ChatListPanelProps> = ({
                                   </span>
                                 </div>
                               )}
+                              {isHovered && (
+                                <button
+                                  type="button"
+                                  data-testid="down-context"
+                                  aria-label="Context Menu"
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    const rect = e.currentTarget.getBoundingClientRect();
+                                    setContextMenu({
+                                      chat,
+                                      x: Math.min(rect.left - 120, window.innerWidth - 220),
+                                      y: Math.min(rect.bottom + 4, window.innerHeight - 250),
+                                    });
+                                  }}
+                                  style={{
+                                    background: 'transparent',
+                                    border: 'none',
+                                    padding: '2px',
+                                    cursor: 'pointer',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    color: 'var(--secondary, #8696a0)',
+                                  }}
+                                >
+                                  <Icon name="ic-chevron-down" size={18} color="var(--secondary, #8696a0)" />
+                                </button>
+                              )}
                             </div>
                           </div>
                         </div>
@@ -597,6 +732,42 @@ export const ChatListPanel: React.FC<ChatListPanelProps> = ({
           </div>
         </div>
       </div>
+
+      {/* Floating Chat Row Context Menu */}
+      {contextMenu && (
+        <MenuDropdown
+          isOpen={true}
+          position="fixed"
+          onClose={() => setContextMenu(null)}
+          top={`${contextMenu.y}px`}
+          left={`${contextMenu.x}px`}
+          align="left"
+          items={[
+            { id: 'archive', label: 'Archive chat' },
+            {
+              id: 'mute',
+              label: contextMenu.chat.isMuted ? 'Unmute notifications' : 'Mute notifications',
+            },
+            {
+              id: 'pin',
+              label: contextMenu.chat.isPinned ? 'Unpin chat' : 'Pin chat',
+            },
+            {
+              id: 'unread',
+              label: contextMenu.chat.unreadCount ? 'Mark as read' : 'Mark as unread',
+            },
+            { id: 'delete', label: 'Delete chat', danger: true },
+          ]}
+          onSelectItem={(actionId) => {
+            if (actionId === 'archive') onArchiveChat?.(contextMenu.chat.id);
+            if (actionId === 'mute') onMuteChat?.(contextMenu.chat.id);
+            if (actionId === 'pin') onPinChat?.(contextMenu.chat.id);
+            if (actionId === 'unread') onToggleUnread?.(contextMenu.chat.id);
+            if (actionId === 'delete') onDeleteChat?.(contextMenu.chat.id);
+            setContextMenu(null);
+          }}
+        />
+      )}
     </div>
   );
 };

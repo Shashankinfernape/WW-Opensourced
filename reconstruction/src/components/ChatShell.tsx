@@ -262,6 +262,28 @@ export const ChatShell: React.FC<ChatShellProps> = () => {
   const [isChatMenuOpen, setIsChatMenuOpen] = useState(false);
 
   const [chats, setChats] = useState<ChatSummary[]>(NEUTRAL_CHATS);
+  const [archivedChats, setArchivedChats] = useState<ChatSummary[]>([
+    {
+      id: 'arch_1',
+      name: 'Project Updates Group',
+      initial: 'P',
+      color: '#00a884',
+      lastMessage: 'Release notes v1.2 published.',
+      time: '30/9/2026',
+      unreadCount: 0,
+      ack: 3,
+    },
+    {
+      id: 'arch_2',
+      name: 'Product Discussion',
+      initial: 'P',
+      color: '#34b7f1',
+      lastMessage: 'Thanks for sharing the updates!',
+      time: '28/9/2026',
+      unreadCount: 0,
+      ack: 2,
+    },
+  ]);
   const [selectedChatId, setSelectedChatId] = useState<string | null>(null);
   const [filter, setFilter] = useState<'all' | 'unread' | 'favourites' | 'groups'>('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -325,17 +347,19 @@ export const ChatShell: React.FC<ChatShellProps> = () => {
   const selectedChat = selectedChatId ? chats.find((c) => c.id === selectedChatId) || null : null;
   const activeMessages = selectedChatId ? messagesMap[selectedChatId] || [] : [];
 
-  const handleSendMessage = (text: string) => {
+  const handleSendMessage = (text: string, type: 'text' | 'audio' = 'text') => {
     if (!selectedChatId) return;
     const now = new Date();
-    const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }).toLowerCase();
     const targetChatId = selectedChatId;
     const newMessage: ChatMessage = {
       id: `m_${Date.now()}`,
       sender: 'me',
-      text,
+      text: type === 'audio' ? '' : text,
       time: timeStr,
       ack: 1, // SENT
+      type,
+      media: type === 'audio' ? { duration: '0:06' } : undefined,
     };
 
     setMessagesMap((prev) => ({
@@ -344,7 +368,17 @@ export const ChatShell: React.FC<ChatShellProps> = () => {
     }));
 
     setChats((prev) =>
-      prev.map((c) => (c.id === targetChatId ? { ...c, lastMessage: text, time: timeStr, ack: 1 } : c))
+      prev.map((c) =>
+        c.id === targetChatId
+          ? {
+              ...c,
+              lastMessage: type === 'audio' ? 'Voice message' : text,
+              mediaType: type === 'audio' ? 'audio' : c.mediaType,
+              time: timeStr,
+              ack: 1,
+            }
+          : c
+      )
     );
 
     // Simulate server ACK update to READ (ack = 3) after 800ms
@@ -379,6 +413,50 @@ export const ChatShell: React.FC<ChatShellProps> = () => {
       setSelectedChatId(null);
       setRightDrawer('none');
       setIsChatMenuOpen(false);
+    }
+  };
+
+  const handleArchiveChat = (chatId: string) => {
+    const target = chats.find((c) => c.id === chatId);
+    if (!target) return;
+    setChats((prev) => prev.filter((c) => c.id !== chatId));
+    setArchivedChats((prev) => [target, ...prev]);
+    if (selectedChatId === chatId) {
+      setSelectedChatId(null);
+    }
+  };
+
+  const handleUnarchiveChat = (chatId: string) => {
+    const target = archivedChats.find((c) => c.id === chatId);
+    if (!target) return;
+    setArchivedChats((prev) => prev.filter((c) => c.id !== chatId));
+    setChats((prev) => [target, ...prev]);
+  };
+
+  const handleMuteChat = (chatId: string) => {
+    setChats((prev) =>
+      prev.map((c) => (c.id === chatId ? { ...c, isMuted: !c.isMuted } : c))
+    );
+  };
+
+  const handlePinChat = (chatId: string) => {
+    setChats((prev) =>
+      prev.map((c) => (c.id === chatId ? { ...c, isPinned: !c.isPinned } : c))
+    );
+  };
+
+  const handleToggleUnread = (chatId: string) => {
+    setChats((prev) =>
+      prev.map((c) =>
+        c.id === chatId ? { ...c, unreadCount: c.unreadCount ? 0 : 1 } : c
+      )
+    );
+  };
+
+  const handleDeleteChat = (chatId: string) => {
+    setChats((prev) => prev.filter((c) => c.id !== chatId));
+    if (selectedChatId === chatId) {
+      setSelectedChatId(null);
     }
   };
 
@@ -443,6 +521,8 @@ export const ChatShell: React.FC<ChatShellProps> = () => {
         ) : leftDrawer === 'archived' ? (
           <ArchivedChatsPanel
             onClose={() => setLeftDrawer('none')}
+            archivedChats={archivedChats}
+            onUnarchiveChat={handleUnarchiveChat}
             onSelectChat={(id) => {
               setSelectedChatId(id);
               setLeftDrawer('none');
@@ -488,6 +568,12 @@ export const ChatShell: React.FC<ChatShellProps> = () => {
               searchQuery={searchQuery}
               onSearchChange={setSearchQuery}
               onOpenArchived={() => setLeftDrawer('archived')}
+              archivedCount={archivedChats.length}
+              onArchiveChat={handleArchiveChat}
+              onMuteChat={handleMuteChat}
+              onPinChat={handlePinChat}
+              onToggleUnread={handleToggleUnread}
+              onDeleteChat={handleDeleteChat}
             />
           </div>
         )}

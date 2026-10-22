@@ -5,9 +5,11 @@ import { ChatSummary } from './ChatListPanel';
 interface ArchivedChatsPanelProps {
   onClose: () => void;
   onSelectChat: (id: string) => void;
+  archivedChats?: ChatSummary[];
+  onUnarchiveChat?: (id: string) => void;
 }
 
-const ARCHIVED_FIXTURES: ChatSummary[] = [
+const DEFAULT_ARCHIVED_FIXTURES: ChatSummary[] = [
   {
     id: 'arch_1',
     name: 'Project Updates Group',
@@ -30,7 +32,14 @@ const ARCHIVED_FIXTURES: ChatSummary[] = [
   },
 ];
 
-export const ArchivedChatsPanel: React.FC<ArchivedChatsPanelProps> = ({ onClose, onSelectChat }) => {
+export const ArchivedChatsPanel: React.FC<ArchivedChatsPanelProps> = ({
+  onClose,
+  onSelectChat,
+  archivedChats,
+  onUnarchiveChat,
+}) => {
+  const displayChats = archivedChats !== undefined ? archivedChats : DEFAULT_ARCHIVED_FIXTURES;
+
   return (
     <div className="xnpuxes x78zum5 xdt5ytf x5yr21d x1o0tod x6ikm8r x10wlt62 x67bb7w x10l6tqk x13vifvy xh8yej3 x1280gxy copyable-area" data-testid="archived-drawer" style={{ width: '100%', height: '100%', position: 'relative' }}>
       {/* Header */}
@@ -84,8 +93,8 @@ export const ArchivedChatsPanel: React.FC<ArchivedChatsPanelProps> = ({ onClose,
             <div className="xjm9jq1 xkh2ocl x1uew315"></div>
           </div>
           <div tabIndex={-1} className="x6ikm8r x10wlt62" data-testid="archived-chatlist">
-            <div className="x1y332i5 x1n2onr6 x6ikm8r x10wlt62" style={{ height: `${ARCHIVED_FIXTURES.length * 76}px`, position: 'relative' }}>
-              {ARCHIVED_FIXTURES.map((item, idx) => (
+            <div className="x1y332i5 x1n2onr6 x6ikm8r x10wlt62" style={{ height: `${displayChats.length * 76}px`, position: 'relative' }}>
+              {displayChats.map((item, idx) => (
                 <div key={item.id} className="x10l6tqk xh8yej3 x1g42fcv" role="listitem" data-testid={`list-item-${idx}`} style={{ zIndex: 1000000 - idx, height: '76px', transform: `translateY(${idx * 76}px)` }}>
                   <div tabIndex={-1} className="" role="button" onClick={() => onSelectChat(item.id)}>
                     <div data-testid="cell-frame-container" className="x1280gxy xlr9sxt xvvg52n xwd4zgb xq8v1ta x78zum5 x1q0g3np xy75621 x1hm9lzh x1sa5p1d x71s49j x1n2onr6 x1ypdohk x1ubxc9n xbmkbis xb5mbof xiitwr3 x206yn3">

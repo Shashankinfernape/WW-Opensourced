@@ -15,6 +15,7 @@ interface MenuDropdownProps {
   top?: number | string;
   right?: number | string;
   left?: number | string;
+  position?: 'absolute' | 'fixed';
 }
 
 export const MenuDropdown: React.FC<MenuDropdownProps> = ({
@@ -26,13 +27,14 @@ export const MenuDropdown: React.FC<MenuDropdownProps> = ({
   top = '50px',
   right,
   left,
+  position = 'absolute',
 }) => {
   if (!isOpen) return null;
 
   return (
     <div
       style={{
-        position: 'absolute',
+        position,
         top,
         right: align === 'right' ? (right ?? '12px') : undefined,
         left: align === 'left' ? (left ?? '12px') : undefined,

@@ -1,0 +1,95 @@
+{
+  "panel": "profile_drawer",
+  "description": "Profile Drawer view: LeftNavRail (64px) with active You tab pill + Edit Profile drawer (432px)",
+  "timestamp": "2026-10-22T05:57:00+05:30",
+  "static_traces": {
+    "feature_traces": [
+      {
+        "seed": "WAWebProfileImage.react",
+        "match": "contains",
+        "direction": "both",
+        "evidence_id": "ev_2bd6f2a552e76b643b30c768b1f25ff229e80b4f0a03d9cab811d9fae2825345"
+      },
+      {
+        "seed": "BaseProfilePhoto.react",
+        "match": "contains",
+        "direction": "both",
+        "evidence_id": "ev_df1f79e8c47caadd53680c78535e6ba944a9e91ee6b7d311dcc5a4a561bb2fc7"
+      },
+      {
+        "seed": "ic-add-a-photo",
+        "match": "contains",
+        "direction": "both",
+        "evidence_id": "ev_c5dec65057f3674755b8b0053f35fda3827116fd9aadd8e2c6af49a1205c4de3"
+      },
+      {
+        "seed": "ic-alternate-email",
+        "match": "contains",
+        "direction": "both",
+        "evidence_id": "ev_fe031d3dfdb2127c73e4f981ee43ff49612c945838f3c34f5d915a41057665c6"
+      }
+    ],
+    "semantic_traces": [
+      {
+        "seed": "WAWebProfileImage.react",
+        "direction": "callers",
+        "evidence_id": "ev_4929291987d8116f8f164c1052e913d605f78ab9d73844d2b3948cf552e990f3"
+      },
+      {
+        "seed": "WAWebProfileImage.react",
+        "direction": "forward-influence",
+        "evidence_id": "ev_f1a3ed64cff155f478433533bdcb3f30b81f50669d216c9e43a199c8c238457c"
+      },
+      {
+        "seed": "BaseProfilePhoto.react",
+        "direction": "callers",
+        "evidence_id": "ev_5477d17dafef0fdba68cb0c7c09e1071a4a229d54f181ca35483bba1e2c36edf"
+      },
+      {
+        "seed": "BaseProfilePhoto.react",
+        "direction": "forward-influence",
+        "evidence_id": "ev_ddf99fa160a5f8bb6cdb3e81b7c6a71cc0e6a04765f150e6bd2fa3c377c456c1"
+      }
+    ],
+    "inspections": [
+      {
+        "node_id": "jag_node_75dda4f908461c3391b41080ef440ed6dcf21ded18b2fcf2aaa63ef57f9a3e2d",
+        "evidence_id": "ev_74bfcaabff2333336c495f2e9115c3c42a458c8433f97944ac7d655499469b9b"
+      }
+    ]
+  },
+  "runtime_observations": {
+    "live_cdp_inspect": "ev_aa521d812d35c59ba29f5f08b389f417fef66ce8d234f2d72120e2418a0fb82a",
+    "recon_cdp_inspect": "ev_a30932029be083e9b1bb5aa14207945d82f3cbb4e350c3848b88fa5537482329"
+  },
+  "rea_comparators": {
+    "comparator_1_web_captures_diff": {
+      "evidence_id": "ev_92db01ec52719786dc991d477f945bdbadea4d3c4fa51e6599156753f9e5764a",
+      "aligned_steps": 2,
+      "status": "PASS"
+    },
+    "comparator_2_bundle_provenance": {
+      "evidence_id": "ev_c6bb9ae184948e8dd8070c6d63f6ad0adfd13e08c0a34c487eb5622e38fb9769",
+      "status": "PASS"
+    },
+    "comparator_3_pixel_diff": {
+      "evidence_id": "ev_935338e3510e7468a913bfe83f1d9871e3ee69900ae25aed224caad6aa64d1c5",
+      "crop_area": { "x": 0, "y": 0, "width": 496, "height": 765 },
+      "compared_pixels": 379440,
+      "changed_pixels": 34350,
+      "changed_ratio": 0.090528,
+      "accuracy": 0.909472,
+      "threshold": 0.15,
+      "status": "PASS"
+    }
+  },
+  "privacy_compliance": {
+    "zero_leak_verified": true,
+    "synthetic_placeholders": {
+      "name": "Alex Rivera",
+      "about": "Available",
+      "username": "alexrivera",
+      "phone": "+1 (555) 019-2834"
+    }
+  }
+}

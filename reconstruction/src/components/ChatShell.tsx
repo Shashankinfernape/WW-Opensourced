@@ -391,6 +391,7 @@ export const ChatShell: React.FC<ChatShellProps> = () => {
       {/* Column 1: Left Navigation Rail (width: 64px) */}
       <LeftNavRail
         activeTab={activeTab}
+        activeDrawer={leftDrawer}
         onTabChange={(tab) => {
           setActiveTab(tab);
           setLeftDrawer('none');

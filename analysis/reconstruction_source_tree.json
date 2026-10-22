@@ -2,7 +2,7 @@
   "schema": "HistoricalSourceGraph",
   "authority": "historical-reference",
   "root_alias": "$REFERENCE_ROOT",
-  "root_sha256": "63b11670ebfb9428f69f5545bacde8c9d7ef7d296a5bae22cde40be214f3a44c",
+  "root_sha256": "a43d0942a34ebf9f6eec78fb82aadfd73e7252963e8808333987efdfc82617d2",
   "inventory_state": "partial",
   "entries": [
     {
@@ -142,8 +142,8 @@
       "limitations": [],
       "kind": "file",
       "language": "TSX",
-      "sha256": "b0c6828d67802b3361fc2bb2944a7707195dcc3489a8eb81d17d1b817ce045c6",
-      "size": 18552,
+      "sha256": "63fbb5e513a7ce4cdcb8513119f781691bf0abe25afbfcfdcc4369bdfb198b84",
+      "size": 18586,
       "content_state": "hashed"
     },
     {
@@ -214,8 +214,8 @@
       "limitations": [],
       "kind": "file",
       "language": "TSX",
-      "sha256": "4ca57665770830c6216ca5671f946fd6364124d4f523efc1cd7be63eebc33da7",
-      "size": 11372,
+      "sha256": "7322e681279dab9b1dd091f6a5d53171c7be33efeb72118fc0df24f53bcbb064",
+      "size": 12277,
       "content_state": "hashed"
     },
     {
@@ -298,8 +298,8 @@
       "limitations": [],
       "kind": "file",
       "language": "TSX",
-      "sha256": "a8fdffd82891b53233efe80b3baa4cb1bd3ec24b725c132b64b8ec6b34cbd08b",
-      "size": 16780,
+      "sha256": "0c4801f0ca2185daf49ffc08e5f199bbf9284a8b5035a3347ac3264ce112b215",
+      "size": 31847,
       "content_state": "hashed"
     },
     {
@@ -976,7 +976,7 @@
   "manifests": [],
   "vcs": {
     "kind": "git",
-    "head": "aea8834721ab7f216c7f759abf02a8ca056d5f9a",
+    "head": "e3dc677cbb5dffb31564ab7f7692ee3f986a7342",
     "dirty": null
   },
   "provenance": {

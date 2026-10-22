@@ -19,20 +19,23 @@ import { Icon } from '../icons/Icon';
 
 export interface LeftNavRailProps {
   activeTab?: 'chats' | 'calls' | 'status' | 'channels' | 'communities';
+  activeDrawer?: 'none' | 'newchat' | 'archived' | 'starred' | 'settings' | 'profile';
   onTabChange?: (tab: 'chats' | 'calls' | 'status' | 'channels' | 'communities') => void;
   onOpenSettings?: () => void;
 }
 
 export const LeftNavRail: React.FC<LeftNavRailProps> = ({
   activeTab = 'chats',
+  activeDrawer = 'none',
   onTabChange,
   onOpenSettings,
 }) => {
-  const isChats = activeTab === 'chats';
-  const isCalls = activeTab === 'calls';
-  const isStatus = activeTab === 'status';
-  const isChannels = activeTab === 'channels';
-  const isCommunities = activeTab === 'communities';
+  const isYouActive = activeDrawer === 'profile' || activeDrawer === 'settings';
+  const isChats = !isYouActive && activeTab === 'chats';
+  const isCalls = !isYouActive && activeTab === 'calls';
+  const isStatus = !isYouActive && activeTab === 'status';
+  const isChannels = !isYouActive && activeTab === 'channels';
+  const isCommunities = !isYouActive && activeTab === 'communities';
 
   const baseButtonClasses =
     'x78zum5 x6s0dn4 xl56j7k x100vrsf x1vqgdyp x11g6tue x972fbf x10w94by x1qhh985 x14e42zd x1ejq31n x18oe1m7 x1sy0etr xstzfhl x1c1uobl';
@@ -218,32 +221,47 @@ export const LeftNavRail: React.FC<LeftNavRailProps> = ({
             </div>
 
             {/* You Tab (WAWebMeTabNavBarItem.react, isMeTabEnabled() === true) */}
-            <div className="x1n2onr6 x100vrsf x1vqgdyp x11g6tue x972fbf x10w94by x1qhh985 x14e42zd x1ejq31n x78zum5 x6s0dn4 xl56j7k" style={getItemWrapperStyle(false)}>
+            <div className="x1n2onr6 x100vrsf x1vqgdyp x11g6tue x972fbf x10w94by x1qhh985 x14e42zd x1ejq31n x78zum5 x6s0dn4 xl56j7k" style={getItemWrapperStyle(isYouActive)}>
               <button
                 type="button"
                 aria-label="You"
-                aria-pressed={false}
+                aria-pressed={isYouActive}
                 data-navbar-item="true"
-                data-navbar-item-selected="false"
+                data-navbar-item-selected={String(isYouActive)}
+                data-navbar-item-index="7"
                 tabIndex={-1}
                 onClick={onOpenSettings}
                 className={baseButtonClasses}
-                style={getButtonStyle(false)}
+                style={getButtonStyle(isYouActive)}
               >
                 <div
-                  className="x78zum5 x6s0dn4 xl56j7k x1c9tyrk xeusxvb x1pahc9y x1ertn4p"
+                  className="x3nfvp2 x2lah0s x16ye13r x5lhr3w x1plvlek xryxfnj x1n2onr6"
                   style={{
                     width: '24px',
                     height: '24px',
-                    borderRadius: '50%',
-                    backgroundColor: 'var(--avatar-placeholder-background, #6b7780)',
-                    color: '#ffffff',
-                    fontSize: '11px',
-                    fontWeight: 500,
-                    userSelect: 'none',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                   }}
                 >
-                  U
+                  <div
+                    className="x78zum5 x6s0dn4 xl56j7k x1c9tyrk xeusxvb x1pahc9y x1ertn4p"
+                    style={{
+                      width: '24px',
+                      height: '24px',
+                      borderRadius: '50%',
+                      backgroundColor: 'var(--avatar-placeholder-background, #6b7780)',
+                      color: '#ffffff',
+                      fontSize: '11px',
+                      fontWeight: 600,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      userSelect: 'none',
+                    }}
+                  >
+                    AR
+                  </div>
                 </div>
               </button>
             </div>

@@ -1,0 +1,50 @@
+{
+  "featureTraces": [
+    {
+      "seed": "WAWebProfileImage.react",
+      "match": "contains",
+      "direction": "both",
+      "evidence_id": "ev_2bd6f2a552e76b643b30c768b1f25ff229e80b4f0a03d9cab811d9fae2825345"
+    },
+    {
+      "seed": "BaseProfilePhoto.react",
+      "match": "contains",
+      "direction": "both",
+      "evidence_id": "ev_df1f79e8c47caadd53680c78535e6ba944a9e91ee6b7d311dcc5a4a561bb2fc7"
+    },
+    {
+      "seed": "ic-add-a-photo",
+      "match": "contains",
+      "direction": "both",
+      "evidence_id": "ev_c5dec65057f3674755b8b0053f35fda3827116fd9aadd8e2c6af49a1205c4de3"
+    },
+    {
+      "seed": "ic-alternate-email",
+      "match": "contains",
+      "direction": "both",
+      "evidence_id": "ev_fe031d3dfdb2127c73e4f981ee43ff49612c945838f3c34f5d915a41057665c6"
+    }
+  ],
+  "semanticTraces": [
+    {
+      "seed": "WAWebProfileImage.react",
+      "direction": "callers",
+      "evidence_id": "ev_4929291987d8116f8f164c1052e913d605f78ab9d73844d2b3948cf552e990f3"
+    },
+    {
+      "seed": "WAWebProfileImage.react",
+      "direction": "forward-influence",
+      "evidence_id": "ev_f1a3ed64cff155f478433533bdcb3f30b81f50669d216c9e43a199c8c238457c"
+    },
+    {
+      "seed": "BaseProfilePhoto.react",
+      "direction": "callers",
+      "evidence_id": "ev_5477d17dafef0fdba68cb0c7c09e1071a4a229d54f181ca35483bba1e2c36edf"
+    },
+    {
+      "seed": "BaseProfilePhoto.react",
+      "direction": "forward-influence",
+      "evidence_id": "ev_ddf99fa160a5f8bb6cdb3e81b7c6a71cc0e6a04765f150e6bd2fa3c377c456c1"
+    }
+  ]
+}

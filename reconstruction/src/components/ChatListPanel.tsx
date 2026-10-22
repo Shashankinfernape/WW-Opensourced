@@ -134,7 +134,7 @@ export const ChatListPanel: React.FC<ChatListPanelProps> = ({
                             className={`x140p0ai x1gufx9m x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x xeuugli x13faqbe x1vvkbs x1lliihq x1fj9vlw ${filter === 'all' ? 'xk4n5i7' : 'xhslqc4'} x1qh4rir x87ps6o x1f6kntn xjb2p0i xfjzk2p x8r4c90 x1ic7a3i x12xpedu`}
                             style={{
                               ['--x-fontSize' as string]: '14px',
-                              ['--x-lineHeight' as string]: '9.9531px',
+                              ['--x-lineHeight' as string]: '20px',
                               ['--x-8dd7yt' as string]: '-0.0137em',
                               ['--x-hxtmnb' as string]: '0.0137em',
                             }}
@@ -176,7 +176,7 @@ export const ChatListPanel: React.FC<ChatListPanelProps> = ({
                             className={`x140p0ai x1gufx9m x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x xeuugli x13faqbe x1vvkbs x1lliihq x1fj9vlw ${filter === 'unread' ? 'xk4n5i7' : 'xhslqc4'} x1qh4rir x87ps6o x1f6kntn xjb2p0i xfjzk2p x8r4c90 x1ic7a3i x12xpedu`}
                             style={{
                               ['--x-fontSize' as string]: '14px',
-                              ['--x-lineHeight' as string]: '9.9531px',
+                              ['--x-lineHeight' as string]: '20px',
                               ['--x-8dd7yt' as string]: '-0.0137em',
                               ['--x-hxtmnb' as string]: '0.0137em',
                             }}
@@ -218,7 +218,7 @@ export const ChatListPanel: React.FC<ChatListPanelProps> = ({
                             className={`x140p0ai x1gufx9m x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x xeuugli x13faqbe x1vvkbs x1lliihq x1fj9vlw ${filter === 'favourites' ? 'xk4n5i7' : 'xhslqc4'} x1qh4rir x87ps6o x1f6kntn xjb2p0i xfjzk2p x8r4c90 x1ic7a3i x12xpedu`}
                             style={{
                               ['--x-fontSize' as string]: '14px',
-                              ['--x-lineHeight' as string]: '9.9531px',
+                              ['--x-lineHeight' as string]: '20px',
                               ['--x-8dd7yt' as string]: '-0.0137em',
                               ['--x-hxtmnb' as string]: '0.0137em',
                             }}
@@ -260,7 +260,7 @@ export const ChatListPanel: React.FC<ChatListPanelProps> = ({
                             className={`x140p0ai x1gufx9m x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x xeuugli x13faqbe x1vvkbs x1lliihq x1fj9vlw ${filter === 'groups' ? 'xk4n5i7' : 'xhslqc4'} x1qh4rir x87ps6o x1f6kntn xjb2p0i xfjzk2p x8r4c90 x1ic7a3i x12xpedu`}
                             style={{
                               ['--x-fontSize' as string]: '14px',
-                              ['--x-lineHeight' as string]: '9.9531px',
+                              ['--x-lineHeight' as string]: '20px',
                               ['--x-8dd7yt' as string]: '-0.0137em',
                               ['--x-hxtmnb' as string]: '0.0137em',
                             }}

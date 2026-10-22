@@ -20,7 +20,7 @@ export const ChatListHeader: React.FC<ChatListHeaderProps> = ({
                 className="x140p0ai x1gufx9m x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x193iq5w xeuugli x13faqbe x1vvkbs x1lliihq x1fj9vlw x14ug900 x1hx0egp x1aueamr xjb2p0i xo1l8bm xladpa3 x1ic7a3i"
                 style={{
                   ['--x-fontSize' as string]: '22px',
-                  ['--x-lineHeight' as string]: '15.6406px',
+                  ['--x-lineHeight' as string]: '28px',
                   ['--x-8dd7yt' as string]: '-0.0137em',
                   ['--x-hxtmnb' as string]: '0.0137em',
                 }}
